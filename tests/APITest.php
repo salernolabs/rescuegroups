@@ -24,12 +24,11 @@ class APITest extends \PHPUnit\Framework\TestCase
      */
     public function testConstructorEnvironmentVariable()
     {
-        $currentValue = !empty($_ENV['RESCUEGROUPS_API_KEY']) ? $_ENV['RESCUEGROUPS_API_KEY'] : '';
-        $_ENV['RESCUEGROUPS_API_KEY'] = 'someTestKey';
+        $environmentVariable = getenv('RESCUEGROUPS_API_KEY');
+        $this->assertNotEmpty($environmentVariable);
 
         $api = new \RescueGroups\API();
-        $this->addToAssertionCount(1);
 
-        $_ENV['RESCUEGROUPS_API_KEY'] = $currentValue;
+        $this->addToAssertionCount(1);
     }
 }

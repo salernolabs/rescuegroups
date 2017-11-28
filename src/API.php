@@ -25,7 +25,7 @@ class API
     {
         if (empty($key))
         {
-            $key = $_ENV['RESCUEGROUPS_API_KEY'];
+            $key = getenv('RESCUEGROUPS_API_KEY');
         }
 
         if (empty($key))
@@ -49,23 +49,16 @@ class API
             'objectAction' => $request->getObjectAction()
         ];
 
-        $client = new \GuzzleHttp\Client(
-            [
-                'apiVersion' => static::API_VERSION,
-                'request.options' => [
-                    'headers' => ['Content-type', 'application/json']
-                ]
-            ]
-        );
+        $client = new \GuzzleHttp\Client();
 
         $response = $client->request(
             'POST',
-            'https://api.rescuegroups.org/http/{apiVersion}.json',
+            'https://api.rescuegroups.org/http/' . static::API_VERSION . '.json',
             [
-                'form_params' => $postObject
+                \GuzzleHttp\RequestOptions::HEADERS => ['Content-type', 'application/json'],
+                \GuzzleHttp\RequestOptions::JSON => $postObject
             ]
         );
-
 
         if ($response->getStatusCode() != 200)
         {
@@ -77,6 +70,11 @@ class API
         if (empty($data))
         {
             throw new Exceptions\Exception("Could not decode valid JSON response from endpoint.");
+        }
+
+        if ($data->status == 'error')
+        {
+            throw new Exceptions\ErrorResponse($data->message);
         }
 
         return new Responses\Envelope($data);
