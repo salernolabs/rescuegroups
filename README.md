@@ -16,3 +16,7 @@ You can run phpunit tests from the command line by just running phpunit but make
 
     phpunit
     
+Unless you don't have it installed on your computer, then you can just run it from the vendor folder if you've composer installed with dev dependencies.
+
+    #From the folder you have this project check out in
+    php vendor/phpunit/phpunit/phpunit
