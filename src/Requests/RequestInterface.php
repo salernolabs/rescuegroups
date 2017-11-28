@@ -11,16 +11,9 @@ namespace RescueGroups\Requests;
 interface RequestInterface
 {
     /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType();
-
-    /**
-     * Return the object action
+     * Return true if login is required
      *
      * @return mixed
      */
-    public function getObjectAction();
+    public function loginRequired();
 }

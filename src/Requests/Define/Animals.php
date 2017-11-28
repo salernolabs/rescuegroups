@@ -8,8 +8,16 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class Animals implements \RescueGroups\Requests\RequestInterface
+class Animals implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
+    /**
+     * @return bool
+     */
+    public function loginRequired()
+    {
+        return false;
+    }
+
     /**
      * Return the object type
      *
