@@ -17,7 +17,9 @@ class AnimalPatternsTest extends \PHPUnit\Framework\TestCase
     {
         $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalPatterns.json');
         $api = new \RescueGroups\API();
-        $api->setCustomGuzzleHandler($vcr);
+        $api
+            ->setSandboxMode(true)
+            ->setCustomGuzzleHandler($vcr);
 
         $request = new \RescueGroups\Requests\Define\AnimalPatterns();
 

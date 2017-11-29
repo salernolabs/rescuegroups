@@ -17,7 +17,9 @@ class AnimalColorsTest extends \PHPUnit\Framework\TestCase
     {
         $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalColors.json');
         $api = new \RescueGroups\API();
-        $api->setCustomGuzzleHandler($vcr);
+        $api
+            ->setSandboxMode(true)
+            ->setCustomGuzzleHandler($vcr);
 
         $request = new \RescueGroups\Requests\Define\AnimalColors();
 

@@ -9,7 +9,8 @@ namespace RescueGroups;
 
 class API
 {
-    const API_VERSION = 'v2';
+    const API_ENDPOINT = 'https://api.rescuegroups.org/http/v2.json';
+    const SANDBOX_API_ENDPOINT = 'https://test-api.rescuegroups.org/http/v2.json';
 
     /**
      * @var string
@@ -32,6 +33,11 @@ class API
     private $customGuzzleHandler;
 
     /**
+     * @var bool
+     */
+    private $debug = false;
+
+    /**
      * API constructor.
      * @param string|null $key
      * @throws Exceptions\InvalidKey
@@ -49,6 +55,19 @@ class API
         }
 
         $this->key = $key;
+    }
+
+    /**
+     * Set Sandbox Mode
+     *
+     * @param $mode
+     * @return $this
+     */
+    public function setSandboxMode($mode)
+    {
+        $this->debug = !empty($mode);
+
+        return $this;
     }
 
     /**
@@ -76,7 +95,7 @@ class API
 
         $data = $this->getNetworkResponse($postObject);
 
-        return $this->processResponse($data);
+        return $this->processResponse($request, $data);
     }
 
     /**
@@ -111,6 +130,11 @@ class API
             $postObject['objectAction'] = $request->getObjectAction();
         }
 
+        if ($request instanceof Requests\ParametersInterface)
+        {
+            $request->applyParameters($postObject);
+        }
+
         return $postObject;
     }
 
@@ -134,7 +158,7 @@ class API
 
         $response = $client->request(
             'POST',
-            'https://api.rescuegroups.org/http/' . static::API_VERSION . '.json',
+            empty($this->debug) ? static::API_ENDPOINT : static::SANDBOX_API_ENDPOINT,
             [
                 \GuzzleHttp\RequestOptions::HEADERS => ['Content-type', 'application/json'],
                 \GuzzleHttp\RequestOptions::JSON => $postObject
@@ -163,7 +187,7 @@ class API
      * @return Responses\Envelope
      * @throws Exceptions\ErrorResponse
      */
-    private function processResponse($data)
+    private function processResponse(Requests\RequestInterface $request, $data)
     {
         if (empty($data->status) || $data->status == 'error')
         {
@@ -182,6 +206,17 @@ class API
             throw new Exceptions\ErrorResponse($message);
         }
 
-        return new Responses\Envelope($data);
+        $envelope = new Responses\Envelope($data);
+
+        if ($request instanceof \RescueGroups\Requests\ProcessResponseInterface)
+        {
+            $envelope->data = $request->processResponse($this, $data->data);
+        }
+        else
+        {
+            $envelope->data = $data->data;
+        }
+
+        return $envelope;
     }
 }

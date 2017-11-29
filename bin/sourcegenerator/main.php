@@ -10,6 +10,8 @@
  * @subpackage bin
  * @author Eric
  */
+require_once(__DIR__ . '/../../vendor/autoload.php');
+
 class RequestGenerator
 {
     /**
@@ -100,29 +102,29 @@ class RequestGenerator
         'website'
     ];
 
+    private $definable = [
+        'animalBreeds',
+        'animalColors',
+        'animalPatterns',
+        'animalQualities',
+        'animalSpecies',
+        'animals',
+        'events',
+        'orgs',
+        'testimonials'
+    ];
+
     /**
      * Build define requests, used for building further requests
      */
     public function buildDefineRequests()
     {
-        $definable = [
-            'animalBreeds',
-            'animalColors',
-            'animalPatterns',
-            'animalQualities',
-            'animalSpecies',
-            'animals',
-            'events',
-            'orgs',
-            'testimonials'
-        ];
-
         $templateData = file_get_contents(__DIR__ . '/templates/define-request.php.tpl');
         $testTemplateData = file_get_contents(__DIR__ . '/templates/define-request-test.php.tpl');
 
         $variableSearch = ['%CLASSNAME%', '%TYPENAME%'];
 
-        foreach ($definable as $type)
+        foreach ($this->definable as $type)
         {
             $className = ucfirst($type);
             $classFileName = __DIR__ . '/../../src/Requests/Define/' . $className . '.php';
@@ -137,8 +139,38 @@ class RequestGenerator
             file_put_contents($testFileName, $modifiedTemplateSource);
         }
     }
+
+    /**
+     * Call define and build a returnable datamodel
+     */
+    public function buildDefinableDataModel()
+    {
+        foreach ($this->definable as $type)
+        {
+            $className = ucfirst($type);
+
+            $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../tests/data/fixtures/define-'.$className.'.json');
+            $api = new \RescueGroups\API();
+            $api->setSandboxMode(true);
+
+            $login = new \RescueGroups\Requests\Action\Login();
+            $api->executeRequest($login);
+
+            $api->setCustomGuzzleHandler($vcr);
+
+            $fullClassName = '\RescueGroups\Requests\Define\\' . $className;
+
+            $query = new $fullClassName();
+
+            $result = $api->executeRequest($query);
+
+            print_r($result);
+            die('Woo!');
+        }
+    }
 }
 
 $generator = new RequestGenerator();
 
 $generator->buildDefineRequests();
+$generator->buildDefinableDataModel();

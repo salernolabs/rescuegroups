@@ -54,10 +54,5 @@ class Envelope
         {
             $this->foundRows = $data->foundRows;
         }
-
-        if (!empty($data->data))
-        {
-            $this->data = $data->data;
-        }
     }
 }
