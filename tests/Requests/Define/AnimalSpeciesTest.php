@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals Define Request Test
+ * AnimalSpecies Define Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -8,18 +8,18 @@
  */
 namespace RescueGroups\Tests\Requests\Define;
 
-class AnimalsTest extends \PHPUnit\Framework\TestCase
+class AnimalSpeciesTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test query
      */
     public function testQuery()
     {
-        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-Animals.json');
+        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalSpecies.json');
         $api = new \RescueGroups\API();
         $api->setCustomGuzzleHandler($vcr);
 
-        $request = new \RescueGroups\Requests\Define\Animals();
+        $request = new \RescueGroups\Requests\Define\AnimalSpecies();
 
         $result = $api->executeRequest($request);
 

@@ -27,6 +27,11 @@ class API
     private $tokenHash;
 
     /**
+     * @var \GuzzleHttp\HandlerStack
+     */
+    private $customGuzzleHandler;
+
+    /**
      * API constructor.
      * @param string|null $key
      * @throws Exceptions\InvalidKey
@@ -44,6 +49,19 @@ class API
         }
 
         $this->key = $key;
+    }
+
+    /**
+     * Set custom guzzle handler, useful for testing
+     *
+     * @param \GuzzleHttp\HandlerStack $handler
+     * @return $this
+     */
+    public function setCustomGuzzleHandler(\GuzzleHttp\HandlerStack $handler)
+    {
+        $this->customGuzzleHandler = $handler;
+
+        return $this;
     }
 
     /**
@@ -105,7 +123,14 @@ class API
      */
     private function getNetworkResponse($postObject)
     {
-        $client = new \GuzzleHttp\Client();
+        $options = [];
+
+        if (!empty($this->customGuzzleHandler))
+        {
+            $options['handler'] = $this->customGuzzleHandler;
+        }
+
+        $client = new \GuzzleHttp\Client($options);
 
         $response = $client->request(
             'POST',
@@ -142,7 +167,19 @@ class API
     {
         if (empty($data->status) || $data->status == 'error')
         {
-            throw new Exceptions\ErrorResponse(!empty($data->message) ? $data->message : '');
+            $message = null;
+
+            if (!empty($data->message))
+            {
+                $message = $data->message;
+            }
+
+            if (empty($message) && !empty($data->messages))
+            {
+                $message = new Responses\Messages($data->messages);
+            }
+
+            throw new Exceptions\ErrorResponse($message);
         }
 
         return new Responses\Envelope($data);

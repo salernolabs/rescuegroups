@@ -1,6 +1,8 @@
 # salernolabs/rescuegroups
 
-An unofficial rescuegroups.org HTTP API PHP SDK
+An unofficial rescuegroups.org HTTP API PHP SDK.
+
+Please read the RescueGroups.org API specification and documentation thoroughly before attempting to use this library. https://rescuegroups.org/services/adoptable-pet-data-http-json-api/
 
 ## Installation
 

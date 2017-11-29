@@ -21,7 +21,8 @@
         "preferred-install": "dist"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "^6.4",
+        "dshafik/guzzlehttp-vcr": "dev-master"
     },
     "require": {
         "guzzlehttp/guzzle": "^6.3",

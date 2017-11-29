@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals Define Request
+ * Events Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class Animals implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class Events implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool
@@ -25,7 +25,7 @@ class Animals implements \RescueGroups\Requests\RequestInterface, \RescueGroups\
      */
     public function getObjectType()
     {
-        return 'animals';
+        return 'events';
     }
 
     /**

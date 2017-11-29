@@ -36,4 +36,29 @@ class Messages
             $this->record = $data->recordMessages;
         }
     }
+
+    /**
+     * You can use this sending it into an exception or an error
+     */
+    public function __toString()
+    {
+        $output = '';
+        foreach ($this->general as $message)
+        {
+            if (!empty($output))
+                $output .= '; ';
+
+            $output .= $message->messageID . ' - ' . $message->messageText;
+        }
+
+        foreach ($this->record as $message)
+        {
+            if (!empty($output))
+                $output .= '; ';
+
+            $output .= $message->messageID . ' - ' . $message->messageText;
+        }
+
+        return $output;
+    }
 }
