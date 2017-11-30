@@ -84,6 +84,22 @@ class API
     }
 
     /**
+     * Set Token
+     *
+     * @param $token
+     * @param $tokenHash
+     * @return $this
+     */
+    public function setToken($token, $tokenHash)
+    {
+        $this->token = $token;
+        $this->tokenHash = $tokenHash;
+
+        return $this;
+    }
+
+
+    /**
      * Actually Perform request
      *
      * @param Requests\RequestInterface $request

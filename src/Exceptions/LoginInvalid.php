@@ -1,6 +1,6 @@
 <?php
 /**
- * Login Required Exception
+ * Login Invalid Exception
  *
  * @package RescueGroups
  * @subpackage Exceptions
@@ -8,15 +8,15 @@
  */
 namespace RescueGroups\Exceptions;
 
-class LoginRequired extends Exception
+class LoginInvalid extends Exception
 {
     /**
      * @var int
      */
-    protected $code = 1735;
+    protected $code = 1737;
 
     /**
      * @var string
      */
-    protected $message = "You must login before you can use this request.";
+    protected $message = "Login failed, your credentials appear to be incorrect.";
 }

@@ -43,6 +43,10 @@ To make non-public/authenticated queries against the HTTP API you need to log in
     //Then just run it with the API handler
     $api->executeRequest($login);
 
+Alternatively, if you already have a valid token and tokenHash from the Rescuegroups API, you can just call the ->setToken() function on the API handler to skip the step.
+
+    $api->setToken('token', 'tokenHash');
+
 ## Testing
 
 You can run phpunit tests from the command line by just running phpunit but make sure you've set the API Key environment variable.

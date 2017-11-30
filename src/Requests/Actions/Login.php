@@ -38,7 +38,7 @@ class Login
         $this->username = $username;
         if (empty($username))
         {
-            $this->username = getenv('RESCUEGROUPS_LOGIN');
+            $this->username = getenv('RESCUEGROUPS_USERNAME');
         }
 
         $this->password = $password;
@@ -88,6 +88,11 @@ class Login
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
+        if (empty($data->token) || empty($data->tokenHash))
+        {
+            throw new \RescueGroups\Exceptions\LoginInvalid();
+        }
 
+        $api->setToken($data->token, $data->tokenHash);
     }
 }
