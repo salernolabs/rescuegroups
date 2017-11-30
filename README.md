@@ -4,13 +4,23 @@ An unofficial rescuegroups.org HTTP API PHP SDK.
 
 Please read the RescueGroups.org API specification and documentation thoroughly before attempting to use this library. https://rescuegroups.org/services/adoptable-pet-data-http-json-api/
 
-## Installation
+## Installation and Setup
 
 The easiest way to install this package is with composer:
 
     composer require salernolabs/rescuegroups
     
-Afterwards you can either specify your API key in the constructor to the API class or the preferred method is to use the environment variable RESCUEGROUPS_API_KEY.
+Afterwards you can either specify your API key in the constructor to the API class or the preferred method is to use the following environment variables:
+
+For just using public queries:
+
+ * RESCUEGROUPS_API_KEY
+
+For using queries that require a login also specify:
+
+ * RESCUEGROUPS_USERNAME
+ * RESCUEGROUPS_PASSWORD
+ * RESCUEGROUPS_ORG_ID
 
 ## Testing
 
