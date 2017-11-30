@@ -147,6 +147,7 @@ class API
      */
     private function getNetworkResponse($postObject)
     {
+        $endpoint = static::API_ENDPOINT;
         $options = [];
 
         if (!empty($this->customGuzzleHandler))
@@ -154,11 +155,17 @@ class API
             $options['handler'] = $this->customGuzzleHandler;
         }
 
+        if ($this->debug)
+        {
+            $endpoint = static::SANDBOX_API_ENDPOINT;
+            $options['verify'] = false;
+        }
+
         $client = new \GuzzleHttp\Client($options);
 
         $response = $client->request(
             'POST',
-            empty($this->debug) ? static::API_ENDPOINT : static::SANDBOX_API_ENDPOINT,
+            $endpoint,
             [
                 \GuzzleHttp\RequestOptions::HEADERS => ['Content-type', 'application/json'],
                 \GuzzleHttp\RequestOptions::JSON => $postObject
