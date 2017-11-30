@@ -16,11 +16,32 @@ For just using public queries:
 
  * RESCUEGROUPS_API_KEY
 
-For using queries that require a login also specify:
+For using queries that require a login you can also specify:
 
  * RESCUEGROUPS_USERNAME
  * RESCUEGROUPS_PASSWORD
  * RESCUEGROUPS_ORG_ID
+
+You can instantiate the API handler in either way:
+
+    //Use environment variables
+    $api = new \RescueGroups\API();
+
+    //Use specific api key
+    $api = new \RescueGroups\API("Your API Key")
+
+## Logging In
+
+To make non-public/authenticated queries against the HTTP API you need to log in. You can either spoecify the environment variables or set them in the login query.
+
+    //Use environment variables
+    $login = new \RescueGroups\Requests\Actions\Login();
+
+    //Use specific login credentials
+    $login = new \RescueGroups\Requests\Actions\Login("Username", "Password", 1235);
+
+    //Then just run it with the API handler
+    $api->executeRequest($login);
 
 ## Testing
 
@@ -28,7 +49,7 @@ You can run phpunit tests from the command line by just running phpunit but make
 
     phpunit
     
-Unless you don't have it installed on your computer, then you can just run it from the vendor folder if you've composer installed with dev dependencies.
+If you don't have it installed on your computer, then you can just run it from the vendor folder if you've composer installed with dev dependencies.
 
     #From the folder you have this project check out in
     php vendor/phpunit/phpunit/phpunit

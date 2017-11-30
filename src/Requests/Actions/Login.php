@@ -33,11 +33,25 @@ class Login
      * Login constructor.
      * @throws \RescueGroups\Exceptions\InvalidLoginCredentials
      */
-    public function __construct()
+    public function __construct($username = null, $password = null, $organizationId = null)
     {
-        $this->username = getenv('RESCUEGROUPS_LOGIN');
-        $this->password = getenv('RESCUEGROUPS_PASSWORD');
-        $this->organizationId = getenv('RESCUEGROUPS_ORG_ID');
+        $this->username = $username;
+        if (empty($username))
+        {
+            $this->username = getenv('RESCUEGROUPS_LOGIN');
+        }
+
+        $this->password = $password;
+        if (empty($this->password))
+        {
+            $this->password = getenv('RESCUEGROUPS_PASSWORD');
+        }
+
+        $this->organizationId = $organizationId;
+        if (empty($this->organizationId))
+        {
+            $this->organizationId = getenv('RESCUEGROUPS_ORG_ID');
+        }
 
         if (empty($this->username) || empty($this->password) || empty($this->organizationId))
         {
