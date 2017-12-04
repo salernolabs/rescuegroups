@@ -1,0 +1,236 @@
+<?php
+/**
+ * OutcomesDeceased Search Request
+ *
+ * @package RescueGroups
+ * @subpackage Requests
+ * @author SourceGenerator
+ */
+namespace RescueGroups\Requests\OutcomesDeceased;
+
+class Search implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface, \RescueGroups\Requests\ParametersInterface
+{
+    use \RescueGroups\Requests\Traits\SearchParameters;
+
+    /**
+     * ID
+     * @var integer
+     */
+    private $outcomesDeceasedID = null;
+
+    /**
+     * Outcome Deceased Intake
+     * @var integer
+     */
+    private $outcomesDeceasedIntakeID = null;
+
+    /**
+     * Condition
+     * @var integer
+     */
+    private $outcomesDeceasedAnimalConditionID = null;
+
+    /**
+     * Date
+     * @var \DateTime
+     */
+    private $outcomesDeceasedDate = null;
+
+    /**
+     * Notes
+     * @var string
+     */
+    private $outcomesDeceasedNotes = null;
+
+    /**
+     * Reason
+     * @var string
+     */
+    private $outcomesDeceasedReason = null;
+
+    /**
+     * Animal
+     * @var integer
+     */
+    private $animalID = null;
+
+    /**
+     * Animal
+     * @var string
+     */
+    private $animalName = null;
+
+    /**
+     * Condition
+     * @var string
+     */
+    private $animalConditionName = null;
+
+
+    /**
+     * @return bool
+     */
+    public function loginRequired()
+    {
+        return false;
+    }
+
+    /**
+     * Return the object type
+     *
+     * @return string
+     */
+    public function getObjectType()
+    {
+        return 'outcomesDeceased';
+    }
+
+    /**
+     * Return the object action
+     *
+     * @return mixed
+     */
+    public function getObjectAction()
+    {
+        return 'search';
+    }
+
+    /**
+     * Set ID
+     *
+     * @param integer $outcomesDeceasedID
+     * @return $this
+     */
+    public function setOutcomesDeceasedID($outcomesDeceasedID)
+    {
+        $this->outcomesDeceasedID = $outcomesDeceasedID;
+
+        return $this;
+    }
+
+    /**
+     * Set Outcome Deceased Intake
+     *
+     * @param integer $outcomesDeceasedIntakeID
+     * @return $this
+     */
+    public function setOutcomesDeceasedIntakeID($outcomesDeceasedIntakeID)
+    {
+        $this->outcomesDeceasedIntakeID = $outcomesDeceasedIntakeID;
+
+        return $this;
+    }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $outcomesDeceasedAnimalConditionID
+     * @return $this
+     */
+    public function setOutcomesDeceasedAnimalConditionID($outcomesDeceasedAnimalConditionID)
+    {
+        $this->outcomesDeceasedAnimalConditionID = $outcomesDeceasedAnimalConditionID;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $outcomesDeceasedDate
+     * @return $this
+     */
+    public function setOutcomesDeceasedDate($outcomesDeceasedDate)
+    {
+        $this->outcomesDeceasedDate = $outcomesDeceasedDate;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $outcomesDeceasedNotes
+     * @return $this
+     */
+    public function setOutcomesDeceasedNotes($outcomesDeceasedNotes)
+    {
+        $this->outcomesDeceasedNotes = $outcomesDeceasedNotes;
+
+        return $this;
+    }
+
+    /**
+     * Set Reason
+     *
+     * @param string $outcomesDeceasedReason
+     * @return $this
+     */
+    public function setOutcomesDeceasedReason($outcomesDeceasedReason)
+    {
+        $this->outcomesDeceasedReason = $outcomesDeceasedReason;
+
+        return $this;
+    }
+
+    /**
+     * Set Animal
+     *
+     * @param integer $animalID
+     * @return $this
+     */
+    public function setAnimalID($animalID)
+    {
+        $this->animalID = $animalID;
+
+        return $this;
+    }
+
+    /**
+     * Set Animal
+     *
+     * @param string $animalName
+     * @return $this
+     */
+    public function setAnimalName($animalName)
+    {
+        $this->animalName = $animalName;
+
+        return $this;
+    }
+
+    /**
+     * Set Condition
+     *
+     * @param string $animalConditionName
+     * @return $this
+     */
+    public function setAnimalConditionName($animalConditionName)
+    {
+        $this->animalConditionName = $animalConditionName;
+
+        return $this;
+    }
+
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     * @return mixed
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        if ($this->outcomesDeceasedID !== null) $parameterArray['outcomesDeceasedID'] = $this->outcomesDeceasedID;
+        if ($this->outcomesDeceasedIntakeID !== null) $parameterArray['outcomesDeceasedIntakeID'] = $this->outcomesDeceasedIntakeID;
+        if ($this->outcomesDeceasedAnimalConditionID !== null) $parameterArray['outcomesDeceasedAnimalConditionID'] = $this->outcomesDeceasedAnimalConditionID;
+        if ($this->outcomesDeceasedDate !== null) $parameterArray['outcomesDeceasedDate'] = $this->outcomesDeceasedDate;
+        if ($this->outcomesDeceasedNotes !== null) $parameterArray['outcomesDeceasedNotes'] = $this->outcomesDeceasedNotes;
+        if ($this->outcomesDeceasedReason !== null) $parameterArray['outcomesDeceasedReason'] = $this->outcomesDeceasedReason;
+        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
+        if ($this->animalName !== null) $parameterArray['animalName'] = $this->animalName;
+        if ($this->animalConditionName !== null) $parameterArray['animalConditionName'] = $this->animalConditionName;
+
+        $this->addSearchParameters($parameterArray);
+
+    }
+}

@@ -98,7 +98,6 @@ class API
         return $this;
     }
 
-
     /**
      * Actually Perform request
      *
@@ -121,7 +120,7 @@ class API
      * @return array
      * @throws Exceptions\LoginRequired
      */
-    private function getPostObject(Requests\RequestInterface $request)
+    public function getPostObject(Requests\RequestInterface $request)
     {
         $postObject = [];
 

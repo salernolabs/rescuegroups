@@ -10,20 +10,22 @@ namespace RescueGroups\Tests\Requests\Define;
 
 class AnimalColorsTest extends \PHPUnit\Framework\TestCase
 {
+    use \RescueGroups\Tests\Traits\APISetup;
+
     /**
      * Test query
      */
     public function testQuery()
     {
+        $this->apiLogin();
+
         $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalColors.json');
-        $api = new \RescueGroups\API();
-        $api
-            ->setSandboxMode(true)
+        $this->api
             ->setCustomGuzzleHandler($vcr);
 
         $request = new \RescueGroups\Requests\Define\AnimalColors();
 
-        $result = $api->executeRequest($request);
+        $result = $this->api->executeRequest($request);
 
         $this->assertEquals('ok', $result->status);
 
