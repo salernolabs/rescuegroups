@@ -1,21 +1,22 @@
 <?php
 /**
- * %CLASSNAME% Define Request
+ * %CLASSNAME% %REQUESTNAME% Request
  *
  * @package RescueGroups
  * @subpackage Requests
  * @author SourceGenerator
  */
-namespace RescueGroups\Requests\Define;
+namespace RescueGroups\Requests\%CLASSNAME%;
 
-class %CLASSNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class %REQUESTNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface%PARAMETERSINTERFACE%
 {
+%TRAITS%%FIELDS%
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return %NEEDLOGIN%;
+        return %LOGINREQUIRED%;
     }
 
     /**
@@ -35,6 +36,8 @@ class %CLASSNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGro
      */
     public function getObjectAction()
     {
-        return 'define';
+        return '%OBJECTACTION%';
     }
+%SETTERS%
+%GETPARAMETERS%
 }
