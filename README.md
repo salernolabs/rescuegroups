@@ -4,6 +4,8 @@ An unofficial rescuegroups.org HTTP API PHP SDK. This package is not stable yet 
 
 Please read the RescueGroups.org API specification and documentation thoroughly before attempting to use this library. https://rescuegroups.org/services/adoptable-pet-data-http-json-api/
 
+[Query Documentation](docs/requests/readme.md)
+
 ## Installation and Setup
 
 The easiest way to install this package is with composer:

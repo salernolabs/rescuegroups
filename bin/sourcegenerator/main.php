@@ -14,6 +14,58 @@ require_once(__DIR__ . '/../../vendor/autoload.php');
 
 class RequestGenerator
 {
+    const DATE_FORMAT = 'Y-m-d H:i:s';
+
+    /**
+     * @var string
+     */
+    private $templateData;
+
+    /**
+     * @var string
+     */
+    private $testTemplateData;
+
+    /**
+     * @var string
+     */
+    private $fieldTemplate;
+
+    /**
+     * @var string
+     */
+    private $getParametersTemplate;
+
+    /**
+     * @var string
+     */
+    private $getParameterItemTemplate;
+
+    /**
+     * @var string
+     */
+    private $setterTemplate;
+
+    /**
+     * @var string
+     */
+    private $docTemplate;
+
+    /**
+     * @var string
+     */
+    private $docRequestTemplate;
+
+    /**
+     * @var string
+     */
+    private $docRequestMethodTemplate;
+
+    /**
+     * @var string
+     */
+    private $docIndexTemplate;
+
     /**
      * @var array
      */
@@ -102,6 +154,9 @@ class RequestGenerator
         'website' => 'Website',
     ];
 
+    /**
+     * @var array
+     */
     private $publicDefinable = [
         'animalBreeds' => 1,
         'animalColors' => 1,
@@ -122,7 +177,7 @@ class RequestGenerator
         $templateData = file_get_contents(__DIR__ . '/templates/define-request.php.tpl');
         $testTemplateData = file_get_contents(__DIR__ . '/templates/define-request-test.php.tpl');
 
-        $variableSearch = ['%CLASSNAME%', '%TYPENAME%', '%NEEDLOGIN%'];
+        $variableSearch = ['%CLASSNAME%', '%TYPENAME%', '%NEEDLOGIN%', '%DATE%'];
 
         foreach ($this->objectTypes as $type => $className)
         {
@@ -131,7 +186,7 @@ class RequestGenerator
             $classFileName = __DIR__ . '/../../src/Requests/Define/' . $className . '.php';
             $testFileName = __DIR__ . '/../../tests/Requests/Define/' . $className . 'Test.php';
 
-            $variableReplace = [$className, $type, $needsLogin ? 'true' : 'false'];
+            $variableReplace = [$className, $type, $needsLogin ? 'true' : 'false', date(static::DATE_FORMAT)];
 
             $modifiedTemplateSource = str_replace($variableSearch, $variableReplace, $templateData);
             file_put_contents($classFileName, $modifiedTemplateSource);
@@ -157,6 +212,20 @@ class RequestGenerator
         $login = new \RescueGroups\Requests\Actions\Login();
         $api->executeRequest($login);
 
+        //Load Templates
+        $this->templateData = file_get_contents(__DIR__ . '/templates/objectquery-request.php.tpl');
+        $this->testTemplateData = file_get_contents(__DIR__ . '/templates/objectquery-test.php.tpl');
+        $this->fieldTemplate = file_get_contents(__DIR__ . '/templates/segments/fields.php.tpl');
+        $this->getParametersTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameters.php.tpl');
+        $this->getParameterItemTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameter-item.php.tpl');
+        $this->setterTemplate = file_get_contents(__DIR__ . '/templates/segments/setter.php.tpl');
+        $this->docTemplate = file_get_contents(__DIR__ . '/templates/query-doc.md.tpl');
+        $this->docRequestTemplate = file_get_contents(__DIR__ . '/templates/segments/query-request-doc.md.tpl');
+        $this->docRequestMethodTemplate = file_get_contents(__DIR__ . '/templates/segments/query-request-method-doc.md.tpl');
+        $this->docIndexTemplate = file_get_contents(__DIR__ . '/templates/doc-index.md.tpl');
+
+        $queryDocLinks = '';
+
         //Check definitions with vcr for data
         foreach ($this->objectTypes as $type => $className)
         {
@@ -174,6 +243,8 @@ class RequestGenerator
                 $result = $api->executeRequest($query);
 
                 $this->buildDefinedObjectQueries($className, $type, $result->data);
+
+                $queryDocLinks .= ' * [' . $className . '](' . $className . '/readme.md)' . "\n";
             }
             catch(\Exception $e)
             {
@@ -181,6 +252,15 @@ class RequestGenerator
                 continue;
             }
         }
+
+        file_put_contents(
+            __DIR__ . '/../../doc/requests/readme.md',
+            str_replace(
+                ['%DATE%', '%QUERYLINKS%'],
+                [date(static::DATE_FORMAT), $queryDocLinks],
+                $this->docIndexTemplate
+            )
+        );
     }
 
     /**
@@ -195,6 +275,7 @@ class RequestGenerator
         //Initial setups
         $dir = __DIR__ . '/../../src/Requests/Objects/' . $className;
         $testDir = __DIR__ . '/../../tests/Requests/Objects/' . $className;
+        $docDir = __DIR__ . '/../../doc/requests/' . $className;
 
         if (!is_dir($dir))
         {
@@ -204,6 +285,11 @@ class RequestGenerator
         if (!is_dir($testDir))
         {
             mkdir($testDir);
+        }
+
+        if (!is_dir($docDir))
+        {
+            mkdir($docDir);
         }
 
         $replacers = [
@@ -220,7 +306,8 @@ class RequestGenerator
             '%TRAITS%',
 
             '%FIELDASSERTS%',
-            '%FIELDSETS%'
+            '%FIELDSETS%',
+            '%DATE%'
         ];
 
         $fieldReplaceFields = [
@@ -231,13 +318,16 @@ class RequestGenerator
             '%SDKFIELDNAME%'
         ];
 
-        //Load Templates
-        $templateData = file_get_contents(__DIR__ . '/templates/objectquery-request.php.tpl');
-        $testTemplateData = file_get_contents(__DIR__ . '/templates/objectquery-test.php.tpl');
-        $fieldTemplate = file_get_contents(__DIR__ . '/templates/segments/fields.php.tpl');
-        $getParametersTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameters.php.tpl');
-        $getParameterItemTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameter-item.php.tpl');
-        $setterTemplate = file_get_contents(__DIR__ . '/templates/segments/setter.php.tpl');
+        $mainDocFile = $docDir . '/readme.md';
+        $mainDocRequests = '';
+
+        $docReplaceFields = [
+            '%CLASSNAME%',
+            '%TYPENAME%',
+            '%REQUESTS%',
+            '%DATE%',
+            '%OBJECTACTION%'
+        ];
 
         //Loop over each object action and create a file for it
         foreach ($definition as $request => $requestData)
@@ -261,6 +351,8 @@ class RequestGenerator
 
             $needsLogin = (!is_array($requestData->permissions) && $requestData->permissions == 'Public');
 
+            $docReplaceVars[2] = $requestClassName;
+
             $replacements = [
                 $className,
                 $requestClassName,
@@ -274,7 +366,9 @@ class RequestGenerator
                 '',
                 '',
                 '',
-                ''
+                '',
+
+                date(static::DATE_FORMAT)
             ];
 
             if ($isSearch)
@@ -285,6 +379,8 @@ class RequestGenerator
             $fieldAsserts = "\n" . '        $this->assertEquals("' . $type . '", $data["objectType"]);' . "\n";
             $fieldAsserts .= "\n" . '        $this->assertEquals("' . $request . '", $data["objectAction"]);' . "\n";
             $fieldSets = '';
+
+            $docMethods = '';
 
             //Handle any fields the queries can take
             if (!empty($requestData->fields))
@@ -336,13 +432,15 @@ class RequestGenerator
                         $sdkFieldName
                     ];
 
-                    $replacements[6] .= str_replace($fieldReplaceFields, $fieldReplaceData, $fieldTemplate);
-                    $replacements[7] .= str_replace($fieldReplaceFields, $fieldReplaceData, $setterTemplate);
+                    $replacements[6] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->fieldTemplate);
+                    $replacements[7] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->setterTemplate);
 
-                    $parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $getParameterItemTemplate);
+                    $parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->getParameterItemTemplate);
 
                     $fieldSets .= "\n" . '        $query->set' . ucfirst($sdkFieldName) . '("' . $sdkFieldName . '");';
                     $fieldAsserts .= "\n" . '        $this->assertEquals("' . $sdkFieldName . '", $data["' . $fieldData->name . '"]);';
+
+                    $docMethods .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->docRequestMethodTemplate);
                 }
 
                 if ($isSearch)
@@ -353,7 +451,7 @@ class RequestGenerator
                 $replacements[8] = str_replace(
                     ['%PARAMETERS%'],
                     [$parameterFields],
-                    $getParametersTemplate
+                    $this->getParametersTemplate
                 );
 
             }
@@ -361,12 +459,24 @@ class RequestGenerator
             $replacements[10] = $fieldAsserts;
             $replacements[11] = $fieldSets;
 
-            $classContent = str_replace($replacers, $replacements, $templateData);
-            $testClassContent = str_replace($replacers, $replacements, $testTemplateData);
+            $classContent = str_replace($replacers, $replacements, $this->templateData);
+            $testClassContent = str_replace($replacers, $replacements, $this->testTemplateData);
 
             file_put_contents($requestFileName, $classContent);
             file_put_contents($requestTestFileName, $testClassContent);
+
+            $mainDocRequests .= str_replace(['%CLASSNAME%','%REQUEST%','%METHODS%','%OBJECTTYPE%','%OBJECTACTION%'], [$className, $requestClassName, $docMethods, $type, $request], $this->docRequestTemplate);
         }
+
+        $docReplaceVars = [
+            $className,
+            $type,
+            $mainDocRequests,
+            date(static::DATE_FORMAT)
+        ];
+
+        $mainDocContents = str_replace($docReplaceFields, $docReplaceVars, $this->docTemplate);
+        file_put_contents($mainDocFile, $mainDocContents);
     }
 
 }
