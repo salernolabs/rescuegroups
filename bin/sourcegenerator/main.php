@@ -128,7 +128,6 @@ class RequestGenerator
         {
             $needsLogin = empty($this->publicDefinable[$type]);
 
-//            $className = ucfirst($type);
             $classFileName = __DIR__ . '/../../src/Requests/Define/' . $className . '.php';
             $testFileName = __DIR__ . '/../../tests/Requests/Define/' . $className . 'Test.php';
 
@@ -228,7 +227,8 @@ class RequestGenerator
             '%FRIENDLYNAME%',
             '%TYPE%',
             '%NAME%',
-            '%PARAMETERNAME%'
+            '%PARAMETERNAME%',
+            '%SDKFIELDNAME%'
         ];
 
         //Load Templates
@@ -298,6 +298,15 @@ class RequestGenerator
                 {
                     if (empty($fieldData->type)) continue;
 
+                    //Create friendly field name
+                    $sdkFieldName = $fieldName;
+
+                    //AnimalQualities is the exception here, the field would be blank because it's name is animalQualities
+                    if ($className != 'AnimalQualities' && $className != 'EventAnimalAttendance')
+                        $sdkFieldName = lcfirst(str_replace($type, '', $fieldName));
+
+                    if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
+
                     if ($fieldData->type == 'key')
                     {
                         $fieldData->type = 'integer';
@@ -323,7 +332,8 @@ class RequestGenerator
                         $fieldData->friendlyname,
                         $fieldData->type,
                         $fieldData->name,
-                        ucfirst($fieldData->name)
+                        ucfirst($sdkFieldName),
+                        $sdkFieldName
                     ];
 
                     $replacements[6] .= str_replace($fieldReplaceFields, $fieldReplaceData, $fieldTemplate);
@@ -331,8 +341,8 @@ class RequestGenerator
 
                     $parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $getParameterItemTemplate);
 
-                    $fieldSets .= "\n" . '        $query->set' . ucfirst($fieldData->name) . '("' . $fieldData->name . '");';
-                    $fieldAsserts .= "\n" . '        $this->assertEquals("' . $fieldData->name . '", $data["' . $fieldData->name . '"]);';
+                    $fieldSets .= "\n" . '        $query->set' . ucfirst($sdkFieldName) . '("' . $sdkFieldName . '");';
+                    $fieldAsserts .= "\n" . '        $this->assertEquals("' . $sdkFieldName . '", $data["' . $fieldData->name . '"]);';
                 }
 
                 if ($isSearch)

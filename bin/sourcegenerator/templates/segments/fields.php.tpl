@@ -2,5 +2,5 @@
      * %FRIENDLYNAME%
      * @var %TYPE%
      */
-    private $%NAME% = null;
+    private $%SDKFIELDNAME% = null;
 

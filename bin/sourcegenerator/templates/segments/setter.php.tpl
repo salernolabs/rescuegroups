@@ -5,9 +5,9 @@
      * @param %TYPE% $%NAME%
      * @return $this
      */
-    public function set%PARAMETERNAME%($%NAME%)
+    public function set%PARAMETERNAME%($%SDKFIELDNAME%)
     {
-        $this->%NAME% = $%NAME%;
+        $this->%SDKFIELDNAME% = $%SDKFIELDNAME%;
 
         return $this;
     }
