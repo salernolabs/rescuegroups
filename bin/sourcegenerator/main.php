@@ -18,88 +18,88 @@ class RequestGenerator
      * @var array
      */
     private $objectTypes = [
-        'affiliates',
-        'animals',
-        'animalBreeds',
-        'animalColors',
-        'animalConditions',
-        'animalExportAccounts',
-        'animalFiles',
-        'animalGroups',
-        'animalsAdoptions',
-        'animalsJournalCategories',
-        'animalsJournalEntrytypes',
-        'animalsJournalEntries',
-        'animalsMeetrequests',
-        'animalPatterns',
-        'animalQualities',
-        'animalsExports',
-        //'animalsMedia', //Gives Error #1013 The object you specified was not found.
-        'animalsReasonsEuthanasia',
-        'animalsReasonsImpound',
-        'animalsReasonsSurrender',
-        'animalsReasonsTransfer',
-        'animalSpecies',
-        'animalStatuses',
-        'animalAdoptionLeads',
-        'animalAdoptionStatuses',
-        'calls',
-        'callsCategories',
-        'callsLogentries',
-        'callsOutcomes',
-        'callsQueues',
-        'callsQueuesMembers',
-        'callsStatuses',
-        'callsUrgencies',
-        'colonies',
-        'coloniesCaretakers',
-        'contacts',
-        'contactFiles',
-        'contactsGroups',
-        'countries',
-        'donations',
-        'events',
-        'eventanimalattendance',
-        'intakes',
-        'intakesBorninrescueshelter',
-        'intakesImpounds',
-        'intakesOwnerrequestedeuthanasias',
-        'intakesOwnersurrenders',
-        'intakesServices',
-        'intakesStraydropoffs',
-        'intakesStraypickups',
-        'intakesTransfers',
-        'intakesServicetypes',
-        'inventoryitems',
-        'inventoryitemsConditions',
-        'inventoryfiles',
-        'inventoryLoaners',
-        'locations',
-        'memorials',
-        'microchipRegistrations',
-        'microchipVendors',
-        'newsarticles',
-        'orgs',
-        'outcomes',
-        'outcomesAdoptions',
-        'outcomesDeceased',
-        'outcomesEuthanasias',
-        'outcomesReleases',
-        'outcomesReturntoowner',
-        'outcomesTransfers',
-        'partnerships',
-        'roles',
-        'submittedforms',
-        'settings',
-        'testimonials',
-        'users',
-        'volunteerHours',
-        'volunteersJournalEntries',
-        'waitinglists',
-        'webfiles',
-        'webimages',
-        'webpages',
-        'website'
+        'affiliates' => 'Affiliates',
+        'animals' => 'Animals',
+        'animalBreeds' => 'AnimalBreeds',
+        'animalColors' => 'AnimalColors',
+        'animalConditions' => 'AnimalConditions',
+        'animalExportAccounts' => 'AnimalExportAccounts',
+        'animalFiles' => 'AnimalFiles',
+        'animalGroups' => 'AnimalGroups',
+        'animalsAdoptions' => 'AnimalsAdoptions',
+        'animalsJournalCategories' => 'AnimalsJournalCategories',
+        'animalsJournalEntrytypes' => 'AnimalsJournalEntryTypes',
+        'animalsJournalEntries' => 'AnimalsJournalEntries',
+        //'animalsMedia' => 'AnimalsMedia',
+        'animalsMeetrequests' => 'AnimalsMeetRequests',
+        'animalPatterns' => 'AnimalPatterns',
+        'animalQualities' => 'AnimalQualities',
+        'animalsExports' => 'AnimalsExports',
+        'animalsReasonsEuthanasia' => 'AnimalsReasonsEuthanasia',
+        'animalsReasonsImpound' => 'AnimalsReasonsImpound',
+        'animalsReasonsSurrender' => 'AnimalsReasonsSurrender',
+        'animalsReasonsTransfer' => 'AnimalsReasonsTransfer',
+        'animalSpecies' => 'AnimalSpecies',
+        'animalStatuses' => 'AnimalStatuses',
+        'animalAdoptionLeads' => 'AnimalAdoptionLeads',
+        'animalAdoptionStatuses' => 'AnimalAdoptionStatuses',
+        'calls' => 'Calls',
+        'callsCategories' => 'CallsCategories',
+        'callsLogentries' => 'CallsLogEntries',
+        'callsOutcomes' => 'CallsOutcomes',
+        'callsQueues' => 'CallsQueues',
+        'callsQueuesMembers' => 'CallsQueuesMembers',
+        'callsStatuses' => 'CallsStatuses',
+        'callsUrgencies' => 'CallsUrgencies',
+        'colonies' => 'Colonies',
+        'coloniesCaretakers' => 'ColoniesCareTakers',
+        'contacts' => 'Contacts',
+        'contactFiles' => 'ContactFiles',
+        'contactsGroups' => 'ContactsGroups',
+        'countries' => 'Countries',
+        'donations' => 'Donations',
+        'events' => 'Events',
+        'eventanimalattendance' => 'EventAnimalAttendance',
+        'intakes' => 'Intakes',
+        'intakesBorninrescueshelter' => 'IntakesBornInRescueShelter',
+        'intakesImpounds' => 'IntakesImpounds',
+        'intakesOwnerrequestedeuthanasias' => 'IntakesOwnerRequestEdeuthanasias',
+        'intakesOwnersurrenders' => 'IntakesOwnerSurrenders',
+        'intakesServices' => 'IntakesServices',
+        'intakesStraydropoffs' => 'IntakesStrayDropoffs',
+        'intakesStraypickups' => 'IntakesStrayPickups',
+        'intakesTransfers' => 'IntakesTransfers',
+        'intakesServicetypes' => 'IntakesServiceTypes',
+        'inventoryitems' => 'InventoryItems',
+        'inventoryitemsConditions' => 'InventoryItemsConditions',
+        'inventoryfiles' => 'InventoryFiles',
+        'inventoryLoaners' => 'InventoryLoaners',
+        'locations' => 'Locations',
+        'memorials' => 'Memorials',
+        'microchipRegistrations' => 'MicrochipRegistrations',
+        'microchipVendors' => 'MicrochipVendors',
+        'newsarticles' => 'NewsArticles',
+        'orgs' => 'Orgs',
+        'outcomes' => 'Outcomes',
+        'outcomesAdoptions' => 'OutcomesAdoptions',
+        'outcomesDeceased' => 'OutcomesDeceased',
+        'outcomesEuthanasias' => 'OutcomesEuthanasias',
+        'outcomesReleases' => 'OutcomesReleases',
+        'outcomesReturntoowner' => 'OutcomesReturnToOwner',
+        'outcomesTransfers' => 'OutcomesTransfers',
+        'partnerships' => 'Partnerships',
+        'roles' => 'Roles',
+        'submittedforms' => 'Submittedforms',
+        'settings' => 'Settings',
+        'testimonials' => 'Testimonials',
+        'users' => 'Users',
+        'volunteerHours' => 'VolunteerHours',
+        'volunteersJournalEntries' => 'VolunteersJournalEntries',
+        'waitinglists' => 'WaitingLists',
+        'webfiles' => 'WebFiles',
+        'webimages' => 'WebImages',
+        'webpages' => 'WebPages',
+        'website' => 'Website',
     ];
 
     private $publicDefinable = [
@@ -124,11 +124,11 @@ class RequestGenerator
 
         $variableSearch = ['%CLASSNAME%', '%TYPENAME%', '%NEEDLOGIN%'];
 
-        foreach ($this->objectTypes as $type)
+        foreach ($this->objectTypes as $type => $className)
         {
             $needsLogin = empty($this->publicDefinable[$type]);
 
-            $className = ucfirst($type);
+//            $className = ucfirst($type);
             $classFileName = __DIR__ . '/../../src/Requests/Define/' . $className . '.php';
             $testFileName = __DIR__ . '/../../tests/Requests/Define/' . $className . 'Test.php';
 
@@ -159,9 +159,9 @@ class RequestGenerator
         $api->executeRequest($login);
 
         //Check definitions with vcr for data
-        foreach ($this->objectTypes as $type)
+        foreach ($this->objectTypes as $type => $className)
         {
-            $className = ucfirst($type);
+            //$className = ucfirst($type);
 
             $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../tests/data/fixtures/define-'.$className.'.json');
             $api->setCustomGuzzleHandler($vcr);
@@ -194,8 +194,8 @@ class RequestGenerator
     private function buildDefinedObjectQueries($className, $type, $definition)
     {
         //Initial setups
-        $dir = __DIR__ . '/../../src/Requests/' . ucfirst($className);
-        $testDir = __DIR__ . '/../../tests/Requests/' . ucfirst($className);
+        $dir = __DIR__ . '/../../src/Requests/Objects/' . $className;
+        $testDir = __DIR__ . '/../../tests/Requests/Objects/' . $className;
 
         if (!is_dir($dir))
         {

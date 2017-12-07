@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsJournalEntrytypes Define Request
+ * AnimalsJournalEntryTypes Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class AnimalsJournalEntrytypes implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class AnimalsJournalEntryTypes implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

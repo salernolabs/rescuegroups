@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryitemsConditions Define Request
+ * InventoryItemsConditions Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class InventoryitemsConditions implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class InventoryItemsConditions implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

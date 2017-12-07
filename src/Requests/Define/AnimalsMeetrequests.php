@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetrequests Define Request
+ * AnimalsMeetRequests Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class AnimalsMeetrequests implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class AnimalsMeetRequests implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReturntoowner Define Request
+ * OutcomesReturnToOwner Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class OutcomesReturntoowner implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class OutcomesReturnToOwner implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

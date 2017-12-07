@@ -19,7 +19,7 @@ class %REQUESTNAME%Test extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Requests\%CLASSNAME%\%REQUESTNAME%();
+        $query = new \RescueGroups\Requests\Objects\%CLASSNAME%\%REQUESTNAME%();
 
         %FIELDSETS%
 

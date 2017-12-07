@@ -6,7 +6,7 @@
  * @subpackage Requests
  * @author SourceGenerator
  */
-namespace RescueGroups\Requests\%CLASSNAME%;
+namespace RescueGroups\Requests\Objects\%CLASSNAME%;
 
 class %REQUESTNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface%PARAMETERSINTERFACE%
 {
