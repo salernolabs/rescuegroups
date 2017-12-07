@@ -5,7 +5,7 @@
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
- * @date 2017-12-07 23:51:43
+ * @date 2017-12-07 23:57:25
  */
 namespace RescueGroups\Tests\Requests\Objects\NewsArticles\UpdateSettings;
 

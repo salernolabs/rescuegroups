@@ -5,7 +5,7 @@
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
- * @date 2017-12-07 23:51:37
+ * @date 2017-12-07 23:57:19
  */
 namespace RescueGroups\Tests\Requests\Objects\AnimalStatuses\Search;
 
