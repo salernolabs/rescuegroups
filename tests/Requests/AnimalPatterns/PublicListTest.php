@@ -26,5 +26,9 @@ class PublicListTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animalPatterns", $data["objectType"]);
+
+        $this->assertEquals("publicList", $data["objectAction"]);
+
     }
 }

@@ -26,5 +26,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("website", $data["objectType"]);
+
+        $this->assertEquals("getSettings", $data["objectAction"]);
+
     }
 }

@@ -26,5 +26,9 @@ class GetSpeciesTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animals", $data["objectType"]);
+
+        $this->assertEquals("getSpecies", $data["objectAction"]);
+
     }
 }

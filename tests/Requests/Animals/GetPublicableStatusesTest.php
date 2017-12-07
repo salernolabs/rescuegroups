@@ -26,5 +26,9 @@ class GetPublicableStatusesTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animals", $data["objectType"]);
+
+        $this->assertEquals("getPublicableStatuses", $data["objectAction"]);
+
     }
 }

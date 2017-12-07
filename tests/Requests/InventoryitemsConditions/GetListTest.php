@@ -26,5 +26,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("inventoryitemsConditions", $data["objectType"]);
+
+        $this->assertEquals("list", $data["objectAction"]);
+
     }
 }

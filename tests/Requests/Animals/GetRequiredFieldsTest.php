@@ -26,5 +26,9 @@ class GetRequiredFieldsTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animals", $data["objectType"]);
+
+        $this->assertEquals("getRequiredFields", $data["objectAction"]);
+
     }
 }

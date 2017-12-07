@@ -26,5 +26,9 @@ class ListFostersTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("contacts", $data["objectType"]);
+
+        $this->assertEquals("listFosters", $data["objectAction"]);
+
     }
 }

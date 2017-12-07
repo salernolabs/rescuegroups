@@ -346,9 +346,10 @@ class RequestGenerator
                     $getParametersTemplate
                 );
 
-                $replacements[10] = $fieldAsserts;
-                $replacements[11] = $fieldSets;
             }
+
+            $replacements[10] = $fieldAsserts;
+            $replacements[11] = $fieldSets;
 
             $classContent = str_replace($replacers, $replacements, $templateData);
             $testClassContent = str_replace($replacers, $replacements, $testTemplateData);

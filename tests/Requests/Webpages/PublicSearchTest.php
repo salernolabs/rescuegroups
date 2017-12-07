@@ -26,5 +26,9 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("webpages", $data["objectType"]);
+
+        $this->assertEquals("publicSearch", $data["objectAction"]);
+
     }
 }

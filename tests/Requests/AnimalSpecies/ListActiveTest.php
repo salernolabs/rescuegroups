@@ -26,5 +26,9 @@ class ListActiveTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animalSpecies", $data["objectType"]);
+
+        $this->assertEquals("listActive", $data["objectAction"]);
+
     }
 }

@@ -26,5 +26,9 @@ class GetExportsTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
+        $this->assertEquals("animalsExports", $data["objectType"]);
+
+        $this->assertEquals("getExports", $data["objectAction"]);
+
     }
 }
