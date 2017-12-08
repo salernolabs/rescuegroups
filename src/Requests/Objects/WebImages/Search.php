@@ -5,7 +5,6 @@
  * @package RescueGroups
  * @subpackage Requests
  * @author SourceGenerator
- * @date 2017-12-07 23:57:28
  */
 namespace RescueGroups\Requests\Objects\WebImages;
 

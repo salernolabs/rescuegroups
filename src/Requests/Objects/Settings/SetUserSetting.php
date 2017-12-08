@@ -5,7 +5,6 @@
  * @package RescueGroups
  * @subpackage Requests
  * @author SourceGenerator
- * @date 2017-12-07 23:57:27
  */
 namespace RescueGroups\Requests\Objects\Settings;
 

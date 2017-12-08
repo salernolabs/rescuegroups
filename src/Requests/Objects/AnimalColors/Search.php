@@ -5,7 +5,6 @@
  * @package RescueGroups
  * @subpackage Requests
  * @author SourceGenerator
- * @date 2017-12-07 23:57:15
  */
 namespace RescueGroups\Requests\Objects\AnimalColors;
 

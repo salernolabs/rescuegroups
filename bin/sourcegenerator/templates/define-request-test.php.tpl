@@ -5,7 +5,6 @@
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
- * @date %DATE%
  */
 namespace RescueGroups\Tests\Requests\Define;
 
