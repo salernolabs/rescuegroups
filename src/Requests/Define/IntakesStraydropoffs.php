@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesStraydropoffs Define Request
+ * IntakesStrayDropoffs Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class IntakesStraydropoffs implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class IntakesStrayDropoffs implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

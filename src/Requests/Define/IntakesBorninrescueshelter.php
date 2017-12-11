@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesBorninrescueshelter Define Request
+ * IntakesBornInRescueShelter Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class IntakesBorninrescueshelter implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class IntakesBornInRescueShelter implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

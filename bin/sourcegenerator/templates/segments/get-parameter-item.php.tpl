@@ -1,1 +1,1 @@
-        if ($this->%NAME% !== null) $parameterArray['%NAME%'] = $this->%NAME%;
+        if ($this->%SDKFIELDNAME% !== null) $parameterArray['%NAME%'] = $this->%SDKFIELDNAME%;

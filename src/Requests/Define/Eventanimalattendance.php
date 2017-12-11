@@ -1,6 +1,6 @@
 <?php
 /**
- * Eventanimalattendance Define Request
+ * EventAnimalAttendance Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class Eventanimalattendance implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class EventAnimalAttendance implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

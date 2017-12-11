@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnersurrenders Define Request
+ * IntakesOwnerSurrenders Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class IntakesOwnersurrenders implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class IntakesOwnerSurrenders implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool

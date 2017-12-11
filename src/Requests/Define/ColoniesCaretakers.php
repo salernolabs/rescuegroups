@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCaretakers Define Request
+ * ColoniesCareTakers Define Request
  *
  * @package RescueGroups
  * @subpackage Requests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Requests\Define;
 
-class ColoniesCaretakers implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class ColoniesCareTakers implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
 {
     /**
      * @return bool
