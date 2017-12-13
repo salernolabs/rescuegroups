@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\CallsQueue;
+namespace RescueGroups\Response\Objects;
 
 class CallsQueue
 {

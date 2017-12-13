@@ -39,5 +39,4 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
         return 'updateSettings';
     }
 
-
 }

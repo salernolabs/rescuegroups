@@ -39,5 +39,4 @@ class ListFosters implements \RescueGroups\Request\RequestInterface, \RescueGrou
         return 'listFosters';
     }
 
-
 }

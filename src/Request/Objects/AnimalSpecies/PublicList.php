@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalSpecies;
 
-class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
 {
 
     /**
@@ -39,5 +39,28 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return 'publicList';
     }
 
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\AnimalSpecies[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\AnimalSpecies($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\AnimalSpecies($data)];
+    }
 
 }

@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\IntakesStrayDropoff;
+namespace RescueGroups\Response\Objects;
 
 class IntakesStrayDropoff
 {

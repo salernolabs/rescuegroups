@@ -266,12 +266,10 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {

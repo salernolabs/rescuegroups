@@ -39,5 +39,4 @@ class GetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
         return 'getPublicStatuses';
     }
 
-
 }

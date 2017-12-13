@@ -551,12 +551,10 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {

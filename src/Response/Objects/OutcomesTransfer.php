@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\OutcomesTransfer;
+namespace RescueGroups\Response\Objects;
 
 class OutcomesTransfer
 {

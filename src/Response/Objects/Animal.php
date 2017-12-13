@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\Animal;
+namespace RescueGroups\Response\Objects;
 
 class Animal
 {

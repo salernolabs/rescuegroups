@@ -39,5 +39,4 @@ class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGrou
         return 'listPending';
     }
 
-
 }

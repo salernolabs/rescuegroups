@@ -39,5 +39,4 @@ class GetRequireableFields implements \RescueGroups\Request\RequestInterface, \R
         return 'getRequireableFields';
     }
 
-
 }

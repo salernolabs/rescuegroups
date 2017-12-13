@@ -39,5 +39,4 @@ class ListRecent implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return 'listRecent';
     }
 
-
 }

@@ -39,5 +39,4 @@ class GetSettings implements \RescueGroups\Request\RequestInterface, \RescueGrou
         return 'getSettings';
     }
 
-
 }

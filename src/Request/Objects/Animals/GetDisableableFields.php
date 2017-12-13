@@ -39,5 +39,4 @@ class GetDisableableFields implements \RescueGroups\Request\RequestInterface, \R
         return 'getDisableableFields';
     }
 
-
 }

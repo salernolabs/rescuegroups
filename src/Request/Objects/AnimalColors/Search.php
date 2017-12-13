@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalColors;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
@@ -116,12 +116,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
@@ -133,4 +131,28 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         $this->addSearchParameters($parameterArray);
 
     }
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\AnimalColor[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\AnimalColor($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\AnimalColor($data)];
+    }
+
 }

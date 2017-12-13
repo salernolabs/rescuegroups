@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\OutcomesEuthanasia;
+namespace RescueGroups\Response\Objects;
 
 class OutcomesEuthanasia
 {

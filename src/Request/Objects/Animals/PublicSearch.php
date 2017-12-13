@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
@@ -2719,12 +2719,10 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
@@ -2873,4 +2871,28 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         $this->addSearchParameters($parameterArray);
 
     }
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\Animal[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\Animal($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\Animal($data)];
+    }
+
 }

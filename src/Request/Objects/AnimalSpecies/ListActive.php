@@ -39,5 +39,4 @@ class ListActive implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return 'listActive';
     }
 
-
 }

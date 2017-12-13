@@ -57,12 +57,10 @@ class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {

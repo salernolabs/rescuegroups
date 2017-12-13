@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalQualities;
 
-class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     /**
      * Animal Qualities
@@ -57,16 +57,38 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
         if ($this->animalQualities !== null) $parameterArray['animalQualities'] = $this->animalQualities;
 
     }
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\AnimalQuality[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\AnimalQuality($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\AnimalQuality($data)];
+    }
+
 }

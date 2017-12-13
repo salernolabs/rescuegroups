@@ -39,5 +39,4 @@ class ListRescues implements \RescueGroups\Request\RequestInterface, \RescueGrou
         return 'listRescues';
     }
 
-
 }

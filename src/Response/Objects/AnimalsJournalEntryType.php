@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\AnimalsJournalEntryType;
+namespace RescueGroups\Response\Objects;
 
 class AnimalsJournalEntryType
 {

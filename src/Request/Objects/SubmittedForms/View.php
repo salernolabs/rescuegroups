@@ -39,5 +39,4 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
         return 'view';
     }
 
-
 }

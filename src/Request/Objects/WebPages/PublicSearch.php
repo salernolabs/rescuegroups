@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\WebPages;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
@@ -41,5 +41,28 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         return 'publicSearch';
     }
 
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\WebPage[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\WebPage($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\WebPage($data)];
+    }
 
 }

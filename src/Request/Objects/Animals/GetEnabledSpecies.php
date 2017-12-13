@@ -39,5 +39,4 @@ class GetEnabledSpecies implements \RescueGroups\Request\RequestInterface, \Resc
         return 'getEnabledSpecies';
     }
 
-
 }

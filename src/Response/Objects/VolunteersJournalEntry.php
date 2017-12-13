@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\VolunteersJournalEntry;
+namespace RescueGroups\Response\Objects;
 
 class VolunteersJournalEntry
 {

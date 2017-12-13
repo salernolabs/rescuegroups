@@ -38,6 +38,5 @@ class %REQUESTNAME% implements \RescueGroups\Request\RequestInterface, \RescueGr
     {
         return '%OBJECTACTION%';
     }
-%SETTERS%
-%GETPARAMETERS%
+%SETTERS%%GETPARAMETERS%%PROCESSRESPONSE%
 }

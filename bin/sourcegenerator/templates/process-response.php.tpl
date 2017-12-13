@@ -1,8 +1,9 @@
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns %RESPONSEOBJECTCLASS%[]
+     * @returns \RescueGroups\Response\Objects\%RESPONSECLASSNAME%[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -13,11 +14,11 @@
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\%RESPONSEOBJECTCLASS%($object);
+                $output[] = new \RescueGroups\Response\Objects\%RESPONSECLASSNAME%($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\%RESPONSEOBJECTCLASS%($data)]
+        return [new \RescueGroups\Response\Objects\%RESPONSECLASSNAME%($data)];
     }

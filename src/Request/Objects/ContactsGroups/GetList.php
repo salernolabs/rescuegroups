@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\ContactsGroups;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     /**
      * Group
@@ -57,16 +57,38 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
         if ($this->contactGroup !== null) $parameterArray['contactGroup'] = $this->contactGroup;
 
     }
+    /**
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Response\Objects\ContactsGroup[]
+     */
+    public function processResponse(\RescueGroups\API $api, $data)
+    {
+        if (empty($data)) return [];
+
+        if (is_array($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Response\Objects\ContactsGroup($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Response\Objects\ContactsGroup($data)];
+    }
+
 }

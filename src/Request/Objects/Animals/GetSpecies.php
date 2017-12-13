@@ -39,5 +39,4 @@ class GetSpecies implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return 'getSpecies';
     }
 
-
 }

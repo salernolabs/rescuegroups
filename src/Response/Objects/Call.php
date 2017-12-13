@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\Call;
+namespace RescueGroups\Response\Objects;
 
 class Call
 {

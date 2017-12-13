@@ -39,5 +39,4 @@ class GetExports implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return 'getExports';
     }
 
-
 }

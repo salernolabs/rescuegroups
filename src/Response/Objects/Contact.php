@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\Contact;
+namespace RescueGroups\Response\Objects;
 
 class Contact
 {

@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\WebImage;
+namespace RescueGroups\Response\Objects;
 
 class WebImage
 {

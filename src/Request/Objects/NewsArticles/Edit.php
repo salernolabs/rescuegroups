@@ -114,12 +114,10 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
         return $this;
     }
-
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {

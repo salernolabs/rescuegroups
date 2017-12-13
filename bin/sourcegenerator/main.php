@@ -82,6 +82,11 @@ class RequestGenerator
     private $responseConstructorItemTemplate;
 
     /**
+     * @var string
+     */
+    private $processResponseTemplate;
+
+    /**
      * @var array
      */
     private $objectTypes = [
@@ -227,7 +232,7 @@ class RequestGenerator
         $login = new \RescueGroups\Request\Actions\Login();
         $api->executeRequest($login);
 
-        //Load Templates
+        //Load Templates, what a mess this turned out to be
         $this->templateData = file_get_contents(__DIR__ . '/templates/objectquery-request.php.tpl');
         $this->testTemplateData = file_get_contents(__DIR__ . '/templates/objectquery-test.php.tpl');
         $this->fieldTemplate = file_get_contents(__DIR__ . '/templates/segments/fields.php.tpl');
@@ -242,7 +247,7 @@ class RequestGenerator
         $this->responseTemplate = file_get_contents(__DIR__ . '/templates/response-object.php.tpl');
         $this->responseConstructorTemplate = file_get_contents(__DIR__ . '/templates/segments/set-constructor-item.tpl');
         $this->responseConstructorItemTemplate = file_get_contents(__DIR__ . '/templates/segments/public-fields.php.tpl');
-
+        $this->processResponseTemplate = file_get_contents(__DIR__ . '/templates/process-response.php.tpl');
 
         $queryDocLinks = '';
 
@@ -334,7 +339,8 @@ class RequestGenerator
 
             '%RESPONSEOBJECTCONSTRUCT%',
             '%FIELDSPUBLIC%',
-            '%RESPONSECLASSNAME%'
+            '%RESPONSECLASSNAME%',
+            '%PROCESSRESPONSE%'
         ];
 
         $fieldReplaceFields = [
@@ -360,6 +366,7 @@ class RequestGenerator
         foreach ($definition as $request => $requestData)
         {
             $isSearch = ($request == 'search' || $request == 'publicSearch');
+            $isList = ($request == 'list' || $request == 'publicList');
 
             if ($request == 'define')
             {
@@ -399,7 +406,8 @@ class RequestGenerator
 
                 '',
                 '',
-                $responseClassName
+                $responseClassName,
+                ''
             ];
 
             if ($isSearch)
@@ -496,18 +504,26 @@ class RequestGenerator
             $replacements[11] = $fieldSets;
             $replacements[13] = $constructorFields;
 
-            $classContent = str_replace($replacers, $replacements, $this->templateData);
-            $testClassContent = str_replace($replacers, $replacements, $this->testTemplateData);
-            $responseObjectContent = str_replace($replacers, $replacements, $this->responseTemplate);
+            //Handle auto object modeling
+            if ($isSearch || $isList)
+            {
+                $replacements[5] .= ', \RescueGroups\Request\ProcessResponseInterface';
+                $replacements[16] = str_replace($replacers, $replacements, $this->processResponseTemplate);
+            }
 
-            file_put_contents($requestFileName, $classContent);
-            file_put_contents($requestTestFileName, $testClassContent);
+            $responseObjectContent = str_replace($replacers, $replacements, $this->responseTemplate);
 
             //Avoid writing empty response object classes
             if (!empty($constructorFields) && $requestClassName == 'Add')
             {
                 file_put_contents($responseObject, $responseObjectContent);
             }
+
+            $classContent = str_replace($replacers, $replacements, $this->templateData);
+            $testClassContent = str_replace($replacers, $replacements, $this->testTemplateData);
+
+            file_put_contents($requestFileName, $classContent);
+            file_put_contents($requestTestFileName, $testClassContent);
 
             $mainDocRequest .= str_replace(['%CLASSNAME%','%REQUEST%','%METHODS%','%OBJECTTYPE%','%OBJECTACTION%'], [$className, $requestClassName, $docMethods, $type, $request], $this->docRequestTemplate);
         }

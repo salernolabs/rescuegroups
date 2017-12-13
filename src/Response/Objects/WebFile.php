@@ -6,7 +6,7 @@
  * @subpackage Response
  * @author SourceGenerator
  */
-namespace RescueGroups\Response\Objects\WebFile;
+namespace RescueGroups\Response\Objects;
 
 class WebFile
 {
