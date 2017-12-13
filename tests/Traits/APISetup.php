@@ -34,7 +34,7 @@ trait APISetup
         $this->api
             ->setCustomGuzzleHandler($vcr);
 
-        $request = new \RescueGroups\Requests\Actions\Login();
+        $request = new \RescueGroups\Request\Actions\Login();
         $this->api->executeRequest($request);
     }
 

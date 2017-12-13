@@ -4,7 +4,7 @@ An unofficial rescuegroups.org HTTP API PHP SDK. This package is not stable yet 
 
 Please read the RescueGroups.org API specification and documentation thoroughly before attempting to use this library. https://rescuegroups.org/services/adoptable-pet-data-http-json-api/
 
-[Query Documentation](doc/requests/readme.md)
+[Query Documentation](doc/request/readme.md)
 
 ## Installation and Setup
 
@@ -37,10 +37,10 @@ You can instantiate the API handler in either way:
 To make non-public/authenticated queries against the HTTP API you need to log in. You can either spoecify the environment variables or set them in the login query.
 
     //Use environment variables
-    $login = new \RescueGroups\Requests\Actions\Login();
+    $login = new \RescueGroups\Request\Actions\Login();
 
     //Use specific login credentials
-    $login = new \RescueGroups\Requests\Actions\Login("Username", "Password", 1235);
+    $login = new \RescueGroups\Request\Actions\Login("Username", "Password", 1235);
 
     //Then just run it with the API handler
     $api->executeRequest($login);

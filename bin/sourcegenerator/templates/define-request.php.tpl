@@ -3,12 +3,12 @@
  * %CLASSNAME% Define Request
  *
  * @package RescueGroups
- * @subpackage Requests
+ * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Requests\Define;
+namespace RescueGroups\Request\Define;
 
-class %CLASSNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface
+class %CLASSNAME% implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
     /**
      * @return bool
