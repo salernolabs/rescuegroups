@@ -3,12 +3,12 @@
  * %CLASSNAME% %REQUESTNAME% Request
  *
  * @package RescueGroups
- * @subpackage Requests
+ * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Requests\Objects\%CLASSNAME%;
+namespace RescueGroups\Request\Objects\%CLASSNAME%;
 
-class %REQUESTNAME% implements \RescueGroups\Requests\RequestInterface, \RescueGroups\Requests\ObjectActionInterface%PARAMETERSINTERFACE%
+class %REQUESTNAME% implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface%PARAMETERSINTERFACE%
 {
 %TRAITS%%FIELDS%
     /**

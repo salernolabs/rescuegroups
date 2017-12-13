@@ -101,10 +101,10 @@ class API
     /**
      * Actually Perform request
      *
-     * @param Requests\RequestInterface $request
-     * @return Responses\Envelope
+     * @param Request\RequestInterface $request
+     * @return Response\Envelope
      */
-    public function executeRequest(Requests\RequestInterface $request)
+    public function executeRequest(Request\RequestInterface $request)
     {
         $postObject = $this->getPostObject($request);
 
@@ -116,11 +116,11 @@ class API
     /**
      * Get post object
      *
-     * @param Requests\RequestInterface $request
+     * @param Request\RequestInterface $request
      * @return array
      * @throws Exceptions\LoginRequired
      */
-    public function getPostObject(Requests\RequestInterface $request)
+    public function getPostObject(Request\RequestInterface $request)
     {
         $postObject = [];
 
@@ -139,13 +139,13 @@ class API
             $postObject['apikey'] = $this->key;
         }
 
-        if ($request instanceof Requests\ObjectActionInterface)
+        if ($request instanceof Request\ObjectActionInterface)
         {
             $postObject['objectType'] = $request->getObjectType();
             $postObject['objectAction'] = $request->getObjectAction();
         }
 
-        if ($request instanceof Requests\ParametersInterface)
+        if ($request instanceof Request\ParametersInterface)
         {
             $request->applyParameters($postObject);
         }
@@ -206,10 +206,10 @@ class API
      * Process Response
      *
      * @param $data
-     * @return Responses\Envelope
+     * @return Response\Envelope
      * @throws Exceptions\ErrorResponse
      */
-    private function processResponse(Requests\RequestInterface $request, $data)
+    private function processResponse(Request\RequestInterface $request, $data)
     {
         if (empty($data->status) || $data->status == 'error')
         {
@@ -222,15 +222,15 @@ class API
 
             if (empty($message) && !empty($data->messages))
             {
-                $message = new Responses\Messages($data->messages);
+                $message = new Response\Messages($data->messages);
             }
 
             throw new Exceptions\ErrorResponse($message);
         }
 
-        $envelope = new Responses\Envelope($data);
+        $envelope = new Response\Envelope($data);
 
-        if ($request instanceof \RescueGroups\Requests\ProcessResponseInterface)
+        if ($request instanceof \RescueGroups\Request\ProcessResponseInterface)
         {
             $envelope->data = $request->processResponse($this, $data->data);
         }

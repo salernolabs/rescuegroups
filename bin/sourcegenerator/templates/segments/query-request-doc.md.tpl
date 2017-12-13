@@ -2,7 +2,7 @@
 
 Performs %OBJECTTYPE%.%OBJECTACTION% query.
 
-    $query = new \RescueGroups\Requests\Objects\%CLASSNAME%\%REQUEST%();
+    $query = new \RescueGroups\Request\Objects\%CLASSNAME%\%REQUEST%();
 
 %METHODS%
 

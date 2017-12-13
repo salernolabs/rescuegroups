@@ -170,9 +170,9 @@ class RequestGenerator
     ];
 
     /**
-     * Build define requests, used for building further requests
+     * Build define request, used for building further request
      */
-    public function buildDefineRequests()
+    public function buildDefineRequest()
     {
         $templateData = file_get_contents(__DIR__ . '/templates/define-request.php.tpl');
         $testTemplateData = file_get_contents(__DIR__ . '/templates/define-request-test.php.tpl');
@@ -183,8 +183,8 @@ class RequestGenerator
         {
             $needsLogin = empty($this->publicDefinable[$type]);
 
-            $classFileName = __DIR__ . '/../../src/Requests/Define/' . $className . '.php';
-            $testFileName = __DIR__ . '/../../tests/Requests/Define/' . $className . 'Test.php';
+            $classFileName = __DIR__ . '/../../src/Request/Define/' . $className . '.php';
+            $testFileName = __DIR__ . '/../../tests/Request/Define/' . $className . 'Test.php';
 
             $variableReplace = [$className, $type, $needsLogin ? 'true' : 'false', date(static::DATE_FORMAT)];
 
@@ -209,7 +209,7 @@ class RequestGenerator
         $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../tests/data/fixtures/action-login.json');
         $api->setCustomGuzzleHandler($vcr);
 
-        $login = new \RescueGroups\Requests\Actions\Login();
+        $login = new \RescueGroups\Request\Actions\Login();
         $api->executeRequest($login);
 
         //Load Templates
@@ -234,7 +234,7 @@ class RequestGenerator
             $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../tests/data/fixtures/define-'.$className.'.json');
             $api->setCustomGuzzleHandler($vcr);
 
-            $fullClassName = '\RescueGroups\Requests\Define\\' . $className;
+            $fullClassName = '\RescueGroups\Request\Define\\' . $className;
 
             $query = new $fullClassName();
 
@@ -254,7 +254,7 @@ class RequestGenerator
         }
 
         file_put_contents(
-            __DIR__ . '/../../doc/requests/readme.md',
+            __DIR__ . '/../../doc/request/readme.md',
             str_replace(
                 ['%DATE%', '%QUERYLINKS%'],
                 [date(static::DATE_FORMAT), $queryDocLinks],
@@ -273,9 +273,9 @@ class RequestGenerator
     private function buildDefinedObjectQueries($className, $type, $definition)
     {
         //Initial setups
-        $dir = __DIR__ . '/../../src/Requests/Objects/' . $className;
-        $testDir = __DIR__ . '/../../tests/Requests/Objects/' . $className;
-        $docDir = __DIR__ . '/../../doc/requests/' . $className;
+        $dir = __DIR__ . '/../../src/Request/Objects/' . $className;
+        $testDir = __DIR__ . '/../../tests/Request/Objects/' . $className;
+        $docDir = __DIR__ . '/../../doc/request/' . $className;
 
         if (!is_dir($dir))
         {
@@ -319,12 +319,12 @@ class RequestGenerator
         ];
 
         $mainDocFile = $docDir . '/readme.md';
-        $mainDocRequests = '';
+        $mainDocRequest = '';
 
         $docReplaceFields = [
             '%CLASSNAME%',
             '%TYPENAME%',
-            '%REQUESTS%',
+            '%REQUEST%',
             '%DATE%',
             '%OBJECTACTION%'
         ];
@@ -373,7 +373,7 @@ class RequestGenerator
 
             if ($isSearch)
             {
-                $replacements[9] .= '    use \RescueGroups\Requests\Traits\SearchParameters;' . "\n\n";
+                $replacements[9] .= '    use \RescueGroups\Request\Traits\SearchParameters;' . "\n\n";
             }
 
             $fieldAsserts = "\n" . '        $this->assertEquals("' . $type . '", $data["objectType"]);' . "\n";
@@ -385,7 +385,7 @@ class RequestGenerator
             //Handle any fields the queries can take
             if (!empty($requestData->fields))
             {
-                $replacements[5] = ', \RescueGroups\Requests\ParametersInterface';
+                $replacements[5] = ', \RescueGroups\Request\ParametersInterface';
 
                 $parameterFields = '';
 
@@ -465,13 +465,13 @@ class RequestGenerator
             file_put_contents($requestFileName, $classContent);
             file_put_contents($requestTestFileName, $testClassContent);
 
-            $mainDocRequests .= str_replace(['%CLASSNAME%','%REQUEST%','%METHODS%','%OBJECTTYPE%','%OBJECTACTION%'], [$className, $requestClassName, $docMethods, $type, $request], $this->docRequestTemplate);
+            $mainDocRequest .= str_replace(['%CLASSNAME%','%REQUEST%','%METHODS%','%OBJECTTYPE%','%OBJECTACTION%'], [$className, $requestClassName, $docMethods, $type, $request], $this->docRequestTemplate);
         }
 
         $docReplaceVars = [
             $className,
             $type,
-            $mainDocRequests,
+            $mainDocRequest,
             date(static::DATE_FORMAT)
         ];
 
@@ -483,5 +483,5 @@ class RequestGenerator
 
 $generator = new RequestGenerator();
 
-$generator->buildDefineRequests();
+$generator->buildDefineRequest();
 $generator->buildDefinableDataModel();

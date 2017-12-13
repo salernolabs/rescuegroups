@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Requests\Define;
+namespace RescueGroups\Tests\Request\Define;
 
 class %CLASSNAME%Test extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class %CLASSNAME%Test extends \PHPUnit\Framework\TestCase
         $this->api
             ->setCustomGuzzleHandler($vcr);
 
-        $request = new \RescueGroups\Requests\Define\%CLASSNAME%();
+        $request = new \RescueGroups\Request\Define\%CLASSNAME%();
 
         $result = $this->api->executeRequest($request);
 

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Requests\Objects\%CLASSNAME%\%REQUESTNAME%;
+namespace RescueGroups\Tests\Request\Objects\%CLASSNAME%;
 
 class %REQUESTNAME%Test extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class %REQUESTNAME%Test extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Requests\Objects\%CLASSNAME%\%REQUESTNAME%();
+        $query = new \RescueGroups\Request\Objects\%CLASSNAME%\%REQUESTNAME%();
 
         %FIELDSETS%
 
