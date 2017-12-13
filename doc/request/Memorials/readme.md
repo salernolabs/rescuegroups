@@ -62,9 +62,9 @@ Sets memorialDescription field with a value of type string.
 
 #### ::setMemorialOrder
 
-Sets memorialOrder field with a value of type integer.
+Sets memorialOrder field with a value of type string.
 
-    $query->setMemorialOrder(integer);
+    $query->setMemorialOrder(string);
 
 
 
@@ -76,9 +76,9 @@ Performs memorials.add query.
 
 #### ::setMemorialPictureBinary
 
-Sets memorialPictureBinary field with a value of type binary.
+Sets memorialPictureBinary field with a value of type string.
 
-    $query->setMemorialPictureBinary(binary);
+    $query->setMemorialPictureBinary(string);
 
 #### ::setMemorialName
 
@@ -100,9 +100,9 @@ Sets memorialDescription field with a value of type string.
 
 #### ::setMemorialOrder
 
-Sets memorialOrder field with a value of type integer.
+Sets memorialOrder field with a value of type string.
 
-    $query->setMemorialOrder(integer);
+    $query->setMemorialOrder(string);
 
 
 
@@ -120,9 +120,9 @@ Sets memorialID field with a value of type integer.
 
 #### ::setMemorialPictureBinary
 
-Sets memorialPictureBinary field with a value of type binary.
+Sets memorialPictureBinary field with a value of type string.
 
-    $query->setMemorialPictureBinary(binary);
+    $query->setMemorialPictureBinary(string);
 
 #### ::setMemorialPictureOldFileName
 
@@ -180,9 +180,9 @@ Sets enableMemorials field with a value of type string.
 
 #### ::setSetMemorialsDonationOnlineStoreItem
 
-Sets setMemorialsDonationOnlineStoreItem field with a value of type int.
+Sets setMemorialsDonationOnlineStoreItem field with a value of type string.
 
-    $query->setSetMemorialsDonationOnlineStoreItem(int);
+    $query->setSetMemorialsDonationOnlineStoreItem(string);
 
 #### ::setShowMemorialsAlphaLinks
 

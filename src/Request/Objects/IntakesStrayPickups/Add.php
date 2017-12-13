@@ -54,7 +54,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Pickup State/Province
-     * @var province
+     * @var string
      */
     private $intakesStraypickupState = null;
 
@@ -199,7 +199,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Pickup State/Province
      *
-     * @param province $intakesStraypickupState
+     * @param string $intakesStraypickupState
      * @return $this
      */
     public function setIntakesStraypickupState($intakesStraypickupState)

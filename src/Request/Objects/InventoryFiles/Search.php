@@ -44,7 +44,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * File size
-     * @var int
+     * @var string
      */
     private $inventoryfileSize = null;
 
@@ -128,13 +128,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Files
-     * @var int
+     * @var string
      */
     private $inventoryitemFiles = null;
 
     /**
      * Loaners
-     * @var int
+     * @var string
      */
     private $inventoryitemLoaners = null;
 
@@ -235,7 +235,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set File size
      *
-     * @param int $inventoryfileSize
+     * @param string $inventoryfileSize
      * @return $this
      */
     public function setInventoryfileSize($inventoryfileSize)
@@ -417,7 +417,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Files
      *
-     * @param int $inventoryitemFiles
+     * @param string $inventoryitemFiles
      * @return $this
      */
     public function setInventoryitemFiles($inventoryitemFiles)
@@ -430,7 +430,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Loaners
      *
-     * @param int $inventoryitemLoaners
+     * @param string $inventoryitemLoaners
      * @return $this
      */
     public function setInventoryitemLoaners($inventoryitemLoaners)

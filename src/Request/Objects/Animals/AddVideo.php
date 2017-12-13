@@ -18,7 +18,7 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
 
     /**
      * Video
-     * @var binary
+     * @var string
      */
     private $videoBinary = null;
 
@@ -30,7 +30,7 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
 
     /**
      * Order
-     * @var int
+     * @var string
      */
     private $mediaOrder = null;
 
@@ -79,7 +79,7 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
     /**
      * Set Video
      *
-     * @param binary $videoBinary
+     * @param string $videoBinary
      * @return $this
      */
     public function setVideoBinary($videoBinary)
@@ -105,7 +105,7 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
     /**
      * Set Order
      *
-     * @param int $mediaOrder
+     * @param string $mediaOrder
      * @return $this
      */
     public function setMediaOrder($mediaOrder)

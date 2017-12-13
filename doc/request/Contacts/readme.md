@@ -104,9 +104,9 @@ Sets contactCity field with a value of type string.
 
 #### ::setContactState
 
-Sets contactState field with a value of type province.
+Sets contactState field with a value of type string.
 
-    $query->setContactState(province);
+    $query->setContactState(string);
 
 #### ::setContactPostalcode
 
@@ -134,15 +134,15 @@ Sets contactCountry field with a value of type integer.
 
 #### ::setContactPhoneHome
 
-Sets contactPhoneHome field with a value of type phone.
+Sets contactPhoneHome field with a value of type string.
 
-    $query->setContactPhoneHome(phone);
+    $query->setContactPhoneHome(string);
 
 #### ::setContactPhoneWork
 
-Sets contactPhoneWork field with a value of type phone.
+Sets contactPhoneWork field with a value of type string.
 
-    $query->setContactPhoneWork(phone);
+    $query->setContactPhoneWork(string);
 
 #### ::setContactPhoneWorkExt
 
@@ -152,15 +152,15 @@ Sets contactPhoneWorkExt field with a value of type string.
 
 #### ::setContactPhoneCell
 
-Sets contactPhoneCell field with a value of type phone.
+Sets contactPhoneCell field with a value of type string.
 
-    $query->setContactPhoneCell(phone);
+    $query->setContactPhoneCell(string);
 
 #### ::setContactFax
 
-Sets contactFax field with a value of type phone.
+Sets contactFax field with a value of type string.
 
-    $query->setContactFax(phone);
+    $query->setContactFax(string);
 
 #### ::setContactEmail
 
@@ -200,9 +200,9 @@ Sets contactCarrier field with a value of type string.
 
 #### ::setContactBounces
 
-Sets contactBounces field with a value of type int.
+Sets contactBounces field with a value of type string.
 
-    $query->setContactBounces(int);
+    $query->setContactBounces(string);
 
 #### ::setContactSendMail
 
@@ -310,9 +310,9 @@ Sets contactCity field with a value of type string.
 
 #### ::setContactState
 
-Sets contactState field with a value of type province.
+Sets contactState field with a value of type string.
 
-    $query->setContactState(province);
+    $query->setContactState(string);
 
 #### ::setContactPostalcode
 
@@ -340,15 +340,15 @@ Sets contactCountry field with a value of type integer.
 
 #### ::setContactPhoneHome
 
-Sets contactPhoneHome field with a value of type phone.
+Sets contactPhoneHome field with a value of type string.
 
-    $query->setContactPhoneHome(phone);
+    $query->setContactPhoneHome(string);
 
 #### ::setContactPhoneWork
 
-Sets contactPhoneWork field with a value of type phone.
+Sets contactPhoneWork field with a value of type string.
 
-    $query->setContactPhoneWork(phone);
+    $query->setContactPhoneWork(string);
 
 #### ::setContactPhoneWorkExt
 
@@ -358,15 +358,15 @@ Sets contactPhoneWorkExt field with a value of type string.
 
 #### ::setContactPhoneCell
 
-Sets contactPhoneCell field with a value of type phone.
+Sets contactPhoneCell field with a value of type string.
 
-    $query->setContactPhoneCell(phone);
+    $query->setContactPhoneCell(string);
 
 #### ::setContactFax
 
-Sets contactFax field with a value of type phone.
+Sets contactFax field with a value of type string.
 
-    $query->setContactFax(phone);
+    $query->setContactFax(string);
 
 #### ::setContactEmail
 
@@ -516,9 +516,9 @@ Sets contactCity field with a value of type string.
 
 #### ::setContactState
 
-Sets contactState field with a value of type province.
+Sets contactState field with a value of type string.
 
-    $query->setContactState(province);
+    $query->setContactState(string);
 
 #### ::setContactPostalcode
 
@@ -546,15 +546,15 @@ Sets contactCountry field with a value of type integer.
 
 #### ::setContactPhoneHome
 
-Sets contactPhoneHome field with a value of type phone.
+Sets contactPhoneHome field with a value of type string.
 
-    $query->setContactPhoneHome(phone);
+    $query->setContactPhoneHome(string);
 
 #### ::setContactPhoneWork
 
-Sets contactPhoneWork field with a value of type phone.
+Sets contactPhoneWork field with a value of type string.
 
-    $query->setContactPhoneWork(phone);
+    $query->setContactPhoneWork(string);
 
 #### ::setContactPhoneWorkExt
 
@@ -564,15 +564,15 @@ Sets contactPhoneWorkExt field with a value of type string.
 
 #### ::setContactPhoneCell
 
-Sets contactPhoneCell field with a value of type phone.
+Sets contactPhoneCell field with a value of type string.
 
-    $query->setContactPhoneCell(phone);
+    $query->setContactPhoneCell(string);
 
 #### ::setContactFax
 
-Sets contactFax field with a value of type phone.
+Sets contactFax field with a value of type string.
 
-    $query->setContactFax(phone);
+    $query->setContactFax(string);
 
 #### ::setContactEmail
 

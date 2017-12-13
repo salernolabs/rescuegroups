@@ -18,7 +18,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Microchip number
-     * @var microchipnumber
+     * @var string
      */
     private $microchipRegistrationMicrochipNumber = null;
 
@@ -60,7 +60,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $microchipRegistrationRegistrantState = null;
 
@@ -78,13 +78,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Primary phone number
-     * @var phone
+     * @var string
      */
     private $microchipRegistrationRegistrantPrimaryPhone = null;
 
     /**
      * Secondary phone number
-     * @var phone
+     * @var string
      */
     private $microchipRegistrationRegistrantSecondaryPhone = null;
 
@@ -145,7 +145,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Microchip number
      *
-     * @param microchipnumber $microchipRegistrationMicrochipNumber
+     * @param string $microchipRegistrationMicrochipNumber
      * @return $this
      */
     public function setMicrochipRegistrationMicrochipNumber($microchipRegistrationMicrochipNumber)
@@ -236,7 +236,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set State/Province
      *
-     * @param province $microchipRegistrationRegistrantState
+     * @param string $microchipRegistrationRegistrantState
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantState($microchipRegistrationRegistrantState)
@@ -275,7 +275,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Primary phone number
      *
-     * @param phone $microchipRegistrationRegistrantPrimaryPhone
+     * @param string $microchipRegistrationRegistrantPrimaryPhone
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantPrimaryPhone($microchipRegistrationRegistrantPrimaryPhone)
@@ -288,7 +288,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Secondary phone number
      *
-     * @param phone $microchipRegistrationRegistrantSecondaryPhone
+     * @param string $microchipRegistrationRegistrantSecondaryPhone
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantSecondaryPhone($microchipRegistrationRegistrantSecondaryPhone)

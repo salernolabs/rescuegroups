@@ -44,7 +44,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Number of animals
-     * @var int
+     * @var string
      */
     private $colonyTotalAnimals = null;
 
@@ -68,7 +68,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $locationUrl = null;
 
@@ -86,7 +86,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $locationState = null;
 
@@ -104,7 +104,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Phone
-     * @var phone
+     * @var string
      */
     private $locationPhone = null;
 
@@ -116,25 +116,25 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Animals
-     * @var int
+     * @var string
      */
     private $locationAnimals = null;
 
     /**
      * Events
-     * @var int
+     * @var string
      */
     private $locationEvents = null;
 
     /**
      * Colonies
-     * @var int
+     * @var string
      */
     private $locationColonies = null;
 
     /**
      * Meet Requests
-     * @var int
+     * @var string
      */
     private $locationMeetrequests = null;
 
@@ -235,7 +235,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Number of animals
      *
-     * @param int $colonyTotalAnimals
+     * @param string $colonyTotalAnimals
      * @return $this
      */
     public function setColonyTotalAnimals($colonyTotalAnimals)
@@ -287,7 +287,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Web address
      *
-     * @param url $locationUrl
+     * @param string $locationUrl
      * @return $this
      */
     public function setLocationUrl($locationUrl)
@@ -326,7 +326,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set State/Province
      *
-     * @param province $locationState
+     * @param string $locationState
      * @return $this
      */
     public function setLocationState($locationState)
@@ -365,7 +365,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Phone
      *
-     * @param phone $locationPhone
+     * @param string $locationPhone
      * @return $this
      */
     public function setLocationPhone($locationPhone)
@@ -391,7 +391,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Animals
      *
-     * @param int $locationAnimals
+     * @param string $locationAnimals
      * @return $this
      */
     public function setLocationAnimals($locationAnimals)
@@ -404,7 +404,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Events
      *
-     * @param int $locationEvents
+     * @param string $locationEvents
      * @return $this
      */
     public function setLocationEvents($locationEvents)
@@ -417,7 +417,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Colonies
      *
-     * @param int $locationColonies
+     * @param string $locationColonies
      * @return $this
      */
     public function setLocationColonies($locationColonies)
@@ -430,7 +430,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Meet Requests
      *
-     * @param int $locationMeetrequests
+     * @param string $locationMeetrequests
      * @return $this
      */
     public function setLocationMeetrequests($locationMeetrequests)

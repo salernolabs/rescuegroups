@@ -54,7 +54,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Impound State/Province
-     * @var province
+     * @var string
      */
     private $intakesImpoundState = null;
 
@@ -205,7 +205,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Impound State/Province
      *
-     * @param province $intakesImpoundState
+     * @param string $intakesImpoundState
      * @return $this
      */
     public function setIntakesImpoundState($intakesImpoundState)

@@ -32,7 +32,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Animals
-     * @var int
+     * @var string
      */
     private $groupAnimals = null;
 
@@ -113,7 +113,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Animals
      *
-     * @param int $groupAnimals
+     * @param string $groupAnimals
      * @return $this
      */
     public function setGroupAnimals($groupAnimals)

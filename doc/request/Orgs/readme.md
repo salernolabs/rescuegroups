@@ -64,9 +64,9 @@ Sets orgCity field with a value of type string.
 
 #### ::setOrgState
 
-Sets orgState field with a value of type province.
+Sets orgState field with a value of type string.
 
-    $query->setOrgState(province);
+    $query->setOrgState(string);
 
 #### ::setOrgPostalcode
 
@@ -88,15 +88,15 @@ Sets orgCountry field with a value of type integer.
 
 #### ::setOrgPhone
 
-Sets orgPhone field with a value of type phone.
+Sets orgPhone field with a value of type string.
 
-    $query->setOrgPhone(phone);
+    $query->setOrgPhone(string);
 
 #### ::setOrgFax
 
-Sets orgFax field with a value of type phone.
+Sets orgFax field with a value of type string.
 
-    $query->setOrgFax(phone);
+    $query->setOrgFax(string);
 
 #### ::setOrgEmail
 
@@ -106,33 +106,33 @@ Sets orgEmail field with a value of type string.
 
 #### ::setOrgWebsiteUrl
 
-Sets orgWebsiteUrl field with a value of type url.
+Sets orgWebsiteUrl field with a value of type string.
 
-    $query->setOrgWebsiteUrl(url);
+    $query->setOrgWebsiteUrl(string);
 
 #### ::setOrgFacebookUrl
 
-Sets orgFacebookUrl field with a value of type url.
+Sets orgFacebookUrl field with a value of type string.
 
-    $query->setOrgFacebookUrl(url);
+    $query->setOrgFacebookUrl(string);
 
 #### ::setOrgAdoptionUrl
 
-Sets orgAdoptionUrl field with a value of type url.
+Sets orgAdoptionUrl field with a value of type string.
 
-    $query->setOrgAdoptionUrl(url);
+    $query->setOrgAdoptionUrl(string);
 
 #### ::setOrgDonationUrl
 
-Sets orgDonationUrl field with a value of type url.
+Sets orgDonationUrl field with a value of type string.
 
-    $query->setOrgDonationUrl(url);
+    $query->setOrgDonationUrl(string);
 
 #### ::setOrgSponsorshipUrl
 
-Sets orgSponsorshipUrl field with a value of type url.
+Sets orgSponsorshipUrl field with a value of type string.
 
-    $query->setOrgSponsorshipUrl(url);
+    $query->setOrgSponsorshipUrl(string);
 
 #### ::setOrgServeAreas
 
@@ -172,9 +172,9 @@ Sets orgType field with a value of type string.
 
 #### ::setOrgLocationDistance
 
-Sets orgLocationDistance field with a value of type int.
+Sets orgLocationDistance field with a value of type string.
 
-    $query->setOrgLocationDistance(int);
+    $query->setOrgLocationDistance(string);
 
 #### ::setOrgCommonapplicationAccept
 

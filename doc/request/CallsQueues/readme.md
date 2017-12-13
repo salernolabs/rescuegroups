@@ -88,15 +88,15 @@ Sets queueUpdatedByID field with a value of type integer.
 
 #### ::setQueueOpenCallsCount
 
-Sets queueOpenCallsCount field with a value of type int.
+Sets queueOpenCallsCount field with a value of type string.
 
-    $query->setQueueOpenCallsCount(int);
+    $query->setQueueOpenCallsCount(string);
 
 #### ::setQueueMembersCount
 
-Sets queueMembersCount field with a value of type int.
+Sets queueMembersCount field with a value of type string.
 
-    $query->setQueueMembersCount(int);
+    $query->setQueueMembersCount(string);
 
 
 

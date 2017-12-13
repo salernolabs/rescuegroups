@@ -102,15 +102,15 @@ Sets submitterCountry field with a value of type integer.
 
 #### ::setSubmitterPhoneHome
 
-Sets submitterPhoneHome field with a value of type phone.
+Sets submitterPhoneHome field with a value of type string.
 
-    $query->setSubmitterPhoneHome(phone);
+    $query->setSubmitterPhoneHome(string);
 
 #### ::setSubmitterPhoneWork
 
-Sets submitterPhoneWork field with a value of type phone.
+Sets submitterPhoneWork field with a value of type string.
 
-    $query->setSubmitterPhoneWork(phone);
+    $query->setSubmitterPhoneWork(string);
 
 #### ::setSubmitterPhoneWorkExt
 
@@ -120,15 +120,15 @@ Sets submitterPhoneWorkExt field with a value of type string.
 
 #### ::setSubmitterPhoneCell
 
-Sets submitterPhoneCell field with a value of type phone.
+Sets submitterPhoneCell field with a value of type string.
 
-    $query->setSubmitterPhoneCell(phone);
+    $query->setSubmitterPhoneCell(string);
 
 #### ::setSubmitterFax
 
-Sets submitterFax field with a value of type phone.
+Sets submitterFax field with a value of type string.
 
-    $query->setSubmitterFax(phone);
+    $query->setSubmitterFax(string);
 
 #### ::setSubmitterEmail
 
@@ -200,9 +200,9 @@ Sets submittedformAssignedToID field with a value of type integer.
 
 #### ::setSubmittedformCommentsCount
 
-Sets submittedformCommentsCount field with a value of type int.
+Sets submittedformCommentsCount field with a value of type string.
 
-    $query->setSubmittedformCommentsCount(int);
+    $query->setSubmittedformCommentsCount(string);
 
 #### ::setSubmittedformCommentsInline
 
@@ -338,15 +338,15 @@ Sets submitterCountry field with a value of type integer.
 
 #### ::setSubmitterPhoneHome
 
-Sets submitterPhoneHome field with a value of type phone.
+Sets submitterPhoneHome field with a value of type string.
 
-    $query->setSubmitterPhoneHome(phone);
+    $query->setSubmitterPhoneHome(string);
 
 #### ::setSubmitterPhoneWork
 
-Sets submitterPhoneWork field with a value of type phone.
+Sets submitterPhoneWork field with a value of type string.
 
-    $query->setSubmitterPhoneWork(phone);
+    $query->setSubmitterPhoneWork(string);
 
 #### ::setSubmitterPhoneWorkExt
 
@@ -356,15 +356,15 @@ Sets submitterPhoneWorkExt field with a value of type string.
 
 #### ::setSubmitterPhoneCell
 
-Sets submitterPhoneCell field with a value of type phone.
+Sets submitterPhoneCell field with a value of type string.
 
-    $query->setSubmitterPhoneCell(phone);
+    $query->setSubmitterPhoneCell(string);
 
 #### ::setSubmitterFax
 
-Sets submitterFax field with a value of type phone.
+Sets submitterFax field with a value of type string.
 
-    $query->setSubmitterFax(phone);
+    $query->setSubmitterFax(string);
 
 #### ::setSubmitterEmail
 
@@ -404,9 +404,9 @@ Sets submitterCarrier field with a value of type string.
 
 #### ::setSubmitterBounces
 
-Sets submitterBounces field with a value of type int.
+Sets submitterBounces field with a value of type string.
 
-    $query->setSubmitterBounces(int);
+    $query->setSubmitterBounces(string);
 
 #### ::setSubmitterSendMail
 

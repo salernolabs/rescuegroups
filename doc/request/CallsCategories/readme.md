@@ -94,9 +94,9 @@ Sets categoryUpdatedByID field with a value of type integer.
 
 #### ::setCategoryCallsCount
 
-Sets categoryCallsCount field with a value of type int.
+Sets categoryCallsCount field with a value of type string.
 
-    $query->setCategoryCallsCount(int);
+    $query->setCategoryCallsCount(string);
 
 
 

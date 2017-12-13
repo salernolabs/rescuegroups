@@ -74,7 +74,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Calls Count
-     * @var int
+     * @var string
      */
     private $categoryCallsCount = null;
 
@@ -240,7 +240,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Calls Count
      *
-     * @param int $categoryCallsCount
+     * @param string $categoryCallsCount
      * @return $this
      */
     public function setCategoryCallsCount($categoryCallsCount)

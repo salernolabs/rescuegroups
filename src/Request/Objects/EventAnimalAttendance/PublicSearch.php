@@ -74,7 +74,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $eventUrl = null;
 
@@ -98,7 +98,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location web address
-     * @var url
+     * @var string
      */
     private $eventLocationUrl = null;
 
@@ -116,7 +116,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location state/province
-     * @var province
+     * @var string
      */
     private $eventLocationState = null;
 
@@ -134,7 +134,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location phone
-     * @var phone
+     * @var string
      */
     private $eventLocationPhone = null;
 
@@ -306,7 +306,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Web address
      *
-     * @param url $eventUrl
+     * @param string $eventUrl
      * @return $this
      */
     public function setEventUrl($eventUrl)
@@ -358,7 +358,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location web address
      *
-     * @param url $eventLocationUrl
+     * @param string $eventLocationUrl
      * @return $this
      */
     public function setEventLocationUrl($eventLocationUrl)
@@ -397,7 +397,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location state/province
      *
-     * @param province $eventLocationState
+     * @param string $eventLocationState
      * @return $this
      */
     public function setEventLocationState($eventLocationState)
@@ -436,7 +436,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location phone
      *
-     * @param phone $eventLocationPhone
+     * @param string $eventLocationPhone
      * @return $this
      */
     public function setEventLocationPhone($eventLocationPhone)

@@ -236,7 +236,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Distance
-     * @var int
+     * @var string
      */
     private $animalLocationDistance = null;
 
@@ -500,7 +500,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Web page
-     * @var url
+     * @var string
      */
     private $animalUrl = null;
 
@@ -818,7 +818,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location
-     * @var enumLookup
+     * @var string
      */
     private $locationName = null;
 
@@ -1371,7 +1371,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Distance
      *
-     * @param int $animalLocationDistance
+     * @param string $animalLocationDistance
      * @return $this
      */
     public function setAnimalLocationDistance($animalLocationDistance)
@@ -1943,7 +1943,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Web page
      *
-     * @param url $animalUrl
+     * @param string $animalUrl
      * @return $this
      */
     public function setAnimalUrl($animalUrl)
@@ -2632,7 +2632,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location
      *
-     * @param enumLookup $locationName
+     * @param string $locationName
      * @return $this
      */
     public function setLocationName($locationName)

@@ -158,13 +158,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Created time frame
-     * @var int
+     * @var string
      */
     private $animalCreatedTimeframe = null;
 
     /**
      * Days in Foster
-     * @var int
+     * @var string
      */
     private $animalDaysInFoster = null;
 
@@ -272,7 +272,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Highlight
-     * @var int
+     * @var string
      */
     private $animalHighlightOrder = null;
 
@@ -290,7 +290,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Intakes
-     * @var int
+     * @var string
      */
     private $animalIntakes = null;
 
@@ -332,7 +332,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Updated timeframe
-     * @var int
+     * @var string
      */
     private $animalUpdatedTimeframe = null;
 
@@ -446,7 +446,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Open Intakes
-     * @var int
+     * @var string
      */
     private $animalOpenIntakes = null;
 
@@ -464,7 +464,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Outcomes
-     * @var int
+     * @var string
      */
     private $animalOutcomes = null;
 
@@ -1316,7 +1316,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Location
-     * @var enumLookup
+     * @var string
      */
     private $locationName = null;
 
@@ -1358,7 +1358,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Comments
-     * @var int
+     * @var string
      */
     private $submittedformCommentsCount = null;
 
@@ -1388,13 +1388,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Status
-     * @var enumLookup
+     * @var string
      */
     private $submittedformStatus = null;
 
     /**
      * Steps
-     * @var int
+     * @var string
      */
     private $submittedformStepsCount = null;
 
@@ -2108,7 +2108,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Created time frame
      *
-     * @param int $animalCreatedTimeframe
+     * @param string $animalCreatedTimeframe
      * @return $this
      */
     public function setAnimalCreatedTimeframe($animalCreatedTimeframe)
@@ -2121,7 +2121,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Days in Foster
      *
-     * @param int $animalDaysInFoster
+     * @param string $animalDaysInFoster
      * @return $this
      */
     public function setAnimalDaysInFoster($animalDaysInFoster)
@@ -2355,7 +2355,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Highlight
      *
-     * @param int $animalHighlightOrder
+     * @param string $animalHighlightOrder
      * @return $this
      */
     public function setAnimalHighlightOrder($animalHighlightOrder)
@@ -2394,7 +2394,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Intakes
      *
-     * @param int $animalIntakes
+     * @param string $animalIntakes
      * @return $this
      */
     public function setAnimalIntakes($animalIntakes)
@@ -2485,7 +2485,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Updated timeframe
      *
-     * @param int $animalUpdatedTimeframe
+     * @param string $animalUpdatedTimeframe
      * @return $this
      */
     public function setAnimalUpdatedTimeframe($animalUpdatedTimeframe)
@@ -2732,7 +2732,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Open Intakes
      *
-     * @param int $animalOpenIntakes
+     * @param string $animalOpenIntakes
      * @return $this
      */
     public function setAnimalOpenIntakes($animalOpenIntakes)
@@ -2771,7 +2771,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Outcomes
      *
-     * @param int $animalOutcomes
+     * @param string $animalOutcomes
      * @return $this
      */
     public function setAnimalOutcomes($animalOutcomes)
@@ -4617,7 +4617,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Location
      *
-     * @param enumLookup $locationName
+     * @param string $locationName
      * @return $this
      */
     public function setLocationName($locationName)
@@ -4708,7 +4708,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Comments
      *
-     * @param int $submittedformCommentsCount
+     * @param string $submittedformCommentsCount
      * @return $this
      */
     public function setSubmittedformCommentsCount($submittedformCommentsCount)
@@ -4773,7 +4773,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Status
      *
-     * @param enumLookup $submittedformStatus
+     * @param string $submittedformStatus
      * @return $this
      */
     public function setSubmittedformStatus($submittedformStatus)
@@ -4786,7 +4786,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Steps
      *
-     * @param int $submittedformStepsCount
+     * @param string $submittedformStepsCount
      * @return $this
      */
     public function setSubmittedformStepsCount($submittedformStepsCount)

@@ -12,7 +12,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 {
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $memorialPictureBinary = null;
 
@@ -36,7 +36,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Order
-     * @var integer
+     * @var string
      */
     private $memorialOrder = null;
 
@@ -72,7 +72,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set File
      *
-     * @param binary $memorialPictureBinary
+     * @param string $memorialPictureBinary
      * @return $this
      */
     public function setMemorialPictureBinary($memorialPictureBinary)
@@ -124,7 +124,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Order
      *
-     * @param integer $memorialOrder
+     * @param string $memorialOrder
      * @return $this
      */
     public function setMemorialOrder($memorialOrder)

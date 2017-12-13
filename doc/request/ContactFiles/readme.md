@@ -56,9 +56,9 @@ Sets contactfileDisplayInline field with a value of type string.
 
 #### ::setContactfileSize
 
-Sets contactfileSize field with a value of type int.
+Sets contactfileSize field with a value of type string.
 
-    $query->setContactfileSize(int);
+    $query->setContactfileSize(string);
 
 #### ::setContactfileCreatedDate
 
@@ -96,9 +96,9 @@ Sets contactfileContactID field with a value of type integer.
 
 #### ::setContactfileBinary
 
-Sets contactfileBinary field with a value of type binary.
+Sets contactfileBinary field with a value of type string.
 
-    $query->setContactfileBinary(binary);
+    $query->setContactfileBinary(string);
 
 #### ::setContactfileOldFileName
 

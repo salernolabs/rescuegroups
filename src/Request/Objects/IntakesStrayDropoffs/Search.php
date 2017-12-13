@@ -62,7 +62,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Found State/Province
-     * @var province
+     * @var string
      */
     private $intakesStraydropoffFoundState = null;
 
@@ -232,7 +232,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Found State/Province
      *
-     * @param province $intakesStraydropoffFoundState
+     * @param string $intakesStraydropoffFoundState
      * @return $this
      */
     public function setIntakesStraydropoffFoundState($intakesStraydropoffFoundState)

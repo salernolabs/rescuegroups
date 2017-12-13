@@ -50,7 +50,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Order
-     * @var integer
+     * @var string
      */
     private $memorialOrder = null;
 
@@ -164,7 +164,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Order
      *
-     * @param integer $memorialOrder
+     * @param string $memorialOrder
      * @return $this
      */
     public function setMemorialOrder($memorialOrder)

@@ -30,7 +30,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $eventUrl = null;
 
@@ -123,7 +123,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Web address
      *
-     * @param url $eventUrl
+     * @param string $eventUrl
      * @return $this
      */
     public function setEventUrl($eventUrl)

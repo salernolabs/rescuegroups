@@ -44,7 +44,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $eventUrl = null;
 
@@ -74,7 +74,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location web address
-     * @var url
+     * @var string
      */
     private $locationUrl = null;
 
@@ -92,7 +92,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location state/province
-     * @var province
+     * @var string
      */
     private $locationState = null;
 
@@ -110,7 +110,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location phone
-     * @var phone
+     * @var string
      */
     private $locationPhone = null;
 
@@ -122,13 +122,13 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Location events
-     * @var int
+     * @var string
      */
     private $locationEvents = null;
 
     /**
      * Distance
-     * @var int
+     * @var string
      */
     private $locationDistance = null;
 
@@ -229,7 +229,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Web address
      *
-     * @param url $eventUrl
+     * @param string $eventUrl
      * @return $this
      */
     public function setEventUrl($eventUrl)
@@ -294,7 +294,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location web address
      *
-     * @param url $locationUrl
+     * @param string $locationUrl
      * @return $this
      */
     public function setLocationUrl($locationUrl)
@@ -333,7 +333,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location state/province
      *
-     * @param province $locationState
+     * @param string $locationState
      * @return $this
      */
     public function setLocationState($locationState)
@@ -372,7 +372,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location phone
      *
-     * @param phone $locationPhone
+     * @param string $locationPhone
      * @return $this
      */
     public function setLocationPhone($locationPhone)
@@ -398,7 +398,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Location events
      *
-     * @param int $locationEvents
+     * @param string $locationEvents
      * @return $this
      */
     public function setLocationEvents($locationEvents)
@@ -411,7 +411,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Distance
      *
-     * @param int $locationDistance
+     * @param string $locationDistance
      * @return $this
      */
     public function setLocationDistance($locationDistance)

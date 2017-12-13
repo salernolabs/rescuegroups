@@ -60,7 +60,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Impound State/Province
-     * @var province
+     * @var string
      */
     private $intakesImpoundState = null;
 
@@ -224,7 +224,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Impound State/Province
      *
-     * @param province $intakesImpoundState
+     * @param string $intakesImpoundState
      * @return $this
      */
     public function setIntakesImpoundState($intakesImpoundState)

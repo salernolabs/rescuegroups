@@ -68,7 +68,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $contactState = null;
 
@@ -98,13 +98,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneWork = null;
 
@@ -116,13 +116,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $contactFax = null;
 
@@ -164,7 +164,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Number of bounced email messages
-     * @var int
+     * @var string
      */
     private $contactBounces = null;
 
@@ -371,7 +371,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set State/Province
      *
-     * @param province $contactState
+     * @param string $contactState
      * @return $this
      */
     public function setContactState($contactState)
@@ -436,7 +436,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Home phone number
      *
-     * @param phone $contactPhoneHome
+     * @param string $contactPhoneHome
      * @return $this
      */
     public function setContactPhoneHome($contactPhoneHome)
@@ -449,7 +449,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Work phone number
      *
-     * @param phone $contactPhoneWork
+     * @param string $contactPhoneWork
      * @return $this
      */
     public function setContactPhoneWork($contactPhoneWork)
@@ -475,7 +475,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Cell phone number
      *
-     * @param phone $contactPhoneCell
+     * @param string $contactPhoneCell
      * @return $this
      */
     public function setContactPhoneCell($contactPhoneCell)
@@ -488,7 +488,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Fax number
      *
-     * @param phone $contactFax
+     * @param string $contactFax
      * @return $this
      */
     public function setContactFax($contactFax)
@@ -579,7 +579,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Number of bounced email messages
      *
-     * @param int $contactBounces
+     * @param string $contactBounces
      * @return $this
      */
     public function setContactBounces($contactBounces)

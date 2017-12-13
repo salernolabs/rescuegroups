@@ -78,13 +78,13 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneWork = null;
 
@@ -96,13 +96,13 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $submitterFax = null;
 
@@ -311,7 +311,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Home phone number
      *
-     * @param phone $submitterPhoneHome
+     * @param string $submitterPhoneHome
      * @return $this
      */
     public function setSubmitterPhoneHome($submitterPhoneHome)
@@ -324,7 +324,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Work phone number
      *
-     * @param phone $submitterPhoneWork
+     * @param string $submitterPhoneWork
      * @return $this
      */
     public function setSubmitterPhoneWork($submitterPhoneWork)
@@ -350,7 +350,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Cell phone number
      *
-     * @param phone $submitterPhoneCell
+     * @param string $submitterPhoneCell
      * @return $this
      */
     public function setSubmitterPhoneCell($submitterPhoneCell)
@@ -363,7 +363,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Fax number
      *
-     * @param phone $submitterFax
+     * @param string $submitterFax
      * @return $this
      */
     public function setSubmitterFax($submitterFax)

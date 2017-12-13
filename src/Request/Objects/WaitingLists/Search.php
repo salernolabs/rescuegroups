@@ -38,7 +38,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Members Count
-     * @var int
+     * @var string
      */
     private $waitinglistMembersCount = null;
 
@@ -126,7 +126,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Members Count
      *
-     * @param int $waitinglistMembersCount
+     * @param string $waitinglistMembersCount
      * @return $this
      */
     public function setWaitinglistMembersCount($waitinglistMembersCount)

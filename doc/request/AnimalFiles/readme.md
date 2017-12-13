@@ -62,9 +62,9 @@ Sets animalfilePublic field with a value of type string.
 
 #### ::setAnimalfileSize
 
-Sets animalfileSize field with a value of type int.
+Sets animalfileSize field with a value of type string.
 
-    $query->setAnimalfileSize(int);
+    $query->setAnimalfileSize(string);
 
 #### ::setAnimalfileCreatedDate
 
@@ -102,9 +102,9 @@ Sets animalfileAnimalID field with a value of type integer.
 
 #### ::setAnimalfileBinary
 
-Sets animalfileBinary field with a value of type binary.
+Sets animalfileBinary field with a value of type string.
 
-    $query->setAnimalfileBinary(binary);
+    $query->setAnimalfileBinary(string);
 
 #### ::setAnimalfileOldFileName
 

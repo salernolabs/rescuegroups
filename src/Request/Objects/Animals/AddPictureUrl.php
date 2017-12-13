@@ -18,13 +18,13 @@ class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
 
     /**
      * Picture Url
-     * @var url
+     * @var string
      */
     private $pictureUrl = null;
 
     /**
      * Order
-     * @var int
+     * @var string
      */
     private $mediaOrder = null;
 
@@ -73,7 +73,7 @@ class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     /**
      * Set Picture Url
      *
-     * @param url $pictureUrl
+     * @param string $pictureUrl
      * @return $this
      */
     public function setPictureUrl($pictureUrl)
@@ -86,7 +86,7 @@ class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     /**
      * Set Order
      *
-     * @param int $mediaOrder
+     * @param string $mediaOrder
      * @return $this
      */
     public function setMediaOrder($mediaOrder)

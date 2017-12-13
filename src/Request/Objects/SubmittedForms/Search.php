@@ -44,7 +44,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Comments Count
-     * @var int
+     * @var string
      */
     private $submittedformCommentsCount = null;
 
@@ -182,13 +182,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneWork = null;
 
@@ -200,13 +200,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $submitterPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $submitterFax = null;
 
@@ -248,7 +248,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Number of bounced email messages
-     * @var int
+     * @var string
      */
     private $submitterBounces = null;
 
@@ -391,7 +391,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Comments Count
      *
-     * @param int $submittedformCommentsCount
+     * @param string $submittedformCommentsCount
      * @return $this
      */
     public function setSubmittedformCommentsCount($submittedformCommentsCount)
@@ -690,7 +690,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Home phone number
      *
-     * @param phone $submitterPhoneHome
+     * @param string $submitterPhoneHome
      * @return $this
      */
     public function setSubmitterPhoneHome($submitterPhoneHome)
@@ -703,7 +703,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Work phone number
      *
-     * @param phone $submitterPhoneWork
+     * @param string $submitterPhoneWork
      * @return $this
      */
     public function setSubmitterPhoneWork($submitterPhoneWork)
@@ -729,7 +729,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Cell phone number
      *
-     * @param phone $submitterPhoneCell
+     * @param string $submitterPhoneCell
      * @return $this
      */
     public function setSubmitterPhoneCell($submitterPhoneCell)
@@ -742,7 +742,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Fax number
      *
-     * @param phone $submitterFax
+     * @param string $submitterFax
      * @return $this
      */
     public function setSubmitterFax($submitterFax)
@@ -833,7 +833,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Number of bounced email messages
      *
-     * @param int $submitterBounces
+     * @param string $submitterBounces
      * @return $this
      */
     public function setSubmitterBounces($submitterBounces)

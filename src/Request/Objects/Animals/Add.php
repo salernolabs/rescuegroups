@@ -204,7 +204,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Highlight
-     * @var int
+     * @var string
      */
     private $animalHighlightOrder = null;
 
@@ -1196,7 +1196,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Highlight
      *
-     * @param int $animalHighlightOrder
+     * @param string $animalHighlightOrder
      * @return $this
      */
     public function setAnimalHighlightOrder($animalHighlightOrder)

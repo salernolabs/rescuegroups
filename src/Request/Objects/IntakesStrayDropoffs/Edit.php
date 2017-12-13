@@ -60,7 +60,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Found State/Province
-     * @var province
+     * @var string
      */
     private $intakesStraydropoffFoundState = null;
 
@@ -212,7 +212,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Found State/Province
      *
-     * @param province $intakesStraydropoffFoundState
+     * @param string $intakesStraydropoffFoundState
      * @return $this
      */
     public function setIntakesStraydropoffFoundState($intakesStraydropoffFoundState)

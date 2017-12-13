@@ -54,7 +54,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $userState = null;
 
@@ -78,13 +78,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneWork = null;
 
@@ -96,13 +96,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $userFax = null;
 
@@ -265,7 +265,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set State/Province
      *
-     * @param province $userState
+     * @param string $userState
      * @return $this
      */
     public function setUserState($userState)
@@ -317,7 +317,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Home phone number
      *
-     * @param phone $userPhoneHome
+     * @param string $userPhoneHome
      * @return $this
      */
     public function setUserPhoneHome($userPhoneHome)
@@ -330,7 +330,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Work phone number
      *
-     * @param phone $userPhoneWork
+     * @param string $userPhoneWork
      * @return $this
      */
     public function setUserPhoneWork($userPhoneWork)
@@ -356,7 +356,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Cell phone number
      *
-     * @param phone $userPhoneCell
+     * @param string $userPhoneCell
      * @return $this
      */
     public function setUserPhoneCell($userPhoneCell)
@@ -369,7 +369,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Fax number
      *
-     * @param phone $userFax
+     * @param string $userFax
      * @return $this
      */
     public function setUserFax($userFax)

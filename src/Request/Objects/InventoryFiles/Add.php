@@ -18,7 +18,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $inventoryfileBinary = null;
 
@@ -91,7 +91,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set File
      *
-     * @param binary $inventoryfileBinary
+     * @param string $inventoryfileBinary
      * @return $this
      */
     public function setInventoryfileBinary($inventoryfileBinary)

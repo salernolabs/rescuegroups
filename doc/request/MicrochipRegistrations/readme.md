@@ -38,9 +38,9 @@ Sets microchipRegistrationCreatedDate field with a value of type \DateTime.
 
 #### ::setMicrochipRegistrationCreatedByID
 
-Sets microchipRegistrationCreatedByID field with a value of type int.
+Sets microchipRegistrationCreatedByID field with a value of type string.
 
-    $query->setMicrochipRegistrationCreatedByID(int);
+    $query->setMicrochipRegistrationCreatedByID(string);
 
 #### ::setMicrochipRegistrationUpdatedDate
 
@@ -50,15 +50,15 @@ Sets microchipRegistrationUpdatedDate field with a value of type \DateTime.
 
 #### ::setMicrochipRegistrationUpdatedByID
 
-Sets microchipRegistrationUpdatedByID field with a value of type int.
+Sets microchipRegistrationUpdatedByID field with a value of type string.
 
-    $query->setMicrochipRegistrationUpdatedByID(int);
+    $query->setMicrochipRegistrationUpdatedByID(string);
 
 #### ::setMicrochipRegistrationMicrochipNumber
 
-Sets microchipRegistrationMicrochipNumber field with a value of type microchipnumber.
+Sets microchipRegistrationMicrochipNumber field with a value of type string.
 
-    $query->setMicrochipRegistrationMicrochipNumber(microchipnumber);
+    $query->setMicrochipRegistrationMicrochipNumber(string);
 
 #### ::setMicrochipRegistrationMicrochipVendor
 
@@ -116,9 +116,9 @@ Sets microchipRegistrationRegistrantCity field with a value of type string.
 
 #### ::setMicrochipRegistrationRegistrantState
 
-Sets microchipRegistrationRegistrantState field with a value of type province.
+Sets microchipRegistrationRegistrantState field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantState(province);
+    $query->setMicrochipRegistrationRegistrantState(string);
 
 #### ::setMicrochipRegistrationRegistrantPostalcode
 
@@ -134,15 +134,15 @@ Sets microchipRegistrationRegistrantCountry field with a value of type integer.
 
 #### ::setMicrochipRegistrationRegistrantPrimaryPhone
 
-Sets microchipRegistrationRegistrantPrimaryPhone field with a value of type phone.
+Sets microchipRegistrationRegistrantPrimaryPhone field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantPrimaryPhone(phone);
+    $query->setMicrochipRegistrationRegistrantPrimaryPhone(string);
 
 #### ::setMicrochipRegistrationRegistrantSecondaryPhone
 
-Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type phone.
+Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantSecondaryPhone(phone);
+    $query->setMicrochipRegistrationRegistrantSecondaryPhone(string);
 
 #### ::setMicrochipRegistrationRegistrantPrimaryEmail
 
@@ -190,9 +190,9 @@ Sets microchipRegistrationAnimalID field with a value of type integer.
 
 #### ::setMicrochipRegistrationMicrochipNumber
 
-Sets microchipRegistrationMicrochipNumber field with a value of type microchipnumber.
+Sets microchipRegistrationMicrochipNumber field with a value of type string.
 
-    $query->setMicrochipRegistrationMicrochipNumber(microchipnumber);
+    $query->setMicrochipRegistrationMicrochipNumber(string);
 
 #### ::setMicrochipRegistrationMicrochipVendor
 
@@ -232,9 +232,9 @@ Sets microchipRegistrationRegistrantCity field with a value of type string.
 
 #### ::setMicrochipRegistrationRegistrantState
 
-Sets microchipRegistrationRegistrantState field with a value of type province.
+Sets microchipRegistrationRegistrantState field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantState(province);
+    $query->setMicrochipRegistrationRegistrantState(string);
 
 #### ::setMicrochipRegistrationRegistrantPostalcode
 
@@ -250,15 +250,15 @@ Sets microchipRegistrationRegistrantCountry field with a value of type integer.
 
 #### ::setMicrochipRegistrationRegistrantPrimaryPhone
 
-Sets microchipRegistrationRegistrantPrimaryPhone field with a value of type phone.
+Sets microchipRegistrationRegistrantPrimaryPhone field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantPrimaryPhone(phone);
+    $query->setMicrochipRegistrationRegistrantPrimaryPhone(string);
 
 #### ::setMicrochipRegistrationRegistrantSecondaryPhone
 
-Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type phone.
+Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantSecondaryPhone(phone);
+    $query->setMicrochipRegistrationRegistrantSecondaryPhone(string);
 
 #### ::setMicrochipRegistrationRegistrantPrimaryEmail
 

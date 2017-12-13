@@ -68,9 +68,9 @@ Sets webfileRoleName field with a value of type string.
 
 #### ::setWebfileSize
 
-Sets webfileSize field with a value of type int.
+Sets webfileSize field with a value of type string.
 
-    $query->setWebfileSize(int);
+    $query->setWebfileSize(string);
 
 #### ::setWebfileCreatedDate
 
@@ -102,9 +102,9 @@ Performs webfiles.add query.
 
 #### ::setWebfileBinary
 
-Sets webfileBinary field with a value of type binary.
+Sets webfileBinary field with a value of type string.
 
-    $query->setWebfileBinary(binary);
+    $query->setWebfileBinary(string);
 
 #### ::setWebfileOldFileName
 

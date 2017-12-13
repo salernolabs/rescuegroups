@@ -74,9 +74,9 @@ Sets intakesStraypickupCity field with a value of type string.
 
 #### ::setIntakesStraypickupState
 
-Sets intakesStraypickupState field with a value of type province.
+Sets intakesStraypickupState field with a value of type string.
 
-    $query->setIntakesStraypickupState(province);
+    $query->setIntakesStraypickupState(string);
 
 #### ::setIntakesStraypickupPostalcode
 
@@ -172,9 +172,9 @@ Sets intakesStraypickupCity field with a value of type string.
 
 #### ::setIntakesStraypickupState
 
-Sets intakesStraypickupState field with a value of type province.
+Sets intakesStraypickupState field with a value of type string.
 
-    $query->setIntakesStraypickupState(province);
+    $query->setIntakesStraypickupState(string);
 
 #### ::setIntakesStraypickupPostalcode
 
@@ -252,9 +252,9 @@ Sets intakesStraypickupCity field with a value of type string.
 
 #### ::setIntakesStraypickupState
 
-Sets intakesStraypickupState field with a value of type province.
+Sets intakesStraypickupState field with a value of type string.
 
-    $query->setIntakesStraypickupState(province);
+    $query->setIntakesStraypickupState(string);
 
 #### ::setIntakesStraypickupPostalcode
 
@@ -332,9 +332,9 @@ Sets intakesStraypickupCity field with a value of type string.
 
 #### ::setIntakesStraypickupState
 
-Sets intakesStraypickupState field with a value of type province.
+Sets intakesStraypickupState field with a value of type string.
 
-    $query->setIntakesStraypickupState(province);
+    $query->setIntakesStraypickupState(string);
 
 #### ::setIntakesStraypickupPostalcode
 

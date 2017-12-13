@@ -56,7 +56,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * File size
-     * @var int
+     * @var string
      */
     private $animalfileSize = null;
 
@@ -189,7 +189,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set File size
      *
-     * @param int $animalfileSize
+     * @param string $animalfileSize
      * @return $this
      */
     public function setAnimalfileSize($animalfileSize)

@@ -60,7 +60,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $contactState = null;
 
@@ -90,13 +90,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneWork = null;
 
@@ -108,13 +108,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $contactPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $contactFax = null;
 
@@ -338,7 +338,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set State/Province
      *
-     * @param province $contactState
+     * @param string $contactState
      * @return $this
      */
     public function setContactState($contactState)
@@ -403,7 +403,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Home phone number
      *
-     * @param phone $contactPhoneHome
+     * @param string $contactPhoneHome
      * @return $this
      */
     public function setContactPhoneHome($contactPhoneHome)
@@ -416,7 +416,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Work phone number
      *
-     * @param phone $contactPhoneWork
+     * @param string $contactPhoneWork
      * @return $this
      */
     public function setContactPhoneWork($contactPhoneWork)
@@ -442,7 +442,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Cell phone number
      *
-     * @param phone $contactPhoneCell
+     * @param string $contactPhoneCell
      * @return $this
      */
     public function setContactPhoneCell($contactPhoneCell)
@@ -455,7 +455,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Fax number
      *
-     * @param phone $contactFax
+     * @param string $contactFax
      * @return $this
      */
     public function setContactFax($contactFax)

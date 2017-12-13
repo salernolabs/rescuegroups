@@ -18,7 +18,7 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
 
     /**
      * Picture
-     * @var binary
+     * @var string
      */
     private $pictureBinary = null;
 
@@ -30,7 +30,7 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
 
     /**
      * Order
-     * @var int
+     * @var string
      */
     private $mediaOrder = null;
 
@@ -79,7 +79,7 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
     /**
      * Set Picture
      *
-     * @param binary $pictureBinary
+     * @param string $pictureBinary
      * @return $this
      */
     public function setPictureBinary($pictureBinary)
@@ -105,7 +105,7 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
     /**
      * Set Order
      *
-     * @param int $mediaOrder
+     * @param string $mediaOrder
      * @return $this
      */
     public function setMediaOrder($mediaOrder)

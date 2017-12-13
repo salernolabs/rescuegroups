@@ -24,7 +24,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $locationUrl = null;
 
@@ -42,7 +42,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $locationState = null;
 
@@ -60,7 +60,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Phone
-     * @var phone
+     * @var string
      */
     private $locationPhone = null;
 
@@ -128,7 +128,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Web address
      *
-     * @param url $locationUrl
+     * @param string $locationUrl
      * @return $this
      */
     public function setLocationUrl($locationUrl)
@@ -167,7 +167,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set State/Province
      *
-     * @param province $locationState
+     * @param string $locationState
      * @return $this
      */
     public function setLocationState($locationState)
@@ -206,7 +206,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Phone
      *
-     * @param phone $locationPhone
+     * @param string $locationPhone
      * @return $this
      */
     public function setLocationPhone($locationPhone)

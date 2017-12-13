@@ -68,13 +68,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Open Calls
-     * @var int
+     * @var string
      */
     private $queueOpenCallsCount = null;
 
     /**
      * Members
-     * @var int
+     * @var string
      */
     private $queueMembersCount = null;
 
@@ -227,7 +227,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Open Calls
      *
-     * @param int $queueOpenCallsCount
+     * @param string $queueOpenCallsCount
      * @return $this
      */
     public function setQueueOpenCallsCount($queueOpenCallsCount)
@@ -240,7 +240,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Members
      *
-     * @param int $queueMembersCount
+     * @param string $queueMembersCount
      * @return $this
      */
     public function setQueueMembersCount($queueMembersCount)

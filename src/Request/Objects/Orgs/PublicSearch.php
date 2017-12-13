@@ -44,7 +44,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $orgState = null;
 
@@ -68,13 +68,13 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Phone
-     * @var phone
+     * @var string
      */
     private $orgPhone = null;
 
     /**
      * Fax
-     * @var phone
+     * @var string
      */
     private $orgFax = null;
 
@@ -86,31 +86,31 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Url
-     * @var url
+     * @var string
      */
     private $orgWebsiteUrl = null;
 
     /**
      * Facebook Url
-     * @var url
+     * @var string
      */
     private $orgFacebookUrl = null;
 
     /**
      * Url
-     * @var url
+     * @var string
      */
     private $orgAdoptionUrl = null;
 
     /**
      * Url
-     * @var url
+     * @var string
      */
     private $orgDonationUrl = null;
 
     /**
      * Url
-     * @var url
+     * @var string
      */
     private $orgSponsorshipUrl = null;
 
@@ -152,7 +152,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Distance
-     * @var int
+     * @var string
      */
     private $orgLocationDistance = null;
 
@@ -259,7 +259,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set State/Province
      *
-     * @param province $orgState
+     * @param string $orgState
      * @return $this
      */
     public function setOrgState($orgState)
@@ -311,7 +311,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Phone
      *
-     * @param phone $orgPhone
+     * @param string $orgPhone
      * @return $this
      */
     public function setOrgPhone($orgPhone)
@@ -324,7 +324,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Fax
      *
-     * @param phone $orgFax
+     * @param string $orgFax
      * @return $this
      */
     public function setOrgFax($orgFax)
@@ -350,7 +350,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Url
      *
-     * @param url $orgWebsiteUrl
+     * @param string $orgWebsiteUrl
      * @return $this
      */
     public function setOrgWebsiteUrl($orgWebsiteUrl)
@@ -363,7 +363,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Facebook Url
      *
-     * @param url $orgFacebookUrl
+     * @param string $orgFacebookUrl
      * @return $this
      */
     public function setOrgFacebookUrl($orgFacebookUrl)
@@ -376,7 +376,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Url
      *
-     * @param url $orgAdoptionUrl
+     * @param string $orgAdoptionUrl
      * @return $this
      */
     public function setOrgAdoptionUrl($orgAdoptionUrl)
@@ -389,7 +389,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Url
      *
-     * @param url $orgDonationUrl
+     * @param string $orgDonationUrl
      * @return $this
      */
     public function setOrgDonationUrl($orgDonationUrl)
@@ -402,7 +402,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Url
      *
-     * @param url $orgSponsorshipUrl
+     * @param string $orgSponsorshipUrl
      * @return $this
      */
     public function setOrgSponsorshipUrl($orgSponsorshipUrl)
@@ -493,7 +493,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Distance
      *
-     * @param int $orgLocationDistance
+     * @param string $orgLocationDistance
      * @return $this
      */
     public function setOrgLocationDistance($orgLocationDistance)

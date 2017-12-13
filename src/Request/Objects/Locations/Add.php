@@ -18,7 +18,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Web address
-     * @var url
+     * @var string
      */
     private $locationUrl = null;
 
@@ -36,7 +36,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $locationState = null;
 
@@ -54,7 +54,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Phone
-     * @var phone
+     * @var string
      */
     private $locationPhone = null;
 
@@ -109,7 +109,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Web address
      *
-     * @param url $locationUrl
+     * @param string $locationUrl
      * @return $this
      */
     public function setLocationUrl($locationUrl)
@@ -148,7 +148,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set State/Province
      *
-     * @param province $locationState
+     * @param string $locationState
      * @return $this
      */
     public function setLocationState($locationState)
@@ -187,7 +187,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Phone
      *
-     * @param phone $locationPhone
+     * @param string $locationPhone
      * @return $this
      */
     public function setLocationPhone($locationPhone)

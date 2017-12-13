@@ -78,7 +78,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Quantity
-     * @var int
+     * @var string
      */
     private $inventoryitemQuantity = null;
 
@@ -257,7 +257,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Quantity
      *
-     * @param int $inventoryitemQuantity
+     * @param string $inventoryitemQuantity
      * @return $this
      */
     public function setInventoryitemQuantity($inventoryitemQuantity)

@@ -60,7 +60,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Pickup State/Province
-     * @var province
+     * @var string
      */
     private $intakesStraypickupState = null;
 
@@ -218,7 +218,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Pickup State/Province
      *
-     * @param province $intakesStraypickupState
+     * @param string $intakesStraypickupState
      * @return $this
      */
     public function setIntakesStraypickupState($intakesStraypickupState)

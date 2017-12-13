@@ -54,7 +54,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $outcomesReleaseState = null;
 
@@ -193,7 +193,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set State/Province
      *
-     * @param province $outcomesReleaseState
+     * @param string $outcomesReleaseState
      * @return $this
      */
     public function setOutcomesReleaseState($outcomesReleaseState)

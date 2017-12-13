@@ -18,13 +18,13 @@ class VideoUrlReorder implements \RescueGroups\Request\RequestInterface, \Rescue
 
     /**
      * ID
-     * @var int
+     * @var string
      */
     private $mediaID = null;
 
     /**
      * Order
-     * @var int
+     * @var string
      */
     private $newOrder = null;
 
@@ -73,7 +73,7 @@ class VideoUrlReorder implements \RescueGroups\Request\RequestInterface, \Rescue
     /**
      * Set ID
      *
-     * @param int $mediaID
+     * @param string $mediaID
      * @return $this
      */
     public function setMediaID($mediaID)
@@ -86,7 +86,7 @@ class VideoUrlReorder implements \RescueGroups\Request\RequestInterface, \Rescue
     /**
      * Set Order
      *
-     * @param int $newOrder
+     * @param string $newOrder
      * @return $this
      */
     public function setNewOrder($newOrder)

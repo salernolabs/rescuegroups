@@ -78,9 +78,9 @@ Sets eventEnd field with a value of type \DateTime.
 
 #### ::setEventUrl
 
-Sets eventUrl field with a value of type url.
+Sets eventUrl field with a value of type string.
 
-    $query->setEventUrl(url);
+    $query->setEventUrl(string);
 
 #### ::setEventDescription
 
@@ -108,9 +108,9 @@ Sets locationName field with a value of type string.
 
 #### ::setLocationUrl
 
-Sets locationUrl field with a value of type url.
+Sets locationUrl field with a value of type string.
 
-    $query->setLocationUrl(url);
+    $query->setLocationUrl(string);
 
 #### ::setLocationAddress
 
@@ -126,9 +126,9 @@ Sets locationCity field with a value of type string.
 
 #### ::setLocationState
 
-Sets locationState field with a value of type province.
+Sets locationState field with a value of type string.
 
-    $query->setLocationState(province);
+    $query->setLocationState(string);
 
 #### ::setLocationPostalcode
 
@@ -144,9 +144,9 @@ Sets locationCountry field with a value of type integer.
 
 #### ::setLocationPhone
 
-Sets locationPhone field with a value of type phone.
+Sets locationPhone field with a value of type string.
 
-    $query->setLocationPhone(phone);
+    $query->setLocationPhone(string);
 
 #### ::setLocationPhoneExt
 
@@ -156,15 +156,15 @@ Sets locationPhoneExt field with a value of type string.
 
 #### ::setLocationEvents
 
-Sets locationEvents field with a value of type int.
+Sets locationEvents field with a value of type string.
 
-    $query->setLocationEvents(int);
+    $query->setLocationEvents(string);
 
 #### ::setLocationDistance
 
-Sets locationDistance field with a value of type int.
+Sets locationDistance field with a value of type string.
 
-    $query->setLocationDistance(int);
+    $query->setLocationDistance(string);
 
 
 
@@ -200,9 +200,9 @@ Sets eventEnd field with a value of type \DateTime.
 
 #### ::setEventUrl
 
-Sets eventUrl field with a value of type url.
+Sets eventUrl field with a value of type string.
 
-    $query->setEventUrl(url);
+    $query->setEventUrl(string);
 
 #### ::setEventDescription
 
@@ -218,15 +218,15 @@ Sets eventLocationID field with a value of type integer.
 
 #### ::setEventAnimalAttendance
 
-Sets eventAnimalAttendance field with a value of type int.
+Sets eventAnimalAttendance field with a value of type string.
 
-    $query->setEventAnimalAttendance(int);
+    $query->setEventAnimalAttendance(string);
 
 #### ::setEventMeetrequests
 
-Sets eventMeetrequests field with a value of type int.
+Sets eventMeetrequests field with a value of type string.
 
-    $query->setEventMeetrequests(int);
+    $query->setEventMeetrequests(string);
 
 #### ::setEventSpecies
 
@@ -248,9 +248,9 @@ Sets locationName field with a value of type string.
 
 #### ::setLocationUrl
 
-Sets locationUrl field with a value of type url.
+Sets locationUrl field with a value of type string.
 
-    $query->setLocationUrl(url);
+    $query->setLocationUrl(string);
 
 #### ::setLocationAddress
 
@@ -266,9 +266,9 @@ Sets locationCity field with a value of type string.
 
 #### ::setLocationState
 
-Sets locationState field with a value of type province.
+Sets locationState field with a value of type string.
 
-    $query->setLocationState(province);
+    $query->setLocationState(string);
 
 #### ::setLocationPostalcode
 
@@ -284,9 +284,9 @@ Sets locationCountry field with a value of type integer.
 
 #### ::setLocationPhone
 
-Sets locationPhone field with a value of type phone.
+Sets locationPhone field with a value of type string.
 
-    $query->setLocationPhone(phone);
+    $query->setLocationPhone(string);
 
 #### ::setLocationPhoneExt
 
@@ -296,27 +296,27 @@ Sets locationPhoneExt field with a value of type string.
 
 #### ::setLocationAnimals
 
-Sets locationAnimals field with a value of type int.
+Sets locationAnimals field with a value of type string.
 
-    $query->setLocationAnimals(int);
+    $query->setLocationAnimals(string);
 
 #### ::setLocationEvents
 
-Sets locationEvents field with a value of type int.
+Sets locationEvents field with a value of type string.
 
-    $query->setLocationEvents(int);
+    $query->setLocationEvents(string);
 
 #### ::setLocationColonies
 
-Sets locationColonies field with a value of type int.
+Sets locationColonies field with a value of type string.
 
-    $query->setLocationColonies(int);
+    $query->setLocationColonies(string);
 
 #### ::setLocationMeetrequests
 
-Sets locationMeetrequests field with a value of type int.
+Sets locationMeetrequests field with a value of type string.
 
-    $query->setLocationMeetrequests(int);
+    $query->setLocationMeetrequests(string);
 
 
 
@@ -346,9 +346,9 @@ Sets eventEnd field with a value of type \DateTime.
 
 #### ::setEventUrl
 
-Sets eventUrl field with a value of type url.
+Sets eventUrl field with a value of type string.
 
-    $query->setEventUrl(url);
+    $query->setEventUrl(string);
 
 #### ::setEventDescription
 
@@ -402,9 +402,9 @@ Sets eventEnd field with a value of type \DateTime.
 
 #### ::setEventUrl
 
-Sets eventUrl field with a value of type url.
+Sets eventUrl field with a value of type string.
 
-    $query->setEventUrl(url);
+    $query->setEventUrl(string);
 
 #### ::setEventDescription
 

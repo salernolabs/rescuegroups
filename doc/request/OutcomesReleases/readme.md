@@ -82,9 +82,9 @@ Sets outcomesReleaseCity field with a value of type string.
 
 #### ::setOutcomesReleaseState
 
-Sets outcomesReleaseState field with a value of type province.
+Sets outcomesReleaseState field with a value of type string.
 
-    $query->setOutcomesReleaseState(province);
+    $query->setOutcomesReleaseState(string);
 
 #### ::setOutcomesReleasePostalcode
 
@@ -174,9 +174,9 @@ Sets outcomesReleaseCity field with a value of type string.
 
 #### ::setOutcomesReleaseState
 
-Sets outcomesReleaseState field with a value of type province.
+Sets outcomesReleaseState field with a value of type string.
 
-    $query->setOutcomesReleaseState(province);
+    $query->setOutcomesReleaseState(string);
 
 #### ::setOutcomesReleasePostalcode
 
@@ -242,9 +242,9 @@ Sets outcomesReleaseCity field with a value of type string.
 
 #### ::setOutcomesReleaseState
 
-Sets outcomesReleaseState field with a value of type province.
+Sets outcomesReleaseState field with a value of type string.
 
-    $query->setOutcomesReleaseState(province);
+    $query->setOutcomesReleaseState(string);
 
 #### ::setOutcomesReleasePostalcode
 
@@ -310,9 +310,9 @@ Sets outcomesReleaseCity field with a value of type string.
 
 #### ::setOutcomesReleaseState
 
-Sets outcomesReleaseState field with a value of type province.
+Sets outcomesReleaseState field with a value of type string.
 
-    $query->setOutcomesReleaseState(province);
+    $query->setOutcomesReleaseState(string);
 
 #### ::setOutcomesReleasePostalcode
 

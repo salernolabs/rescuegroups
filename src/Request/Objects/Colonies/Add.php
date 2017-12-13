@@ -24,7 +24,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Number of animals
-     * @var int
+     * @var string
      */
     private $colonyTotalAnimals = null;
 
@@ -98,7 +98,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Number of animals
      *
-     * @param int $colonyTotalAnimals
+     * @param string $colonyTotalAnimals
      * @return $this
      */
     public function setColonyTotalAnimals($colonyTotalAnimals)

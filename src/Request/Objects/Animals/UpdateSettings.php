@@ -18,13 +18,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Babies (Kittens, Puppies) Youngest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListBabiesYoungest = null;
 
     /**
      * Babies (Kittens, Puppies) Oldest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListBabiesOldest = null;
 
@@ -36,13 +36,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Teens Youngest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListTeensYoungest = null;
 
     /**
      * Teens Oldest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListTeensOldest = null;
 
@@ -54,13 +54,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Adults Youngest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListAdultsYoungest = null;
 
     /**
      * Adults Oldest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListAdultsOldest = null;
 
@@ -72,7 +72,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Seniors Youngest Age
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListSeniorsYoungest = null;
 
@@ -84,13 +84,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Long Time/Must Adopt Shortest length of time
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListLongtimeYoungest = null;
 
     /**
      * Long Time/Must Adopt Longest length of time
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListLongtimeOldest = null;
 
@@ -102,7 +102,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Recent Arrivals Shortest length of time
-     * @var int
+     * @var string
      */
     private $setAnimalsSpecialListRecentDays = null;
 
@@ -481,7 +481,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Babies (Kittens, Puppies) Youngest Age
      *
-     * @param int $setAnimalsSpecialListBabiesYoungest
+     * @param string $setAnimalsSpecialListBabiesYoungest
      * @return $this
      */
     public function setSetAnimalsSpecialListBabiesYoungest($setAnimalsSpecialListBabiesYoungest)
@@ -494,7 +494,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Babies (Kittens, Puppies) Oldest Age
      *
-     * @param int $setAnimalsSpecialListBabiesOldest
+     * @param string $setAnimalsSpecialListBabiesOldest
      * @return $this
      */
     public function setSetAnimalsSpecialListBabiesOldest($setAnimalsSpecialListBabiesOldest)
@@ -520,7 +520,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Teens Youngest Age
      *
-     * @param int $setAnimalsSpecialListTeensYoungest
+     * @param string $setAnimalsSpecialListTeensYoungest
      * @return $this
      */
     public function setSetAnimalsSpecialListTeensYoungest($setAnimalsSpecialListTeensYoungest)
@@ -533,7 +533,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Teens Oldest Age
      *
-     * @param int $setAnimalsSpecialListTeensOldest
+     * @param string $setAnimalsSpecialListTeensOldest
      * @return $this
      */
     public function setSetAnimalsSpecialListTeensOldest($setAnimalsSpecialListTeensOldest)
@@ -559,7 +559,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Adults Youngest Age
      *
-     * @param int $setAnimalsSpecialListAdultsYoungest
+     * @param string $setAnimalsSpecialListAdultsYoungest
      * @return $this
      */
     public function setSetAnimalsSpecialListAdultsYoungest($setAnimalsSpecialListAdultsYoungest)
@@ -572,7 +572,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Adults Oldest Age
      *
-     * @param int $setAnimalsSpecialListAdultsOldest
+     * @param string $setAnimalsSpecialListAdultsOldest
      * @return $this
      */
     public function setSetAnimalsSpecialListAdultsOldest($setAnimalsSpecialListAdultsOldest)
@@ -598,7 +598,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Seniors Youngest Age
      *
-     * @param int $setAnimalsSpecialListSeniorsYoungest
+     * @param string $setAnimalsSpecialListSeniorsYoungest
      * @return $this
      */
     public function setSetAnimalsSpecialListSeniorsYoungest($setAnimalsSpecialListSeniorsYoungest)
@@ -624,7 +624,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Long Time/Must Adopt Shortest length of time
      *
-     * @param int $setAnimalsSpecialListLongtimeYoungest
+     * @param string $setAnimalsSpecialListLongtimeYoungest
      * @return $this
      */
     public function setSetAnimalsSpecialListLongtimeYoungest($setAnimalsSpecialListLongtimeYoungest)
@@ -637,7 +637,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Long Time/Must Adopt Longest length of time
      *
-     * @param int $setAnimalsSpecialListLongtimeOldest
+     * @param string $setAnimalsSpecialListLongtimeOldest
      * @return $this
      */
     public function setSetAnimalsSpecialListLongtimeOldest($setAnimalsSpecialListLongtimeOldest)
@@ -663,7 +663,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Recent Arrivals Shortest length of time
      *
-     * @param int $setAnimalsSpecialListRecentDays
+     * @param string $setAnimalsSpecialListRecentDays
      * @return $this
      */
     public function setSetAnimalsSpecialListRecentDays($setAnimalsSpecialListRecentDays)

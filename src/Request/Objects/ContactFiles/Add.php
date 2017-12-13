@@ -18,7 +18,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $contactfileBinary = null;
 
@@ -91,7 +91,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set File
      *
-     * @param binary $contactfileBinary
+     * @param string $contactfileBinary
      * @return $this
      */
     public function setContactfileBinary($contactfileBinary)

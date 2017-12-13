@@ -50,15 +50,15 @@ Sets webimageSize field with a value of type string.
 
 #### ::setWebimageWidth
 
-Sets webimageWidth field with a value of type int.
+Sets webimageWidth field with a value of type string.
 
-    $query->setWebimageWidth(int);
+    $query->setWebimageWidth(string);
 
 #### ::setWebimageHeight
 
-Sets webimageHeight field with a value of type int.
+Sets webimageHeight field with a value of type string.
 
-    $query->setWebimageHeight(int);
+    $query->setWebimageHeight(string);
 
 
 
@@ -84,9 +84,9 @@ Performs webimages.add query.
 
 #### ::setWebimageBinary
 
-Sets webimageBinary field with a value of type binary.
+Sets webimageBinary field with a value of type string.
 
-    $query->setWebimageBinary(binary);
+    $query->setWebimageBinary(string);
 
 #### ::setWebimageOldFileName
 

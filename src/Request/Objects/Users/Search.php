@@ -62,7 +62,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $userState = null;
 
@@ -86,13 +86,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Home phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneHome = null;
 
     /**
      * Work phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneWork = null;
 
@@ -104,13 +104,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Cell phone number
-     * @var phone
+     * @var string
      */
     private $userPhoneCell = null;
 
     /**
      * Fax number
-     * @var phone
+     * @var string
      */
     private $userFax = null;
 
@@ -152,7 +152,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Password reset count
-     * @var int
+     * @var string
      */
     private $userPasswordResetCount = null;
 
@@ -298,7 +298,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set State/Province
      *
-     * @param province $userState
+     * @param string $userState
      * @return $this
      */
     public function setUserState($userState)
@@ -350,7 +350,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Home phone number
      *
-     * @param phone $userPhoneHome
+     * @param string $userPhoneHome
      * @return $this
      */
     public function setUserPhoneHome($userPhoneHome)
@@ -363,7 +363,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Work phone number
      *
-     * @param phone $userPhoneWork
+     * @param string $userPhoneWork
      * @return $this
      */
     public function setUserPhoneWork($userPhoneWork)
@@ -389,7 +389,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Cell phone number
      *
-     * @param phone $userPhoneCell
+     * @param string $userPhoneCell
      * @return $this
      */
     public function setUserPhoneCell($userPhoneCell)
@@ -402,7 +402,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Fax number
      *
-     * @param phone $userFax
+     * @param string $userFax
      * @return $this
      */
     public function setUserFax($userFax)
@@ -493,7 +493,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Password reset count
      *
-     * @param int $userPasswordResetCount
+     * @param string $userPasswordResetCount
      * @return $this
      */
     public function setUserPasswordResetCount($userPasswordResetCount)

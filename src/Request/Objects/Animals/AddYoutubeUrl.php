@@ -18,13 +18,13 @@ class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
 
     /**
      * YouTube Url
-     * @var url
+     * @var string
      */
     private $youtubeUrl = null;
 
     /**
      * Order
-     * @var int
+     * @var string
      */
     private $mediaOrder = null;
 
@@ -73,7 +73,7 @@ class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     /**
      * Set YouTube Url
      *
-     * @param url $youtubeUrl
+     * @param string $youtubeUrl
      * @return $this
      */
     public function setYoutubeUrl($youtubeUrl)
@@ -86,7 +86,7 @@ class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     /**
      * Set Order
      *
-     * @param int $mediaOrder
+     * @param string $mediaOrder
      * @return $this
      */
     public function setMediaOrder($mediaOrder)

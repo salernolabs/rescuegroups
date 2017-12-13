@@ -50,9 +50,9 @@ Sets waitinglistComment field with a value of type string.
 
 #### ::setWaitinglistMembersCount
 
-Sets waitinglistMembersCount field with a value of type int.
+Sets waitinglistMembersCount field with a value of type string.
 
-    $query->setWaitinglistMembersCount(int);
+    $query->setWaitinglistMembersCount(string);
 
 
 

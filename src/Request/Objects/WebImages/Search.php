@@ -44,13 +44,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Width
-     * @var int
+     * @var string
      */
     private $webimageWidth = null;
 
     /**
      * Height
-     * @var int
+     * @var string
      */
     private $webimageHeight = null;
 
@@ -151,7 +151,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Width
      *
-     * @param int $webimageWidth
+     * @param string $webimageWidth
      * @return $this
      */
     public function setWebimageWidth($webimageWidth)
@@ -164,7 +164,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Height
      *
-     * @param int $webimageHeight
+     * @param string $webimageHeight
      * @return $this
      */
     public function setWebimageHeight($webimageHeight)

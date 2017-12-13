@@ -204,7 +204,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Highlight
-     * @var int
+     * @var string
      */
     private $animalHighlightOrder = null;
 
@@ -1202,7 +1202,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Highlight
      *
-     * @param int $animalHighlightOrder
+     * @param string $animalHighlightOrder
      * @return $this
      */
     public function setAnimalHighlightOrder($animalHighlightOrder)

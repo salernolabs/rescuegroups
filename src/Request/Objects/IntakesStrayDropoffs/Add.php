@@ -54,7 +54,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Found State/Province
-     * @var province
+     * @var string
      */
     private $intakesStraydropoffFoundState = null;
 
@@ -193,7 +193,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Found State/Province
      *
-     * @param province $intakesStraydropoffFoundState
+     * @param string $intakesStraydropoffFoundState
      * @return $this
      */
     public function setIntakesStraydropoffFoundState($intakesStraydropoffFoundState)

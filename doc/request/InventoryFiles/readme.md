@@ -50,9 +50,9 @@ Sets inventoryfileDisplayInline field with a value of type string.
 
 #### ::setInventoryfileSize
 
-Sets inventoryfileSize field with a value of type int.
+Sets inventoryfileSize field with a value of type string.
 
-    $query->setInventoryfileSize(int);
+    $query->setInventoryfileSize(string);
 
 #### ::setInventoryfileCreatedDate
 
@@ -134,15 +134,15 @@ Sets inventoryitemStorageLocation field with a value of type string.
 
 #### ::setInventoryitemFiles
 
-Sets inventoryitemFiles field with a value of type int.
+Sets inventoryitemFiles field with a value of type string.
 
-    $query->setInventoryitemFiles(int);
+    $query->setInventoryitemFiles(string);
 
 #### ::setInventoryitemLoaners
 
-Sets inventoryitemLoaners field with a value of type int.
+Sets inventoryitemLoaners field with a value of type string.
 
-    $query->setInventoryitemLoaners(int);
+    $query->setInventoryitemLoaners(string);
 
 
 
@@ -174,9 +174,9 @@ Sets inventoryfileItemID field with a value of type integer.
 
 #### ::setInventoryfileBinary
 
-Sets inventoryfileBinary field with a value of type binary.
+Sets inventoryfileBinary field with a value of type string.
 
-    $query->setInventoryfileBinary(binary);
+    $query->setInventoryfileBinary(string);
 
 #### ::setInventoryfileOldFileName
 

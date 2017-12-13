@@ -74,9 +74,9 @@ Sets intakesStraydropoffFoundCity field with a value of type string.
 
 #### ::setIntakesStraydropoffFoundState
 
-Sets intakesStraydropoffFoundState field with a value of type province.
+Sets intakesStraydropoffFoundState field with a value of type string.
 
-    $query->setIntakesStraydropoffFoundState(province);
+    $query->setIntakesStraydropoffFoundState(string);
 
 #### ::setIntakesStraydropoffFoundPostalcode
 
@@ -160,9 +160,9 @@ Sets intakesStraydropoffFoundCity field with a value of type string.
 
 #### ::setIntakesStraydropoffFoundState
 
-Sets intakesStraydropoffFoundState field with a value of type province.
+Sets intakesStraydropoffFoundState field with a value of type string.
 
-    $query->setIntakesStraydropoffFoundState(province);
+    $query->setIntakesStraydropoffFoundState(string);
 
 #### ::setIntakesStraydropoffFoundPostalcode
 
@@ -234,9 +234,9 @@ Sets intakesStraydropoffFoundCity field with a value of type string.
 
 #### ::setIntakesStraydropoffFoundState
 
-Sets intakesStraydropoffFoundState field with a value of type province.
+Sets intakesStraydropoffFoundState field with a value of type string.
 
-    $query->setIntakesStraydropoffFoundState(province);
+    $query->setIntakesStraydropoffFoundState(string);
 
 #### ::setIntakesStraydropoffFoundPostalcode
 
@@ -308,9 +308,9 @@ Sets intakesStraydropoffFoundCity field with a value of type string.
 
 #### ::setIntakesStraydropoffFoundState
 
-Sets intakesStraydropoffFoundState field with a value of type province.
+Sets intakesStraydropoffFoundState field with a value of type string.
 
-    $query->setIntakesStraydropoffFoundState(province);
+    $query->setIntakesStraydropoffFoundState(string);
 
 #### ::setIntakesStraydropoffFoundPostalcode
 

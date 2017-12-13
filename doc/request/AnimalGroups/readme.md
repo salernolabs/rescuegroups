@@ -52,9 +52,9 @@ Sets groupHeaderID field with a value of type integer.
 
 #### ::setGroupAnimals
 
-Sets groupAnimals field with a value of type int.
+Sets groupAnimals field with a value of type string.
 
-    $query->setGroupAnimals(int);
+    $query->setGroupAnimals(string);
 
 #### ::setWebpageName
 

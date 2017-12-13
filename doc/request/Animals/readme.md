@@ -270,9 +270,9 @@ Sets animalLocationCoordinates field with a value of type string.
 
 #### ::setAnimalLocationDistance
 
-Sets animalLocationDistance field with a value of type int.
+Sets animalLocationDistance field with a value of type string.
 
-    $query->setAnimalLocationDistance(int);
+    $query->setAnimalLocationDistance(string);
 
 #### ::setAnimalLocationCitystate
 
@@ -534,9 +534,9 @@ Sets animalUpdatedDate field with a value of type \DateTime.
 
 #### ::setAnimalUrl
 
-Sets animalUrl field with a value of type url.
+Sets animalUrl field with a value of type string.
 
-    $query->setAnimalUrl(url);
+    $query->setAnimalUrl(string);
 
 #### ::setAnimalVocal
 
@@ -852,9 +852,9 @@ Sets locationUrl field with a value of type string.
 
 #### ::setLocationName
 
-Sets locationName field with a value of type enumLookup.
+Sets locationName field with a value of type string.
 
-    $query->setLocationName(enumLookup);
+    $query->setLocationName(string);
 
 #### ::setLocationPhone
 
@@ -1046,15 +1046,15 @@ Sets animalCreatedByID field with a value of type integer.
 
 #### ::setAnimalCreatedTimeframe
 
-Sets animalCreatedTimeframe field with a value of type int.
+Sets animalCreatedTimeframe field with a value of type string.
 
-    $query->setAnimalCreatedTimeframe(int);
+    $query->setAnimalCreatedTimeframe(string);
 
 #### ::setAnimalDaysInFoster
 
-Sets animalDaysInFoster field with a value of type int.
+Sets animalDaysInFoster field with a value of type string.
 
-    $query->setAnimalDaysInFoster(int);
+    $query->setAnimalDaysInFoster(string);
 
 #### ::setAnimalDeclawed
 
@@ -1160,9 +1160,9 @@ Sets animalGroomingNeeds field with a value of type string.
 
 #### ::setAnimalHighlightOrder
 
-Sets animalHighlightOrder field with a value of type int.
+Sets animalHighlightOrder field with a value of type string.
 
-    $query->setAnimalHighlightOrder(int);
+    $query->setAnimalHighlightOrder(string);
 
 #### ::setAnimalHousetrained
 
@@ -1178,9 +1178,9 @@ Sets animalIndoorOutdoor field with a value of type string.
 
 #### ::setAnimalIntakes
 
-Sets animalIntakes field with a value of type int.
+Sets animalIntakes field with a value of type string.
 
-    $query->setAnimalIntakes(int);
+    $query->setAnimalIntakes(string);
 
 #### ::setAnimalInternalID
 
@@ -1220,9 +1220,9 @@ Sets animalUpdatedDate field with a value of type \DateTime.
 
 #### ::setAnimalUpdatedTimeframe
 
-Sets animalUpdatedTimeframe field with a value of type int.
+Sets animalUpdatedTimeframe field with a value of type string.
 
-    $query->setAnimalUpdatedTimeframe(int);
+    $query->setAnimalUpdatedTimeframe(string);
 
 #### ::setAnimalLocationID
 
@@ -1334,9 +1334,9 @@ Sets animalOKWithKids field with a value of type string.
 
 #### ::setAnimalOpenIntakes
 
-Sets animalOpenIntakes field with a value of type int.
+Sets animalOpenIntakes field with a value of type string.
 
-    $query->setAnimalOpenIntakes(int);
+    $query->setAnimalOpenIntakes(string);
 
 #### ::setAnimalOrigin
 
@@ -1352,9 +1352,9 @@ Sets animalOthernames field with a value of type string.
 
 #### ::setAnimalOutcomes
 
-Sets animalOutcomes field with a value of type int.
+Sets animalOutcomes field with a value of type string.
 
-    $query->setAnimalOutcomes(int);
+    $query->setAnimalOutcomes(string);
 
 #### ::setAnimalOwnerExperience
 
@@ -2204,9 +2204,9 @@ Sets locationMeetrequests field with a value of type string.
 
 #### ::setLocationName
 
-Sets locationName field with a value of type enumLookup.
+Sets locationName field with a value of type string.
 
-    $query->setLocationName(enumLookup);
+    $query->setLocationName(string);
 
 #### ::setLocationPhone
 
@@ -2246,9 +2246,9 @@ Sets submittedformAssignedToID field with a value of type string.
 
 #### ::setSubmittedformCommentsCount
 
-Sets submittedformCommentsCount field with a value of type int.
+Sets submittedformCommentsCount field with a value of type string.
 
-    $query->setSubmittedformCommentsCount(int);
+    $query->setSubmittedformCommentsCount(string);
 
 #### ::setSubmittedformCommentsInline
 
@@ -2276,15 +2276,15 @@ Sets submittedformPending field with a value of type string.
 
 #### ::setSubmittedformStatus
 
-Sets submittedformStatus field with a value of type enumLookup.
+Sets submittedformStatus field with a value of type string.
 
-    $query->setSubmittedformStatus(enumLookup);
+    $query->setSubmittedformStatus(string);
 
 #### ::setSubmittedformStepsCount
 
-Sets submittedformStepsCount field with a value of type int.
+Sets submittedformStepsCount field with a value of type string.
 
-    $query->setSubmittedformStepsCount(int);
+    $query->setSubmittedformStepsCount(string);
 
 #### ::setSubmitterID
 
@@ -2854,9 +2854,9 @@ Sets animalGroomingNeeds field with a value of type string.
 
 #### ::setAnimalHighlightOrder
 
-Sets animalHighlightOrder field with a value of type int.
+Sets animalHighlightOrder field with a value of type string.
 
-    $query->setAnimalHighlightOrder(int);
+    $query->setAnimalHighlightOrder(string);
 
 #### ::setAnimalHousetrained
 
@@ -3600,9 +3600,9 @@ Sets animalGroomingNeeds field with a value of type string.
 
 #### ::setAnimalHighlightOrder
 
-Sets animalHighlightOrder field with a value of type int.
+Sets animalHighlightOrder field with a value of type string.
 
-    $query->setAnimalHighlightOrder(int);
+    $query->setAnimalHighlightOrder(string);
 
 #### ::setAnimalHousetrained
 
@@ -4166,9 +4166,9 @@ Sets animalID field with a value of type integer.
 
 #### ::setPictureBinary
 
-Sets pictureBinary field with a value of type binary.
+Sets pictureBinary field with a value of type string.
 
-    $query->setPictureBinary(binary);
+    $query->setPictureBinary(string);
 
 #### ::setFileName
 
@@ -4178,9 +4178,9 @@ Sets fileName field with a value of type string.
 
 #### ::setMediaOrder
 
-Sets mediaOrder field with a value of type int.
+Sets mediaOrder field with a value of type string.
 
-    $query->setMediaOrder(int);
+    $query->setMediaOrder(string);
 
 
 
@@ -4198,15 +4198,15 @@ Sets animalID field with a value of type integer.
 
 #### ::setPictureUrl
 
-Sets pictureUrl field with a value of type url.
+Sets pictureUrl field with a value of type string.
 
-    $query->setPictureUrl(url);
+    $query->setPictureUrl(string);
 
 #### ::setMediaOrder
 
-Sets mediaOrder field with a value of type int.
+Sets mediaOrder field with a value of type string.
 
-    $query->setMediaOrder(int);
+    $query->setMediaOrder(string);
 
 
 
@@ -4224,9 +4224,9 @@ Sets animalID field with a value of type integer.
 
 #### ::setVideoBinary
 
-Sets videoBinary field with a value of type binary.
+Sets videoBinary field with a value of type string.
 
-    $query->setVideoBinary(binary);
+    $query->setVideoBinary(string);
 
 #### ::setFileName
 
@@ -4236,9 +4236,9 @@ Sets fileName field with a value of type string.
 
 #### ::setMediaOrder
 
-Sets mediaOrder field with a value of type int.
+Sets mediaOrder field with a value of type string.
 
-    $query->setMediaOrder(int);
+    $query->setMediaOrder(string);
 
 
 
@@ -4256,15 +4256,15 @@ Sets animalID field with a value of type integer.
 
 #### ::setYoutubeUrl
 
-Sets youtubeUrl field with a value of type url.
+Sets youtubeUrl field with a value of type string.
 
-    $query->setYoutubeUrl(url);
+    $query->setYoutubeUrl(string);
 
 #### ::setMediaOrder
 
-Sets mediaOrder field with a value of type int.
+Sets mediaOrder field with a value of type string.
 
-    $query->setMediaOrder(int);
+    $query->setMediaOrder(string);
 
 
 
@@ -4282,15 +4282,15 @@ Sets animalID field with a value of type integer.
 
 #### ::setMediaID
 
-Sets mediaID field with a value of type int.
+Sets mediaID field with a value of type string.
 
-    $query->setMediaID(int);
+    $query->setMediaID(string);
 
 #### ::setNewOrder
 
-Sets newOrder field with a value of type int.
+Sets newOrder field with a value of type string.
 
-    $query->setNewOrder(int);
+    $query->setNewOrder(string);
 
 
 
@@ -4308,15 +4308,15 @@ Sets animalID field with a value of type integer.
 
 #### ::setMediaID
 
-Sets mediaID field with a value of type int.
+Sets mediaID field with a value of type string.
 
-    $query->setMediaID(int);
+    $query->setMediaID(string);
 
 #### ::setNewOrder
 
-Sets newOrder field with a value of type int.
+Sets newOrder field with a value of type string.
 
-    $query->setNewOrder(int);
+    $query->setNewOrder(string);
 
 
 
@@ -4334,15 +4334,15 @@ Sets animalID field with a value of type integer.
 
 #### ::setMediaID
 
-Sets mediaID field with a value of type int.
+Sets mediaID field with a value of type string.
 
-    $query->setMediaID(int);
+    $query->setMediaID(string);
 
 #### ::setNewOrder
 
-Sets newOrder field with a value of type int.
+Sets newOrder field with a value of type string.
 
-    $query->setNewOrder(int);
+    $query->setNewOrder(string);
 
 
 
@@ -4502,9 +4502,9 @@ Performs animals.setPublicStatuses query.
 
 #### ::setStatuslist
 
-Sets statuslist field with a value of type int.
+Sets statuslist field with a value of type string.
 
-    $query->setStatuslist(int);
+    $query->setStatuslist(string);
 
 
 
@@ -4530,15 +4530,15 @@ Sets enableAnimalsSpecialListBabies field with a value of type string.
 
 #### ::setSetAnimalsSpecialListBabiesYoungest
 
-Sets setAnimalsSpecialListBabiesYoungest field with a value of type int.
+Sets setAnimalsSpecialListBabiesYoungest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListBabiesYoungest(int);
+    $query->setSetAnimalsSpecialListBabiesYoungest(string);
 
 #### ::setSetAnimalsSpecialListBabiesOldest
 
-Sets setAnimalsSpecialListBabiesOldest field with a value of type int.
+Sets setAnimalsSpecialListBabiesOldest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListBabiesOldest(int);
+    $query->setSetAnimalsSpecialListBabiesOldest(string);
 
 #### ::setEnableAnimalsSpecialListTeens
 
@@ -4548,15 +4548,15 @@ Sets enableAnimalsSpecialListTeens field with a value of type string.
 
 #### ::setSetAnimalsSpecialListTeensYoungest
 
-Sets setAnimalsSpecialListTeensYoungest field with a value of type int.
+Sets setAnimalsSpecialListTeensYoungest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListTeensYoungest(int);
+    $query->setSetAnimalsSpecialListTeensYoungest(string);
 
 #### ::setSetAnimalsSpecialListTeensOldest
 
-Sets setAnimalsSpecialListTeensOldest field with a value of type int.
+Sets setAnimalsSpecialListTeensOldest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListTeensOldest(int);
+    $query->setSetAnimalsSpecialListTeensOldest(string);
 
 #### ::setEnableAnimalsSpecialListAdults
 
@@ -4566,15 +4566,15 @@ Sets enableAnimalsSpecialListAdults field with a value of type string.
 
 #### ::setSetAnimalsSpecialListAdultsYoungest
 
-Sets setAnimalsSpecialListAdultsYoungest field with a value of type int.
+Sets setAnimalsSpecialListAdultsYoungest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListAdultsYoungest(int);
+    $query->setSetAnimalsSpecialListAdultsYoungest(string);
 
 #### ::setSetAnimalsSpecialListAdultsOldest
 
-Sets setAnimalsSpecialListAdultsOldest field with a value of type int.
+Sets setAnimalsSpecialListAdultsOldest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListAdultsOldest(int);
+    $query->setSetAnimalsSpecialListAdultsOldest(string);
 
 #### ::setEnableAnimalsSpecialListSeniors
 
@@ -4584,9 +4584,9 @@ Sets enableAnimalsSpecialListSeniors field with a value of type string.
 
 #### ::setSetAnimalsSpecialListSeniorsYoungest
 
-Sets setAnimalsSpecialListSeniorsYoungest field with a value of type int.
+Sets setAnimalsSpecialListSeniorsYoungest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListSeniorsYoungest(int);
+    $query->setSetAnimalsSpecialListSeniorsYoungest(string);
 
 #### ::setEnableAnimalsSpecialListLongtime
 
@@ -4596,15 +4596,15 @@ Sets enableAnimalsSpecialListLongtime field with a value of type string.
 
 #### ::setSetAnimalsSpecialListLongtimeYoungest
 
-Sets setAnimalsSpecialListLongtimeYoungest field with a value of type int.
+Sets setAnimalsSpecialListLongtimeYoungest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListLongtimeYoungest(int);
+    $query->setSetAnimalsSpecialListLongtimeYoungest(string);
 
 #### ::setSetAnimalsSpecialListLongtimeOldest
 
-Sets setAnimalsSpecialListLongtimeOldest field with a value of type int.
+Sets setAnimalsSpecialListLongtimeOldest field with a value of type string.
 
-    $query->setSetAnimalsSpecialListLongtimeOldest(int);
+    $query->setSetAnimalsSpecialListLongtimeOldest(string);
 
 #### ::setEnableAnimalsSpecialListRecent
 
@@ -4614,9 +4614,9 @@ Sets enableAnimalsSpecialListRecent field with a value of type string.
 
 #### ::setSetAnimalsSpecialListRecentDays
 
-Sets setAnimalsSpecialListRecentDays field with a value of type int.
+Sets setAnimalsSpecialListRecentDays field with a value of type string.
 
-    $query->setSetAnimalsSpecialListRecentDays(int);
+    $query->setSetAnimalsSpecialListRecentDays(string);
 
 #### ::setEnableAnimalsSpecialListSpecialNeeds
 

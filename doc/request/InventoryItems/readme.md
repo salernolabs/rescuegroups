@@ -112,15 +112,15 @@ Sets inventoryitemStorageLocation field with a value of type string.
 
 #### ::setInventoryitemFiles
 
-Sets inventoryitemFiles field with a value of type int.
+Sets inventoryitemFiles field with a value of type string.
 
-    $query->setInventoryitemFiles(int);
+    $query->setInventoryitemFiles(string);
 
 #### ::setInventoryitemLoaners
 
-Sets inventoryitemLoaners field with a value of type int.
+Sets inventoryitemLoaners field with a value of type string.
 
-    $query->setInventoryitemLoaners(int);
+    $query->setInventoryitemLoaners(string);
 
 
 
@@ -198,9 +198,9 @@ Sets inventoryitemStorageLocation field with a value of type string.
 
 #### ::setInventoryitemQuantity
 
-Sets inventoryitemQuantity field with a value of type int.
+Sets inventoryitemQuantity field with a value of type string.
 
-    $query->setInventoryitemQuantity(int);
+    $query->setInventoryitemQuantity(string);
 
 
 

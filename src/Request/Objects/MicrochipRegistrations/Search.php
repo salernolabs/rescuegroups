@@ -26,7 +26,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Created by
-     * @var int
+     * @var string
      */
     private $microchipRegistrationCreatedByID = null;
 
@@ -38,13 +38,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Updated By
-     * @var int
+     * @var string
      */
     private $microchipRegistrationUpdatedByID = null;
 
     /**
      * Microchip number
-     * @var microchipnumber
+     * @var string
      */
     private $microchipRegistrationMicrochipNumber = null;
 
@@ -104,7 +104,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * State/Province
-     * @var province
+     * @var string
      */
     private $microchipRegistrationRegistrantState = null;
 
@@ -122,13 +122,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Primary phone number
-     * @var phone
+     * @var string
      */
     private $microchipRegistrationRegistrantPrimaryPhone = null;
 
     /**
      * Secondary phone number
-     * @var phone
+     * @var string
      */
     private $microchipRegistrationRegistrantSecondaryPhone = null;
 
@@ -220,7 +220,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Created by
      *
-     * @param int $microchipRegistrationCreatedByID
+     * @param string $microchipRegistrationCreatedByID
      * @return $this
      */
     public function setMicrochipRegistrationCreatedByID($microchipRegistrationCreatedByID)
@@ -246,7 +246,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Updated By
      *
-     * @param int $microchipRegistrationUpdatedByID
+     * @param string $microchipRegistrationUpdatedByID
      * @return $this
      */
     public function setMicrochipRegistrationUpdatedByID($microchipRegistrationUpdatedByID)
@@ -259,7 +259,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Microchip number
      *
-     * @param microchipnumber $microchipRegistrationMicrochipNumber
+     * @param string $microchipRegistrationMicrochipNumber
      * @return $this
      */
     public function setMicrochipRegistrationMicrochipNumber($microchipRegistrationMicrochipNumber)
@@ -389,7 +389,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set State/Province
      *
-     * @param province $microchipRegistrationRegistrantState
+     * @param string $microchipRegistrationRegistrantState
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantState($microchipRegistrationRegistrantState)
@@ -428,7 +428,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Primary phone number
      *
-     * @param phone $microchipRegistrationRegistrantPrimaryPhone
+     * @param string $microchipRegistrationRegistrantPrimaryPhone
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantPrimaryPhone($microchipRegistrationRegistrantPrimaryPhone)
@@ -441,7 +441,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Secondary phone number
      *
-     * @param phone $microchipRegistrationRegistrantSecondaryPhone
+     * @param string $microchipRegistrationRegistrantSecondaryPhone
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantSecondaryPhone($microchipRegistrationRegistrantSecondaryPhone)

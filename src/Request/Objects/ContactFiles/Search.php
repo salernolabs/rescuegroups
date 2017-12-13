@@ -50,7 +50,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * File size
-     * @var int
+     * @var string
      */
     private $contactfileSize = null;
 
@@ -170,7 +170,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set File size
      *
-     * @param int $contactfileSize
+     * @param string $contactfileSize
      * @return $this
      */
     public function setContactfileSize($contactfileSize)

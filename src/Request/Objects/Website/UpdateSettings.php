@@ -72,13 +72,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Number of highlighted animals to show on the front page
-     * @var int
+     * @var string
      */
     private $setWebsiteFrontPageNumberOfHighlightedAnimals = null;
 
     /**
      * Amount of highlighted animals' description to show on the front page
-     * @var int
+     * @var string
      */
     private $setWebsiteFrontPageHighlightedAnimalsDescriptionLength = null;
 
@@ -144,7 +144,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Set the side bar width
-     * @var int
+     * @var string
      */
     private $setWebsiteSideBarWidth = null;
 
@@ -180,25 +180,25 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Set the animal browse panel width
-     * @var int
+     * @var string
      */
     private $setWebsiteAnimalBrowsePanelWidth = null;
 
     /**
      * Animal Browse page columns
-     * @var int
+     * @var string
      */
     private $setWebsiteAnimalBrowsePanelColumns = null;
 
     /**
      * Animal Browse page number of animals
-     * @var int
+     * @var string
      */
     private $setWebsiteAnimalBrowseAnimalsPerPage = null;
 
     /**
      * Animal limit
-     * @var int
+     * @var string
      */
     private $setWebsiteAnimalBrowseLimit = null;
 
@@ -216,7 +216,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * How much of each animal's description to display
-     * @var int
+     * @var string
      */
     private $setWebsiteAnimalBrowseDescriptionLength = null;
 
@@ -556,7 +556,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Number of highlighted animals to show on the front page
      *
-     * @param int $setWebsiteFrontPageNumberOfHighlightedAnimals
+     * @param string $setWebsiteFrontPageNumberOfHighlightedAnimals
      * @return $this
      */
     public function setSetWebsiteFrontPageNumberOfHighlightedAnimals($setWebsiteFrontPageNumberOfHighlightedAnimals)
@@ -569,7 +569,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Amount of highlighted animals' description to show on the front page
      *
-     * @param int $setWebsiteFrontPageHighlightedAnimalsDescriptionLength
+     * @param string $setWebsiteFrontPageHighlightedAnimalsDescriptionLength
      * @return $this
      */
     public function setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength($setWebsiteFrontPageHighlightedAnimalsDescriptionLength)
@@ -712,7 +712,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Set the side bar width
      *
-     * @param int $setWebsiteSideBarWidth
+     * @param string $setWebsiteSideBarWidth
      * @return $this
      */
     public function setSetWebsiteSideBarWidth($setWebsiteSideBarWidth)
@@ -790,7 +790,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Set the animal browse panel width
      *
-     * @param int $setWebsiteAnimalBrowsePanelWidth
+     * @param string $setWebsiteAnimalBrowsePanelWidth
      * @return $this
      */
     public function setSetWebsiteAnimalBrowsePanelWidth($setWebsiteAnimalBrowsePanelWidth)
@@ -803,7 +803,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Animal Browse page columns
      *
-     * @param int $setWebsiteAnimalBrowsePanelColumns
+     * @param string $setWebsiteAnimalBrowsePanelColumns
      * @return $this
      */
     public function setSetWebsiteAnimalBrowsePanelColumns($setWebsiteAnimalBrowsePanelColumns)
@@ -816,7 +816,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Animal Browse page number of animals
      *
-     * @param int $setWebsiteAnimalBrowseAnimalsPerPage
+     * @param string $setWebsiteAnimalBrowseAnimalsPerPage
      * @return $this
      */
     public function setSetWebsiteAnimalBrowseAnimalsPerPage($setWebsiteAnimalBrowseAnimalsPerPage)
@@ -829,7 +829,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Animal limit
      *
-     * @param int $setWebsiteAnimalBrowseLimit
+     * @param string $setWebsiteAnimalBrowseLimit
      * @return $this
      */
     public function setSetWebsiteAnimalBrowseLimit($setWebsiteAnimalBrowseLimit)
@@ -868,7 +868,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set How much of each animal's description to display
      *
-     * @param int $setWebsiteAnimalBrowseDescriptionLength
+     * @param string $setWebsiteAnimalBrowseDescriptionLength
      * @return $this
      */
     public function setSetWebsiteAnimalBrowseDescriptionLength($setWebsiteAnimalBrowseDescriptionLength)

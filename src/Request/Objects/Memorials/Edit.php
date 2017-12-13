@@ -18,7 +18,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $memorialPictureBinary = null;
 
@@ -85,7 +85,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set File
      *
-     * @param binary $memorialPictureBinary
+     * @param string $memorialPictureBinary
      * @return $this
      */
     public function setMemorialPictureBinary($memorialPictureBinary)

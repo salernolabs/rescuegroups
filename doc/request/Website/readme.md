@@ -80,15 +80,15 @@ Sets enableWebsiteFrontPageHighlightedAnimals field with a value of type string.
 
 #### ::setSetWebsiteFrontPageNumberOfHighlightedAnimals
 
-Sets setWebsiteFrontPageNumberOfHighlightedAnimals field with a value of type int.
+Sets setWebsiteFrontPageNumberOfHighlightedAnimals field with a value of type string.
 
-    $query->setSetWebsiteFrontPageNumberOfHighlightedAnimals(int);
+    $query->setSetWebsiteFrontPageNumberOfHighlightedAnimals(string);
 
 #### ::setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength
 
-Sets setWebsiteFrontPageHighlightedAnimalsDescriptionLength field with a value of type int.
+Sets setWebsiteFrontPageHighlightedAnimalsDescriptionLength field with a value of type string.
 
-    $query->setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength(int);
+    $query->setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength(string);
 
 #### ::setEnableWebsiteRescueGroupsPoweredByImage
 
@@ -152,9 +152,9 @@ Sets enableWebsiteSparky field with a value of type string.
 
 #### ::setSetWebsiteSideBarWidth
 
-Sets setWebsiteSideBarWidth field with a value of type int.
+Sets setWebsiteSideBarWidth field with a value of type string.
 
-    $query->setSetWebsiteSideBarWidth(int);
+    $query->setSetWebsiteSideBarWidth(string);
 
 #### ::setEnableWebsiteLogo
 
@@ -188,27 +188,27 @@ Sets setWebsiteAnimalBrowseLayout field with a value of type string.
 
 #### ::setSetWebsiteAnimalBrowsePanelWidth
 
-Sets setWebsiteAnimalBrowsePanelWidth field with a value of type int.
+Sets setWebsiteAnimalBrowsePanelWidth field with a value of type string.
 
-    $query->setSetWebsiteAnimalBrowsePanelWidth(int);
+    $query->setSetWebsiteAnimalBrowsePanelWidth(string);
 
 #### ::setSetWebsiteAnimalBrowsePanelColumns
 
-Sets setWebsiteAnimalBrowsePanelColumns field with a value of type int.
+Sets setWebsiteAnimalBrowsePanelColumns field with a value of type string.
 
-    $query->setSetWebsiteAnimalBrowsePanelColumns(int);
+    $query->setSetWebsiteAnimalBrowsePanelColumns(string);
 
 #### ::setSetWebsiteAnimalBrowseAnimalsPerPage
 
-Sets setWebsiteAnimalBrowseAnimalsPerPage field with a value of type int.
+Sets setWebsiteAnimalBrowseAnimalsPerPage field with a value of type string.
 
-    $query->setSetWebsiteAnimalBrowseAnimalsPerPage(int);
+    $query->setSetWebsiteAnimalBrowseAnimalsPerPage(string);
 
 #### ::setSetWebsiteAnimalBrowseLimit
 
-Sets setWebsiteAnimalBrowseLimit field with a value of type int.
+Sets setWebsiteAnimalBrowseLimit field with a value of type string.
 
-    $query->setSetWebsiteAnimalBrowseLimit(int);
+    $query->setSetWebsiteAnimalBrowseLimit(string);
 
 #### ::setDisableWebsiteAnimalBrowseCourtesyListings
 
@@ -224,9 +224,9 @@ Sets showWebsiteAnimalBrowseSponsorshipLink field with a value of type string.
 
 #### ::setSetWebsiteAnimalBrowseDescriptionLength
 
-Sets setWebsiteAnimalBrowseDescriptionLength field with a value of type int.
+Sets setWebsiteAnimalBrowseDescriptionLength field with a value of type string.
 
-    $query->setSetWebsiteAnimalBrowseDescriptionLength(int);
+    $query->setSetWebsiteAnimalBrowseDescriptionLength(string);
 
 #### ::setSetWebsiteAnimalBrowseFields
 

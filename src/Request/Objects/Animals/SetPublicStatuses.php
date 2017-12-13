@@ -12,7 +12,7 @@ class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
 {
     /**
      * Statuses
-     * @var int
+     * @var string
      */
     private $statuslist = null;
 
@@ -48,7 +48,7 @@ class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
     /**
      * Set Statuses
      *
-     * @param int $statuslist
+     * @param string $statuslist
      * @return $this
      */
     public function setStatuslist($statuslist)

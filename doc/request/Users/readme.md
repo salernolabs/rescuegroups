@@ -82,9 +82,9 @@ Sets userCity field with a value of type string.
 
 #### ::setUserState
 
-Sets userState field with a value of type province.
+Sets userState field with a value of type string.
 
-    $query->setUserState(province);
+    $query->setUserState(string);
 
 #### ::setUserPostalcode
 
@@ -106,15 +106,15 @@ Sets userCountry field with a value of type integer.
 
 #### ::setUserPhoneHome
 
-Sets userPhoneHome field with a value of type phone.
+Sets userPhoneHome field with a value of type string.
 
-    $query->setUserPhoneHome(phone);
+    $query->setUserPhoneHome(string);
 
 #### ::setUserPhoneWork
 
-Sets userPhoneWork field with a value of type phone.
+Sets userPhoneWork field with a value of type string.
 
-    $query->setUserPhoneWork(phone);
+    $query->setUserPhoneWork(string);
 
 #### ::setUserPhoneWorkExt
 
@@ -124,15 +124,15 @@ Sets userPhoneWorkExt field with a value of type string.
 
 #### ::setUserPhoneCell
 
-Sets userPhoneCell field with a value of type phone.
+Sets userPhoneCell field with a value of type string.
 
-    $query->setUserPhoneCell(phone);
+    $query->setUserPhoneCell(string);
 
 #### ::setUserFax
 
-Sets userFax field with a value of type phone.
+Sets userFax field with a value of type string.
 
-    $query->setUserFax(phone);
+    $query->setUserFax(string);
 
 #### ::setUserEmail
 
@@ -172,9 +172,9 @@ Sets userLastPasswordResetDate field with a value of type \DateTime.
 
 #### ::setUserPasswordResetCount
 
-Sets userPasswordResetCount field with a value of type int.
+Sets userPasswordResetCount field with a value of type string.
 
-    $query->setUserPasswordResetCount(int);
+    $query->setUserPasswordResetCount(string);
 
 #### ::setUserStatus
 
@@ -234,9 +234,9 @@ Sets userCity field with a value of type string.
 
 #### ::setUserState
 
-Sets userState field with a value of type province.
+Sets userState field with a value of type string.
 
-    $query->setUserState(province);
+    $query->setUserState(string);
 
 #### ::setUserPostalcode
 
@@ -258,15 +258,15 @@ Sets userCountry field with a value of type integer.
 
 #### ::setUserPhoneHome
 
-Sets userPhoneHome field with a value of type phone.
+Sets userPhoneHome field with a value of type string.
 
-    $query->setUserPhoneHome(phone);
+    $query->setUserPhoneHome(string);
 
 #### ::setUserPhoneWork
 
-Sets userPhoneWork field with a value of type phone.
+Sets userPhoneWork field with a value of type string.
 
-    $query->setUserPhoneWork(phone);
+    $query->setUserPhoneWork(string);
 
 #### ::setUserPhoneWorkExt
 
@@ -276,15 +276,15 @@ Sets userPhoneWorkExt field with a value of type string.
 
 #### ::setUserPhoneCell
 
-Sets userPhoneCell field with a value of type phone.
+Sets userPhoneCell field with a value of type string.
 
-    $query->setUserPhoneCell(phone);
+    $query->setUserPhoneCell(string);
 
 #### ::setUserFax
 
-Sets userFax field with a value of type phone.
+Sets userFax field with a value of type string.
 
-    $query->setUserFax(phone);
+    $query->setUserFax(string);
 
 #### ::setUserEmail
 
@@ -380,9 +380,9 @@ Sets userCity field with a value of type string.
 
 #### ::setUserState
 
-Sets userState field with a value of type province.
+Sets userState field with a value of type string.
 
-    $query->setUserState(province);
+    $query->setUserState(string);
 
 #### ::setUserPostalcode
 
@@ -404,15 +404,15 @@ Sets userCountry field with a value of type integer.
 
 #### ::setUserPhoneHome
 
-Sets userPhoneHome field with a value of type phone.
+Sets userPhoneHome field with a value of type string.
 
-    $query->setUserPhoneHome(phone);
+    $query->setUserPhoneHome(string);
 
 #### ::setUserPhoneWork
 
-Sets userPhoneWork field with a value of type phone.
+Sets userPhoneWork field with a value of type string.
 
-    $query->setUserPhoneWork(phone);
+    $query->setUserPhoneWork(string);
 
 #### ::setUserPhoneWorkExt
 
@@ -422,15 +422,15 @@ Sets userPhoneWorkExt field with a value of type string.
 
 #### ::setUserPhoneCell
 
-Sets userPhoneCell field with a value of type phone.
+Sets userPhoneCell field with a value of type string.
 
-    $query->setUserPhoneCell(phone);
+    $query->setUserPhoneCell(string);
 
 #### ::setUserFax
 
-Sets userFax field with a value of type phone.
+Sets userFax field with a value of type string.
 
-    $query->setUserFax(phone);
+    $query->setUserFax(string);
 
 #### ::setUserEmail
 

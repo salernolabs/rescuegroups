@@ -243,6 +243,7 @@ class RequestGenerator
         $this->responseConstructorTemplate = file_get_contents(__DIR__ . '/templates/segments/set-constructor-item.tpl');
         $this->responseConstructorItemTemplate = file_get_contents(__DIR__ . '/templates/segments/public-fields.php.tpl');
 
+
         $queryDocLinks = '';
 
         //Check definitions with vcr for data
@@ -296,22 +297,7 @@ class RequestGenerator
         $testDir = __DIR__ . '/../../tests/Request/Objects/' . $className;
         $docDir = __DIR__ . '/../../doc/request/' . $className;
 
-        $responseClassName = $className;
-        if (substr($responseClassName, -7) != 'Species')
-        {
-            if (substr($responseClassName, -3) == 'ses')
-            {
-                $responseClassName = substr($responseClassName, 0, -2);
-            }
-            elseif (substr($responseClassName, -3) == 'ies')
-            {
-                $responseClassName = substr($responseClassName, 0, -3) . 'y';
-            }
-            elseif (substr($responseClassName, -1) == 's')
-            {
-                $responseClassName = substr($responseClassName, 0, -1);
-            }
-        }
+        $responseClassName = $this->getResponseObjectClassName($className);
         $responseObject = __DIR__ . '/../../src/Response/Objects/' . $responseClassName . '.php';
 
         if (!is_dir($dir))
@@ -449,29 +435,27 @@ class RequestGenerator
 
                     if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
 
-                    if ($fieldData->type == 'key')
+                    switch ($fieldData->type)
                     {
-                        $fieldData->type = 'integer';
-                    }
-                    else if ($fieldData->type == 'date')
-                    {
-                        $fieldData->type = '\DateTime';
-                    }
-                    else if ($fieldData->type == 'datetime')
-                    {
-                        $fieldData->type = '\DateTime';
-                    }
-                    else if ($fieldData->type == 'postalcode')
-                    {
-                        $fieldData->type = 'string';
-                    }
-                    else if ($fieldData->type == 'email')
-                    {
-                        $fieldData->type = 'string';
-                    }
-                    else if ($fieldData->type == 'decimal')
-                    {
-                        $fieldData->type = 'float';
+                        case 'key':
+                            $fieldData->type = 'integer';
+                            break;
+
+                        case 'date':
+                            $fieldData->type = '\DateTime';
+                            break;
+
+                        case 'datetime':
+                            $fieldData->type = '\DateTime';
+                            break;
+
+                        case 'decimal':
+                            $fieldData->type = 'float';
+                            break;
+
+                        default:
+                            $fieldData->type = 'string';
+                            break;
                     }
 
                     $fieldReplaceData = [
@@ -520,7 +504,7 @@ class RequestGenerator
             file_put_contents($requestTestFileName, $testClassContent);
 
             //Avoid writing empty response object classes
-            if (!empty($constructorFields))
+            if (!empty($constructorFields) && $requestClassName == 'Add')
             {
                 file_put_contents($responseObject, $responseObjectContent);
             }
@@ -537,6 +521,33 @@ class RequestGenerator
 
         $mainDocContents = str_replace($docReplaceFields, $docReplaceVars, $this->docTemplate);
         file_put_contents($mainDocFile, $mainDocContents);
+    }
+
+    /**
+     * Get response object class name
+     *
+     * @param $responseClassName
+     * @return string
+     */
+    private function getResponseObjectClassName($responseClassName)
+    {
+        if (substr($responseClassName, -7) != 'Species')
+        {
+            if (substr($responseClassName, -3) == 'ses')
+            {
+                $responseClassName = substr($responseClassName, 0, -2);
+            }
+            elseif (substr($responseClassName, -3) == 'ies')
+            {
+                $responseClassName = substr($responseClassName, 0, -3) . 'y';
+            }
+            elseif (substr($responseClassName, -1) == 's')
+            {
+                $responseClassName = substr($responseClassName, 0, -1);
+            }
+        }
+
+        return $responseClassName;
     }
 
 }

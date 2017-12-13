@@ -74,9 +74,9 @@ Sets intakesImpoundCity field with a value of type string.
 
 #### ::setIntakesImpoundState
 
-Sets intakesImpoundState field with a value of type province.
+Sets intakesImpoundState field with a value of type string.
 
-    $query->setIntakesImpoundState(province);
+    $query->setIntakesImpoundState(string);
 
 #### ::setIntakesImpoundPostalcode
 
@@ -184,9 +184,9 @@ Sets intakesImpoundCity field with a value of type string.
 
 #### ::setIntakesImpoundState
 
-Sets intakesImpoundState field with a value of type province.
+Sets intakesImpoundState field with a value of type string.
 
-    $query->setIntakesImpoundState(province);
+    $query->setIntakesImpoundState(string);
 
 #### ::setIntakesImpoundPostalcode
 
@@ -270,9 +270,9 @@ Sets intakesImpoundCity field with a value of type string.
 
 #### ::setIntakesImpoundState
 
-Sets intakesImpoundState field with a value of type province.
+Sets intakesImpoundState field with a value of type string.
 
-    $query->setIntakesImpoundState(province);
+    $query->setIntakesImpoundState(string);
 
 #### ::setIntakesImpoundPostalcode
 
@@ -356,9 +356,9 @@ Sets intakesImpoundCity field with a value of type string.
 
 #### ::setIntakesImpoundState
 
-Sets intakesImpoundState field with a value of type province.
+Sets intakesImpoundState field with a value of type string.
 
-    $query->setIntakesImpoundState(province);
+    $query->setIntakesImpoundState(string);
 
 #### ::setIntakesImpoundPostalcode
 

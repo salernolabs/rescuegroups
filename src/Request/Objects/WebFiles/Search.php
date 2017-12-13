@@ -62,7 +62,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * File size
-     * @var int
+     * @var string
      */
     private $webfileSize = null;
 
@@ -208,7 +208,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set File size
      *
-     * @param int $webfileSize
+     * @param string $webfileSize
      * @return $this
      */
     public function setWebfileSize($webfileSize)

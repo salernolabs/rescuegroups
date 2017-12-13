@@ -92,13 +92,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Files
-     * @var int
+     * @var string
      */
     private $inventoryitemFiles = null;
 
     /**
      * Loaners
-     * @var int
+     * @var string
      */
     private $inventoryitemLoaners = null;
 
@@ -303,7 +303,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Files
      *
-     * @param int $inventoryitemFiles
+     * @param string $inventoryitemFiles
      * @return $this
      */
     public function setInventoryitemFiles($inventoryitemFiles)
@@ -316,7 +316,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Loaners
      *
-     * @param int $inventoryitemLoaners
+     * @param string $inventoryitemLoaners
      * @return $this
      */
     public function setInventoryitemLoaners($inventoryitemLoaners)

@@ -12,7 +12,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 {
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $webimageBinary = null;
 
@@ -60,7 +60,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set File
      *
-     * @param binary $webimageBinary
+     * @param string $webimageBinary
      * @return $this
      */
     public function setWebimageBinary($webimageBinary)

@@ -12,7 +12,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 {
     /**
      * File
-     * @var binary
+     * @var string
      */
     private $webfileBinary = null;
 
@@ -78,7 +78,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set File
      *
-     * @param binary $webfileBinary
+     * @param string $webfileBinary
      * @return $this
      */
     public function setWebfileBinary($webfileBinary)

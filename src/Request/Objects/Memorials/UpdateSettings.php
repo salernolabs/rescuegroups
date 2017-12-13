@@ -18,7 +18,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 
     /**
      * Select Memorials donation store item
-     * @var int
+     * @var string
      */
     private $setMemorialsDonationOnlineStoreItem = null;
 
@@ -73,7 +73,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set Select Memorials donation store item
      *
-     * @param int $setMemorialsDonationOnlineStoreItem
+     * @param string $setMemorialsDonationOnlineStoreItem
      * @return $this
      */
     public function setSetMemorialsDonationOnlineStoreItem($setMemorialsDonationOnlineStoreItem)

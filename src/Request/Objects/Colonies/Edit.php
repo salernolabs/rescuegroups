@@ -30,7 +30,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Number of animals
-     * @var int
+     * @var string
      */
     private $colonyTotalAnimals = null;
 
@@ -117,7 +117,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Number of animals
      *
-     * @param int $colonyTotalAnimals
+     * @param string $colonyTotalAnimals
      * @return $this
      */
     public function setColonyTotalAnimals($colonyTotalAnimals)
