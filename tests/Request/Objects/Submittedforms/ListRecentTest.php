@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms\ListRecent;
+namespace RescueGroups\Tests\Request\Objects\Submittedforms;
 
 class ListRecentTest extends \PHPUnit\Framework\TestCase
 {

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesStrayPickups\Add;
+namespace RescueGroups\Tests\Request\Objects\IntakesStrayPickups;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {

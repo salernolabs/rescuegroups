@@ -1,12 +1,12 @@
 <?php
 /**
- * AnimalsMeetRequest View Request Test
+ * AnimalsMeetRequests View Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests\View;
+namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {
@@ -27,7 +27,7 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
-        $this->assertEquals("animalsMeetrequest", $data["objectType"]);
+        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
 
         $this->assertEquals("view", $data["objectAction"]);
 

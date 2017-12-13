@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\AddPictureUrl;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class AddPictureUrlTest extends \PHPUnit\Framework\TestCase
 {

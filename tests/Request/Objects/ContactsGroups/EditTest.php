@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\ContactsGroups\Edit;
+namespace RescueGroups\Tests\Request\Objects\ContactsGroups;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

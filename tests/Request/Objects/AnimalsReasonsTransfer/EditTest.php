@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsTransfer\Edit;
+namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsTransfer;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

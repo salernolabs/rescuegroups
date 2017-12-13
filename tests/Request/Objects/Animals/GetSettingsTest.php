@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\GetSettings;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class GetSettingsTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 /**
- * AnimalsMeetRequest Edit Request Test
+ * AnimalsMeetRequests Edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests\Edit;
+namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {
@@ -32,7 +32,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
-        $this->assertEquals("animalsMeetrequest", $data["objectType"]);
+        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
 
         $this->assertEquals("edit", $data["objectAction"]);
 

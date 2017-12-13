@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\PictureReorder;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class PictureReorderTest extends \PHPUnit\Framework\TestCase
 {

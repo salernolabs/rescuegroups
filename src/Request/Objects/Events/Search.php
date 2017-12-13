@@ -61,10 +61,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     private $eventAnimalAttendance = null;
 
     /**
-     * Event meet request
+     * Event meet requests
      * @var int
      */
-    private $eventMeetrequest = null;
+    private $eventMeetrequests = null;
 
     /**
      * Species attending
@@ -151,10 +151,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     private $locationColonies = null;
 
     /**
-     * Location meet request
+     * Location meet requests
      * @var int
      */
-    private $locationMeetrequest = null;
+    private $locationMeetrequests = null;
 
 
     /**
@@ -290,14 +290,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Event meet request
+     * Set Event meet requests
      *
-     * @param int $eventMeetrequest
+     * @param int $eventMeetrequests
      * @return $this
      */
-    public function setEventMeetrequest($eventMeetrequest)
+    public function setEventMeetrequests($eventMeetrequests)
     {
-        $this->eventMeetrequest = $eventMeetrequest;
+        $this->eventMeetrequests = $eventMeetrequests;
 
         return $this;
     }
@@ -485,14 +485,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Location meet request
+     * Set Location meet requests
      *
-     * @param int $locationMeetrequest
+     * @param int $locationMeetrequests
      * @return $this
      */
-    public function setLocationMeetrequest($locationMeetrequest)
+    public function setLocationMeetrequests($locationMeetrequests)
     {
-        $this->locationMeetrequest = $locationMeetrequest;
+        $this->locationMeetrequests = $locationMeetrequests;
 
         return $this;
     }
@@ -513,7 +513,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         if ($this->eventDescription !== null) $parameterArray['eventDescription'] = $this->eventDescription;
         if ($this->eventLocationID !== null) $parameterArray['eventLocationID'] = $this->eventLocationID;
         if ($this->eventAnimalAttendance !== null) $parameterArray['eventAnimalAttendance'] = $this->eventAnimalAttendance;
-        if ($this->eventMeetrequest !== null) $parameterArray['eventMeetrequest'] = $this->eventMeetrequest;
+        if ($this->eventMeetrequests !== null) $parameterArray['eventMeetrequests'] = $this->eventMeetrequests;
         if ($this->eventSpecies !== null) $parameterArray['eventSpecies'] = $this->eventSpecies;
         if ($this->locationID !== null) $parameterArray['locationID'] = $this->locationID;
         if ($this->locationName !== null) $parameterArray['locationName'] = $this->locationName;
@@ -528,7 +528,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         if ($this->locationAnimals !== null) $parameterArray['locationAnimals'] = $this->locationAnimals;
         if ($this->locationEvents !== null) $parameterArray['locationEvents'] = $this->locationEvents;
         if ($this->locationColonies !== null) $parameterArray['locationColonies'] = $this->locationColonies;
-        if ($this->locationMeetrequest !== null) $parameterArray['locationMeetrequest'] = $this->locationMeetrequest;
+        if ($this->locationMeetrequests !== null) $parameterArray['locationMeetrequests'] = $this->locationMeetrequests;
 
         $this->addSearchParameters($parameterArray);
 

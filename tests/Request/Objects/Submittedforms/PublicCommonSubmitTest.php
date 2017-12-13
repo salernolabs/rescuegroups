@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms\PublicCommonSubmit;
+namespace RescueGroups\Tests\Request\Objects\Submittedforms;
 
 class PublicCommonSubmitTest extends \PHPUnit\Framework\TestCase
 {

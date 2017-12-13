@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Contacts\UpdateSettings;
+namespace RescueGroups\Tests\Request\Objects\Contacts;
 
 class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 {

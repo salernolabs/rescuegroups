@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\SetEnabledSpecies;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class SetEnabledSpeciesTest extends \PHPUnit\Framework\TestCase
 {

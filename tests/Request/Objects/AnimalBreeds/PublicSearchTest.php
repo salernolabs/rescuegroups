@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalBreeds\PublicSearch;
+namespace RescueGroups\Tests\Request\Objects\AnimalBreeds;
 
 class PublicSearchTest extends \PHPUnit\Framework\TestCase
 {

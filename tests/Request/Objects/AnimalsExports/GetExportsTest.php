@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsExports\GetExports;
+namespace RescueGroups\Tests\Request\Objects\AnimalsExports;
 
 class GetExportsTest extends \PHPUnit\Framework\TestCase
 {

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance\Search;
+namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
@@ -36,7 +36,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $query->setEventDescription("eventDescription");
         $query->setEventLocationID("eventLocationID");
         $query->setEventAnimalAttendance("eventAnimalAttendance");
-        $query->setEventMeetrequest("eventMeetrequest");
+        $query->setEventMeetrequests("eventMeetrequests");
         $query->setEventSpecies("eventSpecies");
         $query->setEventLocationName("eventLocationName");
         $query->setEventLocationUrl("eventLocationUrl");
@@ -50,7 +50,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $query->setEventLocationAnimals("eventLocationAnimals");
         $query->setEventLocationEvents("eventLocationEvents");
         $query->setEventLocationColonies("eventLocationColonies");
-        $query->setEventLocationMeetrequest("eventLocationMeetrequest");
+        $query->setEventLocationMeetrequests("eventLocationMeetrequests");
 
         $data = $this->api->getPostObject($query);
 
@@ -73,7 +73,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("eventDescription", $data["eventDescription"]);
         $this->assertEquals("eventLocationID", $data["eventLocationID"]);
         $this->assertEquals("eventAnimalAttendance", $data["eventAnimalAttendance"]);
-        $this->assertEquals("eventMeetrequest", $data["eventMeetrequest"]);
+        $this->assertEquals("eventMeetrequests", $data["eventMeetrequests"]);
         $this->assertEquals("eventSpecies", $data["eventSpecies"]);
         $this->assertEquals("eventLocationName", $data["eventLocationName"]);
         $this->assertEquals("eventLocationUrl", $data["eventLocationUrl"]);
@@ -87,6 +87,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("eventLocationAnimals", $data["eventLocationAnimals"]);
         $this->assertEquals("eventLocationEvents", $data["eventLocationEvents"]);
         $this->assertEquals("eventLocationColonies", $data["eventLocationColonies"]);
-        $this->assertEquals("eventLocationMeetrequest", $data["eventLocationMeetrequest"]);
+        $this->assertEquals("eventLocationMeetrequests", $data["eventLocationMeetrequests"]);
     }
 }

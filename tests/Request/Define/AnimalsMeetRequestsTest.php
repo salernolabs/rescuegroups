@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequest Define Request Test
+ * AnimalsMeetRequests Define Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -19,7 +19,7 @@ class AnimalsMeetRequestsTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalsMeetRequest.json');
+        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-AnimalsMeetRequests.json');
         $this->api
             ->setCustomGuzzleHandler($vcr);
 

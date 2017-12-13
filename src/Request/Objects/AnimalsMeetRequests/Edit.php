@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequest Edit Request
+ * AnimalsMeetRequests Edit Request
  *
  * @package RescueGroups
  * @subpackage Request
@@ -62,7 +62,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function getObjectType()
     {
-        return 'animalsMeetrequest';
+        return 'animalsMeetrequests';
     }
 
     /**

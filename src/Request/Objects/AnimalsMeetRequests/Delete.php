@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequest Delete Request
+ * AnimalsMeetRequests Delete Request
  *
  * @package RescueGroups
  * @subpackage Request
@@ -32,7 +32,7 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function getObjectType()
     {
-        return 'animalsMeetrequest';
+        return 'animalsMeetrequests';
     }
 
     /**

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Memorials\Delete;
+namespace RescueGroups\Tests\Request\Objects\Memorials;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {

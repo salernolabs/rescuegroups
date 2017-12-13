@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsEuthanasia\Add;
+namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsEuthanasia;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {

@@ -83,7 +83,7 @@ class RequestGenerator
         'animalsJournalEntrytypes' => 'AnimalsJournalEntryTypes',
         'animalsJournalEntries' => 'AnimalsJournalEntries',
         //'animalsMedia' => 'AnimalsMedia',
-        'animalsMeetrequest' => 'AnimalsMeetRequest',
+        'animalsMeetrequests' => 'AnimalsMeetRequests',
         'animalPatterns' => 'AnimalPatterns',
         'animalQualities' => 'AnimalQualities',
         'animalsExports' => 'AnimalsExports',

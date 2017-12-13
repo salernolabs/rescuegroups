@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalSpecies\PublicList;
+namespace RescueGroups\Tests\Request\Objects\AnimalSpecies;
 
 class PublicListTest extends \PHPUnit\Framework\TestCase
 {

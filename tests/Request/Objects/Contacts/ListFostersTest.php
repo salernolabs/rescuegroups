@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Contacts\ListFosters;
+namespace RescueGroups\Tests\Request\Objects\Contacts;
 
 class ListFostersTest extends \PHPUnit\Framework\TestCase
 {

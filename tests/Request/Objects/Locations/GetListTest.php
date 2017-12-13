@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Locations\GetList;
+namespace RescueGroups\Tests\Request\Objects\Locations;
 
 class GetListTest extends \PHPUnit\Framework\TestCase
 {

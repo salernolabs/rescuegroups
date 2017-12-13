@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\InventoryFiles\Edit;
+namespace RescueGroups\Tests\Request\Objects\InventoryFiles;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

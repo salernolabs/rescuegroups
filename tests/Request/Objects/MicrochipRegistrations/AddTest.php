@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations\Add;
+namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsImpound\Delete;
+namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsImpound;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {

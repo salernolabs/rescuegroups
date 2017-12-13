@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\VolunteerHours\View;
+namespace RescueGroups\Tests\Request\Objects\VolunteerHours;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

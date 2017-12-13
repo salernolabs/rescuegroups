@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\InventoryItems\View;
+namespace RescueGroups\Tests\Request\Objects\InventoryItems;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

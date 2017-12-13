@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequest Search Request
+ * AnimalsMeetRequests Search Request
  *
  * @package RescueGroups
  * @subpackage Request
@@ -94,7 +94,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function getObjectType()
     {
-        return 'animalsMeetrequest';
+        return 'animalsMeetrequests';
     }
 
     /**

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Memorials\UpdateSettings;
+namespace RescueGroups\Tests\Request\Objects\Memorials;
 
 class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 {

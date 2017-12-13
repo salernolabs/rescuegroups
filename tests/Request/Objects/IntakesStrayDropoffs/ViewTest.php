@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesStrayDropoffs\View;
+namespace RescueGroups\Tests\Request\Objects\IntakesStrayDropoffs;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

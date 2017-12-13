@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalGroups\Search;
+namespace RescueGroups\Tests\Request\Objects\AnimalGroups;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {

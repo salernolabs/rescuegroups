@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\CallsQueues\Delete;
+namespace RescueGroups\Tests\Request\Objects\CallsQueues;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {

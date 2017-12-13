@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations\UpdateSettings;
+namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations;
 
 class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 {

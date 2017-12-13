@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\Search;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
@@ -238,7 +238,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $query->setLocationCountry("locationCountry");
         $query->setLocationUrl("locationUrl");
         $query->setLocationEvents("locationEvents");
-        $query->setLocationMeetrequest("locationMeetrequest");
+        $query->setLocationMeetrequests("locationMeetrequests");
         $query->setLocationName("locationName");
         $query->setLocationPhone("locationPhone");
         $query->setLocationState("locationState");
@@ -538,7 +538,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("locationCountry", $data["locationCountry"]);
         $this->assertEquals("locationUrl", $data["locationUrl"]);
         $this->assertEquals("locationEvents", $data["locationEvents"]);
-        $this->assertEquals("locationMeetrequest", $data["locationMeetrequest"]);
+        $this->assertEquals("locationMeetrequests", $data["locationMeetrequests"]);
         $this->assertEquals("locationName", $data["locationName"]);
         $this->assertEquals("locationPhone", $data["locationPhone"]);
         $this->assertEquals("locationState", $data["locationState"]);

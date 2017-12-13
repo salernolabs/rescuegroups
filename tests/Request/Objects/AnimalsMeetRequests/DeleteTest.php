@@ -1,12 +1,12 @@
 <?php
 /**
- * AnimalsMeetRequest Delete Request Test
+ * AnimalsMeetRequests Delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests\Delete;
+namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {
@@ -27,7 +27,7 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
-        $this->assertEquals("animalsMeetrequest", $data["objectType"]);
+        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
 
         $this->assertEquals("delete", $data["objectAction"]);
 

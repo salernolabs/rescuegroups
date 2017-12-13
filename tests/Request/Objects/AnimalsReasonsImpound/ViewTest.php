@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsImpound\View;
+namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsImpound;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

@@ -91,10 +91,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     private $locationColonies = null;
 
     /**
-     * Meet Request
+     * Meet Requests
      * @var int
      */
-    private $locationMeetrequest = null;
+    private $locationMeetrequests = null;
 
 
     /**
@@ -295,14 +295,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Meet Request
+     * Set Meet Requests
      *
-     * @param int $locationMeetrequest
+     * @param int $locationMeetrequests
      * @return $this
      */
-    public function setLocationMeetrequest($locationMeetrequest)
+    public function setLocationMeetrequests($locationMeetrequests)
     {
-        $this->locationMeetrequest = $locationMeetrequest;
+        $this->locationMeetrequests = $locationMeetrequests;
 
         return $this;
     }
@@ -328,7 +328,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         if ($this->locationAnimals !== null) $parameterArray['locationAnimals'] = $this->locationAnimals;
         if ($this->locationEvents !== null) $parameterArray['locationEvents'] = $this->locationEvents;
         if ($this->locationColonies !== null) $parameterArray['locationColonies'] = $this->locationColonies;
-        if ($this->locationMeetrequest !== null) $parameterArray['locationMeetrequest'] = $this->locationMeetrequest;
+        if ($this->locationMeetrequests !== null) $parameterArray['locationMeetrequests'] = $this->locationMeetrequests;
 
         $this->addSearchParameters($parameterArray);
 

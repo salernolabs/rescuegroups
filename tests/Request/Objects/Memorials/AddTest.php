@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Memorials\Add;
+namespace RescueGroups\Tests\Request\Objects\Memorials;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {

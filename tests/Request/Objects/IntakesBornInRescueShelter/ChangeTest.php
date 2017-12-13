@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesBornInRescueShelter\Change;
+namespace RescueGroups\Tests\Request\Objects\IntakesBornInRescueShelter;
 
 class ChangeTest extends \PHPUnit\Framework\TestCase
 {

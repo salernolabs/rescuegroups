@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\VideoReorder;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class VideoReorderTest extends \PHPUnit\Framework\TestCase
 {

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\SetDisabledFields;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class SetDisabledFieldsTest extends \PHPUnit\Framework\TestCase
 {

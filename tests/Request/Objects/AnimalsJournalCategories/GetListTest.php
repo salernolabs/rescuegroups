@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsJournalCategories\GetList;
+namespace RescueGroups\Tests\Request\Objects\AnimalsJournalCategories;
 
 class GetListTest extends \PHPUnit\Framework\TestCase
 {

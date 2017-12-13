@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Settings\SetUserSetting;
+namespace RescueGroups\Tests\Request\Objects\Settings;
 
 class SetUserSettingTest extends \PHPUnit\Framework\TestCase
 {

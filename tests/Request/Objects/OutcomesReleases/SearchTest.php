@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\OutcomesReleases\Search;
+namespace RescueGroups\Tests\Request\Objects\OutcomesReleases;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {

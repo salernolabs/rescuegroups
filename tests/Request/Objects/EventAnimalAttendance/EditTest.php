@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance\Edit;
+namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

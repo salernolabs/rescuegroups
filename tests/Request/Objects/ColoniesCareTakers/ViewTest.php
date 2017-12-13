@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\ColoniesCareTakers\View;
+namespace RescueGroups\Tests\Request\Objects\ColoniesCareTakers;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

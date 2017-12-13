@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations\Search;
+namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {

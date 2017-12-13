@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms\ListPending;
+namespace RescueGroups\Tests\Request\Objects\Submittedforms;
 
 class ListPendingTest extends \PHPUnit\Framework\TestCase
 {

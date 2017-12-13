@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Events\PublicView;
+namespace RescueGroups\Tests\Request\Objects\Events;
 
 class PublicViewTest extends \PHPUnit\Framework\TestCase
 {

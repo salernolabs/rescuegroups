@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance\Delete;
+namespace RescueGroups\Tests\Request\Objects\EventAnimalAttendance;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {

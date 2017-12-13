@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesStrayPickups\Edit;
+namespace RescueGroups\Tests\Request\Objects\IntakesStrayPickups;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

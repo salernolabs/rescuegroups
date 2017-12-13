@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\NewsArticles\PublicView;
+namespace RescueGroups\Tests\Request\Objects\NewsArticles;
 
 class PublicViewTest extends \PHPUnit\Framework\TestCase
 {

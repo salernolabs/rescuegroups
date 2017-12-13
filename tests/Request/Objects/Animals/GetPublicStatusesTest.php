@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\GetPublicStatuses;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class GetPublicStatusesTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 /**
- * AnimalsMeetRequest Search Request Test
+ * AnimalsMeetRequests Search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests\Search;
+namespace RescueGroups\Tests\Request\Objects\AnimalsMeetRequests;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
@@ -37,7 +37,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $data = $this->api->getPostObject($query);
 
         
-        $this->assertEquals("animalsMeetrequest", $data["objectType"]);
+        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
 
         $this->assertEquals("search", $data["objectAction"]);
 

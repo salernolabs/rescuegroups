@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\CallsLogEntries\Add;
+namespace RescueGroups\Tests\Request\Objects\CallsLogEntries;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {

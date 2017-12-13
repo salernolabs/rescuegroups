@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\GetRequiredFields;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class GetRequiredFieldsTest extends \PHPUnit\Framework\TestCase
 {

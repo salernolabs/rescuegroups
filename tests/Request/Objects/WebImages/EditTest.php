@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\WebImages\Edit;
+namespace RescueGroups\Tests\Request\Objects\WebImages;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

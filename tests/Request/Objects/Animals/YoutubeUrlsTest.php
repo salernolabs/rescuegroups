@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\YoutubeUrls;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class YoutubeUrlsTest extends \PHPUnit\Framework\TestCase
 {

@@ -262,11 +262,11 @@ Sets eventAnimalAttendance field with a value of type int.
 
     $query->setEventAnimalAttendance(int);
 
-#### ::setEventMeetrequest
+#### ::setEventMeetrequests
 
-Sets eventMeetrequest field with a value of type int.
+Sets eventMeetrequests field with a value of type int.
 
-    $query->setEventMeetrequest(int);
+    $query->setEventMeetrequests(int);
 
 #### ::setEventSpecies
 
@@ -346,11 +346,11 @@ Sets eventLocationColonies field with a value of type int.
 
     $query->setEventLocationColonies(int);
 
-#### ::setEventLocationMeetrequest
+#### ::setEventLocationMeetrequests
 
-Sets eventLocationMeetrequest field with a value of type int.
+Sets eventLocationMeetrequests field with a value of type int.
 
-    $query->setEventLocationMeetrequest(int);
+    $query->setEventLocationMeetrequests(int);
 
 
 

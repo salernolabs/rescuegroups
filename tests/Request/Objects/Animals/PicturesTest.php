@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Animals\Pictures;
+namespace RescueGroups\Tests\Request\Objects\Animals;
 
 class PicturesTest extends \PHPUnit\Framework\TestCase
 {

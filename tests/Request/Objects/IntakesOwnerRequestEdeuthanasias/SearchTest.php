@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias\Search;
+namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {

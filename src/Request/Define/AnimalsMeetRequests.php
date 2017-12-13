@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequest Define Request
+ * AnimalsMeetRequests Define Request
  *
  * @package RescueGroups
  * @subpackage Request
@@ -25,7 +25,7 @@ class AnimalsMeetRequests implements \RescueGroups\Request\RequestInterface, \Re
      */
     public function getObjectType()
     {
-        return 'animalsMeetrequest';
+        return 'animalsMeetrequests';
     }
 
     /**

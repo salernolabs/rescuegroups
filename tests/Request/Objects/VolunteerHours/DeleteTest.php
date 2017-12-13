@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\VolunteerHours\Delete;
+namespace RescueGroups\Tests\Request\Objects\VolunteerHours;
 
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {

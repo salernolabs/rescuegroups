@@ -2196,11 +2196,11 @@ Sets locationEvents field with a value of type string.
 
     $query->setLocationEvents(string);
 
-#### ::setLocationMeetrequest
+#### ::setLocationMeetrequests
 
-Sets locationMeetrequest field with a value of type string.
+Sets locationMeetrequests field with a value of type string.
 
-    $query->setLocationMeetrequest(string);
+    $query->setLocationMeetrequests(string);
 
 #### ::setLocationName
 

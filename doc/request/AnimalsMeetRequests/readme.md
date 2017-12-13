@@ -1,14 +1,14 @@
-# AnimalsMeetRequest
+# AnimalsMeetRequests
 
-This is the documentation for the animalsMeetrequest queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the animalsMeetrequests queries against the RescueGroups.org HTTP API v2.
 
-[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsMeetrequest)
+[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsMeetrequests)
 
-## AnimalsMeetRequest\Search
+## AnimalsMeetRequests\Search
 
-Performs animalsMeetrequest.search query.
+Performs animalsMeetrequests.search query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequest\Search();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Search();
 
 #### ::setMeetrequestID
 
@@ -78,11 +78,11 @@ Sets locationName field with a value of type string.
 
 
 
-## AnimalsMeetRequest\View
+## AnimalsMeetRequests\View
 
-Performs animalsMeetrequest.view query.
+Performs animalsMeetrequests.view query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequest\View();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\View();
 
 #### ::setMeetrequestID
 
@@ -92,11 +92,11 @@ Sets meetrequestID field with a value of type integer.
 
 
 
-## AnimalsMeetRequest\Add
+## AnimalsMeetRequests\Add
 
-Performs animalsMeetrequest.add query.
+Performs animalsMeetrequests.add query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequest\Add();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Add();
 
 #### ::setMeetrequestAnimalID
 
@@ -130,11 +130,11 @@ Sets meetrequestDate field with a value of type \DateTime.
 
 
 
-## AnimalsMeetRequest\Edit
+## AnimalsMeetRequests\Edit
 
-Performs animalsMeetrequest.edit query.
+Performs animalsMeetrequests.edit query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequest\Edit();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Edit();
 
 #### ::setMeetrequestID
 
@@ -174,11 +174,11 @@ Sets meetrequestDate field with a value of type \DateTime.
 
 
 
-## AnimalsMeetRequest\Delete
+## AnimalsMeetRequests\Delete
 
-Performs animalsMeetrequest.delete query.
+Performs animalsMeetrequests.delete query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequest\Delete();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
 
 #### ::setMeetrequestID
 

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations\View;
+namespace RescueGroups\Tests\Request\Objects\MicrochipRegistrations;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {

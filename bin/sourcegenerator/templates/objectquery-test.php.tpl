@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\%CLASSNAME%\%REQUESTNAME%;
+namespace RescueGroups\Tests\Request\Objects\%CLASSNAME%;
 
 class %REQUESTNAME%Test extends \PHPUnit\Framework\TestCase
 {

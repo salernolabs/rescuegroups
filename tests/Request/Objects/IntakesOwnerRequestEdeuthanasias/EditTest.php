@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias\Edit;
+namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {

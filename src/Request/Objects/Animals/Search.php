@@ -1309,10 +1309,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     private $locationEvents = null;
 
     /**
-     * Meet Request
+     * Meet Requests
      * @var string
      */
-    private $locationMeetrequest = null;
+    private $locationMeetrequests = null;
 
     /**
      * Location
@@ -4602,14 +4602,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Meet Request
+     * Set Meet Requests
      *
-     * @param string $locationMeetrequest
+     * @param string $locationMeetrequests
      * @return $this
      */
-    public function setLocationMeetrequest($locationMeetrequest)
+    public function setLocationMeetrequests($locationMeetrequests)
     {
-        $this->locationMeetrequest = $locationMeetrequest;
+        $this->locationMeetrequests = $locationMeetrequests;
 
         return $this;
     }
@@ -5813,7 +5813,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         if ($this->locationCountry !== null) $parameterArray['locationCountry'] = $this->locationCountry;
         if ($this->locationUrl !== null) $parameterArray['locationUrl'] = $this->locationUrl;
         if ($this->locationEvents !== null) $parameterArray['locationEvents'] = $this->locationEvents;
-        if ($this->locationMeetrequest !== null) $parameterArray['locationMeetrequest'] = $this->locationMeetrequest;
+        if ($this->locationMeetrequests !== null) $parameterArray['locationMeetrequests'] = $this->locationMeetrequests;
         if ($this->locationName !== null) $parameterArray['locationName'] = $this->locationName;
         if ($this->locationPhone !== null) $parameterArray['locationPhone'] = $this->locationPhone;
         if ($this->locationState !== null) $parameterArray['locationState'] = $this->locationState;

@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsSurrender\Add;
+namespace RescueGroups\Tests\Request\Objects\AnimalsReasonsSurrender;
 
 class AddTest extends \PHPUnit\Framework\TestCase
 {
