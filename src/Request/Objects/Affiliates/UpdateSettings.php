@@ -12,7 +12,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
 {
     /**
      * 
-     * @var email
+     * @var string
      */
     private $setAffiliatesPayPalEmail = null;
 
@@ -186,7 +186,7 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     /**
      * Set 
      *
-     * @param email $setAffiliatesPayPalEmail
+     * @param string $setAffiliatesPayPalEmail
      * @return $this
      */
     public function setSetAffiliatesPayPalEmail($setAffiliatesPayPalEmail)

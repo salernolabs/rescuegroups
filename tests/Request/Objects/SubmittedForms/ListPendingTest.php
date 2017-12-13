@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms View Request Test
+ * SubmittedForms ListPending Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
-class ViewTest extends \PHPUnit\Framework\TestCase
+class ListPendingTest extends \PHPUnit\Framework\TestCase
 {
     use \RescueGroups\Tests\Traits\APISetup;
 
@@ -19,7 +19,7 @@ class ViewTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\View();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\ListPending();
 
         
 
@@ -28,7 +28,7 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         
         $this->assertEquals("submittedforms", $data["objectType"]);
 
-        $this->assertEquals("view", $data["objectAction"]);
+        $this->assertEquals("listPending", $data["objectAction"]);
 
     }
 }

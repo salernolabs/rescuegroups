@@ -1,12 +1,12 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias Edit Request
+ * IntakesOwnerRequestedEuthanasias Edit Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias;
+namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {

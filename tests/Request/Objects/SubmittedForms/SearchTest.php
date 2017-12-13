@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms Search Request Test
+ * SubmittedForms Search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\Search();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\Search();
 
         
         $query->setSubmittedformID("submittedformID");

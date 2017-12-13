@@ -1,12 +1,12 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias Search Request Test
+ * IntakesOwnerRequestedEuthanasias Search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias;
+namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Search();
+        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Search();
 
         
         $query->setIntakesOwnerrequestedeuthanasiaID("intakesOwnerrequestedeuthanasiaID");

@@ -46,9 +46,9 @@ Sets queueName field with a value of type string.
 
 #### ::setQueueFromEmail
 
-Sets queueFromEmail field with a value of type email.
+Sets queueFromEmail field with a value of type string.
 
-    $query->setQueueFromEmail(email);
+    $query->setQueueFromEmail(string);
 
 #### ::setQueueDefaultUrgencyID
 
@@ -114,9 +114,9 @@ Sets queueName field with a value of type string.
 
 #### ::setQueueFromEmail
 
-Sets queueFromEmail field with a value of type email.
+Sets queueFromEmail field with a value of type string.
 
-    $query->setQueueFromEmail(email);
+    $query->setQueueFromEmail(string);
 
 #### ::setQueueDefaultUrgencyID
 
@@ -146,9 +146,9 @@ Sets queueName field with a value of type string.
 
 #### ::setQueueFromEmail
 
-Sets queueFromEmail field with a value of type email.
+Sets queueFromEmail field with a value of type string.
 
-    $query->setQueueFromEmail(email);
+    $query->setQueueFromEmail(string);
 
 #### ::setQueueDefaultUrgencyID
 

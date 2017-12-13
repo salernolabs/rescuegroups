@@ -146,15 +146,15 @@ Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type ph
 
 #### ::setMicrochipRegistrationRegistrantPrimaryEmail
 
-Sets microchipRegistrationRegistrantPrimaryEmail field with a value of type email.
+Sets microchipRegistrationRegistrantPrimaryEmail field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantPrimaryEmail(email);
+    $query->setMicrochipRegistrationRegistrantPrimaryEmail(string);
 
 #### ::setMicrochipRegistrationRegistrantSecondaryEmail
 
-Sets microchipRegistrationRegistrantSecondaryEmail field with a value of type email.
+Sets microchipRegistrationRegistrantSecondaryEmail field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantSecondaryEmail(email);
+    $query->setMicrochipRegistrationRegistrantSecondaryEmail(string);
 
 #### ::setMicrochipRegistrationDate
 
@@ -262,15 +262,15 @@ Sets microchipRegistrationRegistrantSecondaryPhone field with a value of type ph
 
 #### ::setMicrochipRegistrationRegistrantPrimaryEmail
 
-Sets microchipRegistrationRegistrantPrimaryEmail field with a value of type email.
+Sets microchipRegistrationRegistrantPrimaryEmail field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantPrimaryEmail(email);
+    $query->setMicrochipRegistrationRegistrantPrimaryEmail(string);
 
 #### ::setMicrochipRegistrationRegistrantSecondaryEmail
 
-Sets microchipRegistrationRegistrantSecondaryEmail field with a value of type email.
+Sets microchipRegistrationRegistrantSecondaryEmail field with a value of type string.
 
-    $query->setMicrochipRegistrationRegistrantSecondaryEmail(email);
+    $query->setMicrochipRegistrationRegistrantSecondaryEmail(string);
 
 
 

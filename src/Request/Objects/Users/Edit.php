@@ -114,19 +114,19 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * Email address
-     * @var email
+     * @var string
      */
     private $userEmail = null;
 
     /**
      * Alternate email address
-     * @var email
+     * @var string
      */
     private $userEmailAlt = null;
 
     /**
      * Pager email address
-     * @var email
+     * @var string
      */
     private $userEmailPager = null;
 
@@ -395,7 +395,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Email address
      *
-     * @param email $userEmail
+     * @param string $userEmail
      * @return $this
      */
     public function setUserEmail($userEmail)
@@ -408,7 +408,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Alternate email address
      *
-     * @param email $userEmailAlt
+     * @param string $userEmailAlt
      * @return $this
      */
     public function setUserEmailAlt($userEmailAlt)
@@ -421,7 +421,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set Pager email address
      *
-     * @param email $userEmailPager
+     * @param string $userEmailPager
      * @return $this
      */
     public function setUserEmailPager($userEmailPager)

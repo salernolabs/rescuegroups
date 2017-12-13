@@ -136,21 +136,21 @@ Sets userFax field with a value of type phone.
 
 #### ::setUserEmail
 
-Sets userEmail field with a value of type email.
+Sets userEmail field with a value of type string.
 
-    $query->setUserEmail(email);
+    $query->setUserEmail(string);
 
 #### ::setUserEmailAlt
 
-Sets userEmailAlt field with a value of type email.
+Sets userEmailAlt field with a value of type string.
 
-    $query->setUserEmailAlt(email);
+    $query->setUserEmailAlt(string);
 
 #### ::setUserEmailPager
 
-Sets userEmailPager field with a value of type email.
+Sets userEmailPager field with a value of type string.
 
-    $query->setUserEmailPager(email);
+    $query->setUserEmailPager(string);
 
 #### ::setUserContactID
 
@@ -288,21 +288,21 @@ Sets userFax field with a value of type phone.
 
 #### ::setUserEmail
 
-Sets userEmail field with a value of type email.
+Sets userEmail field with a value of type string.
 
-    $query->setUserEmail(email);
+    $query->setUserEmail(string);
 
 #### ::setUserEmailAlt
 
-Sets userEmailAlt field with a value of type email.
+Sets userEmailAlt field with a value of type string.
 
-    $query->setUserEmailAlt(email);
+    $query->setUserEmailAlt(string);
 
 #### ::setUserEmailPager
 
-Sets userEmailPager field with a value of type email.
+Sets userEmailPager field with a value of type string.
 
-    $query->setUserEmailPager(email);
+    $query->setUserEmailPager(string);
 
 #### ::setUserContactID
 
@@ -434,21 +434,21 @@ Sets userFax field with a value of type phone.
 
 #### ::setUserEmail
 
-Sets userEmail field with a value of type email.
+Sets userEmail field with a value of type string.
 
-    $query->setUserEmail(email);
+    $query->setUserEmail(string);
 
 #### ::setUserEmailAlt
 
-Sets userEmailAlt field with a value of type email.
+Sets userEmailAlt field with a value of type string.
 
-    $query->setUserEmailAlt(email);
+    $query->setUserEmailAlt(string);
 
 #### ::setUserEmailPager
 
-Sets userEmailPager field with a value of type email.
+Sets userEmailPager field with a value of type string.
 
-    $query->setUserEmailPager(email);
+    $query->setUserEmailPager(string);
 
 #### ::setUserContactID
 

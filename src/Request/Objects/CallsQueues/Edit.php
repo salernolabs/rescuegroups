@@ -24,7 +24,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
 
     /**
      * From Email Address
-     * @var email
+     * @var string
      */
     private $queueFromEmail = null;
 
@@ -92,7 +92,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     /**
      * Set From Email Address
      *
-     * @param email $queueFromEmail
+     * @param string $queueFromEmail
      * @return $this
      */
     public function setQueueFromEmail($queueFromEmail)

@@ -1,21 +1,22 @@
 <?php
 /**
- * Submittedforms Define Request
+ * SubmittedForms ListRecent Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Define;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class Submittedforms implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class ListRecent implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -35,6 +36,8 @@ class Submittedforms implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function getObjectAction()
     {
-        return 'define';
+        return 'listRecent';
     }
+
+
 }

@@ -1,22 +1,21 @@
 <?php
 /**
- * Submittedforms ListPending Request
+ * IntakesOwnerRequestedEuthanasias Define Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Define;
 
-class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class IntakesOwnerRequestedEuthanasias implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,7 +25,7 @@ class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGrou
      */
     public function getObjectType()
     {
-        return 'submittedforms';
+        return 'intakesOwnerrequestedeuthanasias';
     }
 
     /**
@@ -36,8 +35,6 @@ class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGrou
      */
     public function getObjectAction()
     {
-        return 'listPending';
+        return 'define';
     }
-
-
 }

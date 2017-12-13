@@ -90,13 +90,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Primary email address
-     * @var email
+     * @var string
      */
     private $microchipRegistrationRegistrantPrimaryEmail = null;
 
     /**
      * Secondary email address
-     * @var email
+     * @var string
      */
     private $microchipRegistrationRegistrantSecondaryEmail = null;
 
@@ -301,7 +301,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Primary email address
      *
-     * @param email $microchipRegistrationRegistrantPrimaryEmail
+     * @param string $microchipRegistrationRegistrantPrimaryEmail
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantPrimaryEmail($microchipRegistrationRegistrantPrimaryEmail)
@@ -314,7 +314,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Secondary email address
      *
-     * @param email $microchipRegistrationRegistrantSecondaryEmail
+     * @param string $microchipRegistrationRegistrantSecondaryEmail
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantSecondaryEmail($microchipRegistrationRegistrantSecondaryEmail)

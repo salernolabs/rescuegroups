@@ -20,9 +20,9 @@ Performs affiliates.updateSettings query.
 
 #### ::setSetAffiliatesPayPalEmail
 
-Sets setAffiliatesPayPalEmail field with a value of type email.
+Sets setAffiliatesPayPalEmail field with a value of type string.
 
-    $query->setSetAffiliatesPayPalEmail(email);
+    $query->setSetAffiliatesPayPalEmail(string);
 
 #### ::setShowAffiliatesPayPalLink
 

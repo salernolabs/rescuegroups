@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms Search Request
+ * SubmittedForms Search Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
 class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
@@ -212,19 +212,19 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Email address
-     * @var email
+     * @var string
      */
     private $submitterEmail = null;
 
     /**
      * Alternate email address
-     * @var email
+     * @var string
      */
     private $submitterEmailAlt = null;
 
     /**
      * Pager email address
-     * @var email
+     * @var string
      */
     private $submitterEmailPager = null;
 
@@ -755,7 +755,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Email address
      *
-     * @param email $submitterEmail
+     * @param string $submitterEmail
      * @return $this
      */
     public function setSubmitterEmail($submitterEmail)
@@ -768,7 +768,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Alternate email address
      *
-     * @param email $submitterEmailAlt
+     * @param string $submitterEmailAlt
      * @return $this
      */
     public function setSubmitterEmailAlt($submitterEmailAlt)
@@ -781,7 +781,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Pager email address
      *
-     * @param email $submitterEmailPager
+     * @param string $submitterEmailPager
      * @return $this
      */
     public function setSubmitterEmailPager($submitterEmailPager)

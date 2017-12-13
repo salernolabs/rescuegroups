@@ -260,19 +260,19 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Email address
-     * @var email
+     * @var string
      */
     private $contactEmail = null;
 
     /**
      * Alternate email address
-     * @var email
+     * @var string
      */
     private $contactEmailAlt = null;
 
     /**
      * Pager email address
-     * @var email
+     * @var string
      */
     private $contactEmailPager = null;
 
@@ -919,7 +919,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Email address
      *
-     * @param email $contactEmail
+     * @param string $contactEmail
      * @return $this
      */
     public function setContactEmail($contactEmail)
@@ -932,7 +932,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Alternate email address
      *
-     * @param email $contactEmailAlt
+     * @param string $contactEmailAlt
      * @return $this
      */
     public function setContactEmailAlt($contactEmailAlt)
@@ -945,7 +945,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Pager email address
      *
-     * @param email $contactEmailPager
+     * @param string $contactEmailPager
      * @return $this
      */
     public function setContactEmailPager($contactEmailPager)

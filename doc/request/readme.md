@@ -1,6 +1,6 @@
 # Query Documentation
 
-This documentation and the queries within were generated on 2017-12-13 14:05:34. Manual changes to this or related files may get overwritten.
+This documentation and the queries within were generated on 2017-12-13 21:54:50. Manual changes to this or related files may get overwritten.
 
 ## Queries
 
@@ -48,7 +48,7 @@ This documentation and the queries within were generated on 2017-12-13 14:05:34.
  * [Intakes](Intakes/readme.md)
  * [IntakesBornInRescueShelter](IntakesBornInRescueShelter/readme.md)
  * [IntakesImpounds](IntakesImpounds/readme.md)
- * [IntakesOwnerRequestEdeuthanasias](IntakesOwnerRequestEdeuthanasias/readme.md)
+ * [IntakesOwnerRequestedEuthanasias](IntakesOwnerRequestedEuthanasias/readme.md)
  * [IntakesOwnerSurrenders](IntakesOwnerSurrenders/readme.md)
  * [IntakesServices](IntakesServices/readme.md)
  * [IntakesStrayDropoffs](IntakesStrayDropoffs/readme.md)
@@ -74,7 +74,7 @@ This documentation and the queries within were generated on 2017-12-13 14:05:34.
  * [OutcomesTransfers](OutcomesTransfers/readme.md)
  * [Partnerships](Partnerships/readme.md)
  * [Roles](Roles/readme.md)
- * [Submittedforms](Submittedforms/readme.md)
+ * [SubmittedForms](SubmittedForms/readme.md)
  * [Settings](Settings/readme.md)
  * [Testimonials](Testimonials/readme.md)
  * [Users](Users/readme.md)

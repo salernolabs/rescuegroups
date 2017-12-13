@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms ListRecent Request Test
+ * SubmittedForms View Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
-class ListRecentTest extends \PHPUnit\Framework\TestCase
+class ViewTest extends \PHPUnit\Framework\TestCase
 {
     use \RescueGroups\Tests\Traits\APISetup;
 
@@ -19,7 +19,7 @@ class ListRecentTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\ListRecent();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\View();
 
         
 
@@ -28,7 +28,7 @@ class ListRecentTest extends \PHPUnit\Framework\TestCase
         
         $this->assertEquals("submittedforms", $data["objectType"]);
 
-        $this->assertEquals("listRecent", $data["objectAction"]);
+        $this->assertEquals("view", $data["objectAction"]);
 
     }
 }

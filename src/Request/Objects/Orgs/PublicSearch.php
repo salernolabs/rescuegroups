@@ -80,7 +80,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 
     /**
      * Email
-     * @var email
+     * @var string
      */
     private $orgEmail = null;
 
@@ -337,7 +337,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     /**
      * Set Email
      *
-     * @param email $orgEmail
+     * @param string $orgEmail
      * @return $this
      */
     public function setOrgEmail($orgEmail)

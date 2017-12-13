@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms GetList Request Test
+ * SubmittedForms GetList Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
 class GetListTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class GetListTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\GetList();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\GetList();
 
         
 

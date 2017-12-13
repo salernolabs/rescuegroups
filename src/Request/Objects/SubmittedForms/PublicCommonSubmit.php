@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms PublicCommonSubmit Request
+ * SubmittedForms PublicCommonSubmit Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
 class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
@@ -108,19 +108,19 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
 
     /**
      * Email address
-     * @var email
+     * @var string
      */
     private $submitterEmail = null;
 
     /**
      * Alternate email address
-     * @var email
+     * @var string
      */
     private $submitterEmailAlt = null;
 
     /**
      * Pager email address
-     * @var email
+     * @var string
      */
     private $submitterEmailPager = null;
 
@@ -376,7 +376,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Email address
      *
-     * @param email $submitterEmail
+     * @param string $submitterEmail
      * @return $this
      */
     public function setSubmitterEmail($submitterEmail)
@@ -389,7 +389,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Alternate email address
      *
-     * @param email $submitterEmailAlt
+     * @param string $submitterEmailAlt
      * @return $this
      */
     public function setSubmitterEmailAlt($submitterEmailAlt)
@@ -402,7 +402,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
     /**
      * Set Pager email address
      *
-     * @param email $submitterEmailPager
+     * @param string $submitterEmailPager
      * @return $this
      */
     public function setSubmitterEmailPager($submitterEmailPager)

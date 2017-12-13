@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms ListRecent Request
+ * SubmittedForms GetList Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class ListRecent implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
 
     /**
@@ -36,7 +36,7 @@ class ListRecent implements \RescueGroups\Request\RequestInterface, \RescueGroup
      */
     public function getObjectAction()
     {
-        return 'listRecent';
+        return 'list';
     }
 
 

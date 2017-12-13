@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias Define Request Test
+ * IntakesOwnerRequestedEuthanasias Define Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Tests\Request\Define;
 
-class IntakesOwnerRequestEdeuthanasiasTest extends \PHPUnit\Framework\TestCase
+class IntakesOwnerRequestedEuthanasiasTest extends \PHPUnit\Framework\TestCase
 {
     use \RescueGroups\Tests\Traits\APISetup;
 
@@ -19,11 +19,11 @@ class IntakesOwnerRequestEdeuthanasiasTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-IntakesOwnerRequestEdeuthanasias.json');
+        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/define-IntakesOwnerRequestedEuthanasias.json');
         $this->api
             ->setCustomGuzzleHandler($vcr);
 
-        $request = new \RescueGroups\Request\Define\IntakesOwnerRequestEdeuthanasias();
+        $request = new \RescueGroups\Request\Define\IntakesOwnerRequestedEuthanasias();
 
         $result = $this->api->executeRequest($request);
 

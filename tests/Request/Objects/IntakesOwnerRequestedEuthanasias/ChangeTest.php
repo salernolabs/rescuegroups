@@ -1,14 +1,14 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias Add Request Test
+ * IntakesOwnerRequestedEuthanasias Change Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias;
+namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
-class AddTest extends \PHPUnit\Framework\TestCase
+class ChangeTest extends \PHPUnit\Framework\TestCase
 {
     use \RescueGroups\Tests\Traits\APISetup;
 
@@ -19,9 +19,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Add();
+        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
 
         
+        $query->setIntakeID("intakeID");
         $query->setIntakesOwnerrequestedeuthanasiaAnimalID("intakesOwnerrequestedeuthanasiaAnimalID");
         $query->setIntakesOwnerrequestedeuthanasiaAnimalConditionID("intakesOwnerrequestedeuthanasiaAnimalConditionID");
         $query->setIntakesOwnerrequestedeuthanasiaDate("intakesOwnerrequestedeuthanasiaDate");
@@ -34,8 +35,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         
         $this->assertEquals("intakesOwnerrequestedeuthanasias", $data["objectType"]);
 
-        $this->assertEquals("add", $data["objectAction"]);
+        $this->assertEquals("change", $data["objectAction"]);
 
+        $this->assertEquals("intakeID", $data["intakeID"]);
         $this->assertEquals("intakesOwnerrequestedeuthanasiaAnimalID", $data["intakesOwnerrequestedeuthanasiaAnimalID"]);
         $this->assertEquals("intakesOwnerrequestedeuthanasiaAnimalConditionID", $data["intakesOwnerrequestedeuthanasiaAnimalConditionID"]);
         $this->assertEquals("intakesOwnerrequestedeuthanasiaDate", $data["intakesOwnerrequestedeuthanasiaDate"]);

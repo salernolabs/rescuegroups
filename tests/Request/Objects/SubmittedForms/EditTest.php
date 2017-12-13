@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms Edit Request Test
+ * SubmittedForms Edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
 class EditTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\Edit();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\Edit();
 
         
         $query->setSubmittedformID("submittedformID");

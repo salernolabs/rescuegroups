@@ -1,12 +1,12 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias View Request Test
+ * IntakesOwnerRequestedEuthanasias View Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestEdeuthanasias;
+namespace RescueGroups\Tests\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
 class ViewTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class ViewTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\View();
+        $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
         
         $query->setIntakesOwnerrequestedeuthanasiaID("intakesOwnerrequestedeuthanasiaID");

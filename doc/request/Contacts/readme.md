@@ -164,21 +164,21 @@ Sets contactFax field with a value of type phone.
 
 #### ::setContactEmail
 
-Sets contactEmail field with a value of type email.
+Sets contactEmail field with a value of type string.
 
-    $query->setContactEmail(email);
+    $query->setContactEmail(string);
 
 #### ::setContactEmailAlt
 
-Sets contactEmailAlt field with a value of type email.
+Sets contactEmailAlt field with a value of type string.
 
-    $query->setContactEmailAlt(email);
+    $query->setContactEmailAlt(string);
 
 #### ::setContactEmailPager
 
-Sets contactEmailPager field with a value of type email.
+Sets contactEmailPager field with a value of type string.
 
-    $query->setContactEmailPager(email);
+    $query->setContactEmailPager(string);
 
 #### ::setContactCompany
 
@@ -370,21 +370,21 @@ Sets contactFax field with a value of type phone.
 
 #### ::setContactEmail
 
-Sets contactEmail field with a value of type email.
+Sets contactEmail field with a value of type string.
 
-    $query->setContactEmail(email);
+    $query->setContactEmail(string);
 
 #### ::setContactEmailAlt
 
-Sets contactEmailAlt field with a value of type email.
+Sets contactEmailAlt field with a value of type string.
 
-    $query->setContactEmailAlt(email);
+    $query->setContactEmailAlt(string);
 
 #### ::setContactEmailPager
 
-Sets contactEmailPager field with a value of type email.
+Sets contactEmailPager field with a value of type string.
 
-    $query->setContactEmailPager(email);
+    $query->setContactEmailPager(string);
 
 #### ::setContactCompany
 
@@ -576,21 +576,21 @@ Sets contactFax field with a value of type phone.
 
 #### ::setContactEmail
 
-Sets contactEmail field with a value of type email.
+Sets contactEmail field with a value of type string.
 
-    $query->setContactEmail(email);
+    $query->setContactEmail(string);
 
 #### ::setContactEmailAlt
 
-Sets contactEmailAlt field with a value of type email.
+Sets contactEmailAlt field with a value of type string.
 
-    $query->setContactEmailAlt(email);
+    $query->setContactEmailAlt(string);
 
 #### ::setContactEmailPager
 
-Sets contactEmailPager field with a value of type email.
+Sets contactEmailPager field with a value of type string.
 
-    $query->setContactEmailPager(email);
+    $query->setContactEmailPager(string);
 
 #### ::setContactCompany
 

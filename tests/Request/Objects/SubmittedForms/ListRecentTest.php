@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms ListPending Request Test
+ * SubmittedForms ListRecent Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
-class ListPendingTest extends \PHPUnit\Framework\TestCase
+class ListRecentTest extends \PHPUnit\Framework\TestCase
 {
     use \RescueGroups\Tests\Traits\APISetup;
 
@@ -19,7 +19,7 @@ class ListPendingTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\ListPending();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\ListRecent();
 
         
 
@@ -28,7 +28,7 @@ class ListPendingTest extends \PHPUnit\Framework\TestCase
         
         $this->assertEquals("submittedforms", $data["objectType"]);
 
-        $this->assertEquals("listPending", $data["objectAction"]);
+        $this->assertEquals("listRecent", $data["objectAction"]);
 
     }
 }

@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms View Request
+ * SubmittedForms ListPending Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
 
     /**
@@ -36,7 +36,7 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function getObjectAction()
     {
-        return 'view';
+        return 'listPending';
     }
 
 

@@ -1,14 +1,14 @@
-# IntakesOwnerRequestEdeuthanasias
+# IntakesOwnerRequestedEuthanasias
 
 This is the documentation for the intakesOwnerrequestedeuthanasias queries against the RescueGroups.org HTTP API v2.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnerrequestedeuthanasias)
 
-## IntakesOwnerRequestEdeuthanasias\View
+## IntakesOwnerRequestedEuthanasias\View
 
 Performs intakesOwnerrequestedeuthanasias.view query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\View();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
 #### ::setIntakesOwnerrequestedeuthanasiaID
 
@@ -18,11 +18,11 @@ Sets intakesOwnerrequestedeuthanasiaID field with a value of type integer.
 
 
 
-## IntakesOwnerRequestEdeuthanasias\Search
+## IntakesOwnerRequestedEuthanasias\Search
 
 Performs intakesOwnerrequestedeuthanasias.search query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Search();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Search();
 
 #### ::setIntakesOwnerrequestedeuthanasiaID
 
@@ -92,11 +92,11 @@ Sets euthanasiaReason field with a value of type string.
 
 
 
-## IntakesOwnerRequestEdeuthanasias\Add
+## IntakesOwnerRequestedEuthanasias\Add
 
 Performs intakesOwnerrequestedeuthanasias.add query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Add();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Add();
 
 #### ::setIntakesOwnerrequestedeuthanasiaAnimalID
 
@@ -136,11 +136,11 @@ Sets intakesOwnerrequestedeuthanasiaReasonID field with a value of type integer.
 
 
 
-## IntakesOwnerRequestEdeuthanasias\Edit
+## IntakesOwnerRequestedEuthanasias\Edit
 
 Performs intakesOwnerrequestedeuthanasias.edit query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Edit();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Edit();
 
 #### ::setIntakesOwnerrequestedeuthanasiaID
 
@@ -186,11 +186,11 @@ Sets intakesOwnerrequestedeuthanasiaReasonID field with a value of type integer.
 
 
 
-## IntakesOwnerRequestEdeuthanasias\Change
+## IntakesOwnerRequestedEuthanasias\Change
 
 Performs intakesOwnerrequestedeuthanasias.change query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
 
 #### ::setIntakeID
 

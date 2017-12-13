@@ -1,38 +1,38 @@
-# Submittedforms
+# SubmittedForms
 
 This is the documentation for the submittedforms queries against the RescueGroups.org HTTP API v2.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-submittedforms)
 
-## Submittedforms\GetList
+## SubmittedForms\GetList
 
 Performs submittedforms.list query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\GetList();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\GetList();
 
 
 
-## Submittedforms\ListRecent
+## SubmittedForms\ListRecent
 
 Performs submittedforms.listRecent query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\ListRecent();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\ListRecent();
 
 
 
-## Submittedforms\ListPending
+## SubmittedForms\ListPending
 
 Performs submittedforms.listPending query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\ListPending();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\ListPending();
 
 
 
-## Submittedforms\PublicCommonSubmit
+## SubmittedForms\PublicCommonSubmit
 
 Performs submittedforms.publicCommonSubmit query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\PublicCommonSubmit();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
 
 #### ::setSubmittedformAnimalID
 
@@ -132,21 +132,21 @@ Sets submitterFax field with a value of type phone.
 
 #### ::setSubmitterEmail
 
-Sets submitterEmail field with a value of type email.
+Sets submitterEmail field with a value of type string.
 
-    $query->setSubmitterEmail(email);
+    $query->setSubmitterEmail(string);
 
 #### ::setSubmitterEmailAlt
 
-Sets submitterEmailAlt field with a value of type email.
+Sets submitterEmailAlt field with a value of type string.
 
-    $query->setSubmitterEmailAlt(email);
+    $query->setSubmitterEmailAlt(string);
 
 #### ::setSubmitterEmailPager
 
-Sets submitterEmailPager field with a value of type email.
+Sets submitterEmailPager field with a value of type string.
 
-    $query->setSubmitterEmailPager(email);
+    $query->setSubmitterEmailPager(string);
 
 #### ::setSubmitterReferredBy
 
@@ -162,11 +162,11 @@ Sets submittedformAnswers field with a value of type string.
 
 
 
-## Submittedforms\Search
+## SubmittedForms\Search
 
 Performs submittedforms.search query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\Search();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\Search();
 
 #### ::setSubmittedformID
 
@@ -368,21 +368,21 @@ Sets submitterFax field with a value of type phone.
 
 #### ::setSubmitterEmail
 
-Sets submitterEmail field with a value of type email.
+Sets submitterEmail field with a value of type string.
 
-    $query->setSubmitterEmail(email);
+    $query->setSubmitterEmail(string);
 
 #### ::setSubmitterEmailAlt
 
-Sets submitterEmailAlt field with a value of type email.
+Sets submitterEmailAlt field with a value of type string.
 
-    $query->setSubmitterEmailAlt(email);
+    $query->setSubmitterEmailAlt(string);
 
 #### ::setSubmitterEmailPager
 
-Sets submitterEmailPager field with a value of type email.
+Sets submitterEmailPager field with a value of type string.
 
-    $query->setSubmitterEmailPager(email);
+    $query->setSubmitterEmailPager(string);
 
 #### ::setSubmitterCompany
 
@@ -452,19 +452,19 @@ Sets submitterCoalitionMember field with a value of type string.
 
 
 
-## Submittedforms\View
+## SubmittedForms\View
 
 Performs submittedforms.view query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\View();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\View();
 
 
 
-## Submittedforms\Edit
+## SubmittedForms\Edit
 
 Performs submittedforms.edit query.
 
-    $query = new \RescueGroups\Request\Objects\Submittedforms\Edit();
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\Edit();
 
 #### ::setSubmittedformID
 

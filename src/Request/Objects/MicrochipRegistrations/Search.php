@@ -134,13 +134,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * Primary email address
-     * @var email
+     * @var string
      */
     private $microchipRegistrationRegistrantPrimaryEmail = null;
 
     /**
      * Secondary email address
-     * @var email
+     * @var string
      */
     private $microchipRegistrationRegistrantSecondaryEmail = null;
 
@@ -454,7 +454,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Primary email address
      *
-     * @param email $microchipRegistrationRegistrantPrimaryEmail
+     * @param string $microchipRegistrationRegistrantPrimaryEmail
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantPrimaryEmail($microchipRegistrationRegistrantPrimaryEmail)
@@ -467,7 +467,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set Secondary email address
      *
-     * @param email $microchipRegistrationRegistrantSecondaryEmail
+     * @param string $microchipRegistrationRegistrantSecondaryEmail
      * @return $this
      */
     public function setMicrochipRegistrationRegistrantSecondaryEmail($microchipRegistrationRegistrantSecondaryEmail)

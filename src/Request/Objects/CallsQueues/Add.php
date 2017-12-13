@@ -18,7 +18,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * From Email Address
-     * @var email
+     * @var string
      */
     private $queueFromEmail = null;
 
@@ -73,7 +73,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set From Email Address
      *
-     * @param email $queueFromEmail
+     * @param string $queueFromEmail
      * @return $this
      */
     public function setQueueFromEmail($queueFromEmail)

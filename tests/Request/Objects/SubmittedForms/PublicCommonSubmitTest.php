@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms PublicCommonSubmit Request Test
+ * SubmittedForms PublicCommonSubmit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
  * @author SourceGenerator
  */
-namespace RescueGroups\Tests\Request\Objects\Submittedforms;
+namespace RescueGroups\Tests\Request\Objects\SubmittedForms;
 
 class PublicCommonSubmitTest extends \PHPUnit\Framework\TestCase
 {
@@ -19,7 +19,7 @@ class PublicCommonSubmitTest extends \PHPUnit\Framework\TestCase
     {
         $this->apiLogin();
 
-        $query = new \RescueGroups\Request\Objects\Submittedforms\PublicCommonSubmit();
+        $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
 
         
         $query->setSubmittedformAnimalID("submittedformAnimalID");

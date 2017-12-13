@@ -1,12 +1,12 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias View Request
+ * IntakesOwnerRequestedEuthanasias View Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\IntakesOwnerRequestEdeuthanasias;
+namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {

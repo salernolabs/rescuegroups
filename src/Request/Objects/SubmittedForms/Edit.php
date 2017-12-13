@@ -1,12 +1,12 @@
 <?php
 /**
- * Submittedforms Edit Request
+ * SubmittedForms Edit Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {

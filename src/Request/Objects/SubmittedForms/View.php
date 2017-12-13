@@ -1,14 +1,14 @@
 <?php
 /**
- * Submittedforms GetList Request
+ * SubmittedForms View Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\Submittedforms;
+namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
 
     /**
@@ -36,7 +36,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
      */
     public function getObjectAction()
     {
-        return 'list';
+        return 'view';
     }
 
 

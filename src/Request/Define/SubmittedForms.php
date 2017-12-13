@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnerRequestEdeuthanasias Define Request
+ * SubmittedForms Define Request
  *
  * @package RescueGroups
  * @subpackage Request
@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Define;
 
-class IntakesOwnerRequestEdeuthanasias implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class SubmittedForms implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
     /**
      * @return bool
@@ -25,7 +25,7 @@ class IntakesOwnerRequestEdeuthanasias implements \RescueGroups\Request\RequestI
      */
     public function getObjectType()
     {
-        return 'intakesOwnerrequestedeuthanasias';
+        return 'submittedforms';
     }
 
     /**

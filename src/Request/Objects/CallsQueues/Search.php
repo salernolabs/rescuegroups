@@ -26,7 +26,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
 
     /**
      * From Email Address
-     * @var email
+     * @var string
      */
     private $queueFromEmail = null;
 
@@ -136,7 +136,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     /**
      * Set From Email Address
      *
-     * @param email $queueFromEmail
+     * @param string $queueFromEmail
      * @return $this
      */
     public function setQueueFromEmail($queueFromEmail)

@@ -67,6 +67,21 @@ class RequestGenerator
     private $docIndexTemplate;
 
     /**
+     * @var string
+     */
+    private $responseTemplate;
+
+    /**
+     * @var string
+     */
+    private $responseConstructorTemplate;
+
+    /**
+     * @var string
+     */
+    private $responseConstructorItemTemplate;
+
+    /**
      * @var array
      */
     private $objectTypes = [
@@ -115,7 +130,7 @@ class RequestGenerator
         'intakes' => 'Intakes',
         'intakesBorninrescueshelter' => 'IntakesBornInRescueShelter',
         'intakesImpounds' => 'IntakesImpounds',
-        'intakesOwnerrequestedeuthanasias' => 'IntakesOwnerRequestEdeuthanasias',
+        'intakesOwnerrequestedeuthanasias' => 'IntakesOwnerRequestedEuthanasias',
         'intakesOwnersurrenders' => 'IntakesOwnerSurrenders',
         'intakesServices' => 'IntakesServices',
         'intakesStraydropoffs' => 'IntakesStrayDropoffs',
@@ -141,7 +156,7 @@ class RequestGenerator
         'outcomesTransfers' => 'OutcomesTransfers',
         'partnerships' => 'Partnerships',
         'roles' => 'Roles',
-        'submittedforms' => 'Submittedforms',
+        'submittedforms' => 'SubmittedForms',
         'settings' => 'Settings',
         'testimonials' => 'Testimonials',
         'users' => 'Users',
@@ -224,6 +239,10 @@ class RequestGenerator
         $this->docRequestMethodTemplate = file_get_contents(__DIR__ . '/templates/segments/query-request-method-doc.md.tpl');
         $this->docIndexTemplate = file_get_contents(__DIR__ . '/templates/doc-index.md.tpl');
 
+        $this->responseTemplate = file_get_contents(__DIR__ . '/templates/response-object.php.tpl');
+        $this->responseConstructorTemplate = file_get_contents(__DIR__ . '/templates/segments/set-constructor-item.tpl');
+        $this->responseConstructorItemTemplate = file_get_contents(__DIR__ . '/templates/segments/public-fields.php.tpl');
+
         $queryDocLinks = '';
 
         //Check definitions with vcr for data
@@ -277,6 +296,24 @@ class RequestGenerator
         $testDir = __DIR__ . '/../../tests/Request/Objects/' . $className;
         $docDir = __DIR__ . '/../../doc/request/' . $className;
 
+        $responseClassName = $className;
+        if (substr($responseClassName, -7) != 'Species')
+        {
+            if (substr($responseClassName, -3) == 'ses')
+            {
+                $responseClassName = substr($responseClassName, 0, -2);
+            }
+            elseif (substr($responseClassName, -3) == 'ies')
+            {
+                $responseClassName = substr($responseClassName, 0, -3) . 'y';
+            }
+            elseif (substr($responseClassName, -1) == 's')
+            {
+                $responseClassName = substr($responseClassName, 0, -1);
+            }
+        }
+        $responseObject = __DIR__ . '/../../src/Response/Objects/' . $responseClassName . '.php';
+
         if (!is_dir($dir))
         {
             mkdir($dir);
@@ -307,7 +344,11 @@ class RequestGenerator
 
             '%FIELDASSERTS%',
             '%FIELDSETS%',
-            '%DATE%'
+            '%DATE%',
+
+            '%RESPONSEOBJECTCONSTRUCT%',
+            '%FIELDSPUBLIC%',
+            '%RESPONSECLASSNAME%'
         ];
 
         $fieldReplaceFields = [
@@ -315,7 +356,7 @@ class RequestGenerator
             '%TYPE%',
             '%NAME%',
             '%PARAMETERNAME%',
-            '%SDKFIELDNAME%'
+            '%SDKFIELDNAME%',
         ];
 
         $mainDocFile = $docDir . '/readme.md';
@@ -368,7 +409,11 @@ class RequestGenerator
                 '',
                 '',
 
-                date(static::DATE_FORMAT)
+                date(static::DATE_FORMAT),
+
+                '',
+                '',
+                $responseClassName
             ];
 
             if ($isSearch)
@@ -381,8 +426,9 @@ class RequestGenerator
             $fieldSets = '';
 
             $docMethods = '';
+            $constructorFields = '';
 
-            //Handle any fields the queries can take
+            //Handle any fields the queries can take and create a response object
             if (!empty($requestData->fields))
             {
                 $replacements[5] = ', \RescueGroups\Request\ParametersInterface';
@@ -419,6 +465,10 @@ class RequestGenerator
                     {
                         $fieldData->type = 'string';
                     }
+                    else if ($fieldData->type == 'email')
+                    {
+                        $fieldData->type = 'string';
+                    }
                     else if ($fieldData->type == 'decimal')
                     {
                         $fieldData->type = 'float';
@@ -432,10 +482,12 @@ class RequestGenerator
                         $sdkFieldName
                     ];
 
+                    $replacements[14] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->responseConstructorItemTemplate);
                     $replacements[6] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->fieldTemplate);
                     $replacements[7] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->setterTemplate);
 
                     $parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->getParameterItemTemplate);
+                    $constructorFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->responseConstructorTemplate);
 
                     $fieldSets .= "\n" . '        $query->set' . ucfirst($sdkFieldName) . '("' . $sdkFieldName . '");';
                     $fieldAsserts .= "\n" . '        $this->assertEquals("' . $sdkFieldName . '", $data["' . $fieldData->name . '"]);';
@@ -458,12 +510,20 @@ class RequestGenerator
 
             $replacements[10] = $fieldAsserts;
             $replacements[11] = $fieldSets;
+            $replacements[13] = $constructorFields;
 
             $classContent = str_replace($replacers, $replacements, $this->templateData);
             $testClassContent = str_replace($replacers, $replacements, $this->testTemplateData);
+            $responseObjectContent = str_replace($replacers, $replacements, $this->responseTemplate);
 
             file_put_contents($requestFileName, $classContent);
             file_put_contents($requestTestFileName, $testClassContent);
+
+            //Avoid writing empty response object classes
+            if (!empty($constructorFields))
+            {
+                file_put_contents($responseObject, $responseObjectContent);
+            }
 
             $mainDocRequest .= str_replace(['%CLASSNAME%','%REQUEST%','%METHODS%','%OBJECTTYPE%','%OBJECTACTION%'], [$className, $requestClassName, $docMethods, $type, $request], $this->docRequestTemplate);
         }

@@ -100,9 +100,9 @@ Sets orgFax field with a value of type phone.
 
 #### ::setOrgEmail
 
-Sets orgEmail field with a value of type email.
+Sets orgEmail field with a value of type string.
 
-    $query->setOrgEmail(email);
+    $query->setOrgEmail(string);
 
 #### ::setOrgWebsiteUrl
 

@@ -108,19 +108,19 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
 
     /**
      * Email address
-     * @var email
+     * @var string
      */
     private $userEmail = null;
 
     /**
      * Alternate email address
-     * @var email
+     * @var string
      */
     private $userEmailAlt = null;
 
     /**
      * Pager email address
-     * @var email
+     * @var string
      */
     private $userEmailPager = null;
 
@@ -382,7 +382,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Email address
      *
-     * @param email $userEmail
+     * @param string $userEmail
      * @return $this
      */
     public function setUserEmail($userEmail)
@@ -395,7 +395,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Alternate email address
      *
-     * @param email $userEmailAlt
+     * @param string $userEmailAlt
      * @return $this
      */
     public function setUserEmailAlt($userEmailAlt)
@@ -408,7 +408,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     /**
      * Set Pager email address
      *
-     * @param email $userEmailPager
+     * @param string $userEmailPager
      * @return $this
      */
     public function setUserEmailPager($userEmailPager)
