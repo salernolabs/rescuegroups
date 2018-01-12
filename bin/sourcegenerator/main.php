@@ -508,12 +508,14 @@ class RequestGenerator
      */
     private function buildDefinedObjectQueries($className, $type, $definition)
     {
+        die('OLD LOGIC!');
+
         //Initial setups
         $dir = __DIR__ . '/../../src/Request/Objects/' . $className;
         $testDir = __DIR__ . '/../../tests/Request/Objects/' . $className;
         $docDir = __DIR__ . '/../../doc/request/' . $className;
 
-        $responseClassName = $this->getResponseObjectClassName($className);
+        //$responseClassName = $this->getResponseObjectClassName($className);
         $responseObject = __DIR__ . '/../../src/Response/Objects/' . $responseClassName . '.php';
 
         if (!is_dir($dir))
