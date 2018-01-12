@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class AnimalGroup
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $groupID;
+
+    /**
      * Name
      * @var string
      */
@@ -30,6 +36,7 @@ class AnimalGroup
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->groupID)) $this->groupID = $inputData->groupID;
         if (!empty($inputData->groupName)) $this->groupName = $inputData->groupName;
         if (!empty($inputData->groupHeaderID)) $this->groupHeaderID = $inputData->groupHeaderID;
 

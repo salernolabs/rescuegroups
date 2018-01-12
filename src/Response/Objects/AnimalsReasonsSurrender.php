@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class AnimalsReasonsSurrender
 {
     /**
+     * Reason ID
+     * @var integer
+     */
+    public $reasonID;
+
+    /**
      * Reason
      * @var string
      */
@@ -24,6 +30,7 @@ class AnimalsReasonsSurrender
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->reasonID)) $this->reasonID = $inputData->reasonID;
         if (!empty($inputData->reasonName)) $this->reasonName = $inputData->reasonName;
 
     }

@@ -11,22 +11,16 @@ namespace RescueGroups\Response\Objects;
 class InventoryFile
 {
     /**
+     * File
+     * @var integer
+     */
+    public $inventoryfileID;
+
+    /**
      * ID
      * @var integer
      */
     public $inventoryfileItemID;
-
-    /**
-     * File
-     * @var string
-     */
-    public $inventoryfileBinary;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    public $inventoryfileOldFileName;
 
     /**
      * Description
@@ -54,9 +48,8 @@ class InventoryFile
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->inventoryfileID)) $this->inventoryfileID = $inputData->inventoryfileID;
         if (!empty($inputData->inventoryfileItemID)) $this->inventoryfileItemID = $inputData->inventoryfileItemID;
-        if (!empty($inputData->inventoryfileBinary)) $this->inventoryfileBinary = $inputData->inventoryfileBinary;
-        if (!empty($inputData->inventoryfileOldFileName)) $this->inventoryfileOldFileName = $inputData->inventoryfileOldFileName;
         if (!empty($inputData->inventoryfileDescription)) $this->inventoryfileDescription = $inputData->inventoryfileDescription;
         if (!empty($inputData->inventoryfileStatus)) $this->inventoryfileStatus = $inputData->inventoryfileStatus;
         if (!empty($inputData->inventoryfileDisplayInline)) $this->inventoryfileDisplayInline = $inputData->inventoryfileDisplayInline;

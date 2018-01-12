@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\IntakesImpounds;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Impound
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesImpoundID = null;
+    private $objectFields = [
+        "intakesImpoundID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Impound
-     *
-     * @param integer $intakesImpoundID
-     * @return $this
-     */
-    public function setIntakesImpoundID($intakesImpoundID)
-    {
-        $this->intakesImpoundID = $intakesImpoundID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesImpoundID !== null) $parameterArray['intakesImpoundID'] = $this->intakesImpoundID;
 
     }
+
 }

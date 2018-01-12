@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class AnimalsMeetRequest
 {
     /**
+     * Meet Request ID
+     * @var integer
+     */
+    public $meetrequestID;
+
+    /**
      * Animal ID
      * @var integer
      */
@@ -48,6 +54,7 @@ class AnimalsMeetRequest
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->meetrequestID)) $this->meetrequestID = $inputData->meetrequestID;
         if (!empty($inputData->meetrequestAnimalID)) $this->meetrequestAnimalID = $inputData->meetrequestAnimalID;
         if (!empty($inputData->meetrequestContactID)) $this->meetrequestContactID = $inputData->meetrequestContactID;
         if (!empty($inputData->meetrequestEventID)) $this->meetrequestEventID = $inputData->meetrequestEventID;

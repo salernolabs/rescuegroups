@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Colonies;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $colonyID = null;
+    private $objectFields = [
+        "colonyID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $colonyID
-     * @return $this
-     */
-    public function setColonyID($colonyID)
-    {
-        $this->colonyID = $colonyID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->colonyID !== null) $parameterArray['colonyID'] = $this->colonyID;
 
     }
+
 }

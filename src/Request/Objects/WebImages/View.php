@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\WebImages;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $webimageID = null;
+    private $objectFields = [
+        "webimageID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $webimageID
-     * @return $this
-     */
-    public function setWebimageID($webimageID)
-    {
-        $this->webimageID = $webimageID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->webimageID !== null) $parameterArray['webimageID'] = $this->webimageID;
 
     }
+
 }

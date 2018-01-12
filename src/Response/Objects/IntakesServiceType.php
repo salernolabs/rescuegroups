@@ -12,6 +12,12 @@ class IntakesServiceType
 {
     /**
      * Service
+     * @var integer
+     */
+    public $serviceID;
+
+    /**
+     * Service
      * @var string
      */
     public $serviceName;
@@ -24,6 +30,7 @@ class IntakesServiceType
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->serviceID)) $this->serviceID = $inputData->serviceID;
         if (!empty($inputData->serviceName)) $this->serviceName = $inputData->serviceName;
 
     }

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Animals;
 class YoutubeUrls implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalID = null;
+    private $objectFields = [
+        "animalID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class YoutubeUrls implements \RescueGroups\Request\RequestInterface, \RescueGrou
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
 
     }
+
 }

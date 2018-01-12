@@ -11,16 +11,16 @@ namespace RescueGroups\Response\Objects;
 class Memorial
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $memorialID;
+
+    /**
      * File
      * @var string
      */
     public $memorialPictureBinary;
-
-    /**
-     * File name
-     * @var string
-     */
-    public $memorialName;
 
     /**
      * Old file name
@@ -29,16 +29,16 @@ class Memorial
     public $memorialPictureOldFileName;
 
     /**
+     * File name
+     * @var string
+     */
+    public $memorialName;
+
+    /**
      * Description
      * @var string
      */
     public $memorialDescription;
-
-    /**
-     * Order
-     * @var string
-     */
-    public $memorialOrder;
 
 
 
@@ -48,11 +48,11 @@ class Memorial
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->memorialID)) $this->memorialID = $inputData->memorialID;
         if (!empty($inputData->memorialPictureBinary)) $this->memorialPictureBinary = $inputData->memorialPictureBinary;
-        if (!empty($inputData->memorialName)) $this->memorialName = $inputData->memorialName;
         if (!empty($inputData->memorialPictureOldFileName)) $this->memorialPictureOldFileName = $inputData->memorialPictureOldFileName;
+        if (!empty($inputData->memorialName)) $this->memorialName = $inputData->memorialName;
         if (!empty($inputData->memorialDescription)) $this->memorialDescription = $inputData->memorialDescription;
-        if (!empty($inputData->memorialOrder)) $this->memorialOrder = $inputData->memorialOrder;
 
     }
 }

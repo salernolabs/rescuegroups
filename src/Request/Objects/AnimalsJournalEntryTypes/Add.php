@@ -11,16 +11,14 @@ namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Description
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntrytypeDescription = null;
-
-    /**
-     * Category ID
-     * @var integer
-     */
-    private $journalEntrytypeCategoryID = null;
+    private $objectFields = [
+        "journalEntrytypeDescription" => 0,
+        "journalEntrytypeCategoryID" => 1,
+    ];
 
 
     /**
@@ -52,39 +50,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Description
-     *
-     * @param string $journalEntrytypeDescription
-     * @return $this
-     */
-    public function setJournalEntrytypeDescription($journalEntrytypeDescription)
-    {
-        $this->journalEntrytypeDescription = $journalEntrytypeDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Category ID
-     *
-     * @param integer $journalEntrytypeCategoryID
-     * @return $this
-     */
-    public function setJournalEntrytypeCategoryID($journalEntrytypeCategoryID)
-    {
-        $this->journalEntrytypeCategoryID = $journalEntrytypeCategoryID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntrytypeDescription !== null) $parameterArray['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
-        if ($this->journalEntrytypeCategoryID !== null) $parameterArray['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
 
     }
+
 }

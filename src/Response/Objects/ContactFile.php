@@ -11,22 +11,10 @@ namespace RescueGroups\Response\Objects;
 class ContactFile
 {
     /**
-     * Contact
+     * File ID
      * @var integer
      */
-    public $contactfileContactID;
-
-    /**
-     * File
-     * @var string
-     */
-    public $contactfileBinary;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    public $contactfileOldFileName;
+    public $contactfileID;
 
     /**
      * Description
@@ -54,9 +42,7 @@ class ContactFile
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->contactfileContactID)) $this->contactfileContactID = $inputData->contactfileContactID;
-        if (!empty($inputData->contactfileBinary)) $this->contactfileBinary = $inputData->contactfileBinary;
-        if (!empty($inputData->contactfileOldFileName)) $this->contactfileOldFileName = $inputData->contactfileOldFileName;
+        if (!empty($inputData->contactfileID)) $this->contactfileID = $inputData->contactfileID;
         if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
         if (!empty($inputData->contactfileStatus)) $this->contactfileStatus = $inputData->contactfileStatus;
         if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;

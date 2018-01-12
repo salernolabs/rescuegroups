@@ -11,10 +11,10 @@ namespace RescueGroups\Response\Objects;
 class InventoryLoaner
 {
     /**
-     * Contact
+     * ID
      * @var integer
      */
-    public $inventoryLoanerContactID;
+    public $inventoryLoanerID;
 
     /**
      * Item
@@ -66,7 +66,7 @@ class InventoryLoaner
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->inventoryLoanerContactID)) $this->inventoryLoanerContactID = $inputData->inventoryLoanerContactID;
+        if (!empty($inputData->inventoryLoanerID)) $this->inventoryLoanerID = $inputData->inventoryLoanerID;
         if (!empty($inputData->inventoryLoanerItemID)) $this->inventoryLoanerItemID = $inputData->inventoryLoanerItemID;
         if (!empty($inputData->inventoryLoanerLoanDate)) $this->inventoryLoanerLoanDate = $inputData->inventoryLoanerLoanDate;
         if (!empty($inputData->inventoryLoanerLoanConditionID)) $this->inventoryLoanerLoanConditionID = $inputData->inventoryLoanerLoanConditionID;

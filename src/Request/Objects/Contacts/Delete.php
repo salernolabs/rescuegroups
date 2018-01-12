@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Contacts;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $contactID = null;
+    private $objectFields = [
+        "contactID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $contactID
-     * @return $this
-     */
-    public function setContactID($contactID)
-    {
-        $this->contactID = $contactID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactID !== null) $parameterArray['contactID'] = $this->contactID;
 
     }
+
 }

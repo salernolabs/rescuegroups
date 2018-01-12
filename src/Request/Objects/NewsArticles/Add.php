@@ -11,22 +11,15 @@ namespace RescueGroups\Request\Objects\NewsArticles;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Title
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $articleTitle = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $articleDescription = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $articleDate = null;
+    private $objectFields = [
+        "articleTitle" => 1,
+        "articleDescription" => 1,
+        "articleDate" => 1,
+    ];
 
 
     /**
@@ -58,53 +51,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Title
-     *
-     * @param string $articleTitle
-     * @return $this
-     */
-    public function setArticleTitle($articleTitle)
-    {
-        $this->articleTitle = $articleTitle;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $articleDescription
-     * @return $this
-     */
-    public function setArticleDescription($articleDescription)
-    {
-        $this->articleDescription = $articleDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $articleDate
-     * @return $this
-     */
-    public function setArticleDate($articleDate)
-    {
-        $this->articleDate = $articleDate;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->articleTitle !== null) $parameterArray['articleTitle'] = $this->articleTitle;
-        if ($this->articleDescription !== null) $parameterArray['articleDescription'] = $this->articleDescription;
-        if ($this->articleDate !== null) $parameterArray['articleDate'] = $this->articleDate;
 
     }
+
 }

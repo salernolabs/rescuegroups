@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalsMeetRequests;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Meet Request ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $meetrequestID = null;
+    private $objectFields = [
+        "meetrequestID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Meet Request ID
-     *
-     * @param integer $meetrequestID
-     * @return $this
-     */
-    public function setMeetrequestID($meetrequestID)
-    {
-        $this->meetrequestID = $meetrequestID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->meetrequestID !== null) $parameterArray['meetrequestID'] = $this->meetrequestID;
 
     }
+
 }

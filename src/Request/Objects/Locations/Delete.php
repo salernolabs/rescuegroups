@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Locations;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $locationID = null;
+    private $objectFields = [
+        "locationID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $locationID
-     * @return $this
-     */
-    public function setLocationID($locationID)
-    {
-        $this->locationID = $locationID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->locationID !== null) $parameterArray['locationID'] = $this->locationID;
 
     }
+
 }

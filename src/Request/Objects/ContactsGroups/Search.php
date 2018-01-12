@@ -13,28 +13,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $groupID = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $groupName = null;
-
-    /**
-     * Business
-     * @var string
-     */
-    private $groupBusiness = null;
-
-    /**
-     * Protected
-     * @var string
-     */
-    private $groupProtected = null;
+    private $objectFields = [
+        "groupID" => 1,
+        "groupName" => 0,
+        "groupBusiness" => 0,
+        "groupProtected" => 0,
+    ];
 
 
     /**
@@ -66,71 +54,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $groupID
-     * @return $this
-     */
-    public function setGroupID($groupID)
-    {
-        $this->groupID = $groupID;
-
-        return $this;
-    }
-
-    /**
-     * Set Name
-     *
-     * @param string $groupName
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->groupName = $groupName;
-
-        return $this;
-    }
-
-    /**
-     * Set Business
-     *
-     * @param string $groupBusiness
-     * @return $this
-     */
-    public function setGroupBusiness($groupBusiness)
-    {
-        $this->groupBusiness = $groupBusiness;
-
-        return $this;
-    }
-
-    /**
-     * Set Protected
-     *
-     * @param string $groupProtected
-     * @return $this
-     */
-    public function setGroupProtected($groupProtected)
-    {
-        $this->groupProtected = $groupProtected;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->groupID !== null) $parameterArray['groupID'] = $this->groupID;
-        if ($this->groupName !== null) $parameterArray['groupName'] = $this->groupName;
-        if ($this->groupBusiness !== null) $parameterArray['groupBusiness'] = $this->groupBusiness;
-        if ($this->groupProtected !== null) $parameterArray['groupProtected'] = $this->groupProtected;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -141,7 +75,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\VolunteersJournalEntries;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntryID = null;
+    private $objectFields = [
+        "journalEntryID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $journalEntryID
-     * @return $this
-     */
-    public function setJournalEntryID($journalEntryID)
-    {
-        $this->journalEntryID = $journalEntryID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntryID !== null) $parameterArray['journalEntryID'] = $this->journalEntryID;
 
     }
+
 }

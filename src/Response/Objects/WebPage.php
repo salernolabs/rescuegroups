@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class WebPage
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $webpageID;
+
+    /**
      * Name
      * @var string
      */
@@ -72,6 +78,7 @@ class WebPage
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->webpageID)) $this->webpageID = $inputData->webpageID;
         if (!empty($inputData->webpageName)) $this->webpageName = $inputData->webpageName;
         if (!empty($inputData->webpageContent)) $this->webpageContent = $inputData->webpageContent;
         if (!empty($inputData->webpageStatus)) $this->webpageStatus = $inputData->webpageStatus;

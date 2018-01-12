@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class IntakesOwnerSurrender
 {
     /**
+     * Owner Surrender
+     * @var integer
+     */
+    public $intakesOwnersurrenderID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -54,6 +60,7 @@ class IntakesOwnerSurrender
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->intakesOwnersurrenderID)) $this->intakesOwnersurrenderID = $inputData->intakesOwnersurrenderID;
         if (!empty($inputData->intakesOwnersurrenderAnimalID)) $this->intakesOwnersurrenderAnimalID = $inputData->intakesOwnersurrenderAnimalID;
         if (!empty($inputData->intakesOwnersurrenderAnimalConditionID)) $this->intakesOwnersurrenderAnimalConditionID = $inputData->intakesOwnersurrenderAnimalConditionID;
         if (!empty($inputData->intakesOwnersurrenderDate)) $this->intakesOwnersurrenderDate = $inputData->intakesOwnersurrenderDate;

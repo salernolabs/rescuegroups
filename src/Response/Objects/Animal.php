@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Animal
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $animalID;
+
+    /**
      * Activity level
      * @var string
      */
@@ -33,12 +39,6 @@ class Animal
      * @var integer
      */
     public $animalAdoptionLeadID;
-
-    /**
-     * Adoption pending
-     * @var string
-     */
-    public $animalAdoptionPending;
 
     /**
      * Altered
@@ -275,6 +275,18 @@ class Animal
     public $animalName;
 
     /**
+     * Has special needs
+     * @var string
+     */
+    public $animalSpecialneeds;
+
+    /**
+     * Special needs description
+     * @var string
+     */
+    public $animalSpecialneedsDescription;
+
+    /**
      * Needs a Foster
      * @var string
      */
@@ -359,6 +371,12 @@ class Animal
     public $animalPatternID;
 
     /**
+     * Adoption pending
+     * @var string
+     */
+    public $animalAdoptionPending;
+
+    /**
      * Primary breed
      * @var integer
      */
@@ -417,18 +435,6 @@ class Animal
      * @var string
      */
     public $animalSizeUOM;
-
-    /**
-     * Has special needs
-     * @var string
-     */
-    public $animalSpecialneeds;
-
-    /**
-     * Special needs description
-     * @var string
-     */
-    public $animalSpecialneedsDescription;
 
     /**
      * Species
@@ -756,11 +762,11 @@ class Animal
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->animalID)) $this->animalID = $inputData->animalID;
         if (!empty($inputData->animalActivityLevel)) $this->animalActivityLevel = $inputData->animalActivityLevel;
         if (!empty($inputData->animalAdoptedDate)) $this->animalAdoptedDate = $inputData->animalAdoptedDate;
         if (!empty($inputData->animalAdoptionFee)) $this->animalAdoptionFee = $inputData->animalAdoptionFee;
         if (!empty($inputData->animalAdoptionLeadID)) $this->animalAdoptionLeadID = $inputData->animalAdoptionLeadID;
-        if (!empty($inputData->animalAdoptionPending)) $this->animalAdoptionPending = $inputData->animalAdoptionPending;
         if (!empty($inputData->animalAltered)) $this->animalAltered = $inputData->animalAltered;
         if (!empty($inputData->animalApplicationID)) $this->animalApplicationID = $inputData->animalApplicationID;
         if (!empty($inputData->animalAvailableDate)) $this->animalAvailableDate = $inputData->animalAvailableDate;
@@ -800,6 +806,8 @@ class Animal
         if (!empty($inputData->animalMicrochipVendor)) $this->animalMicrochipVendor = $inputData->animalMicrochipVendor;
         if (!empty($inputData->animalMixedBreed)) $this->animalMixedBreed = $inputData->animalMixedBreed;
         if (!empty($inputData->animalName)) $this->animalName = $inputData->animalName;
+        if (!empty($inputData->animalSpecialneeds)) $this->animalSpecialneeds = $inputData->animalSpecialneeds;
+        if (!empty($inputData->animalSpecialneedsDescription)) $this->animalSpecialneedsDescription = $inputData->animalSpecialneedsDescription;
         if (!empty($inputData->animalNeedsFoster)) $this->animalNeedsFoster = $inputData->animalNeedsFoster;
         if (!empty($inputData->animalNewPeople)) $this->animalNewPeople = $inputData->animalNewPeople;
         if (!empty($inputData->animalNotes)) $this->animalNotes = $inputData->animalNotes;
@@ -814,6 +822,7 @@ class Animal
         if (!empty($inputData->animalOwnerExperience)) $this->animalOwnerExperience = $inputData->animalOwnerExperience;
         if (!empty($inputData->animalOwnerID)) $this->animalOwnerID = $inputData->animalOwnerID;
         if (!empty($inputData->animalPatternID)) $this->animalPatternID = $inputData->animalPatternID;
+        if (!empty($inputData->animalAdoptionPending)) $this->animalAdoptionPending = $inputData->animalAdoptionPending;
         if (!empty($inputData->animalPrimaryBreedID)) $this->animalPrimaryBreedID = $inputData->animalPrimaryBreedID;
         if (!empty($inputData->animalReceivedDate)) $this->animalReceivedDate = $inputData->animalReceivedDate;
         if (!empty($inputData->animalRescueID)) $this->animalRescueID = $inputData->animalRescueID;
@@ -824,8 +833,6 @@ class Animal
         if (!empty($inputData->animalSizeCurrent)) $this->animalSizeCurrent = $inputData->animalSizeCurrent;
         if (!empty($inputData->animalSizePotential)) $this->animalSizePotential = $inputData->animalSizePotential;
         if (!empty($inputData->animalSizeUOM)) $this->animalSizeUOM = $inputData->animalSizeUOM;
-        if (!empty($inputData->animalSpecialneeds)) $this->animalSpecialneeds = $inputData->animalSpecialneeds;
-        if (!empty($inputData->animalSpecialneedsDescription)) $this->animalSpecialneedsDescription = $inputData->animalSpecialneedsDescription;
         if (!empty($inputData->animalSpeciesID)) $this->animalSpeciesID = $inputData->animalSpeciesID;
         if (!empty($inputData->animalSponsorable)) $this->animalSponsorable = $inputData->animalSponsorable;
         if (!empty($inputData->animalSponsors)) $this->animalSponsors = $inputData->animalSponsors;

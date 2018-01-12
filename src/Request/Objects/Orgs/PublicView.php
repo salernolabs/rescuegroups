@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Orgs;
 class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $orgID = null;
+    private $objectFields = [
+        "orgID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $orgID
-     * @return $this
-     */
-    public function setOrgID($orgID)
-    {
-        $this->orgID = $orgID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->orgID !== null) $parameterArray['orgID'] = $this->orgID;
 
     }
+
 }

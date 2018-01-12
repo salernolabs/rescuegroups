@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Call
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $callID;
+
+    /**
      * Contact
      * @var integer
      */
@@ -60,6 +66,7 @@ class Call
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->callID)) $this->callID = $inputData->callID;
         if (!empty($inputData->callContactID)) $this->callContactID = $inputData->callContactID;
         if (!empty($inputData->callAssignedID)) $this->callAssignedID = $inputData->callAssignedID;
         if (!empty($inputData->callStatusID)) $this->callStatusID = $inputData->callStatusID;

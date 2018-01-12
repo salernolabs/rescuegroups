@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Animals;
 class SetRequiredFields implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Field list
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $fieldlist = null;
+    private $objectFields = [
+        "fieldlist" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class SetRequiredFields implements \RescueGroups\Request\RequestInterface, \Resc
     }
 
     /**
-     * Set Field list
-     *
-     * @param string $fieldlist
-     * @return $this
-     */
-    public function setFieldlist($fieldlist)
-    {
-        $this->fieldlist = $fieldlist;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->fieldlist !== null) $parameterArray['fieldlist'] = $this->fieldlist;
 
     }
+
 }

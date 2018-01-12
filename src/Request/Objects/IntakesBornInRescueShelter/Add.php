@@ -11,28 +11,16 @@ namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $notes = null;
+    private $objectFields = [
+        "animalID" => 1,
+        "animalConditionID" => 1,
+        "date" => 1,
+        "notes" => 0,
+    ];
 
 
     /**
@@ -64,67 +52,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Animal
-     *
-     * @param integer $intakesBorninrescueshelterAnimalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesBorninrescueshelterAnimalConditionID
-     * @return $this
-     */
-    public function setAnimalConditionID($animalConditionID)
-    {
-        $this->animalConditionID = $animalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesBorninrescueshelterDate
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesBorninrescueshelterNotes
-     * @return $this
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['intakesBorninrescueshelterAnimalID'] = $this->animalID;
-        if ($this->animalConditionID !== null) $parameterArray['intakesBorninrescueshelterAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $parameterArray['intakesBorninrescueshelterDate'] = $this->date;
-        if ($this->notes !== null) $parameterArray['intakesBorninrescueshelterNotes'] = $this->notes;
 
     }
+
 }

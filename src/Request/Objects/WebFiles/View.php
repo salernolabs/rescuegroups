@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\WebFiles;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $webfileID = null;
+    private $objectFields = [
+        "webfileID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $webfileID
-     * @return $this
-     */
-    public function setWebfileID($webfileID)
-    {
-        $this->webfileID = $webfileID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->webfileID !== null) $parameterArray['webfileID'] = $this->webfileID;
 
     }
+
 }

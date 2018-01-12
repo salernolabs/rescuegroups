@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class User
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $userID;
+
+    /**
      * Login
      * @var string
      */
@@ -131,12 +137,6 @@ class User
     public $userContactID;
 
     /**
-     * Type
-     * @var string
-     */
-    public $userType;
-
-    /**
      * Status
      * @var string
      */
@@ -150,6 +150,7 @@ class User
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->userID)) $this->userID = $inputData->userID;
         if (!empty($inputData->userLogin)) $this->userLogin = $inputData->userLogin;
         if (!empty($inputData->userPassword)) $this->userPassword = $inputData->userPassword;
         if (!empty($inputData->userSalutation)) $this->userSalutation = $inputData->userSalutation;
@@ -170,7 +171,6 @@ class User
         if (!empty($inputData->userEmailAlt)) $this->userEmailAlt = $inputData->userEmailAlt;
         if (!empty($inputData->userEmailPager)) $this->userEmailPager = $inputData->userEmailPager;
         if (!empty($inputData->userContactID)) $this->userContactID = $inputData->userContactID;
-        if (!empty($inputData->userType)) $this->userType = $inputData->userType;
         if (!empty($inputData->userStatus)) $this->userStatus = $inputData->userStatus;
 
     }

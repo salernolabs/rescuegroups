@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\OutcomesAdoptions;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesAdoptionID = null;
+    private $objectFields = [
+        "outcomesAdoptionID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesAdoptionID
-     * @return $this
-     */
-    public function setOutcomesAdoptionID($outcomesAdoptionID)
-    {
-        $this->outcomesAdoptionID = $outcomesAdoptionID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesAdoptionID !== null) $parameterArray['outcomesAdoptionID'] = $this->outcomesAdoptionID;
 
     }
+
 }

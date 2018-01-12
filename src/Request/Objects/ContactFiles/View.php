@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\ContactFiles;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * File ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $contactfileID = null;
+    private $objectFields = [
+        "contactfileID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set File ID
-     *
-     * @param integer $contactfileID
-     * @return $this
-     */
-    public function setContactfileID($contactfileID)
-    {
-        $this->contactfileID = $contactfileID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactfileID !== null) $parameterArray['contactfileID'] = $this->contactfileID;
 
     }
+
 }

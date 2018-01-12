@@ -13,28 +13,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $patternID = null;
-
-    /**
-     * pattern
-     * @var string
-     */
-    private $patternName = null;
-
-    /**
-     * Species
-     * @var string
-     */
-    private $patternSpecies = null;
-
-    /**
-     * Species
-     * @var integer
-     */
-    private $patternSpeciesID = null;
+    private $objectFields = [
+        "patternID" => 1,
+        "patternName" => 0,
+        "patternSpecies" => 0,
+        "patternSpeciesID" => 0,
+    ];
 
 
     /**
@@ -66,71 +54,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $patternID
-     * @return $this
-     */
-    public function setPatternID($patternID)
-    {
-        $this->patternID = $patternID;
-
-        return $this;
-    }
-
-    /**
-     * Set pattern
-     *
-     * @param string $patternName
-     * @return $this
-     */
-    public function setPatternName($patternName)
-    {
-        $this->patternName = $patternName;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param string $patternSpecies
-     * @return $this
-     */
-    public function setPatternSpecies($patternSpecies)
-    {
-        $this->patternSpecies = $patternSpecies;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param integer $patternSpeciesID
-     * @return $this
-     */
-    public function setPatternSpeciesID($patternSpeciesID)
-    {
-        $this->patternSpeciesID = $patternSpeciesID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->patternID !== null) $parameterArray['patternID'] = $this->patternID;
-        if ($this->patternName !== null) $parameterArray['patternName'] = $this->patternName;
-        if ($this->patternSpecies !== null) $parameterArray['patternSpecies'] = $this->patternSpecies;
-        if ($this->patternSpeciesID !== null) $parameterArray['patternSpeciesID'] = $this->patternSpeciesID;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -141,7 +75,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

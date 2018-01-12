@@ -13,16 +13,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Service
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $serviceID = null;
-
-    /**
-     * Service
-     * @var string
-     */
-    private $serviceName = null;
+    private $objectFields = [
+        "serviceID" => 0,
+        "serviceName" => 0,
+    ];
 
 
     /**
@@ -54,43 +52,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Service
-     *
-     * @param integer $serviceID
-     * @return $this
-     */
-    public function setServiceID($serviceID)
-    {
-        $this->serviceID = $serviceID;
-
-        return $this;
-    }
-
-    /**
-     * Set Service
-     *
-     * @param string $serviceName
-     * @return $this
-     */
-    public function setServiceName($serviceName)
-    {
-        $this->serviceName = $serviceName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->serviceID !== null) $parameterArray['serviceID'] = $this->serviceID;
-        if ($this->serviceName !== null) $parameterArray['serviceName'] = $this->serviceName;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -101,7 +73,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class InventoryItem
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $inventoryitemID;
+
+    /**
      * Name
      * @var string
      */
@@ -76,12 +82,6 @@ class InventoryItem
      */
     public $inventoryitemStorageLocation;
 
-    /**
-     * Quantity
-     * @var string
-     */
-    public $inventoryitemQuantity;
-
 
 
     /**
@@ -90,6 +90,7 @@ class InventoryItem
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->inventoryitemID)) $this->inventoryitemID = $inputData->inventoryitemID;
         if (!empty($inputData->inventoryitemName)) $this->inventoryitemName = $inputData->inventoryitemName;
         if (!empty($inputData->inventoryitemItemID)) $this->inventoryitemItemID = $inputData->inventoryitemItemID;
         if (!empty($inputData->inventoryitemDescription)) $this->inventoryitemDescription = $inputData->inventoryitemDescription;
@@ -101,7 +102,6 @@ class InventoryItem
         if (!empty($inputData->inventoryitemDisposedDate)) $this->inventoryitemDisposedDate = $inputData->inventoryitemDisposedDate;
         if (!empty($inputData->inventoryitemDisposedDestination)) $this->inventoryitemDisposedDestination = $inputData->inventoryitemDisposedDestination;
         if (!empty($inputData->inventoryitemStorageLocation)) $this->inventoryitemStorageLocation = $inputData->inventoryitemStorageLocation;
-        if (!empty($inputData->inventoryitemQuantity)) $this->inventoryitemQuantity = $inputData->inventoryitemQuantity;
 
     }
 }

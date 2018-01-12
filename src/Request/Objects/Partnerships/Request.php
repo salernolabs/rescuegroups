@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Partnerships;
 class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Sharing Org
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $partnershipSharingOrgID = null;
+    private $objectFields = [
+        "partnershipSharingOrgID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Set Sharing Org
-     *
-     * @param integer $partnershipSharingOrgID
-     * @return $this
-     */
-    public function setPartnershipSharingOrgID($partnershipSharingOrgID)
-    {
-        $this->partnershipSharingOrgID = $partnershipSharingOrgID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->partnershipSharingOrgID !== null) $parameterArray['partnershipSharingOrgID'] = $this->partnershipSharingOrgID;
 
     }
+
 }

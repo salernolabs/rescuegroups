@@ -13,22 +13,15 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $statusID = null;
-
-    /**
-     * Status name
-     * @var string
-     */
-    private $statusName = null;
-
-    /**
-     * Status description
-     * @var string
-     */
-    private $statusDescription = null;
+    private $objectFields = [
+        "statusID" => 1,
+        "statusName" => 0,
+        "statusDescription" => 0,
+    ];
 
 
     /**
@@ -60,57 +53,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $statusID
-     * @return $this
-     */
-    public function setStatusID($statusID)
-    {
-        $this->statusID = $statusID;
-
-        return $this;
-    }
-
-    /**
-     * Set Status name
-     *
-     * @param string $statusName
-     * @return $this
-     */
-    public function setStatusName($statusName)
-    {
-        $this->statusName = $statusName;
-
-        return $this;
-    }
-
-    /**
-     * Set Status description
-     *
-     * @param string $statusDescription
-     * @return $this
-     */
-    public function setStatusDescription($statusDescription)
-    {
-        $this->statusDescription = $statusDescription;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->statusID !== null) $parameterArray['statusID'] = $this->statusID;
-        if ($this->statusName !== null) $parameterArray['statusName'] = $this->statusName;
-        if ($this->statusDescription !== null) $parameterArray['statusDescription'] = $this->statusDescription;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -121,7 +74,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

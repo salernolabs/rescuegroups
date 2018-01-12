@@ -11,16 +11,14 @@ namespace RescueGroups\Request\Objects\AnimalsReasonsEuthanasia;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Reason ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $reasonID = null;
-
-    /**
-     * Reason
-     * @var string
-     */
-    private $reasonName = null;
+    private $objectFields = [
+        "reasonID" => 1,
+        "reasonName" => 0,
+    ];
 
 
     /**
@@ -52,39 +50,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Reason ID
-     *
-     * @param integer $reasonID
-     * @return $this
-     */
-    public function setReasonID($reasonID)
-    {
-        $this->reasonID = $reasonID;
-
-        return $this;
-    }
-
-    /**
-     * Set Reason
-     *
-     * @param string $reasonName
-     * @return $this
-     */
-    public function setReasonName($reasonName)
-    {
-        $this->reasonName = $reasonName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->reasonID !== null) $parameterArray['reasonID'] = $this->reasonID;
-        if ($this->reasonName !== null) $parameterArray['reasonName'] = $this->reasonName;
 
     }
+
 }

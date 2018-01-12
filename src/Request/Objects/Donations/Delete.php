@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Donations;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $donationID = null;
+    private $objectFields = [
+        "donationID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $donationID
-     * @return $this
-     */
-    public function setDonationID($donationID)
-    {
-        $this->donationID = $donationID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->donationID !== null) $parameterArray['donationID'] = $this->donationID;
 
     }
+
 }

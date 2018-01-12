@@ -11,28 +11,16 @@ namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $memberID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $memberContactID = null;
-
-    /**
-     * Queue
-     * @var integer
-     */
-    private $memberQueueID = null;
-
-    /**
-     * Manager
-     * @var string
-     */
-    private $memberManager = null;
+    private $objectFields = [
+        "memberID" => 1,
+        "memberContactID" => 0,
+        "memberQueueID" => 0,
+        "memberManager" => 0,
+    ];
 
 
     /**
@@ -64,67 +52,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $memberID
-     * @return $this
-     */
-    public function setMemberID($memberID)
-    {
-        $this->memberID = $memberID;
-
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $memberContactID
-     * @return $this
-     */
-    public function setMemberContactID($memberContactID)
-    {
-        $this->memberContactID = $memberContactID;
-
-        return $this;
-    }
-
-    /**
-     * Set Queue
-     *
-     * @param integer $memberQueueID
-     * @return $this
-     */
-    public function setMemberQueueID($memberQueueID)
-    {
-        $this->memberQueueID = $memberQueueID;
-
-        return $this;
-    }
-
-    /**
-     * Set Manager
-     *
-     * @param string $memberManager
-     * @return $this
-     */
-    public function setMemberManager($memberManager)
-    {
-        $this->memberManager = $memberManager;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->memberID !== null) $parameterArray['memberID'] = $this->memberID;
-        if ($this->memberContactID !== null) $parameterArray['memberContactID'] = $this->memberContactID;
-        if ($this->memberQueueID !== null) $parameterArray['memberQueueID'] = $this->memberQueueID;
-        if ($this->memberManager !== null) $parameterArray['memberManager'] = $this->memberManager;
 
     }
+
 }

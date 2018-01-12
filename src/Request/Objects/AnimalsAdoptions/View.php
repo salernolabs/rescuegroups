@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Adoption ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $adoptionID = null;
+    private $objectFields = [
+        "adoptionID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Adoption ID
-     *
-     * @param integer $adoptionID
-     * @return $this
-     */
-    public function setAdoptionID($adoptionID)
-    {
-        $this->adoptionID = $adoptionID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->adoptionID !== null) $parameterArray['adoptionID'] = $this->adoptionID;
 
     }
+
 }

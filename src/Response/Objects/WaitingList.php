@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class WaitingList
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $waitinglistID;
+
+    /**
      * Name
      * @var string
      */
@@ -36,6 +42,7 @@ class WaitingList
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->waitinglistID)) $this->waitinglistID = $inputData->waitinglistID;
         if (!empty($inputData->waitinglistName)) $this->waitinglistName = $inputData->waitinglistName;
         if (!empty($inputData->waitinglistType)) $this->waitinglistType = $inputData->waitinglistType;
         if (!empty($inputData->waitinglistComment)) $this->waitinglistComment = $inputData->waitinglistComment;

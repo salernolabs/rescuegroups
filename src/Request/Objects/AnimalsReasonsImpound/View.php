@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalsReasonsImpound;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Reason ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $reasonID = null;
+    private $objectFields = [
+        "reasonID" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Reason ID
-     *
-     * @param integer $reasonID
-     * @return $this
-     */
-    public function setReasonID($reasonID)
-    {
-        $this->reasonID = $reasonID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->reasonID !== null) $parameterArray['reasonID'] = $this->reasonID;
 
     }
+
 }

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Users;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $userID = null;
+    private $objectFields = [
+        "userID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $userID
-     * @return $this
-     */
-    public function setUserID($userID)
-    {
-        $this->userID = $userID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->userID !== null) $parameterArray['userID'] = $this->userID;
 
     }
+
 }

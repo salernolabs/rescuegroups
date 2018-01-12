@@ -11,16 +11,14 @@ namespace RescueGroups\Request\Objects\ColoniesCareTakers;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Colony
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $caretakerColonyID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $caretakerContactID = null;
+    private $objectFields = [
+        "caretakerColonyID" => 1,
+        "caretakerContactID" => 1,
+    ];
 
 
     /**
@@ -52,39 +50,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Colony
-     *
-     * @param integer $caretakerColonyID
-     * @return $this
-     */
-    public function setCaretakerColonyID($caretakerColonyID)
-    {
-        $this->caretakerColonyID = $caretakerColonyID;
-
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $caretakerContactID
-     * @return $this
-     */
-    public function setCaretakerContactID($caretakerContactID)
-    {
-        $this->caretakerContactID = $caretakerContactID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->caretakerColonyID !== null) $parameterArray['caretakerColonyID'] = $this->caretakerColonyID;
-        if ($this->caretakerContactID !== null) $parameterArray['caretakerContactID'] = $this->caretakerContactID;
 
     }
+
 }

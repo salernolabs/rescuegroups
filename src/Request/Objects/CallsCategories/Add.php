@@ -11,28 +11,16 @@ namespace RescueGroups\Request\Objects\CallsCategories;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $categoryName = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $categoryDescription = null;
-
-    /**
-     * Public
-     * @var string
-     */
-    private $categoryPublic = null;
-
-    /**
-     * Default Queue
-     * @var integer
-     */
-    private $categoryDefaultQueueID = null;
+    private $objectFields = [
+        "categoryName" => 1,
+        "categoryDescription" => 0,
+        "categoryPublic" => 0,
+        "categoryDefaultQueueID" => 1,
+    ];
 
 
     /**
@@ -64,67 +52,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $categoryName
-     * @return $this
-     */
-    public function setCategoryName($categoryName)
-    {
-        $this->categoryName = $categoryName;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $categoryDescription
-     * @return $this
-     */
-    public function setCategoryDescription($categoryDescription)
-    {
-        $this->categoryDescription = $categoryDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Public
-     *
-     * @param string $categoryPublic
-     * @return $this
-     */
-    public function setCategoryPublic($categoryPublic)
-    {
-        $this->categoryPublic = $categoryPublic;
-
-        return $this;
-    }
-
-    /**
-     * Set Default Queue
-     *
-     * @param integer $categoryDefaultQueueID
-     * @return $this
-     */
-    public function setCategoryDefaultQueueID($categoryDefaultQueueID)
-    {
-        $this->categoryDefaultQueueID = $categoryDefaultQueueID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->categoryName !== null) $parameterArray['categoryName'] = $this->categoryName;
-        if ($this->categoryDescription !== null) $parameterArray['categoryDescription'] = $this->categoryDescription;
-        if ($this->categoryPublic !== null) $parameterArray['categoryPublic'] = $this->categoryPublic;
-        if ($this->categoryDefaultQueueID !== null) $parameterArray['categoryDefaultQueueID'] = $this->categoryDefaultQueueID;
 
     }
+
 }

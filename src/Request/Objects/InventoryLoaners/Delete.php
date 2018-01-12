@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\InventoryLoaners;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $inventoryLoanerID = null;
+    private $objectFields = [
+        "inventoryLoanerID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $inventoryLoanerID
-     * @return $this
-     */
-    public function setInventoryLoanerID($inventoryLoanerID)
-    {
-        $this->inventoryLoanerID = $inventoryLoanerID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->inventoryLoanerID !== null) $parameterArray['inventoryLoanerID'] = $this->inventoryLoanerID;
 
     }
+
 }

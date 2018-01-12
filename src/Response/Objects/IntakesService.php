@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class IntakesService
 {
     /**
+     * Service
+     * @var integer
+     */
+    public $intakesServiceID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -54,6 +60,7 @@ class IntakesService
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->intakesServiceID)) $this->intakesServiceID = $inputData->intakesServiceID;
         if (!empty($inputData->intakesServiceAnimalID)) $this->intakesServiceAnimalID = $inputData->intakesServiceAnimalID;
         if (!empty($inputData->intakesServiceAnimalConditionID)) $this->intakesServiceAnimalConditionID = $inputData->intakesServiceAnimalConditionID;
         if (!empty($inputData->intakesServiceDate)) $this->intakesServiceDate = $inputData->intakesServiceDate;

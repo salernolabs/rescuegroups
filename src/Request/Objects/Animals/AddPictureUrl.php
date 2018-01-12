@@ -11,22 +11,15 @@ namespace RescueGroups\Request\Objects\Animals;
 class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalID = null;
-
-    /**
-     * Picture Url
-     * @var string
-     */
-    private $pictureUrl = null;
-
-    /**
-     * Order
-     * @var string
-     */
-    private $mediaOrder = null;
+    private $objectFields = [
+        "animalID" => 1,
+        "pictureUrl" => 1,
+        "mediaOrder" => 0,
+    ];
 
 
     /**
@@ -58,53 +51,13 @@ class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Picture Url
-     *
-     * @param string $pictureUrl
-     * @return $this
-     */
-    public function setPictureUrl($pictureUrl)
-    {
-        $this->pictureUrl = $pictureUrl;
-
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param string $mediaOrder
-     * @return $this
-     */
-    public function setMediaOrder($mediaOrder)
-    {
-        $this->mediaOrder = $mediaOrder;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->pictureUrl !== null) $parameterArray['pictureUrl'] = $this->pictureUrl;
-        if ($this->mediaOrder !== null) $parameterArray['mediaOrder'] = $this->mediaOrder;
 
     }
+
 }

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 include(__DIR__ . '/../../vendor/autoload.php');
 
 $api = new \RescueGroups\API();
@@ -10,15 +10,21 @@ $api->executeRequest($login);
 
 echo 'Getting pets...' . PHP_EOL;
 
-$query = new \RescueGroups\Request\Objects\Animals\Search();
-
 try
 {
-    $result = $api->executeRequest($query);
+    $query = new \RescueGroups\Request\Objects\Animals\Search();
+    //$query->addFilter('animalRescueID', 'equals', 1);
+    $query->addField('animalName');
 
-    print_r($result,1);
+    $result = $api->executeRequest($query);
 }
 catch (\Throwable $exception)
 {
     echo 'Exception: ' . $exception->getMessage() . PHP_EOL;
+    die();
+}
+
+foreach ($result->data as $animal)
+{
+    echo 'Animal with id ' . $animal->animalID . ' is ' . $animal->animalName . PHP_EOL;
 }

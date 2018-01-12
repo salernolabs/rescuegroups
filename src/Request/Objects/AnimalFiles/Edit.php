@@ -11,40 +11,18 @@ namespace RescueGroups\Request\Objects\AnimalFiles;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * File ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalfileID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $animalfileAnimalID = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $animalfileDescription = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $animalfileStatus = null;
-
-    /**
-     * Inline
-     * @var string
-     */
-    private $animalfileDisplayInline = null;
-
-    /**
-     * Public
-     * @var string
-     */
-    private $animalfilePublic = null;
+    private $objectFields = [
+        "animalfileID" => 1,
+        "animalfileAnimalID" => 0,
+        "animalfileDescription" => 0,
+        "animalfileStatus" => 0,
+        "animalfileDisplayInline" => 0,
+        "animalfilePublic" => 0,
+    ];
 
 
     /**
@@ -76,95 +54,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set File ID
-     *
-     * @param integer $animalfileID
-     * @return $this
-     */
-    public function setAnimalfileID($animalfileID)
-    {
-        $this->animalfileID = $animalfileID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param integer $animalfileAnimalID
-     * @return $this
-     */
-    public function setAnimalfileAnimalID($animalfileAnimalID)
-    {
-        $this->animalfileAnimalID = $animalfileAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $animalfileDescription
-     * @return $this
-     */
-    public function setAnimalfileDescription($animalfileDescription)
-    {
-        $this->animalfileDescription = $animalfileDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $animalfileStatus
-     * @return $this
-     */
-    public function setAnimalfileStatus($animalfileStatus)
-    {
-        $this->animalfileStatus = $animalfileStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $animalfileDisplayInline
-     * @return $this
-     */
-    public function setAnimalfileDisplayInline($animalfileDisplayInline)
-    {
-        $this->animalfileDisplayInline = $animalfileDisplayInline;
-
-        return $this;
-    }
-
-    /**
-     * Set Public
-     *
-     * @param string $animalfilePublic
-     * @return $this
-     */
-    public function setAnimalfilePublic($animalfilePublic)
-    {
-        $this->animalfilePublic = $animalfilePublic;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalfileID !== null) $parameterArray['animalfileID'] = $this->animalfileID;
-        if ($this->animalfileAnimalID !== null) $parameterArray['animalfileAnimalID'] = $this->animalfileAnimalID;
-        if ($this->animalfileDescription !== null) $parameterArray['animalfileDescription'] = $this->animalfileDescription;
-        if ($this->animalfileStatus !== null) $parameterArray['animalfileStatus'] = $this->animalfileStatus;
-        if ($this->animalfileDisplayInline !== null) $parameterArray['animalfileDisplayInline'] = $this->animalfileDisplayInline;
-        if ($this->animalfilePublic !== null) $parameterArray['animalfilePublic'] = $this->animalfilePublic;
 
     }
+
 }

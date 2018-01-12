@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Colony
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $colonyID;
+
+    /**
      * Name
      * @var string
      */
@@ -48,6 +54,7 @@ class Colony
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->colonyID)) $this->colonyID = $inputData->colonyID;
         if (!empty($inputData->colonyName)) $this->colonyName = $inputData->colonyName;
         if (!empty($inputData->colonyLocationID)) $this->colonyLocationID = $inputData->colonyLocationID;
         if (!empty($inputData->colonyTotalAnimals)) $this->colonyTotalAnimals = $inputData->colonyTotalAnimals;

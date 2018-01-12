@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Entrytype ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntrytypeID = null;
+    private $objectFields = [
+        "journalEntrytypeID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Entrytype ID
-     *
-     * @param integer $journalEntrytypeID
-     * @return $this
-     */
-    public function setJournalEntrytypeID($journalEntrytypeID)
-    {
-        $this->journalEntrytypeID = $journalEntrytypeID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntrytypeID !== null) $parameterArray['journalEntrytypeID'] = $this->journalEntrytypeID;
 
     }
+
 }

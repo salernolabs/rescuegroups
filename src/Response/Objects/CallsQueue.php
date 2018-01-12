@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class CallsQueue
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $queueID;
+
+    /**
      * Name
      * @var string
      */
@@ -36,6 +42,7 @@ class CallsQueue
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->queueID)) $this->queueID = $inputData->queueID;
         if (!empty($inputData->queueName)) $this->queueName = $inputData->queueName;
         if (!empty($inputData->queueFromEmail)) $this->queueFromEmail = $inputData->queueFromEmail;
         if (!empty($inputData->queueDefaultUrgencyID)) $this->queueDefaultUrgencyID = $inputData->queueDefaultUrgencyID;

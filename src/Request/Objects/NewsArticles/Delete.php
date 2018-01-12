@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\NewsArticles;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $articleID = null;
+    private $objectFields = [
+        "articleID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $articleID
-     * @return $this
-     */
-    public function setArticleID($articleID)
-    {
-        $this->articleID = $articleID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->articleID !== null) $parameterArray['articleID'] = $this->articleID;
 
     }
+
 }

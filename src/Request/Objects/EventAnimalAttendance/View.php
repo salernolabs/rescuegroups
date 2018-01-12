@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $attendanceID = null;
+    private $objectFields = [
+        "attendanceID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $attendanceID
-     * @return $this
-     */
-    public function setAttendanceID($attendanceID)
-    {
-        $this->attendanceID = $attendanceID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->attendanceID !== null) $parameterArray['attendanceID'] = $this->attendanceID;
 
     }
+
 }

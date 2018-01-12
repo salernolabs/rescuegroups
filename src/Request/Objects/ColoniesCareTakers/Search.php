@@ -13,28 +13,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $caretakerID = null;
-
-    /**
-     * Colony
-     * @var integer
-     */
-    private $caretakerColonyID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $caretakerContactID = null;
-
-    /**
-     * Contact
-     * @var string
-     */
-    private $caretakerContactName = null;
+    private $objectFields = [
+        "caretakerID" => 1,
+        "caretakerColonyID" => 0,
+        "caretakerContactID" => 0,
+        "caretakerContactName" => 0,
+    ];
 
 
     /**
@@ -66,71 +54,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $caretakerID
-     * @return $this
-     */
-    public function setCaretakerID($caretakerID)
-    {
-        $this->caretakerID = $caretakerID;
-
-        return $this;
-    }
-
-    /**
-     * Set Colony
-     *
-     * @param integer $caretakerColonyID
-     * @return $this
-     */
-    public function setCaretakerColonyID($caretakerColonyID)
-    {
-        $this->caretakerColonyID = $caretakerColonyID;
-
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $caretakerContactID
-     * @return $this
-     */
-    public function setCaretakerContactID($caretakerContactID)
-    {
-        $this->caretakerContactID = $caretakerContactID;
-
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param string $caretakerContactName
-     * @return $this
-     */
-    public function setCaretakerContactName($caretakerContactName)
-    {
-        $this->caretakerContactName = $caretakerContactName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->caretakerID !== null) $parameterArray['caretakerID'] = $this->caretakerID;
-        if ($this->caretakerColonyID !== null) $parameterArray['caretakerColonyID'] = $this->caretakerColonyID;
-        if ($this->caretakerContactID !== null) $parameterArray['caretakerContactID'] = $this->caretakerContactID;
-        if ($this->caretakerContactName !== null) $parameterArray['caretakerContactName'] = $this->caretakerContactName;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -141,7 +75,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

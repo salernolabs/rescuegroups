@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalFiles;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * File ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalfileID = null;
+    private $objectFields = [
+        "animalfileID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set File ID
-     *
-     * @param integer $animalfileID
-     * @return $this
-     */
-    public function setAnimalfileID($animalfileID)
-    {
-        $this->animalfileID = $animalfileID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalfileID !== null) $parameterArray['animalfileID'] = $this->animalfileID;
 
     }
+
 }

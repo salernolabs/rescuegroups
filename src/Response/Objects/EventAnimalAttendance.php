@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class EventAnimalAttendance
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $attendanceID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -36,6 +42,7 @@ class EventAnimalAttendance
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->attendanceID)) $this->attendanceID = $inputData->attendanceID;
         if (!empty($inputData->attendanceAnimalID)) $this->attendanceAnimalID = $inputData->attendanceAnimalID;
         if (!empty($inputData->attendanceStatus)) $this->attendanceStatus = $inputData->attendanceStatus;
         if (!empty($inputData->attendanceEventID)) $this->attendanceEventID = $inputData->attendanceEventID;

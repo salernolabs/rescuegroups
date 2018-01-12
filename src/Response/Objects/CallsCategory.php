@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class CallsCategory
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $categoryID;
+
+    /**
      * Name
      * @var string
      */
@@ -42,6 +48,7 @@ class CallsCategory
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->categoryID)) $this->categoryID = $inputData->categoryID;
         if (!empty($inputData->categoryName)) $this->categoryName = $inputData->categoryName;
         if (!empty($inputData->categoryDescription)) $this->categoryDescription = $inputData->categoryDescription;
         if (!empty($inputData->categoryPublic)) $this->categoryPublic = $inputData->categoryPublic;

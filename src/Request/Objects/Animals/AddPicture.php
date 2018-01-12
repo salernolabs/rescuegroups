@@ -11,28 +11,16 @@ namespace RescueGroups\Request\Objects\Animals;
 class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalID = null;
-
-    /**
-     * Picture
-     * @var string
-     */
-    private $pictureBinary = null;
-
-    /**
-     * File name
-     * @var string
-     */
-    private $fileName = null;
-
-    /**
-     * Order
-     * @var string
-     */
-    private $mediaOrder = null;
+    private $objectFields = [
+        "animalID" => 1,
+        "pictureBinary" => 1,
+        "fileName" => 1,
+        "mediaOrder" => 0,
+    ];
 
 
     /**
@@ -64,67 +52,13 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Picture
-     *
-     * @param string $pictureBinary
-     * @return $this
-     */
-    public function setPictureBinary($pictureBinary)
-    {
-        $this->pictureBinary = $pictureBinary;
-
-        return $this;
-    }
-
-    /**
-     * Set File name
-     *
-     * @param string $fileName
-     * @return $this
-     */
-    public function setFileName($fileName)
-    {
-        $this->fileName = $fileName;
-
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param string $mediaOrder
-     * @return $this
-     */
-    public function setMediaOrder($mediaOrder)
-    {
-        $this->mediaOrder = $mediaOrder;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->pictureBinary !== null) $parameterArray['pictureBinary'] = $this->pictureBinary;
-        if ($this->fileName !== null) $parameterArray['fileName'] = $this->fileName;
-        if ($this->mediaOrder !== null) $parameterArray['mediaOrder'] = $this->mediaOrder;
 
     }
+
 }

@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class CallsQueuesMember
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $memberID;
+
+    /**
      * Contact
      * @var integer
      */
@@ -36,6 +42,7 @@ class CallsQueuesMember
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->memberID)) $this->memberID = $inputData->memberID;
         if (!empty($inputData->memberContactID)) $this->memberContactID = $inputData->memberContactID;
         if (!empty($inputData->memberQueueID)) $this->memberQueueID = $inputData->memberQueueID;
         if (!empty($inputData->memberManager)) $this->memberManager = $inputData->memberManager;

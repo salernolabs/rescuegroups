@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Event
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $eventID;
+
+    /**
      * Name
      * @var string
      */
@@ -60,6 +66,7 @@ class Event
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->eventID)) $this->eventID = $inputData->eventID;
         if (!empty($inputData->eventName)) $this->eventName = $inputData->eventName;
         if (!empty($inputData->eventStart)) $this->eventStart = $inputData->eventStart;
         if (!empty($inputData->eventEnd)) $this->eventEnd = $inputData->eventEnd;

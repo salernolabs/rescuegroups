@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Events;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $eventID = null;
+    private $objectFields = [
+        "eventID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $eventID
-     * @return $this
-     */
-    public function setEventID($eventID)
-    {
-        $this->eventID = $eventID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->eventID !== null) $parameterArray['eventID'] = $this->eventID;
 
     }
+
 }

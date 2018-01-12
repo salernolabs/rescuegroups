@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalQualities;
 class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     /**
-     * Animal Qualities
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalQualities = null;
+    private $objectFields = [
+        "animalQualities" => 0,
+    ];
 
 
     /**
@@ -46,27 +49,15 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Set Animal Qualities
-     *
-     * @param string $animalQualities
-     * @return $this
-     */
-    public function setAnimalQualities($animalQualities)
-    {
-        $this->animalQualities = $animalQualities;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalQualities !== null) $parameterArray['animalQualities'] = $this->animalQualities;
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -77,7 +68,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

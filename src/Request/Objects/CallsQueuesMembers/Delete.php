@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $memberID = null;
+    private $objectFields = [
+        "memberID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $memberID
-     * @return $this
-     */
-    public function setMemberID($memberID)
-    {
-        $this->memberID = $memberID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->memberID !== null) $parameterArray['memberID'] = $this->memberID;
 
     }
+
 }

@@ -13,16 +13,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Reason ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $reasonID = null;
-
-    /**
-     * Reason
-     * @var string
-     */
-    private $reasonName = null;
+    private $objectFields = [
+        "reasonID" => 0,
+        "reasonName" => 0,
+    ];
 
 
     /**
@@ -54,43 +52,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Reason ID
-     *
-     * @param integer $reasonID
-     * @return $this
-     */
-    public function setReasonID($reasonID)
-    {
-        $this->reasonID = $reasonID;
-
-        return $this;
-    }
-
-    /**
-     * Set Reason
-     *
-     * @param string $reasonName
-     * @return $this
-     */
-    public function setReasonName($reasonName)
-    {
-        $this->reasonName = $reasonName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->reasonID !== null) $parameterArray['reasonID'] = $this->reasonID;
-        if ($this->reasonName !== null) $parameterArray['reasonName'] = $this->reasonName;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -101,7 +73,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

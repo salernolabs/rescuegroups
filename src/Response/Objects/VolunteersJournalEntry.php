@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class VolunteersJournalEntry
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $journalEntryID;
+
+    /**
      * Contact
      * @var integer
      */
@@ -42,6 +48,7 @@ class VolunteersJournalEntry
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->journalEntryID)) $this->journalEntryID = $inputData->journalEntryID;
         if (!empty($inputData->journalEntryContactID)) $this->journalEntryContactID = $inputData->journalEntryContactID;
         if (!empty($inputData->journalEntryDate)) $this->journalEntryDate = $inputData->journalEntryDate;
         if (!empty($inputData->journalEntryComment)) $this->journalEntryComment = $inputData->journalEntryComment;

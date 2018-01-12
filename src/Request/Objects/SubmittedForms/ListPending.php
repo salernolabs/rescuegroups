@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\SubmittedForms;
 
 class ListPending implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

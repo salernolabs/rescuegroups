@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\OutcomesReleases;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesReleaseID = null;
+    private $objectFields = [
+        "outcomesReleaseID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesReleaseID
-     * @return $this
-     */
-    public function setOutcomesReleaseID($outcomesReleaseID)
-    {
-        $this->outcomesReleaseID = $outcomesReleaseID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesReleaseID !== null) $parameterArray['outcomesReleaseID'] = $this->outcomesReleaseID;
 
     }
+
 }

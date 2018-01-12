@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\IntakesOwnerSurrenders;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Owner Surrender
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesOwnersurrenderID = null;
+    private $objectFields = [
+        "intakesOwnersurrenderID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Owner Surrender
-     *
-     * @param integer $intakesOwnersurrenderID
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderID($intakesOwnersurrenderID)
-    {
-        $this->intakesOwnersurrenderID = $intakesOwnersurrenderID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesOwnersurrenderID !== null) $parameterArray['intakesOwnersurrenderID'] = $this->intakesOwnersurrenderID;
 
     }
+
 }

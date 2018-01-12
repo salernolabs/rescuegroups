@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalSpecies;
 
 class ListActive implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

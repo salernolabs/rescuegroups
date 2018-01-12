@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\CallsLogEntries;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $logentryID = null;
+    private $objectFields = [
+        "logentryID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $logentryID
-     * @return $this
-     */
-    public function setLogentryID($logentryID)
-    {
-        $this->logentryID = $logentryID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->logentryID !== null) $parameterArray['logentryID'] = $this->logentryID;
 
     }
+
 }

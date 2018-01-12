@@ -12,6 +12,8 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
+    ];
+
 
     /**
      * @return bool
@@ -51,7 +53,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

@@ -10,7 +10,7 @@ namespace RescueGroups\Request\Objects\%CLASSNAME%;
 
 class %REQUESTNAME% implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface%PARAMETERSINTERFACE%
 {
-%TRAITS%%FIELDS%
+%TRAITS%%AVAILABLEFIELDS%
     /**
      * @return bool
      */
@@ -38,5 +38,5 @@ class %REQUESTNAME% implements \RescueGroups\Request\RequestInterface, \RescueGr
     {
         return '%OBJECTACTION%';
     }
-%SETTERS%%GETPARAMETERS%%PROCESSRESPONSE%
+%GETPARAMETERS%%PROCESSRESPONSE%
 }

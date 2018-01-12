@@ -11,16 +11,14 @@ namespace RescueGroups\Request\Objects\ContactsGroups;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $groupName = null;
-
-    /**
-     * Business
-     * @var string
-     */
-    private $groupBusiness = null;
+    private $objectFields = [
+        "groupName" => 1,
+        "groupBusiness" => 1,
+    ];
 
 
     /**
@@ -52,39 +50,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $groupName
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->groupName = $groupName;
-
-        return $this;
-    }
-
-    /**
-     * Set Business
-     *
-     * @param string $groupBusiness
-     * @return $this
-     */
-    public function setGroupBusiness($groupBusiness)
-    {
-        $this->groupBusiness = $groupBusiness;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->groupName !== null) $parameterArray['groupName'] = $this->groupName;
-        if ($this->groupBusiness !== null) $parameterArray['groupBusiness'] = $this->groupBusiness;
 
     }
+
 }

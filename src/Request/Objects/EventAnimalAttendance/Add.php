@@ -11,22 +11,15 @@ namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $attendanceAnimalID = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $attendanceStatus = null;
-
-    /**
-     * Event
-     * @var integer
-     */
-    private $attendanceEventID = null;
+    private $objectFields = [
+        "attendanceAnimalID" => 1,
+        "attendanceStatus" => 0,
+        "attendanceEventID" => 1,
+    ];
 
 
     /**
@@ -58,53 +51,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Animal
-     *
-     * @param integer $attendanceAnimalID
-     * @return $this
-     */
-    public function setAttendanceAnimalID($attendanceAnimalID)
-    {
-        $this->attendanceAnimalID = $attendanceAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $attendanceStatus
-     * @return $this
-     */
-    public function setAttendanceStatus($attendanceStatus)
-    {
-        $this->attendanceStatus = $attendanceStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Event
-     *
-     * @param integer $attendanceEventID
-     * @return $this
-     */
-    public function setAttendanceEventID($attendanceEventID)
-    {
-        $this->attendanceEventID = $attendanceEventID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->attendanceAnimalID !== null) $parameterArray['attendanceAnimalID'] = $this->attendanceAnimalID;
-        if ($this->attendanceStatus !== null) $parameterArray['attendanceStatus'] = $this->attendanceStatus;
-        if ($this->attendanceEventID !== null) $parameterArray['attendanceEventID'] = $this->attendanceEventID;
 
     }
+
 }

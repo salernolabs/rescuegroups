@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalBreeds;
 
 class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
 {
+    ];
+
 
     /**
      * @return bool
@@ -49,7 +51,7 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

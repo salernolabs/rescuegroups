@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\NewsArticles;
 class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Enable the News Articles feature
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $enableNewsarticles = null;
+    private $objectFields = [
+        "enableNewsarticles" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set Enable the News Articles feature
-     *
-     * @param string $enableNewsarticles
-     * @return $this
-     */
-    public function setEnableNewsarticles($enableNewsarticles)
-    {
-        $this->enableNewsarticles = $enableNewsarticles;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->enableNewsarticles !== null) $parameterArray['enableNewsarticles'] = $this->enableNewsarticles;
 
     }
+
 }

@@ -11,46 +11,19 @@ namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Intake
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakeID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $intakesOwnerrequestedeuthanasiaAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakesOwnerrequestedeuthanasiaAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakesOwnerrequestedeuthanasiaDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakesOwnerrequestedeuthanasiaNotes = null;
-
-    /**
-     * Owner
-     * @var integer
-     */
-    private $intakesOwnerrequestedeuthanasiaOwnerID = null;
-
-    /**
-     * Euthanasia Reason
-     * @var integer
-     */
-    private $intakesOwnerrequestedeuthanasiaReasonID = null;
+    private $objectFields = [
+        "intakeID" => 1,
+        "intakesOwnerrequestedeuthanasiaAnimalID" => 0,
+        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => 1,
+        "intakesOwnerrequestedeuthanasiaDate" => 1,
+        "intakesOwnerrequestedeuthanasiaNotes" => 0,
+        "intakesOwnerrequestedeuthanasiaOwnerID" => 1,
+        "intakesOwnerrequestedeuthanasiaReasonID" => 1,
+    ];
 
 
     /**
@@ -82,109 +55,13 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Intake
-     *
-     * @param integer $intakeID
-     * @return $this
-     */
-    public function setIntakeID($intakeID)
-    {
-        $this->intakeID = $intakeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesOwnerrequestedeuthanasiaAnimalID
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaAnimalID($intakesOwnerrequestedeuthanasiaAnimalID)
-    {
-        $this->intakesOwnerrequestedeuthanasiaAnimalID = $intakesOwnerrequestedeuthanasiaAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesOwnerrequestedeuthanasiaAnimalConditionID
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaAnimalConditionID($intakesOwnerrequestedeuthanasiaAnimalConditionID)
-    {
-        $this->intakesOwnerrequestedeuthanasiaAnimalConditionID = $intakesOwnerrequestedeuthanasiaAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesOwnerrequestedeuthanasiaDate
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaDate($intakesOwnerrequestedeuthanasiaDate)
-    {
-        $this->intakesOwnerrequestedeuthanasiaDate = $intakesOwnerrequestedeuthanasiaDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesOwnerrequestedeuthanasiaNotes
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaNotes($intakesOwnerrequestedeuthanasiaNotes)
-    {
-        $this->intakesOwnerrequestedeuthanasiaNotes = $intakesOwnerrequestedeuthanasiaNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Owner
-     *
-     * @param integer $intakesOwnerrequestedeuthanasiaOwnerID
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaOwnerID($intakesOwnerrequestedeuthanasiaOwnerID)
-    {
-        $this->intakesOwnerrequestedeuthanasiaOwnerID = $intakesOwnerrequestedeuthanasiaOwnerID;
-
-        return $this;
-    }
-
-    /**
-     * Set Euthanasia Reason
-     *
-     * @param integer $intakesOwnerrequestedeuthanasiaReasonID
-     * @return $this
-     */
-    public function setIntakesOwnerrequestedeuthanasiaReasonID($intakesOwnerrequestedeuthanasiaReasonID)
-    {
-        $this->intakesOwnerrequestedeuthanasiaReasonID = $intakesOwnerrequestedeuthanasiaReasonID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakeID !== null) $parameterArray['intakeID'] = $this->intakeID;
-        if ($this->intakesOwnerrequestedeuthanasiaAnimalID !== null) $parameterArray['intakesOwnerrequestedeuthanasiaAnimalID'] = $this->intakesOwnerrequestedeuthanasiaAnimalID;
-        if ($this->intakesOwnerrequestedeuthanasiaAnimalConditionID !== null) $parameterArray['intakesOwnerrequestedeuthanasiaAnimalConditionID'] = $this->intakesOwnerrequestedeuthanasiaAnimalConditionID;
-        if ($this->intakesOwnerrequestedeuthanasiaDate !== null) $parameterArray['intakesOwnerrequestedeuthanasiaDate'] = $this->intakesOwnerrequestedeuthanasiaDate;
-        if ($this->intakesOwnerrequestedeuthanasiaNotes !== null) $parameterArray['intakesOwnerrequestedeuthanasiaNotes'] = $this->intakesOwnerrequestedeuthanasiaNotes;
-        if ($this->intakesOwnerrequestedeuthanasiaOwnerID !== null) $parameterArray['intakesOwnerrequestedeuthanasiaOwnerID'] = $this->intakesOwnerrequestedeuthanasiaOwnerID;
-        if ($this->intakesOwnerrequestedeuthanasiaReasonID !== null) $parameterArray['intakesOwnerrequestedeuthanasiaReasonID'] = $this->intakesOwnerrequestedeuthanasiaReasonID;
 
     }
+
 }

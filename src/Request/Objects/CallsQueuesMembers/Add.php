@@ -11,22 +11,15 @@ namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Contact
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $memberContactID = null;
-
-    /**
-     * Queue
-     * @var integer
-     */
-    private $memberQueueID = null;
-
-    /**
-     * Manager
-     * @var string
-     */
-    private $memberManager = null;
+    private $objectFields = [
+        "memberContactID" => 1,
+        "memberQueueID" => 1,
+        "memberManager" => 0,
+    ];
 
 
     /**
@@ -58,53 +51,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Contact
-     *
-     * @param integer $memberContactID
-     * @return $this
-     */
-    public function setMemberContactID($memberContactID)
-    {
-        $this->memberContactID = $memberContactID;
-
-        return $this;
-    }
-
-    /**
-     * Set Queue
-     *
-     * @param integer $memberQueueID
-     * @return $this
-     */
-    public function setMemberQueueID($memberQueueID)
-    {
-        $this->memberQueueID = $memberQueueID;
-
-        return $this;
-    }
-
-    /**
-     * Set Manager
-     *
-     * @param string $memberManager
-     * @return $this
-     */
-    public function setMemberManager($memberManager)
-    {
-        $this->memberManager = $memberManager;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->memberContactID !== null) $parameterArray['memberContactID'] = $this->memberContactID;
-        if ($this->memberQueueID !== null) $parameterArray['memberQueueID'] = $this->memberQueueID;
-        if ($this->memberManager !== null) $parameterArray['memberManager'] = $this->memberManager;
 
     }
+
 }

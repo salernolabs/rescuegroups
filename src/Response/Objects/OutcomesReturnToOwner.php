@@ -11,10 +11,10 @@ namespace RescueGroups\Response\Objects;
 class OutcomesReturnToOwner
 {
     /**
-     * Outcome Returntoowner Intake
+     * ID
      * @var integer
      */
-    public $intakeID;
+    public $id;
 
     /**
      * Condition
@@ -48,7 +48,7 @@ class OutcomesReturnToOwner
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->outcomesReturntoownerIntakeID)) $this->intakeID = $inputData->outcomesReturntoownerIntakeID;
+        if (!empty($inputData->outcomesReturntoownerID)) $this->id = $inputData->outcomesReturntoownerID;
         if (!empty($inputData->outcomesReturntoownerAnimalConditionID)) $this->animalConditionID = $inputData->outcomesReturntoownerAnimalConditionID;
         if (!empty($inputData->outcomesReturntoownerDate)) $this->date = $inputData->outcomesReturntoownerDate;
         if (!empty($inputData->outcomesReturntoownerNotes)) $this->notes = $inputData->outcomesReturntoownerNotes;

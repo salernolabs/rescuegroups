@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\Contacts;
 
 class ListFosters implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

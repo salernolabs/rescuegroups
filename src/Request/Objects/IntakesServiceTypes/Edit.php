@@ -11,16 +11,14 @@ namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Service
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $serviceID = null;
-
-    /**
-     * Service
-     * @var string
-     */
-    private $serviceName = null;
+    private $objectFields = [
+        "serviceID" => 1,
+        "serviceName" => 0,
+    ];
 
 
     /**
@@ -52,39 +50,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Service
-     *
-     * @param integer $serviceID
-     * @return $this
-     */
-    public function setServiceID($serviceID)
-    {
-        $this->serviceID = $serviceID;
-
-        return $this;
-    }
-
-    /**
-     * Set Service
-     *
-     * @param string $serviceName
-     * @return $this
-     */
-    public function setServiceName($serviceName)
-    {
-        $this->serviceName = $serviceName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->serviceID !== null) $parameterArray['serviceID'] = $this->serviceID;
-        if ($this->serviceName !== null) $parameterArray['serviceName'] = $this->serviceName;
 
     }
+
 }

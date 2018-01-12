@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\AnimalsReasonsTransfer;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Reason
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $reasonName = null;
+    private $objectFields = [
+        "reasonName" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Reason
-     *
-     * @param string $reasonName
-     * @return $this
-     */
-    public function setReasonName($reasonName)
-    {
-        $this->reasonName = $reasonName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->reasonName !== null) $parameterArray['reasonName'] = $this->reasonName;
 
     }
+
 }

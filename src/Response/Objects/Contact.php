@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Contact
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $contactID;
+
+    /**
      * Class
      * @var string
      */
@@ -191,12 +197,6 @@ class Contact
     public $contactCaretakerPublic;
 
     /**
-     * Send website invitation
-     * @var string
-     */
-    public $contactSendInvite;
-
-    /**
      * Groups
      * @var integer
      */
@@ -210,6 +210,7 @@ class Contact
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->contactID)) $this->contactID = $inputData->contactID;
         if (!empty($inputData->contactClass)) $this->contactClass = $inputData->contactClass;
         if (!empty($inputData->contactSalutation)) $this->contactSalutation = $inputData->contactSalutation;
         if (!empty($inputData->contactFirstname)) $this->contactFirstname = $inputData->contactFirstname;
@@ -240,7 +241,6 @@ class Contact
         if (!empty($inputData->contactTransportation)) $this->contactTransportation = $inputData->contactTransportation;
         if (!empty($inputData->contactAvailability)) $this->contactAvailability = $inputData->contactAvailability;
         if (!empty($inputData->contactCaretakerPublic)) $this->contactCaretakerPublic = $inputData->contactCaretakerPublic;
-        if (!empty($inputData->contactSendInvite)) $this->contactSendInvite = $inputData->contactSendInvite;
         if (!empty($inputData->contactGroups)) $this->contactGroups = $inputData->contactGroups;
 
     }

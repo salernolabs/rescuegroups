@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class AnimalsAdoption
 {
     /**
+     * Adoption ID
+     * @var integer
+     */
+    public $adoptionID;
+
+    /**
      * Animal ID
      * @var integer
      */
@@ -70,12 +76,6 @@ class AnimalsAdoption
      */
     public $adoptionLetterSent;
 
-    /**
-     * Add contact to adopters group
-     * @var string
-     */
-    public $adoptionAddAdopterRole;
-
 
 
     /**
@@ -84,6 +84,7 @@ class AnimalsAdoption
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->adoptionID)) $this->adoptionID = $inputData->adoptionID;
         if (!empty($inputData->adoptionAnimalID)) $this->adoptionAnimalID = $inputData->adoptionAnimalID;
         if (!empty($inputData->adoptionAdopterID)) $this->adoptionAdopterID = $inputData->adoptionAdopterID;
         if (!empty($inputData->adoptionLeadID)) $this->adoptionLeadID = $inputData->adoptionLeadID;
@@ -94,7 +95,6 @@ class AnimalsAdoption
         if (!empty($inputData->adoptionSubmittedformID)) $this->adoptionSubmittedformID = $inputData->adoptionSubmittedformID;
         if (!empty($inputData->adoptionStatusID)) $this->adoptionStatusID = $inputData->adoptionStatusID;
         if (!empty($inputData->adoptionLetterSent)) $this->adoptionLetterSent = $inputData->adoptionLetterSent;
-        if (!empty($inputData->adoptionAddAdopterRole)) $this->adoptionAddAdopterRole = $inputData->adoptionAddAdopterRole;
 
     }
 }

@@ -11,22 +11,15 @@ namespace RescueGroups\Request\Objects\SubmittedForms;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $submittedformID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $submittedformAnimalID = null;
-
-    /**
-     * Status
-     * @var integer
-     */
-    private $submittedformStatusID = null;
+    private $objectFields = [
+        "submittedformID" => 1,
+        "submittedformAnimalID" => 0,
+        "submittedformStatusID" => 0,
+    ];
 
 
     /**
@@ -58,53 +51,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $submittedformID
-     * @return $this
-     */
-    public function setSubmittedformID($submittedformID)
-    {
-        $this->submittedformID = $submittedformID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param integer $submittedformAnimalID
-     * @return $this
-     */
-    public function setSubmittedformAnimalID($submittedformAnimalID)
-    {
-        $this->submittedformAnimalID = $submittedformAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param integer $submittedformStatusID
-     * @return $this
-     */
-    public function setSubmittedformStatusID($submittedformStatusID)
-    {
-        $this->submittedformStatusID = $submittedformStatusID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->submittedformID !== null) $parameterArray['submittedformID'] = $this->submittedformID;
-        if ($this->submittedformAnimalID !== null) $parameterArray['submittedformAnimalID'] = $this->submittedformAnimalID;
-        if ($this->submittedformStatusID !== null) $parameterArray['submittedformStatusID'] = $this->submittedformStatusID;
 
     }
+
 }

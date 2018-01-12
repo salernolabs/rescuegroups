@@ -11,52 +11,20 @@ namespace RescueGroups\Request\Objects\Contacts;
 class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Share your organization's Do Not Adopt list
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $enableContactsDoNotAdoptListSharing = null;
-
-    /**
-     * Automatically select to send Registration Invitation
-     * @var string
-     */
-    private $enableContactsAutoSelectRegistrationInvitation = null;
-
-    /**
-     * Automatically select to set caretaker information public
-     * @var string
-     */
-    private $enableContactsAutoSelectCaretakerInfoPublic = null;
-
-    /**
-     * Add a Contact record when an Online Form is submitted
-     * @var string
-     */
-    private $enableAddContactOnlineFormSubmission = null;
-
-    /**
-     * Add a Contact record when an Meet Request is submitted
-     * @var string
-     */
-    private $enableContactsAddContactMeetRequest = null;
-
-    /**
-     * Add a Contact record when a Call is created from the Contact Us page
-     * @var string
-     */
-    private $enableContactsAddContactCallCreation = null;
-
-    /**
-     * Add a Contact record when an Animal Sponsorship is submitted
-     * @var string
-     */
-    private $enableContactsAddContactAnimalSponsorship = null;
-
-    /**
-     * Add a Contact record when a user registers
-     * @var string
-     */
-    private $enableContactsAddContactUserRegistration = null;
+    private $objectFields = [
+        "enableContactsDoNotAdoptListSharing" => 0,
+        "enableContactsAutoSelectRegistrationInvitation" => 0,
+        "enableContactsAutoSelectCaretakerInfoPublic" => 0,
+        "enableAddContactOnlineFormSubmission" => 0,
+        "enableContactsAddContactMeetRequest" => 0,
+        "enableContactsAddContactCallCreation" => 0,
+        "enableContactsAddContactAnimalSponsorship" => 0,
+        "enableContactsAddContactUserRegistration" => 0,
+    ];
 
 
     /**
@@ -88,123 +56,13 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set Share your organization's Do Not Adopt list
-     *
-     * @param string $enableContactsDoNotAdoptListSharing
-     * @return $this
-     */
-    public function setEnableContactsDoNotAdoptListSharing($enableContactsDoNotAdoptListSharing)
-    {
-        $this->enableContactsDoNotAdoptListSharing = $enableContactsDoNotAdoptListSharing;
-
-        return $this;
-    }
-
-    /**
-     * Set Automatically select to send Registration Invitation
-     *
-     * @param string $enableContactsAutoSelectRegistrationInvitation
-     * @return $this
-     */
-    public function setEnableContactsAutoSelectRegistrationInvitation($enableContactsAutoSelectRegistrationInvitation)
-    {
-        $this->enableContactsAutoSelectRegistrationInvitation = $enableContactsAutoSelectRegistrationInvitation;
-
-        return $this;
-    }
-
-    /**
-     * Set Automatically select to set caretaker information public
-     *
-     * @param string $enableContactsAutoSelectCaretakerInfoPublic
-     * @return $this
-     */
-    public function setEnableContactsAutoSelectCaretakerInfoPublic($enableContactsAutoSelectCaretakerInfoPublic)
-    {
-        $this->enableContactsAutoSelectCaretakerInfoPublic = $enableContactsAutoSelectCaretakerInfoPublic;
-
-        return $this;
-    }
-
-    /**
-     * Set Add a Contact record when an Online Form is submitted
-     *
-     * @param string $enableAddContactOnlineFormSubmission
-     * @return $this
-     */
-    public function setEnableAddContactOnlineFormSubmission($enableAddContactOnlineFormSubmission)
-    {
-        $this->enableAddContactOnlineFormSubmission = $enableAddContactOnlineFormSubmission;
-
-        return $this;
-    }
-
-    /**
-     * Set Add a Contact record when an Meet Request is submitted
-     *
-     * @param string $enableContactsAddContactMeetRequest
-     * @return $this
-     */
-    public function setEnableContactsAddContactMeetRequest($enableContactsAddContactMeetRequest)
-    {
-        $this->enableContactsAddContactMeetRequest = $enableContactsAddContactMeetRequest;
-
-        return $this;
-    }
-
-    /**
-     * Set Add a Contact record when a Call is created from the Contact Us page
-     *
-     * @param string $enableContactsAddContactCallCreation
-     * @return $this
-     */
-    public function setEnableContactsAddContactCallCreation($enableContactsAddContactCallCreation)
-    {
-        $this->enableContactsAddContactCallCreation = $enableContactsAddContactCallCreation;
-
-        return $this;
-    }
-
-    /**
-     * Set Add a Contact record when an Animal Sponsorship is submitted
-     *
-     * @param string $enableContactsAddContactAnimalSponsorship
-     * @return $this
-     */
-    public function setEnableContactsAddContactAnimalSponsorship($enableContactsAddContactAnimalSponsorship)
-    {
-        $this->enableContactsAddContactAnimalSponsorship = $enableContactsAddContactAnimalSponsorship;
-
-        return $this;
-    }
-
-    /**
-     * Set Add a Contact record when a user registers
-     *
-     * @param string $enableContactsAddContactUserRegistration
-     * @return $this
-     */
-    public function setEnableContactsAddContactUserRegistration($enableContactsAddContactUserRegistration)
-    {
-        $this->enableContactsAddContactUserRegistration = $enableContactsAddContactUserRegistration;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->enableContactsDoNotAdoptListSharing !== null) $parameterArray['enableContactsDoNotAdoptListSharing'] = $this->enableContactsDoNotAdoptListSharing;
-        if ($this->enableContactsAutoSelectRegistrationInvitation !== null) $parameterArray['enableContactsAutoSelectRegistrationInvitation'] = $this->enableContactsAutoSelectRegistrationInvitation;
-        if ($this->enableContactsAutoSelectCaretakerInfoPublic !== null) $parameterArray['enableContactsAutoSelectCaretakerInfoPublic'] = $this->enableContactsAutoSelectCaretakerInfoPublic;
-        if ($this->enableAddContactOnlineFormSubmission !== null) $parameterArray['enableAddContactOnlineFormSubmission'] = $this->enableAddContactOnlineFormSubmission;
-        if ($this->enableContactsAddContactMeetRequest !== null) $parameterArray['enableContactsAddContactMeetRequest'] = $this->enableContactsAddContactMeetRequest;
-        if ($this->enableContactsAddContactCallCreation !== null) $parameterArray['enableContactsAddContactCallCreation'] = $this->enableContactsAddContactCallCreation;
-        if ($this->enableContactsAddContactAnimalSponsorship !== null) $parameterArray['enableContactsAddContactAnimalSponsorship'] = $this->enableContactsAddContactAnimalSponsorship;
-        if ($this->enableContactsAddContactUserRegistration !== null) $parameterArray['enableContactsAddContactUserRegistration'] = $this->enableContactsAddContactUserRegistration;
 
     }
+
 }

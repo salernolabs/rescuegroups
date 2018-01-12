@@ -31,14 +31,14 @@ trait SearchParameters
     private $resultOrder = 'asc';
 
     /**
-     * @var array
+     * @var \RescueGroups\Request\Search\Filter[]
      */
     private $filters = [];
 
     /**
-     * @var string[]
+     * @var string
      */
-    private $fields = [];
+    private $filterProcessing;
 
     /**
      * Set result start
@@ -102,10 +102,12 @@ trait SearchParameters
      */
     public function addFilter($field, $operation, $criteria)
     {
-        $filter = new \stdClass();
-        $filter->fieldName = $field;
-        $filter->operation = $operation;
-        $filter->criteria = $criteria;
+        if (empty($this->objectFields) || !isset($this->objectFields[$field]))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter();
+        }
+
+        $filter = new \RescueGroups\Request\Search\Filter($field, $operation, $criteria);
 
         $this->filters[] = $filter;
 
@@ -113,14 +115,20 @@ trait SearchParameters
     }
 
     /**
-     * Add a field
+     * Add field to query
      *
-     * @param $field
+     * @param $fieldName
      * @return $this
+     * @throws \RescueGroups\Exceptions\InvalidParameter
      */
-    public function addField($field)
+    public function addField($fieldName)
     {
-        $this->fields[] = $field;
+        if (!isset($this->objectFields[$fieldName]))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter();
+        }
+
+        $this->objectFields[$fieldName] = true;
 
         return $this;
     }
@@ -138,8 +146,32 @@ trait SearchParameters
         if (!empty($this->resultLimit)) $parameters['search']->resultLimit = $this->resultLimit;
         if (!empty($this->resultSort)) $parameters['search']->resultSort = $this->resultSort;
         if (!empty($this->resultOrder)) $parameters['search']->resultOrder = $this->resultOrder;
-        if (!empty($this->filters)) $parameters['search']->filters = $this->filters;
-        if (!empty($this->fields)) $parameters['search']->fields = $this->fields;
+
+        $parameters['search']->filters = [];
+        $parameters['search']->fields = [];
+
+        if (!empty($this->filters))
+        {
+            $filterList = [];
+            foreach ($this->filters as $filter)
+            {
+                $filterList[] = $filter->getFilter();
+            }
+
+            $parameters['search']->filters = $filterList;
+        }
+
+        if (!empty($this->objectFields))
+        {
+            $fieldList = [];
+            foreach ($this->objectFields as $filterName => $enabled)
+            {
+                if ($enabled) $fieldList[] = $filterName;
+            }
+            if (!empty($fieldList)) $parameters['search']->fields = $fieldList;
+        }
+
+        if (!empty($this->filterProcessing)) $parameters['filterProcessing'] = $this->filterProcessing;
     }
 
 }

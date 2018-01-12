@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Born In Rescue/Shelter
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $id = null;
+    private $objectFields = [
+        "id" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Born In Rescue/Shelter
-     *
-     * @param integer $intakesBorninrescueshelterID
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->id !== null) $parameterArray['intakesBorninrescueshelterID'] = $this->id;
 
     }
+
 }

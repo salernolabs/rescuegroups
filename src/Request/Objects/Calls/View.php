@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Calls;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $callID = null;
+    private $objectFields = [
+        "callID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $callID
-     * @return $this
-     */
-    public function setCallID($callID)
-    {
-        $this->callID = $callID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->callID !== null) $parameterArray['callID'] = $this->callID;
 
     }
+
 }

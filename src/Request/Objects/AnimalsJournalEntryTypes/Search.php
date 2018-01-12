@@ -13,28 +13,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Entrytype ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntrytypeID = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $journalEntrytypeDescription = null;
-
-    /**
-     * Category ID
-     * @var integer
-     */
-    private $journalEntrytypeCategoryID = null;
-
-    /**
-     * Category
-     * @var string
-     */
-    private $journalEntrytypeCategoryName = null;
+    private $objectFields = [
+        "journalEntrytypeID" => 0,
+        "journalEntrytypeDescription" => 0,
+        "journalEntrytypeCategoryID" => 0,
+        "journalEntrytypeCategoryName" => 0,
+    ];
 
 
     /**
@@ -66,71 +54,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Entrytype ID
-     *
-     * @param integer $journalEntrytypeID
-     * @return $this
-     */
-    public function setJournalEntrytypeID($journalEntrytypeID)
-    {
-        $this->journalEntrytypeID = $journalEntrytypeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $journalEntrytypeDescription
-     * @return $this
-     */
-    public function setJournalEntrytypeDescription($journalEntrytypeDescription)
-    {
-        $this->journalEntrytypeDescription = $journalEntrytypeDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Category ID
-     *
-     * @param integer $journalEntrytypeCategoryID
-     * @return $this
-     */
-    public function setJournalEntrytypeCategoryID($journalEntrytypeCategoryID)
-    {
-        $this->journalEntrytypeCategoryID = $journalEntrytypeCategoryID;
-
-        return $this;
-    }
-
-    /**
-     * Set Category
-     *
-     * @param string $journalEntrytypeCategoryName
-     * @return $this
-     */
-    public function setJournalEntrytypeCategoryName($journalEntrytypeCategoryName)
-    {
-        $this->journalEntrytypeCategoryName = $journalEntrytypeCategoryName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntrytypeID !== null) $parameterArray['journalEntrytypeID'] = $this->journalEntrytypeID;
-        if ($this->journalEntrytypeDescription !== null) $parameterArray['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
-        if ($this->journalEntrytypeCategoryID !== null) $parameterArray['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
-        if ($this->journalEntrytypeCategoryName !== null) $parameterArray['journalEntrytypeCategoryName'] = $this->journalEntrytypeCategoryName;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -141,7 +75,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

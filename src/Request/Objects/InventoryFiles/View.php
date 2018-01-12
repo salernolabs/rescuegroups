@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\InventoryFiles;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * File
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $inventoryfileID = null;
+    private $objectFields = [
+        "inventoryfileID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set File
-     *
-     * @param integer $inventoryfileID
-     * @return $this
-     */
-    public function setInventoryfileID($inventoryfileID)
-    {
-        $this->inventoryfileID = $inventoryfileID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->inventoryfileID !== null) $parameterArray['inventoryfileID'] = $this->inventoryfileID;
 
     }
+
 }

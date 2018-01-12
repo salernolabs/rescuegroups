@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Intakes;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Intake
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakeID = null;
+    private $objectFields = [
+        "intakeID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Intake
-     *
-     * @param integer $intakeID
-     * @return $this
-     */
-    public function setIntakeID($intakeID)
-    {
-        $this->intakeID = $intakeID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakeID !== null) $parameterArray['intakeID'] = $this->intakeID;
 
     }
+
 }

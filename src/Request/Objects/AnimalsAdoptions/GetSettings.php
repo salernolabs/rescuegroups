@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
 class GetSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

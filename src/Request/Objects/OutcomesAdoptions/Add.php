@@ -11,34 +11,17 @@ namespace RescueGroups\Request\Objects\OutcomesAdoptions;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Outcome Adoption Intake
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesAdoptionIntakeID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $outcomesAdoptionAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $outcomesAdoptionDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $outcomesAdoptionNotes = null;
-
-    /**
-     * Adoption
-     * @var integer
-     */
-    private $outcomesAdoptionAdoptionID = null;
+    private $objectFields = [
+        "outcomesAdoptionIntakeID" => 1,
+        "outcomesAdoptionAnimalConditionID" => 1,
+        "outcomesAdoptionDate" => 1,
+        "outcomesAdoptionNotes" => 0,
+        "outcomesAdoptionAdoptionID" => 1,
+    ];
 
 
     /**
@@ -70,81 +53,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Outcome Adoption Intake
-     *
-     * @param integer $outcomesAdoptionIntakeID
-     * @return $this
-     */
-    public function setOutcomesAdoptionIntakeID($outcomesAdoptionIntakeID)
-    {
-        $this->outcomesAdoptionIntakeID = $outcomesAdoptionIntakeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesAdoptionAnimalConditionID
-     * @return $this
-     */
-    public function setOutcomesAdoptionAnimalConditionID($outcomesAdoptionAnimalConditionID)
-    {
-        $this->outcomesAdoptionAnimalConditionID = $outcomesAdoptionAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesAdoptionDate
-     * @return $this
-     */
-    public function setOutcomesAdoptionDate($outcomesAdoptionDate)
-    {
-        $this->outcomesAdoptionDate = $outcomesAdoptionDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesAdoptionNotes
-     * @return $this
-     */
-    public function setOutcomesAdoptionNotes($outcomesAdoptionNotes)
-    {
-        $this->outcomesAdoptionNotes = $outcomesAdoptionNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Adoption
-     *
-     * @param integer $outcomesAdoptionAdoptionID
-     * @return $this
-     */
-    public function setOutcomesAdoptionAdoptionID($outcomesAdoptionAdoptionID)
-    {
-        $this->outcomesAdoptionAdoptionID = $outcomesAdoptionAdoptionID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesAdoptionIntakeID !== null) $parameterArray['outcomesAdoptionIntakeID'] = $this->outcomesAdoptionIntakeID;
-        if ($this->outcomesAdoptionAnimalConditionID !== null) $parameterArray['outcomesAdoptionAnimalConditionID'] = $this->outcomesAdoptionAnimalConditionID;
-        if ($this->outcomesAdoptionDate !== null) $parameterArray['outcomesAdoptionDate'] = $this->outcomesAdoptionDate;
-        if ($this->outcomesAdoptionNotes !== null) $parameterArray['outcomesAdoptionNotes'] = $this->outcomesAdoptionNotes;
-        if ($this->outcomesAdoptionAdoptionID !== null) $parameterArray['outcomesAdoptionAdoptionID'] = $this->outcomesAdoptionAdoptionID;
 
     }
+
 }

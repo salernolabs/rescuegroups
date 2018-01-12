@@ -340,7 +340,9 @@ class RequestGenerator
             '%RESPONSEOBJECTCONSTRUCT%',
             '%FIELDSPUBLIC%',
             '%RESPONSECLASSNAME%',
-            '%PROCESSRESPONSE%'
+            '%PROCESSRESPONSE%',
+
+            '%AVAILABLEFIELDS%'
         ];
 
         $fieldReplaceFields = [
@@ -407,6 +409,8 @@ class RequestGenerator
                 '',
                 '',
                 $responseClassName,
+                '',
+
                 ''
             ];
 
@@ -425,7 +429,9 @@ class RequestGenerator
             //Handle any fields the queries can take and create a response object
             if (!empty($requestData->fields))
             {
+                //if ($className == 'Animals' && $request=='search') die('<pre>'.print_r($requestData->fields,1));
                 $replacements[5] = ', \RescueGroups\Request\ParametersInterface';
+                $replacements[17] = "    /**\n     * Filterable Fields\n     *\n     * @var array\n     */\n    private \$objectFields = [\n";
 
                 $parameterFields = '';
 
@@ -474,11 +480,13 @@ class RequestGenerator
                         $sdkFieldName
                     ];
 
+                    $replacements[17] .= "        \"" . $sdkFieldName . "\" => " . (($fieldData->friendlyname == 'ID' || (!empty($fieldData->properties[0]) && $fieldData->properties[0] == 'required')) ? '1' : '0') . ",\n";
+
                     $replacements[14] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->responseConstructorItemTemplate);
                     $replacements[6] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->fieldTemplate);
                     $replacements[7] .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->setterTemplate);
 
-                    $parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->getParameterItemTemplate);
+                    //$parameterFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->getParameterItemTemplate);
                     $constructorFields .= str_replace($fieldReplaceFields, $fieldReplaceData, $this->responseConstructorTemplate);
 
                     $fieldSets .= "\n" . '        $query->set' . ucfirst($sdkFieldName) . '("' . $sdkFieldName . '");';
@@ -497,8 +505,9 @@ class RequestGenerator
                     [$parameterFields],
                     $this->getParametersTemplate
                 );
-
             }
+
+            $replacements[17] .= "    ];\n\n";
 
             $replacements[10] = $fieldAsserts;
             $replacements[11] = $fieldSets;
@@ -514,7 +523,7 @@ class RequestGenerator
             $responseObjectContent = str_replace($replacers, $replacements, $this->responseTemplate);
 
             //Avoid writing empty response object classes
-            if (!empty($constructorFields) && $requestClassName == 'Add')
+            if (!empty($constructorFields) && $requestClassName == 'Edit')
             {
                 file_put_contents($responseObject, $responseObjectContent);
             }
@@ -570,5 +579,5 @@ class RequestGenerator
 
 $generator = new RequestGenerator();
 
-$generator->buildDefineRequest();
+//$generator->buildDefineRequest();
 $generator->buildDefinableDataModel();

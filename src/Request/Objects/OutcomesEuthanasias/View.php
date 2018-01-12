@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\OutcomesEuthanasias;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesEuthanasiaID = null;
+    private $objectFields = [
+        "outcomesEuthanasiaID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesEuthanasiaID
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaID($outcomesEuthanasiaID)
-    {
-        $this->outcomesEuthanasiaID = $outcomesEuthanasiaID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesEuthanasiaID !== null) $parameterArray['outcomesEuthanasiaID'] = $this->outcomesEuthanasiaID;
 
     }
+
 }

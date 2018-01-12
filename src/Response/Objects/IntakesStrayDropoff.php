@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class IntakesStrayDropoff
 {
     /**
+     * Stray Pickup
+     * @var integer
+     */
+    public $intakesStraydropoffID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -78,6 +84,7 @@ class IntakesStrayDropoff
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->intakesStraydropoffID)) $this->intakesStraydropoffID = $inputData->intakesStraydropoffID;
         if (!empty($inputData->intakesStraydropoffAnimalID)) $this->intakesStraydropoffAnimalID = $inputData->intakesStraydropoffAnimalID;
         if (!empty($inputData->intakesStraydropoffAnimalConditionID)) $this->intakesStraydropoffAnimalConditionID = $inputData->intakesStraydropoffAnimalConditionID;
         if (!empty($inputData->intakesStraydropoffDate)) $this->intakesStraydropoffDate = $inputData->intakesStraydropoffDate;

@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\Animals;
 
 class GetDisabledFields implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

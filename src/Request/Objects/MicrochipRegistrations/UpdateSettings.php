@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\MicrochipRegistrations;
 
 class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
 {
+    ];
+
 
     /**
      * @return bool

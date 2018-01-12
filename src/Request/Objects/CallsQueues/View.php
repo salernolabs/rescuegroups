@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\CallsQueues;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $queueID = null;
+    private $objectFields = [
+        "queueID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $queueID
-     * @return $this
-     */
-    public function setQueueID($queueID)
-    {
-        $this->queueID = $queueID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->queueID !== null) $parameterArray['queueID'] = $this->queueID;
 
     }
+
 }

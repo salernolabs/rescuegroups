@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalsReasonsSurrender;
 
 class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
 {
+    ];
+
 
     /**
      * @return bool
@@ -49,7 +51,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

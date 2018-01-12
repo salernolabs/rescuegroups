@@ -13,34 +13,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $waitinglistID = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $waitinglistName = null;
-
-    /**
-     * Type
-     * @var string
-     */
-    private $waitinglistType = null;
-
-    /**
-     * Comment
-     * @var string
-     */
-    private $waitinglistComment = null;
-
-    /**
-     * Members Count
-     * @var string
-     */
-    private $waitinglistMembersCount = null;
+    private $objectFields = [
+        "waitinglistID" => 1,
+        "waitinglistName" => 0,
+        "waitinglistType" => 0,
+        "waitinglistComment" => 0,
+        "waitinglistMembersCount" => 0,
+    ];
 
 
     /**
@@ -72,85 +55,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $waitinglistID
-     * @return $this
-     */
-    public function setWaitinglistID($waitinglistID)
-    {
-        $this->waitinglistID = $waitinglistID;
-
-        return $this;
-    }
-
-    /**
-     * Set Name
-     *
-     * @param string $waitinglistName
-     * @return $this
-     */
-    public function setWaitinglistName($waitinglistName)
-    {
-        $this->waitinglistName = $waitinglistName;
-
-        return $this;
-    }
-
-    /**
-     * Set Type
-     *
-     * @param string $waitinglistType
-     * @return $this
-     */
-    public function setWaitinglistType($waitinglistType)
-    {
-        $this->waitinglistType = $waitinglistType;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $waitinglistComment
-     * @return $this
-     */
-    public function setWaitinglistComment($waitinglistComment)
-    {
-        $this->waitinglistComment = $waitinglistComment;
-
-        return $this;
-    }
-
-    /**
-     * Set Members Count
-     *
-     * @param string $waitinglistMembersCount
-     * @return $this
-     */
-    public function setWaitinglistMembersCount($waitinglistMembersCount)
-    {
-        $this->waitinglistMembersCount = $waitinglistMembersCount;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->waitinglistID !== null) $parameterArray['waitinglistID'] = $this->waitinglistID;
-        if ($this->waitinglistName !== null) $parameterArray['waitinglistName'] = $this->waitinglistName;
-        if ($this->waitinglistType !== null) $parameterArray['waitinglistType'] = $this->waitinglistType;
-        if ($this->waitinglistComment !== null) $parameterArray['waitinglistComment'] = $this->waitinglistComment;
-        if ($this->waitinglistMembersCount !== null) $parameterArray['waitinglistMembersCount'] = $this->waitinglistMembersCount;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -161,7 +76,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

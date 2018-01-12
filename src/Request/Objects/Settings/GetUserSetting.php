@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Settings;
 class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Pattern
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $settingName = null;
+    private $objectFields = [
+        "settingName" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set Pattern
-     *
-     * @param string $settingName
-     * @return $this
-     */
-    public function setSettingName($settingName)
-    {
-        $this->settingName = $settingName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->settingName !== null) $parameterArray['settingName'] = $this->settingName;
 
     }
+
 }

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\WaitingLists;
 class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $waitinglistID = null;
+    private $objectFields = [
+        "waitinglistID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $waitinglistID
-     * @return $this
-     */
-    public function setWaitinglistID($waitinglistID)
-    {
-        $this->waitinglistID = $waitinglistID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->waitinglistID !== null) $parameterArray['waitinglistID'] = $this->waitinglistID;
 
     }
+
 }

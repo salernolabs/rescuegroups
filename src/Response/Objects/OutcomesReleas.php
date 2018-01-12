@@ -11,10 +11,10 @@ namespace RescueGroups\Response\Objects;
 class OutcomesReleas
 {
     /**
-     * Outcome Release Intake
+     * ID
      * @var integer
      */
-    public $outcomesReleaseIntakeID;
+    public $outcomesReleaseID;
 
     /**
      * Condition
@@ -78,7 +78,7 @@ class OutcomesReleas
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->outcomesReleaseIntakeID)) $this->outcomesReleaseIntakeID = $inputData->outcomesReleaseIntakeID;
+        if (!empty($inputData->outcomesReleaseID)) $this->outcomesReleaseID = $inputData->outcomesReleaseID;
         if (!empty($inputData->outcomesReleaseAnimalConditionID)) $this->outcomesReleaseAnimalConditionID = $inputData->outcomesReleaseAnimalConditionID;
         if (!empty($inputData->outcomesReleaseDate)) $this->outcomesReleaseDate = $inputData->outcomesReleaseDate;
         if (!empty($inputData->outcomesReleaseNotes)) $this->outcomesReleaseNotes = $inputData->outcomesReleaseNotes;

@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class AnimalsJournalEntryType
 {
     /**
+     * Entrytype ID
+     * @var integer
+     */
+    public $journalEntrytypeID;
+
+    /**
      * Description
      * @var string
      */
@@ -30,6 +36,7 @@ class AnimalsJournalEntryType
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->journalEntrytypeID)) $this->journalEntrytypeID = $inputData->journalEntrytypeID;
         if (!empty($inputData->journalEntrytypeDescription)) $this->journalEntrytypeDescription = $inputData->journalEntrytypeDescription;
         if (!empty($inputData->journalEntrytypeCategoryID)) $this->journalEntrytypeCategoryID = $inputData->journalEntrytypeCategoryID;
 

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Animals;
 class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Statuses
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $statuslist = null;
+    private $objectFields = [
+        "statuslist" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
     }
 
     /**
-     * Set Statuses
-     *
-     * @param string $statuslist
-     * @return $this
-     */
-    public function setStatuslist($statuslist)
-    {
-        $this->statuslist = $statuslist;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->statuslist !== null) $parameterArray['statuslist'] = $this->statuslist;
 
     }
+
 }

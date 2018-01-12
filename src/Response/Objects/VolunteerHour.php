@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class VolunteerHour
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $id;
+
+    /**
      * Volunteer
      * @var integer
      */
@@ -42,6 +48,7 @@ class VolunteerHour
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->volunteerHoursID)) $this->id = $inputData->volunteerHoursID;
         if (!empty($inputData->volunteerHoursVolunteerID)) $this->volunteerID = $inputData->volunteerHoursVolunteerID;
         if (!empty($inputData->volunteerHoursVolunteerDate)) $this->volunteerDate = $inputData->volunteerHoursVolunteerDate;
         if (!empty($inputData->volunteerHoursVolunteerLength)) $this->volunteerLength = $inputData->volunteerHoursVolunteerLength;

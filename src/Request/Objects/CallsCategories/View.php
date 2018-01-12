@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\CallsCategories;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $categoryID = null;
+    private $objectFields = [
+        "categoryID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $categoryID
-     * @return $this
-     */
-    public function setCategoryID($categoryID)
-    {
-        $this->categoryID = $categoryID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->categoryID !== null) $parameterArray['categoryID'] = $this->categoryID;
 
     }
+
 }

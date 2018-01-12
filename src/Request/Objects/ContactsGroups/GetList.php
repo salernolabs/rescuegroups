@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\ContactsGroups;
 class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     /**
-     * Group
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $contactGroup = null;
+    private $objectFields = [
+        "contactGroup" => 0,
+    ];
 
 
     /**
@@ -46,27 +49,15 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Set Group
-     *
-     * @param string $contactGroup
-     * @return $this
-     */
-    public function setContactGroup($contactGroup)
-    {
-        $this->contactGroup = $contactGroup;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactGroup !== null) $parameterArray['contactGroup'] = $this->contactGroup;
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -77,7 +68,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

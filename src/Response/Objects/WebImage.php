@@ -11,16 +11,10 @@ namespace RescueGroups\Response\Objects;
 class WebImage
 {
     /**
-     * File
-     * @var string
+     * ID
+     * @var integer
      */
-    public $webimageBinary;
-
-    /**
-     * Original File Name
-     * @var string
-     */
-    public $webimageOldFileName;
+    public $webimageID;
 
     /**
      * Name
@@ -36,8 +30,7 @@ class WebImage
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->webimageBinary)) $this->webimageBinary = $inputData->webimageBinary;
-        if (!empty($inputData->webimageOldFileName)) $this->webimageOldFileName = $inputData->webimageOldFileName;
+        if (!empty($inputData->webimageID)) $this->webimageID = $inputData->webimageID;
         if (!empty($inputData->webimageName)) $this->webimageName = $inputData->webimageName;
 
     }

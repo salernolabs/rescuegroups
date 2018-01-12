@@ -11,16 +11,10 @@ namespace RescueGroups\Response\Objects;
 class WebFile
 {
     /**
-     * File
-     * @var string
+     * ID
+     * @var integer
      */
-    public $webfileBinary;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    public $webfileOldFileName;
+    public $webfileID;
 
     /**
      * Description
@@ -54,8 +48,7 @@ class WebFile
      */
     public function __construct($inputData)
     {
-        if (!empty($inputData->webfileBinary)) $this->webfileBinary = $inputData->webfileBinary;
-        if (!empty($inputData->webfileOldFileName)) $this->webfileOldFileName = $inputData->webfileOldFileName;
+        if (!empty($inputData->webfileID)) $this->webfileID = $inputData->webfileID;
         if (!empty($inputData->webfileDescription)) $this->webfileDescription = $inputData->webfileDescription;
         if (!empty($inputData->webfileStatus)) $this->webfileStatus = $inputData->webfileStatus;
         if (!empty($inputData->webfileDisplayInline)) $this->webfileDisplayInline = $inputData->webfileDisplayInline;

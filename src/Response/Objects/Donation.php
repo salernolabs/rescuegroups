@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Donation
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $donationID;
+
+    /**
      * Contact
      * @var integer
      */
@@ -52,12 +58,6 @@ class Donation
      */
     public $donationDate;
 
-    /**
-     * Add contact to Donor group
-     * @var string
-     */
-    public $donationAddDonorGroup;
-
 
 
     /**
@@ -66,6 +66,7 @@ class Donation
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->donationID)) $this->donationID = $inputData->donationID;
         if (!empty($inputData->donationContactID)) $this->donationContactID = $inputData->donationContactID;
         if (!empty($inputData->donationAmount)) $this->donationAmount = $inputData->donationAmount;
         if (!empty($inputData->donationInkind)) $this->donationInkind = $inputData->donationInkind;
@@ -73,7 +74,6 @@ class Donation
         if (!empty($inputData->donationLettersent)) $this->donationLettersent = $inputData->donationLettersent;
         if (!empty($inputData->donationPurpose)) $this->donationPurpose = $inputData->donationPurpose;
         if (!empty($inputData->donationDate)) $this->donationDate = $inputData->donationDate;
-        if (!empty($inputData->donationAddDonorGroup)) $this->donationAddDonorGroup = $inputData->donationAddDonorGroup;
 
     }
 }

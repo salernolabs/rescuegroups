@@ -11,34 +11,17 @@ namespace RescueGroups\Request\Objects\OutcomesEuthanasias;
 class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesEuthanasiaID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $outcomesEuthanasiaAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $outcomesEuthanasiaDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $outcomesEuthanasiaNotes = null;
-
-    /**
-     * Euthanasia Reason
-     * @var integer
-     */
-    private $outcomesEuthanasiaReasonID = null;
+    private $objectFields = [
+        "outcomesEuthanasiaID" => 1,
+        "outcomesEuthanasiaAnimalConditionID" => 0,
+        "outcomesEuthanasiaDate" => 0,
+        "outcomesEuthanasiaNotes" => 0,
+        "outcomesEuthanasiaReasonID" => 0,
+    ];
 
 
     /**
@@ -70,81 +53,13 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesEuthanasiaID
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaID($outcomesEuthanasiaID)
-    {
-        $this->outcomesEuthanasiaID = $outcomesEuthanasiaID;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesEuthanasiaAnimalConditionID
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaAnimalConditionID($outcomesEuthanasiaAnimalConditionID)
-    {
-        $this->outcomesEuthanasiaAnimalConditionID = $outcomesEuthanasiaAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesEuthanasiaDate
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaDate($outcomesEuthanasiaDate)
-    {
-        $this->outcomesEuthanasiaDate = $outcomesEuthanasiaDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesEuthanasiaNotes
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaNotes($outcomesEuthanasiaNotes)
-    {
-        $this->outcomesEuthanasiaNotes = $outcomesEuthanasiaNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Euthanasia Reason
-     *
-     * @param integer $outcomesEuthanasiaReasonID
-     * @return $this
-     */
-    public function setOutcomesEuthanasiaReasonID($outcomesEuthanasiaReasonID)
-    {
-        $this->outcomesEuthanasiaReasonID = $outcomesEuthanasiaReasonID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesEuthanasiaID !== null) $parameterArray['outcomesEuthanasiaID'] = $this->outcomesEuthanasiaID;
-        if ($this->outcomesEuthanasiaAnimalConditionID !== null) $parameterArray['outcomesEuthanasiaAnimalConditionID'] = $this->outcomesEuthanasiaAnimalConditionID;
-        if ($this->outcomesEuthanasiaDate !== null) $parameterArray['outcomesEuthanasiaDate'] = $this->outcomesEuthanasiaDate;
-        if ($this->outcomesEuthanasiaNotes !== null) $parameterArray['outcomesEuthanasiaNotes'] = $this->outcomesEuthanasiaNotes;
-        if ($this->outcomesEuthanasiaReasonID !== null) $parameterArray['outcomesEuthanasiaReasonID'] = $this->outcomesEuthanasiaReasonID;
 
     }
+
 }

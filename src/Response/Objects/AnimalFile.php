@@ -11,22 +11,16 @@ namespace RescueGroups\Response\Objects;
 class AnimalFile
 {
     /**
+     * File ID
+     * @var integer
+     */
+    public $animalfileID;
+
+    /**
      * Animal
      * @var integer
      */
     public $animalfileAnimalID;
-
-    /**
-     * File
-     * @var string
-     */
-    public $animalfileBinary;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    public $animalfileOldFileName;
 
     /**
      * Description
@@ -60,9 +54,8 @@ class AnimalFile
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->animalfileID)) $this->animalfileID = $inputData->animalfileID;
         if (!empty($inputData->animalfileAnimalID)) $this->animalfileAnimalID = $inputData->animalfileAnimalID;
-        if (!empty($inputData->animalfileBinary)) $this->animalfileBinary = $inputData->animalfileBinary;
-        if (!empty($inputData->animalfileOldFileName)) $this->animalfileOldFileName = $inputData->animalfileOldFileName;
         if (!empty($inputData->animalfileDescription)) $this->animalfileDescription = $inputData->animalfileDescription;
         if (!empty($inputData->animalfileStatus)) $this->animalfileStatus = $inputData->animalfileStatus;
         if (!empty($inputData->animalfileDisplayInline)) $this->animalfileDisplayInline = $inputData->animalfileDisplayInline;

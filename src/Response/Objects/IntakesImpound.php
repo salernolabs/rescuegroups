@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class IntakesImpound
 {
     /**
+     * Impound
+     * @var integer
+     */
+    public $intakesImpoundID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -90,6 +96,7 @@ class IntakesImpound
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->intakesImpoundID)) $this->intakesImpoundID = $inputData->intakesImpoundID;
         if (!empty($inputData->intakesImpoundAnimalID)) $this->intakesImpoundAnimalID = $inputData->intakesImpoundAnimalID;
         if (!empty($inputData->intakesImpoundAnimalConditionID)) $this->intakesImpoundAnimalConditionID = $inputData->intakesImpoundAnimalConditionID;
         if (!empty($inputData->intakesImpoundDate)) $this->intakesImpoundDate = $inputData->intakesImpoundDate;

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\IntakesStrayDropoffs;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Stray Pickup
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesStraydropoffID = null;
+    private $objectFields = [
+        "intakesStraydropoffID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Stray Pickup
-     *
-     * @param integer $intakesStraydropoffID
-     * @return $this
-     */
-    public function setIntakesStraydropoffID($intakesStraydropoffID)
-    {
-        $this->intakesStraydropoffID = $intakesStraydropoffID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesStraydropoffID !== null) $parameterArray['intakesStraydropoffID'] = $this->intakesStraydropoffID;
 
     }
+
 }

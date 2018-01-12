@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Service
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $serviceName = null;
+    private $objectFields = [
+        "serviceName" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Service
-     *
-     * @param string $serviceName
-     * @return $this
-     */
-    public function setServiceName($serviceName)
-    {
-        $this->serviceName = $serviceName;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->serviceName !== null) $parameterArray['serviceName'] = $this->serviceName;
 
     }
+
 }

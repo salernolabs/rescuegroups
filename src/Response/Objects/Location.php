@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class Location
 {
     /**
+     * ID
+     * @var integer
+     */
+    public $locationID;
+
+    /**
      * Name
      * @var string
      */
@@ -72,6 +78,7 @@ class Location
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->locationID)) $this->locationID = $inputData->locationID;
         if (!empty($inputData->locationName)) $this->locationName = $inputData->locationName;
         if (!empty($inputData->locationUrl)) $this->locationUrl = $inputData->locationUrl;
         if (!empty($inputData->locationAddress)) $this->locationAddress = $inputData->locationAddress;

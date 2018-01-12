@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Partnerships;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $partnershipID = null;
+    private $objectFields = [
+        "partnershipID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $partnershipID
-     * @return $this
-     */
-    public function setPartnershipID($partnershipID)
-    {
-        $this->partnershipID = $partnershipID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->partnershipID !== null) $parameterArray['partnershipID'] = $this->partnershipID;
 
     }
+
 }

@@ -11,6 +11,12 @@ namespace RescueGroups\Response\Objects;
 class IntakesOwnerRequestedEuthanasia
 {
     /**
+     * Owner requestedeuthanasia
+     * @var integer
+     */
+    public $intakesOwnerrequestedeuthanasiaID;
+
+    /**
      * Animal
      * @var integer
      */
@@ -54,6 +60,7 @@ class IntakesOwnerRequestedEuthanasia
      */
     public function __construct($inputData)
     {
+        if (!empty($inputData->intakesOwnerrequestedeuthanasiaID)) $this->intakesOwnerrequestedeuthanasiaID = $inputData->intakesOwnerrequestedeuthanasiaID;
         if (!empty($inputData->intakesOwnerrequestedeuthanasiaAnimalID)) $this->intakesOwnerrequestedeuthanasiaAnimalID = $inputData->intakesOwnerrequestedeuthanasiaAnimalID;
         if (!empty($inputData->intakesOwnerrequestedeuthanasiaAnimalConditionID)) $this->intakesOwnerrequestedeuthanasiaAnimalConditionID = $inputData->intakesOwnerrequestedeuthanasiaAnimalConditionID;
         if (!empty($inputData->intakesOwnerrequestedeuthanasiaDate)) $this->intakesOwnerrequestedeuthanasiaDate = $inputData->intakesOwnerrequestedeuthanasiaDate;

@@ -13,34 +13,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $breedID = null;
-
-    /**
-     * Species
-     * @var string
-     */
-    private $species = null;
-
-    /**
-     * Breed Name
-     * @var string
-     */
-    private $breedName = null;
-
-    /**
-     * Species
-     * @var string
-     */
-    private $breedSpecies = null;
-
-    /**
-     * Species
-     * @var integer
-     */
-    private $breedSpeciesID = null;
+    private $objectFields = [
+        "breedID" => 1,
+        "species" => 0,
+        "breedName" => 0,
+        "breedSpecies" => 0,
+        "breedSpeciesID" => 0,
+    ];
 
 
     /**
@@ -72,85 +55,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $breedID
-     * @return $this
-     */
-    public function setBreedID($breedID)
-    {
-        $this->breedID = $breedID;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param string $species
-     * @return $this
-     */
-    public function setSpecies($species)
-    {
-        $this->species = $species;
-
-        return $this;
-    }
-
-    /**
-     * Set Breed Name
-     *
-     * @param string $breedName
-     * @return $this
-     */
-    public function setBreedName($breedName)
-    {
-        $this->breedName = $breedName;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param string $breedSpecies
-     * @return $this
-     */
-    public function setBreedSpecies($breedSpecies)
-    {
-        $this->breedSpecies = $breedSpecies;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param integer $breedSpeciesID
-     * @return $this
-     */
-    public function setBreedSpeciesID($breedSpeciesID)
-    {
-        $this->breedSpeciesID = $breedSpeciesID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->breedID !== null) $parameterArray['breedID'] = $this->breedID;
-        if ($this->species !== null) $parameterArray['species'] = $this->species;
-        if ($this->breedName !== null) $parameterArray['breedName'] = $this->breedName;
-        if ($this->breedSpecies !== null) $parameterArray['breedSpecies'] = $this->breedSpecies;
-        if ($this->breedSpeciesID !== null) $parameterArray['breedSpeciesID'] = $this->breedSpeciesID;
 
         $this->addSearchParameters($parameterArray);
 
     }
+
     /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
@@ -161,7 +76,7 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     {
         if (empty($data)) return [];
 
-        if (is_array($data))
+        if (is_array($data) || is_object($data))
         {
             $output = [];
             foreach ($data as $object)

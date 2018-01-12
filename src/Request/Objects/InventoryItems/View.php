@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\InventoryItems;
 class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $inventoryitemID = null;
+    private $objectFields = [
+        "inventoryitemID" => 1,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $inventoryitemID
-     * @return $this
-     */
-    public function setInventoryitemID($inventoryitemID)
-    {
-        $this->inventoryitemID = $inventoryitemID;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->inventoryitemID !== null) $parameterArray['inventoryitemID'] = $this->inventoryitemID;
 
     }
+
 }

@@ -11,10 +11,13 @@ namespace RescueGroups\Request\Objects\Settings;
 class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     *  Default template to load when adding an animal
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $settingDefaultAnimalTemplate = null;
+    private $objectFields = [
+        "settingDefaultAnimalTemplate" => 0,
+    ];
 
 
     /**
@@ -46,25 +49,13 @@ class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set  Default template to load when adding an animal
-     *
-     * @param string $settingDefaultAnimalTemplate
-     * @return $this
-     */
-    public function setSettingDefaultAnimalTemplate($settingDefaultAnimalTemplate)
-    {
-        $this->settingDefaultAnimalTemplate = $settingDefaultAnimalTemplate;
-
-        return $this;
-    }
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->settingDefaultAnimalTemplate !== null) $parameterArray['settingDefaultAnimalTemplate'] = $this->settingDefaultAnimalTemplate;
 
     }
+
 }
