@@ -1,6 +1,6 @@
 <?php
 /**
- * WebImages Add Request Test
+ * WebImages add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebImages\Add();
 
-        
-        $query->setWebimageBinary("webimageBinary");
-        $query->setWebimageOldFileName("webimageOldFileName");
-        $query->setWebimageName("webimageName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webimages", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("webimageBinary", $data["webimageBinary"]);
-        $this->assertEquals("webimageOldFileName", $data["webimageOldFileName"]);
-        $this->assertEquals("webimageName", $data["webimageName"]);
+        $this->assertEquals('webimages', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Memorials View Request Test
+ * Memorials view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Memorials\View();
 
-        
-        $query->setMemorialID("memorialID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("memorials", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("memorialID", $data["memorialID"]);
+        $this->assertEquals('memorials', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

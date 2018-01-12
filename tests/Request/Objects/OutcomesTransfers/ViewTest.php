@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesTransfers View Request Test
+ * OutcomesTransfers view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesTransfers\View();
 
-        
-        $query->setOutcomesTransferID("outcomesTransferID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesTransfers", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("outcomesTransferID", $data["outcomesTransferID"]);
+        $this->assertEquals('outcomesTransfers', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

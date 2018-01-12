@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsImpound View Request Test
+ * AnimalsReasonsImpound view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\View();
 
-        
-        $query->setReasonID("reasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsImpound", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
+        $this->assertEquals('animalsReasonsImpound', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

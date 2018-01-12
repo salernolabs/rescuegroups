@@ -25,13 +25,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "waitinglistMembersCount" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -55,22 +54,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\WaitingList[]
+     * @returns \RescueGroups\Objects\WaitingList[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -81,13 +68,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\WaitingList($object);
+                $output[] = new \RescueGroups\Objects\WaitingList($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\WaitingList($data)];
+        return [new \RescueGroups\Objects\WaitingList($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

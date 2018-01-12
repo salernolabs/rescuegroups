@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals GetRequiredFields Request Test
+ * Animals getRequiredFields Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetRequiredFieldsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\GetRequiredFields();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("getRequiredFields", $data["objectAction"]);
-
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('getRequiredFields', $data['objectAction']);
     }
 }

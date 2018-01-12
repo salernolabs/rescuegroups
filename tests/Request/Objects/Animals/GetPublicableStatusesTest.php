@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals GetPublicableStatuses Request Test
+ * Animals getPublicableStatuses Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetPublicableStatusesTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\GetPublicableStatuses();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("getPublicableStatuses", $data["objectAction"]);
-
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('getPublicableStatuses', $data['objectAction']);
     }
 }

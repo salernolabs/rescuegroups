@@ -1,6 +1,6 @@
 <?php
 /**
- * Events PublicView Request Test
+ * Events publicView Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\PublicView();
 
-        
-        $query->setEventID("eventID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("events", $data["objectType"]);
-
-        $this->assertEquals("publicView", $data["objectAction"]);
-
-        $this->assertEquals("eventID", $data["eventID"]);
+        $this->assertEquals('events', $data['objectType']);
+        $this->assertEquals('publicView', $data['objectAction']);
     }
 }

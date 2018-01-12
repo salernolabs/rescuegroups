@@ -41,13 +41,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "inventoryitemLoaners" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -71,22 +70,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\InventoryFile[]
+     * @returns \RescueGroups\Objects\InventoryFile[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -97,13 +84,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\InventoryFile($object);
+                $output[] = new \RescueGroups\Objects\InventoryFile($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\InventoryFile($data)];
+        return [new \RescueGroups\Objects\InventoryFile($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

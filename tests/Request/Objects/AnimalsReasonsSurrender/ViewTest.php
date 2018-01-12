@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsSurrender View Request Test
+ * AnimalsReasonsSurrender view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\View();
 
-        
-        $query->setReasonID("reasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsSurrender", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
+        $this->assertEquals('animalsReasonsSurrender', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

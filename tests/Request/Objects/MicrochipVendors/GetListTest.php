@@ -1,6 +1,6 @@
 <?php
 /**
- * MicrochipVendors GetList Request Test
+ * MicrochipVendors list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\MicrochipVendors\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("microchipVendors", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('microchipVendors', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

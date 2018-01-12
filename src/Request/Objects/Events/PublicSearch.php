@@ -40,7 +40,6 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         "locationDistance" => 0,
     ];
 
-
     /**
      * @return bool
      */
@@ -70,22 +69,10 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\Event[]
+     * @returns \RescueGroups\Objects\Event[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -96,13 +83,22 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\Event($object);
+                $output[] = new \RescueGroups\Objects\Event($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\Event($data)];
+        return [new \RescueGroups\Objects\Event($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

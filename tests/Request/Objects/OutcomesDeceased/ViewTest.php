@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesDeceased View Request Test
+ * OutcomesDeceased view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\View();
 
-        
-        $query->setId("id");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesDeceased", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["outcomesDeceasedID"]);
+        $this->assertEquals('outcomesDeceased', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

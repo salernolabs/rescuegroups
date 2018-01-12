@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals Pictures Request Test
+ * Animals pictures Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PicturesTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\Pictures();
 
-        
-        $query->setAnimalID("animalID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("pictures", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('pictures', $data['objectAction']);
     }
 }

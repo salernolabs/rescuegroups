@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCareTakers GetList Request Test
+ * ColoniesCareTakers list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("coloniesCaretakers", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('coloniesCaretakers', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

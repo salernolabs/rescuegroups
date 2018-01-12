@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnerRequestedEuthanasias View Request Test
+ * IntakesOwnerRequestedEuthanasias view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
-        
-        $query->setIntakesOwnerrequestedeuthanasiaID("intakesOwnerrequestedeuthanasiaID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesOwnerrequestedeuthanasias", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesOwnerrequestedeuthanasiaID", $data["intakesOwnerrequestedeuthanasiaID"]);
+        $this->assertEquals('intakesOwnerrequestedeuthanasias', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

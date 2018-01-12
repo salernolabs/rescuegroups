@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesServiceTypes Delete Request Test
+ * IntakesServiceTypes delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Delete();
 
-        
-        $query->setServiceID("serviceID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesServicetypes", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("serviceID", $data["serviceID"]);
+        $this->assertEquals('intakesServicetypes', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

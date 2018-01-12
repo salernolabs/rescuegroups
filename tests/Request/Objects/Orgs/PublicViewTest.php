@@ -1,6 +1,6 @@
 <?php
 /**
- * Orgs PublicView Request Test
+ * Orgs publicView Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Orgs\PublicView();
 
-        
-        $query->setOrgID("orgID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("orgs", $data["objectType"]);
-
-        $this->assertEquals("publicView", $data["objectAction"]);
-
-        $this->assertEquals("orgID", $data["orgID"]);
+        $this->assertEquals('orgs', $data['objectType']);
+        $this->assertEquals('publicView', $data['objectAction']);
     }
 }

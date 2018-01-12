@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactsGroups View Request Test
+ * ContactsGroups view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactsGroups\View();
 
-        
-        $query->setGroupID("groupID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contactsGroups", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("groupID", $data["groupID"]);
+        $this->assertEquals('contactsGroups', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

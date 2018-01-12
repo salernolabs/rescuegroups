@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesDeceased Change Request Test
+ * OutcomesDeceased change Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class ChangeTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Change();
 
-        
-        $query->setOutcomeID("outcomeID");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-        $query->setReason("reason");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesDeceased", $data["objectType"]);
-
-        $this->assertEquals("change", $data["objectAction"]);
-
-        $this->assertEquals("outcomeID", $data["outcomeID"]);
-        $this->assertEquals("animalConditionID", $data["outcomesDeceasedAnimalConditionID"]);
-        $this->assertEquals("date", $data["outcomesDeceasedDate"]);
-        $this->assertEquals("notes", $data["outcomesDeceasedNotes"]);
-        $this->assertEquals("reason", $data["outcomesDeceasedReason"]);
+        $this->assertEquals('outcomesDeceased', $data['objectType']);
+        $this->assertEquals('change', $data['objectAction']);
     }
 }

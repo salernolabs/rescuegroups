@@ -1,6 +1,6 @@
 <?php
 /**
- * Donations View Request Test
+ * Donations view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Donations\View();
 
-        
-        $query->setDonationID("donationID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("donations", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("donationID", $data["donationID"]);
+        $this->assertEquals('donations', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmittedForms ListPending Request Test
+ * SubmittedForms listPending Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class ListPendingTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\ListPending();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("submittedforms", $data["objectType"]);
-
-        $this->assertEquals("listPending", $data["objectAction"]);
-
+        $this->assertEquals('submittedforms', $data['objectType']);
+        $this->assertEquals('listPending', $data['objectAction']);
     }
 }

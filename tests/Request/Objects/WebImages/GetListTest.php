@@ -1,6 +1,6 @@
 <?php
 /**
- * WebImages GetList Request Test
+ * WebImages list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebImages\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webimages", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('webimages', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

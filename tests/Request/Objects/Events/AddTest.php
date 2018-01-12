@@ -1,6 +1,6 @@
 <?php
 /**
- * Events Add Request Test
+ * Events add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,28 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\Add();
 
-        
-        $query->setEventName("eventName");
-        $query->setEventStart("eventStart");
-        $query->setEventEnd("eventEnd");
-        $query->setEventUrl("eventUrl");
-        $query->setEventDescription("eventDescription");
-        $query->setEventLocationID("eventLocationID");
-        $query->setEventSpecies("eventSpecies");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("events", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("eventName", $data["eventName"]);
-        $this->assertEquals("eventStart", $data["eventStart"]);
-        $this->assertEquals("eventEnd", $data["eventEnd"]);
-        $this->assertEquals("eventUrl", $data["eventUrl"]);
-        $this->assertEquals("eventDescription", $data["eventDescription"]);
-        $this->assertEquals("eventLocationID", $data["eventLocationID"]);
-        $this->assertEquals("eventSpecies", $data["eventSpecies"]);
+        $this->assertEquals('events', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

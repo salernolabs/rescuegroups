@@ -37,13 +37,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "logEntryCount" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -67,22 +66,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\Call[]
+     * @returns \RescueGroups\Objects\Call[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -93,13 +80,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\Call($object);
+                $output[] = new \RescueGroups\Objects\Call($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\Call($data)];
+        return [new \RescueGroups\Objects\Call($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

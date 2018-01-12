@@ -28,7 +28,6 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         "testimonialContent" => 0,
     ];
 
-
     /**
      * @return bool
      */
@@ -58,22 +57,10 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\Testimonial[]
+     * @returns \RescueGroups\Objects\Testimonial[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -84,13 +71,22 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\Testimonial($object);
+                $output[] = new \RescueGroups\Objects\Testimonial($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\Testimonial($data)];
+        return [new \RescueGroups\Objects\Testimonial($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

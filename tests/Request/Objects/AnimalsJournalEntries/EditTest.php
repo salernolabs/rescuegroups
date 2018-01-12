@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsJournalEntries Edit Request Test
+ * AnimalsJournalEntries edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,30 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Edit();
 
-        
-        $query->setJournalEntryID("journalEntryID");
-        $query->setJournalEntryAnimalID("journalEntryAnimalID");
-        $query->setJournalEntryDate("journalEntryDate");
-        $query->setJournalEntryComment("journalEntryComment");
-        $query->setJournalEntryEntrytypeID("journalEntryEntrytypeID");
-        $query->setJournalEntryCost("journalEntryCost");
-        $query->setJournalEntryDueDate("journalEntryDueDate");
-        $query->setJournalEntryReminderDate("journalEntryReminderDate");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsJournalEntries", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("journalEntryID", $data["journalEntryID"]);
-        $this->assertEquals("journalEntryAnimalID", $data["journalEntryAnimalID"]);
-        $this->assertEquals("journalEntryDate", $data["journalEntryDate"]);
-        $this->assertEquals("journalEntryComment", $data["journalEntryComment"]);
-        $this->assertEquals("journalEntryEntrytypeID", $data["journalEntryEntrytypeID"]);
-        $this->assertEquals("journalEntryCost", $data["journalEntryCost"]);
-        $this->assertEquals("journalEntryDueDate", $data["journalEntryDueDate"]);
-        $this->assertEquals("journalEntryReminderDate", $data["journalEntryReminderDate"]);
+        $this->assertEquals('animalsJournalEntries', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

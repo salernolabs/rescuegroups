@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsTransfer Search Request Test
+ * AnimalsReasonsTransfer search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Search();
 
-        
-        $query->setReasonID("reasonID");
-        $query->setReasonName("reasonName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsTransfer", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
-        $this->assertEquals("reasonName", $data["reasonName"]);
+        $this->assertEquals('animalsReasonsTransfer', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalBreeds PublicSearch Request Test
+ * AnimalBreeds publicSearch Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalBreeds\PublicSearch();
 
-        
-        $query->setBreedID("breedID");
-        $query->setBreedName("breedName");
-        $query->setBreedSpecies("breedSpecies");
-        $query->setBreedSpeciesID("breedSpeciesID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalBreeds", $data["objectType"]);
-
-        $this->assertEquals("publicSearch", $data["objectAction"]);
-
-        $this->assertEquals("breedID", $data["breedID"]);
-        $this->assertEquals("breedName", $data["breedName"]);
-        $this->assertEquals("breedSpecies", $data["breedSpecies"]);
-        $this->assertEquals("breedSpeciesID", $data["breedSpeciesID"]);
+        $this->assertEquals('animalBreeds', $data['objectType']);
+        $this->assertEquals('publicSearch', $data['objectAction']);
     }
 }

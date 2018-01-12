@@ -1,6 +1,6 @@
 <?php
 /**
- * WaitingLists View Request Test
+ * WaitingLists view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\View();
 
-        
-        $query->setWaitinglistID("waitinglistID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("waitinglists", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("waitinglistID", $data["waitinglistID"]);
+        $this->assertEquals('waitinglists', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

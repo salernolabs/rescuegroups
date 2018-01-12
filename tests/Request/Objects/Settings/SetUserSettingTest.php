@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings SetUserSetting Request Test
+ * Settings setUserSetting Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class SetUserSettingTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Settings\SetUserSetting();
 
-        
-        $query->setSettingDefaultAnimalTemplate("settingDefaultAnimalTemplate");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("settings", $data["objectType"]);
-
-        $this->assertEquals("setUserSetting", $data["objectAction"]);
-
-        $this->assertEquals("settingDefaultAnimalTemplate", $data["settingDefaultAnimalTemplate"]);
+        $this->assertEquals('settings', $data['objectType']);
+        $this->assertEquals('setUserSetting', $data['objectAction']);
     }
 }

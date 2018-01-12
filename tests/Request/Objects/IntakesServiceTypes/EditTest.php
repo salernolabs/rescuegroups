@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesServiceTypes Edit Request Test
+ * IntakesServiceTypes edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Edit();
 
-        
-        $query->setServiceID("serviceID");
-        $query->setServiceName("serviceName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesServicetypes", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("serviceID", $data["serviceID"]);
-        $this->assertEquals("serviceName", $data["serviceName"]);
+        $this->assertEquals('intakesServicetypes', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

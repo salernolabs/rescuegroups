@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsQueuesMembers GetList Request Test
+ * CallsQueuesMembers list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsQueuesMembers", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('callsQueuesMembers', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

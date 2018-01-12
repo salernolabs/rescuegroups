@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalQualities;
 
 class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
+    use \RescueGroups\Request\Traits\SearchParameters;
+
     /**
      * Filterable Fields
      *
@@ -18,7 +20,6 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
     private $objectFields = [
         "animalQualities" => 0,
     ];
-
 
     /**
      * @return bool
@@ -49,20 +50,10 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\AnimalQuality[]
+     * @returns \RescueGroups\Objects\AnimalQuality[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -73,13 +64,22 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\AnimalQuality($object);
+                $output[] = new \RescueGroups\Objects\AnimalQuality($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\AnimalQuality($data)];
+        return [new \RescueGroups\Objects\AnimalQuality($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReleases View Request Test
+ * OutcomesReleases view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesReleases\View();
 
-        
-        $query->setOutcomesReleaseID("outcomesReleaseID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesReleases", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("outcomesReleaseID", $data["outcomesReleaseID"]);
+        $this->assertEquals('outcomesReleases', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

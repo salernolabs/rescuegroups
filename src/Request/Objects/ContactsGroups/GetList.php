@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\ContactsGroups;
 
 class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
+    use \RescueGroups\Request\Traits\SearchParameters;
+
     /**
      * Filterable Fields
      *
@@ -19,13 +21,12 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
         "contactGroup" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -49,20 +50,10 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\ContactsGroup[]
+     * @returns \RescueGroups\Objects\ContactsGroup[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -73,13 +64,22 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\ContactsGroup($object);
+                $output[] = new \RescueGroups\Objects\ContactsGroup($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\ContactsGroup($data)];
+        return [new \RescueGroups\Objects\ContactsGroup($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

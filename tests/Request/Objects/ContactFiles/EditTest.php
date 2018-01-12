@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactFiles Edit Request Test
+ * ContactFiles edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactFiles\Edit();
 
-        
-        $query->setContactfileID("contactfileID");
-        $query->setContactfileDescription("contactfileDescription");
-        $query->setContactfileStatus("contactfileStatus");
-        $query->setContactfileDisplayInline("contactfileDisplayInline");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contactFiles", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("contactfileID", $data["contactfileID"]);
-        $this->assertEquals("contactfileDescription", $data["contactfileDescription"]);
-        $this->assertEquals("contactfileStatus", $data["contactfileStatus"]);
-        $this->assertEquals("contactfileDisplayInline", $data["contactfileDisplayInline"]);
+        $this->assertEquals('contactFiles', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

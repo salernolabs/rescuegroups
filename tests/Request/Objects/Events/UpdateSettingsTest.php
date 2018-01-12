@@ -1,6 +1,6 @@
 <?php
 /**
- * Events UpdateSettings Request Test
+ * Events updateSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
 
-        
-        $query->setEnableEvents("enableEvents");
-        $query->setSetEventsMapWebsite("setEventsMapWebsite");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("events", $data["objectType"]);
-
-        $this->assertEquals("updateSettings", $data["objectAction"]);
-
-        $this->assertEquals("enableEvents", $data["enableEvents"]);
-        $this->assertEquals("setEventsMapWebsite", $data["setEventsMapWebsite"]);
+        $this->assertEquals('events', $data['objectType']);
+        $this->assertEquals('updateSettings', $data['objectAction']);
     }
 }

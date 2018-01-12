@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesAdoptions View Request Test
+ * OutcomesAdoptions view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\View();
 
-        
-        $query->setOutcomesAdoptionID("outcomesAdoptionID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesAdoptions", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("outcomesAdoptionID", $data["outcomesAdoptionID"]);
+        $this->assertEquals('outcomesAdoptions', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

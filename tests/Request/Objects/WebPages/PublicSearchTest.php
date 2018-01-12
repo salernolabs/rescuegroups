@@ -1,6 +1,6 @@
 <?php
 /**
- * WebPages PublicSearch Request Test
+ * WebPages publicSearch Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebPages\PublicSearch();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webpages", $data["objectType"]);
-
-        $this->assertEquals("publicSearch", $data["objectAction"]);
-
+        $this->assertEquals('webpages', $data['objectType']);
+        $this->assertEquals('publicSearch', $data['objectAction']);
     }
 }

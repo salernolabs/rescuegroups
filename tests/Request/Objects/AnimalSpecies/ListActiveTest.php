@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalSpecies ListActive Request Test
+ * AnimalSpecies listActive Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class ListActiveTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalSpecies\ListActive();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalSpecies", $data["objectType"]);
-
-        $this->assertEquals("listActive", $data["objectAction"]);
-
+        $this->assertEquals('animalSpecies', $data['objectType']);
+        $this->assertEquals('listActive', $data['objectAction']);
     }
 }

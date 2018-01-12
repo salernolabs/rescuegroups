@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesServiceTypes Add Request Test
+ * IntakesServiceTypes add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Add();
 
-        
-        $query->setServiceName("serviceName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesServicetypes", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("serviceName", $data["serviceName"]);
+        $this->assertEquals('intakesServicetypes', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

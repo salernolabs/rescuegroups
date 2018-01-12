@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsExports GetExports Request Test
+ * AnimalsExports getExports Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetExportsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsExports\GetExports();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsExports", $data["objectType"]);
-
-        $this->assertEquals("getExports", $data["objectAction"]);
-
+        $this->assertEquals('animalsExports', $data['objectType']);
+        $this->assertEquals('getExports', $data['objectAction']);
     }
 }

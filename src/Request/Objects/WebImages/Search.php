@@ -27,13 +27,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "webimageHeight" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -57,22 +56,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\WebImage[]
+     * @returns \RescueGroups\Objects\WebImage[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -83,13 +70,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\WebImage($object);
+                $output[] = new \RescueGroups\Objects\WebImage($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\WebImage($data)];
+        return [new \RescueGroups\Objects\WebImage($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

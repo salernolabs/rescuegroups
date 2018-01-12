@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsQueues Edit Request Test
+ * CallsQueues edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueues\Edit();
 
-        
-        $query->setQueueID("queueID");
-        $query->setQueueName("queueName");
-        $query->setQueueFromEmail("queueFromEmail");
-        $query->setQueueDefaultUrgencyID("queueDefaultUrgencyID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsQueues", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("queueID", $data["queueID"]);
-        $this->assertEquals("queueName", $data["queueName"]);
-        $this->assertEquals("queueFromEmail", $data["queueFromEmail"]);
-        $this->assertEquals("queueDefaultUrgencyID", $data["queueDefaultUrgencyID"]);
+        $this->assertEquals('callsQueues', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

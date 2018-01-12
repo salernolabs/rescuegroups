@@ -38,13 +38,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "impoundReason" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -68,22 +67,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\IntakesImpound[]
+     * @returns \RescueGroups\Objects\IntakesImpound[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -94,13 +81,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\IntakesImpound($object);
+                $output[] = new \RescueGroups\Objects\IntakesImpound($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\IntakesImpound($data)];
+        return [new \RescueGroups\Objects\IntakesImpound($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

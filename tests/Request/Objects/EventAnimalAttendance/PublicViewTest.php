@@ -1,6 +1,6 @@
 <?php
 /**
- * EventAnimalAttendance PublicView Request Test
+ * EventAnimalAttendance publicView Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\PublicView();
 
-        
-        $query->setAttendanceID("attendanceID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("eventanimalattendance", $data["objectType"]);
-
-        $this->assertEquals("publicView", $data["objectAction"]);
-
-        $this->assertEquals("attendanceID", $data["attendanceID"]);
+        $this->assertEquals('eventanimalattendance', $data['objectType']);
+        $this->assertEquals('publicView', $data['objectAction']);
     }
 }

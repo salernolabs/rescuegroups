@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsEuthanasia GetList Request Test
+ * AnimalsReasonsEuthanasia list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsEuthanasia", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

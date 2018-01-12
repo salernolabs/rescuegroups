@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalColors PublicSearch Request Test
+ * AnimalColors publicSearch Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalColors\PublicSearch();
 
-        
-        $query->setColorID("colorID");
-        $query->setColorName("colorName");
-        $query->setColorSpecies("colorSpecies");
-        $query->setColorSpeciesID("colorSpeciesID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalColors", $data["objectType"]);
-
-        $this->assertEquals("publicSearch", $data["objectAction"]);
-
-        $this->assertEquals("colorID", $data["colorID"]);
-        $this->assertEquals("colorName", $data["colorName"]);
-        $this->assertEquals("colorSpecies", $data["colorSpecies"]);
-        $this->assertEquals("colorSpeciesID", $data["colorSpeciesID"]);
+        $this->assertEquals('animalColors', $data['objectType']);
+        $this->assertEquals('publicSearch', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesEuthanasias Change Request Test
+ * OutcomesEuthanasias change Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class ChangeTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Change();
 
-        
-        $query->setOutcomeID("outcomeID");
-        $query->setOutcomesEuthanasiaAnimalConditionID("outcomesEuthanasiaAnimalConditionID");
-        $query->setOutcomesEuthanasiaDate("outcomesEuthanasiaDate");
-        $query->setOutcomesEuthanasiaNotes("outcomesEuthanasiaNotes");
-        $query->setOutcomesEuthanasiaReasonID("outcomesEuthanasiaReasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesEuthanasias", $data["objectType"]);
-
-        $this->assertEquals("change", $data["objectAction"]);
-
-        $this->assertEquals("outcomeID", $data["outcomeID"]);
-        $this->assertEquals("outcomesEuthanasiaAnimalConditionID", $data["outcomesEuthanasiaAnimalConditionID"]);
-        $this->assertEquals("outcomesEuthanasiaDate", $data["outcomesEuthanasiaDate"]);
-        $this->assertEquals("outcomesEuthanasiaNotes", $data["outcomesEuthanasiaNotes"]);
-        $this->assertEquals("outcomesEuthanasiaReasonID", $data["outcomesEuthanasiaReasonID"]);
+        $this->assertEquals('outcomesEuthanasias', $data['objectType']);
+        $this->assertEquals('change', $data['objectAction']);
     }
 }

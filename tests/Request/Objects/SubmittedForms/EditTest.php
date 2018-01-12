@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmittedForms Edit Request Test
+ * SubmittedForms edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\Edit();
 
-        
-        $query->setSubmittedformID("submittedformID");
-        $query->setSubmittedformAnimalID("submittedformAnimalID");
-        $query->setSubmittedformStatusID("submittedformStatusID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("submittedforms", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("submittedformID", $data["submittedformID"]);
-        $this->assertEquals("submittedformAnimalID", $data["submittedformAnimalID"]);
-        $this->assertEquals("submittedformStatusID", $data["submittedformStatusID"]);
+        $this->assertEquals('submittedforms', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

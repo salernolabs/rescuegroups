@@ -31,13 +31,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "euthanasiaReason" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -61,22 +60,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\IntakesOwnerRequestedEuthanasia[]
+     * @returns \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -87,13 +74,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\IntakesOwnerRequestedEuthanasia($object);
+                $output[] = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\IntakesOwnerRequestedEuthanasia($data)];
+        return [new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

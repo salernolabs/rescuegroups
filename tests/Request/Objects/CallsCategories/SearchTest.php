@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsCategories Search Request Test
+ * CallsCategories search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,36 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsCategories\Search();
 
-        
-        $query->setCategoryID("categoryID");
-        $query->setCategoryName("categoryName");
-        $query->setCategoryDescription("categoryDescription");
-        $query->setCategoryPublic("categoryPublic");
-        $query->setCategoryDefaultQueueID("categoryDefaultQueueID");
-        $query->setCategoryDefaultQueueName("categoryDefaultQueueName");
-        $query->setCategoryCreatedDate("categoryCreatedDate");
-        $query->setCategoryCreatedByID("categoryCreatedByID");
-        $query->setCategoryUpdatedDate("categoryUpdatedDate");
-        $query->setCategoryUpdatedByID("categoryUpdatedByID");
-        $query->setCategoryCallsCount("categoryCallsCount");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsCategories", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("categoryID", $data["categoryID"]);
-        $this->assertEquals("categoryName", $data["categoryName"]);
-        $this->assertEquals("categoryDescription", $data["categoryDescription"]);
-        $this->assertEquals("categoryPublic", $data["categoryPublic"]);
-        $this->assertEquals("categoryDefaultQueueID", $data["categoryDefaultQueueID"]);
-        $this->assertEquals("categoryDefaultQueueName", $data["categoryDefaultQueueName"]);
-        $this->assertEquals("categoryCreatedDate", $data["categoryCreatedDate"]);
-        $this->assertEquals("categoryCreatedByID", $data["categoryCreatedByID"]);
-        $this->assertEquals("categoryUpdatedDate", $data["categoryUpdatedDate"]);
-        $this->assertEquals("categoryUpdatedByID", $data["categoryUpdatedByID"]);
-        $this->assertEquals("categoryCallsCount", $data["categoryCallsCount"]);
+        $this->assertEquals('callsCategories', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesEuthanasias View Request Test
+ * OutcomesEuthanasias view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\View();
 
-        
-        $query->setOutcomesEuthanasiaID("outcomesEuthanasiaID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesEuthanasias", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("outcomesEuthanasiaID", $data["outcomesEuthanasiaID"]);
+        $this->assertEquals('outcomesEuthanasias', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

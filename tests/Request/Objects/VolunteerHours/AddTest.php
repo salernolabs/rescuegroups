@@ -1,6 +1,6 @@
 <?php
 /**
- * VolunteerHours Add Request Test
+ * VolunteerHours add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteerHours\Add();
 
-        
-        $query->setVolunteerID("volunteerID");
-        $query->setVolunteerDate("volunteerDate");
-        $query->setVolunteerLength("volunteerLength");
-        $query->setVolunteerTask("volunteerTask");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("volunteerHours", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("volunteerID", $data["volunteerHoursVolunteerID"]);
-        $this->assertEquals("volunteerDate", $data["volunteerHoursVolunteerDate"]);
-        $this->assertEquals("volunteerLength", $data["volunteerHoursVolunteerLength"]);
-        $this->assertEquals("volunteerTask", $data["volunteerHoursVolunteerTask"]);
+        $this->assertEquals('volunteerHours', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalGroups Add Request Test
+ * AnimalGroups add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalGroups\Add();
 
-        
-        $query->setGroupName("groupName");
-        $query->setGroupHeaderID("groupHeaderID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalGroups", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("groupName", $data["groupName"]);
-        $this->assertEquals("groupHeaderID", $data["groupHeaderID"]);
+        $this->assertEquals('animalGroups', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -8,10 +8,17 @@
  */
 namespace RescueGroups\Request\Objects\AnimalColors;
 
-class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    ];
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+    ];
 
     /**
      * @return bool
@@ -45,7 +52,7 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\AnimalColor[]
+     * @returns \RescueGroups\Objects\AnimalColor[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -56,13 +63,22 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\AnimalColor($object);
+                $output[] = new \RescueGroups\Objects\AnimalColor($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\AnimalColor($data)];
+        return [new \RescueGroups\Objects\AnimalColor($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

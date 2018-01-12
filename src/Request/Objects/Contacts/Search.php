@@ -55,13 +55,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "contactType" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -85,22 +84,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\Contact[]
+     * @returns \RescueGroups\Objects\Contact[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -111,13 +98,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\Contact($object);
+                $output[] = new \RescueGroups\Objects\Contact($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\Contact($data)];
+        return [new \RescueGroups\Objects\Contact($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

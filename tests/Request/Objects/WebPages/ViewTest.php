@@ -1,6 +1,6 @@
 <?php
 /**
- * WebPages View Request Test
+ * WebPages view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebPages\View();
 
-        
-        $query->setWebpageID("webpageID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webpages", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("webpageID", $data["webpageID"]);
+        $this->assertEquals('webpages', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

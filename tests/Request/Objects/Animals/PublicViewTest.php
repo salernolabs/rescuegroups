@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals PublicView Request Test
+ * Animals publicView Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\PublicView();
 
-        
-        $query->setAnimalID("animalID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("publicView", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('publicView', $data['objectAction']);
     }
 }

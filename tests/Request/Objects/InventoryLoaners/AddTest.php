@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryLoaners Add Request Test
+ * InventoryLoaners add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,30 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryLoaners\Add();
 
-        
-        $query->setInventoryLoanerContactID("inventoryLoanerContactID");
-        $query->setInventoryLoanerItemID("inventoryLoanerItemID");
-        $query->setInventoryLoanerLoanDate("inventoryLoanerLoanDate");
-        $query->setInventoryLoanerLoanConditionID("inventoryLoanerLoanConditionID");
-        $query->setInventoryLoanerDueDate("inventoryLoanerDueDate");
-        $query->setInventoryLoanerReturnDate("inventoryLoanerReturnDate");
-        $query->setInventoryLoanerReturnConditionID("inventoryLoanerReturnConditionID");
-        $query->setInventoryLoanerNotes("inventoryLoanerNotes");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("inventoryLoaners", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("inventoryLoanerContactID", $data["inventoryLoanerContactID"]);
-        $this->assertEquals("inventoryLoanerItemID", $data["inventoryLoanerItemID"]);
-        $this->assertEquals("inventoryLoanerLoanDate", $data["inventoryLoanerLoanDate"]);
-        $this->assertEquals("inventoryLoanerLoanConditionID", $data["inventoryLoanerLoanConditionID"]);
-        $this->assertEquals("inventoryLoanerDueDate", $data["inventoryLoanerDueDate"]);
-        $this->assertEquals("inventoryLoanerReturnDate", $data["inventoryLoanerReturnDate"]);
-        $this->assertEquals("inventoryLoanerReturnConditionID", $data["inventoryLoanerReturnConditionID"]);
-        $this->assertEquals("inventoryLoanerNotes", $data["inventoryLoanerNotes"]);
+        $this->assertEquals('inventoryLoaners', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

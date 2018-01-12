@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesImpounds View Request Test
+ * IntakesImpounds view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesImpounds\View();
 
-        
-        $query->setIntakesImpoundID("intakesImpoundID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesImpounds", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesImpoundID", $data["intakesImpoundID"]);
+        $this->assertEquals('intakesImpounds', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

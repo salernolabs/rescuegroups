@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsAdoptions View Request Test
+ * AnimalsAdoptions view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\View();
 
-        
-        $query->setAdoptionID("adoptionID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsAdoptions", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("adoptionID", $data["adoptionID"]);
+        $this->assertEquals('animalsAdoptions', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

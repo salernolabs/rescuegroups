@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsExports UpdateExports Request Test
+ * AnimalsExports updateExports Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class UpdateExportsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsExports\UpdateExports();
 
-        
-        $query->setExportID("exportID");
-        $query->setExportEnabled("exportEnabled");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsExports", $data["objectType"]);
-
-        $this->assertEquals("updateExports", $data["objectAction"]);
-
-        $this->assertEquals("exportID", $data["exportID"]);
-        $this->assertEquals("exportEnabled", $data["exportEnabled"]);
+        $this->assertEquals('animalsExports', $data['objectType']);
+        $this->assertEquals('updateExports', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmittedForms View Request Test
+ * SubmittedForms view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\View();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("submittedforms", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
+        $this->assertEquals('submittedforms', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

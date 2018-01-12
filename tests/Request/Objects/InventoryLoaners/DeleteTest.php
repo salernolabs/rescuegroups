@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryLoaners Delete Request Test
+ * InventoryLoaners delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryLoaners\Delete();
 
-        
-        $query->setInventoryLoanerID("inventoryLoanerID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("inventoryLoaners", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("inventoryLoanerID", $data["inventoryLoanerID"]);
+        $this->assertEquals('inventoryLoaners', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

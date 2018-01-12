@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsImpound Edit Request Test
+ * AnimalsReasonsImpound edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Edit();
 
-        
-        $query->setReasonID("reasonID");
-        $query->setReasonName("reasonName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsImpound", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
-        $this->assertEquals("reasonName", $data["reasonName"]);
+        $this->assertEquals('animalsReasonsImpound', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

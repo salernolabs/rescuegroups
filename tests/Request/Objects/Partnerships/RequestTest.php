@@ -1,6 +1,6 @@
 <?php
 /**
- * Partnerships Request Request Test
+ * Partnerships request Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class RequestTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Partnerships\Request();
 
-        
-        $query->setPartnershipSharingOrgID("partnershipSharingOrgID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("partnerships", $data["objectType"]);
-
-        $this->assertEquals("request", $data["objectAction"]);
-
-        $this->assertEquals("partnershipSharingOrgID", $data["partnershipSharingOrgID"]);
+        $this->assertEquals('partnerships', $data['objectType']);
+        $this->assertEquals('request', $data['objectAction']);
     }
 }

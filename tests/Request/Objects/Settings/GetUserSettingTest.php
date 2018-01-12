@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings GetUserSetting Request Test
+ * Settings getUserSetting Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class GetUserSettingTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Settings\GetUserSetting();
 
-        
-        $query->setSettingName("settingName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("settings", $data["objectType"]);
-
-        $this->assertEquals("getUserSetting", $data["objectAction"]);
-
-        $this->assertEquals("settingName", $data["settingName"]);
+        $this->assertEquals('settings', $data['objectType']);
+        $this->assertEquals('getUserSetting', $data['objectAction']);
     }
 }

@@ -45,7 +45,6 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         "orgCommonapplicationAccept" => 0,
     ];
 
-
     /**
      * @return bool
      */
@@ -75,22 +74,10 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\Org[]
+     * @returns \RescueGroups\Objects\Org[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -101,13 +88,22 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\Org($object);
+                $output[] = new \RescueGroups\Objects\Org($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\Org($data)];
+        return [new \RescueGroups\Objects\Org($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

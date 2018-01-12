@@ -8,17 +8,24 @@
  */
 namespace RescueGroups\Request\Objects\AnimalFiles;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
+class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    ];
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -45,7 +52,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\AnimalFile[]
+     * @returns \RescueGroups\Objects\AnimalFile[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -56,13 +63,22 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\AnimalFile($object);
+                $output[] = new \RescueGroups\Objects\AnimalFile($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\AnimalFile($data)];
+        return [new \RescueGroups\Objects\AnimalFile($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

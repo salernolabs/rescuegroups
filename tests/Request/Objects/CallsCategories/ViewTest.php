@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsCategories View Request Test
+ * CallsCategories view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsCategories\View();
 
-        
-        $query->setCategoryID("categoryID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsCategories", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("categoryID", $data["categoryID"]);
+        $this->assertEquals('callsCategories', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

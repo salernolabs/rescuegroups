@@ -1,6 +1,6 @@
 <?php
 /**
- * MicrochipRegistrations GetSettings Request Test
+ * MicrochipRegistrations getSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\GetSettings();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("microchipRegistrations", $data["objectType"]);
-
-        $this->assertEquals("getSettings", $data["objectAction"]);
-
+        $this->assertEquals('microchipRegistrations', $data['objectType']);
+        $this->assertEquals('getSettings', $data['objectAction']);
     }
 }

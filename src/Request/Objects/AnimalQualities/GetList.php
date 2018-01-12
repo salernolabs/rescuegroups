@@ -10,6 +10,8 @@ namespace RescueGroups\Request\Objects\AnimalQualities;
 
 class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
+    use \RescueGroups\Request\Traits\SearchParameters;
+
     /**
      * Filterable Fields
      *
@@ -19,13 +21,12 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
         "animalQualities" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -49,20 +50,10 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\AnimalQuality[]
+     * @returns \RescueGroups\Objects\AnimalQuality[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -73,13 +64,22 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\AnimalQuality($object);
+                $output[] = new \RescueGroups\Objects\AnimalQuality($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\AnimalQuality($data)];
+        return [new \RescueGroups\Objects\AnimalQuality($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

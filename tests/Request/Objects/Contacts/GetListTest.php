@@ -1,6 +1,6 @@
 <?php
 /**
- * Contacts GetList Request Test
+ * Contacts list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Contacts\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contacts", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('contacts', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

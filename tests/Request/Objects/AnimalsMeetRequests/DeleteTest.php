@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequests Delete Request Test
+ * AnimalsMeetRequests delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
 
-        
-        $query->setMeetrequestID("meetrequestID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("meetrequestID", $data["meetrequestID"]);
+        $this->assertEquals('animalsMeetrequests', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

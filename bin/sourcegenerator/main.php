@@ -12,79 +12,218 @@
  */
 require_once(__DIR__ . '/../../vendor/autoload.php');
 
+class QueryRequest
+{
+    /**
+     * @var string
+     */
+    public $className;
+
+    /**
+     * @var string
+     */
+    public $requestName;
+
+    /**
+     * @var string
+     */
+    public $requestClassName;
+
+    /**
+     * @var string
+     */
+    public $responseClassName;
+
+    /**
+     * @var string
+     */
+    public $typeName;
+
+    /**
+     * @var string
+     */
+    public $objectAction;
+
+    /**
+     * @var string
+     */
+    public $loginRequired = 'true';
+
+    /**
+     * @var QueryField[]
+     */
+    public $fields = [];
+
+    /**
+     * @var \DateTime
+     */
+    public $date;
+
+    /**
+     * QueryRequest constructor.
+     */
+    public function __construct($className, $type, $request, $requestData)
+    {
+        $this->date = new \DateTime();
+
+        $this->className = $className;
+        $this->typeName = $type;
+        $this->requestName = $request;
+        $this->objectAction = $request;
+        $this->responseClassName = $this->getResponseObjectClassName($this->className);
+
+        $this->requestClassName = ucfirst($request);
+        if ($this->requestClassName == 'List')
+        {
+            $this->requestClassName = 'GetList';
+        }
+
+        if (!empty($requestData->fields))
+        {
+            foreach ($requestData->fields as $fieldName => $fieldData)
+            {
+                if (empty($fieldData->type)) return;
+
+                //Create friendly field name
+                $sdkFieldName = $fieldName;
+
+                //AnimalQualities is the exception here, the field would be blank because it's name is animalQualities
+                if ($this->className != 'AnimalQualities' && $this->className != 'EventAnimalAttendance')
+                    $sdkFieldName = lcfirst(str_replace($type, '', $fieldName));
+
+                if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
+
+                $field = new QueryField($fieldName, $sdkFieldName, $fieldData);
+                $this->fields[] = $field;
+            }
+        }
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSearch()
+    {
+        return ($this->requestName == 'search' || $this->requestName == 'publicSearch');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isList()
+    {
+        return ($this->requestName == 'list' || $this->requestName == 'publicList');
+    }
+
+    /**
+     * @return bool
+     */
+    public function needsParametersInterface()
+    {
+        return !empty($this->fields);
+    }
+
+    /**
+     * Get response object class name
+     *
+     * @param $responseClassName
+     * @return string
+     */
+    private function getResponseObjectClassName($responseClassName)
+    {
+        if (substr($responseClassName, -7) != 'Species')
+        {
+            if (substr($responseClassName, -3) == 'ses')
+            {
+                $responseClassName = substr($responseClassName, 0, -2);
+            }
+            elseif (substr($responseClassName, -3) == 'ies')
+            {
+                $responseClassName = substr($responseClassName, 0, -3) . 'y';
+            }
+            elseif (substr($responseClassName, -1) == 's')
+            {
+                $responseClassName = substr($responseClassName, 0, -1);
+            }
+        }
+
+        return $responseClassName;
+    }
+}
+
+class QueryField
+{
+    /**
+     * @var string
+     */
+    public $friendlyName;
+
+    /**
+     * @var string
+     */
+    public $type;
+
+    /**
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @var string
+     */
+    public $sdkFieldName;
+
+    /**
+     * @var string
+     */
+    public $required = "0";
+
+    /**
+     * QueryField constructor.
+     * @param $fieldName
+     * @param $sdkFieldName
+     * @param $fieldData
+     */
+    public function __construct($fieldName, $sdkFieldName, $fieldData)
+    {
+        $this->sdkFieldName = $sdkFieldName;
+
+        switch ($fieldData->type)
+        {
+            case 'key':
+                $this->type = 'integer';
+                break;
+
+            case 'date':
+                $this->type = '\DateTime';
+                break;
+
+            case 'datetime':
+                $this->type = '\DateTime';
+                break;
+
+            case 'decimal':
+                $this->type = 'float';
+                break;
+
+            default:
+                $this->type = 'string';
+                break;
+        }
+
+        $this->friendlyName = $fieldData->friendlyname;
+        $this->name = $fieldData->name;
+
+        if ($fieldData->friendlyname == 'ID' || (!empty($fieldData->properties[0]) && $fieldData->properties[0] == 'required'))
+        {
+            $this->required = "1";
+        }
+    }
+}
+
 class RequestGenerator
 {
     const DATE_FORMAT = 'Y-m-d H:i:s';
-
-    /**
-     * @var string
-     */
-    private $templateData;
-
-    /**
-     * @var string
-     */
-    private $testTemplateData;
-
-    /**
-     * @var string
-     */
-    private $fieldTemplate;
-
-    /**
-     * @var string
-     */
-    private $getParametersTemplate;
-
-    /**
-     * @var string
-     */
-    private $getParameterItemTemplate;
-
-    /**
-     * @var string
-     */
-    private $setterTemplate;
-
-    /**
-     * @var string
-     */
-    private $docTemplate;
-
-    /**
-     * @var string
-     */
-    private $docRequestTemplate;
-
-    /**
-     * @var string
-     */
-    private $docRequestMethodTemplate;
-
-    /**
-     * @var string
-     */
-    private $docIndexTemplate;
-
-    /**
-     * @var string
-     */
-    private $responseTemplate;
-
-    /**
-     * @var string
-     */
-    private $responseConstructorTemplate;
-
-    /**
-     * @var string
-     */
-    private $responseConstructorItemTemplate;
-
-    /**
-     * @var string
-     */
-    private $processResponseTemplate;
 
     /**
      * @var array
@@ -175,46 +314,9 @@ class RequestGenerator
     ];
 
     /**
-     * @var array
+     * @var \Mustache_Engine
      */
-    private $publicDefinable = [
-        'animalBreeds' => 1,
-        'animalColors' => 1,
-        'animalPatterns' => 1,
-        'animalQualities' => 1,
-        'animalSpecies' => 1,
-        'animals' => 1,
-        'events' => 1,
-        'orgs' => 1,
-        'testimonials' => 1
-    ];
-
-    /**
-     * Build define request, used for building further request
-     */
-    public function buildDefineRequest()
-    {
-        $templateData = file_get_contents(__DIR__ . '/templates/define-request.php.tpl');
-        $testTemplateData = file_get_contents(__DIR__ . '/templates/define-request-test.php.tpl');
-
-        $variableSearch = ['%CLASSNAME%', '%TYPENAME%', '%NEEDLOGIN%', '%DATE%'];
-
-        foreach ($this->objectTypes as $type => $className)
-        {
-            $needsLogin = empty($this->publicDefinable[$type]);
-
-            $classFileName = __DIR__ . '/../../src/Request/Define/' . $className . '.php';
-            $testFileName = __DIR__ . '/../../tests/Request/Define/' . $className . 'Test.php';
-
-            $variableReplace = [$className, $type, $needsLogin ? 'true' : 'false', date(static::DATE_FORMAT)];
-
-            $modifiedTemplateSource = str_replace($variableSearch, $variableReplace, $templateData);
-            file_put_contents($classFileName, $modifiedTemplateSource);
-
-            $modifiedTemplateSource = str_replace($variableSearch, $variableReplace, $testTemplateData);
-            file_put_contents($testFileName, $modifiedTemplateSource);
-        }
-    }
+    private $mustache;
 
     /**
      * Call define and build a returnable datamodel
@@ -225,29 +327,14 @@ class RequestGenerator
         $api = new \RescueGroups\API();
         $api->setSandboxMode(true);
 
+        $this->mustache = new \Mustache_Engine();
+
         //Login but use vcr
         $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../tests/data/fixtures/action-login.json');
         $api->setCustomGuzzleHandler($vcr);
 
         $login = new \RescueGroups\Request\Actions\Login();
         $api->executeRequest($login);
-
-        //Load Templates, what a mess this turned out to be
-        $this->templateData = file_get_contents(__DIR__ . '/templates/objectquery-request.php.tpl');
-        $this->testTemplateData = file_get_contents(__DIR__ . '/templates/objectquery-test.php.tpl');
-        $this->fieldTemplate = file_get_contents(__DIR__ . '/templates/segments/fields.php.tpl');
-        $this->getParametersTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameters.php.tpl');
-        $this->getParameterItemTemplate = file_get_contents(__DIR__ . '/templates/segments/get-parameter-item.php.tpl');
-        $this->setterTemplate = file_get_contents(__DIR__ . '/templates/segments/setter.php.tpl');
-        $this->docTemplate = file_get_contents(__DIR__ . '/templates/query-doc.md.tpl');
-        $this->docRequestTemplate = file_get_contents(__DIR__ . '/templates/segments/query-request-doc.md.tpl');
-        $this->docRequestMethodTemplate = file_get_contents(__DIR__ . '/templates/segments/query-request-method-doc.md.tpl');
-        $this->docIndexTemplate = file_get_contents(__DIR__ . '/templates/doc-index.md.tpl');
-
-        $this->responseTemplate = file_get_contents(__DIR__ . '/templates/response-object.php.tpl');
-        $this->responseConstructorTemplate = file_get_contents(__DIR__ . '/templates/segments/set-constructor-item.tpl');
-        $this->responseConstructorItemTemplate = file_get_contents(__DIR__ . '/templates/segments/public-fields.php.tpl');
-        $this->processResponseTemplate = file_get_contents(__DIR__ . '/templates/process-response.php.tpl');
 
         $queryDocLinks = '';
 
@@ -267,7 +354,16 @@ class RequestGenerator
             {
                 $result = $api->executeRequest($query);
 
-                $this->buildDefinedObjectQueries($className, $type, $result->data);
+                $objectQueries = $this->buildDefinedObjectQueryObjects($className, $type, $result->data);
+
+                foreach ($objectQueries->requests as $object)
+                {
+                    $this->outputQueryRequestClass($object);
+                    $this->outputResponseClass($object);
+                    $this->outputQueryRequestTestClass($object);
+                }
+
+                $this->outputQueryDocumentation($objectQueries);
 
                 $queryDocLinks .= ' * [' . $className . '](' . $className . '/readme.md)' . "\n";
             }
@@ -278,14 +374,129 @@ class RequestGenerator
             }
         }
 
-        file_put_contents(
-            __DIR__ . '/../../doc/request/readme.md',
-            str_replace(
-                ['%DATE%', '%QUERYLINKS%'],
-                [date(static::DATE_FORMAT), $queryDocLinks],
-                $this->docIndexTemplate
-            )
-        );
+        $mainDocData = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/documentation-index.mustache'), ['date'=>date(static::DATE_FORMAT), 'queryLinks'=>$queryDocLinks]);
+
+        file_put_contents(__DIR__ . '/../../doc/request/readme.md', $mainDocData);
+    }
+
+    /**
+     * Gather data first
+     *
+     * @param $className
+     * @param $type
+     * @param $definition
+     * @return QueryRequest[]
+     */
+    private function buildDefinedObjectQueryObjects($className, $type, $definition)
+    {
+        $output = new \stdClass;
+        $output->className = $className;
+        $output->requests = [];
+
+        foreach ($definition as $request => $requestData)
+        {
+            if ($request == 'define')
+            {
+                continue;
+            }
+
+            $queryRequest = new QueryRequest($className, $type, $request, $requestData);
+
+            $output->requests[] = $queryRequest;
+        }
+
+        return $output;
+    }
+
+    /**
+     * Output Response Class
+     *
+     * @param QueryRequest $query
+     */
+    private function outputResponseClass(QueryRequest $query)
+    {
+        if ($query->requestClassName != 'Edit') return;
+
+        $responseObject = __DIR__ . '/../../src/Objects/' . $query->responseClassName . '.php';
+
+        $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/response-object.mustache'), $query);
+
+        file_put_contents($responseObject, $data);
+    }
+
+    /**
+     * Output the query request class file
+     *
+     * @param QueryRequest $query
+     */
+    private function outputQueryRequestClass(QueryRequest $query)
+    {
+        $dir = __DIR__ . '/../../src/Request/Objects/' . $query->className;
+
+        if (!is_dir($dir))
+        {
+            mkdir($dir);
+        }
+
+        $requestFileName = $dir . '/' . $query->requestClassName . '.php';
+
+        if ($query->isSearch())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
+        }
+        else
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
+        }
+
+        file_put_contents($requestFileName, $data);
+    }
+
+    /**
+     * @param QueryRequest $query
+     */
+    private function outputQueryRequestTestClass(QueryRequest $query)
+    {
+        $dir = __DIR__ . '/../../tests/Request/Objects/' . $query->className;
+
+        if (!is_dir($dir))
+        {
+            mkdir($dir);
+        }
+
+        $requestFileName = $dir . '/' . $query->requestClassName . 'Test.php';
+
+        if ($query->isSearch())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query-test.mustache'), $query);
+        }
+        else
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query-test.mustache'), $query);
+        }
+
+        file_put_contents($requestFileName, $data);
+    }
+
+    /**
+     * Output documentation for a set of queries
+     *
+     * @param $queries
+     */
+    private function outputQueryDocumentation($queries)
+    {
+        $docDir = __DIR__ . '/../../doc/request/' . $queries->className;
+
+        if (!is_dir($docDir))
+        {
+            mkdir($docDir);
+        }
+
+        $docFile = $docDir . '/readme.md';
+
+        $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/object-query-docs.mustache'), $queries);
+
+        file_put_contents($docFile, $data);
     }
 
     /**
@@ -548,36 +759,10 @@ class RequestGenerator
         file_put_contents($mainDocFile, $mainDocContents);
     }
 
-    /**
-     * Get response object class name
-     *
-     * @param $responseClassName
-     * @return string
-     */
-    private function getResponseObjectClassName($responseClassName)
-    {
-        if (substr($responseClassName, -7) != 'Species')
-        {
-            if (substr($responseClassName, -3) == 'ses')
-            {
-                $responseClassName = substr($responseClassName, 0, -2);
-            }
-            elseif (substr($responseClassName, -3) == 'ies')
-            {
-                $responseClassName = substr($responseClassName, 0, -3) . 'y';
-            }
-            elseif (substr($responseClassName, -1) == 's')
-            {
-                $responseClassName = substr($responseClassName, 0, -1);
-            }
-        }
 
-        return $responseClassName;
-    }
 
 }
 
 $generator = new RequestGenerator();
 
-//$generator->buildDefineRequest();
 $generator->buildDefinableDataModel();

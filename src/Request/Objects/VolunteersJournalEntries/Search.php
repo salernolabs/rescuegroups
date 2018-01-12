@@ -28,13 +28,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
         "journalEntryCreatedDate" => 0,
     ];
 
-
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -58,22 +57,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-
-        $this->addSearchParameters($parameterArray);
-
-    }
-
-    /**
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\VolunteersJournalEntry[]
+     * @returns \RescueGroups\Objects\VolunteersJournalEntry[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -84,13 +71,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\VolunteersJournalEntry($object);
+                $output[] = new \RescueGroups\Objects\VolunteersJournalEntry($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\VolunteersJournalEntry($data)];
+        return [new \RescueGroups\Objects\VolunteersJournalEntry($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Events Delete Request Test
+ * Events delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\Delete();
 
-        
-        $query->setEventID("eventID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("events", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("eventID", $data["eventID"]);
+        $this->assertEquals('events', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

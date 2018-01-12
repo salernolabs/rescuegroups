@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesAdoptions Search Request Test
+ * OutcomesAdoptions search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,36 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Search();
 
-        
-        $query->setOutcomesAdoptionID("outcomesAdoptionID");
-        $query->setOutcomesAdoptionIntakeID("outcomesAdoptionIntakeID");
-        $query->setOutcomesAdoptionAnimalConditionID("outcomesAdoptionAnimalConditionID");
-        $query->setOutcomesAdoptionDate("outcomesAdoptionDate");
-        $query->setOutcomesAdoptionNotes("outcomesAdoptionNotes");
-        $query->setOutcomesAdoptionAdoptionID("outcomesAdoptionAdoptionID");
-        $query->setAnimalID("animalID");
-        $query->setAnimalName("animalName");
-        $query->setAnimalConditionName("animalConditionName");
-        $query->setAdopterContactID("adopterContactID");
-        $query->setOwnerName("ownerName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesAdoptions", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("outcomesAdoptionID", $data["outcomesAdoptionID"]);
-        $this->assertEquals("outcomesAdoptionIntakeID", $data["outcomesAdoptionIntakeID"]);
-        $this->assertEquals("outcomesAdoptionAnimalConditionID", $data["outcomesAdoptionAnimalConditionID"]);
-        $this->assertEquals("outcomesAdoptionDate", $data["outcomesAdoptionDate"]);
-        $this->assertEquals("outcomesAdoptionNotes", $data["outcomesAdoptionNotes"]);
-        $this->assertEquals("outcomesAdoptionAdoptionID", $data["outcomesAdoptionAdoptionID"]);
-        $this->assertEquals("animalID", $data["animalID"]);
-        $this->assertEquals("animalName", $data["animalName"]);
-        $this->assertEquals("animalConditionName", $data["animalConditionName"]);
-        $this->assertEquals("adopterContactID", $data["adopterContactID"]);
-        $this->assertEquals("ownerName", $data["ownerName"]);
+        $this->assertEquals('outcomesAdoptions', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCareTakers Search Request Test
+ * ColoniesCareTakers search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Search();
 
-        
-        $query->setCaretakerID("caretakerID");
-        $query->setCaretakerColonyID("caretakerColonyID");
-        $query->setCaretakerContactID("caretakerContactID");
-        $query->setCaretakerContactName("caretakerContactName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("coloniesCaretakers", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("caretakerID", $data["caretakerID"]);
-        $this->assertEquals("caretakerColonyID", $data["caretakerColonyID"]);
-        $this->assertEquals("caretakerContactID", $data["caretakerContactID"]);
-        $this->assertEquals("caretakerContactName", $data["caretakerContactName"]);
+        $this->assertEquals('coloniesCaretakers', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

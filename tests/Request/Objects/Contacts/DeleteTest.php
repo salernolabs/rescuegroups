@@ -1,6 +1,6 @@
 <?php
 /**
- * Contacts Delete Request Test
+ * Contacts delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Contacts\Delete();
 
-        
-        $query->setContactID("contactID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contacts", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("contactID", $data["contactID"]);
+        $this->assertEquals('contacts', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

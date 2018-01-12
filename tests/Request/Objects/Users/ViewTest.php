@@ -1,6 +1,6 @@
 <?php
 /**
- * Users View Request Test
+ * Users view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Users\View();
 
-        
-        $query->setUserID("userID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("users", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("userID", $data["userID"]);
+        $this->assertEquals('users', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

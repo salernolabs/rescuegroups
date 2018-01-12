@@ -1,6 +1,6 @@
 <?php
 /**
- * WebImages View Request Test
+ * WebImages view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebImages\View();
 
-        
-        $query->setWebimageID("webimageID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webimages", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("webimageID", $data["webimageID"]);
+        $this->assertEquals('webimages', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

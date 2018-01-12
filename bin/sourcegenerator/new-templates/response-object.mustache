@@ -1,0 +1,33 @@
+<?php
+/**
+ * {{responseClassName}} Response Object
+ *
+ * @package RescueGroups
+ * @subpackage Response
+ * @author SourceGenerator
+ */
+namespace RescueGroups\Objects;
+
+class {{responseClassName}}
+{
+    {{# fields}}
+    /**
+     * {{friendlyName}}
+     *
+     * @var {{type}}
+     */
+    public ${{sdkFieldName}} = null;
+
+    {{/ fields}}
+
+    /**
+     * {{responseClassName}} Constructor
+     * @var \stdClass $inputData
+     */
+    public function __construct($inputData)
+    {
+        {{# fields}}
+        if (!empty($inputData->{{name}})) $this->{{sdkFieldName}} = $inputData->{{name}};
+        {{/ fields}}
+    }
+}

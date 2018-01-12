@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsStatuses GetList Request Test
+ * CallsStatuses list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsStatuses\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsStatuses", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('callsStatuses', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

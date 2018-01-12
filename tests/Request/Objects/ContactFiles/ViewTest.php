@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactFiles View Request Test
+ * ContactFiles view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactFiles\View();
 
-        
-        $query->setContactfileID("contactfileID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contactFiles", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("contactfileID", $data["contactfileID"]);
+        $this->assertEquals('contactFiles', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

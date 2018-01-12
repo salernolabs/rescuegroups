@@ -1,6 +1,6 @@
 <?php
 /**
- * Partnerships GetSettings Request Test
+ * Partnerships getSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Partnerships\GetSettings();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("partnerships", $data["objectType"]);
-
-        $this->assertEquals("getSettings", $data["objectAction"]);
-
+        $this->assertEquals('partnerships', $data['objectType']);
+        $this->assertEquals('getSettings', $data['objectAction']);
     }
 }

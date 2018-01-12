@@ -1,6 +1,6 @@
 <?php
 /**
- * WebImages Edit Request Test
+ * WebImages edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebImages\Edit();
 
-        
-        $query->setWebimageID("webimageID");
-        $query->setWebimageName("webimageName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webimages", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("webimageID", $data["webimageID"]);
-        $this->assertEquals("webimageName", $data["webimageName"]);
+        $this->assertEquals('webimages', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

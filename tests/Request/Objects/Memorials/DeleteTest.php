@@ -1,6 +1,6 @@
 <?php
 /**
- * Memorials Delete Request Test
+ * Memorials delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Memorials\Delete();
 
-        
-        $query->setMemorialID("memorialID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("memorials", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("memorialID", $data["memorialID"]);
+        $this->assertEquals('memorials', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

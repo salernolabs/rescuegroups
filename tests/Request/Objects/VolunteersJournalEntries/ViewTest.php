@@ -1,6 +1,6 @@
 <?php
 /**
- * VolunteersJournalEntries View Request Test
+ * VolunteersJournalEntries view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\View();
 
-        
-        $query->setJournalEntryID("journalEntryID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("volunteersJournalEntries", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("journalEntryID", $data["journalEntryID"]);
+        $this->assertEquals('volunteersJournalEntries', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

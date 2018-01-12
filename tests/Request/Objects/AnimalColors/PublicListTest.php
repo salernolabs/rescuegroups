@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalColors PublicList Request Test
+ * AnimalColors publicList Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class PublicListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalColors\PublicList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalColors", $data["objectType"]);
-
-        $this->assertEquals("publicList", $data["objectAction"]);
-
+        $this->assertEquals('animalColors', $data['objectType']);
+        $this->assertEquals('publicList', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalBreeds PublicList Request Test
+ * AnimalBreeds publicList Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class PublicListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalBreeds\PublicList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalBreeds", $data["objectType"]);
-
-        $this->assertEquals("publicList", $data["objectAction"]);
-
+        $this->assertEquals('animalBreeds', $data['objectType']);
+        $this->assertEquals('publicList', $data['objectAction']);
     }
 }

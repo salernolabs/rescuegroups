@@ -1,6 +1,6 @@
 <?php
 /**
- * NewsArticles Edit Request Test
+ * NewsArticles edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\Edit();
 
-        
-        $query->setArticleID("articleID");
-        $query->setArticleTitle("articleTitle");
-        $query->setArticleDescription("articleDescription");
-        $query->setArticleDate("articleDate");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("newsarticles", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("articleID", $data["articleID"]);
-        $this->assertEquals("articleTitle", $data["articleTitle"]);
-        $this->assertEquals("articleDescription", $data["articleDescription"]);
-        $this->assertEquals("articleDate", $data["articleDate"]);
+        $this->assertEquals('newsarticles', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

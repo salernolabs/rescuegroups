@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactsGroups Add Request Test
+ * ContactsGroups add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Add();
 
-        
-        $query->setGroupName("groupName");
-        $query->setGroupBusiness("groupBusiness");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contactsGroups", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("groupName", $data["groupName"]);
-        $this->assertEquals("groupBusiness", $data["groupBusiness"]);
+        $this->assertEquals('contactsGroups', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

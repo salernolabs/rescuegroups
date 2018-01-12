@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsAdoptions UpdateSettings Request Test
+ * AnimalsAdoptions updateSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\UpdateSettings();
 
-        
-        $query->setShowAdoptionsTrackingMessage("showAdoptionsTrackingMessage");
-        $query->setShowAppPending("showAppPending");
-        $query->setShowAppPendingAdoptAnyway("showAppPendingAdoptAnyway");
-        $query->setPreventApplicationsForPendingAnimals("preventApplicationsForPendingAnimals");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsAdoptions", $data["objectType"]);
-
-        $this->assertEquals("updateSettings", $data["objectAction"]);
-
-        $this->assertEquals("showAdoptionsTrackingMessage", $data["showAdoptionsTrackingMessage"]);
-        $this->assertEquals("showAppPending", $data["showAppPending"]);
-        $this->assertEquals("showAppPendingAdoptAnyway", $data["showAppPendingAdoptAnyway"]);
-        $this->assertEquals("preventApplicationsForPendingAnimals", $data["preventApplicationsForPendingAnimals"]);
+        $this->assertEquals('animalsAdoptions', $data['objectType']);
+        $this->assertEquals('updateSettings', $data['objectAction']);
     }
 }

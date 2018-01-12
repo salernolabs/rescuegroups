@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings GetList Request Test
+ * Settings list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Settings\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("settings", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('settings', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

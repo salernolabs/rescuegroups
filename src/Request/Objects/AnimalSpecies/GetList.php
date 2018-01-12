@@ -8,17 +8,24 @@
  */
 namespace RescueGroups\Request\Objects\AnimalSpecies;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ProcessResponseInterface
+class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    ];
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -45,7 +52,7 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
      * Process the response with associated output object
      * @param \RescueGroups\API $api
      * @param \stdClass $data
-     * @returns \RescueGroups\Response\Objects\AnimalSpecies[]
+     * @returns \RescueGroups\Objects\AnimalSpecies[]
      */
     public function processResponse(\RescueGroups\API $api, $data)
     {
@@ -56,13 +63,22 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Response\Objects\AnimalSpecies($object);
+                $output[] = new \RescueGroups\Objects\AnimalSpecies($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Response\Objects\AnimalSpecies($data)];
+        return [new \RescueGroups\Objects\AnimalSpecies($data)];
     }
 
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        $this->addSearchParameters($parameterArray);
+    }
 }

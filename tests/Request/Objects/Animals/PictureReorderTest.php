@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals PictureReorder Request Test
+ * Animals pictureReorder Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class PictureReorderTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\PictureReorder();
 
-        
-        $query->setAnimalID("animalID");
-        $query->setMediaID("mediaID");
-        $query->setNewOrder("newOrder");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("pictureReorder", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
-        $this->assertEquals("mediaID", $data["mediaID"]);
-        $this->assertEquals("newOrder", $data["newOrder"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('pictureReorder', $data['objectAction']);
     }
 }

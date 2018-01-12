@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesStrayDropoffs View Request Test
+ * IntakesStrayDropoffs view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
 
-        
-        $query->setIntakesStraydropoffID("intakesStraydropoffID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesStraydropoffs", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesStraydropoffID", $data["intakesStraydropoffID"]);
+        $this->assertEquals('intakesStraydropoffs', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

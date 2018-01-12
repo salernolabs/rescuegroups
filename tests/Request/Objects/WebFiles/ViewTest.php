@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFiles View Request Test
+ * WebFiles view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebFiles\View();
 
-        
-        $query->setWebfileID("webfileID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webfiles", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("webfileID", $data["webfileID"]);
+        $this->assertEquals('webfiles', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

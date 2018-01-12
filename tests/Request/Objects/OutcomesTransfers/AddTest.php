@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesTransfers Add Request Test
+ * OutcomesTransfers add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,28 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Add();
 
-        
-        $query->setOutcomesTransferIntakeID("outcomesTransferIntakeID");
-        $query->setOutcomesTransferAnimalConditionID("outcomesTransferAnimalConditionID");
-        $query->setOutcomesTransferDate("outcomesTransferDate");
-        $query->setOutcomesTransferNotes("outcomesTransferNotes");
-        $query->setOutcomesTransferReceiveID("outcomesTransferReceiveID");
-        $query->setOutcomesTransferCoalitionMember("outcomesTransferCoalitionMember");
-        $query->setOutcomesTransferReasonID("outcomesTransferReasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesTransfers", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("outcomesTransferIntakeID", $data["outcomesTransferIntakeID"]);
-        $this->assertEquals("outcomesTransferAnimalConditionID", $data["outcomesTransferAnimalConditionID"]);
-        $this->assertEquals("outcomesTransferDate", $data["outcomesTransferDate"]);
-        $this->assertEquals("outcomesTransferNotes", $data["outcomesTransferNotes"]);
-        $this->assertEquals("outcomesTransferReceiveID", $data["outcomesTransferReceiveID"]);
-        $this->assertEquals("outcomesTransferCoalitionMember", $data["outcomesTransferCoalitionMember"]);
-        $this->assertEquals("outcomesTransferReasonID", $data["outcomesTransferReasonID"]);
+        $this->assertEquals('outcomesTransfers', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }
