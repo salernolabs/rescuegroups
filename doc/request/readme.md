@@ -1,6 +1,6 @@
 # Query Documentation
 
-This documentation and the queries within were generated on 2018-01-12 18:54:32. Manual changes to this or related files may get overwritten.
+This documentation and the queries within were generated on 2018-01-12 19:00:55. Manual changes to this or related files may get overwritten.
 
 ## Queries
 
