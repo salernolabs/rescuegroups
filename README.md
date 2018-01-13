@@ -1,5 +1,9 @@
 # salernolabs/rescuegroups
 
+[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/version)](https://packagist.org/packages/phpunit/phpunit)
+[![License](https://poser.pugx.org/phpunit/phpunit/license)](https://packagist.org/packages/phpunit/phpunit)
+
+
 An unofficial rescuegroups.org HTTP API PHP SDK. This package is not stable yet and still under development.
 
 Please read the RescueGroups.org API specification and documentation thoroughly before attempting to use this library. https://rescuegroups.org/services/adoptable-pet-data-http-json-api/
