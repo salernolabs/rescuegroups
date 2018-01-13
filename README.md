@@ -1,8 +1,7 @@
 # salernolabs/rescuegroups
 
-[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/version)](https://packagist.org/packages/phpunit/phpunit)
-[![License](https://poser.pugx.org/phpunit/phpunit/license)](https://packagist.org/packages/phpunit/phpunit)
-
+[![Latest Stable Version](https://poser.pugx.org/salernolabs/rescuegroups/v/stable)](https://packagist.org/packages/salernolabs/rescuegroups)
+[![License](https://poser.pugx.org/salernolabs/rescuegroups/license)](https://packagist.org/packages/salernolabs/rescuegroups)
 
 An unofficial rescuegroups.org HTTP API PHP SDK. This package is not stable yet and still under development.
 
