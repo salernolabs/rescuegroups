@@ -8,57 +8,31 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServices;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Service
-     * @var integer
-     */
-    private $intakesServiceID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesServiceAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakesServiceAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakesServiceDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakesServiceNotes = null;
-
-    /**
-     * Owner
-     * @var integer
-     */
-    private $intakesServiceOwnerID = null;
-
-    /**
-     * Service
-     * @var integer
-     */
-    private $intakesServiceServicetypeID = null;
-
+    private $objectFields = [
+        "intakesServiceID" => 1,
+        "intakesServiceAnimalID" => 0,
+        "intakesServiceAnimalConditionID" => 0,
+        "intakesServiceDate" => 0,
+        "intakesServiceNotes" => 0,
+        "intakesServiceOwnerID" => 0,
+        "intakesServiceServicetypeID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -82,111 +56,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Service
-     *
-     * @param integer $intakesServiceID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesService[]
      */
-    public function setIntakesServiceID($intakesServiceID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakesServiceID = $intakesServiceID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesService($object);
+            }
 
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesServiceAnimalID
-     * @return $this
-     */
-    public function setIntakesServiceAnimalID($intakesServiceAnimalID)
-    {
-        $this->intakesServiceAnimalID = $intakesServiceAnimalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesServiceAnimalConditionID
-     * @return $this
-     */
-    public function setIntakesServiceAnimalConditionID($intakesServiceAnimalConditionID)
-    {
-        $this->intakesServiceAnimalConditionID = $intakesServiceAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesServiceDate
-     * @return $this
-     */
-    public function setIntakesServiceDate($intakesServiceDate)
-    {
-        $this->intakesServiceDate = $intakesServiceDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesServiceNotes
-     * @return $this
-     */
-    public function setIntakesServiceNotes($intakesServiceNotes)
-    {
-        $this->intakesServiceNotes = $intakesServiceNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Owner
-     *
-     * @param integer $intakesServiceOwnerID
-     * @return $this
-     */
-    public function setIntakesServiceOwnerID($intakesServiceOwnerID)
-    {
-        $this->intakesServiceOwnerID = $intakesServiceOwnerID;
-
-        return $this;
-    }
-
-    /**
-     * Set Service
-     *
-     * @param integer $intakesServiceServicetypeID
-     * @return $this
-     */
-    public function setIntakesServiceServicetypeID($intakesServiceServicetypeID)
-    {
-        $this->intakesServiceServicetypeID = $intakesServiceServicetypeID;
-
-        return $this;
+        return [new \RescueGroups\Objects\IntakesService($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesServiceID !== null) $parameterArray['intakesServiceID'] = $this->intakesServiceID;
-        if ($this->intakesServiceAnimalID !== null) $parameterArray['intakesServiceAnimalID'] = $this->intakesServiceAnimalID;
-        if ($this->intakesServiceAnimalConditionID !== null) $parameterArray['intakesServiceAnimalConditionID'] = $this->intakesServiceAnimalConditionID;
-        if ($this->intakesServiceDate !== null) $parameterArray['intakesServiceDate'] = $this->intakesServiceDate;
-        if ($this->intakesServiceNotes !== null) $parameterArray['intakesServiceNotes'] = $this->intakesServiceNotes;
-        if ($this->intakesServiceOwnerID !== null) $parameterArray['intakesServiceOwnerID'] = $this->intakesServiceOwnerID;
-        if ($this->intakesServiceServicetypeID !== null) $parameterArray['intakesServiceServicetypeID'] = $this->intakesServiceServicetypeID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

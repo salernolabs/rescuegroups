@@ -8,39 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueues;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $queueID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Name
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $queueName = null;
-
-    /**
-     * From Email Address
-     * @var email
-     */
-    private $queueFromEmail = null;
-
-    /**
-     * Default Urgency
-     * @var integer
-     */
-    private $queueDefaultUrgencyID = null;
-
+    private $objectFields = [
+        "queueID" => 1,
+        "queueName" => 0,
+        "queueFromEmail" => 0,
+        "queueDefaultUrgencyID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -64,69 +53,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $queueID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\CallsQueue[]
      */
-    public function setQueueID($queueID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->queueID = $queueID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\CallsQueue($object);
+            }
 
-    /**
-     * Set Name
-     *
-     * @param string $queueName
-     * @return $this
-     */
-    public function setQueueName($queueName)
-    {
-        $this->queueName = $queueName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set From Email Address
-     *
-     * @param email $queueFromEmail
-     * @return $this
-     */
-    public function setQueueFromEmail($queueFromEmail)
-    {
-        $this->queueFromEmail = $queueFromEmail;
-
-        return $this;
-    }
-
-    /**
-     * Set Default Urgency
-     *
-     * @param integer $queueDefaultUrgencyID
-     * @return $this
-     */
-    public function setQueueDefaultUrgencyID($queueDefaultUrgencyID)
-    {
-        $this->queueDefaultUrgencyID = $queueDefaultUrgencyID;
-
-        return $this;
+        return [new \RescueGroups\Objects\CallsQueue($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->queueID !== null) $parameterArray['queueID'] = $this->queueID;
-        if ($this->queueName !== null) $parameterArray['queueName'] = $this->queueName;
-        if ($this->queueFromEmail !== null) $parameterArray['queueFromEmail'] = $this->queueFromEmail;
-        if ($this->queueDefaultUrgencyID !== null) $parameterArray['queueDefaultUrgencyID'] = $this->queueDefaultUrgencyID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

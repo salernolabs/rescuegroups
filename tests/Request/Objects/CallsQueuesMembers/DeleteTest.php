@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsQueuesMembers Delete Request Test
+ * CallsQueuesMembers delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Delete();
 
-        
-        $query->setMemberID("memberID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsQueuesMembers", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("memberID", $data["memberID"]);
+        $this->assertEquals('callsQueuesMembers', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

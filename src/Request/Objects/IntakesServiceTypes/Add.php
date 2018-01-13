@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Service
-     * @var string
-     */
-    private $serviceName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "serviceName" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Service
-     *
-     * @param string $serviceName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesServiceType[]
      */
-    public function setServiceName($serviceName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->serviceName = $serviceName;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesServiceType($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\IntakesServiceType($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->serviceName !== null) $parameterArray['serviceName'] = $this->serviceName;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

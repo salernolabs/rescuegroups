@@ -8,87 +8,36 @@
  */
 namespace RescueGroups\Request\Objects\InventoryItems;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Name
-     * @var string
-     */
-    private $inventoryitemName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Item Number/ID
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $inventoryitemItemID = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $inventoryitemDescription = null;
-
-    /**
-     * Received Date
-     * @var \DateTime
-     */
-    private $inventoryitemReceivedDate = null;
-
-    /**
-     * Source
-     * @var string
-     */
-    private $inventoryitemSource = null;
-
-    /**
-     * Cost
-     * @var float
-     */
-    private $inventoryitemCost = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $inventoryitemConditionID = null;
-
-    /**
-     * Category
-     * @var string
-     */
-    private $inventoryitemCategory = null;
-
-    /**
-     * Disposed Date
-     * @var \DateTime
-     */
-    private $inventoryitemDisposedDate = null;
-
-    /**
-     * Disposed Destination
-     * @var string
-     */
-    private $inventoryitemDisposedDestination = null;
-
-    /**
-     * Storage Location
-     * @var string
-     */
-    private $inventoryitemStorageLocation = null;
-
-    /**
-     * Quantity
-     * @var int
-     */
-    private $inventoryitemQuantity = null;
-
+    private $objectFields = [
+        "inventoryitemName" => 1,
+        "inventoryitemItemID" => 0,
+        "inventoryitemDescription" => 0,
+        "inventoryitemReceivedDate" => 0,
+        "inventoryitemSource" => 0,
+        "inventoryitemCost" => 1,
+        "inventoryitemConditionID" => 0,
+        "inventoryitemCategory" => 0,
+        "inventoryitemDisposedDate" => 0,
+        "inventoryitemDisposedDestination" => 0,
+        "inventoryitemStorageLocation" => 0,
+        "inventoryitemQuantity" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -112,181 +61,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $inventoryitemName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\InventoryItem[]
      */
-    public function setInventoryitemName($inventoryitemName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->inventoryitemName = $inventoryitemName;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\InventoryItem($object);
+            }
 
-    /**
-     * Set Item Number/ID
-     *
-     * @param string $inventoryitemItemID
-     * @return $this
-     */
-    public function setInventoryitemItemID($inventoryitemItemID)
-    {
-        $this->inventoryitemItemID = $inventoryitemItemID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $inventoryitemDescription
-     * @return $this
-     */
-    public function setInventoryitemDescription($inventoryitemDescription)
-    {
-        $this->inventoryitemDescription = $inventoryitemDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Received Date
-     *
-     * @param \DateTime $inventoryitemReceivedDate
-     * @return $this
-     */
-    public function setInventoryitemReceivedDate($inventoryitemReceivedDate)
-    {
-        $this->inventoryitemReceivedDate = $inventoryitemReceivedDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Source
-     *
-     * @param string $inventoryitemSource
-     * @return $this
-     */
-    public function setInventoryitemSource($inventoryitemSource)
-    {
-        $this->inventoryitemSource = $inventoryitemSource;
-
-        return $this;
-    }
-
-    /**
-     * Set Cost
-     *
-     * @param float $inventoryitemCost
-     * @return $this
-     */
-    public function setInventoryitemCost($inventoryitemCost)
-    {
-        $this->inventoryitemCost = $inventoryitemCost;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $inventoryitemConditionID
-     * @return $this
-     */
-    public function setInventoryitemConditionID($inventoryitemConditionID)
-    {
-        $this->inventoryitemConditionID = $inventoryitemConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Category
-     *
-     * @param string $inventoryitemCategory
-     * @return $this
-     */
-    public function setInventoryitemCategory($inventoryitemCategory)
-    {
-        $this->inventoryitemCategory = $inventoryitemCategory;
-
-        return $this;
-    }
-
-    /**
-     * Set Disposed Date
-     *
-     * @param \DateTime $inventoryitemDisposedDate
-     * @return $this
-     */
-    public function setInventoryitemDisposedDate($inventoryitemDisposedDate)
-    {
-        $this->inventoryitemDisposedDate = $inventoryitemDisposedDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Disposed Destination
-     *
-     * @param string $inventoryitemDisposedDestination
-     * @return $this
-     */
-    public function setInventoryitemDisposedDestination($inventoryitemDisposedDestination)
-    {
-        $this->inventoryitemDisposedDestination = $inventoryitemDisposedDestination;
-
-        return $this;
-    }
-
-    /**
-     * Set Storage Location
-     *
-     * @param string $inventoryitemStorageLocation
-     * @return $this
-     */
-    public function setInventoryitemStorageLocation($inventoryitemStorageLocation)
-    {
-        $this->inventoryitemStorageLocation = $inventoryitemStorageLocation;
-
-        return $this;
-    }
-
-    /**
-     * Set Quantity
-     *
-     * @param int $inventoryitemQuantity
-     * @return $this
-     */
-    public function setInventoryitemQuantity($inventoryitemQuantity)
-    {
-        $this->inventoryitemQuantity = $inventoryitemQuantity;
-
-        return $this;
+        return [new \RescueGroups\Objects\InventoryItem($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->inventoryitemName !== null) $parameterArray['inventoryitemName'] = $this->inventoryitemName;
-        if ($this->inventoryitemItemID !== null) $parameterArray['inventoryitemItemID'] = $this->inventoryitemItemID;
-        if ($this->inventoryitemDescription !== null) $parameterArray['inventoryitemDescription'] = $this->inventoryitemDescription;
-        if ($this->inventoryitemReceivedDate !== null) $parameterArray['inventoryitemReceivedDate'] = $this->inventoryitemReceivedDate;
-        if ($this->inventoryitemSource !== null) $parameterArray['inventoryitemSource'] = $this->inventoryitemSource;
-        if ($this->inventoryitemCost !== null) $parameterArray['inventoryitemCost'] = $this->inventoryitemCost;
-        if ($this->inventoryitemConditionID !== null) $parameterArray['inventoryitemConditionID'] = $this->inventoryitemConditionID;
-        if ($this->inventoryitemCategory !== null) $parameterArray['inventoryitemCategory'] = $this->inventoryitemCategory;
-        if ($this->inventoryitemDisposedDate !== null) $parameterArray['inventoryitemDisposedDate'] = $this->inventoryitemDisposedDate;
-        if ($this->inventoryitemDisposedDestination !== null) $parameterArray['inventoryitemDisposedDestination'] = $this->inventoryitemDisposedDestination;
-        if ($this->inventoryitemStorageLocation !== null) $parameterArray['inventoryitemStorageLocation'] = $this->inventoryitemStorageLocation;
-        if ($this->inventoryitemQuantity !== null) $parameterArray['inventoryitemQuantity'] = $this->inventoryitemQuantity;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

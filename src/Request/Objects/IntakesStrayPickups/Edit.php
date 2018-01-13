@@ -8,87 +8,36 @@
  */
 namespace RescueGroups\Request\Objects\IntakesStrayPickups;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Stray Pickup
-     * @var integer
-     */
-    private $intakesStraypickupID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesStraypickupAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakesStraypickupAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakesStraypickupDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakesStraypickupNotes = null;
-
-    /**
-     * Pickup Location
-     * @var string
-     */
-    private $intakesStraypickupLocation = null;
-
-    /**
-     * Pickup Street address
-     * @var string
-     */
-    private $intakesStraypickupAddress = null;
-
-    /**
-     * Pickup City
-     * @var string
-     */
-    private $intakesStraypickupCity = null;
-
-    /**
-     * Pickup State/Province
-     * @var province
-     */
-    private $intakesStraypickupState = null;
-
-    /**
-     * Pickup Postal Code
-     * @var string
-     */
-    private $intakesStraypickupPostalcode = null;
-
-    /**
-     * Found By
-     * @var integer
-     */
-    private $intakesStraypickupFinderID = null;
-
-    /**
-     * Pickup By
-     * @var integer
-     */
-    private $intakesStraypickupStaffID = null;
-
+    private $objectFields = [
+        "intakesStraypickupID" => 1,
+        "intakesStraypickupAnimalID" => 0,
+        "intakesStraypickupAnimalConditionID" => 0,
+        "intakesStraypickupDate" => 0,
+        "intakesStraypickupNotes" => 0,
+        "intakesStraypickupLocation" => 0,
+        "intakesStraypickupAddress" => 0,
+        "intakesStraypickupCity" => 0,
+        "intakesStraypickupState" => 0,
+        "intakesStraypickupPostalcode" => 0,
+        "intakesStraypickupFinderID" => 0,
+        "intakesStraypickupStaffID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -112,181 +61,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Stray Pickup
-     *
-     * @param integer $intakesStraypickupID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesStrayPickup[]
      */
-    public function setIntakesStraypickupID($intakesStraypickupID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakesStraypickupID = $intakesStraypickupID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesStrayPickup($object);
+            }
 
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesStraypickupAnimalID
-     * @return $this
-     */
-    public function setIntakesStraypickupAnimalID($intakesStraypickupAnimalID)
-    {
-        $this->intakesStraypickupAnimalID = $intakesStraypickupAnimalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesStraypickupAnimalConditionID
-     * @return $this
-     */
-    public function setIntakesStraypickupAnimalConditionID($intakesStraypickupAnimalConditionID)
-    {
-        $this->intakesStraypickupAnimalConditionID = $intakesStraypickupAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesStraypickupDate
-     * @return $this
-     */
-    public function setIntakesStraypickupDate($intakesStraypickupDate)
-    {
-        $this->intakesStraypickupDate = $intakesStraypickupDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesStraypickupNotes
-     * @return $this
-     */
-    public function setIntakesStraypickupNotes($intakesStraypickupNotes)
-    {
-        $this->intakesStraypickupNotes = $intakesStraypickupNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup Location
-     *
-     * @param string $intakesStraypickupLocation
-     * @return $this
-     */
-    public function setIntakesStraypickupLocation($intakesStraypickupLocation)
-    {
-        $this->intakesStraypickupLocation = $intakesStraypickupLocation;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup Street address
-     *
-     * @param string $intakesStraypickupAddress
-     * @return $this
-     */
-    public function setIntakesStraypickupAddress($intakesStraypickupAddress)
-    {
-        $this->intakesStraypickupAddress = $intakesStraypickupAddress;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup City
-     *
-     * @param string $intakesStraypickupCity
-     * @return $this
-     */
-    public function setIntakesStraypickupCity($intakesStraypickupCity)
-    {
-        $this->intakesStraypickupCity = $intakesStraypickupCity;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup State/Province
-     *
-     * @param province $intakesStraypickupState
-     * @return $this
-     */
-    public function setIntakesStraypickupState($intakesStraypickupState)
-    {
-        $this->intakesStraypickupState = $intakesStraypickupState;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup Postal Code
-     *
-     * @param string $intakesStraypickupPostalcode
-     * @return $this
-     */
-    public function setIntakesStraypickupPostalcode($intakesStraypickupPostalcode)
-    {
-        $this->intakesStraypickupPostalcode = $intakesStraypickupPostalcode;
-
-        return $this;
-    }
-
-    /**
-     * Set Found By
-     *
-     * @param integer $intakesStraypickupFinderID
-     * @return $this
-     */
-    public function setIntakesStraypickupFinderID($intakesStraypickupFinderID)
-    {
-        $this->intakesStraypickupFinderID = $intakesStraypickupFinderID;
-
-        return $this;
-    }
-
-    /**
-     * Set Pickup By
-     *
-     * @param integer $intakesStraypickupStaffID
-     * @return $this
-     */
-    public function setIntakesStraypickupStaffID($intakesStraypickupStaffID)
-    {
-        $this->intakesStraypickupStaffID = $intakesStraypickupStaffID;
-
-        return $this;
+        return [new \RescueGroups\Objects\IntakesStrayPickup($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesStraypickupID !== null) $parameterArray['intakesStraypickupID'] = $this->intakesStraypickupID;
-        if ($this->intakesStraypickupAnimalID !== null) $parameterArray['intakesStraypickupAnimalID'] = $this->intakesStraypickupAnimalID;
-        if ($this->intakesStraypickupAnimalConditionID !== null) $parameterArray['intakesStraypickupAnimalConditionID'] = $this->intakesStraypickupAnimalConditionID;
-        if ($this->intakesStraypickupDate !== null) $parameterArray['intakesStraypickupDate'] = $this->intakesStraypickupDate;
-        if ($this->intakesStraypickupNotes !== null) $parameterArray['intakesStraypickupNotes'] = $this->intakesStraypickupNotes;
-        if ($this->intakesStraypickupLocation !== null) $parameterArray['intakesStraypickupLocation'] = $this->intakesStraypickupLocation;
-        if ($this->intakesStraypickupAddress !== null) $parameterArray['intakesStraypickupAddress'] = $this->intakesStraypickupAddress;
-        if ($this->intakesStraypickupCity !== null) $parameterArray['intakesStraypickupCity'] = $this->intakesStraypickupCity;
-        if ($this->intakesStraypickupState !== null) $parameterArray['intakesStraypickupState'] = $this->intakesStraypickupState;
-        if ($this->intakesStraypickupPostalcode !== null) $parameterArray['intakesStraypickupPostalcode'] = $this->intakesStraypickupPostalcode;
-        if ($this->intakesStraypickupFinderID !== null) $parameterArray['intakesStraypickupFinderID'] = $this->intakesStraypickupFinderID;
-        if ($this->intakesStraypickupStaffID !== null) $parameterArray['intakesStraypickupStaffID'] = $this->intakesStraypickupStaffID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

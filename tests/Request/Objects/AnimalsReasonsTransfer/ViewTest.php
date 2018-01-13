@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsTransfer View Request Test
+ * AnimalsReasonsTransfer view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\View();
 
-        
-        $query->setReasonID("reasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsTransfer", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
+        $this->assertEquals('animalsReasonsTransfer', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

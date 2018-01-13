@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesStrayPickups View Request Test
+ * IntakesStrayPickups view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
 
-        
-        $query->setIntakesStraypickupID("intakesStraypickupID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesStraypickups", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesStraypickupID", $data["intakesStraypickupID"]);
+        $this->assertEquals('intakesStraypickups', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals YoutubeUrls Request Test
+ * Animals youtubeUrls Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class YoutubeUrlsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\YoutubeUrls();
 
-        
-        $query->setAnimalID("animalID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("youtubeUrls", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('youtubeUrls', $data['objectAction']);
     }
 }

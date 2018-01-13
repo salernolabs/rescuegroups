@@ -8,51 +8,30 @@
  */
 namespace RescueGroups\Request\Objects\ContactFiles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Contact
-     * @var integer
-     */
-    private $contactfileContactID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * File
-     * @var binary
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $contactfileBinary = null;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    private $contactfileOldFileName = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $contactfileDescription = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $contactfileStatus = null;
-
-    /**
-     * Inline
-     * @var string
-     */
-    private $contactfileDisplayInline = null;
-
+    private $objectFields = [
+        "contactfileContactID" => 1,
+        "contactfileBinary" => 1,
+        "contactfileOldFileName" => 1,
+        "contactfileDescription" => 0,
+        "contactfileStatus" => 1,
+        "contactfileDisplayInline" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -76,97 +55,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Contact
-     *
-     * @param integer $contactfileContactID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ContactFile[]
      */
-    public function setContactfileContactID($contactfileContactID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->contactfileContactID = $contactfileContactID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ContactFile($object);
+            }
 
-    /**
-     * Set File
-     *
-     * @param binary $contactfileBinary
-     * @return $this
-     */
-    public function setContactfileBinary($contactfileBinary)
-    {
-        $this->contactfileBinary = $contactfileBinary;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $contactfileOldFileName
-     * @return $this
-     */
-    public function setContactfileOldFileName($contactfileOldFileName)
-    {
-        $this->contactfileOldFileName = $contactfileOldFileName;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $contactfileDescription
-     * @return $this
-     */
-    public function setContactfileDescription($contactfileDescription)
-    {
-        $this->contactfileDescription = $contactfileDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $contactfileStatus
-     * @return $this
-     */
-    public function setContactfileStatus($contactfileStatus)
-    {
-        $this->contactfileStatus = $contactfileStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $contactfileDisplayInline
-     * @return $this
-     */
-    public function setContactfileDisplayInline($contactfileDisplayInline)
-    {
-        $this->contactfileDisplayInline = $contactfileDisplayInline;
-
-        return $this;
+        return [new \RescueGroups\Objects\ContactFile($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactfileContactID !== null) $parameterArray['contactfileContactID'] = $this->contactfileContactID;
-        if ($this->contactfileBinary !== null) $parameterArray['contactfileBinary'] = $this->contactfileBinary;
-        if ($this->contactfileOldFileName !== null) $parameterArray['contactfileOldFileName'] = $this->contactfileOldFileName;
-        if ($this->contactfileDescription !== null) $parameterArray['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->contactfileStatus !== null) $parameterArray['contactfileStatus'] = $this->contactfileStatus;
-        if ($this->contactfileDisplayInline !== null) $parameterArray['contactfileDisplayInline'] = $this->contactfileDisplayInline;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

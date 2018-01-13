@@ -8,35 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\AnimalStatuses;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $statusID = null;
-
-    /**
-     * Status name
-     * @var string
-     */
-    private $statusName = null;
-
-    /**
-     * Status description
-     * @var string
-     */
-    private $statusDescription = null;
-
+    private $objectFields = [
+        "statusID" => 1,
+        "statusName" => 0,
+        "statusDescription" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -60,57 +52,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $statusID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalStatus[]
      */
-    public function setStatusID($statusID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->statusID = $statusID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalStatus($object);
+            }
 
-    /**
-     * Set Status name
-     *
-     * @param string $statusName
-     * @return $this
-     */
-    public function setStatusName($statusName)
-    {
-        $this->statusName = $statusName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Status description
-     *
-     * @param string $statusDescription
-     * @return $this
-     */
-    public function setStatusDescription($statusDescription)
-    {
-        $this->statusDescription = $statusDescription;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalStatus($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->statusID !== null) $parameterArray['statusID'] = $this->statusID;
-        if ($this->statusName !== null) $parameterArray['statusName'] = $this->statusName;
-        if ($this->statusDescription !== null) $parameterArray['statusDescription'] = $this->statusDescription;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

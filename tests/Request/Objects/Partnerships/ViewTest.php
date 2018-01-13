@@ -1,6 +1,6 @@
 <?php
 /**
- * Partnerships View Request Test
+ * Partnerships view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Partnerships\View();
 
-        
-        $query->setPartnershipID("partnershipID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("partnerships", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("partnershipID", $data["partnershipID"]);
+        $this->assertEquals('partnerships', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

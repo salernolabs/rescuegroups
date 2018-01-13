@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Entrytype ID
-     * @var integer
-     */
-    private $journalEntrytypeID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "journalEntrytypeID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Entrytype ID
-     *
-     * @param integer $journalEntrytypeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsJournalEntryType[]
      */
-    public function setJournalEntrytypeID($journalEntrytypeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->journalEntrytypeID = $journalEntrytypeID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsJournalEntryType($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\AnimalsJournalEntryType($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntrytypeID !== null) $parameterArray['journalEntrytypeID'] = $this->journalEntrytypeID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

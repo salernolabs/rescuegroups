@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsJournalEntryTypes Edit Request Test
+ * AnimalsJournalEntryTypes edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Edit();
 
-        
-        $query->setJournalEntrytypeID("journalEntrytypeID");
-        $query->setJournalEntrytypeDescription("journalEntrytypeDescription");
-        $query->setJournalEntrytypeCategoryID("journalEntrytypeCategoryID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsJournalEntrytypes", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("journalEntrytypeID", $data["journalEntrytypeID"]);
-        $this->assertEquals("journalEntrytypeDescription", $data["journalEntrytypeDescription"]);
-        $this->assertEquals("journalEntrytypeCategoryID", $data["journalEntrytypeCategoryID"]);
+        $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

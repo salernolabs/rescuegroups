@@ -8,33 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $animalID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * YouTube Url
-     * @var url
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $youtubeUrl = null;
-
-    /**
-     * Order
-     * @var int
-     */
-    private $mediaOrder = null;
-
+    private $objectFields = [
+        "animalID" => 1,
+        "youtubeUrl" => 1,
+        "mediaOrder" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -58,55 +52,36 @@ class AddYoutubeUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Animal[]
      */
-    public function setAnimalID($animalID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->animalID = $animalID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Animal($object);
+            }
 
-    /**
-     * Set YouTube Url
-     *
-     * @param url $youtubeUrl
-     * @return $this
-     */
-    public function setYoutubeUrl($youtubeUrl)
-    {
-        $this->youtubeUrl = $youtubeUrl;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param int $mediaOrder
-     * @return $this
-     */
-    public function setMediaOrder($mediaOrder)
-    {
-        $this->mediaOrder = $mediaOrder;
-
-        return $this;
+        return [new \RescueGroups\Objects\Animal($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->youtubeUrl !== null) $parameterArray['youtubeUrl'] = $this->youtubeUrl;
-        if ($this->mediaOrder !== null) $parameterArray['mediaOrder'] = $this->mediaOrder;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

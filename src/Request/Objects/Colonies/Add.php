@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Colonies;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Name
-     * @var string
-     */
-    private $colonyName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Location
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $colonyLocationID = null;
-
-    /**
-     * Number of animals
-     * @var int
-     */
-    private $colonyTotalAnimals = null;
-
-    /**
-     * Registered
-     * @var \DateTime
-     */
-    private $colonyRegisteredDate = null;
-
-    /**
-     * Specific location
-     * @var string
-     */
-    private $colonySpecificLocation = null;
-
+    private $objectFields = [
+        "colonyName" => 1,
+        "colonyLocationID" => 0,
+        "colonyTotalAnimals" => 0,
+        "colonyRegisteredDate" => 1,
+        "colonySpecificLocation" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $colonyName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Colony[]
      */
-    public function setColonyName($colonyName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->colonyName = $colonyName;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Colony($object);
+            }
 
-    /**
-     * Set Location
-     *
-     * @param integer $colonyLocationID
-     * @return $this
-     */
-    public function setColonyLocationID($colonyLocationID)
-    {
-        $this->colonyLocationID = $colonyLocationID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Number of animals
-     *
-     * @param int $colonyTotalAnimals
-     * @return $this
-     */
-    public function setColonyTotalAnimals($colonyTotalAnimals)
-    {
-        $this->colonyTotalAnimals = $colonyTotalAnimals;
-
-        return $this;
-    }
-
-    /**
-     * Set Registered
-     *
-     * @param \DateTime $colonyRegisteredDate
-     * @return $this
-     */
-    public function setColonyRegisteredDate($colonyRegisteredDate)
-    {
-        $this->colonyRegisteredDate = $colonyRegisteredDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Specific location
-     *
-     * @param string $colonySpecificLocation
-     * @return $this
-     */
-    public function setColonySpecificLocation($colonySpecificLocation)
-    {
-        $this->colonySpecificLocation = $colonySpecificLocation;
-
-        return $this;
+        return [new \RescueGroups\Objects\Colony($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->colonyName !== null) $parameterArray['colonyName'] = $this->colonyName;
-        if ($this->colonyLocationID !== null) $parameterArray['colonyLocationID'] = $this->colonyLocationID;
-        if ($this->colonyTotalAnimals !== null) $parameterArray['colonyTotalAnimals'] = $this->colonyTotalAnimals;
-        if ($this->colonyRegisteredDate !== null) $parameterArray['colonyRegisteredDate'] = $this->colonyRegisteredDate;
-        if ($this->colonySpecificLocation !== null) $parameterArray['colonySpecificLocation'] = $this->colonySpecificLocation;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

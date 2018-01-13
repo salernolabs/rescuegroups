@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Statuses
-     * @var int
-     */
-    private $statuslist = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "statuslist" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
     }
 
     /**
-     * Set Statuses
-     *
-     * @param int $statuslist
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Animal[]
      */
-    public function setStatuslist($statuslist)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->statuslist = $statuslist;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Animal($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Animal($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->statuslist !== null) $parameterArray['statuslist'] = $this->statuslist;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -8,39 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $animalID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Video
-     * @var binary
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $videoBinary = null;
-
-    /**
-     * File name
-     * @var string
-     */
-    private $fileName = null;
-
-    /**
-     * Order
-     * @var int
-     */
-    private $mediaOrder = null;
-
+    private $objectFields = [
+        "animalID" => 1,
+        "videoBinary" => 1,
+        "fileName" => 1,
+        "mediaOrder" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -64,69 +53,36 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Animal[]
      */
-    public function setAnimalID($animalID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->animalID = $animalID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Animal($object);
+            }
 
-    /**
-     * Set Video
-     *
-     * @param binary $videoBinary
-     * @return $this
-     */
-    public function setVideoBinary($videoBinary)
-    {
-        $this->videoBinary = $videoBinary;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set File name
-     *
-     * @param string $fileName
-     * @return $this
-     */
-    public function setFileName($fileName)
-    {
-        $this->fileName = $fileName;
-
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param int $mediaOrder
-     * @return $this
-     */
-    public function setMediaOrder($mediaOrder)
-    {
-        $this->mediaOrder = $mediaOrder;
-
-        return $this;
+        return [new \RescueGroups\Objects\Animal($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->videoBinary !== null) $parameterArray['videoBinary'] = $this->videoBinary;
-        if ($this->fileName !== null) $parameterArray['fileName'] = $this->fileName;
-        if ($this->mediaOrder !== null) $parameterArray['mediaOrder'] = $this->mediaOrder;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

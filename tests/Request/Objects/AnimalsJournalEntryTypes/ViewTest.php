@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsJournalEntryTypes View Request Test
+ * AnimalsJournalEntryTypes view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\View();
 
-        
-        $query->setJournalEntrytypeID("journalEntrytypeID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsJournalEntrytypes", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("journalEntrytypeID", $data["journalEntrytypeID"]);
+        $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

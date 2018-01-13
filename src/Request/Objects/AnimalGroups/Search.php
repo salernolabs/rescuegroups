@@ -8,47 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\AnimalGroups;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $groupID = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $groupName = null;
-
-    /**
-     * Header
-     * @var integer
-     */
-    private $groupHeaderID = null;
-
-    /**
-     * Animals
-     * @var int
-     */
-    private $groupAnimals = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $webpageName = null;
-
+    private $objectFields = [
+        "groupID" => 1,
+        "groupName" => 0,
+        "groupHeaderID" => 0,
+        "groupAnimals" => 0,
+        "webpageName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -72,85 +54,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $groupID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalGroup[]
      */
-    public function setGroupID($groupID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->groupID = $groupID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalGroup($object);
+            }
 
-    /**
-     * Set Name
-     *
-     * @param string $groupName
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->groupName = $groupName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Header
-     *
-     * @param integer $groupHeaderID
-     * @return $this
-     */
-    public function setGroupHeaderID($groupHeaderID)
-    {
-        $this->groupHeaderID = $groupHeaderID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animals
-     *
-     * @param int $groupAnimals
-     * @return $this
-     */
-    public function setGroupAnimals($groupAnimals)
-    {
-        $this->groupAnimals = $groupAnimals;
-
-        return $this;
-    }
-
-    /**
-     * Set Name
-     *
-     * @param string $webpageName
-     * @return $this
-     */
-    public function setWebpageName($webpageName)
-    {
-        $this->webpageName = $webpageName;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalGroup($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->groupID !== null) $parameterArray['groupID'] = $this->groupID;
-        if ($this->groupName !== null) $parameterArray['groupName'] = $this->groupName;
-        if ($this->groupHeaderID !== null) $parameterArray['groupHeaderID'] = $this->groupHeaderID;
-        if ($this->groupAnimals !== null) $parameterArray['groupAnimals'] = $this->groupAnimals;
-        if ($this->webpageName !== null) $parameterArray['webpageName'] = $this->webpageName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

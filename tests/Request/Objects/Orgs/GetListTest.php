@@ -1,6 +1,6 @@
 <?php
 /**
- * Orgs GetList Request Test
+ * Orgs list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Orgs\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("orgs", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('orgs', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

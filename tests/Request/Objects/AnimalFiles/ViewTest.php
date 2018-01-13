@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalFiles View Request Test
+ * AnimalFiles view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalFiles\View();
 
-        
-        $query->setAnimalfileID("animalfileID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalFiles", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("animalfileID", $data["animalfileID"]);
+        $this->assertEquals('animalFiles', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

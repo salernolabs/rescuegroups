@@ -1,6 +1,6 @@
 <?php
 /**
- * VolunteerHours View Request Test
+ * VolunteerHours view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteerHours\View();
 
-        
-        $query->setId("id");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("volunteerHours", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["volunteerHoursID"]);
+        $this->assertEquals('volunteerHours', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

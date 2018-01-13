@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class SetEnabledSpecies implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class SetEnabledSpecies implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Field list
-     * @var string
-     */
-    private $fieldlist = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "fieldlist" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class SetEnabledSpecies implements \RescueGroups\Request\RequestInterface, \Resc
     }
 
     /**
-     * Set Field list
-     *
-     * @param string $fieldlist
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Animal[]
      */
-    public function setFieldlist($fieldlist)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->fieldlist = $fieldlist;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Animal($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Animal($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->fieldlist !== null) $parameterArray['fieldlist'] = $this->fieldlist;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

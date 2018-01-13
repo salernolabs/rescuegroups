@@ -1,6 +1,6 @@
 <?php
 /**
- * Events Edit Request Test
+ * Events edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,30 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\Edit();
 
-        
-        $query->setEventID("eventID");
-        $query->setEventName("eventName");
-        $query->setEventStart("eventStart");
-        $query->setEventEnd("eventEnd");
-        $query->setEventUrl("eventUrl");
-        $query->setEventDescription("eventDescription");
-        $query->setEventLocationID("eventLocationID");
-        $query->setEventSpecies("eventSpecies");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("events", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("eventID", $data["eventID"]);
-        $this->assertEquals("eventName", $data["eventName"]);
-        $this->assertEquals("eventStart", $data["eventStart"]);
-        $this->assertEquals("eventEnd", $data["eventEnd"]);
-        $this->assertEquals("eventUrl", $data["eventUrl"]);
-        $this->assertEquals("eventDescription", $data["eventDescription"]);
-        $this->assertEquals("eventLocationID", $data["eventLocationID"]);
-        $this->assertEquals("eventSpecies", $data["eventSpecies"]);
+        $this->assertEquals('events', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

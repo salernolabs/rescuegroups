@@ -1,6 +1,6 @@
 <?php
 /**
- * Countries GetList Request Test
+ * Countries list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Countries\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("countries", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('countries', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

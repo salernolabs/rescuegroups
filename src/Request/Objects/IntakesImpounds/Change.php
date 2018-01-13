@@ -8,93 +8,37 @@
  */
 namespace RescueGroups\Request\Objects\IntakesImpounds;
 
-class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Intake
-     * @var integer
-     */
-    private $intakeID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesImpoundAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakesImpoundAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakesImpoundDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakesImpoundNotes = null;
-
-    /**
-     * Impound Location
-     * @var string
-     */
-    private $intakesImpoundLocation = null;
-
-    /**
-     * Impound Street address
-     * @var string
-     */
-    private $intakesImpoundAddress = null;
-
-    /**
-     * Impound City
-     * @var string
-     */
-    private $intakesImpoundCity = null;
-
-    /**
-     * Impound State/Province
-     * @var province
-     */
-    private $intakesImpoundState = null;
-
-    /**
-     * Impound Postal Code
-     * @var string
-     */
-    private $intakesImpoundPostalcode = null;
-
-    /**
-     * Impound From
-     * @var integer
-     */
-    private $intakesImpoundFromID = null;
-
-    /**
-     * Impound Performed By
-     * @var integer
-     */
-    private $intakesImpoundStaffID = null;
-
-    /**
-     * Reason
-     * @var integer
-     */
-    private $intakesImpoundReasonID = null;
-
+    private $objectFields = [
+        "intakeID" => 1,
+        "intakesImpoundAnimalID" => 0,
+        "intakesImpoundAnimalConditionID" => 1,
+        "intakesImpoundDate" => 1,
+        "intakesImpoundNotes" => 0,
+        "intakesImpoundLocation" => 0,
+        "intakesImpoundAddress" => 1,
+        "intakesImpoundCity" => 1,
+        "intakesImpoundState" => 1,
+        "intakesImpoundPostalcode" => 1,
+        "intakesImpoundFromID" => 1,
+        "intakesImpoundStaffID" => 1,
+        "intakesImpoundReasonID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -118,195 +62,36 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Intake
-     *
-     * @param integer $intakeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesImpound[]
      */
-    public function setIntakeID($intakeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakeID = $intakeID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesImpound($object);
+            }
 
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesImpoundAnimalID
-     * @return $this
-     */
-    public function setIntakesImpoundAnimalID($intakesImpoundAnimalID)
-    {
-        $this->intakesImpoundAnimalID = $intakesImpoundAnimalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesImpoundAnimalConditionID
-     * @return $this
-     */
-    public function setIntakesImpoundAnimalConditionID($intakesImpoundAnimalConditionID)
-    {
-        $this->intakesImpoundAnimalConditionID = $intakesImpoundAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesImpoundDate
-     * @return $this
-     */
-    public function setIntakesImpoundDate($intakesImpoundDate)
-    {
-        $this->intakesImpoundDate = $intakesImpoundDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesImpoundNotes
-     * @return $this
-     */
-    public function setIntakesImpoundNotes($intakesImpoundNotes)
-    {
-        $this->intakesImpoundNotes = $intakesImpoundNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Location
-     *
-     * @param string $intakesImpoundLocation
-     * @return $this
-     */
-    public function setIntakesImpoundLocation($intakesImpoundLocation)
-    {
-        $this->intakesImpoundLocation = $intakesImpoundLocation;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Street address
-     *
-     * @param string $intakesImpoundAddress
-     * @return $this
-     */
-    public function setIntakesImpoundAddress($intakesImpoundAddress)
-    {
-        $this->intakesImpoundAddress = $intakesImpoundAddress;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound City
-     *
-     * @param string $intakesImpoundCity
-     * @return $this
-     */
-    public function setIntakesImpoundCity($intakesImpoundCity)
-    {
-        $this->intakesImpoundCity = $intakesImpoundCity;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound State/Province
-     *
-     * @param province $intakesImpoundState
-     * @return $this
-     */
-    public function setIntakesImpoundState($intakesImpoundState)
-    {
-        $this->intakesImpoundState = $intakesImpoundState;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Postal Code
-     *
-     * @param string $intakesImpoundPostalcode
-     * @return $this
-     */
-    public function setIntakesImpoundPostalcode($intakesImpoundPostalcode)
-    {
-        $this->intakesImpoundPostalcode = $intakesImpoundPostalcode;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound From
-     *
-     * @param integer $intakesImpoundFromID
-     * @return $this
-     */
-    public function setIntakesImpoundFromID($intakesImpoundFromID)
-    {
-        $this->intakesImpoundFromID = $intakesImpoundFromID;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Performed By
-     *
-     * @param integer $intakesImpoundStaffID
-     * @return $this
-     */
-    public function setIntakesImpoundStaffID($intakesImpoundStaffID)
-    {
-        $this->intakesImpoundStaffID = $intakesImpoundStaffID;
-
-        return $this;
-    }
-
-    /**
-     * Set Reason
-     *
-     * @param integer $intakesImpoundReasonID
-     * @return $this
-     */
-    public function setIntakesImpoundReasonID($intakesImpoundReasonID)
-    {
-        $this->intakesImpoundReasonID = $intakesImpoundReasonID;
-
-        return $this;
+        return [new \RescueGroups\Objects\IntakesImpound($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakeID !== null) $parameterArray['intakeID'] = $this->intakeID;
-        if ($this->intakesImpoundAnimalID !== null) $parameterArray['intakesImpoundAnimalID'] = $this->intakesImpoundAnimalID;
-        if ($this->intakesImpoundAnimalConditionID !== null) $parameterArray['intakesImpoundAnimalConditionID'] = $this->intakesImpoundAnimalConditionID;
-        if ($this->intakesImpoundDate !== null) $parameterArray['intakesImpoundDate'] = $this->intakesImpoundDate;
-        if ($this->intakesImpoundNotes !== null) $parameterArray['intakesImpoundNotes'] = $this->intakesImpoundNotes;
-        if ($this->intakesImpoundLocation !== null) $parameterArray['intakesImpoundLocation'] = $this->intakesImpoundLocation;
-        if ($this->intakesImpoundAddress !== null) $parameterArray['intakesImpoundAddress'] = $this->intakesImpoundAddress;
-        if ($this->intakesImpoundCity !== null) $parameterArray['intakesImpoundCity'] = $this->intakesImpoundCity;
-        if ($this->intakesImpoundState !== null) $parameterArray['intakesImpoundState'] = $this->intakesImpoundState;
-        if ($this->intakesImpoundPostalcode !== null) $parameterArray['intakesImpoundPostalcode'] = $this->intakesImpoundPostalcode;
-        if ($this->intakesImpoundFromID !== null) $parameterArray['intakesImpoundFromID'] = $this->intakesImpoundFromID;
-        if ($this->intakesImpoundStaffID !== null) $parameterArray['intakesImpoundStaffID'] = $this->intakesImpoundStaffID;
-        if ($this->intakesImpoundReasonID !== null) $parameterArray['intakesImpoundReasonID'] = $this->intakesImpoundReasonID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

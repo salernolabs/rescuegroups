@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals GetEnabledSpecies Request Test
+ * Animals getEnabledSpecies Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetEnabledSpeciesTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\GetEnabledSpecies();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("getEnabledSpecies", $data["objectAction"]);
-
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('getEnabledSpecies', $data['objectAction']);
     }
 }

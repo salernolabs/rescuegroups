@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsCategories Edit Request Test
+ * CallsCategories edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsCategories\Edit();
 
-        
-        $query->setCategoryID("categoryID");
-        $query->setCategoryName("categoryName");
-        $query->setCategoryDescription("categoryDescription");
-        $query->setCategoryPublic("categoryPublic");
-        $query->setCategoryDefaultQueueID("categoryDefaultQueueID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsCategories", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("categoryID", $data["categoryID"]);
-        $this->assertEquals("categoryName", $data["categoryName"]);
-        $this->assertEquals("categoryDescription", $data["categoryDescription"]);
-        $this->assertEquals("categoryPublic", $data["categoryPublic"]);
-        $this->assertEquals("categoryDefaultQueueID", $data["categoryDefaultQueueID"]);
+        $this->assertEquals('callsCategories', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

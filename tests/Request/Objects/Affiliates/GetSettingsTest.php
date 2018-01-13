@@ -1,6 +1,6 @@
 <?php
 /**
- * Affiliates GetSettings Request Test
+ * Affiliates getSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Affiliates\GetSettings();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("affiliates", $data["objectType"]);
-
-        $this->assertEquals("getSettings", $data["objectAction"]);
-
+        $this->assertEquals('affiliates', $data['objectType']);
+        $this->assertEquals('getSettings', $data['objectAction']);
     }
 }

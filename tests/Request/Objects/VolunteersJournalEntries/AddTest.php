@@ -1,6 +1,6 @@
 <?php
 /**
- * VolunteersJournalEntries Add Request Test
+ * VolunteersJournalEntries add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Add();
 
-        
-        $query->setJournalEntryContactID("journalEntryContactID");
-        $query->setJournalEntryDate("journalEntryDate");
-        $query->setJournalEntryComment("journalEntryComment");
-        $query->setJournalEntryType("journalEntryType");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("volunteersJournalEntries", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("journalEntryContactID", $data["journalEntryContactID"]);
-        $this->assertEquals("journalEntryDate", $data["journalEntryDate"]);
-        $this->assertEquals("journalEntryComment", $data["journalEntryComment"]);
-        $this->assertEquals("journalEntryType", $data["journalEntryType"]);
+        $this->assertEquals('volunteersJournalEntries', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

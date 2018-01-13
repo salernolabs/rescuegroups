@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalGroups Search Request Test
+ * AnimalGroups search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalGroups\Search();
 
-        
-        $query->setGroupID("groupID");
-        $query->setGroupName("groupName");
-        $query->setGroupHeaderID("groupHeaderID");
-        $query->setGroupAnimals("groupAnimals");
-        $query->setWebpageName("webpageName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalGroups", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("groupID", $data["groupID"]);
-        $this->assertEquals("groupName", $data["groupName"]);
-        $this->assertEquals("groupHeaderID", $data["groupHeaderID"]);
-        $this->assertEquals("groupAnimals", $data["groupAnimals"]);
-        $this->assertEquals("webpageName", $data["webpageName"]);
+        $this->assertEquals('animalGroups', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * WaitingLists Delete Request Test
+ * WaitingLists delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\Delete();
 
-        
-        $query->setWaitinglistID("waitinglistID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("waitinglists", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("waitinglistID", $data["waitinglistID"]);
+        $this->assertEquals('waitinglists', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

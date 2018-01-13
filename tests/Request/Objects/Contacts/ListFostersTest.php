@@ -1,6 +1,6 @@
 <?php
 /**
- * Contacts ListFosters Request Test
+ * Contacts listFosters Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class ListFostersTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Contacts\ListFosters();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contacts", $data["objectType"]);
-
-        $this->assertEquals("listFosters", $data["objectAction"]);
-
+        $this->assertEquals('contacts', $data['objectType']);
+        $this->assertEquals('listFosters', $data['objectAction']);
     }
 }

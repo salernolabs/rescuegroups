@@ -1,6 +1,6 @@
 <?php
 /**
- * Contacts GetSettings Request Test
+ * Contacts getSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Contacts\GetSettings();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contacts", $data["objectType"]);
-
-        $this->assertEquals("getSettings", $data["objectAction"]);
-
+        $this->assertEquals('contacts', $data['objectType']);
+        $this->assertEquals('getSettings', $data['objectAction']);
     }
 }

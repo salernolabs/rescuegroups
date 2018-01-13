@@ -8,27 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\WebImages;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $webimageID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Name
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $webimageName = null;
-
+    private $objectFields = [
+        "webimageID" => 1,
+        "webimageName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -52,41 +51,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $webimageID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\WebImage[]
      */
-    public function setWebimageID($webimageID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->webimageID = $webimageID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\WebImage($object);
+            }
 
-    /**
-     * Set Name
-     *
-     * @param string $webimageName
-     * @return $this
-     */
-    public function setWebimageName($webimageName)
-    {
-        $this->webimageName = $webimageName;
+            return $output;
+        }
 
-        return $this;
+        return [new \RescueGroups\Objects\WebImage($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->webimageID !== null) $parameterArray['webimageID'] = $this->webimageID;
-        if ($this->webimageName !== null) $parameterArray['webimageName'] = $this->webimageName;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

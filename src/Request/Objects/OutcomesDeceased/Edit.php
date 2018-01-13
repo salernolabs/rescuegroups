@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesDeceased;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $id = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Condition
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $notes = null;
-
-    /**
-     * Reason
-     * @var string
-     */
-    private $reason = null;
-
+    private $objectFields = [
+        "id" => 1,
+        "animalConditionID" => 0,
+        "date" => 0,
+        "notes" => 0,
+        "reason" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesDeceasedID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\OutcomesDeceased[]
      */
-    public function setId($id)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->id = $id;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\OutcomesDeceased($object);
+            }
 
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesDeceasedAnimalConditionID
-     * @return $this
-     */
-    public function setAnimalConditionID($animalConditionID)
-    {
-        $this->animalConditionID = $animalConditionID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesDeceasedDate
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesDeceasedNotes
-     * @return $this
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Set Reason
-     *
-     * @param string $outcomesDeceasedReason
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->reason = $reason;
-
-        return $this;
+        return [new \RescueGroups\Objects\OutcomesDeceased($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->id !== null) $parameterArray['outcomesDeceasedID'] = $this->id;
-        if ($this->animalConditionID !== null) $parameterArray['outcomesDeceasedAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $parameterArray['outcomesDeceasedDate'] = $this->date;
-        if ($this->notes !== null) $parameterArray['outcomesDeceasedNotes'] = $this->notes;
-        if ($this->reason !== null) $parameterArray['outcomesDeceasedReason'] = $this->reason;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

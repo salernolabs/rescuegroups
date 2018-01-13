@@ -1,6 +1,6 @@
 <?php
 /**
- * Calls View Request Test
+ * Calls view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Calls\View();
 
-        
-        $query->setCallID("callID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("calls", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("callID", $data["callID"]);
+        $this->assertEquals('calls', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

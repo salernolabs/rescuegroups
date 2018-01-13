@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsLogEntries View Request Test
+ * CallsLogEntries view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
 
-        
-        $query->setLogentryID("logentryID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsLogentries", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("logentryID", $data["logentryID"]);
+        $this->assertEquals('callsLogentries', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

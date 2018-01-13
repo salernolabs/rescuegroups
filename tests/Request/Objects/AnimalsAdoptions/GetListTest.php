@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsAdoptions GetList Request Test
+ * AnimalsAdoptions list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsAdoptions", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('animalsAdoptions', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

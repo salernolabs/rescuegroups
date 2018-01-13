@@ -8,41 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\ColoniesCareTakers;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $caretakerID = null;
-
-    /**
-     * Colony
-     * @var integer
-     */
-    private $caretakerColonyID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $caretakerContactID = null;
-
-    /**
-     * Contact
-     * @var string
-     */
-    private $caretakerContactName = null;
-
+    private $objectFields = [
+        "caretakerID" => 1,
+        "caretakerColonyID" => 0,
+        "caretakerContactID" => 0,
+        "caretakerContactName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -66,71 +53,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $caretakerID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ColoniesCareTaker[]
      */
-    public function setCaretakerID($caretakerID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->caretakerID = $caretakerID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ColoniesCareTaker($object);
+            }
 
-    /**
-     * Set Colony
-     *
-     * @param integer $caretakerColonyID
-     * @return $this
-     */
-    public function setCaretakerColonyID($caretakerColonyID)
-    {
-        $this->caretakerColonyID = $caretakerColonyID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $caretakerContactID
-     * @return $this
-     */
-    public function setCaretakerContactID($caretakerContactID)
-    {
-        $this->caretakerContactID = $caretakerContactID;
-
-        return $this;
-    }
-
-    /**
-     * Set Contact
-     *
-     * @param string $caretakerContactName
-     * @return $this
-     */
-    public function setCaretakerContactName($caretakerContactName)
-    {
-        $this->caretakerContactName = $caretakerContactName;
-
-        return $this;
+        return [new \RescueGroups\Objects\ColoniesCareTaker($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->caretakerID !== null) $parameterArray['caretakerID'] = $this->caretakerID;
-        if ($this->caretakerColonyID !== null) $parameterArray['caretakerColonyID'] = $this->caretakerColonyID;
-        if ($this->caretakerContactID !== null) $parameterArray['caretakerContactID'] = $this->caretakerContactID;
-        if ($this->caretakerContactName !== null) $parameterArray['caretakerContactName'] = $this->caretakerContactName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

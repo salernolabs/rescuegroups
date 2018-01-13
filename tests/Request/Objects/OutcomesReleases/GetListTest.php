@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReleases GetList Request Test
+ * OutcomesReleases list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesReleases\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesReleases", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('outcomesReleases', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

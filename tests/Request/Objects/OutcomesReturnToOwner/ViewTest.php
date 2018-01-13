@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReturnToOwner View Request Test
+ * OutcomesReturnToOwner view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\View();
 
-        
-        $query->setId("id");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesReturntoowner", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["outcomesReturntoownerID"]);
+        $this->assertEquals('outcomesReturntoowner', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

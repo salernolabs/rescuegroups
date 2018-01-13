@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsCategories Add Request Test
+ * CallsCategories add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsCategories\Add();
 
-        
-        $query->setCategoryName("categoryName");
-        $query->setCategoryDescription("categoryDescription");
-        $query->setCategoryPublic("categoryPublic");
-        $query->setCategoryDefaultQueueID("categoryDefaultQueueID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsCategories", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("categoryName", $data["categoryName"]);
-        $this->assertEquals("categoryDescription", $data["categoryDescription"]);
-        $this->assertEquals("categoryPublic", $data["categoryPublic"]);
-        $this->assertEquals("categoryDefaultQueueID", $data["categoryDefaultQueueID"]);
+        $this->assertEquals('callsCategories', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

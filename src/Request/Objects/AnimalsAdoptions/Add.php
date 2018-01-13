@@ -8,81 +8,35 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Animal ID
-     * @var integer
-     */
-    private $adoptionAnimalID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Adopter ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $adoptionAdopterID = null;
-
-    /**
-     * Lead ID
-     * @var integer
-     */
-    private $adoptionLeadID = null;
-
-    /**
-     * Fee
-     * @var float
-     */
-    private $adoptionFeeAmount = null;
-
-    /**
-     * Donation
-     * @var float
-     */
-    private $adoptionDonationAmount = null;
-
-    /**
-     * Donation ID
-     * @var integer
-     */
-    private $adoptionDonationID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $adoptionDate = null;
-
-    /**
-     * Submitted form ID
-     * @var integer
-     */
-    private $adoptionSubmittedformID = null;
-
-    /**
-     * Status ID
-     * @var integer
-     */
-    private $adoptionStatusID = null;
-
-    /**
-     * Thank you letter sent
-     * @var string
-     */
-    private $adoptionLetterSent = null;
-
-    /**
-     * Add contact to adopters group
-     * @var string
-     */
-    private $adoptionAddAdopterRole = null;
-
+    private $objectFields = [
+        "adoptionAnimalID" => 1,
+        "adoptionAdopterID" => 1,
+        "adoptionLeadID" => 0,
+        "adoptionFeeAmount" => 0,
+        "adoptionDonationAmount" => 0,
+        "adoptionDonationID" => 0,
+        "adoptionDate" => 1,
+        "adoptionSubmittedformID" => 0,
+        "adoptionStatusID" => 1,
+        "adoptionLetterSent" => 0,
+        "adoptionAddAdopterRole" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -106,167 +60,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Animal ID
-     *
-     * @param integer $adoptionAnimalID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsAdoption[]
      */
-    public function setAdoptionAnimalID($adoptionAnimalID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->adoptionAnimalID = $adoptionAnimalID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsAdoption($object);
+            }
 
-    /**
-     * Set Adopter ID
-     *
-     * @param integer $adoptionAdopterID
-     * @return $this
-     */
-    public function setAdoptionAdopterID($adoptionAdopterID)
-    {
-        $this->adoptionAdopterID = $adoptionAdopterID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Lead ID
-     *
-     * @param integer $adoptionLeadID
-     * @return $this
-     */
-    public function setAdoptionLeadID($adoptionLeadID)
-    {
-        $this->adoptionLeadID = $adoptionLeadID;
-
-        return $this;
-    }
-
-    /**
-     * Set Fee
-     *
-     * @param float $adoptionFeeAmount
-     * @return $this
-     */
-    public function setAdoptionFeeAmount($adoptionFeeAmount)
-    {
-        $this->adoptionFeeAmount = $adoptionFeeAmount;
-
-        return $this;
-    }
-
-    /**
-     * Set Donation
-     *
-     * @param float $adoptionDonationAmount
-     * @return $this
-     */
-    public function setAdoptionDonationAmount($adoptionDonationAmount)
-    {
-        $this->adoptionDonationAmount = $adoptionDonationAmount;
-
-        return $this;
-    }
-
-    /**
-     * Set Donation ID
-     *
-     * @param integer $adoptionDonationID
-     * @return $this
-     */
-    public function setAdoptionDonationID($adoptionDonationID)
-    {
-        $this->adoptionDonationID = $adoptionDonationID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $adoptionDate
-     * @return $this
-     */
-    public function setAdoptionDate($adoptionDate)
-    {
-        $this->adoptionDate = $adoptionDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Submitted form ID
-     *
-     * @param integer $adoptionSubmittedformID
-     * @return $this
-     */
-    public function setAdoptionSubmittedformID($adoptionSubmittedformID)
-    {
-        $this->adoptionSubmittedformID = $adoptionSubmittedformID;
-
-        return $this;
-    }
-
-    /**
-     * Set Status ID
-     *
-     * @param integer $adoptionStatusID
-     * @return $this
-     */
-    public function setAdoptionStatusID($adoptionStatusID)
-    {
-        $this->adoptionStatusID = $adoptionStatusID;
-
-        return $this;
-    }
-
-    /**
-     * Set Thank you letter sent
-     *
-     * @param string $adoptionLetterSent
-     * @return $this
-     */
-    public function setAdoptionLetterSent($adoptionLetterSent)
-    {
-        $this->adoptionLetterSent = $adoptionLetterSent;
-
-        return $this;
-    }
-
-    /**
-     * Set Add contact to adopters group
-     *
-     * @param string $adoptionAddAdopterRole
-     * @return $this
-     */
-    public function setAdoptionAddAdopterRole($adoptionAddAdopterRole)
-    {
-        $this->adoptionAddAdopterRole = $adoptionAddAdopterRole;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalsAdoption($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->adoptionAnimalID !== null) $parameterArray['adoptionAnimalID'] = $this->adoptionAnimalID;
-        if ($this->adoptionAdopterID !== null) $parameterArray['adoptionAdopterID'] = $this->adoptionAdopterID;
-        if ($this->adoptionLeadID !== null) $parameterArray['adoptionLeadID'] = $this->adoptionLeadID;
-        if ($this->adoptionFeeAmount !== null) $parameterArray['adoptionFeeAmount'] = $this->adoptionFeeAmount;
-        if ($this->adoptionDonationAmount !== null) $parameterArray['adoptionDonationAmount'] = $this->adoptionDonationAmount;
-        if ($this->adoptionDonationID !== null) $parameterArray['adoptionDonationID'] = $this->adoptionDonationID;
-        if ($this->adoptionDate !== null) $parameterArray['adoptionDate'] = $this->adoptionDate;
-        if ($this->adoptionSubmittedformID !== null) $parameterArray['adoptionSubmittedformID'] = $this->adoptionSubmittedformID;
-        if ($this->adoptionStatusID !== null) $parameterArray['adoptionStatusID'] = $this->adoptionStatusID;
-        if ($this->adoptionLetterSent !== null) $parameterArray['adoptionLetterSent'] = $this->adoptionLetterSent;
-        if ($this->adoptionAddAdopterRole !== null) $parameterArray['adoptionAddAdopterRole'] = $this->adoptionAddAdopterRole;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

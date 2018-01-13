@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsMeetRequests Add Request Test
+ * AnimalsMeetRequests add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Add();
 
-        
-        $query->setMeetrequestAnimalID("meetrequestAnimalID");
-        $query->setMeetrequestContactID("meetrequestContactID");
-        $query->setMeetrequestEventID("meetrequestEventID");
-        $query->setMeetrequestLocationID("meetrequestLocationID");
-        $query->setMeetrequestDate("meetrequestDate");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsMeetrequests", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("meetrequestAnimalID", $data["meetrequestAnimalID"]);
-        $this->assertEquals("meetrequestContactID", $data["meetrequestContactID"]);
-        $this->assertEquals("meetrequestEventID", $data["meetrequestEventID"]);
-        $this->assertEquals("meetrequestLocationID", $data["meetrequestLocationID"]);
-        $this->assertEquals("meetrequestDate", $data["meetrequestDate"]);
+        $this->assertEquals('animalsMeetrequests', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

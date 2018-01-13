@@ -8,39 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $articleID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Title
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $articleTitle = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $articleDescription = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $articleDate = null;
-
+    private $objectFields = [
+        "articleID" => 1,
+        "articleTitle" => 0,
+        "articleDescription" => 0,
+        "articleDate" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -64,69 +53,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $articleID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\NewsArticle[]
      */
-    public function setArticleID($articleID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->articleID = $articleID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\NewsArticle($object);
+            }
 
-    /**
-     * Set Title
-     *
-     * @param string $articleTitle
-     * @return $this
-     */
-    public function setArticleTitle($articleTitle)
-    {
-        $this->articleTitle = $articleTitle;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $articleDescription
-     * @return $this
-     */
-    public function setArticleDescription($articleDescription)
-    {
-        $this->articleDescription = $articleDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $articleDate
-     * @return $this
-     */
-    public function setArticleDate($articleDate)
-    {
-        $this->articleDate = $articleDate;
-
-        return $this;
+        return [new \RescueGroups\Objects\NewsArticle($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->articleID !== null) $parameterArray['articleID'] = $this->articleID;
-        if ($this->articleTitle !== null) $parameterArray['articleTitle'] = $this->articleTitle;
-        if ($this->articleDescription !== null) $parameterArray['articleDescription'] = $this->articleDescription;
-        if ($this->articleDate !== null) $parameterArray['articleDate'] = $this->articleDate;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

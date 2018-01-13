@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryFiles View Request Test
+ * InventoryFiles view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryFiles\View();
 
-        
-        $query->setInventoryfileID("inventoryfileID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("inventoryfiles", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("inventoryfileID", $data["inventoryfileID"]);
+        $this->assertEquals('inventoryfiles', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

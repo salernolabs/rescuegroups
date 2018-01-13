@@ -8,33 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Title
-     * @var string
-     */
-    private $articleTitle = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Description
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $articleDescription = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $articleDate = null;
-
+    private $objectFields = [
+        "articleTitle" => 1,
+        "articleDescription" => 1,
+        "articleDate" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -58,55 +52,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Title
-     *
-     * @param string $articleTitle
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\NewsArticle[]
      */
-    public function setArticleTitle($articleTitle)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->articleTitle = $articleTitle;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\NewsArticle($object);
+            }
 
-    /**
-     * Set Description
-     *
-     * @param string $articleDescription
-     * @return $this
-     */
-    public function setArticleDescription($articleDescription)
-    {
-        $this->articleDescription = $articleDescription;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $articleDate
-     * @return $this
-     */
-    public function setArticleDate($articleDate)
-    {
-        $this->articleDate = $articleDate;
-
-        return $this;
+        return [new \RescueGroups\Objects\NewsArticle($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->articleTitle !== null) $parameterArray['articleTitle'] = $this->articleTitle;
-        if ($this->articleDescription !== null) $parameterArray['articleDescription'] = $this->articleDescription;
-        if ($this->articleDate !== null) $parameterArray['articleDate'] = $this->articleDate;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

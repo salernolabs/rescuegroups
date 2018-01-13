@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalPatterns PublicSearch Request Test
+ * AnimalPatterns publicSearch Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalPatterns\PublicSearch();
 
-        
-        $query->setPatternID("patternID");
-        $query->setPatternName("patternName");
-        $query->setPatternSpecies("patternSpecies");
-        $query->setPatternSpeciesID("patternSpeciesID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalPatterns", $data["objectType"]);
-
-        $this->assertEquals("publicSearch", $data["objectAction"]);
-
-        $this->assertEquals("patternID", $data["patternID"]);
-        $this->assertEquals("patternName", $data["patternName"]);
-        $this->assertEquals("patternSpecies", $data["patternSpecies"]);
-        $this->assertEquals("patternSpeciesID", $data["patternSpeciesID"]);
+        $this->assertEquals('animalPatterns', $data['objectType']);
+        $this->assertEquals('publicSearch', $data['objectAction']);
     }
 }

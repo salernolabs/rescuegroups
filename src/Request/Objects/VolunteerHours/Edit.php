@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\VolunteerHours;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $id = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Volunteer
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $volunteerID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $volunteerDate = null;
-
-    /**
-     * Hours
-     * @var float
-     */
-    private $volunteerLength = null;
-
-    /**
-     * Task
-     * @var string
-     */
-    private $volunteerTask = null;
-
+    private $objectFields = [
+        "id" => 1,
+        "volunteerID" => 0,
+        "volunteerDate" => 0,
+        "volunteerLength" => 0,
+        "volunteerTask" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $volunteerHoursID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\VolunteerHour[]
      */
-    public function setId($id)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->id = $id;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\VolunteerHour($object);
+            }
 
-    /**
-     * Set Volunteer
-     *
-     * @param integer $volunteerHoursVolunteerID
-     * @return $this
-     */
-    public function setVolunteerID($volunteerID)
-    {
-        $this->volunteerID = $volunteerID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $volunteerHoursVolunteerDate
-     * @return $this
-     */
-    public function setVolunteerDate($volunteerDate)
-    {
-        $this->volunteerDate = $volunteerDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Hours
-     *
-     * @param float $volunteerHoursVolunteerLength
-     * @return $this
-     */
-    public function setVolunteerLength($volunteerLength)
-    {
-        $this->volunteerLength = $volunteerLength;
-
-        return $this;
-    }
-
-    /**
-     * Set Task
-     *
-     * @param string $volunteerHoursVolunteerTask
-     * @return $this
-     */
-    public function setVolunteerTask($volunteerTask)
-    {
-        $this->volunteerTask = $volunteerTask;
-
-        return $this;
+        return [new \RescueGroups\Objects\VolunteerHour($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->id !== null) $parameterArray['volunteerHoursID'] = $this->id;
-        if ($this->volunteerID !== null) $parameterArray['volunteerHoursVolunteerID'] = $this->volunteerID;
-        if ($this->volunteerDate !== null) $parameterArray['volunteerHoursVolunteerDate'] = $this->volunteerDate;
-        if ($this->volunteerLength !== null) $parameterArray['volunteerHoursVolunteerLength'] = $this->volunteerLength;
-        if ($this->volunteerTask !== null) $parameterArray['volunteerHoursVolunteerTask'] = $this->volunteerTask;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

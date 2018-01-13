@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesBornInRescueShelter Add Request Test
+ * IntakesBornInRescueShelter add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Add();
 
-        
-        $query->setAnimalID("animalID");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesBorninrescueshelter", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["intakesBorninrescueshelterAnimalID"]);
-        $this->assertEquals("animalConditionID", $data["intakesBorninrescueshelterAnimalConditionID"]);
-        $this->assertEquals("date", $data["intakesBorninrescueshelterDate"]);
-        $this->assertEquals("notes", $data["intakesBorninrescueshelterNotes"]);
+        $this->assertEquals('intakesBorninrescueshelter', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

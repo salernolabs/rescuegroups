@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals AddVideo Request Test
+ * Animals addVideo Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddVideoTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\AddVideo();
 
-        
-        $query->setAnimalID("animalID");
-        $query->setVideoBinary("videoBinary");
-        $query->setFileName("fileName");
-        $query->setMediaOrder("mediaOrder");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("addVideo", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
-        $this->assertEquals("videoBinary", $data["videoBinary"]);
-        $this->assertEquals("fileName", $data["fileName"]);
-        $this->assertEquals("mediaOrder", $data["mediaOrder"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('addVideo', $data['objectAction']);
     }
 }

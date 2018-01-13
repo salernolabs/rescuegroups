@@ -1,0 +1,23 @@
+# {{className}}
+
+This is the documentation for the {{className}} queries against the RescueGroups.org HTTP API v2.
+
+[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-{{typeName}})
+
+{{# requests}}
+## {{className}}\{{requestClassName}}
+
+Performs {{typeName}}.{{objectAction}} query.
+
+    $query = new \RescueGroups\Request\Objects\{{className}}\{{requestClassName}}();
+
+{{!
+%METHODS%
+#### ::set%PARAMETERNAME%
+
+Sets %NAME% field with a value of type %TYPE%.
+
+    $query->set%PARAMETERNAME%(%TYPE%);
+    }}
+
+{{/ requests}}

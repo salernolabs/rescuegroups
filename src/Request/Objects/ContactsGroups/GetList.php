@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\ContactsGroups;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Group
-     * @var string
-     */
-    private $contactGroup = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "contactGroup" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Set Group
-     *
-     * @param string $contactGroup
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ContactsGroup[]
      */
-    public function setContactGroup($contactGroup)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->contactGroup = $contactGroup;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ContactsGroup($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\ContactsGroup($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactGroup !== null) $parameterArray['contactGroup'] = $this->contactGroup;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

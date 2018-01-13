@@ -8,58 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Testimonials;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $testimonialID = null;
-
-    /**
-     * Location
-     * @var string
-     */
-    private $testimonialLocation = null;
-
-    /**
-     * Distance
-     * @var string
-     */
-    private $testimonialLocationDistance = null;
-
-    /**
-     * City, State
-     * @var string
-     */
-    private $testimonialLocationCitystate = null;
-
-    /**
-     * Service
-     * @var string
-     */
-    private $testimonialService = null;
-
-    /**
-     * User first name
-     * @var string
-     */
-    private $testimonialUserFirstname = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $testimonialCreatedDate = null;
-
-    /**
-     * Testimonial
-     * @var string
-     */
-    private $testimonialContent = null;
-
+    private $objectFields = [
+        "testimonialID" => 1,
+        "testimonialLocation" => 0,
+        "testimonialLocationDistance" => 0,
+        "testimonialLocationCitystate" => 0,
+        "testimonialService" => 0,
+        "testimonialUserFirstname" => 0,
+        "testimonialCreatedDate" => 0,
+        "testimonialContent" => 0,
+    ];
 
     /**
      * @return bool
@@ -90,127 +57,36 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $testimonialID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Testimonial[]
      */
-    public function setTestimonialID($testimonialID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->testimonialID = $testimonialID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Testimonial($object);
+            }
 
-    /**
-     * Set Location
-     *
-     * @param string $testimonialLocation
-     * @return $this
-     */
-    public function setTestimonialLocation($testimonialLocation)
-    {
-        $this->testimonialLocation = $testimonialLocation;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Distance
-     *
-     * @param string $testimonialLocationDistance
-     * @return $this
-     */
-    public function setTestimonialLocationDistance($testimonialLocationDistance)
-    {
-        $this->testimonialLocationDistance = $testimonialLocationDistance;
-
-        return $this;
-    }
-
-    /**
-     * Set City, State
-     *
-     * @param string $testimonialLocationCitystate
-     * @return $this
-     */
-    public function setTestimonialLocationCitystate($testimonialLocationCitystate)
-    {
-        $this->testimonialLocationCitystate = $testimonialLocationCitystate;
-
-        return $this;
-    }
-
-    /**
-     * Set Service
-     *
-     * @param string $testimonialService
-     * @return $this
-     */
-    public function setTestimonialService($testimonialService)
-    {
-        $this->testimonialService = $testimonialService;
-
-        return $this;
-    }
-
-    /**
-     * Set User first name
-     *
-     * @param string $testimonialUserFirstname
-     * @return $this
-     */
-    public function setTestimonialUserFirstname($testimonialUserFirstname)
-    {
-        $this->testimonialUserFirstname = $testimonialUserFirstname;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $testimonialCreatedDate
-     * @return $this
-     */
-    public function setTestimonialCreatedDate($testimonialCreatedDate)
-    {
-        $this->testimonialCreatedDate = $testimonialCreatedDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Testimonial
-     *
-     * @param string $testimonialContent
-     * @return $this
-     */
-    public function setTestimonialContent($testimonialContent)
-    {
-        $this->testimonialContent = $testimonialContent;
-
-        return $this;
+        return [new \RescueGroups\Objects\Testimonial($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->testimonialID !== null) $parameterArray['testimonialID'] = $this->testimonialID;
-        if ($this->testimonialLocation !== null) $parameterArray['testimonialLocation'] = $this->testimonialLocation;
-        if ($this->testimonialLocationDistance !== null) $parameterArray['testimonialLocationDistance'] = $this->testimonialLocationDistance;
-        if ($this->testimonialLocationCitystate !== null) $parameterArray['testimonialLocationCitystate'] = $this->testimonialLocationCitystate;
-        if ($this->testimonialService !== null) $parameterArray['testimonialService'] = $this->testimonialService;
-        if ($this->testimonialUserFirstname !== null) $parameterArray['testimonialUserFirstname'] = $this->testimonialUserFirstname;
-        if ($this->testimonialCreatedDate !== null) $parameterArray['testimonialCreatedDate'] = $this->testimonialCreatedDate;
-        if ($this->testimonialContent !== null) $parameterArray['testimonialContent'] = $this->testimonialContent;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

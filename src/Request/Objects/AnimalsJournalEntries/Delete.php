@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntries;
 
-class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Entry ID
-     * @var integer
-     */
-    private $journalEntryID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "journalEntryID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Entry ID
-     *
-     * @param integer $journalEntryID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsJournalEntry[]
      */
-    public function setJournalEntryID($journalEntryID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->journalEntryID = $journalEntryID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsJournalEntry($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\AnimalsJournalEntry($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntryID !== null) $parameterArray['journalEntryID'] = $this->journalEntryID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

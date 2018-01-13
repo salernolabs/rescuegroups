@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCareTakers View Request Test
+ * ColoniesCareTakers view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\View();
 
-        
-        $query->setCaretakerID("caretakerID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("coloniesCaretakers", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("caretakerID", $data["caretakerID"]);
+        $this->assertEquals('coloniesCaretakers', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

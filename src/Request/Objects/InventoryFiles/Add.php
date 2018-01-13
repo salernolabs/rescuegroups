@@ -8,51 +8,30 @@
  */
 namespace RescueGroups\Request\Objects\InventoryFiles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $inventoryfileItemID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * File
-     * @var binary
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $inventoryfileBinary = null;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    private $inventoryfileOldFileName = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $inventoryfileDescription = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $inventoryfileStatus = null;
-
-    /**
-     * Inline
-     * @var string
-     */
-    private $inventoryfileDisplayInline = null;
-
+    private $objectFields = [
+        "inventoryfileItemID" => 1,
+        "inventoryfileBinary" => 1,
+        "inventoryfileOldFileName" => 1,
+        "inventoryfileDescription" => 0,
+        "inventoryfileStatus" => 1,
+        "inventoryfileDisplayInline" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -76,97 +55,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $inventoryfileItemID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\InventoryFile[]
      */
-    public function setInventoryfileItemID($inventoryfileItemID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->inventoryfileItemID = $inventoryfileItemID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\InventoryFile($object);
+            }
 
-    /**
-     * Set File
-     *
-     * @param binary $inventoryfileBinary
-     * @return $this
-     */
-    public function setInventoryfileBinary($inventoryfileBinary)
-    {
-        $this->inventoryfileBinary = $inventoryfileBinary;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $inventoryfileOldFileName
-     * @return $this
-     */
-    public function setInventoryfileOldFileName($inventoryfileOldFileName)
-    {
-        $this->inventoryfileOldFileName = $inventoryfileOldFileName;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $inventoryfileDescription
-     * @return $this
-     */
-    public function setInventoryfileDescription($inventoryfileDescription)
-    {
-        $this->inventoryfileDescription = $inventoryfileDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $inventoryfileStatus
-     * @return $this
-     */
-    public function setInventoryfileStatus($inventoryfileStatus)
-    {
-        $this->inventoryfileStatus = $inventoryfileStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $inventoryfileDisplayInline
-     * @return $this
-     */
-    public function setInventoryfileDisplayInline($inventoryfileDisplayInline)
-    {
-        $this->inventoryfileDisplayInline = $inventoryfileDisplayInline;
-
-        return $this;
+        return [new \RescueGroups\Objects\InventoryFile($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->inventoryfileItemID !== null) $parameterArray['inventoryfileItemID'] = $this->inventoryfileItemID;
-        if ($this->inventoryfileBinary !== null) $parameterArray['inventoryfileBinary'] = $this->inventoryfileBinary;
-        if ($this->inventoryfileOldFileName !== null) $parameterArray['inventoryfileOldFileName'] = $this->inventoryfileOldFileName;
-        if ($this->inventoryfileDescription !== null) $parameterArray['inventoryfileDescription'] = $this->inventoryfileDescription;
-        if ($this->inventoryfileStatus !== null) $parameterArray['inventoryfileStatus'] = $this->inventoryfileStatus;
-        if ($this->inventoryfileDisplayInline !== null) $parameterArray['inventoryfileDisplayInline'] = $this->inventoryfileDisplayInline;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

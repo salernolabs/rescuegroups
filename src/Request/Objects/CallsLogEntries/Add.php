@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\CallsLogEntries;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Call
-     * @var integer
-     */
-    private $logentryCallID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Contact
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $logentryContactID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $logentryDate = null;
-
-    /**
-     * Outcome
-     * @var integer
-     */
-    private $logentryOutcomeID = null;
-
-    /**
-     * Comments
-     * @var string
-     */
-    private $logentryComments = null;
-
+    private $objectFields = [
+        "logentryCallID" => 1,
+        "logentryContactID" => 1,
+        "logentryDate" => 1,
+        "logentryOutcomeID" => 1,
+        "logentryComments" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Call
-     *
-     * @param integer $logentryCallID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\CallsLogEntry[]
      */
-    public function setLogentryCallID($logentryCallID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->logentryCallID = $logentryCallID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\CallsLogEntry($object);
+            }
 
-    /**
-     * Set Contact
-     *
-     * @param integer $logentryContactID
-     * @return $this
-     */
-    public function setLogentryContactID($logentryContactID)
-    {
-        $this->logentryContactID = $logentryContactID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $logentryDate
-     * @return $this
-     */
-    public function setLogentryDate($logentryDate)
-    {
-        $this->logentryDate = $logentryDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Outcome
-     *
-     * @param integer $logentryOutcomeID
-     * @return $this
-     */
-    public function setLogentryOutcomeID($logentryOutcomeID)
-    {
-        $this->logentryOutcomeID = $logentryOutcomeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Comments
-     *
-     * @param string $logentryComments
-     * @return $this
-     */
-    public function setLogentryComments($logentryComments)
-    {
-        $this->logentryComments = $logentryComments;
-
-        return $this;
+        return [new \RescueGroups\Objects\CallsLogEntry($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->logentryCallID !== null) $parameterArray['logentryCallID'] = $this->logentryCallID;
-        if ($this->logentryContactID !== null) $parameterArray['logentryContactID'] = $this->logentryContactID;
-        if ($this->logentryDate !== null) $parameterArray['logentryDate'] = $this->logentryDate;
-        if ($this->logentryOutcomeID !== null) $parameterArray['logentryOutcomeID'] = $this->logentryOutcomeID;
-        if ($this->logentryComments !== null) $parameterArray['logentryComments'] = $this->logentryComments;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

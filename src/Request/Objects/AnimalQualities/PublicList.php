@@ -8,14 +8,18 @@
  */
 namespace RescueGroups\Request\Objects\AnimalQualities;
 
-class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Animal Qualities
-     * @var string
-     */
-    private $animalQualities = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "animalQualities" => 0,
+    ];
 
     /**
      * @return bool
@@ -46,27 +50,36 @@ class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Set Animal Qualities
-     *
-     * @param string $animalQualities
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalQuality[]
      */
-    public function setAnimalQualities($animalQualities)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->animalQualities = $animalQualities;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalQuality($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\AnimalQuality($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalQualities !== null) $parameterArray['animalQualities'] = $this->animalQualities;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

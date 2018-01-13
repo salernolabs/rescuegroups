@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalSpecies Search Request Test
+ * AnimalSpecies search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,26 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalSpecies\Search();
 
-        
-        $query->setSpeciesID("speciesID");
-        $query->setSpeciesSingular("speciesSingular");
-        $query->setSpeciesPlural("speciesPlural");
-        $query->setSpeciesSingularYoung("speciesSingularYoung");
-        $query->setSpeciesPluralYoung("speciesPluralYoung");
-        $query->setSpeciesFullname("speciesFullname");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalSpecies", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("speciesID", $data["speciesID"]);
-        $this->assertEquals("speciesSingular", $data["speciesSingular"]);
-        $this->assertEquals("speciesPlural", $data["speciesPlural"]);
-        $this->assertEquals("speciesSingularYoung", $data["speciesSingularYoung"]);
-        $this->assertEquals("speciesPluralYoung", $data["speciesPluralYoung"]);
-        $this->assertEquals("speciesFullname", $data["speciesFullname"]);
+        $this->assertEquals('animalSpecies', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

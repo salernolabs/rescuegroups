@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryItems Delete Request Test
+ * InventoryItems delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryItems\Delete();
 
-        
-        $query->setInventoryitemID("inventoryitemID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("inventoryitems", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("inventoryitemID", $data["inventoryitemID"]);
+        $this->assertEquals('inventoryitems', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

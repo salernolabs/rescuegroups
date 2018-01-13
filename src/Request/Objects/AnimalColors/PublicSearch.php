@@ -8,34 +8,21 @@
  */
 namespace RescueGroups\Request\Objects\AnimalColors;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $colorID = null;
-
-    /**
-     * Color
-     * @var string
-     */
-    private $colorName = null;
-
-    /**
-     * Species
-     * @var string
-     */
-    private $colorSpecies = null;
-
-    /**
-     * Species
-     * @var integer
-     */
-    private $colorSpeciesID = null;
-
+    private $objectFields = [
+        "colorID" => 1,
+        "colorName" => 0,
+        "colorSpecies" => 0,
+        "colorSpeciesID" => 0,
+    ];
 
     /**
      * @return bool
@@ -66,71 +53,36 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $colorID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalColor[]
      */
-    public function setColorID($colorID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->colorID = $colorID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalColor($object);
+            }
 
-    /**
-     * Set Color
-     *
-     * @param string $colorName
-     * @return $this
-     */
-    public function setColorName($colorName)
-    {
-        $this->colorName = $colorName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param string $colorSpecies
-     * @return $this
-     */
-    public function setColorSpecies($colorSpecies)
-    {
-        $this->colorSpecies = $colorSpecies;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param integer $colorSpeciesID
-     * @return $this
-     */
-    public function setColorSpeciesID($colorSpeciesID)
-    {
-        $this->colorSpeciesID = $colorSpeciesID;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalColor($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->colorID !== null) $parameterArray['colorID'] = $this->colorID;
-        if ($this->colorName !== null) $parameterArray['colorName'] = $this->colorName;
-        if ($this->colorSpecies !== null) $parameterArray['colorSpecies'] = $this->colorSpecies;
-        if ($this->colorSpeciesID !== null) $parameterArray['colorSpeciesID'] = $this->colorSpeciesID;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

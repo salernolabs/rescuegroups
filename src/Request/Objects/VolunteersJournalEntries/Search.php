@@ -8,65 +8,32 @@
  */
 namespace RescueGroups\Request\Objects\VolunteersJournalEntries;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntryID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $journalEntryContactID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $journalEntryDate = null;
-
-    /**
-     * Comment
-     * @var string
-     */
-    private $journalEntryComment = null;
-
-    /**
-     * Entry Type
-     * @var string
-     */
-    private $journalEntryType = null;
-
-    /**
-     * Volunteer Name
-     * @var string
-     */
-    private $volunteerName = null;
-
-    /**
-     * Volunteer Type
-     * @var string
-     */
-    private $volunteerType = null;
-
-    /**
-     * Added Date
-     * @var \DateTime
-     */
-    private $journalEntryCreatedDate = null;
-
+    private $objectFields = [
+        "journalEntryID" => 1,
+        "journalEntryContactID" => 0,
+        "journalEntryDate" => 0,
+        "journalEntryComment" => 0,
+        "journalEntryType" => 0,
+        "volunteerName" => 0,
+        "volunteerType" => 0,
+        "journalEntryCreatedDate" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -90,127 +57,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $journalEntryID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\VolunteersJournalEntry[]
      */
-    public function setJournalEntryID($journalEntryID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->journalEntryID = $journalEntryID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\VolunteersJournalEntry($object);
+            }
 
-    /**
-     * Set Contact
-     *
-     * @param integer $journalEntryContactID
-     * @return $this
-     */
-    public function setJournalEntryContactID($journalEntryContactID)
-    {
-        $this->journalEntryContactID = $journalEntryContactID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $journalEntryDate
-     * @return $this
-     */
-    public function setJournalEntryDate($journalEntryDate)
-    {
-        $this->journalEntryDate = $journalEntryDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $journalEntryComment
-     * @return $this
-     */
-    public function setJournalEntryComment($journalEntryComment)
-    {
-        $this->journalEntryComment = $journalEntryComment;
-
-        return $this;
-    }
-
-    /**
-     * Set Entry Type
-     *
-     * @param string $journalEntryType
-     * @return $this
-     */
-    public function setJournalEntryType($journalEntryType)
-    {
-        $this->journalEntryType = $journalEntryType;
-
-        return $this;
-    }
-
-    /**
-     * Set Volunteer Name
-     *
-     * @param string $volunteerName
-     * @return $this
-     */
-    public function setVolunteerName($volunteerName)
-    {
-        $this->volunteerName = $volunteerName;
-
-        return $this;
-    }
-
-    /**
-     * Set Volunteer Type
-     *
-     * @param string $volunteerType
-     * @return $this
-     */
-    public function setVolunteerType($volunteerType)
-    {
-        $this->volunteerType = $volunteerType;
-
-        return $this;
-    }
-
-    /**
-     * Set Added Date
-     *
-     * @param \DateTime $journalEntryCreatedDate
-     * @return $this
-     */
-    public function setJournalEntryCreatedDate($journalEntryCreatedDate)
-    {
-        $this->journalEntryCreatedDate = $journalEntryCreatedDate;
-
-        return $this;
+        return [new \RescueGroups\Objects\VolunteersJournalEntry($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntryID !== null) $parameterArray['journalEntryID'] = $this->journalEntryID;
-        if ($this->journalEntryContactID !== null) $parameterArray['journalEntryContactID'] = $this->journalEntryContactID;
-        if ($this->journalEntryDate !== null) $parameterArray['journalEntryDate'] = $this->journalEntryDate;
-        if ($this->journalEntryComment !== null) $parameterArray['journalEntryComment'] = $this->journalEntryComment;
-        if ($this->journalEntryType !== null) $parameterArray['journalEntryType'] = $this->journalEntryType;
-        if ($this->volunteerName !== null) $parameterArray['volunteerName'] = $this->volunteerName;
-        if ($this->volunteerType !== null) $parameterArray['volunteerType'] = $this->volunteerType;
-        if ($this->journalEntryCreatedDate !== null) $parameterArray['journalEntryCreatedDate'] = $this->journalEntryCreatedDate;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

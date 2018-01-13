@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesServices Change Request Test
+ * IntakesServices change Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,28 +21,9 @@ class ChangeTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServices\Change();
 
-        
-        $query->setIntakeID("intakeID");
-        $query->setIntakesServiceAnimalID("intakesServiceAnimalID");
-        $query->setIntakesServiceAnimalConditionID("intakesServiceAnimalConditionID");
-        $query->setIntakesServiceDate("intakesServiceDate");
-        $query->setIntakesServiceNotes("intakesServiceNotes");
-        $query->setIntakesServiceOwnerID("intakesServiceOwnerID");
-        $query->setIntakesServiceServicetypeID("intakesServiceServicetypeID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesServices", $data["objectType"]);
-
-        $this->assertEquals("change", $data["objectAction"]);
-
-        $this->assertEquals("intakeID", $data["intakeID"]);
-        $this->assertEquals("intakesServiceAnimalID", $data["intakesServiceAnimalID"]);
-        $this->assertEquals("intakesServiceAnimalConditionID", $data["intakesServiceAnimalConditionID"]);
-        $this->assertEquals("intakesServiceDate", $data["intakesServiceDate"]);
-        $this->assertEquals("intakesServiceNotes", $data["intakesServiceNotes"]);
-        $this->assertEquals("intakesServiceOwnerID", $data["intakesServiceOwnerID"]);
-        $this->assertEquals("intakesServiceServicetypeID", $data["intakesServiceServicetypeID"]);
+        $this->assertEquals('intakesServices', $data['objectType']);
+        $this->assertEquals('change', $data['objectAction']);
     }
 }

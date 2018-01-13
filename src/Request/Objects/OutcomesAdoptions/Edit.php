@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesAdoptions;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $outcomesAdoptionID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Condition
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesAdoptionAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $outcomesAdoptionDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $outcomesAdoptionNotes = null;
-
-    /**
-     * Adoption
-     * @var integer
-     */
-    private $outcomesAdoptionAdoptionID = null;
-
+    private $objectFields = [
+        "outcomesAdoptionID" => 1,
+        "outcomesAdoptionAnimalConditionID" => 0,
+        "outcomesAdoptionDate" => 0,
+        "outcomesAdoptionNotes" => 0,
+        "outcomesAdoptionAdoptionID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesAdoptionID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\OutcomesAdoption[]
      */
-    public function setOutcomesAdoptionID($outcomesAdoptionID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->outcomesAdoptionID = $outcomesAdoptionID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\OutcomesAdoption($object);
+            }
 
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesAdoptionAnimalConditionID
-     * @return $this
-     */
-    public function setOutcomesAdoptionAnimalConditionID($outcomesAdoptionAnimalConditionID)
-    {
-        $this->outcomesAdoptionAnimalConditionID = $outcomesAdoptionAnimalConditionID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesAdoptionDate
-     * @return $this
-     */
-    public function setOutcomesAdoptionDate($outcomesAdoptionDate)
-    {
-        $this->outcomesAdoptionDate = $outcomesAdoptionDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesAdoptionNotes
-     * @return $this
-     */
-    public function setOutcomesAdoptionNotes($outcomesAdoptionNotes)
-    {
-        $this->outcomesAdoptionNotes = $outcomesAdoptionNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Adoption
-     *
-     * @param integer $outcomesAdoptionAdoptionID
-     * @return $this
-     */
-    public function setOutcomesAdoptionAdoptionID($outcomesAdoptionAdoptionID)
-    {
-        $this->outcomesAdoptionAdoptionID = $outcomesAdoptionAdoptionID;
-
-        return $this;
+        return [new \RescueGroups\Objects\OutcomesAdoption($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesAdoptionID !== null) $parameterArray['outcomesAdoptionID'] = $this->outcomesAdoptionID;
-        if ($this->outcomesAdoptionAnimalConditionID !== null) $parameterArray['outcomesAdoptionAnimalConditionID'] = $this->outcomesAdoptionAnimalConditionID;
-        if ($this->outcomesAdoptionDate !== null) $parameterArray['outcomesAdoptionDate'] = $this->outcomesAdoptionDate;
-        if ($this->outcomesAdoptionNotes !== null) $parameterArray['outcomesAdoptionNotes'] = $this->outcomesAdoptionNotes;
-        if ($this->outcomesAdoptionAdoptionID !== null) $parameterArray['outcomesAdoptionAdoptionID'] = $this->outcomesAdoptionAdoptionID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

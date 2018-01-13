@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Sharing Org
-     * @var integer
-     */
-    private $partnershipSharingOrgID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "partnershipSharingOrgID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Set Sharing Org
-     *
-     * @param integer $partnershipSharingOrgID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Partnership[]
      */
-    public function setPartnershipSharingOrgID($partnershipSharingOrgID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->partnershipSharingOrgID = $partnershipSharingOrgID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Partnership($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Partnership($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->partnershipSharingOrgID !== null) $parameterArray['partnershipSharingOrgID'] = $this->partnershipSharingOrgID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

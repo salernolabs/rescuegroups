@@ -8,71 +8,33 @@
  */
 namespace RescueGroups\Request\Objects\Outcomes;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Outcome ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomeID = null;
-
-    /**
-     * Condition ID
-     * @var integer
-     */
-    private $outcomeAnimalConditionID = null;
-
-    /**
-     * Type
-     * @var string
-     */
-    private $outcomeType = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $outcomeDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $outcomeNotes = null;
-
-    /**
-     * Intake ID
-     * @var integer
-     */
-    private $intakeID = null;
-
-    /**
-     * Animal ID
-     * @var integer
-     */
-    private $intakeAnimalID = null;
-
-    /**
-     * Animal
-     * @var string
-     */
-    private $animalName = null;
-
-    /**
-     * Condition
-     * @var string
-     */
-    private $outcomeAnimalConditionName = null;
-
+    private $objectFields = [
+        "outcomeID" => 0,
+        "outcomeAnimalConditionID" => 0,
+        "outcomeType" => 0,
+        "outcomeDate" => 0,
+        "outcomeNotes" => 0,
+        "intakeID" => 0,
+        "intakeAnimalID" => 0,
+        "animalName" => 0,
+        "outcomeAnimalConditionName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -96,141 +58,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Outcome ID
-     *
-     * @param integer $outcomeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Outcome[]
      */
-    public function setOutcomeID($outcomeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->outcomeID = $outcomeID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Outcome($object);
+            }
 
-    /**
-     * Set Condition ID
-     *
-     * @param integer $outcomeAnimalConditionID
-     * @return $this
-     */
-    public function setOutcomeAnimalConditionID($outcomeAnimalConditionID)
-    {
-        $this->outcomeAnimalConditionID = $outcomeAnimalConditionID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Type
-     *
-     * @param string $outcomeType
-     * @return $this
-     */
-    public function setOutcomeType($outcomeType)
-    {
-        $this->outcomeType = $outcomeType;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomeDate
-     * @return $this
-     */
-    public function setOutcomeDate($outcomeDate)
-    {
-        $this->outcomeDate = $outcomeDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomeNotes
-     * @return $this
-     */
-    public function setOutcomeNotes($outcomeNotes)
-    {
-        $this->outcomeNotes = $outcomeNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Intake ID
-     *
-     * @param integer $intakeID
-     * @return $this
-     */
-    public function setIntakeID($intakeID)
-    {
-        $this->intakeID = $intakeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal ID
-     *
-     * @param integer $intakeAnimalID
-     * @return $this
-     */
-    public function setIntakeAnimalID($intakeAnimalID)
-    {
-        $this->intakeAnimalID = $intakeAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param string $animalName
-     * @return $this
-     */
-    public function setAnimalName($animalName)
-    {
-        $this->animalName = $animalName;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param string $outcomeAnimalConditionName
-     * @return $this
-     */
-    public function setOutcomeAnimalConditionName($outcomeAnimalConditionName)
-    {
-        $this->outcomeAnimalConditionName = $outcomeAnimalConditionName;
-
-        return $this;
+        return [new \RescueGroups\Objects\Outcome($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomeID !== null) $parameterArray['outcomeID'] = $this->outcomeID;
-        if ($this->outcomeAnimalConditionID !== null) $parameterArray['outcomeAnimalConditionID'] = $this->outcomeAnimalConditionID;
-        if ($this->outcomeType !== null) $parameterArray['outcomeType'] = $this->outcomeType;
-        if ($this->outcomeDate !== null) $parameterArray['outcomeDate'] = $this->outcomeDate;
-        if ($this->outcomeNotes !== null) $parameterArray['outcomeNotes'] = $this->outcomeNotes;
-        if ($this->intakeID !== null) $parameterArray['intakeID'] = $this->intakeID;
-        if ($this->intakeAnimalID !== null) $parameterArray['intakeAnimalID'] = $this->intakeAnimalID;
-        if ($this->animalName !== null) $parameterArray['animalName'] = $this->animalName;
-        if ($this->outcomeAnimalConditionName !== null) $parameterArray['outcomeAnimalConditionName'] = $this->outcomeAnimalConditionName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Memorials Edit Request Test
+ * Memorials edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Memorials\Edit();
 
-        
-        $query->setMemorialID("memorialID");
-        $query->setMemorialPictureBinary("memorialPictureBinary");
-        $query->setMemorialPictureOldFileName("memorialPictureOldFileName");
-        $query->setMemorialName("memorialName");
-        $query->setMemorialDescription("memorialDescription");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("memorials", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("memorialID", $data["memorialID"]);
-        $this->assertEquals("memorialPictureBinary", $data["memorialPictureBinary"]);
-        $this->assertEquals("memorialPictureOldFileName", $data["memorialPictureOldFileName"]);
-        $this->assertEquals("memorialName", $data["memorialName"]);
-        $this->assertEquals("memorialDescription", $data["memorialDescription"]);
+        $this->assertEquals('memorials', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

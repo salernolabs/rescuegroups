@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReturnToOwner;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Outcome Returntoowner Intake
-     * @var integer
-     */
-    private $intakeID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Condition
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $notes = null;
-
-    /**
-     * Return To
-     * @var integer
-     */
-    private $ownerID = null;
-
+    private $objectFields = [
+        "intakeID" => 1,
+        "animalConditionID" => 1,
+        "date" => 1,
+        "notes" => 0,
+        "ownerID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Outcome Returntoowner Intake
-     *
-     * @param integer $outcomesReturntoownerIntakeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\OutcomesReturnToOwner[]
      */
-    public function setIntakeID($intakeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakeID = $intakeID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\OutcomesReturnToOwner($object);
+            }
 
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesReturntoownerAnimalConditionID
-     * @return $this
-     */
-    public function setAnimalConditionID($animalConditionID)
-    {
-        $this->animalConditionID = $animalConditionID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesReturntoownerDate
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesReturntoownerNotes
-     * @return $this
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Set Return To
-     *
-     * @param integer $outcomesReturntoownerOwnerID
-     * @return $this
-     */
-    public function setOwnerID($ownerID)
-    {
-        $this->ownerID = $ownerID;
-
-        return $this;
+        return [new \RescueGroups\Objects\OutcomesReturnToOwner($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakeID !== null) $parameterArray['outcomesReturntoownerIntakeID'] = $this->intakeID;
-        if ($this->animalConditionID !== null) $parameterArray['outcomesReturntoownerAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $parameterArray['outcomesReturntoownerDate'] = $this->date;
-        if ($this->notes !== null) $parameterArray['outcomesReturntoownerNotes'] = $this->notes;
-        if ($this->ownerID !== null) $parameterArray['outcomesReturntoownerOwnerID'] = $this->ownerID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

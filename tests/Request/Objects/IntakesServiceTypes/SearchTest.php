@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesServiceTypes Search Request Test
+ * IntakesServiceTypes search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Search();
 
-        
-        $query->setServiceID("serviceID");
-        $query->setServiceName("serviceName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesServicetypes", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("serviceID", $data["serviceID"]);
-        $this->assertEquals("serviceName", $data["serviceName"]);
+        $this->assertEquals('intakesServicetypes', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

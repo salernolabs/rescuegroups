@@ -8,27 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Description
-     * @var string
-     */
-    private $journalEntrytypeDescription = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Category ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntrytypeCategoryID = null;
-
+    private $objectFields = [
+        "journalEntrytypeDescription" => 0,
+        "journalEntrytypeCategoryID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -52,41 +51,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Description
-     *
-     * @param string $journalEntrytypeDescription
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsJournalEntryType[]
      */
-    public function setJournalEntrytypeDescription($journalEntrytypeDescription)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->journalEntrytypeDescription = $journalEntrytypeDescription;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsJournalEntryType($object);
+            }
 
-    /**
-     * Set Category ID
-     *
-     * @param integer $journalEntrytypeCategoryID
-     * @return $this
-     */
-    public function setJournalEntrytypeCategoryID($journalEntrytypeCategoryID)
-    {
-        $this->journalEntrytypeCategoryID = $journalEntrytypeCategoryID;
+            return $output;
+        }
 
-        return $this;
+        return [new \RescueGroups\Objects\AnimalsJournalEntryType($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntrytypeDescription !== null) $parameterArray['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
-        if ($this->journalEntrytypeCategoryID !== null) $parameterArray['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

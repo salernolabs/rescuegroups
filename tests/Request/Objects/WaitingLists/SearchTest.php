@@ -1,6 +1,6 @@
 <?php
 /**
- * WaitingLists Search Request Test
+ * WaitingLists search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\Search();
 
-        
-        $query->setWaitinglistID("waitinglistID");
-        $query->setWaitinglistName("waitinglistName");
-        $query->setWaitinglistType("waitinglistType");
-        $query->setWaitinglistComment("waitinglistComment");
-        $query->setWaitinglistMembersCount("waitinglistMembersCount");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("waitinglists", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("waitinglistID", $data["waitinglistID"]);
-        $this->assertEquals("waitinglistName", $data["waitinglistName"]);
-        $this->assertEquals("waitinglistType", $data["waitinglistType"]);
-        $this->assertEquals("waitinglistComment", $data["waitinglistComment"]);
-        $this->assertEquals("waitinglistMembersCount", $data["waitinglistMembersCount"]);
+        $this->assertEquals('waitinglists', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

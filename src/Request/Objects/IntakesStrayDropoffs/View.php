@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\IntakesStrayDropoffs;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Stray Pickup
-     * @var integer
-     */
-    private $intakesStraydropoffID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "intakesStraydropoffID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Stray Pickup
-     *
-     * @param integer $intakesStraydropoffID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesStrayDropoff[]
      */
-    public function setIntakesStraydropoffID($intakesStraydropoffID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakesStraydropoffID = $intakesStraydropoffID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesStrayDropoff($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\IntakesStrayDropoff($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesStraydropoffID !== null) $parameterArray['intakesStraydropoffID'] = $this->intakesStraydropoffID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

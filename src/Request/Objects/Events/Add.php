@@ -8,57 +8,31 @@
  */
 namespace RescueGroups\Request\Objects\Events;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Name
-     * @var string
-     */
-    private $eventName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Start Date/Time
-     * @var \DateTime
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $eventStart = null;
-
-    /**
-     * End Date/Time
-     * @var \DateTime
-     */
-    private $eventEnd = null;
-
-    /**
-     * Web address
-     * @var url
-     */
-    private $eventUrl = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $eventDescription = null;
-
-    /**
-     * Location
-     * @var integer
-     */
-    private $eventLocationID = null;
-
-    /**
-     * Species attending
-     * @var integer
-     */
-    private $eventSpecies = null;
-
+    private $objectFields = [
+        "eventName" => 1,
+        "eventStart" => 1,
+        "eventEnd" => 1,
+        "eventUrl" => 0,
+        "eventDescription" => 0,
+        "eventLocationID" => 1,
+        "eventSpecies" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -82,111 +56,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $eventName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Event[]
      */
-    public function setEventName($eventName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->eventName = $eventName;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Event($object);
+            }
 
-    /**
-     * Set Start Date/Time
-     *
-     * @param \DateTime $eventStart
-     * @return $this
-     */
-    public function setEventStart($eventStart)
-    {
-        $this->eventStart = $eventStart;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set End Date/Time
-     *
-     * @param \DateTime $eventEnd
-     * @return $this
-     */
-    public function setEventEnd($eventEnd)
-    {
-        $this->eventEnd = $eventEnd;
-
-        return $this;
-    }
-
-    /**
-     * Set Web address
-     *
-     * @param url $eventUrl
-     * @return $this
-     */
-    public function setEventUrl($eventUrl)
-    {
-        $this->eventUrl = $eventUrl;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $eventDescription
-     * @return $this
-     */
-    public function setEventDescription($eventDescription)
-    {
-        $this->eventDescription = $eventDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Location
-     *
-     * @param integer $eventLocationID
-     * @return $this
-     */
-    public function setEventLocationID($eventLocationID)
-    {
-        $this->eventLocationID = $eventLocationID;
-
-        return $this;
-    }
-
-    /**
-     * Set Species attending
-     *
-     * @param integer $eventSpecies
-     * @return $this
-     */
-    public function setEventSpecies($eventSpecies)
-    {
-        $this->eventSpecies = $eventSpecies;
-
-        return $this;
+        return [new \RescueGroups\Objects\Event($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->eventName !== null) $parameterArray['eventName'] = $this->eventName;
-        if ($this->eventStart !== null) $parameterArray['eventStart'] = $this->eventStart;
-        if ($this->eventEnd !== null) $parameterArray['eventEnd'] = $this->eventEnd;
-        if ($this->eventUrl !== null) $parameterArray['eventUrl'] = $this->eventUrl;
-        if ($this->eventDescription !== null) $parameterArray['eventDescription'] = $this->eventDescription;
-        if ($this->eventLocationID !== null) $parameterArray['eventLocationID'] = $this->eventLocationID;
-        if ($this->eventSpecies !== null) $parameterArray['eventSpecies'] = $this->eventSpecies;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

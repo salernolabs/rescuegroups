@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsLogEntries Search Request Test
+ * CallsLogEntries search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,30 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsLogEntries\Search();
 
-        
-        $query->setLogentryID("logentryID");
-        $query->setLogentryCallID("logentryCallID");
-        $query->setLogentryContactID("logentryContactID");
-        $query->setLogentryDate("logentryDate");
-        $query->setLogentryOutcomeID("logentryOutcomeID");
-        $query->setLogentryComments("logentryComments");
-        $query->setContactName("contactName");
-        $query->setOutcomeName("outcomeName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsLogentries", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("logentryID", $data["logentryID"]);
-        $this->assertEquals("logentryCallID", $data["logentryCallID"]);
-        $this->assertEquals("logentryContactID", $data["logentryContactID"]);
-        $this->assertEquals("logentryDate", $data["logentryDate"]);
-        $this->assertEquals("logentryOutcomeID", $data["logentryOutcomeID"]);
-        $this->assertEquals("logentryComments", $data["logentryComments"]);
-        $this->assertEquals("contactName", $data["contactName"]);
-        $this->assertEquals("outcomeName", $data["outcomeName"]);
+        $this->assertEquals('callsLogentries', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

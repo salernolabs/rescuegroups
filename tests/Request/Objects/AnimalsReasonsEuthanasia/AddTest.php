@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsEuthanasia Add Request Test
+ * AnimalsReasonsEuthanasia add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Add();
 
-        
-        $query->setReasonName("reasonName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsEuthanasia", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("reasonName", $data["reasonName"]);
+        $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Memorials;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $memorialID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * File
-     * @var binary
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $memorialPictureBinary = null;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    private $memorialPictureOldFileName = null;
-
-    /**
-     * File name
-     * @var string
-     */
-    private $memorialName = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $memorialDescription = null;
-
+    private $objectFields = [
+        "memorialID" => 1,
+        "memorialPictureBinary" => 0,
+        "memorialPictureOldFileName" => 0,
+        "memorialName" => 0,
+        "memorialDescription" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $memorialID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Memorial[]
      */
-    public function setMemorialID($memorialID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->memorialID = $memorialID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Memorial($object);
+            }
 
-    /**
-     * Set File
-     *
-     * @param binary $memorialPictureBinary
-     * @return $this
-     */
-    public function setMemorialPictureBinary($memorialPictureBinary)
-    {
-        $this->memorialPictureBinary = $memorialPictureBinary;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $memorialPictureOldFileName
-     * @return $this
-     */
-    public function setMemorialPictureOldFileName($memorialPictureOldFileName)
-    {
-        $this->memorialPictureOldFileName = $memorialPictureOldFileName;
-
-        return $this;
-    }
-
-    /**
-     * Set File name
-     *
-     * @param string $memorialName
-     * @return $this
-     */
-    public function setMemorialName($memorialName)
-    {
-        $this->memorialName = $memorialName;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $memorialDescription
-     * @return $this
-     */
-    public function setMemorialDescription($memorialDescription)
-    {
-        $this->memorialDescription = $memorialDescription;
-
-        return $this;
+        return [new \RescueGroups\Objects\Memorial($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->memorialID !== null) $parameterArray['memorialID'] = $this->memorialID;
-        if ($this->memorialPictureBinary !== null) $parameterArray['memorialPictureBinary'] = $this->memorialPictureBinary;
-        if ($this->memorialPictureOldFileName !== null) $parameterArray['memorialPictureOldFileName'] = $this->memorialPictureOldFileName;
-        if ($this->memorialName !== null) $parameterArray['memorialName'] = $this->memorialName;
-        if ($this->memorialDescription !== null) $parameterArray['memorialDescription'] = $this->memorialDescription;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * MicrochipRegistrations View Request Test
+ * MicrochipRegistrations view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\View();
 
-        
-        $query->setMicrochipRegistrationID("microchipRegistrationID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("microchipRegistrations", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("microchipRegistrationID", $data["microchipRegistrationID"]);
+        $this->assertEquals('microchipRegistrations', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

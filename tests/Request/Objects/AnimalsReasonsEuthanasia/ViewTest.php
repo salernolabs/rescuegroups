@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsEuthanasia View Request Test
+ * AnimalsReasonsEuthanasia view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\View();
 
-        
-        $query->setReasonID("reasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsEuthanasia", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
+        $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

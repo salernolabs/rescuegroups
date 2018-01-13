@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsQueues Add Request Test
+ * CallsQueues add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueues\Add();
 
-        
-        $query->setQueueName("queueName");
-        $query->setQueueFromEmail("queueFromEmail");
-        $query->setQueueDefaultUrgencyID("queueDefaultUrgencyID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsQueues", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("queueName", $data["queueName"]);
-        $this->assertEquals("queueFromEmail", $data["queueFromEmail"]);
-        $this->assertEquals("queueDefaultUrgencyID", $data["queueDefaultUrgencyID"]);
+        $this->assertEquals('callsQueues', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

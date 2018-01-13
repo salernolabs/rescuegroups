@@ -8,27 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\ColoniesCareTakers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Colony
-     * @var integer
-     */
-    private $caretakerColonyID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Contact
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $caretakerContactID = null;
-
+    private $objectFields = [
+        "caretakerColonyID" => 1,
+        "caretakerContactID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -52,41 +51,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Colony
-     *
-     * @param integer $caretakerColonyID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ColoniesCareTaker[]
      */
-    public function setCaretakerColonyID($caretakerColonyID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->caretakerColonyID = $caretakerColonyID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ColoniesCareTaker($object);
+            }
 
-    /**
-     * Set Contact
-     *
-     * @param integer $caretakerContactID
-     * @return $this
-     */
-    public function setCaretakerContactID($caretakerContactID)
-    {
-        $this->caretakerContactID = $caretakerContactID;
+            return $output;
+        }
 
-        return $this;
+        return [new \RescueGroups\Objects\ColoniesCareTaker($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->caretakerColonyID !== null) $parameterArray['caretakerColonyID'] = $this->caretakerColonyID;
-        if ($this->caretakerContactID !== null) $parameterArray['caretakerContactID'] = $this->caretakerContactID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

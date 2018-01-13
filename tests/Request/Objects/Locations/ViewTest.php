@@ -1,6 +1,6 @@
 <?php
 /**
- * Locations View Request Test
+ * Locations view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Locations\View();
 
-        
-        $query->setLocationID("locationID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("locations", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("locationID", $data["locationID"]);
+        $this->assertEquals('locations', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

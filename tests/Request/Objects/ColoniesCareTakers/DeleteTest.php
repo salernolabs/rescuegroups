@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCareTakers Delete Request Test
+ * ColoniesCareTakers delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Delete();
 
-        
-        $query->setCaretakerID("caretakerID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("coloniesCaretakers", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("caretakerID", $data["caretakerID"]);
+        $this->assertEquals('coloniesCaretakers', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

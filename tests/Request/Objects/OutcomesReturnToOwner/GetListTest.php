@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReturnToOwner GetList Request Test
+ * OutcomesReturnToOwner list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesReturntoowner", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('outcomesReturntoowner', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

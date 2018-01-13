@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactsGroups Edit Request Test
+ * ContactsGroups edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Edit();
 
-        
-        $query->setGroupID("groupID");
-        $query->setGroupName("groupName");
-        $query->setGroupBusiness("groupBusiness");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("contactsGroups", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("groupID", $data["groupID"]);
-        $this->assertEquals("groupName", $data["groupName"]);
-        $this->assertEquals("groupBusiness", $data["groupBusiness"]);
+        $this->assertEquals('contactsGroups', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

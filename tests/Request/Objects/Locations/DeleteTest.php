@@ -1,6 +1,6 @@
 <?php
 /**
- * Locations Delete Request Test
+ * Locations delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Locations\Delete();
 
-        
-        $query->setLocationID("locationID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("locations", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("locationID", $data["locationID"]);
+        $this->assertEquals('locations', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

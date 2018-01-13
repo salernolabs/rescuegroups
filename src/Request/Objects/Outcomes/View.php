@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Outcomes;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Outcome ID
-     * @var integer
-     */
-    private $outcomeID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "outcomeID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Outcome ID
-     *
-     * @param integer $outcomeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Outcome[]
      */
-    public function setOutcomeID($outcomeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->outcomeID = $outcomeID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Outcome($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Outcome($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomeID !== null) $parameterArray['outcomeID'] = $this->outcomeID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

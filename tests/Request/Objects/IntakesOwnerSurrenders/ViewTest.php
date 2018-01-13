@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnerSurrenders View Request Test
+ * IntakesOwnerSurrenders view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
 
-        
-        $query->setIntakesOwnersurrenderID("intakesOwnersurrenderID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesOwnersurrenders", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesOwnersurrenderID", $data["intakesOwnersurrenderID"]);
+        $this->assertEquals('intakesOwnersurrenders', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

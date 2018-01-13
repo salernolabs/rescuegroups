@@ -8,57 +8,31 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesTransfers;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $outcomesTransferID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Condition
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $outcomesTransferAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $outcomesTransferDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $outcomesTransferNotes = null;
-
-    /**
-     * Received
-     * @var integer
-     */
-    private $outcomesTransferReceiveID = null;
-
-    /**
-     * Coalition Member
-     * @var string
-     */
-    private $outcomesTransferCoalitionMember = null;
-
-    /**
-     * Transfer Reason
-     * @var integer
-     */
-    private $outcomesTransferReasonID = null;
-
+    private $objectFields = [
+        "outcomesTransferID" => 1,
+        "outcomesTransferAnimalConditionID" => 0,
+        "outcomesTransferDate" => 0,
+        "outcomesTransferNotes" => 0,
+        "outcomesTransferReceiveID" => 0,
+        "outcomesTransferCoalitionMember" => 0,
+        "outcomesTransferReasonID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -82,111 +56,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesTransferID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\OutcomesTransfer[]
      */
-    public function setOutcomesTransferID($outcomesTransferID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->outcomesTransferID = $outcomesTransferID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\OutcomesTransfer($object);
+            }
 
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesTransferAnimalConditionID
-     * @return $this
-     */
-    public function setOutcomesTransferAnimalConditionID($outcomesTransferAnimalConditionID)
-    {
-        $this->outcomesTransferAnimalConditionID = $outcomesTransferAnimalConditionID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesTransferDate
-     * @return $this
-     */
-    public function setOutcomesTransferDate($outcomesTransferDate)
-    {
-        $this->outcomesTransferDate = $outcomesTransferDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesTransferNotes
-     * @return $this
-     */
-    public function setOutcomesTransferNotes($outcomesTransferNotes)
-    {
-        $this->outcomesTransferNotes = $outcomesTransferNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Received
-     *
-     * @param integer $outcomesTransferReceiveID
-     * @return $this
-     */
-    public function setOutcomesTransferReceiveID($outcomesTransferReceiveID)
-    {
-        $this->outcomesTransferReceiveID = $outcomesTransferReceiveID;
-
-        return $this;
-    }
-
-    /**
-     * Set Coalition Member
-     *
-     * @param string $outcomesTransferCoalitionMember
-     * @return $this
-     */
-    public function setOutcomesTransferCoalitionMember($outcomesTransferCoalitionMember)
-    {
-        $this->outcomesTransferCoalitionMember = $outcomesTransferCoalitionMember;
-
-        return $this;
-    }
-
-    /**
-     * Set Transfer Reason
-     *
-     * @param integer $outcomesTransferReasonID
-     * @return $this
-     */
-    public function setOutcomesTransferReasonID($outcomesTransferReasonID)
-    {
-        $this->outcomesTransferReasonID = $outcomesTransferReasonID;
-
-        return $this;
+        return [new \RescueGroups\Objects\OutcomesTransfer($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->outcomesTransferID !== null) $parameterArray['outcomesTransferID'] = $this->outcomesTransferID;
-        if ($this->outcomesTransferAnimalConditionID !== null) $parameterArray['outcomesTransferAnimalConditionID'] = $this->outcomesTransferAnimalConditionID;
-        if ($this->outcomesTransferDate !== null) $parameterArray['outcomesTransferDate'] = $this->outcomesTransferDate;
-        if ($this->outcomesTransferNotes !== null) $parameterArray['outcomesTransferNotes'] = $this->outcomesTransferNotes;
-        if ($this->outcomesTransferReceiveID !== null) $parameterArray['outcomesTransferReceiveID'] = $this->outcomesTransferReceiveID;
-        if ($this->outcomesTransferCoalitionMember !== null) $parameterArray['outcomesTransferCoalitionMember'] = $this->outcomesTransferCoalitionMember;
-        if ($this->outcomesTransferReasonID !== null) $parameterArray['outcomesTransferReasonID'] = $this->outcomesTransferReasonID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFiles Edit Request Test
+ * WebFiles edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebFiles\Edit();
 
-        
-        $query->setWebfileID("webfileID");
-        $query->setWebfileDescription("webfileDescription");
-        $query->setWebfileStatus("webfileStatus");
-        $query->setWebfileDisplayInline("webfileDisplayInline");
-        $query->setWebfileRoleID("webfileRoleID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webfiles", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("webfileID", $data["webfileID"]);
-        $this->assertEquals("webfileDescription", $data["webfileDescription"]);
-        $this->assertEquals("webfileStatus", $data["webfileStatus"]);
-        $this->assertEquals("webfileDisplayInline", $data["webfileDisplayInline"]);
-        $this->assertEquals("webfileRoleID", $data["webfileRoleID"]);
+        $this->assertEquals('webfiles', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

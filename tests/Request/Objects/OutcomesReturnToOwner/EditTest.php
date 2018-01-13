@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesReturnToOwner Edit Request Test
+ * OutcomesReturnToOwner edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Edit();
 
-        
-        $query->setId("id");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-        $query->setOwnerID("ownerID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesReturntoowner", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["outcomesReturntoownerID"]);
-        $this->assertEquals("animalConditionID", $data["outcomesReturntoownerAnimalConditionID"]);
-        $this->assertEquals("date", $data["outcomesReturntoownerDate"]);
-        $this->assertEquals("notes", $data["outcomesReturntoownerNotes"]);
-        $this->assertEquals("ownerID", $data["outcomesReturntoownerOwnerID"]);
+        $this->assertEquals('outcomesReturntoowner', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

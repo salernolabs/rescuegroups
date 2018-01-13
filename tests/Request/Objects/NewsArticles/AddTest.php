@@ -1,6 +1,6 @@
 <?php
 /**
- * NewsArticles Add Request Test
+ * NewsArticles add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\Add();
 
-        
-        $query->setArticleTitle("articleTitle");
-        $query->setArticleDescription("articleDescription");
-        $query->setArticleDate("articleDate");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("newsarticles", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("articleTitle", $data["articleTitle"]);
-        $this->assertEquals("articleDescription", $data["articleDescription"]);
-        $this->assertEquals("articleDate", $data["articleDate"]);
+        $this->assertEquals('newsarticles', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

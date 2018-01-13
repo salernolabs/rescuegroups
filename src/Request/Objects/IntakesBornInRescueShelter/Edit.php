@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Born In Rescue/Shelter
-     * @var integer
-     */
-    private $id = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Animal
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $animalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $notes = null;
-
+    private $objectFields = [
+        "id" => 1,
+        "animalID" => 0,
+        "animalConditionID" => 0,
+        "date" => 0,
+        "notes" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Born In Rescue/Shelter
-     *
-     * @param integer $intakesBorninrescueshelterID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesBornInRescueShelter[]
      */
-    public function setId($id)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->id = $id;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesBornInRescueShelter($object);
+            }
 
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesBorninrescueshelterAnimalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesBorninrescueshelterAnimalConditionID
-     * @return $this
-     */
-    public function setAnimalConditionID($animalConditionID)
-    {
-        $this->animalConditionID = $animalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesBorninrescueshelterDate
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesBorninrescueshelterNotes
-     * @return $this
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
+        return [new \RescueGroups\Objects\IntakesBornInRescueShelter($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->id !== null) $parameterArray['intakesBorninrescueshelterID'] = $this->id;
-        if ($this->animalID !== null) $parameterArray['intakesBorninrescueshelterAnimalID'] = $this->animalID;
-        if ($this->animalConditionID !== null) $parameterArray['intakesBorninrescueshelterAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $parameterArray['intakesBorninrescueshelterDate'] = $this->date;
-        if ($this->notes !== null) $parameterArray['intakesBorninrescueshelterNotes'] = $this->notes;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

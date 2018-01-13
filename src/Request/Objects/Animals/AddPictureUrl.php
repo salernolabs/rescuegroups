@@ -8,33 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $animalID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Picture Url
-     * @var url
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $pictureUrl = null;
-
-    /**
-     * Order
-     * @var int
-     */
-    private $mediaOrder = null;
-
+    private $objectFields = [
+        "animalID" => 1,
+        "pictureUrl" => 1,
+        "mediaOrder" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -58,55 +52,36 @@ class AddPictureUrl implements \RescueGroups\Request\RequestInterface, \RescueGr
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $animalID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Animal[]
      */
-    public function setAnimalID($animalID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->animalID = $animalID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Animal($object);
+            }
 
-    /**
-     * Set Picture Url
-     *
-     * @param url $pictureUrl
-     * @return $this
-     */
-    public function setPictureUrl($pictureUrl)
-    {
-        $this->pictureUrl = $pictureUrl;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param int $mediaOrder
-     * @return $this
-     */
-    public function setMediaOrder($mediaOrder)
-    {
-        $this->mediaOrder = $mediaOrder;
-
-        return $this;
+        return [new \RescueGroups\Objects\Animal($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->pictureUrl !== null) $parameterArray['pictureUrl'] = $this->pictureUrl;
-        if ($this->mediaOrder !== null) $parameterArray['mediaOrder'] = $this->mediaOrder;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

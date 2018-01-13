@@ -1,6 +1,6 @@
 <?php
 /**
- * WaitingLists Add Request Test
+ * WaitingLists add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\Add();
 
-        
-        $query->setWaitinglistName("waitinglistName");
-        $query->setWaitinglistType("waitinglistType");
-        $query->setWaitinglistComment("waitinglistComment");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("waitinglists", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("waitinglistName", $data["waitinglistName"]);
-        $this->assertEquals("waitinglistType", $data["waitinglistType"]);
-        $this->assertEquals("waitinglistComment", $data["waitinglistComment"]);
+        $this->assertEquals('waitinglists', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsTransfer Edit Request Test
+ * AnimalsReasonsTransfer edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Edit();
 
-        
-        $query->setReasonID("reasonID");
-        $query->setReasonName("reasonName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsTransfer", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
-        $this->assertEquals("reasonName", $data["reasonName"]);
+        $this->assertEquals('animalsReasonsTransfer', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsSurrender Add Request Test
+ * AnimalsReasonsSurrender add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Add();
 
-        
-        $query->setReasonName("reasonName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsSurrender", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("reasonName", $data["reasonName"]);
+        $this->assertEquals('animalsReasonsSurrender', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryItems GetList Request Test
+ * InventoryItems list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryItems\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("inventoryitems", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('inventoryitems', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

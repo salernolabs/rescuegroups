@@ -8,71 +8,33 @@
  */
 namespace RescueGroups\Request\Objects\Intakes;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Intake
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakeID = null;
-
-    /**
-     * Outcome
-     * @var integer
-     */
-    private $intakeOutcomeID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $intakeAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakeAnimalConditionID = null;
-
-    /**
-     * Type
-     * @var string
-     */
-    private $intakeType = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakeDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakeNotes = null;
-
-    /**
-     * Animal
-     * @var string
-     */
-    private $animalName = null;
-
-    /**
-     * Condition
-     * @var string
-     */
-    private $animalConditionName = null;
-
+    private $objectFields = [
+        "intakeID" => 0,
+        "intakeOutcomeID" => 0,
+        "intakeAnimalID" => 0,
+        "intakeAnimalConditionID" => 0,
+        "intakeType" => 0,
+        "intakeDate" => 0,
+        "intakeNotes" => 0,
+        "animalName" => 0,
+        "animalConditionName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -96,141 +58,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Intake
-     *
-     * @param integer $intakeID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Intake[]
      */
-    public function setIntakeID($intakeID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakeID = $intakeID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Intake($object);
+            }
 
-    /**
-     * Set Outcome
-     *
-     * @param integer $intakeOutcomeID
-     * @return $this
-     */
-    public function setIntakeOutcomeID($intakeOutcomeID)
-    {
-        $this->intakeOutcomeID = $intakeOutcomeID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param integer $intakeAnimalID
-     * @return $this
-     */
-    public function setIntakeAnimalID($intakeAnimalID)
-    {
-        $this->intakeAnimalID = $intakeAnimalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakeAnimalConditionID
-     * @return $this
-     */
-    public function setIntakeAnimalConditionID($intakeAnimalConditionID)
-    {
-        $this->intakeAnimalConditionID = $intakeAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Type
-     *
-     * @param string $intakeType
-     * @return $this
-     */
-    public function setIntakeType($intakeType)
-    {
-        $this->intakeType = $intakeType;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakeDate
-     * @return $this
-     */
-    public function setIntakeDate($intakeDate)
-    {
-        $this->intakeDate = $intakeDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakeNotes
-     * @return $this
-     */
-    public function setIntakeNotes($intakeNotes)
-    {
-        $this->intakeNotes = $intakeNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param string $animalName
-     * @return $this
-     */
-    public function setAnimalName($animalName)
-    {
-        $this->animalName = $animalName;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param string $animalConditionName
-     * @return $this
-     */
-    public function setAnimalConditionName($animalConditionName)
-    {
-        $this->animalConditionName = $animalConditionName;
-
-        return $this;
+        return [new \RescueGroups\Objects\Intake($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakeID !== null) $parameterArray['intakeID'] = $this->intakeID;
-        if ($this->intakeOutcomeID !== null) $parameterArray['intakeOutcomeID'] = $this->intakeOutcomeID;
-        if ($this->intakeAnimalID !== null) $parameterArray['intakeAnimalID'] = $this->intakeAnimalID;
-        if ($this->intakeAnimalConditionID !== null) $parameterArray['intakeAnimalConditionID'] = $this->intakeAnimalConditionID;
-        if ($this->intakeType !== null) $parameterArray['intakeType'] = $this->intakeType;
-        if ($this->intakeDate !== null) $parameterArray['intakeDate'] = $this->intakeDate;
-        if ($this->intakeNotes !== null) $parameterArray['intakeNotes'] = $this->intakeNotes;
-        if ($this->animalName !== null) $parameterArray['animalName'] = $this->animalName;
-        if ($this->animalConditionName !== null) $parameterArray['animalConditionName'] = $this->animalConditionName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

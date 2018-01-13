@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesTransfers View Request Test
+ * IntakesTransfers view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesTransfers\View();
 
-        
-        $query->setIntakesTransferID("intakesTransferID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesTransfers", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("intakesTransferID", $data["intakesTransferID"]);
+        $this->assertEquals('intakesTransfers', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

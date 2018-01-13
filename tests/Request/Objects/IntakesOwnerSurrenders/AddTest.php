@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesOwnerSurrenders Add Request Test
+ * IntakesOwnerSurrenders add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,26 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Add();
 
-        
-        $query->setIntakesOwnersurrenderAnimalID("intakesOwnersurrenderAnimalID");
-        $query->setIntakesOwnersurrenderAnimalConditionID("intakesOwnersurrenderAnimalConditionID");
-        $query->setIntakesOwnersurrenderDate("intakesOwnersurrenderDate");
-        $query->setIntakesOwnersurrenderNotes("intakesOwnersurrenderNotes");
-        $query->setIntakesOwnersurrenderOwnerID("intakesOwnersurrenderOwnerID");
-        $query->setIntakesOwnersurrenderReasonID("intakesOwnersurrenderReasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesOwnersurrenders", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("intakesOwnersurrenderAnimalID", $data["intakesOwnersurrenderAnimalID"]);
-        $this->assertEquals("intakesOwnersurrenderAnimalConditionID", $data["intakesOwnersurrenderAnimalConditionID"]);
-        $this->assertEquals("intakesOwnersurrenderDate", $data["intakesOwnersurrenderDate"]);
-        $this->assertEquals("intakesOwnersurrenderNotes", $data["intakesOwnersurrenderNotes"]);
-        $this->assertEquals("intakesOwnersurrenderOwnerID", $data["intakesOwnersurrenderOwnerID"]);
-        $this->assertEquals("intakesOwnersurrenderReasonID", $data["intakesOwnersurrenderReasonID"]);
+        $this->assertEquals('intakesOwnersurrenders', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

@@ -8,63 +8,32 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntries;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Entry ID
-     * @var integer
-     */
-    private $journalEntryID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Animal ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $journalEntryAnimalID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $journalEntryDate = null;
-
-    /**
-     * Comment
-     * @var string
-     */
-    private $journalEntryComment = null;
-
-    /**
-     * Entrytype ID
-     * @var integer
-     */
-    private $journalEntryEntrytypeID = null;
-
-    /**
-     * Cost
-     * @var float
-     */
-    private $journalEntryCost = null;
-
-    /**
-     * Due Date
-     * @var \DateTime
-     */
-    private $journalEntryDueDate = null;
-
-    /**
-     * Reminder Date
-     * @var \DateTime
-     */
-    private $journalEntryReminderDate = null;
-
+    private $objectFields = [
+        "journalEntryID" => 1,
+        "journalEntryAnimalID" => 0,
+        "journalEntryDate" => 0,
+        "journalEntryComment" => 0,
+        "journalEntryEntrytypeID" => 0,
+        "journalEntryCost" => 0,
+        "journalEntryDueDate" => 0,
+        "journalEntryReminderDate" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -88,125 +57,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Entry ID
-     *
-     * @param integer $journalEntryID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsJournalEntry[]
      */
-    public function setJournalEntryID($journalEntryID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->journalEntryID = $journalEntryID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsJournalEntry($object);
+            }
 
-    /**
-     * Set Animal ID
-     *
-     * @param integer $journalEntryAnimalID
-     * @return $this
-     */
-    public function setJournalEntryAnimalID($journalEntryAnimalID)
-    {
-        $this->journalEntryAnimalID = $journalEntryAnimalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $journalEntryDate
-     * @return $this
-     */
-    public function setJournalEntryDate($journalEntryDate)
-    {
-        $this->journalEntryDate = $journalEntryDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $journalEntryComment
-     * @return $this
-     */
-    public function setJournalEntryComment($journalEntryComment)
-    {
-        $this->journalEntryComment = $journalEntryComment;
-
-        return $this;
-    }
-
-    /**
-     * Set Entrytype ID
-     *
-     * @param integer $journalEntryEntrytypeID
-     * @return $this
-     */
-    public function setJournalEntryEntrytypeID($journalEntryEntrytypeID)
-    {
-        $this->journalEntryEntrytypeID = $journalEntryEntrytypeID;
-
-        return $this;
-    }
-
-    /**
-     * Set Cost
-     *
-     * @param float $journalEntryCost
-     * @return $this
-     */
-    public function setJournalEntryCost($journalEntryCost)
-    {
-        $this->journalEntryCost = $journalEntryCost;
-
-        return $this;
-    }
-
-    /**
-     * Set Due Date
-     *
-     * @param \DateTime $journalEntryDueDate
-     * @return $this
-     */
-    public function setJournalEntryDueDate($journalEntryDueDate)
-    {
-        $this->journalEntryDueDate = $journalEntryDueDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Reminder Date
-     *
-     * @param \DateTime $journalEntryReminderDate
-     * @return $this
-     */
-    public function setJournalEntryReminderDate($journalEntryReminderDate)
-    {
-        $this->journalEntryReminderDate = $journalEntryReminderDate;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalsJournalEntry($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->journalEntryID !== null) $parameterArray['journalEntryID'] = $this->journalEntryID;
-        if ($this->journalEntryAnimalID !== null) $parameterArray['journalEntryAnimalID'] = $this->journalEntryAnimalID;
-        if ($this->journalEntryDate !== null) $parameterArray['journalEntryDate'] = $this->journalEntryDate;
-        if ($this->journalEntryComment !== null) $parameterArray['journalEntryComment'] = $this->journalEntryComment;
-        if ($this->journalEntryEntrytypeID !== null) $parameterArray['journalEntryEntrytypeID'] = $this->journalEntryEntrytypeID;
-        if ($this->journalEntryCost !== null) $parameterArray['journalEntryCost'] = $this->journalEntryCost;
-        if ($this->journalEntryDueDate !== null) $parameterArray['journalEntryDueDate'] = $this->journalEntryDueDate;
-        if ($this->journalEntryReminderDate !== null) $parameterArray['journalEntryReminderDate'] = $this->journalEntryReminderDate;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

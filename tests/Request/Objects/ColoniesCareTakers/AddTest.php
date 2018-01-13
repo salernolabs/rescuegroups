@@ -1,6 +1,6 @@
 <?php
 /**
- * ColoniesCareTakers Add Request Test
+ * ColoniesCareTakers add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Add();
 
-        
-        $query->setCaretakerColonyID("caretakerColonyID");
-        $query->setCaretakerContactID("caretakerContactID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("coloniesCaretakers", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("caretakerColonyID", $data["caretakerColonyID"]);
-        $this->assertEquals("caretakerContactID", $data["caretakerContactID"]);
+        $this->assertEquals('coloniesCaretakers', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

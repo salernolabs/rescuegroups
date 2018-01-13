@@ -1,6 +1,6 @@
 <?php
 /**
- * NewsArticles PublicView Request Test
+ * NewsArticles publicView Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\PublicView();
 
-        
-        $query->setArticleID("articleID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("newsarticles", $data["objectType"]);
-
-        $this->assertEquals("publicView", $data["objectAction"]);
-
-        $this->assertEquals("articleID", $data["articleID"]);
+        $this->assertEquals('newsarticles', $data['objectType']);
+        $this->assertEquals('publicView', $data['objectAction']);
     }
 }

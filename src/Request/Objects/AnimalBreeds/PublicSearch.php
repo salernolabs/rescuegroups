@@ -8,34 +8,21 @@
  */
 namespace RescueGroups\Request\Objects\AnimalBreeds;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $breedID = null;
-
-    /**
-     * Breed Name
-     * @var string
-     */
-    private $breedName = null;
-
-    /**
-     * Species
-     * @var string
-     */
-    private $breedSpecies = null;
-
-    /**
-     * Species
-     * @var integer
-     */
-    private $breedSpeciesID = null;
-
+    private $objectFields = [
+        "breedID" => 1,
+        "breedName" => 0,
+        "breedSpecies" => 0,
+        "breedSpeciesID" => 0,
+    ];
 
     /**
      * @return bool
@@ -66,71 +53,36 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $breedID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalBreed[]
      */
-    public function setBreedID($breedID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->breedID = $breedID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalBreed($object);
+            }
 
-    /**
-     * Set Breed Name
-     *
-     * @param string $breedName
-     * @return $this
-     */
-    public function setBreedName($breedName)
-    {
-        $this->breedName = $breedName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param string $breedSpecies
-     * @return $this
-     */
-    public function setBreedSpecies($breedSpecies)
-    {
-        $this->breedSpecies = $breedSpecies;
-
-        return $this;
-    }
-
-    /**
-     * Set Species
-     *
-     * @param integer $breedSpeciesID
-     * @return $this
-     */
-    public function setBreedSpeciesID($breedSpeciesID)
-    {
-        $this->breedSpeciesID = $breedSpeciesID;
-
-        return $this;
+        return [new \RescueGroups\Objects\AnimalBreed($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->breedID !== null) $parameterArray['breedID'] = $this->breedID;
-        if ($this->breedName !== null) $parameterArray['breedName'] = $this->breedName;
-        if ($this->breedSpecies !== null) $parameterArray['breedSpecies'] = $this->breedSpecies;
-        if ($this->breedSpeciesID !== null) $parameterArray['breedSpeciesID'] = $this->breedSpeciesID;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

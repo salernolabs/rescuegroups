@@ -8,47 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\WaitingLists;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $waitinglistID = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $waitinglistName = null;
-
-    /**
-     * Type
-     * @var string
-     */
-    private $waitinglistType = null;
-
-    /**
-     * Comment
-     * @var string
-     */
-    private $waitinglistComment = null;
-
-    /**
-     * Members Count
-     * @var int
-     */
-    private $waitinglistMembersCount = null;
-
+    private $objectFields = [
+        "waitinglistID" => 1,
+        "waitinglistName" => 0,
+        "waitinglistType" => 0,
+        "waitinglistComment" => 0,
+        "waitinglistMembersCount" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -72,85 +54,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $waitinglistID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\WaitingList[]
      */
-    public function setWaitinglistID($waitinglistID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->waitinglistID = $waitinglistID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\WaitingList($object);
+            }
 
-    /**
-     * Set Name
-     *
-     * @param string $waitinglistName
-     * @return $this
-     */
-    public function setWaitinglistName($waitinglistName)
-    {
-        $this->waitinglistName = $waitinglistName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Type
-     *
-     * @param string $waitinglistType
-     * @return $this
-     */
-    public function setWaitinglistType($waitinglistType)
-    {
-        $this->waitinglistType = $waitinglistType;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $waitinglistComment
-     * @return $this
-     */
-    public function setWaitinglistComment($waitinglistComment)
-    {
-        $this->waitinglistComment = $waitinglistComment;
-
-        return $this;
-    }
-
-    /**
-     * Set Members Count
-     *
-     * @param int $waitinglistMembersCount
-     * @return $this
-     */
-    public function setWaitinglistMembersCount($waitinglistMembersCount)
-    {
-        $this->waitinglistMembersCount = $waitinglistMembersCount;
-
-        return $this;
+        return [new \RescueGroups\Objects\WaitingList($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->waitinglistID !== null) $parameterArray['waitinglistID'] = $this->waitinglistID;
-        if ($this->waitinglistName !== null) $parameterArray['waitinglistName'] = $this->waitinglistName;
-        if ($this->waitinglistType !== null) $parameterArray['waitinglistType'] = $this->waitinglistType;
-        if ($this->waitinglistComment !== null) $parameterArray['waitinglistComment'] = $this->waitinglistComment;
-        if ($this->waitinglistMembersCount !== null) $parameterArray['waitinglistMembersCount'] = $this->waitinglistMembersCount;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

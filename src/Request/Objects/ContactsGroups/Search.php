@@ -8,41 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\ContactsGroups;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $groupID = null;
-
-    /**
-     * Name
-     * @var string
-     */
-    private $groupName = null;
-
-    /**
-     * Business
-     * @var string
-     */
-    private $groupBusiness = null;
-
-    /**
-     * Protected
-     * @var string
-     */
-    private $groupProtected = null;
-
+    private $objectFields = [
+        "groupID" => 1,
+        "groupName" => 0,
+        "groupBusiness" => 0,
+        "groupProtected" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -66,71 +53,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $groupID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ContactsGroup[]
      */
-    public function setGroupID($groupID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->groupID = $groupID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ContactsGroup($object);
+            }
 
-    /**
-     * Set Name
-     *
-     * @param string $groupName
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->groupName = $groupName;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Business
-     *
-     * @param string $groupBusiness
-     * @return $this
-     */
-    public function setGroupBusiness($groupBusiness)
-    {
-        $this->groupBusiness = $groupBusiness;
-
-        return $this;
-    }
-
-    /**
-     * Set Protected
-     *
-     * @param string $groupProtected
-     * @return $this
-     */
-    public function setGroupProtected($groupProtected)
-    {
-        $this->groupProtected = $groupProtected;
-
-        return $this;
+        return [new \RescueGroups\Objects\ContactsGroup($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->groupID !== null) $parameterArray['groupID'] = $this->groupID;
-        if ($this->groupName !== null) $parameterArray['groupName'] = $this->groupName;
-        if ($this->groupBusiness !== null) $parameterArray['groupBusiness'] = $this->groupBusiness;
-        if ($this->groupProtected !== null) $parameterArray['groupProtected'] = $this->groupProtected;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

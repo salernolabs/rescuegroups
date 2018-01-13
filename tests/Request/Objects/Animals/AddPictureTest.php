@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals AddPicture Request Test
+ * Animals addPicture Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,22 +21,9 @@ class AddPictureTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\AddPicture();
 
-        
-        $query->setAnimalID("animalID");
-        $query->setPictureBinary("pictureBinary");
-        $query->setFileName("fileName");
-        $query->setMediaOrder("mediaOrder");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("addPicture", $data["objectAction"]);
-
-        $this->assertEquals("animalID", $data["animalID"]);
-        $this->assertEquals("pictureBinary", $data["pictureBinary"]);
-        $this->assertEquals("fileName", $data["fileName"]);
-        $this->assertEquals("mediaOrder", $data["mediaOrder"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('addPicture', $data['objectAction']);
     }
 }

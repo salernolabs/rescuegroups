@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesAdoptions Edit Request Test
+ * OutcomesAdoptions edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Edit();
 
-        
-        $query->setOutcomesAdoptionID("outcomesAdoptionID");
-        $query->setOutcomesAdoptionAnimalConditionID("outcomesAdoptionAnimalConditionID");
-        $query->setOutcomesAdoptionDate("outcomesAdoptionDate");
-        $query->setOutcomesAdoptionNotes("outcomesAdoptionNotes");
-        $query->setOutcomesAdoptionAdoptionID("outcomesAdoptionAdoptionID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesAdoptions", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("outcomesAdoptionID", $data["outcomesAdoptionID"]);
-        $this->assertEquals("outcomesAdoptionAnimalConditionID", $data["outcomesAdoptionAnimalConditionID"]);
-        $this->assertEquals("outcomesAdoptionDate", $data["outcomesAdoptionDate"]);
-        $this->assertEquals("outcomesAdoptionNotes", $data["outcomesAdoptionNotes"]);
-        $this->assertEquals("outcomesAdoptionAdoptionID", $data["outcomesAdoptionAdoptionID"]);
+        $this->assertEquals('outcomesAdoptions', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

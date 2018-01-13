@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFiles Add Request Test
+ * WebFiles add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,26 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebFiles\Add();
 
-        
-        $query->setWebfileBinary("webfileBinary");
-        $query->setWebfileOldFileName("webfileOldFileName");
-        $query->setWebfileDescription("webfileDescription");
-        $query->setWebfileStatus("webfileStatus");
-        $query->setWebfileDisplayInline("webfileDisplayInline");
-        $query->setWebfileRoleID("webfileRoleID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webfiles", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("webfileBinary", $data["webfileBinary"]);
-        $this->assertEquals("webfileOldFileName", $data["webfileOldFileName"]);
-        $this->assertEquals("webfileDescription", $data["webfileDescription"]);
-        $this->assertEquals("webfileStatus", $data["webfileStatus"]);
-        $this->assertEquals("webfileDisplayInline", $data["webfileDisplayInline"]);
-        $this->assertEquals("webfileRoleID", $data["webfileRoleID"]);
+        $this->assertEquals('webfiles', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

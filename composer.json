@@ -26,7 +26,8 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "psr/log": "^1.0"
+        "psr/log": "^1.0",
+        "mustache/mustache": "^2.12"
     },
     "autoload": {
         "psr-4": {

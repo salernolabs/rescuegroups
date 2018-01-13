@@ -1,6 +1,6 @@
 <?php
 /**
- * VolunteerHours Edit Request Test
+ * VolunteerHours edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteerHours\Edit();
 
-        
-        $query->setId("id");
-        $query->setVolunteerID("volunteerID");
-        $query->setVolunteerDate("volunteerDate");
-        $query->setVolunteerLength("volunteerLength");
-        $query->setVolunteerTask("volunteerTask");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("volunteerHours", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["volunteerHoursID"]);
-        $this->assertEquals("volunteerID", $data["volunteerHoursVolunteerID"]);
-        $this->assertEquals("volunteerDate", $data["volunteerHoursVolunteerDate"]);
-        $this->assertEquals("volunteerLength", $data["volunteerHoursVolunteerLength"]);
-        $this->assertEquals("volunteerTask", $data["volunteerHoursVolunteerTask"]);
+        $this->assertEquals('volunteerHours', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

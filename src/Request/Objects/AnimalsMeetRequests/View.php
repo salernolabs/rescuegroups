@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsMeetRequests;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Meet Request ID
-     * @var integer
-     */
-    private $meetrequestID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "meetrequestID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Meet Request ID
-     *
-     * @param integer $meetrequestID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsMeetRequest[]
      */
-    public function setMeetrequestID($meetrequestID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->meetrequestID = $meetrequestID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsMeetRequest($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\AnimalsMeetRequest($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->meetrequestID !== null) $parameterArray['meetrequestID'] = $this->meetrequestID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

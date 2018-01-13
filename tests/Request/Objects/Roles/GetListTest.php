@@ -1,6 +1,6 @@
 <?php
 /**
- * Roles GetList Request Test
+ * Roles list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Roles\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("roles", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('roles', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

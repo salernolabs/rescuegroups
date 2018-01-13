@@ -8,14 +8,18 @@
  */
 namespace RescueGroups\Request\Objects\Orgs;
 
-class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $orgID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "orgID" => 1,
+    ];
 
     /**
      * @return bool
@@ -46,27 +50,36 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $orgID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Org[]
      */
-    public function setOrgID($orgID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->orgID = $orgID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Org($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Org($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->orgID !== null) $parameterArray['orgID'] = $this->orgID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

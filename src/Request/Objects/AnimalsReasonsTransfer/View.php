@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsReasonsTransfer;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Reason ID
-     * @var integer
-     */
-    private $reasonID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "reasonID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set Reason ID
-     *
-     * @param integer $reasonID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalsReasonsTransfer[]
      */
-    public function setReasonID($reasonID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->reasonID = $reasonID;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalsReasonsTransfer($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\AnimalsReasonsTransfer($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->reasonID !== null) $parameterArray['reasonID'] = $this->reasonID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

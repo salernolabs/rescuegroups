@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesEuthanasias Add Request Test
+ * OutcomesEuthanasias add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Add();
 
-        
-        $query->setOutcomesEuthanasiaIntakeID("outcomesEuthanasiaIntakeID");
-        $query->setOutcomesEuthanasiaAnimalConditionID("outcomesEuthanasiaAnimalConditionID");
-        $query->setOutcomesEuthanasiaDate("outcomesEuthanasiaDate");
-        $query->setOutcomesEuthanasiaNotes("outcomesEuthanasiaNotes");
-        $query->setOutcomesEuthanasiaReasonID("outcomesEuthanasiaReasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesEuthanasias", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("outcomesEuthanasiaIntakeID", $data["outcomesEuthanasiaIntakeID"]);
-        $this->assertEquals("outcomesEuthanasiaAnimalConditionID", $data["outcomesEuthanasiaAnimalConditionID"]);
-        $this->assertEquals("outcomesEuthanasiaDate", $data["outcomesEuthanasiaDate"]);
-        $this->assertEquals("outcomesEuthanasiaNotes", $data["outcomesEuthanasiaNotes"]);
-        $this->assertEquals("outcomesEuthanasiaReasonID", $data["outcomesEuthanasiaReasonID"]);
+        $this->assertEquals('outcomesEuthanasias', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

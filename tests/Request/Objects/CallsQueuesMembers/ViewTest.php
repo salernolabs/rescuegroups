@@ -1,6 +1,6 @@
 <?php
 /**
- * CallsQueuesMembers View Request Test
+ * CallsQueuesMembers view Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\View();
 
-        
-        $query->setMemberID("memberID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("callsQueuesMembers", $data["objectType"]);
-
-        $this->assertEquals("view", $data["objectAction"]);
-
-        $this->assertEquals("memberID", $data["memberID"]);
+        $this->assertEquals('callsQueuesMembers', $data['objectType']);
+        $this->assertEquals('view', $data['objectAction']);
     }
 }

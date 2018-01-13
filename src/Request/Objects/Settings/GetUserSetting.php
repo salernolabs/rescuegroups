@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Settings;
 
-class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Pattern
-     * @var string
-     */
-    private $settingName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "settingName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set Pattern
-     *
-     * @param string $settingName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\Setting[]
      */
-    public function setSettingName($settingName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->settingName = $settingName;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\Setting($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\Setting($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->settingName !== null) $parameterArray['settingName'] = $this->settingName;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

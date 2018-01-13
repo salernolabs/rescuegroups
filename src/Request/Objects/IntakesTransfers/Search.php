@@ -8,89 +8,36 @@
  */
 namespace RescueGroups\Request\Objects\IntakesTransfers;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Owner Surrender
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $intakesTransferID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $intakesTransferAnimalID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $intakesTransferAnimalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $intakesTransferDate = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $intakesTransferNotes = null;
-
-    /**
-     * Transferred From
-     * @var integer
-     */
-    private $intakesTransferFromID = null;
-
-    /**
-     * Coalition Member
-     * @var string
-     */
-    private $intakesTransferCoalitionMember = null;
-
-    /**
-     * Transfer Reason
-     * @var integer
-     */
-    private $intakesTransferReasonID = null;
-
-    /**
-     * Animal
-     * @var string
-     */
-    private $animalName = null;
-
-    /**
-     * Condition
-     * @var string
-     */
-    private $animalConditionName = null;
-
-    /**
-     * Transfer From
-     * @var string
-     */
-    private $transferFromName = null;
-
-    /**
-     * Transfer Reason
-     * @var string
-     */
-    private $transferReason = null;
-
+    private $objectFields = [
+        "intakesTransferID" => 0,
+        "intakesTransferAnimalID" => 0,
+        "intakesTransferAnimalConditionID" => 0,
+        "intakesTransferDate" => 0,
+        "intakesTransferNotes" => 0,
+        "intakesTransferFromID" => 0,
+        "intakesTransferCoalitionMember" => 0,
+        "intakesTransferReasonID" => 0,
+        "animalName" => 0,
+        "animalConditionName" => 0,
+        "transferFromName" => 0,
+        "transferReason" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -114,183 +61,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Owner Surrender
-     *
-     * @param integer $intakesTransferID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesTransfer[]
      */
-    public function setIntakesTransferID($intakesTransferID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->intakesTransferID = $intakesTransferID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesTransfer($object);
+            }
 
-    /**
-     * Set Animal
-     *
-     * @param integer $intakesTransferAnimalID
-     * @return $this
-     */
-    public function setIntakesTransferAnimalID($intakesTransferAnimalID)
-    {
-        $this->intakesTransferAnimalID = $intakesTransferAnimalID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $intakesTransferAnimalConditionID
-     * @return $this
-     */
-    public function setIntakesTransferAnimalConditionID($intakesTransferAnimalConditionID)
-    {
-        $this->intakesTransferAnimalConditionID = $intakesTransferAnimalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $intakesTransferDate
-     * @return $this
-     */
-    public function setIntakesTransferDate($intakesTransferDate)
-    {
-        $this->intakesTransferDate = $intakesTransferDate;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $intakesTransferNotes
-     * @return $this
-     */
-    public function setIntakesTransferNotes($intakesTransferNotes)
-    {
-        $this->intakesTransferNotes = $intakesTransferNotes;
-
-        return $this;
-    }
-
-    /**
-     * Set Transferred From
-     *
-     * @param integer $intakesTransferFromID
-     * @return $this
-     */
-    public function setIntakesTransferFromID($intakesTransferFromID)
-    {
-        $this->intakesTransferFromID = $intakesTransferFromID;
-
-        return $this;
-    }
-
-    /**
-     * Set Coalition Member
-     *
-     * @param string $intakesTransferCoalitionMember
-     * @return $this
-     */
-    public function setIntakesTransferCoalitionMember($intakesTransferCoalitionMember)
-    {
-        $this->intakesTransferCoalitionMember = $intakesTransferCoalitionMember;
-
-        return $this;
-    }
-
-    /**
-     * Set Transfer Reason
-     *
-     * @param integer $intakesTransferReasonID
-     * @return $this
-     */
-    public function setIntakesTransferReasonID($intakesTransferReasonID)
-    {
-        $this->intakesTransferReasonID = $intakesTransferReasonID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param string $animalName
-     * @return $this
-     */
-    public function setAnimalName($animalName)
-    {
-        $this->animalName = $animalName;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param string $animalConditionName
-     * @return $this
-     */
-    public function setAnimalConditionName($animalConditionName)
-    {
-        $this->animalConditionName = $animalConditionName;
-
-        return $this;
-    }
-
-    /**
-     * Set Transfer From
-     *
-     * @param string $transferFromName
-     * @return $this
-     */
-    public function setTransferFromName($transferFromName)
-    {
-        $this->transferFromName = $transferFromName;
-
-        return $this;
-    }
-
-    /**
-     * Set Transfer Reason
-     *
-     * @param string $transferReason
-     * @return $this
-     */
-    public function setTransferReason($transferReason)
-    {
-        $this->transferReason = $transferReason;
-
-        return $this;
+        return [new \RescueGroups\Objects\IntakesTransfer($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->intakesTransferID !== null) $parameterArray['intakesTransferID'] = $this->intakesTransferID;
-        if ($this->intakesTransferAnimalID !== null) $parameterArray['intakesTransferAnimalID'] = $this->intakesTransferAnimalID;
-        if ($this->intakesTransferAnimalConditionID !== null) $parameterArray['intakesTransferAnimalConditionID'] = $this->intakesTransferAnimalConditionID;
-        if ($this->intakesTransferDate !== null) $parameterArray['intakesTransferDate'] = $this->intakesTransferDate;
-        if ($this->intakesTransferNotes !== null) $parameterArray['intakesTransferNotes'] = $this->intakesTransferNotes;
-        if ($this->intakesTransferFromID !== null) $parameterArray['intakesTransferFromID'] = $this->intakesTransferFromID;
-        if ($this->intakesTransferCoalitionMember !== null) $parameterArray['intakesTransferCoalitionMember'] = $this->intakesTransferCoalitionMember;
-        if ($this->intakesTransferReasonID !== null) $parameterArray['intakesTransferReasonID'] = $this->intakesTransferReasonID;
-        if ($this->animalName !== null) $parameterArray['animalName'] = $this->animalName;
-        if ($this->animalConditionName !== null) $parameterArray['animalConditionName'] = $this->animalConditionName;
-        if ($this->transferFromName !== null) $parameterArray['transferFromName'] = $this->transferFromName;
-        if ($this->transferReason !== null) $parameterArray['transferReason'] = $this->transferReason;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

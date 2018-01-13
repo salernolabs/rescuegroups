@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals SetPublicStatuses Request Test
+ * Animals setPublicStatuses Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class SetPublicStatusesTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\SetPublicStatuses();
 
-        
-        $query->setStatuslist("statuslist");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("setPublicStatuses", $data["objectAction"]);
-
-        $this->assertEquals("statuslist", $data["statuslist"]);
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('setPublicStatuses', $data['objectAction']);
     }
 }

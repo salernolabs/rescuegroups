@@ -1,6 +1,6 @@
 <?php
 /**
- * Animals GetDisableableFields Request Test
+ * Animals getDisableableFields Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetDisableableFieldsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Animals\GetDisableableFields();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animals", $data["objectType"]);
-
-        $this->assertEquals("getDisableableFields", $data["objectAction"]);
-
+        $this->assertEquals('animals', $data['objectType']);
+        $this->assertEquals('getDisableableFields', $data['objectAction']);
     }
 }

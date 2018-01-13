@@ -8,45 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\WebFiles;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $webfileID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Description
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $webfileDescription = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $webfileStatus = null;
-
-    /**
-     * Inline
-     * @var string
-     */
-    private $webfileDisplayInline = null;
-
-    /**
-     * Security Role
-     * @var integer
-     */
-    private $webfileRoleID = null;
-
+    private $objectFields = [
+        "webfileID" => 1,
+        "webfileDescription" => 0,
+        "webfileStatus" => 0,
+        "webfileDisplayInline" => 0,
+        "webfileRoleID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -70,83 +54,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $webfileID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\WebFile[]
      */
-    public function setWebfileID($webfileID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->webfileID = $webfileID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\WebFile($object);
+            }
 
-    /**
-     * Set Description
-     *
-     * @param string $webfileDescription
-     * @return $this
-     */
-    public function setWebfileDescription($webfileDescription)
-    {
-        $this->webfileDescription = $webfileDescription;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $webfileStatus
-     * @return $this
-     */
-    public function setWebfileStatus($webfileStatus)
-    {
-        $this->webfileStatus = $webfileStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $webfileDisplayInline
-     * @return $this
-     */
-    public function setWebfileDisplayInline($webfileDisplayInline)
-    {
-        $this->webfileDisplayInline = $webfileDisplayInline;
-
-        return $this;
-    }
-
-    /**
-     * Set Security Role
-     *
-     * @param integer $webfileRoleID
-     * @return $this
-     */
-    public function setWebfileRoleID($webfileRoleID)
-    {
-        $this->webfileRoleID = $webfileRoleID;
-
-        return $this;
+        return [new \RescueGroups\Objects\WebFile($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->webfileID !== null) $parameterArray['webfileID'] = $this->webfileID;
-        if ($this->webfileDescription !== null) $parameterArray['webfileDescription'] = $this->webfileDescription;
-        if ($this->webfileStatus !== null) $parameterArray['webfileStatus'] = $this->webfileStatus;
-        if ($this->webfileDisplayInline !== null) $parameterArray['webfileDisplayInline'] = $this->webfileDisplayInline;
-        if ($this->webfileRoleID !== null) $parameterArray['webfileRoleID'] = $this->webfileRoleID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

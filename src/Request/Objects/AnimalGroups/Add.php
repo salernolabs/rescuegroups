@@ -8,27 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalGroups;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Name
-     * @var string
-     */
-    private $groupName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Header
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $groupHeaderID = null;
-
+    private $objectFields = [
+        "groupName" => 1,
+        "groupHeaderID" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -52,41 +51,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $groupName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\AnimalGroup[]
      */
-    public function setGroupName($groupName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->groupName = $groupName;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\AnimalGroup($object);
+            }
 
-    /**
-     * Set Header
-     *
-     * @param integer $groupHeaderID
-     * @return $this
-     */
-    public function setGroupHeaderID($groupHeaderID)
-    {
-        $this->groupHeaderID = $groupHeaderID;
+            return $output;
+        }
 
-        return $this;
+        return [new \RescueGroups\Objects\AnimalGroup($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->groupName !== null) $parameterArray['groupName'] = $this->groupName;
-        if ($this->groupHeaderID !== null) $parameterArray['groupHeaderID'] = $this->groupHeaderID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -8,65 +8,32 @@
  */
 namespace RescueGroups\Request\Objects\ContactFiles;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * File ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $contactfileID = null;
-
-    /**
-     * Contact
-     * @var integer
-     */
-    private $contactfileContactID = null;
-
-    /**
-     * Old file name
-     * @var string
-     */
-    private $contactfileOldName = null;
-
-    /**
-     * Description
-     * @var string
-     */
-    private $contactfileDescription = null;
-
-    /**
-     * Status
-     * @var string
-     */
-    private $contactfileStatus = null;
-
-    /**
-     * Inline
-     * @var string
-     */
-    private $contactfileDisplayInline = null;
-
-    /**
-     * File size
-     * @var int
-     */
-    private $contactfileSize = null;
-
-    /**
-     * Created Date
-     * @var \DateTime
-     */
-    private $contactfileCreatedDate = null;
-
+    private $objectFields = [
+        "contactfileID" => 0,
+        "contactfileContactID" => 1,
+        "contactfileOldName" => 0,
+        "contactfileDescription" => 0,
+        "contactfileStatus" => 0,
+        "contactfileDisplayInline" => 0,
+        "contactfileSize" => 0,
+        "contactfileCreatedDate" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -90,127 +57,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set File ID
-     *
-     * @param integer $contactfileID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\ContactFile[]
      */
-    public function setContactfileID($contactfileID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->contactfileID = $contactfileID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\ContactFile($object);
+            }
 
-    /**
-     * Set Contact
-     *
-     * @param integer $contactfileContactID
-     * @return $this
-     */
-    public function setContactfileContactID($contactfileContactID)
-    {
-        $this->contactfileContactID = $contactfileContactID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $contactfileOldName
-     * @return $this
-     */
-    public function setContactfileOldName($contactfileOldName)
-    {
-        $this->contactfileOldName = $contactfileOldName;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $contactfileDescription
-     * @return $this
-     */
-    public function setContactfileDescription($contactfileDescription)
-    {
-        $this->contactfileDescription = $contactfileDescription;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $contactfileStatus
-     * @return $this
-     */
-    public function setContactfileStatus($contactfileStatus)
-    {
-        $this->contactfileStatus = $contactfileStatus;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $contactfileDisplayInline
-     * @return $this
-     */
-    public function setContactfileDisplayInline($contactfileDisplayInline)
-    {
-        $this->contactfileDisplayInline = $contactfileDisplayInline;
-
-        return $this;
-    }
-
-    /**
-     * Set File size
-     *
-     * @param int $contactfileSize
-     * @return $this
-     */
-    public function setContactfileSize($contactfileSize)
-    {
-        $this->contactfileSize = $contactfileSize;
-
-        return $this;
-    }
-
-    /**
-     * Set Created Date
-     *
-     * @param \DateTime $contactfileCreatedDate
-     * @return $this
-     */
-    public function setContactfileCreatedDate($contactfileCreatedDate)
-    {
-        $this->contactfileCreatedDate = $contactfileCreatedDate;
-
-        return $this;
+        return [new \RescueGroups\Objects\ContactFile($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->contactfileID !== null) $parameterArray['contactfileID'] = $this->contactfileID;
-        if ($this->contactfileContactID !== null) $parameterArray['contactfileContactID'] = $this->contactfileContactID;
-        if ($this->contactfileOldName !== null) $parameterArray['contactfileOldName'] = $this->contactfileOldName;
-        if ($this->contactfileDescription !== null) $parameterArray['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->contactfileStatus !== null) $parameterArray['contactfileStatus'] = $this->contactfileStatus;
-        if ($this->contactfileDisplayInline !== null) $parameterArray['contactfileDisplayInline'] = $this->contactfileDisplayInline;
-        if ($this->contactfileSize !== null) $parameterArray['contactfileSize'] = $this->contactfileSize;
-        if ($this->contactfileCreatedDate !== null) $parameterArray['contactfileCreatedDate'] = $this->contactfileCreatedDate;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

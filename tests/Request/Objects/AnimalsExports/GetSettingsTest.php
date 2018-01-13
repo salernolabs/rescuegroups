@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsExports GetSettings Request Test
+ * AnimalsExports getSettings Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsExports\GetSettings();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsExports", $data["objectType"]);
-
-        $this->assertEquals("getSettings", $data["objectAction"]);
-
+        $this->assertEquals('animalsExports', $data['objectType']);
+        $this->assertEquals('getSettings', $data['objectAction']);
     }
 }

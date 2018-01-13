@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesDeceased Edit Request Test
+ * OutcomesDeceased edit Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Edit();
 
-        
-        $query->setId("id");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-        $query->setReason("reason");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesDeceased", $data["objectType"]);
-
-        $this->assertEquals("edit", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["outcomesDeceasedID"]);
-        $this->assertEquals("animalConditionID", $data["outcomesDeceasedAnimalConditionID"]);
-        $this->assertEquals("date", $data["outcomesDeceasedDate"]);
-        $this->assertEquals("notes", $data["outcomesDeceasedNotes"]);
-        $this->assertEquals("reason", $data["outcomesDeceasedReason"]);
+        $this->assertEquals('outcomesDeceased', $data['objectType']);
+        $this->assertEquals('edit', $data['objectAction']);
     }
 }

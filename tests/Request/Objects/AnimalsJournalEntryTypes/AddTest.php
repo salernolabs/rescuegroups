@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsJournalEntryTypes Add Request Test
+ * AnimalsJournalEntryTypes add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,18 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Add();
 
-        
-        $query->setJournalEntrytypeDescription("journalEntrytypeDescription");
-        $query->setJournalEntrytypeCategoryID("journalEntrytypeCategoryID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsJournalEntrytypes", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("journalEntrytypeDescription", $data["journalEntrytypeDescription"]);
-        $this->assertEquals("journalEntrytypeCategoryID", $data["journalEntrytypeCategoryID"]);
+        $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

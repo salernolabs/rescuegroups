@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFiles GetList Request Test
+ * WebFiles list Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,14 +21,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebFiles\GetList();
 
-        
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("webfiles", $data["objectType"]);
-
-        $this->assertEquals("list", $data["objectAction"]);
-
+        $this->assertEquals('webfiles', $data['objectType']);
+        $this->assertEquals('list', $data['objectAction']);
     }
 }

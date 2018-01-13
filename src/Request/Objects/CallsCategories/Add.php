@@ -8,39 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\CallsCategories;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Name
-     * @var string
-     */
-    private $categoryName = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Description
-     * @var string
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $categoryDescription = null;
-
-    /**
-     * Public
-     * @var string
-     */
-    private $categoryPublic = null;
-
-    /**
-     * Default Queue
-     * @var integer
-     */
-    private $categoryDefaultQueueID = null;
-
+    private $objectFields = [
+        "categoryName" => 1,
+        "categoryDescription" => 0,
+        "categoryPublic" => 0,
+        "categoryDefaultQueueID" => 1,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -64,69 +53,36 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Set Name
-     *
-     * @param string $categoryName
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\CallsCategory[]
      */
-    public function setCategoryName($categoryName)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->categoryName = $categoryName;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\CallsCategory($object);
+            }
 
-    /**
-     * Set Description
-     *
-     * @param string $categoryDescription
-     * @return $this
-     */
-    public function setCategoryDescription($categoryDescription)
-    {
-        $this->categoryDescription = $categoryDescription;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Public
-     *
-     * @param string $categoryPublic
-     * @return $this
-     */
-    public function setCategoryPublic($categoryPublic)
-    {
-        $this->categoryPublic = $categoryPublic;
-
-        return $this;
-    }
-
-    /**
-     * Set Default Queue
-     *
-     * @param integer $categoryDefaultQueueID
-     * @return $this
-     */
-    public function setCategoryDefaultQueueID($categoryDefaultQueueID)
-    {
-        $this->categoryDefaultQueueID = $categoryDefaultQueueID;
-
-        return $this;
+        return [new \RescueGroups\Objects\CallsCategory($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->categoryName !== null) $parameterArray['categoryName'] = $this->categoryName;
-        if ($this->categoryDescription !== null) $parameterArray['categoryDescription'] = $this->categoryDescription;
-        if ($this->categoryPublic !== null) $parameterArray['categoryPublic'] = $this->categoryPublic;
-        if ($this->categoryDefaultQueueID !== null) $parameterArray['categoryDefaultQueueID'] = $this->categoryDefaultQueueID;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalsReasonsEuthanasia Delete Request Test
+ * AnimalsReasonsEuthanasia delete Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,16 +21,9 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Delete();
 
-        
-        $query->setReasonID("reasonID");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalsReasonsEuthanasia", $data["objectType"]);
-
-        $this->assertEquals("delete", $data["objectAction"]);
-
-        $this->assertEquals("reasonID", $data["reasonID"]);
+        $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
+        $this->assertEquals('delete', $data['objectAction']);
     }
 }

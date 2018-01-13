@@ -1,6 +1,6 @@
 <?php
 /**
- * OutcomesDeceased Add Request Test
+ * OutcomesDeceased add Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,24 +21,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Add();
 
-        
-        $query->setIntakeID("intakeID");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-        $query->setReason("reason");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("outcomesDeceased", $data["objectType"]);
-
-        $this->assertEquals("add", $data["objectAction"]);
-
-        $this->assertEquals("intakeID", $data["outcomesDeceasedIntakeID"]);
-        $this->assertEquals("animalConditionID", $data["outcomesDeceasedAnimalConditionID"]);
-        $this->assertEquals("date", $data["outcomesDeceasedDate"]);
-        $this->assertEquals("notes", $data["outcomesDeceasedNotes"]);
-        $this->assertEquals("reason", $data["outcomesDeceasedReason"]);
+        $this->assertEquals('outcomesDeceased', $data['objectType']);
+        $this->assertEquals('add', $data['objectAction']);
     }
 }

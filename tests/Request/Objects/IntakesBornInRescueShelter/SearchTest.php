@@ -1,6 +1,6 @@
 <?php
 /**
- * IntakesBornInRescueShelter Search Request Test
+ * IntakesBornInRescueShelter search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,28 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Search();
 
-        
-        $query->setId("id");
-        $query->setAnimalID("animalID");
-        $query->setAnimalConditionID("animalConditionID");
-        $query->setDate("date");
-        $query->setNotes("notes");
-        $query->setAnimalName("animalName");
-        $query->setAnimalConditionName("animalConditionName");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("intakesBorninrescueshelter", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("id", $data["intakesBorninrescueshelterID"]);
-        $this->assertEquals("animalID", $data["intakesBorninrescueshelterAnimalID"]);
-        $this->assertEquals("animalConditionID", $data["intakesBorninrescueshelterAnimalConditionID"]);
-        $this->assertEquals("date", $data["intakesBorninrescueshelterDate"]);
-        $this->assertEquals("notes", $data["intakesBorninrescueshelterNotes"]);
-        $this->assertEquals("animalName", $data["animalName"]);
-        $this->assertEquals("animalConditionName", $data["animalConditionName"]);
+        $this->assertEquals('intakesBorninrescueshelter', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

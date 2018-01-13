@@ -8,39 +8,28 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * ID
-     * @var integer
-     */
-    private $memberID = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Contact
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $memberContactID = null;
-
-    /**
-     * Queue
-     * @var integer
-     */
-    private $memberQueueID = null;
-
-    /**
-     * Manager
-     * @var string
-     */
-    private $memberManager = null;
-
+    private $objectFields = [
+        "memberID" => 1,
+        "memberContactID" => 0,
+        "memberQueueID" => 0,
+        "memberManager" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -64,69 +53,36 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $memberID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\CallsQueuesMember[]
      */
-    public function setMemberID($memberID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->memberID = $memberID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\CallsQueuesMember($object);
+            }
 
-    /**
-     * Set Contact
-     *
-     * @param integer $memberContactID
-     * @return $this
-     */
-    public function setMemberContactID($memberContactID)
-    {
-        $this->memberContactID = $memberContactID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Queue
-     *
-     * @param integer $memberQueueID
-     * @return $this
-     */
-    public function setMemberQueueID($memberQueueID)
-    {
-        $this->memberQueueID = $memberQueueID;
-
-        return $this;
-    }
-
-    /**
-     * Set Manager
-     *
-     * @param string $memberManager
-     * @return $this
-     */
-    public function setMemberManager($memberManager)
-    {
-        $this->memberManager = $memberManager;
-
-        return $this;
+        return [new \RescueGroups\Objects\CallsQueuesMember($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->memberID !== null) $parameterArray['memberID'] = $this->memberID;
-        if ($this->memberContactID !== null) $parameterArray['memberContactID'] = $this->memberContactID;
-        if ($this->memberQueueID !== null) $parameterArray['memberQueueID'] = $this->memberQueueID;
-        if ($this->memberManager !== null) $parameterArray['memberManager'] = $this->memberManager;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

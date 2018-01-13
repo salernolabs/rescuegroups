@@ -8,21 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
-    /**
-     * Enable the News Articles feature
-     * @var string
-     */
-    private $enableNewsarticles = null;
+    use \RescueGroups\Request\Traits\SearchParameters;
 
+    /**
+     * Filterable Fields
+     *
+     * @var array
+     */
+    private $objectFields = [
+        "enableNewsarticles" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,27 +50,36 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Set Enable the News Articles feature
-     *
-     * @param string $enableNewsarticles
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\NewsArticle[]
      */
-    public function setEnableNewsarticles($enableNewsarticles)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->enableNewsarticles = $enableNewsarticles;
+        if (empty($data)) return [];
 
-        return $this;
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\NewsArticle($object);
+            }
+
+            return $output;
+        }
+
+        return [new \RescueGroups\Objects\NewsArticle($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->enableNewsarticles !== null) $parameterArray['enableNewsarticles'] = $this->enableNewsarticles;
-
+        $this->addSearchParameters($parameterArray);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AnimalStatuses Search Request Test
+ * AnimalStatuses search Request Test
  *
  * @package RescueGroups
  * @subpackage Tests
@@ -21,20 +21,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalStatuses\Search();
 
-        
-        $query->setStatusID("statusID");
-        $query->setStatusName("statusName");
-        $query->setStatusDescription("statusDescription");
-
         $data = $this->api->getPostObject($query);
 
-        
-        $this->assertEquals("animalStatuses", $data["objectType"]);
-
-        $this->assertEquals("search", $data["objectAction"]);
-
-        $this->assertEquals("statusID", $data["statusID"]);
-        $this->assertEquals("statusName", $data["statusName"]);
-        $this->assertEquals("statusDescription", $data["statusDescription"]);
+        $this->assertEquals('animalStatuses', $data['objectType']);
+        $this->assertEquals('search', $data['objectAction']);
     }
 }

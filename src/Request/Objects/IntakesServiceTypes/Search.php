@@ -8,29 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * Service
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $serviceID = null;
-
-    /**
-     * Service
-     * @var string
-     */
-    private $serviceName = null;
-
+    private $objectFields = [
+        "serviceID" => 0,
+        "serviceName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -54,43 +51,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set Service
-     *
-     * @param integer $serviceID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\IntakesServiceType[]
      */
-    public function setServiceID($serviceID)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->serviceID = $serviceID;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\IntakesServiceType($object);
+            }
 
-    /**
-     * Set Service
-     *
-     * @param string $serviceName
-     * @return $this
-     */
-    public function setServiceName($serviceName)
-    {
-        $this->serviceName = $serviceName;
+            return $output;
+        }
 
-        return $this;
+        return [new \RescueGroups\Objects\IntakesServiceType($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->serviceID !== null) $parameterArray['serviceID'] = $this->serviceID;
-        if ($this->serviceName !== null) $parameterArray['serviceName'] = $this->serviceName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }

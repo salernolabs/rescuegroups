@@ -8,77 +8,34 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReturnToOwner;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
 
     /**
-     * ID
-     * @var integer
+     * Filterable Fields
+     *
+     * @var array
      */
-    private $id = null;
-
-    /**
-     * Outcome Returntoowner Intake
-     * @var integer
-     */
-    private $intakeID = null;
-
-    /**
-     * Condition
-     * @var integer
-     */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     * @var string
-     */
-    private $notes = null;
-
-    /**
-     * Return To
-     * @var integer
-     */
-    private $ownerID = null;
-
-    /**
-     * Animal
-     * @var integer
-     */
-    private $animalID = null;
-
-    /**
-     * Animal
-     * @var string
-     */
-    private $animalName = null;
-
-    /**
-     * Condition
-     * @var string
-     */
-    private $animalConditionName = null;
-
-    /**
-     * Owner
-     * @var string
-     */
-    private $returntoownerName = null;
-
+    private $objectFields = [
+        "id" => 1,
+        "intakeID" => 0,
+        "animalConditionID" => 0,
+        "date" => 0,
+        "notes" => 0,
+        "ownerID" => 0,
+        "animalID" => 0,
+        "animalName" => 0,
+        "animalConditionName" => 0,
+        "returntoownerName" => 0,
+    ];
 
     /**
      * @return bool
      */
     public function loginRequired()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -102,155 +59,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Set ID
-     *
-     * @param integer $outcomesReturntoownerID
-     * @return $this
+     * Process the response with associated output object
+     * @param \RescueGroups\API $api
+     * @param \stdClass $data
+     * @returns \RescueGroups\Objects\OutcomesReturnToOwner[]
      */
-    public function setId($id)
+    public function processResponse(\RescueGroups\API $api, $data)
     {
-        $this->id = $id;
+        if (empty($data)) return [];
 
-        return $this;
-    }
+        if (is_array($data) || is_object($data))
+        {
+            $output = [];
+            foreach ($data as $object)
+            {
+                $output[] = new \RescueGroups\Objects\OutcomesReturnToOwner($object);
+            }
 
-    /**
-     * Set Outcome Returntoowner Intake
-     *
-     * @param integer $outcomesReturntoownerIntakeID
-     * @return $this
-     */
-    public function setIntakeID($intakeID)
-    {
-        $this->intakeID = $intakeID;
+            return $output;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $outcomesReturntoownerAnimalConditionID
-     * @return $this
-     */
-    public function setAnimalConditionID($animalConditionID)
-    {
-        $this->animalConditionID = $animalConditionID;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $outcomesReturntoownerDate
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $outcomesReturntoownerNotes
-     * @return $this
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Set Return To
-     *
-     * @param integer $outcomesReturntoownerOwnerID
-     * @return $this
-     */
-    public function setOwnerID($ownerID)
-    {
-        $this->ownerID = $ownerID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param integer $animalID
-     * @return $this
-     */
-    public function setAnimalID($animalID)
-    {
-        $this->animalID = $animalID;
-
-        return $this;
-    }
-
-    /**
-     * Set Animal
-     *
-     * @param string $animalName
-     * @return $this
-     */
-    public function setAnimalName($animalName)
-    {
-        $this->animalName = $animalName;
-
-        return $this;
-    }
-
-    /**
-     * Set Condition
-     *
-     * @param string $animalConditionName
-     * @return $this
-     */
-    public function setAnimalConditionName($animalConditionName)
-    {
-        $this->animalConditionName = $animalConditionName;
-
-        return $this;
-    }
-
-    /**
-     * Set Owner
-     *
-     * @param string $returntoownerName
-     * @return $this
-     */
-    public function setReturntoownerName($returntoownerName)
-    {
-        $this->returntoownerName = $returntoownerName;
-
-        return $this;
+        return [new \RescueGroups\Objects\OutcomesReturnToOwner($data)];
     }
 
     /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
-     * @return mixed
      */
     public function applyParameters(&$parameterArray)
     {
-        if ($this->id !== null) $parameterArray['outcomesReturntoownerID'] = $this->id;
-        if ($this->intakeID !== null) $parameterArray['outcomesReturntoownerIntakeID'] = $this->intakeID;
-        if ($this->animalConditionID !== null) $parameterArray['outcomesReturntoownerAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $parameterArray['outcomesReturntoownerDate'] = $this->date;
-        if ($this->notes !== null) $parameterArray['outcomesReturntoownerNotes'] = $this->notes;
-        if ($this->ownerID !== null) $parameterArray['outcomesReturntoownerOwnerID'] = $this->ownerID;
-        if ($this->animalID !== null) $parameterArray['animalID'] = $this->animalID;
-        if ($this->animalName !== null) $parameterArray['animalName'] = $this->animalName;
-        if ($this->animalConditionName !== null) $parameterArray['animalConditionName'] = $this->animalConditionName;
-        if ($this->returntoownerName !== null) $parameterArray['returntoownerName'] = $this->returntoownerName;
-
         $this->addSearchParameters($parameterArray);
-
     }
 }
