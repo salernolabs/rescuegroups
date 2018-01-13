@@ -29,6 +29,11 @@ class QueryField
     /**
      * @var string
      */
+    public $parameterName;
+
+    /**
+     * @var string
+     */
     public $required = "0";
 
     /**
@@ -40,6 +45,7 @@ class QueryField
     public function __construct($fieldName, $sdkFieldName, $fieldData)
     {
         $this->sdkFieldName = $sdkFieldName;
+        $this->parameterName = ucfirst($sdkFieldName);
 
         switch ($fieldData->type)
         {
