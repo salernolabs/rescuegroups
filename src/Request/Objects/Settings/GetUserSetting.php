@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Settings;
 
-class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Pattern
+     *
+     * @var string
+     */
+    private $settingName = null;
+
 
     /**
-     * Filterable Fields
+     * Set Pattern
      *
-     * @var array
+     * @param string $value
+     * @return $this
      */
-    private $objectFields = [
-        "settingName" => 0,
-    ];
+    public function setSettingName($value)
+    {
+        $this->settingName = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Setting[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Setting($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Setting($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->settingName !== null) $parameterArray['values'][] = ["settingName"=>$this->settingName];
     }
 }

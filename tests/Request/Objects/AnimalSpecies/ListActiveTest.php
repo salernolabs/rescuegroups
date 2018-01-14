@@ -20,7 +20,6 @@ class ListActiveTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalSpecies\ListActive();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalSpecies', $data['objectType']);

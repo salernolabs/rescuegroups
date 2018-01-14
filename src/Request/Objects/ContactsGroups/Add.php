@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\ContactsGroups;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Name
+     *
+     * @var string
+     */
+    private $groupName = null;
 
     /**
-     * Filterable Fields
+     * Business
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "groupName" => 1,
-        "groupBusiness" => 1,
-    ];
+    private $groupBusiness = null;
+
+
+    /**
+     * Set Name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setGroupName($value)
+    {
+        $this->groupName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Business
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setGroupBusiness($value)
+    {
+        $this->groupBusiness = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\ContactsGroup[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\ContactsGroup($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\ContactsGroup($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->groupName !== null) $parameterArray['values'][] = ["groupName"=>$this->groupName];
+        if ($this->groupBusiness !== null) $parameterArray['values'][] = ["groupBusiness"=>$this->groupBusiness];
     }
 }

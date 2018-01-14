@@ -18,10 +18,10 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "journalEntrytypeID" => 0,
-        "journalEntrytypeDescription" => 0,
-        "journalEntrytypeCategoryID" => 0,
-        "journalEntrytypeCategoryName" => 0,
+        "journalEntrytypeID" => [0, 'journalEntrytypeID'],
+        "journalEntrytypeDescription" => [0, 'journalEntrytypeDescription'],
+        "journalEntrytypeCategoryID" => [0, 'journalEntrytypeCategoryID'],
+        "journalEntrytypeCategoryName" => [0, 'journalEntrytypeCategoryName'],
     ];
 
     /**

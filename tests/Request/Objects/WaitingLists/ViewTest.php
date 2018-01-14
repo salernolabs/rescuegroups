@@ -20,7 +20,6 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\View();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('waitinglists', $data['objectType']);

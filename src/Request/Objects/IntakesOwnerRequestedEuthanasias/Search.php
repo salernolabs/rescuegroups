@@ -18,17 +18,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakesOwnerrequestedeuthanasiaID" => 0,
-        "intakesOwnerrequestedeuthanasiaAnimalID" => 0,
-        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => 0,
-        "intakesOwnerrequestedeuthanasiaDate" => 0,
-        "intakesOwnerrequestedeuthanasiaNotes" => 0,
-        "intakesOwnerrequestedeuthanasiaOwnerID" => 0,
-        "intakesOwnerrequestedeuthanasiaReasonID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "ownerName" => 0,
-        "euthanasiaReason" => 0,
+        "intakesOwnerrequestedeuthanasiaID" => [0, 'intakesOwnerrequestedeuthanasiaID'],
+        "intakesOwnerrequestedeuthanasiaAnimalID" => [0, 'intakesOwnerrequestedeuthanasiaAnimalID'],
+        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => [0, 'intakesOwnerrequestedeuthanasiaAnimalConditionID'],
+        "intakesOwnerrequestedeuthanasiaDate" => [0, 'intakesOwnerrequestedeuthanasiaDate'],
+        "intakesOwnerrequestedeuthanasiaNotes" => [0, 'intakesOwnerrequestedeuthanasiaNotes'],
+        "intakesOwnerrequestedeuthanasiaOwnerID" => [0, 'intakesOwnerrequestedeuthanasiaOwnerID'],
+        "intakesOwnerrequestedeuthanasiaReasonID" => [0, 'intakesOwnerrequestedeuthanasiaReasonID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "ownerName" => [0, 'ownerName'],
+        "euthanasiaReason" => [0, 'euthanasiaReason'],
     ];
 
     /**

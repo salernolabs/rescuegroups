@@ -20,7 +20,6 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Locations\Add();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('locations', $data['objectType']);

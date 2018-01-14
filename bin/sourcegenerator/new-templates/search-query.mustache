@@ -19,7 +19,7 @@ class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \R
      */
     private $objectFields = [
     {{#fields}}
-        "{{sdkFieldName}}" => {{{required}}},
+        "{{sdkFieldName}}" => [{{{required}}}, '{{name}}'],
     {{/fields}}
     ];
 

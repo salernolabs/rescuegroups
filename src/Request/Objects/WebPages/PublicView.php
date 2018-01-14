@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\WebPages;
 
-class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * ID
+     *
+     * @var integer
+     */
+    private $webpageID = null;
+
 
     /**
-     * Filterable Fields
+     * Set ID
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "webpageID" => 1,
-    ];
+    public function setWebpageID($value)
+    {
+        $this->webpageID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\WebPage[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\WebPage($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\WebPage($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->webpageID !== null) $parameterArray['values'][] = ["webpageID"=>$this->webpageID];
     }
 }

@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Calls;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * ID
+     *
+     * @var integer
+     */
+    private $callID = null;
+
 
     /**
-     * Filterable Fields
+     * Set ID
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "callID" => 1,
-    ];
+    public function setCallID($value)
+    {
+        $this->callID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Call[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Call($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Call($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->callID !== null) $parameterArray['values'][] = ["callID"=>$this->callID];
     }
 }

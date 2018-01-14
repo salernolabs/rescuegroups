@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\VolunteersJournalEntries;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * ID
+     *
+     * @var integer
+     */
+    private $journalEntryID = null;
+
 
     /**
-     * Filterable Fields
+     * Set ID
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "journalEntryID" => 1,
-    ];
+    public function setJournalEntryID($value)
+    {
+        $this->journalEntryID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\VolunteersJournalEntry[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\VolunteersJournalEntry($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\VolunteersJournalEntry($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->journalEntryID !== null) $parameterArray['values'][] = ["journalEntryID"=>$this->journalEntryID];
     }
 }

@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Enable the Partnerships feature
+     *
+     * @var string
+     */
+    private $enablePartnerships = null;
 
     /**
-     * Filterable Fields
+     * Partnership alert email address(es)
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "enablePartnerships" => 0,
-        "setPartnershipAlertEmailAddresses" => 0,
-    ];
+    private $setPartnershipAlertEmailAddresses = null;
+
+
+    /**
+     * Set Enable the Partnerships feature
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setEnablePartnerships($value)
+    {
+        $this->enablePartnerships = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Partnership alert email address(es)
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setSetPartnershipAlertEmailAddresses($value)
+    {
+        $this->setPartnershipAlertEmailAddresses = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Partnership[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Partnership($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Partnership($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enablePartnerships !== null) $parameterArray['values'][] = ["enablePartnerships"=>$this->enablePartnerships];
+        if ($this->setPartnershipAlertEmailAddresses !== null) $parameterArray['values'][] = ["setPartnershipAlertEmailAddresses"=>$this->setPartnershipAlertEmailAddresses];
     }
 }

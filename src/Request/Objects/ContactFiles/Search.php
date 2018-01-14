@@ -18,14 +18,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "contactfileID" => 0,
-        "contactfileContactID" => 1,
-        "contactfileOldName" => 0,
-        "contactfileDescription" => 0,
-        "contactfileStatus" => 0,
-        "contactfileDisplayInline" => 0,
-        "contactfileSize" => 0,
-        "contactfileCreatedDate" => 0,
+        "contactfileID" => [0, 'contactfileID'],
+        "contactfileContactID" => [1, 'contactfileContactID'],
+        "contactfileOldName" => [0, 'contactfileOldName'],
+        "contactfileDescription" => [0, 'contactfileDescription'],
+        "contactfileStatus" => [0, 'contactfileStatus'],
+        "contactfileDisplayInline" => [0, 'contactfileDisplayInline'],
+        "contactfileSize" => [0, 'contactfileSize'],
+        "contactfileCreatedDate" => [0, 'contactfileCreatedDate'],
     ];
 
     /**

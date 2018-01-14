@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\Events;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Enable the Events feature
+     *
+     * @var string
+     */
+    private $enableEvents = null;
 
     /**
-     * Filterable Fields
+     * Map website to use with the Events feature
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "enableEvents" => 0,
-        "setEventsMapWebsite" => 0,
-    ];
+    private $setEventsMapWebsite = null;
+
+
+    /**
+     * Set Enable the Events feature
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setEnableEvents($value)
+    {
+        $this->enableEvents = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Map website to use with the Events feature
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setSetEventsMapWebsite($value)
+    {
+        $this->setEventsMapWebsite = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Event[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Event($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Event($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enableEvents !== null) $parameterArray['values'][] = ["enableEvents"=>$this->enableEvents];
+        if ($this->setEventsMapWebsite !== null) $parameterArray['values'][] = ["setEventsMapWebsite"=>$this->setEventsMapWebsite];
     }
 }

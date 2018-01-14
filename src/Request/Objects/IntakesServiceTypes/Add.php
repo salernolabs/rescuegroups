@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Service
+     *
+     * @var string
+     */
+    private $serviceName = null;
+
 
     /**
-     * Filterable Fields
+     * Set Service
      *
-     * @var array
+     * @param string $value
+     * @return $this
      */
-    private $objectFields = [
-        "serviceName" => 1,
-    ];
+    public function setServiceName($value)
+    {
+        $this->serviceName = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesServiceType[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesServiceType($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesServiceType($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->serviceName !== null) $parameterArray['values'][] = ["serviceName"=>$this->serviceName];
     }
 }

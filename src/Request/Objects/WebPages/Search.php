@@ -18,19 +18,19 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "webpageID" => 1,
-        "webpageOrgID" => 0,
-        "webpageName" => 0,
-        "webpageContent" => 0,
-        "webpageStatus" => 0,
-        "webpageUselayout" => 0,
-        "webpageShowonmenu" => 0,
-        "webpageMetaDescription" => 0,
-        "webpageBackgroundImageID" => 0,
-        "webpageBackgroundImageFileName" => 0,
-        "webpageBackgroundMusicID" => 0,
-        "webpageBackgroundMusicFileName" => 0,
-        "webpageRoles" => 0,
+        "webpageID" => [1, 'webpageID'],
+        "webpageOrgID" => [0, 'webpageOrgID'],
+        "webpageName" => [0, 'webpageName'],
+        "webpageContent" => [0, 'webpageContent'],
+        "webpageStatus" => [0, 'webpageStatus'],
+        "webpageUselayout" => [0, 'webpageUselayout'],
+        "webpageShowonmenu" => [0, 'webpageShowonmenu'],
+        "webpageMetaDescription" => [0, 'webpageMetaDescription'],
+        "webpageBackgroundImageID" => [0, 'webpageBackgroundImageID'],
+        "webpageBackgroundImageFileName" => [0, 'webpageBackgroundImageFileName'],
+        "webpageBackgroundMusicID" => [0, 'webpageBackgroundMusicID'],
+        "webpageBackgroundMusicFileName" => [0, 'webpageBackgroundMusicFileName'],
+        "webpageRoles" => [0, 'webpageRoles'],
     ];
 
     /**

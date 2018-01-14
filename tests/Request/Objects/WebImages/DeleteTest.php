@@ -20,7 +20,6 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\WebImages\Delete();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('webimages', $data['objectType']);

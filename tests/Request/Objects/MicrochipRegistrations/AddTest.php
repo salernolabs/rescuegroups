@@ -20,7 +20,6 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Add();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('microchipRegistrations', $data['objectType']);

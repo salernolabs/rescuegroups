@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Owner requestedeuthanasia
+     *
+     * @var integer
+     */
+    private $intakesOwnerrequestedeuthanasiaID = null;
+
 
     /**
-     * Filterable Fields
+     * Set Owner requestedeuthanasia
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "intakesOwnerrequestedeuthanasiaID" => 1,
-    ];
+    public function setIntakesOwnerrequestedeuthanasiaID($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakesOwnerrequestedeuthanasiaID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaID"=>$this->intakesOwnerrequestedeuthanasiaID];
     }
 }

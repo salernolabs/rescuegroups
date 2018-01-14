@@ -18,12 +18,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "speciesID" => 1,
-        "speciesSingular" => 0,
-        "speciesPlural" => 0,
-        "speciesSingularYoung" => 0,
-        "speciesPluralYoung" => 0,
-        "speciesFullname" => 0,
+        "speciesID" => [1, 'speciesID'],
+        "speciesSingular" => [0, 'speciesSingular'],
+        "speciesPlural" => [0, 'speciesPlural'],
+        "speciesSingularYoung" => [0, 'speciesSingularYoung'],
+        "speciesPluralYoung" => [0, 'speciesPluralYoung'],
+        "speciesFullname" => [0, 'speciesFullname'],
     ];
 
     /**

@@ -18,17 +18,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "memberID" => 1,
-        "memberContactID" => 0,
-        "memberQueueID" => 0,
-        "memberManager" => 0,
-        "memberCreatedDate" => 0,
-        "memberCreatedByID" => 0,
-        "memberUpdatedDate" => 0,
-        "memberUpdatedByID" => 0,
-        "queueName" => 0,
-        "memberName" => 0,
-        "memberContactType" => 0,
+        "memberID" => [1, 'memberID'],
+        "memberContactID" => [0, 'memberContactID'],
+        "memberQueueID" => [0, 'memberQueueID'],
+        "memberManager" => [0, 'memberManager'],
+        "memberCreatedDate" => [0, 'memberCreatedDate'],
+        "memberCreatedByID" => [0, 'memberCreatedByID'],
+        "memberUpdatedDate" => [0, 'memberUpdatedDate'],
+        "memberUpdatedByID" => [0, 'memberUpdatedByID'],
+        "queueName" => [0, 'queueName'],
+        "memberName" => [0, 'memberName'],
+        "memberContactType" => [0, 'memberContactType'],
     ];
 
     /**

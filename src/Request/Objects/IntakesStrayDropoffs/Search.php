@@ -18,20 +18,20 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakesStraydropoffID" => 0,
-        "intakesStraydropoffAnimalID" => 0,
-        "intakesStraydropoffAnimalConditionID" => 0,
-        "intakesStraydropoffDate" => 0,
-        "intakesStraydropoffNotes" => 0,
-        "intakesStraydropoffFoundLocation" => 0,
-        "intakesStraydropoffFoundAddress" => 0,
-        "intakesStraydropoffFoundCity" => 0,
-        "intakesStraydropoffFoundState" => 0,
-        "intakesStraydropoffFoundPostalcode" => 0,
-        "intakesStraydropoffFinderID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "finderName" => 0,
+        "intakesStraydropoffID" => [0, 'intakesStraydropoffID'],
+        "intakesStraydropoffAnimalID" => [0, 'intakesStraydropoffAnimalID'],
+        "intakesStraydropoffAnimalConditionID" => [0, 'intakesStraydropoffAnimalConditionID'],
+        "intakesStraydropoffDate" => [0, 'intakesStraydropoffDate'],
+        "intakesStraydropoffNotes" => [0, 'intakesStraydropoffNotes'],
+        "intakesStraydropoffFoundLocation" => [0, 'intakesStraydropoffFoundLocation'],
+        "intakesStraydropoffFoundAddress" => [0, 'intakesStraydropoffFoundAddress'],
+        "intakesStraydropoffFoundCity" => [0, 'intakesStraydropoffFoundCity'],
+        "intakesStraydropoffFoundState" => [0, 'intakesStraydropoffFoundState'],
+        "intakesStraydropoffFoundPostalcode" => [0, 'intakesStraydropoffFoundPostalcode'],
+        "intakesStraydropoffFinderID" => [0, 'intakesStraydropoffFinderID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "finderName" => [0, 'finderName'],
     ];
 
     /**

@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Sharing Org
+     *
+     * @var integer
+     */
+    private $partnershipSharingOrgID = null;
+
 
     /**
-     * Filterable Fields
+     * Set Sharing Org
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "partnershipSharingOrgID" => 1,
-    ];
+    public function setPartnershipSharingOrgID($value)
+    {
+        $this->partnershipSharingOrgID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Partnership[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Partnership($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Partnership($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->partnershipSharingOrgID !== null) $parameterArray['values'][] = ["partnershipSharingOrgID"=>$this->partnershipSharingOrgID];
     }
 }

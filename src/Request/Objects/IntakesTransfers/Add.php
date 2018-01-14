@@ -8,24 +8,149 @@
  */
 namespace RescueGroups\Request\Objects\IntakesTransfers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Animal
+     *
+     * @var integer
+     */
+    private $intakesTransferAnimalID = null;
 
     /**
-     * Filterable Fields
+     * Condition
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "intakesTransferAnimalID" => 1,
-        "intakesTransferAnimalConditionID" => 1,
-        "intakesTransferDate" => 1,
-        "intakesTransferNotes" => 0,
-        "intakesTransferFromID" => 1,
-        "intakesTransferCoalitionMember" => 1,
-        "intakesTransferReasonID" => 1,
-    ];
+    private $intakesTransferAnimalConditionID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $intakesTransferDate = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $intakesTransferNotes = null;
+
+    /**
+     * Transferred From
+     *
+     * @var integer
+     */
+    private $intakesTransferFromID = null;
+
+    /**
+     * Coalition Member
+     *
+     * @var string
+     */
+    private $intakesTransferCoalitionMember = null;
+
+    /**
+     * Transfer Reason
+     *
+     * @var integer
+     */
+    private $intakesTransferReasonID = null;
+
+
+    /**
+     * Set Animal
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesTransferAnimalID($value)
+    {
+        $this->intakesTransferAnimalID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesTransferAnimalConditionID($value)
+    {
+        $this->intakesTransferAnimalConditionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setIntakesTransferDate($value)
+    {
+        $this->intakesTransferDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setIntakesTransferNotes($value)
+    {
+        $this->intakesTransferNotes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Transferred From
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesTransferFromID($value)
+    {
+        $this->intakesTransferFromID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Coalition Member
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setIntakesTransferCoalitionMember($value)
+    {
+        $this->intakesTransferCoalitionMember = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Transfer Reason
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesTransferReasonID($value)
+    {
+        $this->intakesTransferReasonID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -56,36 +181,20 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesTransfer[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesTransfer($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesTransfer($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakesTransferAnimalID !== null) $parameterArray['values'][] = ["intakesTransferAnimalID"=>$this->intakesTransferAnimalID];
+        if ($this->intakesTransferAnimalConditionID !== null) $parameterArray['values'][] = ["intakesTransferAnimalConditionID"=>$this->intakesTransferAnimalConditionID];
+        if ($this->intakesTransferDate !== null) $parameterArray['values'][] = ["intakesTransferDate"=>$this->intakesTransferDate];
+        if ($this->intakesTransferNotes !== null) $parameterArray['values'][] = ["intakesTransferNotes"=>$this->intakesTransferNotes];
+        if ($this->intakesTransferFromID !== null) $parameterArray['values'][] = ["intakesTransferFromID"=>$this->intakesTransferFromID];
+        if ($this->intakesTransferCoalitionMember !== null) $parameterArray['values'][] = ["intakesTransferCoalitionMember"=>$this->intakesTransferCoalitionMember];
+        if ($this->intakesTransferReasonID !== null) $parameterArray['values'][] = ["intakesTransferReasonID"=>$this->intakesTransferReasonID];
     }
 }

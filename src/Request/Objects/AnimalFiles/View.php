@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\AnimalFiles;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * File ID
+     *
+     * @var integer
+     */
+    private $animalfileID = null;
+
 
     /**
-     * Filterable Fields
+     * Set File ID
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "animalfileID" => 1,
-    ];
+    public function setAnimalfileID($value)
+    {
+        $this->animalfileID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalFile[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalFile($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalFile($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->animalfileID !== null) $parameterArray['values'][] = ["animalfileID"=>$this->animalfileID];
     }
 }

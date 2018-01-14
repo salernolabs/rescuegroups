@@ -8,20 +8,69 @@
  */
 namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Animal
+     *
+     * @var integer
+     */
+    private $attendanceAnimalID = null;
 
     /**
-     * Filterable Fields
+     * Status
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "attendanceAnimalID" => 1,
-        "attendanceStatus" => 0,
-        "attendanceEventID" => 1,
-    ];
+    private $attendanceStatus = null;
+
+    /**
+     * Event
+     *
+     * @var integer
+     */
+    private $attendanceEventID = null;
+
+
+    /**
+     * Set Animal
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setAttendanceAnimalID($value)
+    {
+        $this->attendanceAnimalID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Status
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAttendanceStatus($value)
+    {
+        $this->attendanceStatus = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Event
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setAttendanceEventID($value)
+    {
+        $this->attendanceEventID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -52,36 +101,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\EventAnimalAttendance[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\EventAnimalAttendance($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\EventAnimalAttendance($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->attendanceAnimalID !== null) $parameterArray['values'][] = ["attendanceAnimalID"=>$this->attendanceAnimalID];
+        if ($this->attendanceStatus !== null) $parameterArray['values'][] = ["attendanceStatus"=>$this->attendanceStatus];
+        if ($this->attendanceEventID !== null) $parameterArray['values'][] = ["attendanceEventID"=>$this->attendanceEventID];
     }
 }

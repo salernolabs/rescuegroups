@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\{{className}};
 
-class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     {{#fields}}
     /**
@@ -16,17 +16,18 @@ class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \R
      *
      * @var {{type}}
      */
-    private ${{parameterName}} = null;
+    private ${{sdkFieldName}} = null;
 
     {{/fields}}
 
     {{#fields}}
     /**
      * Set {{friendlyName}}
+     *
      * @param {{type}} $value
      * @return $this
      */
-    public function set{{$parameterName}}($value)
+    public function set{{parameterName}}($value)
     {
         $this->{{sdkFieldName}} = $value;
 
@@ -61,30 +62,6 @@ class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \R
     public function getObjectAction()
     {
         return '{{objectAction}}';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\{{responseClassName}}[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\{{responseClassName}}($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\{{responseClassName}}($data)];
     }
 
     /**

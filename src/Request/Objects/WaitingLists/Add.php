@@ -8,20 +8,69 @@
  */
 namespace RescueGroups\Request\Objects\WaitingLists;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Name
+     *
+     * @var string
+     */
+    private $waitinglistName = null;
 
     /**
-     * Filterable Fields
+     * Type
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "waitinglistName" => 1,
-        "waitinglistType" => 1,
-        "waitinglistComment" => 0,
-    ];
+    private $waitinglistType = null;
+
+    /**
+     * Comment
+     *
+     * @var string
+     */
+    private $waitinglistComment = null;
+
+
+    /**
+     * Set Name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setWaitinglistName($value)
+    {
+        $this->waitinglistName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Type
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setWaitinglistType($value)
+    {
+        $this->waitinglistType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Comment
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setWaitinglistComment($value)
+    {
+        $this->waitinglistComment = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -52,36 +101,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\WaitingList[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\WaitingList($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\WaitingList($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->waitinglistName !== null) $parameterArray['values'][] = ["waitinglistName"=>$this->waitinglistName];
+        if ($this->waitinglistType !== null) $parameterArray['values'][] = ["waitinglistType"=>$this->waitinglistType];
+        if ($this->waitinglistComment !== null) $parameterArray['values'][] = ["waitinglistComment"=>$this->waitinglistComment];
     }
 }

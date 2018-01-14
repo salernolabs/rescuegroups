@@ -125,7 +125,7 @@ trait SearchParameters
             throw new \RescueGroups\Exceptions\InvalidParameter();
         }
 
-        $filter = new \RescueGroups\Request\Search\Filter($field, $operation, $criteria);
+        $filter = new \RescueGroups\Request\Search\Filter($this->objectFields[$field][1], $operation, $criteria);
 
         $this->filters[] = $filter;
 
@@ -146,7 +146,7 @@ trait SearchParameters
             throw new \RescueGroups\Exceptions\InvalidParameter();
         }
 
-        $this->objectFields[$fieldName] = true;
+        $this->objectFields[$fieldName][0] = true;
 
         return $this;
     }
@@ -191,9 +191,9 @@ trait SearchParameters
         if (!empty($this->objectFields))
         {
             $fieldList = [];
-            foreach ($this->objectFields as $filterName => $enabled)
+            foreach ($this->objectFields as $filterName => $data)
             {
-                if ($enabled) $fieldList[] = $filterName;
+                if ($data[0]) $fieldList[] = $data[1];
             }
             if (!empty($fieldList)) $parameters['search']->fields = $fieldList;
         }

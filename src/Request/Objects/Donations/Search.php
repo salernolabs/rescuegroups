@@ -18,16 +18,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "donationID" => 1,
-        "donationContactID" => 0,
-        "donationContactName" => 0,
-        "donationContactType" => 0,
-        "donationAmount" => 0,
-        "donationInkind" => 0,
-        "donationComment" => 0,
-        "donationLettersent" => 0,
-        "donationPurpose" => 0,
-        "donationDate" => 0,
+        "donationID" => [1, 'donationID'],
+        "donationContactID" => [0, 'donationContactID'],
+        "donationContactName" => [0, 'donationContactName'],
+        "donationContactType" => [0, 'donationContactType'],
+        "donationAmount" => [0, 'donationAmount'],
+        "donationInkind" => [0, 'donationInkind'],
+        "donationComment" => [0, 'donationComment'],
+        "donationLettersent" => [0, 'donationLettersent'],
+        "donationPurpose" => [0, 'donationPurpose'],
+        "donationDate" => [0, 'donationDate'],
     ];
 
     /**

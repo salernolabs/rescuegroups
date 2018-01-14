@@ -18,9 +18,9 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "statusID" => 1,
-        "statusName" => 0,
-        "statusDescription" => 0,
+        "statusID" => [1, 'statusID'],
+        "statusName" => [0, 'statusName'],
+        "statusDescription" => [0, 'statusDescription'],
     ];
 
     /**

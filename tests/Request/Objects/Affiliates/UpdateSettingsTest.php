@@ -20,7 +20,6 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Affiliates\UpdateSettings();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('affiliates', $data['objectType']);

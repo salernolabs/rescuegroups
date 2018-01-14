@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Description
+     *
+     * @var string
+     */
+    private $journalEntrytypeDescription = null;
 
     /**
-     * Filterable Fields
+     * Category ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "journalEntrytypeDescription" => 0,
-        "journalEntrytypeCategoryID" => 1,
-    ];
+    private $journalEntrytypeCategoryID = null;
+
+
+    /**
+     * Set Description
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setJournalEntrytypeDescription($value)
+    {
+        $this->journalEntrytypeDescription = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Category ID
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setJournalEntrytypeCategoryID($value)
+    {
+        $this->journalEntrytypeCategoryID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsJournalEntryType[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsJournalEntryType($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsJournalEntryType($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->journalEntrytypeDescription !== null) $parameterArray['values'][] = ["journalEntrytypeDescription"=>$this->journalEntrytypeDescription];
+        if ($this->journalEntrytypeCategoryID !== null) $parameterArray['values'][] = ["journalEntrytypeCategoryID"=>$this->journalEntrytypeCategoryID];
     }
 }

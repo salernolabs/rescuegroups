@@ -18,19 +18,19 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "outcomesTransferID" => 1,
-        "outcomesTransferIntakeID" => 0,
-        "outcomesTransferAnimalConditionID" => 0,
-        "outcomesTransferDate" => 0,
-        "outcomesTransferNotes" => 0,
-        "outcomesTransferReceiveID" => 0,
-        "outcomesTransferCoalitionMember" => 0,
-        "outcomesTransferReasonID" => 0,
-        "outcomesTransferReason" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "receiveName" => 0,
+        "outcomesTransferID" => [1, 'outcomesTransferID'],
+        "outcomesTransferIntakeID" => [0, 'outcomesTransferIntakeID'],
+        "outcomesTransferAnimalConditionID" => [0, 'outcomesTransferAnimalConditionID'],
+        "outcomesTransferDate" => [0, 'outcomesTransferDate'],
+        "outcomesTransferNotes" => [0, 'outcomesTransferNotes'],
+        "outcomesTransferReceiveID" => [0, 'outcomesTransferReceiveID'],
+        "outcomesTransferCoalitionMember" => [0, 'outcomesTransferCoalitionMember'],
+        "outcomesTransferReasonID" => [0, 'outcomesTransferReasonID'],
+        "outcomesTransferReason" => [0, 'outcomesTransferReason'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "receiveName" => [0, 'receiveName'],
     ];
 
     /**

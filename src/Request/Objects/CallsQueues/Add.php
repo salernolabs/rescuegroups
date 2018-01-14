@@ -8,20 +8,69 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueues;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Name
+     *
+     * @var string
+     */
+    private $queueName = null;
 
     /**
-     * Filterable Fields
+     * From Email Address
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "queueName" => 1,
-        "queueFromEmail" => 0,
-        "queueDefaultUrgencyID" => 1,
-    ];
+    private $queueFromEmail = null;
+
+    /**
+     * Default Urgency
+     *
+     * @var integer
+     */
+    private $queueDefaultUrgencyID = null;
+
+
+    /**
+     * Set Name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setQueueName($value)
+    {
+        $this->queueName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set From Email Address
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setQueueFromEmail($value)
+    {
+        $this->queueFromEmail = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Default Urgency
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setQueueDefaultUrgencyID($value)
+    {
+        $this->queueDefaultUrgencyID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -52,36 +101,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\CallsQueue[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\CallsQueue($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\CallsQueue($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->queueName !== null) $parameterArray['values'][] = ["queueName"=>$this->queueName];
+        if ($this->queueFromEmail !== null) $parameterArray['values'][] = ["queueFromEmail"=>$this->queueFromEmail];
+        if ($this->queueDefaultUrgencyID !== null) $parameterArray['values'][] = ["queueDefaultUrgencyID"=>$this->queueDefaultUrgencyID];
     }
 }

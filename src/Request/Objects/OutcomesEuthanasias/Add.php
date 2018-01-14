@@ -8,22 +8,109 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesEuthanasias;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Outcome Euthanasia Intake
+     *
+     * @var integer
+     */
+    private $outcomesEuthanasiaIntakeID = null;
 
     /**
-     * Filterable Fields
+     * Condition
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "outcomesEuthanasiaIntakeID" => 1,
-        "outcomesEuthanasiaAnimalConditionID" => 1,
-        "outcomesEuthanasiaDate" => 1,
-        "outcomesEuthanasiaNotes" => 0,
-        "outcomesEuthanasiaReasonID" => 1,
-    ];
+    private $outcomesEuthanasiaAnimalConditionID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $outcomesEuthanasiaDate = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $outcomesEuthanasiaNotes = null;
+
+    /**
+     * Euthanasia Reason
+     *
+     * @var integer
+     */
+    private $outcomesEuthanasiaReasonID = null;
+
+
+    /**
+     * Set Outcome Euthanasia Intake
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setOutcomesEuthanasiaIntakeID($value)
+    {
+        $this->outcomesEuthanasiaIntakeID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setOutcomesEuthanasiaAnimalConditionID($value)
+    {
+        $this->outcomesEuthanasiaAnimalConditionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setOutcomesEuthanasiaDate($value)
+    {
+        $this->outcomesEuthanasiaDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesEuthanasiaNotes($value)
+    {
+        $this->outcomesEuthanasiaNotes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Euthanasia Reason
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setOutcomesEuthanasiaReasonID($value)
+    {
+        $this->outcomesEuthanasiaReasonID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -54,36 +141,18 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\OutcomesEuthanasia[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\OutcomesEuthanasia($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\OutcomesEuthanasia($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->outcomesEuthanasiaIntakeID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaIntakeID"=>$this->outcomesEuthanasiaIntakeID];
+        if ($this->outcomesEuthanasiaAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaAnimalConditionID"=>$this->outcomesEuthanasiaAnimalConditionID];
+        if ($this->outcomesEuthanasiaDate !== null) $parameterArray['values'][] = ["outcomesEuthanasiaDate"=>$this->outcomesEuthanasiaDate];
+        if ($this->outcomesEuthanasiaNotes !== null) $parameterArray['values'][] = ["outcomesEuthanasiaNotes"=>$this->outcomesEuthanasiaNotes];
+        if ($this->outcomesEuthanasiaReasonID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaReasonID"=>$this->outcomesEuthanasiaReasonID];
     }
 }

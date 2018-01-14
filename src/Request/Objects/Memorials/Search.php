@@ -18,13 +18,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "memorialID" => 1,
-        "memorialPictureFileName" => 0,
-        "memorialPictureUrl" => 0,
-        "memorialPictureThumbnailUrl" => 0,
-        "memorialName" => 0,
-        "memorialDescription" => 0,
-        "memorialOrder" => 0,
+        "memorialID" => [1, 'memorialID'],
+        "memorialPictureFileName" => [0, 'memorialPictureFileName'],
+        "memorialPictureUrl" => [0, 'memorialPictureUrl'],
+        "memorialPictureThumbnailUrl" => [0, 'memorialPictureThumbnailUrl'],
+        "memorialName" => [0, 'memorialName'],
+        "memorialDescription" => [0, 'memorialDescription'],
+        "memorialOrder" => [0, 'memorialOrder'],
     ];
 
     /**

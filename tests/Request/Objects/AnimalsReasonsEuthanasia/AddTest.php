@@ -20,7 +20,6 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Add();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);

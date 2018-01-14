@@ -8,20 +8,69 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Title
+     *
+     * @var string
+     */
+    private $articleTitle = null;
 
     /**
-     * Filterable Fields
+     * Description
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "articleTitle" => 1,
-        "articleDescription" => 1,
-        "articleDate" => 1,
-    ];
+    private $articleDescription = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $articleDate = null;
+
+
+    /**
+     * Set Title
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setArticleTitle($value)
+    {
+        $this->articleTitle = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Description
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setArticleDescription($value)
+    {
+        $this->articleDescription = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setArticleDate($value)
+    {
+        $this->articleDate = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -52,36 +101,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\NewsArticle[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\NewsArticle($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\NewsArticle($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->articleTitle !== null) $parameterArray['values'][] = ["articleTitle"=>$this->articleTitle];
+        if ($this->articleDescription !== null) $parameterArray['values'][] = ["articleDescription"=>$this->articleDescription];
+        if ($this->articleDate !== null) $parameterArray['values'][] = ["articleDate"=>$this->articleDate];
     }
 }

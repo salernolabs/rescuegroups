@@ -8,24 +8,149 @@
  */
 namespace RescueGroups\Request\Objects\Calls;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Contact
+     *
+     * @var integer
+     */
+    private $callContactID = null;
 
     /**
-     * Filterable Fields
+     * Assigned
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "callContactID" => 1,
-        "callAssignedID" => 0,
-        "callStatusID" => 1,
-        "callUrgencyID" => 1,
-        "callCategoryID" => 1,
-        "callQueueID" => 1,
-        "callDate" => 1,
-    ];
+    private $callAssignedID = null;
+
+    /**
+     * Status
+     *
+     * @var integer
+     */
+    private $callStatusID = null;
+
+    /**
+     * Urgency
+     *
+     * @var integer
+     */
+    private $callUrgencyID = null;
+
+    /**
+     * Category
+     *
+     * @var integer
+     */
+    private $callCategoryID = null;
+
+    /**
+     * Queue
+     *
+     * @var integer
+     */
+    private $callQueueID = null;
+
+    /**
+     * Call date
+     *
+     * @var \DateTime
+     */
+    private $callDate = null;
+
+
+    /**
+     * Set Contact
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallContactID($value)
+    {
+        $this->callContactID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Assigned
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallAssignedID($value)
+    {
+        $this->callAssignedID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Status
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallStatusID($value)
+    {
+        $this->callStatusID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Urgency
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallUrgencyID($value)
+    {
+        $this->callUrgencyID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Category
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallCategoryID($value)
+    {
+        $this->callCategoryID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Queue
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCallQueueID($value)
+    {
+        $this->callQueueID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Call date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setCallDate($value)
+    {
+        $this->callDate = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -56,36 +181,20 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Call[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Call($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Call($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->callContactID !== null) $parameterArray['values'][] = ["callContactID"=>$this->callContactID];
+        if ($this->callAssignedID !== null) $parameterArray['values'][] = ["callAssignedID"=>$this->callAssignedID];
+        if ($this->callStatusID !== null) $parameterArray['values'][] = ["callStatusID"=>$this->callStatusID];
+        if ($this->callUrgencyID !== null) $parameterArray['values'][] = ["callUrgencyID"=>$this->callUrgencyID];
+        if ($this->callCategoryID !== null) $parameterArray['values'][] = ["callCategoryID"=>$this->callCategoryID];
+        if ($this->callQueueID !== null) $parameterArray['values'][] = ["callQueueID"=>$this->callQueueID];
+        if ($this->callDate !== null) $parameterArray['values'][] = ["callDate"=>$this->callDate];
     }
 }

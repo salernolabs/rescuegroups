@@ -8,20 +8,69 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Contact
+     *
+     * @var integer
+     */
+    private $memberContactID = null;
 
     /**
-     * Filterable Fields
+     * Queue
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "memberContactID" => 1,
-        "memberQueueID" => 1,
-        "memberManager" => 0,
-    ];
+    private $memberQueueID = null;
+
+    /**
+     * Manager
+     *
+     * @var string
+     */
+    private $memberManager = null;
+
+
+    /**
+     * Set Contact
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setMemberContactID($value)
+    {
+        $this->memberContactID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Queue
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setMemberQueueID($value)
+    {
+        $this->memberQueueID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Manager
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMemberManager($value)
+    {
+        $this->memberManager = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -52,36 +101,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\CallsQueuesMember[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\CallsQueuesMember($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\CallsQueuesMember($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->memberContactID !== null) $parameterArray['values'][] = ["memberContactID"=>$this->memberContactID];
+        if ($this->memberQueueID !== null) $parameterArray['values'][] = ["memberQueueID"=>$this->memberQueueID];
+        if ($this->memberManager !== null) $parameterArray['values'][] = ["memberManager"=>$this->memberManager];
     }
 }

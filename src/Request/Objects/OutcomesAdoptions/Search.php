@@ -18,17 +18,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "outcomesAdoptionID" => 1,
-        "outcomesAdoptionIntakeID" => 0,
-        "outcomesAdoptionAnimalConditionID" => 0,
-        "outcomesAdoptionDate" => 0,
-        "outcomesAdoptionNotes" => 0,
-        "outcomesAdoptionAdoptionID" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "adopterContactID" => 0,
-        "ownerName" => 0,
+        "outcomesAdoptionID" => [1, 'outcomesAdoptionID'],
+        "outcomesAdoptionIntakeID" => [0, 'outcomesAdoptionIntakeID'],
+        "outcomesAdoptionAnimalConditionID" => [0, 'outcomesAdoptionAnimalConditionID'],
+        "outcomesAdoptionDate" => [0, 'outcomesAdoptionDate'],
+        "outcomesAdoptionNotes" => [0, 'outcomesAdoptionNotes'],
+        "outcomesAdoptionAdoptionID" => [0, 'outcomesAdoptionAdoptionID'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "adopterContactID" => [0, 'adopterContactID'],
+        "ownerName" => [0, 'ownerName'],
     ];
 
     /**

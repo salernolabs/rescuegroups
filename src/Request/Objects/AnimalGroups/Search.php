@@ -18,11 +18,11 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "groupID" => 1,
-        "groupName" => 0,
-        "groupHeaderID" => 0,
-        "groupAnimals" => 0,
-        "webpageName" => 0,
+        "groupID" => [1, 'groupID'],
+        "groupName" => [0, 'groupName'],
+        "groupHeaderID" => [0, 'groupHeaderID'],
+        "groupAnimals" => [0, 'groupAnimals'],
+        "webpageName" => [0, 'webpageName'],
     ];
 
     /**

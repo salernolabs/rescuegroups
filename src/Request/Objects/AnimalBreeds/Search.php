@@ -18,11 +18,11 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "breedID" => 1,
-        "species" => 0,
-        "breedName" => 0,
-        "breedSpecies" => 0,
-        "breedSpeciesID" => 0,
+        "breedID" => [1, 'breedID'],
+        "species" => [0, 'species'],
+        "breedName" => [0, 'breedName'],
+        "breedSpecies" => [0, 'breedSpecies'],
+        "breedSpeciesID" => [0, 'breedSpeciesID'],
     ];
 
     /**

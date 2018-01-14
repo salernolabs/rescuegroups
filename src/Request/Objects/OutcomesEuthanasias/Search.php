@@ -18,16 +18,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "outcomesEuthanasiaID" => 1,
-        "outcomesEuthanasiaIntakeID" => 0,
-        "outcomesEuthanasiaAnimalConditionID" => 0,
-        "outcomesEuthanasiaDate" => 0,
-        "outcomesEuthanasiaNotes" => 0,
-        "outcomesEuthanasiaReasonID" => 0,
-        "outcomesEuthanasiaReason" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
+        "outcomesEuthanasiaID" => [1, 'outcomesEuthanasiaID'],
+        "outcomesEuthanasiaIntakeID" => [0, 'outcomesEuthanasiaIntakeID'],
+        "outcomesEuthanasiaAnimalConditionID" => [0, 'outcomesEuthanasiaAnimalConditionID'],
+        "outcomesEuthanasiaDate" => [0, 'outcomesEuthanasiaDate'],
+        "outcomesEuthanasiaNotes" => [0, 'outcomesEuthanasiaNotes'],
+        "outcomesEuthanasiaReasonID" => [0, 'outcomesEuthanasiaReasonID'],
+        "outcomesEuthanasiaReason" => [0, 'outcomesEuthanasiaReason'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
     ];
 
     /**

@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsExports;
 
-class UpdateExports implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateExports implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Export ID
+     *
+     * @var integer
+     */
+    private $exportID = null;
 
     /**
-     * Filterable Fields
+     * Export enabled
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "exportID" => 0,
-        "exportEnabled" => 0,
-    ];
+    private $exportEnabled = null;
+
+
+    /**
+     * Set Export ID
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setExportID($value)
+    {
+        $this->exportID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Export enabled
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setExportEnabled($value)
+    {
+        $this->exportEnabled = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class UpdateExports implements \RescueGroups\Request\RequestInterface, \RescueGr
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsExport[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsExport($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsExport($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->exportID !== null) $parameterArray['values'][] = ["exportID"=>$this->exportID];
+        if ($this->exportEnabled !== null) $parameterArray['values'][] = ["exportEnabled"=>$this->exportEnabled];
     }
 }

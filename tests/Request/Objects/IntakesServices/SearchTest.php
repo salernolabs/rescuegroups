@@ -20,10 +20,48 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\IntakesServices\Search();
+        $query
+            ->setResultStart(33)
+            ->setResultLimit(123)
+            ->setResultSort('testSortValue')
+            ->setResultOrder('ascending')
+            ->addField('intakesServiceID')
+            ->addField('intakesServiceAnimalID')
+            ->addField('intakesServiceAnimalConditionID')
+            ->addField('intakesServiceDate')
+            ->addField('intakesServiceNotes')
+            ->addField('intakesServiceOwnerID')
+            ->addField('intakesServiceServicetypeID')
+            ->addField('animalName')
+            ->addField('animalConditionName')
+            ->addField('ownerName')
+            ->addField('serviceName')
+            ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesServices', $data['objectType']);
         $this->assertEquals('search', $data['objectAction']);
+        $this->assertEquals(33, $data['search']->resultStart);
+        $this->assertEquals(123, $data['search']->resultLimit);
+        $this->assertEquals('testSortValue', $data['search']->resultSort);
+        $this->assertEquals('ascending', $data['search']->resultOrder);
+        $this->assertEquals('Yes', $data['search']->calcFoundRows);
+        
+        $translatedFields = [
+            "intakesServiceID",
+            "intakesServiceAnimalID",
+            "intakesServiceAnimalConditionID",
+            "intakesServiceDate",
+            "intakesServiceNotes",
+            "intakesServiceOwnerID",
+            "intakesServiceServicetypeID",
+            "animalName",
+            "animalConditionName",
+            "ownerName",
+            "serviceName",
+        ];
+
+        $this->assertEquals($translatedFields, $data['search']->fields);
     }
 }

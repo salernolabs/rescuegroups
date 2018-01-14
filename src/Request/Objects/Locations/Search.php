@@ -18,20 +18,20 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "locationID" => 1,
-        "locationName" => 0,
-        "locationUrl" => 0,
-        "locationAddress" => 0,
-        "locationCity" => 0,
-        "locationState" => 0,
-        "locationPostalcode" => 0,
-        "locationCountry" => 0,
-        "locationPhone" => 0,
-        "locationPhoneExt" => 0,
-        "locationAnimals" => 0,
-        "locationEvents" => 0,
-        "locationColonies" => 0,
-        "locationMeetrequests" => 0,
+        "locationID" => [1, 'locationID'],
+        "locationName" => [0, 'locationName'],
+        "locationUrl" => [0, 'locationUrl'],
+        "locationAddress" => [0, 'locationAddress'],
+        "locationCity" => [0, 'locationCity'],
+        "locationState" => [0, 'locationState'],
+        "locationPostalcode" => [0, 'locationPostalcode'],
+        "locationCountry" => [0, 'locationCountry'],
+        "locationPhone" => [0, 'locationPhone'],
+        "locationPhoneExt" => [0, 'locationPhoneExt'],
+        "locationAnimals" => [0, 'locationAnimals'],
+        "locationEvents" => [0, 'locationEvents'],
+        "locationColonies" => [0, 'locationColonies'],
+        "locationMeetrequests" => [0, 'locationMeetrequests'],
     ];
 
     /**

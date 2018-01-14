@@ -8,19 +8,49 @@
  */
 namespace RescueGroups\Request\Objects\ColoniesCareTakers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Colony
+     *
+     * @var integer
+     */
+    private $caretakerColonyID = null;
 
     /**
-     * Filterable Fields
+     * Contact
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "caretakerColonyID" => 1,
-        "caretakerContactID" => 1,
-    ];
+    private $caretakerContactID = null;
+
+
+    /**
+     * Set Colony
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCaretakerColonyID($value)
+    {
+        $this->caretakerColonyID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Contact
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setCaretakerContactID($value)
+    {
+        $this->caretakerContactID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -51,36 +81,15 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\ColoniesCareTaker[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\ColoniesCareTaker($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\ColoniesCareTaker($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->caretakerColonyID !== null) $parameterArray['values'][] = ["caretakerColonyID"=>$this->caretakerColonyID];
+        if ($this->caretakerContactID !== null) $parameterArray['values'][] = ["caretakerContactID"=>$this->caretakerContactID];
     }
 }

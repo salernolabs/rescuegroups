@@ -18,10 +18,10 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
      * @var array
      */
     private $objectFields = [
-        "breedID" => 1,
-        "breedName" => 0,
-        "breedSpecies" => 0,
-        "breedSpeciesID" => 0,
+        "breedID" => [1, 'breedID'],
+        "breedName" => [0, 'breedName'],
+        "breedSpecies" => [0, 'breedSpecies'],
+        "breedSpeciesID" => [0, 'breedSpeciesID'],
     ];
 
     /**

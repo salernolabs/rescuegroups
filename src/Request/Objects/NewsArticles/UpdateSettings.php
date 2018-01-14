@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Enable the News Articles feature
+     *
+     * @var string
+     */
+    private $enableNewsarticles = null;
+
 
     /**
-     * Filterable Fields
+     * Set Enable the News Articles feature
      *
-     * @var array
+     * @param string $value
+     * @return $this
      */
-    private $objectFields = [
-        "enableNewsarticles" => 0,
-    ];
+    public function setEnableNewsarticles($value)
+    {
+        $this->enableNewsarticles = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\NewsArticle[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\NewsArticle($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\NewsArticle($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enableNewsarticles !== null) $parameterArray['values'][] = ["enableNewsarticles"=>$this->enableNewsarticles];
     }
 }

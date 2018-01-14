@@ -18,13 +18,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "webimageID" => 1,
-        "webimageName" => 0,
-        "webimageFileName" => 0,
-        "webimageUrl" => 0,
-        "webimageSize" => 0,
-        "webimageWidth" => 0,
-        "webimageHeight" => 0,
+        "webimageID" => [1, 'webimageID'],
+        "webimageName" => [0, 'webimageName'],
+        "webimageFileName" => [0, 'webimageFileName'],
+        "webimageUrl" => [0, 'webimageUrl'],
+        "webimageSize" => [0, 'webimageSize'],
+        "webimageWidth" => [0, 'webimageWidth'],
+        "webimageHeight" => [0, 'webimageHeight'],
     ];
 
     /**

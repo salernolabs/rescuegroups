@@ -236,7 +236,7 @@ class RequestGenerator
         }
         else
         {
-            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query.mustache'), $query);
         }
 
         file_put_contents($requestFileName, $data);
@@ -266,7 +266,7 @@ class RequestGenerator
         }
         else
         {
-            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query-test.mustache'), $query);
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query-test.mustache'), $query);
         }
 
         file_put_contents($requestFileName, $data);

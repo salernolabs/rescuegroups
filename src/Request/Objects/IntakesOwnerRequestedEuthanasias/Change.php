@@ -8,24 +8,149 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
-class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Intake
+     *
+     * @var integer
+     */
+    private $intakeID = null;
 
     /**
-     * Filterable Fields
+     * Animal
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "intakeID" => 1,
-        "intakesOwnerrequestedeuthanasiaAnimalID" => 0,
-        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => 1,
-        "intakesOwnerrequestedeuthanasiaDate" => 1,
-        "intakesOwnerrequestedeuthanasiaNotes" => 0,
-        "intakesOwnerrequestedeuthanasiaOwnerID" => 1,
-        "intakesOwnerrequestedeuthanasiaReasonID" => 1,
-    ];
+    private $intakesOwnerrequestedeuthanasiaAnimalID = null;
+
+    /**
+     * Condition
+     *
+     * @var integer
+     */
+    private $intakesOwnerrequestedeuthanasiaAnimalConditionID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $intakesOwnerrequestedeuthanasiaDate = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $intakesOwnerrequestedeuthanasiaNotes = null;
+
+    /**
+     * Owner
+     *
+     * @var integer
+     */
+    private $intakesOwnerrequestedeuthanasiaOwnerID = null;
+
+    /**
+     * Euthanasia Reason
+     *
+     * @var integer
+     */
+    private $intakesOwnerrequestedeuthanasiaReasonID = null;
+
+
+    /**
+     * Set Intake
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakeID($value)
+    {
+        $this->intakeID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Animal
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaAnimalID($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaAnimalID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaAnimalConditionID($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaAnimalConditionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaDate($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaNotes($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaNotes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Owner
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaOwnerID($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaOwnerID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Euthanasia Reason
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnerrequestedeuthanasiaReasonID($value)
+    {
+        $this->intakesOwnerrequestedeuthanasiaReasonID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -56,36 +181,20 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
+        if ($this->intakesOwnerrequestedeuthanasiaAnimalID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalID"=>$this->intakesOwnerrequestedeuthanasiaAnimalID];
+        if ($this->intakesOwnerrequestedeuthanasiaAnimalConditionID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalConditionID"=>$this->intakesOwnerrequestedeuthanasiaAnimalConditionID];
+        if ($this->intakesOwnerrequestedeuthanasiaDate !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaDate"=>$this->intakesOwnerrequestedeuthanasiaDate];
+        if ($this->intakesOwnerrequestedeuthanasiaNotes !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaNotes"=>$this->intakesOwnerrequestedeuthanasiaNotes];
+        if ($this->intakesOwnerrequestedeuthanasiaOwnerID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaOwnerID"=>$this->intakesOwnerrequestedeuthanasiaOwnerID];
+        if ($this->intakesOwnerrequestedeuthanasiaReasonID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaReasonID"=>$this->intakesOwnerrequestedeuthanasiaReasonID];
     }
 }

@@ -20,7 +20,6 @@ class PublicCommonSubmitTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('submittedforms', $data['objectType']);

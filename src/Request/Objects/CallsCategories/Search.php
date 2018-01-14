@@ -18,17 +18,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "categoryID" => 1,
-        "categoryName" => 0,
-        "categoryDescription" => 0,
-        "categoryPublic" => 0,
-        "categoryDefaultQueueID" => 0,
-        "categoryDefaultQueueName" => 0,
-        "categoryCreatedDate" => 0,
-        "categoryCreatedByID" => 0,
-        "categoryUpdatedDate" => 0,
-        "categoryUpdatedByID" => 0,
-        "categoryCallsCount" => 0,
+        "categoryID" => [1, 'categoryID'],
+        "categoryName" => [0, 'categoryName'],
+        "categoryDescription" => [0, 'categoryDescription'],
+        "categoryPublic" => [0, 'categoryPublic'],
+        "categoryDefaultQueueID" => [0, 'categoryDefaultQueueID'],
+        "categoryDefaultQueueName" => [0, 'categoryDefaultQueueName'],
+        "categoryCreatedDate" => [0, 'categoryCreatedDate'],
+        "categoryCreatedByID" => [0, 'categoryCreatedByID'],
+        "categoryUpdatedDate" => [0, 'categoryUpdatedDate'],
+        "categoryUpdatedByID" => [0, 'categoryUpdatedByID'],
+        "categoryCallsCount" => [0, 'categoryCallsCount'],
     ];
 
     /**

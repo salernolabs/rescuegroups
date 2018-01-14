@@ -20,7 +20,6 @@ class SetUserSettingTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Settings\SetUserSetting();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('settings', $data['objectType']);

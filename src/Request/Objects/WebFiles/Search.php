@@ -18,16 +18,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "webfileID" => 1,
-        "webfileOldName" => 0,
-        "webfileName" => 0,
-        "webfileDescription" => 0,
-        "webfileStatus" => 0,
-        "webfileDisplayInline" => 0,
-        "webfileRoleID" => 0,
-        "webfileRoleName" => 0,
-        "webfileSize" => 0,
-        "webfileCreatedDate" => 0,
+        "webfileID" => [1, 'webfileID'],
+        "webfileOldName" => [0, 'webfileOldName'],
+        "webfileName" => [0, 'webfileName'],
+        "webfileDescription" => [0, 'webfileDescription'],
+        "webfileStatus" => [0, 'webfileStatus'],
+        "webfileDisplayInline" => [0, 'webfileDisplayInline'],
+        "webfileRoleID" => [0, 'webfileRoleID'],
+        "webfileRoleName" => [0, 'webfileRoleName'],
+        "webfileSize" => [0, 'webfileSize'],
+        "webfileCreatedDate" => [0, 'webfileCreatedDate'],
     ];
 
     /**

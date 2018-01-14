@@ -77,5 +77,10 @@ class QueryField
         {
             $this->required = "1";
         }
+
+        if (empty($this->friendlyName))
+        {
+            $this->friendlyName = $this->sdkFieldName;
+        }
     }
 }

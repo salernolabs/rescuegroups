@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\Settings;
 
-class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     *  Default template to load when adding an animal
+     *
+     * @var string
+     */
+    private $settingDefaultAnimalTemplate = null;
+
 
     /**
-     * Filterable Fields
+     * Set  Default template to load when adding an animal
      *
-     * @var array
+     * @param string $value
+     * @return $this
      */
-    private $objectFields = [
-        "settingDefaultAnimalTemplate" => 0,
-    ];
+    public function setSettingDefaultAnimalTemplate($value)
+    {
+        $this->settingDefaultAnimalTemplate = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Setting[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Setting($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Setting($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->settingDefaultAnimalTemplate !== null) $parameterArray['values'][] = ["settingDefaultAnimalTemplate"=>$this->settingDefaultAnimalTemplate];
     }
 }

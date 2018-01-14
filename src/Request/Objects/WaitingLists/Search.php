@@ -18,11 +18,11 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "waitinglistID" => 1,
-        "waitinglistName" => 0,
-        "waitinglistType" => 0,
-        "waitinglistComment" => 0,
-        "waitinglistMembersCount" => 0,
+        "waitinglistID" => [1, 'waitinglistID'],
+        "waitinglistName" => [0, 'waitinglistName'],
+        "waitinglistType" => [0, 'waitinglistType'],
+        "waitinglistComment" => [0, 'waitinglistComment'],
+        "waitinglistMembersCount" => [0, 'waitinglistMembersCount'],
     ];
 
     /**

@@ -8,18 +8,29 @@
  */
 namespace RescueGroups\Request\Objects\IntakesStrayPickups;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Stray Pickup
+     *
+     * @var integer
+     */
+    private $intakesStraypickupID = null;
+
 
     /**
-     * Filterable Fields
+     * Set Stray Pickup
      *
-     * @var array
+     * @param integer $value
+     * @return $this
      */
-    private $objectFields = [
-        "intakesStraypickupID" => 1,
-    ];
+    public function setIntakesStraypickupID($value)
+    {
+        $this->intakesStraypickupID = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -50,36 +61,14 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesStrayPickup[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesStrayPickup($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesStrayPickup($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakesStraypickupID !== null) $parameterArray['values'][] = ["intakesStraypickupID"=>$this->intakesStraypickupID];
     }
 }

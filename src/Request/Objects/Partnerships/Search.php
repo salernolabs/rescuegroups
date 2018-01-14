@@ -18,18 +18,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "partnershipID" => 1,
-        "partnershipRequestOrgID" => 0,
-        "partnershipRequestOrgName" => 0,
-        "partnershipSharingOrgID" => 0,
-        "partnershipSharingOrgName" => 0,
-        "partnershipRequestDate" => 0,
-        "partnershipRequestedByID" => 0,
-        "partnershipRequestedBy" => 0,
-        "partnershipResponseByID" => 0,
-        "partnershipResponseBy" => 0,
-        "partnershipStatus" => 0,
-        "partnershipResponseDate" => 0,
+        "partnershipID" => [1, 'partnershipID'],
+        "partnershipRequestOrgID" => [0, 'partnershipRequestOrgID'],
+        "partnershipRequestOrgName" => [0, 'partnershipRequestOrgName'],
+        "partnershipSharingOrgID" => [0, 'partnershipSharingOrgID'],
+        "partnershipSharingOrgName" => [0, 'partnershipSharingOrgName'],
+        "partnershipRequestDate" => [0, 'partnershipRequestDate'],
+        "partnershipRequestedByID" => [0, 'partnershipRequestedByID'],
+        "partnershipRequestedBy" => [0, 'partnershipRequestedBy'],
+        "partnershipResponseByID" => [0, 'partnershipResponseByID'],
+        "partnershipResponseBy" => [0, 'partnershipResponseBy'],
+        "partnershipStatus" => [0, 'partnershipStatus'],
+        "partnershipResponseDate" => [0, 'partnershipResponseDate'],
     ];
 
     /**

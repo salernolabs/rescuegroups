@@ -8,21 +8,89 @@
  */
 namespace RescueGroups\Request\Objects\VolunteerHours;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Volunteer
+     *
+     * @var integer
+     */
+    private $volunteerID = null;
 
     /**
-     * Filterable Fields
+     * Date
      *
-     * @var array
+     * @var \DateTime
      */
-    private $objectFields = [
-        "volunteerID" => 1,
-        "volunteerDate" => 1,
-        "volunteerLength" => 1,
-        "volunteerTask" => 1,
-    ];
+    private $volunteerDate = null;
+
+    /**
+     * Hours
+     *
+     * @var float
+     */
+    private $volunteerLength = null;
+
+    /**
+     * Task
+     *
+     * @var string
+     */
+    private $volunteerTask = null;
+
+
+    /**
+     * Set Volunteer
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setVolunteerID($value)
+    {
+        $this->volunteerID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setVolunteerDate($value)
+    {
+        $this->volunteerDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Hours
+     *
+     * @param float $value
+     * @return $this
+     */
+    public function setVolunteerLength($value)
+    {
+        $this->volunteerLength = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Task
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setVolunteerTask($value)
+    {
+        $this->volunteerTask = $value;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
@@ -53,36 +121,17 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\VolunteerHour[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\VolunteerHour($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\VolunteerHour($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->volunteerID !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerID"=>$this->volunteerID];
+        if ($this->volunteerDate !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerDate"=>$this->volunteerDate];
+        if ($this->volunteerLength !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerLength"=>$this->volunteerLength];
+        if ($this->volunteerTask !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerTask"=>$this->volunteerTask];
     }
 }
