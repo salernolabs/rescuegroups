@@ -27,6 +27,7 @@ class {{requestClassName}}Test extends \PHPUnit\Framework\TestCase
             ->setResultOrder('ascending')
             {{# fields}}
             ->addField('{{sdkFieldName}}')
+            ->addFilter('{{sdkFieldName}}', 'equals', '{{friendlyName}}')
             {{/ fields}}
             ->setCalculateFoundRows(true);
 
@@ -40,6 +41,12 @@ class {{requestClassName}}Test extends \PHPUnit\Framework\TestCase
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
 
+        $filterTable = [
+        {{# fields}}
+            ['fieldName'=>'{{name}}','operation'=>'equals','criteria'=>"{{friendlyName}}"],
+        {{/ fields}}
+        ];
+
         $translatedFields = [
         {{# fields}}
             "{{name}}",
@@ -47,5 +54,6 @@ class {{requestClassName}}Test extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

@@ -26,9 +26,13 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('caretakerID')
+            ->addFilter('caretakerID', 'equals', 'ID')
             ->addField('caretakerColonyID')
+            ->addFilter('caretakerColonyID', 'equals', 'Colony')
             ->addField('caretakerContactID')
+            ->addFilter('caretakerContactID', 'equals', 'Contact')
             ->addField('caretakerContactName')
+            ->addFilter('caretakerContactName', 'equals', 'Contact')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -40,7 +44,14 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'caretakerID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'caretakerColonyID','operation'=>'equals','criteria'=>"Colony"],
+            ['fieldName'=>'caretakerContactID','operation'=>'equals','criteria'=>"Contact"],
+            ['fieldName'=>'caretakerContactName','operation'=>'equals','criteria'=>"Contact"],
+        ];
+
         $translatedFields = [
             "caretakerID",
             "caretakerColonyID",
@@ -49,5 +60,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

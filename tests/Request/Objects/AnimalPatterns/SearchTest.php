@@ -26,9 +26,13 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('patternID')
+            ->addFilter('patternID', 'equals', 'ID')
             ->addField('patternName')
+            ->addFilter('patternName', 'equals', 'pattern')
             ->addField('patternSpecies')
+            ->addFilter('patternSpecies', 'equals', 'Species')
             ->addField('patternSpeciesID')
+            ->addFilter('patternSpeciesID', 'equals', 'Species')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -40,7 +44,14 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'patternID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'patternName','operation'=>'equals','criteria'=>"pattern"],
+            ['fieldName'=>'patternSpecies','operation'=>'equals','criteria'=>"Species"],
+            ['fieldName'=>'patternSpeciesID','operation'=>'equals','criteria'=>"Species"],
+        ];
+
         $translatedFields = [
             "patternID",
             "patternName",
@@ -49,5 +60,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

@@ -36,10 +36,14 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+        ];
+
         $translatedFields = [
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

@@ -26,13 +26,21 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('testimonialID')
+            ->addFilter('testimonialID', 'equals', 'ID')
             ->addField('testimonialLocation')
+            ->addFilter('testimonialLocation', 'equals', 'Location')
             ->addField('testimonialLocationDistance')
+            ->addFilter('testimonialLocationDistance', 'equals', 'Distance')
             ->addField('testimonialLocationCitystate')
+            ->addFilter('testimonialLocationCitystate', 'equals', 'City, State')
             ->addField('testimonialService')
+            ->addFilter('testimonialService', 'equals', 'Service')
             ->addField('testimonialUserFirstname')
+            ->addFilter('testimonialUserFirstname', 'equals', 'User first name')
             ->addField('testimonialCreatedDate')
+            ->addFilter('testimonialCreatedDate', 'equals', 'Date')
             ->addField('testimonialContent')
+            ->addFilter('testimonialContent', 'equals', 'Testimonial')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -44,7 +52,18 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'testimonialID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'testimonialLocation','operation'=>'equals','criteria'=>"Location"],
+            ['fieldName'=>'testimonialLocationDistance','operation'=>'equals','criteria'=>"Distance"],
+            ['fieldName'=>'testimonialLocationCitystate','operation'=>'equals','criteria'=>"City, State"],
+            ['fieldName'=>'testimonialService','operation'=>'equals','criteria'=>"Service"],
+            ['fieldName'=>'testimonialUserFirstname','operation'=>'equals','criteria'=>"User first name"],
+            ['fieldName'=>'testimonialCreatedDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'testimonialContent','operation'=>'equals','criteria'=>"Testimonial"],
+        ];
+
         $translatedFields = [
             "testimonialID",
             "testimonialLocation",
@@ -57,5 +76,6 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

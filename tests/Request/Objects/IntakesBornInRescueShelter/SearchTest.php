@@ -26,12 +26,19 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('id')
+            ->addFilter('id', 'equals', 'Born In Rescue/Shelter')
             ->addField('animalID')
+            ->addFilter('animalID', 'equals', 'Animal')
             ->addField('animalConditionID')
+            ->addFilter('animalConditionID', 'equals', 'Condition')
             ->addField('date')
+            ->addFilter('date', 'equals', 'Date')
             ->addField('notes')
+            ->addFilter('notes', 'equals', 'Notes')
             ->addField('animalName')
+            ->addFilter('animalName', 'equals', 'Animal')
             ->addField('animalConditionName')
+            ->addFilter('animalConditionName', 'equals', 'Condition')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -43,7 +50,17 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'intakesBorninrescueshelterID','operation'=>'equals','criteria'=>"Born In Rescue/Shelter"],
+            ['fieldName'=>'intakesBorninrescueshelterAnimalID','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'intakesBorninrescueshelterAnimalConditionID','operation'=>'equals','criteria'=>"Condition"],
+            ['fieldName'=>'intakesBorninrescueshelterDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'intakesBorninrescueshelterNotes','operation'=>'equals','criteria'=>"Notes"],
+            ['fieldName'=>'animalName','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'animalConditionName','operation'=>'equals','criteria'=>"Condition"],
+        ];
+
         $translatedFields = [
             "intakesBorninrescueshelterID",
             "intakesBorninrescueshelterAnimalID",
@@ -55,5 +72,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

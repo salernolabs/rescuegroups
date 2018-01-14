@@ -26,15 +26,25 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('donationID')
+            ->addFilter('donationID', 'equals', 'ID')
             ->addField('donationContactID')
+            ->addFilter('donationContactID', 'equals', 'Contact')
             ->addField('donationContactName')
+            ->addFilter('donationContactName', 'equals', 'Contact')
             ->addField('donationContactType')
+            ->addFilter('donationContactType', 'equals', 'Donor Type')
             ->addField('donationAmount')
+            ->addFilter('donationAmount', 'equals', 'Amount')
             ->addField('donationInkind')
+            ->addFilter('donationInkind', 'equals', 'Inkind type')
             ->addField('donationComment')
+            ->addFilter('donationComment', 'equals', 'Comment')
             ->addField('donationLettersent')
+            ->addFilter('donationLettersent', 'equals', 'Letter sent')
             ->addField('donationPurpose')
+            ->addFilter('donationPurpose', 'equals', 'Purpose')
             ->addField('donationDate')
+            ->addFilter('donationDate', 'equals', 'Date')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -46,7 +56,20 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'donationID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'donationContactID','operation'=>'equals','criteria'=>"Contact"],
+            ['fieldName'=>'donationContactName','operation'=>'equals','criteria'=>"Contact"],
+            ['fieldName'=>'donationContactType','operation'=>'equals','criteria'=>"Donor Type"],
+            ['fieldName'=>'donationAmount','operation'=>'equals','criteria'=>"Amount"],
+            ['fieldName'=>'donationInkind','operation'=>'equals','criteria'=>"Inkind type"],
+            ['fieldName'=>'donationComment','operation'=>'equals','criteria'=>"Comment"],
+            ['fieldName'=>'donationLettersent','operation'=>'equals','criteria'=>"Letter sent"],
+            ['fieldName'=>'donationPurpose','operation'=>'equals','criteria'=>"Purpose"],
+            ['fieldName'=>'donationDate','operation'=>'equals','criteria'=>"Date"],
+        ];
+
         $translatedFields = [
             "donationID",
             "donationContactID",
@@ -61,5 +84,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

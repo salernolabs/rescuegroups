@@ -26,16 +26,27 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('intakesOwnersurrenderID')
+            ->addFilter('intakesOwnersurrenderID', 'equals', 'Owner Surrender')
             ->addField('intakesOwnersurrenderAnimalID')
+            ->addFilter('intakesOwnersurrenderAnimalID', 'equals', 'Animal')
             ->addField('intakesOwnersurrenderAnimalConditionID')
+            ->addFilter('intakesOwnersurrenderAnimalConditionID', 'equals', 'Condition')
             ->addField('intakesOwnersurrenderDate')
+            ->addFilter('intakesOwnersurrenderDate', 'equals', 'Date')
             ->addField('intakesOwnersurrenderNotes')
+            ->addFilter('intakesOwnersurrenderNotes', 'equals', 'Notes')
             ->addField('intakesOwnersurrenderOwnerID')
+            ->addFilter('intakesOwnersurrenderOwnerID', 'equals', 'Surrendered By')
             ->addField('intakesOwnersurrenderReasonID')
+            ->addFilter('intakesOwnersurrenderReasonID', 'equals', 'Surrender Reason')
             ->addField('animalName')
+            ->addFilter('animalName', 'equals', 'Animal')
             ->addField('animalConditionName')
+            ->addFilter('animalConditionName', 'equals', 'Condition')
             ->addField('ownerName')
+            ->addFilter('ownerName', 'equals', 'Surrendered By')
             ->addField('surrenderReason')
+            ->addFilter('surrenderReason', 'equals', 'Surrender Reason')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -47,7 +58,21 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'intakesOwnersurrenderID','operation'=>'equals','criteria'=>"Owner Surrender"],
+            ['fieldName'=>'intakesOwnersurrenderAnimalID','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'intakesOwnersurrenderAnimalConditionID','operation'=>'equals','criteria'=>"Condition"],
+            ['fieldName'=>'intakesOwnersurrenderDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'intakesOwnersurrenderNotes','operation'=>'equals','criteria'=>"Notes"],
+            ['fieldName'=>'intakesOwnersurrenderOwnerID','operation'=>'equals','criteria'=>"Surrendered By"],
+            ['fieldName'=>'intakesOwnersurrenderReasonID','operation'=>'equals','criteria'=>"Surrender Reason"],
+            ['fieldName'=>'animalName','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'animalConditionName','operation'=>'equals','criteria'=>"Condition"],
+            ['fieldName'=>'ownerName','operation'=>'equals','criteria'=>"Surrendered By"],
+            ['fieldName'=>'surrenderReason','operation'=>'equals','criteria'=>"Surrender Reason"],
+        ];
+
         $translatedFields = [
             "intakesOwnersurrenderID",
             "intakesOwnersurrenderAnimalID",
@@ -63,5 +88,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

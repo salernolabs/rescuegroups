@@ -26,11 +26,17 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('speciesID')
+            ->addFilter('speciesID', 'equals', 'ID')
             ->addField('speciesSingular')
+            ->addFilter('speciesSingular', 'equals', 'Singular name')
             ->addField('speciesPlural')
+            ->addFilter('speciesPlural', 'equals', 'Plural name')
             ->addField('speciesSingularYoung')
+            ->addFilter('speciesSingularYoung', 'equals', 'Singular young name')
             ->addField('speciesPluralYoung')
+            ->addFilter('speciesPluralYoung', 'equals', 'Plural young name')
             ->addField('speciesFullname')
+            ->addFilter('speciesFullname', 'equals', 'Full name')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -42,7 +48,16 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'speciesID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'speciesSingular','operation'=>'equals','criteria'=>"Singular name"],
+            ['fieldName'=>'speciesPlural','operation'=>'equals','criteria'=>"Plural name"],
+            ['fieldName'=>'speciesSingularYoung','operation'=>'equals','criteria'=>"Singular young name"],
+            ['fieldName'=>'speciesPluralYoung','operation'=>'equals','criteria'=>"Plural young name"],
+            ['fieldName'=>'speciesFullname','operation'=>'equals','criteria'=>"Full name"],
+        ];
+
         $translatedFields = [
             "speciesID",
             "speciesSingular",
@@ -53,5 +68,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

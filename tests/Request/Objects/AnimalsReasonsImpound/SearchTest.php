@@ -26,7 +26,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('reasonID')
+            ->addFilter('reasonID', 'equals', 'Reason ID')
             ->addField('reasonName')
+            ->addFilter('reasonName', 'equals', 'Reason')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -38,12 +40,18 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'reasonID','operation'=>'equals','criteria'=>"Reason ID"],
+            ['fieldName'=>'reasonName','operation'=>'equals','criteria'=>"Reason"],
+        ];
+
         $translatedFields = [
             "reasonID",
             "reasonName",
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

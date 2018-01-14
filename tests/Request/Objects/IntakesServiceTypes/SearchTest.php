@@ -26,7 +26,9 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('serviceID')
+            ->addFilter('serviceID', 'equals', 'Service')
             ->addField('serviceName')
+            ->addFilter('serviceName', 'equals', 'Service')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -38,12 +40,18 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'serviceID','operation'=>'equals','criteria'=>"Service"],
+            ['fieldName'=>'serviceName','operation'=>'equals','criteria'=>"Service"],
+        ];
+
         $translatedFields = [
             "serviceID",
             "serviceName",
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

@@ -26,11 +26,17 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('articleID')
+            ->addFilter('articleID', 'equals', 'ID')
             ->addField('articleOrgID')
+            ->addFilter('articleOrgID', 'equals', 'Organization')
             ->addField('articleTitle')
+            ->addFilter('articleTitle', 'equals', 'Title')
             ->addField('articleDescription')
+            ->addFilter('articleDescription', 'equals', 'Description')
             ->addField('articleDate')
+            ->addFilter('articleDate', 'equals', 'Date')
             ->addField('articleUpdatedDate')
+            ->addFilter('articleUpdatedDate', 'equals', 'Last updated')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -42,7 +48,16 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'articleID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'articleOrgID','operation'=>'equals','criteria'=>"Organization"],
+            ['fieldName'=>'articleTitle','operation'=>'equals','criteria'=>"Title"],
+            ['fieldName'=>'articleDescription','operation'=>'equals','criteria'=>"Description"],
+            ['fieldName'=>'articleDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'articleUpdatedDate','operation'=>'equals','criteria'=>"Last updated"],
+        ];
+
         $translatedFields = [
             "articleID",
             "articleOrgID",
@@ -53,5 +68,6 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

@@ -26,16 +26,27 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('outcomesAdoptionID')
+            ->addFilter('outcomesAdoptionID', 'equals', 'ID')
             ->addField('outcomesAdoptionIntakeID')
+            ->addFilter('outcomesAdoptionIntakeID', 'equals', 'Outcome Adoption Intake')
             ->addField('outcomesAdoptionAnimalConditionID')
+            ->addFilter('outcomesAdoptionAnimalConditionID', 'equals', 'Condition')
             ->addField('outcomesAdoptionDate')
+            ->addFilter('outcomesAdoptionDate', 'equals', 'Date')
             ->addField('outcomesAdoptionNotes')
+            ->addFilter('outcomesAdoptionNotes', 'equals', 'Notes')
             ->addField('outcomesAdoptionAdoptionID')
+            ->addFilter('outcomesAdoptionAdoptionID', 'equals', 'Adoption')
             ->addField('animalID')
+            ->addFilter('animalID', 'equals', 'Animal')
             ->addField('animalName')
+            ->addFilter('animalName', 'equals', 'Animal')
             ->addField('animalConditionName')
+            ->addFilter('animalConditionName', 'equals', 'Condition')
             ->addField('adopterContactID')
+            ->addFilter('adopterContactID', 'equals', 'Adopter Contact')
             ->addField('ownerName')
+            ->addFilter('ownerName', 'equals', 'Owner')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -47,7 +58,21 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'outcomesAdoptionID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'outcomesAdoptionIntakeID','operation'=>'equals','criteria'=>"Outcome Adoption Intake"],
+            ['fieldName'=>'outcomesAdoptionAnimalConditionID','operation'=>'equals','criteria'=>"Condition"],
+            ['fieldName'=>'outcomesAdoptionDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'outcomesAdoptionNotes','operation'=>'equals','criteria'=>"Notes"],
+            ['fieldName'=>'outcomesAdoptionAdoptionID','operation'=>'equals','criteria'=>"Adoption"],
+            ['fieldName'=>'animalID','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'animalName','operation'=>'equals','criteria'=>"Animal"],
+            ['fieldName'=>'animalConditionName','operation'=>'equals','criteria'=>"Condition"],
+            ['fieldName'=>'adopterContactID','operation'=>'equals','criteria'=>"Adopter Contact"],
+            ['fieldName'=>'ownerName','operation'=>'equals','criteria'=>"Owner"],
+        ];
+
         $translatedFields = [
             "outcomesAdoptionID",
             "outcomesAdoptionIntakeID",
@@ -63,5 +88,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

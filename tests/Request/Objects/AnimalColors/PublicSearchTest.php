@@ -26,9 +26,13 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('colorID')
+            ->addFilter('colorID', 'equals', 'ID')
             ->addField('colorName')
+            ->addFilter('colorName', 'equals', 'Color')
             ->addField('colorSpecies')
+            ->addFilter('colorSpecies', 'equals', 'Species')
             ->addField('colorSpeciesID')
+            ->addFilter('colorSpeciesID', 'equals', 'Species')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -40,7 +44,14 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'colorID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'colorName','operation'=>'equals','criteria'=>"Color"],
+            ['fieldName'=>'colorSpecies','operation'=>'equals','criteria'=>"Species"],
+            ['fieldName'=>'colorSpeciesID','operation'=>'equals','criteria'=>"Species"],
+        ];
+
         $translatedFields = [
             "colorID",
             "colorName",
@@ -49,5 +60,6 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }

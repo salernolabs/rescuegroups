@@ -26,13 +26,21 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
             ->addField('journalEntryID')
+            ->addFilter('journalEntryID', 'equals', 'ID')
             ->addField('journalEntryContactID')
+            ->addFilter('journalEntryContactID', 'equals', 'Contact')
             ->addField('journalEntryDate')
+            ->addFilter('journalEntryDate', 'equals', 'Date')
             ->addField('journalEntryComment')
+            ->addFilter('journalEntryComment', 'equals', 'Comment')
             ->addField('journalEntryType')
+            ->addFilter('journalEntryType', 'equals', 'Entry Type')
             ->addField('volunteerName')
+            ->addFilter('volunteerName', 'equals', 'Volunteer Name')
             ->addField('volunteerType')
+            ->addFilter('volunteerType', 'equals', 'Volunteer Type')
             ->addField('journalEntryCreatedDate')
+            ->addFilter('journalEntryCreatedDate', 'equals', 'Added Date')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);
@@ -44,7 +52,18 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('testSortValue', $data['search']->resultSort);
         $this->assertEquals('ascending', $data['search']->resultOrder);
         $this->assertEquals('Yes', $data['search']->calcFoundRows);
-        
+
+        $filterTable = [
+            ['fieldName'=>'journalEntryID','operation'=>'equals','criteria'=>"ID"],
+            ['fieldName'=>'journalEntryContactID','operation'=>'equals','criteria'=>"Contact"],
+            ['fieldName'=>'journalEntryDate','operation'=>'equals','criteria'=>"Date"],
+            ['fieldName'=>'journalEntryComment','operation'=>'equals','criteria'=>"Comment"],
+            ['fieldName'=>'journalEntryType','operation'=>'equals','criteria'=>"Entry Type"],
+            ['fieldName'=>'volunteerName','operation'=>'equals','criteria'=>"Volunteer Name"],
+            ['fieldName'=>'volunteerType','operation'=>'equals','criteria'=>"Volunteer Type"],
+            ['fieldName'=>'journalEntryCreatedDate','operation'=>'equals','criteria'=>"Added Date"],
+        ];
+
         $translatedFields = [
             "journalEntryID",
             "journalEntryContactID",
@@ -57,5 +76,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         ];
 
         $this->assertEquals($translatedFields, $data['search']->fields);
+        $this->assertEquals($filterTable, $data['search']->filters);
     }
 }
