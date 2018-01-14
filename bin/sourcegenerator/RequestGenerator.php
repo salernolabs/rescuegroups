@@ -225,6 +225,10 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
         }
+        elseif ($query->isList())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/list-query.mustache'), $query);
+        }
         else
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
