@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class WaitingList
+class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -41,13 +41,31 @@ class WaitingList
 
     /**
      * WaitingList Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->waitinglistID)) $this->waitinglistID = $inputData->waitinglistID;
         if (!empty($inputData->waitinglistName)) $this->waitinglistName = $inputData->waitinglistName;
         if (!empty($inputData->waitinglistType)) $this->waitinglistType = $inputData->waitinglistType;
         if (!empty($inputData->waitinglistComment)) $this->waitinglistComment = $inputData->waitinglistComment;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->waitinglistID !== null) $output['waitinglistID'] = $this->waitinglistID;
+        if ($this->waitinglistName !== null) $output['waitinglistName'] = $this->waitinglistName;
+        if ($this->waitinglistType !== null) $output['waitinglistType'] = $this->waitinglistType;
+        if ($this->waitinglistComment !== null) $output['waitinglistComment'] = $this->waitinglistComment;
+
+        return $output;
     }
 }

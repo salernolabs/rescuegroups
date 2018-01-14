@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class AnimalGroup
+class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -34,12 +34,29 @@ class AnimalGroup
 
     /**
      * AnimalGroup Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->groupID)) $this->groupID = $inputData->groupID;
         if (!empty($inputData->groupName)) $this->groupName = $inputData->groupName;
         if (!empty($inputData->groupHeaderID)) $this->groupHeaderID = $inputData->groupHeaderID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->groupID !== null) $output['groupID'] = $this->groupID;
+        if ($this->groupName !== null) $output['groupName'] = $this->groupName;
+        if ($this->groupHeaderID !== null) $output['groupHeaderID'] = $this->groupHeaderID;
+
+        return $output;
     }
 }

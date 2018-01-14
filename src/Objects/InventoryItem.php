@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class InventoryItem
+class InventoryItem implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -97,10 +97,12 @@ class InventoryItem
 
     /**
      * InventoryItem Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->inventoryitemID)) $this->inventoryitemID = $inputData->inventoryitemID;
         if (!empty($inputData->inventoryitemName)) $this->inventoryitemName = $inputData->inventoryitemName;
         if (!empty($inputData->inventoryitemItemID)) $this->inventoryitemItemID = $inputData->inventoryitemItemID;
@@ -113,5 +115,29 @@ class InventoryItem
         if (!empty($inputData->inventoryitemDisposedDate)) $this->inventoryitemDisposedDate = $inputData->inventoryitemDisposedDate;
         if (!empty($inputData->inventoryitemDisposedDestination)) $this->inventoryitemDisposedDestination = $inputData->inventoryitemDisposedDestination;
         if (!empty($inputData->inventoryitemStorageLocation)) $this->inventoryitemStorageLocation = $inputData->inventoryitemStorageLocation;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->inventoryitemID !== null) $output['inventoryitemID'] = $this->inventoryitemID;
+        if ($this->inventoryitemName !== null) $output['inventoryitemName'] = $this->inventoryitemName;
+        if ($this->inventoryitemItemID !== null) $output['inventoryitemItemID'] = $this->inventoryitemItemID;
+        if ($this->inventoryitemDescription !== null) $output['inventoryitemDescription'] = $this->inventoryitemDescription;
+        if ($this->inventoryitemReceivedDate !== null) $output['inventoryitemReceivedDate'] = $this->inventoryitemReceivedDate;
+        if ($this->inventoryitemSource !== null) $output['inventoryitemSource'] = $this->inventoryitemSource;
+        if ($this->inventoryitemCost !== null) $output['inventoryitemCost'] = $this->inventoryitemCost;
+        if ($this->inventoryitemConditionID !== null) $output['inventoryitemConditionID'] = $this->inventoryitemConditionID;
+        if ($this->inventoryitemCategory !== null) $output['inventoryitemCategory'] = $this->inventoryitemCategory;
+        if ($this->inventoryitemDisposedDate !== null) $output['inventoryitemDisposedDate'] = $this->inventoryitemDisposedDate;
+        if ($this->inventoryitemDisposedDestination !== null) $output['inventoryitemDisposedDestination'] = $this->inventoryitemDisposedDestination;
+        if ($this->inventoryitemStorageLocation !== null) $output['inventoryitemStorageLocation'] = $this->inventoryitemStorageLocation;
+
+        return $output;
     }
 }

@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class IntakesServiceType
+class IntakesServiceType implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Service
@@ -27,11 +27,27 @@ class IntakesServiceType
 
     /**
      * IntakesServiceType Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->serviceID)) $this->serviceID = $inputData->serviceID;
         if (!empty($inputData->serviceName)) $this->serviceName = $inputData->serviceName;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->serviceID !== null) $output['serviceID'] = $this->serviceID;
+        if ($this->serviceName !== null) $output['serviceName'] = $this->serviceName;
+
+        return $output;
     }
 }

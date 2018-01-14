@@ -8,27 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\WebPages;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\WebPage[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\WebPage $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "webpageID" => 1,
-        "webpageName" => 0,
-        "webpageContent" => 0,
-        "webpageStatus" => 0,
-        "webpageUselayout" => 0,
-        "webpageShowonmenu" => 0,
-        "webpageMetaDescription" => 0,
-        "webpageBackgroundImageID" => 0,
-        "webpageBackgroundMusicID" => 0,
-        "webpageRoleID" => 0,
-    ];
+    public function updateWebPage(\RescueGroups\Objects\WebPage $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -59,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\WebPage[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\WebPage($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\WebPage($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

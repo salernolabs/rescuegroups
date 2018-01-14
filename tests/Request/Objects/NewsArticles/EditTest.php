@@ -21,9 +21,21 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\Edit();
 
+        $testObject = new \RescueGroups\Objects\NewsArticle();
+        $testObject->articleID = 'testValue ID';
+        $testObject->articleTitle = 'testValue Title';
+        $testObject->articleDescription = 'testValue Description';
+        $testObject->articleDate = 'testValue Date';
+
+        $query->updateNewsArticle($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('newsarticles', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['articleID']);
+        $this->assertEquals('testValue Title', $data['values'][0]['articleTitle']);
+        $this->assertEquals('testValue Description', $data['values'][0]['articleDescription']);
+        $this->assertEquals('testValue Date', $data['values'][0]['articleDate']);
     }
 }

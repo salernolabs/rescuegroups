@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class IntakesBornInRescueShelter
+class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Born In Rescue/Shelter
@@ -48,14 +48,33 @@ class IntakesBornInRescueShelter
 
     /**
      * IntakesBornInRescueShelter Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->intakesBorninrescueshelterID)) $this->id = $inputData->intakesBorninrescueshelterID;
         if (!empty($inputData->intakesBorninrescueshelterAnimalID)) $this->animalID = $inputData->intakesBorninrescueshelterAnimalID;
         if (!empty($inputData->intakesBorninrescueshelterAnimalConditionID)) $this->animalConditionID = $inputData->intakesBorninrescueshelterAnimalConditionID;
         if (!empty($inputData->intakesBorninrescueshelterDate)) $this->date = $inputData->intakesBorninrescueshelterDate;
         if (!empty($inputData->intakesBorninrescueshelterNotes)) $this->notes = $inputData->intakesBorninrescueshelterNotes;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->id !== null) $output['intakesBorninrescueshelterID'] = $this->id;
+        if ($this->animalID !== null) $output['intakesBorninrescueshelterAnimalID'] = $this->animalID;
+        if ($this->animalConditionID !== null) $output['intakesBorninrescueshelterAnimalConditionID'] = $this->animalConditionID;
+        if ($this->date !== null) $output['intakesBorninrescueshelterDate'] = $this->date;
+        if ($this->notes !== null) $output['intakesBorninrescueshelterNotes'] = $this->notes;
+
+        return $output;
     }
 }

@@ -8,23 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\AnimalFiles;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\AnimalFile[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\AnimalFile $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "animalfileID" => 1,
-        "animalfileAnimalID" => 0,
-        "animalfileDescription" => 0,
-        "animalfileStatus" => 0,
-        "animalfileDisplayInline" => 0,
-        "animalfilePublic" => 0,
-    ];
+    public function updateAnimalFile(\RescueGroups\Objects\AnimalFile $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -55,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalFile[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalFile($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalFile($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

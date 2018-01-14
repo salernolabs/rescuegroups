@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class AnimalsAdoption
+class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Adoption ID
@@ -90,10 +90,12 @@ class AnimalsAdoption
 
     /**
      * AnimalsAdoption Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->adoptionID)) $this->adoptionID = $inputData->adoptionID;
         if (!empty($inputData->adoptionAnimalID)) $this->adoptionAnimalID = $inputData->adoptionAnimalID;
         if (!empty($inputData->adoptionAdopterID)) $this->adoptionAdopterID = $inputData->adoptionAdopterID;
@@ -105,5 +107,28 @@ class AnimalsAdoption
         if (!empty($inputData->adoptionSubmittedformID)) $this->adoptionSubmittedformID = $inputData->adoptionSubmittedformID;
         if (!empty($inputData->adoptionStatusID)) $this->adoptionStatusID = $inputData->adoptionStatusID;
         if (!empty($inputData->adoptionLetterSent)) $this->adoptionLetterSent = $inputData->adoptionLetterSent;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->adoptionID !== null) $output['adoptionID'] = $this->adoptionID;
+        if ($this->adoptionAnimalID !== null) $output['adoptionAnimalID'] = $this->adoptionAnimalID;
+        if ($this->adoptionAdopterID !== null) $output['adoptionAdopterID'] = $this->adoptionAdopterID;
+        if ($this->adoptionLeadID !== null) $output['adoptionLeadID'] = $this->adoptionLeadID;
+        if ($this->adoptionFeeAmount !== null) $output['adoptionFeeAmount'] = $this->adoptionFeeAmount;
+        if ($this->adoptionDonationAmount !== null) $output['adoptionDonationAmount'] = $this->adoptionDonationAmount;
+        if ($this->adoptionDonationID !== null) $output['adoptionDonationID'] = $this->adoptionDonationID;
+        if ($this->adoptionDate !== null) $output['adoptionDate'] = $this->adoptionDate;
+        if ($this->adoptionSubmittedformID !== null) $output['adoptionSubmittedformID'] = $this->adoptionSubmittedformID;
+        if ($this->adoptionStatusID !== null) $output['adoptionStatusID'] = $this->adoptionStatusID;
+        if ($this->adoptionLetterSent !== null) $output['adoptionLetterSent'] = $this->adoptionLetterSent;
+
+        return $output;
     }
 }

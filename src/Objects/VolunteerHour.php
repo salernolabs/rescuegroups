@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class VolunteerHour
+class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -48,14 +48,33 @@ class VolunteerHour
 
     /**
      * VolunteerHour Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->volunteerHoursID)) $this->id = $inputData->volunteerHoursID;
         if (!empty($inputData->volunteerHoursVolunteerID)) $this->volunteerID = $inputData->volunteerHoursVolunteerID;
         if (!empty($inputData->volunteerHoursVolunteerDate)) $this->volunteerDate = $inputData->volunteerHoursVolunteerDate;
         if (!empty($inputData->volunteerHoursVolunteerLength)) $this->volunteerLength = $inputData->volunteerHoursVolunteerLength;
         if (!empty($inputData->volunteerHoursVolunteerTask)) $this->volunteerTask = $inputData->volunteerHoursVolunteerTask;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->id !== null) $output['volunteerHoursID'] = $this->id;
+        if ($this->volunteerID !== null) $output['volunteerHoursVolunteerID'] = $this->volunteerID;
+        if ($this->volunteerDate !== null) $output['volunteerHoursVolunteerDate'] = $this->volunteerDate;
+        if ($this->volunteerLength !== null) $output['volunteerHoursVolunteerLength'] = $this->volunteerLength;
+        if ($this->volunteerTask !== null) $output['volunteerHoursVolunteerTask'] = $this->volunteerTask;
+
+        return $output;
     }
 }

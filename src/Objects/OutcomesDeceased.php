@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class OutcomesDeceased
+class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -48,14 +48,33 @@ class OutcomesDeceased
 
     /**
      * OutcomesDeceased Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->outcomesDeceasedID)) $this->id = $inputData->outcomesDeceasedID;
         if (!empty($inputData->outcomesDeceasedAnimalConditionID)) $this->animalConditionID = $inputData->outcomesDeceasedAnimalConditionID;
         if (!empty($inputData->outcomesDeceasedDate)) $this->date = $inputData->outcomesDeceasedDate;
         if (!empty($inputData->outcomesDeceasedNotes)) $this->notes = $inputData->outcomesDeceasedNotes;
         if (!empty($inputData->outcomesDeceasedReason)) $this->reason = $inputData->outcomesDeceasedReason;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->id !== null) $output['outcomesDeceasedID'] = $this->id;
+        if ($this->animalConditionID !== null) $output['outcomesDeceasedAnimalConditionID'] = $this->animalConditionID;
+        if ($this->date !== null) $output['outcomesDeceasedDate'] = $this->date;
+        if ($this->notes !== null) $output['outcomesDeceasedNotes'] = $this->notes;
+        if ($this->reason !== null) $output['outcomesDeceasedReason'] = $this->reason;
+
+        return $output;
     }
 }

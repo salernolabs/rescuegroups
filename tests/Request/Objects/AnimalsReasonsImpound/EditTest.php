@@ -21,9 +21,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Edit();
 
+        $testObject = new \RescueGroups\Objects\AnimalsReasonsImpound();
+        $testObject->reasonID = 'testValue Reason ID';
+        $testObject->reasonName = 'testValue Reason';
+
+        $query->updateAnimalsReasonsImpound($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsReasonsImpound', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue Reason ID', $data['values'][0]['reasonID']);
+        $this->assertEquals('testValue Reason', $data['values'][0]['reasonName']);
     }
 }

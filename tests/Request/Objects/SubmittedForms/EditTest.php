@@ -21,9 +21,19 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\Edit();
 
+        $testObject = new \RescueGroups\Objects\SubmittedForm();
+        $testObject->submittedformID = 'testValue ID';
+        $testObject->submittedformAnimalID = 'testValue Animal';
+        $testObject->submittedformStatusID = 'testValue Status';
+
+        $query->updateSubmittedForm($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('submittedforms', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['submittedformID']);
+        $this->assertEquals('testValue Animal', $data['values'][0]['submittedformAnimalID']);
+        $this->assertEquals('testValue Status', $data['values'][0]['submittedformStatusID']);
     }
 }

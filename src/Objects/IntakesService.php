@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class IntakesService
+class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Service
@@ -62,10 +62,12 @@ class IntakesService
 
     /**
      * IntakesService Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->intakesServiceID)) $this->intakesServiceID = $inputData->intakesServiceID;
         if (!empty($inputData->intakesServiceAnimalID)) $this->intakesServiceAnimalID = $inputData->intakesServiceAnimalID;
         if (!empty($inputData->intakesServiceAnimalConditionID)) $this->intakesServiceAnimalConditionID = $inputData->intakesServiceAnimalConditionID;
@@ -73,5 +75,24 @@ class IntakesService
         if (!empty($inputData->intakesServiceNotes)) $this->intakesServiceNotes = $inputData->intakesServiceNotes;
         if (!empty($inputData->intakesServiceOwnerID)) $this->intakesServiceOwnerID = $inputData->intakesServiceOwnerID;
         if (!empty($inputData->intakesServiceServicetypeID)) $this->intakesServiceServicetypeID = $inputData->intakesServiceServicetypeID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->intakesServiceID !== null) $output['intakesServiceID'] = $this->intakesServiceID;
+        if ($this->intakesServiceAnimalID !== null) $output['intakesServiceAnimalID'] = $this->intakesServiceAnimalID;
+        if ($this->intakesServiceAnimalConditionID !== null) $output['intakesServiceAnimalConditionID'] = $this->intakesServiceAnimalConditionID;
+        if ($this->intakesServiceDate !== null) $output['intakesServiceDate'] = $this->intakesServiceDate;
+        if ($this->intakesServiceNotes !== null) $output['intakesServiceNotes'] = $this->intakesServiceNotes;
+        if ($this->intakesServiceOwnerID !== null) $output['intakesServiceOwnerID'] = $this->intakesServiceOwnerID;
+        if ($this->intakesServiceServicetypeID !== null) $output['intakesServiceServicetypeID'] = $this->intakesServiceServicetypeID;
+
+        return $output;
     }
 }

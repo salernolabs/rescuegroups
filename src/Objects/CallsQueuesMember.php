@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class CallsQueuesMember
+class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -41,13 +41,31 @@ class CallsQueuesMember
 
     /**
      * CallsQueuesMember Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->memberID)) $this->memberID = $inputData->memberID;
         if (!empty($inputData->memberContactID)) $this->memberContactID = $inputData->memberContactID;
         if (!empty($inputData->memberQueueID)) $this->memberQueueID = $inputData->memberQueueID;
         if (!empty($inputData->memberManager)) $this->memberManager = $inputData->memberManager;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->memberID !== null) $output['memberID'] = $this->memberID;
+        if ($this->memberContactID !== null) $output['memberContactID'] = $this->memberContactID;
+        if ($this->memberQueueID !== null) $output['memberQueueID'] = $this->memberQueueID;
+        if ($this->memberManager !== null) $output['memberManager'] = $this->memberManager;
+
+        return $output;
     }
 }

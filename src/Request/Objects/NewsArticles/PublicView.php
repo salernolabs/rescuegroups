@@ -26,7 +26,7 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
      */
     public function loginRequired()
     {
-        return true;
+        return false;
     }
 
     /**

@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class WebFile
+class WebFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -48,14 +48,33 @@ class WebFile
 
     /**
      * WebFile Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->webfileID)) $this->webfileID = $inputData->webfileID;
         if (!empty($inputData->webfileDescription)) $this->webfileDescription = $inputData->webfileDescription;
         if (!empty($inputData->webfileStatus)) $this->webfileStatus = $inputData->webfileStatus;
         if (!empty($inputData->webfileDisplayInline)) $this->webfileDisplayInline = $inputData->webfileDisplayInline;
         if (!empty($inputData->webfileRoleID)) $this->webfileRoleID = $inputData->webfileRoleID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->webfileID !== null) $output['webfileID'] = $this->webfileID;
+        if ($this->webfileDescription !== null) $output['webfileDescription'] = $this->webfileDescription;
+        if ($this->webfileStatus !== null) $output['webfileStatus'] = $this->webfileStatus;
+        if ($this->webfileDisplayInline !== null) $output['webfileDisplayInline'] = $this->webfileDisplayInline;
+        if ($this->webfileRoleID !== null) $output['webfileRoleID'] = $this->webfileRoleID;
+
+        return $output;
     }
 }

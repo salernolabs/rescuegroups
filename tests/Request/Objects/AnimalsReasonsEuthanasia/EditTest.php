@@ -21,9 +21,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Edit();
 
+        $testObject = new \RescueGroups\Objects\AnimalsReasonsEuthanasia();
+        $testObject->reasonID = 'testValue Reason ID';
+        $testObject->reasonName = 'testValue Reason';
+
+        $query->updateAnimalsReasonsEuthanasia($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue Reason ID', $data['values'][0]['reasonID']);
+        $this->assertEquals('testValue Reason', $data['values'][0]['reasonName']);
     }
 }

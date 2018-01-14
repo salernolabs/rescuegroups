@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class ContactFile
+class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * File ID
@@ -41,13 +41,31 @@ class ContactFile
 
     /**
      * ContactFile Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->contactfileID)) $this->contactfileID = $inputData->contactfileID;
         if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
         if (!empty($inputData->contactfileStatus)) $this->contactfileStatus = $inputData->contactfileStatus;
         if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->contactfileID !== null) $output['contactfileID'] = $this->contactfileID;
+        if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
+        if ($this->contactfileStatus !== null) $output['contactfileStatus'] = $this->contactfileStatus;
+        if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;
+
+        return $output;
     }
 }

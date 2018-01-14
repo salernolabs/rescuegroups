@@ -8,22 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\VolunteerHours;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\VolunteerHour[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\VolunteerHour $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "id" => 1,
-        "volunteerID" => 0,
-        "volunteerDate" => 0,
-        "volunteerLength" => 0,
-        "volunteerTask" => 0,
-    ];
+    public function updateVolunteerHour(\RescueGroups\Objects\VolunteerHour $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -54,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\VolunteerHour[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\VolunteerHour($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\VolunteerHour($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

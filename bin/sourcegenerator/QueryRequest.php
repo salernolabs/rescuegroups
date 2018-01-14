@@ -68,6 +68,11 @@ class QueryRequest
             $this->requestClassName = 'GetList';
         }
 
+        if ($requestData->permissions == 'Public')
+        {
+            $this->loginRequired = 'false';
+        }
+
         if (!empty($requestData->fields))
         {
             foreach ($requestData->fields as $fieldName => $fieldData)
@@ -103,6 +108,14 @@ class QueryRequest
     public function isList()
     {
         return ($this->requestName == 'list' || $this->requestName == 'publicList');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEdit()
+    {
+        return ($this->requestName == 'edit');
     }
 
     /**

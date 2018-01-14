@@ -8,49 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\Contacts;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\Contact[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\Contact $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "contactID" => 1,
-        "contactClass" => 0,
-        "contactSalutation" => 0,
-        "contactFirstname" => 0,
-        "contactLastname" => 0,
-        "contactTitle" => 0,
-        "contactAddress" => 0,
-        "contactCity" => 0,
-        "contactState" => 0,
-        "contactPostalcode" => 0,
-        "contactPlus4" => 0,
-        "contactCounty" => 0,
-        "contactCountry" => 0,
-        "contactPhoneHome" => 0,
-        "contactPhoneWork" => 0,
-        "contactPhoneWorkExt" => 0,
-        "contactPhoneCell" => 0,
-        "contactFax" => 0,
-        "contactEmail" => 0,
-        "contactEmailAlt" => 0,
-        "contactEmailPager" => 0,
-        "contactCompany" => 0,
-        "contactReferredBy" => 0,
-        "contactCarrier" => 0,
-        "contactSendMail" => 0,
-        "contactActive" => 0,
-        "contactComment" => 0,
-        "contactCoalitionMember" => 0,
-        "contactTransportation" => 0,
-        "contactAvailability" => 0,
-        "contactCaretakerPublic" => 0,
-        "contactGroups" => 0,
-    ];
+    public function updateContact(\RescueGroups\Objects\Contact $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -81,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Contact[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Contact($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Contact($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

@@ -1,29 +1,29 @@
 <?php
 /**
- * IntakesBornInRescueShelter Edit Request
+ * {{className}} {{requestClassName}} Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
+namespace RescueGroups\Request\Objects\{{className}};
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Editable  array
+     * Editable {{$className}} array
      *
-     * @var \RescueGroups\Objects\IntakesBornInRescueShelter[]
+     * @var \RescueGroups\Objects\{{responseClassName}}[]
      */
     protected $editObjects = [];
 
     /**
      * Set the editable object
      *
-     * @param \RescueGroups\Objects\IntakesBornInRescueShelter $editObject
+     * @param \RescueGroups\Objects\{{responseClassName}} $editObject
      * @return $this
      */
-    public function updateIntakesBornInRescueShelter(\RescueGroups\Objects\IntakesBornInRescueShelter $editObject)
+    public function update{{responseClassName}}(\RescueGroups\Objects\{{responseClassName}} $editObject)
     {
         $this->editObjects[] = $editObject;
 
@@ -35,7 +35,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function loginRequired()
     {
-        return true;
+        return {{loginRequired}};
     }
 
     /**
@@ -45,7 +45,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function getObjectType()
     {
-        return 'intakesBorninrescueshelter';
+        return '{{typeName}}';
     }
 
     /**
@@ -55,7 +55,7 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function getObjectAction()
     {
-        return 'edit';
+        return '{{objectAction}}';
     }
 
     /**

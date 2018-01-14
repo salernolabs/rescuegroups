@@ -8,29 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\InventoryItems;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\InventoryItem[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\InventoryItem $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "inventoryitemID" => 1,
-        "inventoryitemName" => 0,
-        "inventoryitemItemID" => 0,
-        "inventoryitemDescription" => 0,
-        "inventoryitemReceivedDate" => 0,
-        "inventoryitemSource" => 0,
-        "inventoryitemCost" => 0,
-        "inventoryitemConditionID" => 0,
-        "inventoryitemCategory" => 0,
-        "inventoryitemDisposedDate" => 0,
-        "inventoryitemDisposedDestination" => 0,
-        "inventoryitemStorageLocation" => 0,
-    ];
+    public function updateInventoryItem(\RescueGroups\Objects\InventoryItem $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -61,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\InventoryItem[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\InventoryItem($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\InventoryItem($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

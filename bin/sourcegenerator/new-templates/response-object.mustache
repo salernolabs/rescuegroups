@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class {{responseClassName}}
+class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterface
 {
     {{# fields}}
     /**
@@ -22,12 +22,29 @@ class {{responseClassName}}
 
     /**
      * {{responseClassName}} Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         {{# fields}}
         if (!empty($inputData->{{name}})) $this->{{sdkFieldName}} = $inputData->{{name}};
         {{/ fields}}
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        {{# fields}}
+        if ($this->{{sdkFieldName}} !== null) $output['{{name}}'] = $this->{{sdkFieldName}};
+        {{/ fields}}
+
+        return $output;
     }
 }

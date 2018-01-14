@@ -21,9 +21,19 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Edit();
 
+        $testObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
+        $testObject->journalEntrytypeID = 'testValue Entrytype ID';
+        $testObject->journalEntrytypeDescription = 'testValue Description';
+        $testObject->journalEntrytypeCategoryID = 'testValue Category ID';
+
+        $query->updateAnimalsJournalEntryType($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue Entrytype ID', $data['values'][0]['journalEntrytypeID']);
+        $this->assertEquals('testValue Description', $data['values'][0]['journalEntrytypeDescription']);
+        $this->assertEquals('testValue Category ID', $data['values'][0]['journalEntrytypeCategoryID']);
     }
 }

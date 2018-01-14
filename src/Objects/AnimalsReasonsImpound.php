@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class AnimalsReasonsImpound
+class AnimalsReasonsImpound implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Reason ID
@@ -27,11 +27,27 @@ class AnimalsReasonsImpound
 
     /**
      * AnimalsReasonsImpound Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->reasonID)) $this->reasonID = $inputData->reasonID;
         if (!empty($inputData->reasonName)) $this->reasonName = $inputData->reasonName;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->reasonID !== null) $output['reasonID'] = $this->reasonID;
+        if ($this->reasonName !== null) $output['reasonName'] = $this->reasonName;
+
+        return $output;
     }
 }

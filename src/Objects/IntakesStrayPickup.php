@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class IntakesStrayPickup
+class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Stray Pickup
@@ -97,10 +97,12 @@ class IntakesStrayPickup
 
     /**
      * IntakesStrayPickup Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->intakesStraypickupID)) $this->intakesStraypickupID = $inputData->intakesStraypickupID;
         if (!empty($inputData->intakesStraypickupAnimalID)) $this->intakesStraypickupAnimalID = $inputData->intakesStraypickupAnimalID;
         if (!empty($inputData->intakesStraypickupAnimalConditionID)) $this->intakesStraypickupAnimalConditionID = $inputData->intakesStraypickupAnimalConditionID;
@@ -113,5 +115,29 @@ class IntakesStrayPickup
         if (!empty($inputData->intakesStraypickupPostalcode)) $this->intakesStraypickupPostalcode = $inputData->intakesStraypickupPostalcode;
         if (!empty($inputData->intakesStraypickupFinderID)) $this->intakesStraypickupFinderID = $inputData->intakesStraypickupFinderID;
         if (!empty($inputData->intakesStraypickupStaffID)) $this->intakesStraypickupStaffID = $inputData->intakesStraypickupStaffID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->intakesStraypickupID !== null) $output['intakesStraypickupID'] = $this->intakesStraypickupID;
+        if ($this->intakesStraypickupAnimalID !== null) $output['intakesStraypickupAnimalID'] = $this->intakesStraypickupAnimalID;
+        if ($this->intakesStraypickupAnimalConditionID !== null) $output['intakesStraypickupAnimalConditionID'] = $this->intakesStraypickupAnimalConditionID;
+        if ($this->intakesStraypickupDate !== null) $output['intakesStraypickupDate'] = $this->intakesStraypickupDate;
+        if ($this->intakesStraypickupNotes !== null) $output['intakesStraypickupNotes'] = $this->intakesStraypickupNotes;
+        if ($this->intakesStraypickupLocation !== null) $output['intakesStraypickupLocation'] = $this->intakesStraypickupLocation;
+        if ($this->intakesStraypickupAddress !== null) $output['intakesStraypickupAddress'] = $this->intakesStraypickupAddress;
+        if ($this->intakesStraypickupCity !== null) $output['intakesStraypickupCity'] = $this->intakesStraypickupCity;
+        if ($this->intakesStraypickupState !== null) $output['intakesStraypickupState'] = $this->intakesStraypickupState;
+        if ($this->intakesStraypickupPostalcode !== null) $output['intakesStraypickupPostalcode'] = $this->intakesStraypickupPostalcode;
+        if ($this->intakesStraypickupFinderID !== null) $output['intakesStraypickupFinderID'] = $this->intakesStraypickupFinderID;
+        if ($this->intakesStraypickupStaffID !== null) $output['intakesStraypickupStaffID'] = $this->intakesStraypickupStaffID;
+
+        return $output;
     }
 }

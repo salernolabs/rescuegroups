@@ -8,30 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\IntakesImpounds;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Editable  array
+     *
+     * @var \RescueGroups\Objects\IntakesImpound[]
+     */
+    protected $editObjects = [];
 
     /**
-     * Filterable Fields
+     * Set the editable object
      *
-     * @var array
+     * @param \RescueGroups\Objects\IntakesImpound $editObject
+     * @return $this
      */
-    private $objectFields = [
-        "intakesImpoundID" => 1,
-        "intakesImpoundAnimalID" => 0,
-        "intakesImpoundAnimalConditionID" => 0,
-        "intakesImpoundDate" => 0,
-        "intakesImpoundNotes" => 0,
-        "intakesImpoundLocation" => 0,
-        "intakesImpoundAddress" => 0,
-        "intakesImpoundCity" => 0,
-        "intakesImpoundState" => 0,
-        "intakesImpoundPostalcode" => 0,
-        "intakesImpoundFromID" => 0,
-        "intakesImpoundStaffID" => 0,
-        "intakesImpoundReasonID" => 0,
-    ];
+    public function updateIntakesImpound(\RescueGroups\Objects\IntakesImpound $editObject)
+    {
+        $this->editObjects[] = $editObject;
+
+        return $this;
+    }
 
     /**
      * @return bool
@@ -62,36 +59,22 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesImpound[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesImpound($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesImpound($data)];
-    }
-
-    /**
      * Apply request parameters to the outgoing request
      *
      * @param $parameterArray
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

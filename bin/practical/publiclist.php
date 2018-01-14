@@ -4,9 +4,9 @@ include(__DIR__ . '/../../vendor/autoload.php');
 
 $api = new \RescueGroups\API();
 
-$login = new \RescueGroups\Request\Actions\Login();
+//$login = new \RescueGroups\Request\Actions\Login();
 
-$api->executeRequest($login);
+//$api->executeRequest($login);
 
 echo 'Getting lists...' . PHP_EOL;
 

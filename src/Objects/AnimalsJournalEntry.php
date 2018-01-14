@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class AnimalsJournalEntry
+class AnimalsJournalEntry implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * Entry ID
@@ -69,10 +69,12 @@ class AnimalsJournalEntry
 
     /**
      * AnimalsJournalEntry Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->journalEntryID)) $this->journalEntryID = $inputData->journalEntryID;
         if (!empty($inputData->journalEntryAnimalID)) $this->journalEntryAnimalID = $inputData->journalEntryAnimalID;
         if (!empty($inputData->journalEntryDate)) $this->journalEntryDate = $inputData->journalEntryDate;
@@ -81,5 +83,25 @@ class AnimalsJournalEntry
         if (!empty($inputData->journalEntryCost)) $this->journalEntryCost = $inputData->journalEntryCost;
         if (!empty($inputData->journalEntryDueDate)) $this->journalEntryDueDate = $inputData->journalEntryDueDate;
         if (!empty($inputData->journalEntryReminderDate)) $this->journalEntryReminderDate = $inputData->journalEntryReminderDate;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->journalEntryID !== null) $output['journalEntryID'] = $this->journalEntryID;
+        if ($this->journalEntryAnimalID !== null) $output['journalEntryAnimalID'] = $this->journalEntryAnimalID;
+        if ($this->journalEntryDate !== null) $output['journalEntryDate'] = $this->journalEntryDate;
+        if ($this->journalEntryComment !== null) $output['journalEntryComment'] = $this->journalEntryComment;
+        if ($this->journalEntryEntrytypeID !== null) $output['journalEntryEntrytypeID'] = $this->journalEntryEntrytypeID;
+        if ($this->journalEntryCost !== null) $output['journalEntryCost'] = $this->journalEntryCost;
+        if ($this->journalEntryDueDate !== null) $output['journalEntryDueDate'] = $this->journalEntryDueDate;
+        if ($this->journalEntryReminderDate !== null) $output['journalEntryReminderDate'] = $this->journalEntryReminderDate;
+
+        return $output;
     }
 }

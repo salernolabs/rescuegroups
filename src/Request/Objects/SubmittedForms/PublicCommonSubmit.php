@@ -46,7 +46,7 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
      */
     public function loginRequired()
     {
-        return true;
+        return false;
     }
 
     /**

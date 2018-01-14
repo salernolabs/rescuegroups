@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Objects;
 
-class User
+class User implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
      * ID
@@ -167,10 +167,12 @@ class User
 
     /**
      * User Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->userID)) $this->userID = $inputData->userID;
         if (!empty($inputData->userLogin)) $this->userLogin = $inputData->userLogin;
         if (!empty($inputData->userPassword)) $this->userPassword = $inputData->userPassword;
@@ -193,5 +195,39 @@ class User
         if (!empty($inputData->userEmailPager)) $this->userEmailPager = $inputData->userEmailPager;
         if (!empty($inputData->userContactID)) $this->userContactID = $inputData->userContactID;
         if (!empty($inputData->userStatus)) $this->userStatus = $inputData->userStatus;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @return array
+     */
+    public function getArray()
+    {
+        $output = [];
+        if ($this->userID !== null) $output['userID'] = $this->userID;
+        if ($this->userLogin !== null) $output['userLogin'] = $this->userLogin;
+        if ($this->userPassword !== null) $output['userPassword'] = $this->userPassword;
+        if ($this->userSalutation !== null) $output['userSalutation'] = $this->userSalutation;
+        if ($this->userFirstname !== null) $output['userFirstname'] = $this->userFirstname;
+        if ($this->userLastname !== null) $output['userLastname'] = $this->userLastname;
+        if ($this->userAddress !== null) $output['userAddress'] = $this->userAddress;
+        if ($this->userCity !== null) $output['userCity'] = $this->userCity;
+        if ($this->userState !== null) $output['userState'] = $this->userState;
+        if ($this->userPostalcode !== null) $output['userPostalcode'] = $this->userPostalcode;
+        if ($this->userPlus4 !== null) $output['userPlus4'] = $this->userPlus4;
+        if ($this->userCountry !== null) $output['userCountry'] = $this->userCountry;
+        if ($this->userPhoneHome !== null) $output['userPhoneHome'] = $this->userPhoneHome;
+        if ($this->userPhoneWork !== null) $output['userPhoneWork'] = $this->userPhoneWork;
+        if ($this->userPhoneWorkExt !== null) $output['userPhoneWorkExt'] = $this->userPhoneWorkExt;
+        if ($this->userPhoneCell !== null) $output['userPhoneCell'] = $this->userPhoneCell;
+        if ($this->userFax !== null) $output['userFax'] = $this->userFax;
+        if ($this->userEmail !== null) $output['userEmail'] = $this->userEmail;
+        if ($this->userEmailAlt !== null) $output['userEmailAlt'] = $this->userEmailAlt;
+        if ($this->userEmailPager !== null) $output['userEmailPager'] = $this->userEmailPager;
+        if ($this->userContactID !== null) $output['userContactID'] = $this->userContactID;
+        if ($this->userStatus !== null) $output['userStatus'] = $this->userStatus;
+
+        return $output;
     }
 }

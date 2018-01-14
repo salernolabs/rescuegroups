@@ -29,7 +29,7 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
      */
     public function loginRequired()
     {
-        return true;
+        return false;
     }
 
     /**
