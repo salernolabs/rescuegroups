@@ -172,6 +172,7 @@ class RequestGenerator
     {
         $output = new \stdClass;
         $output->className = $className;
+        $output->typeName = $type;
         $output->requests = [];
 
         foreach ($definition as $request => $requestData)

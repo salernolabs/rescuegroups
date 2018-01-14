@@ -41,6 +41,11 @@ trait SearchParameters
     private $filterProcessing;
 
     /**
+     * @var bool
+     */
+    private $calculateFoundRows = false;
+
+    /**
      * Set result start
      *
      * @param $resultStart
@@ -88,6 +93,19 @@ trait SearchParameters
     public function setResultOrder($resultOrder)
     {
         $this->resultOrder = $resultOrder;
+
+        return $this;
+    }
+
+    /**
+     * Set calculate found rows
+     *
+     * @param $calcFoundRows
+     * @return $this
+     */
+    public function setCalculateFoundRows($calcFoundRows)
+    {
+        $this->calculateFoundRows = $calcFoundRows;
 
         return $this;
     }
@@ -146,6 +164,15 @@ trait SearchParameters
         if (!empty($this->resultLimit)) $parameters['search']->resultLimit = $this->resultLimit;
         if (!empty($this->resultSort)) $parameters['search']->resultSort = $this->resultSort;
         if (!empty($this->resultOrder)) $parameters['search']->resultOrder = $this->resultOrder;
+
+        if (!empty($this->calculateFoundRows))
+        {
+            $parameters['search']->calcFoundRows = 'Yes';
+        }
+        else
+        {
+            $parameters['search']->calcFoundRows = 'No';
+        }
 
         $parameters['search']->filters = [];
         $parameters['search']->fields = [];
