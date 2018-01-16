@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Contact implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -280,12 +280,13 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->contactID !== null) $output['contactID'] = $this->contactID;
+        if ($includeId && $this->contactID !== null) $output['contactID'] = $this->contactID;
         if ($this->contactClass !== null) $output['contactClass'] = $this->contactClass;
         if ($this->contactSalutation !== null) $output['contactSalutation'] = $this->contactSalutation;
         if ($this->contactFirstname !== null) $output['contactFirstname'] = $this->contactFirstname;

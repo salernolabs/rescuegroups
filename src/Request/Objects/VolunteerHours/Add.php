@@ -11,86 +11,24 @@ namespace RescueGroups\Request\Objects\VolunteerHours;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Volunteer
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\VolunteerHour[]
      */
-    private $volunteerID = null;
+    protected $addObjects = [];
 
     /**
-     * Date
+     * Set the addable object
      *
-     * @var \DateTime
-     */
-    private $volunteerDate = null;
-
-    /**
-     * Hours
-     *
-     * @var float
-     */
-    private $volunteerLength = null;
-
-    /**
-     * Task
-     *
-     * @var string
-     */
-    private $volunteerTask = null;
-
-
-    /**
-     * Set Volunteer
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\VolunteerHour $addObject
      * @return $this
      */
-    public function setVolunteerID($value)
+    public function addVolunteerHour(\RescueGroups\Objects\VolunteerHour $addObject)
     {
-        $this->volunteerID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setVolunteerDate($value)
-    {
-        $this->volunteerDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Hours
-     *
-     * @param float $value
-     * @return $this
-     */
-    public function setVolunteerLength($value)
-    {
-        $this->volunteerLength = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Task
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setVolunteerTask($value)
-    {
-        $this->volunteerTask = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -127,11 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->volunteerID !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerID"=>$this->volunteerID];
-        if ($this->volunteerDate !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerDate"=>$this->volunteerDate];
-        if ($this->volunteerLength !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerLength"=>$this->volunteerLength];
-        if ($this->volunteerTask !== null) $parameterArray['values'][] = ["volunteerHoursVolunteerTask"=>$this->volunteerTask];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

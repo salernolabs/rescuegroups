@@ -20,9 +20,18 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Add();
+
+        $testObject = new \RescueGroups\Objects\EventAnimalAttendance();
+        $testObject->attendanceStatus = 'testValue Status';
+        $testObject->attendanceEventID = 'testValue Event';
+
+        $query->addEventAnimalAttendance($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('eventanimalattendance', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Status', $data['values'][0]['attendanceStatus']);
+        $this->assertEquals('testValue Event', $data['values'][0]['attendanceEventID']);
     }
 }

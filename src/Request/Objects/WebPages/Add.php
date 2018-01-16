@@ -11,186 +11,24 @@ namespace RescueGroups\Request\Objects\WebPages;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\WebPage[]
      */
-    private $webpageName = null;
+    protected $addObjects = [];
 
     /**
-     * Content
+     * Set the addable object
      *
-     * @var string
-     */
-    private $webpageContent = null;
-
-    /**
-     * Status
-     *
-     * @var string
-     */
-    private $webpageStatus = null;
-
-    /**
-     * Use Layout
-     *
-     * @var string
-     */
-    private $webpageUselayout = null;
-
-    /**
-     * Show on Menu
-     *
-     * @var string
-     */
-    private $webpageShowonmenu = null;
-
-    /**
-     * Meta Description
-     *
-     * @var string
-     */
-    private $webpageMetaDescription = null;
-
-    /**
-     * Background Image
-     *
-     * @var integer
-     */
-    private $webpageBackgroundImageID = null;
-
-    /**
-     * Background Music
-     *
-     * @var integer
-     */
-    private $webpageBackgroundMusicID = null;
-
-    /**
-     * Security Role
-     *
-     * @var integer
-     */
-    private $webpageRoleID = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\WebPage $addObject
      * @return $this
      */
-    public function setWebpageName($value)
+    public function addWebPage(\RescueGroups\Objects\WebPage $addObject)
     {
-        $this->webpageName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Content
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWebpageContent($value)
-    {
-        $this->webpageContent = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWebpageStatus($value)
-    {
-        $this->webpageStatus = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Use Layout
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWebpageUselayout($value)
-    {
-        $this->webpageUselayout = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Show on Menu
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWebpageShowonmenu($value)
-    {
-        $this->webpageShowonmenu = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Meta Description
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWebpageMetaDescription($value)
-    {
-        $this->webpageMetaDescription = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Background Image
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setWebpageBackgroundImageID($value)
-    {
-        $this->webpageBackgroundImageID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Background Music
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setWebpageBackgroundMusicID($value)
-    {
-        $this->webpageBackgroundMusicID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Security Role
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setWebpageRoleID($value)
-    {
-        $this->webpageRoleID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -227,16 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->webpageName !== null) $parameterArray['values'][] = ["webpageName"=>$this->webpageName];
-        if ($this->webpageContent !== null) $parameterArray['values'][] = ["webpageContent"=>$this->webpageContent];
-        if ($this->webpageStatus !== null) $parameterArray['values'][] = ["webpageStatus"=>$this->webpageStatus];
-        if ($this->webpageUselayout !== null) $parameterArray['values'][] = ["webpageUselayout"=>$this->webpageUselayout];
-        if ($this->webpageShowonmenu !== null) $parameterArray['values'][] = ["webpageShowonmenu"=>$this->webpageShowonmenu];
-        if ($this->webpageMetaDescription !== null) $parameterArray['values'][] = ["webpageMetaDescription"=>$this->webpageMetaDescription];
-        if ($this->webpageBackgroundImageID !== null) $parameterArray['values'][] = ["webpageBackgroundImageID"=>$this->webpageBackgroundImageID];
-        if ($this->webpageBackgroundMusicID !== null) $parameterArray['values'][] = ["webpageBackgroundMusicID"=>$this->webpageBackgroundMusicID];
-        if ($this->webpageRoleID !== null) $parameterArray['values'][] = ["webpageRoleID"=>$this->webpageRoleID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

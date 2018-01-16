@@ -37,6 +37,11 @@ class QueryField
     public $required = "0";
 
     /**
+     * @var bool
+     */
+    public $isKey = false;
+
+    /**
      * QueryField constructor.
      * @param $fieldName
      * @param $sdkFieldName

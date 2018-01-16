@@ -11,146 +11,24 @@ namespace RescueGroups\Request\Objects\AnimalsJournalEntries;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal ID
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\AnimalsJournalEntry[]
      */
-    private $journalEntryAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Date
+     * Set the addable object
      *
-     * @var \DateTime
-     */
-    private $journalEntryDate = null;
-
-    /**
-     * Comment
-     *
-     * @var string
-     */
-    private $journalEntryComment = null;
-
-    /**
-     * Entrytype ID
-     *
-     * @var integer
-     */
-    private $journalEntryEntrytypeID = null;
-
-    /**
-     * Cost
-     *
-     * @var float
-     */
-    private $journalEntryCost = null;
-
-    /**
-     * Due Date
-     *
-     * @var \DateTime
-     */
-    private $journalEntryDueDate = null;
-
-    /**
-     * Reminder Date
-     *
-     * @var \DateTime
-     */
-    private $journalEntryReminderDate = null;
-
-
-    /**
-     * Set Animal ID
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\AnimalsJournalEntry $addObject
      * @return $this
      */
-    public function setJournalEntryAnimalID($value)
+    public function addAnimalsJournalEntry(\RescueGroups\Objects\AnimalsJournalEntry $addObject)
     {
-        $this->journalEntryAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setJournalEntryDate($value)
-    {
-        $this->journalEntryDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setJournalEntryComment($value)
-    {
-        $this->journalEntryComment = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Entrytype ID
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setJournalEntryEntrytypeID($value)
-    {
-        $this->journalEntryEntrytypeID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Cost
-     *
-     * @param float $value
-     * @return $this
-     */
-    public function setJournalEntryCost($value)
-    {
-        $this->journalEntryCost = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Due Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setJournalEntryDueDate($value)
-    {
-        $this->journalEntryDueDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Reminder Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setJournalEntryReminderDate($value)
-    {
-        $this->journalEntryReminderDate = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -187,14 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->journalEntryAnimalID !== null) $parameterArray['values'][] = ["journalEntryAnimalID"=>$this->journalEntryAnimalID];
-        if ($this->journalEntryDate !== null) $parameterArray['values'][] = ["journalEntryDate"=>$this->journalEntryDate];
-        if ($this->journalEntryComment !== null) $parameterArray['values'][] = ["journalEntryComment"=>$this->journalEntryComment];
-        if ($this->journalEntryEntrytypeID !== null) $parameterArray['values'][] = ["journalEntryEntrytypeID"=>$this->journalEntryEntrytypeID];
-        if ($this->journalEntryCost !== null) $parameterArray['values'][] = ["journalEntryCost"=>$this->journalEntryCost];
-        if ($this->journalEntryDueDate !== null) $parameterArray['values'][] = ["journalEntryDueDate"=>$this->journalEntryDueDate];
-        if ($this->journalEntryReminderDate !== null) $parameterArray['values'][] = ["journalEntryReminderDate"=>$this->journalEntryReminderDate];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

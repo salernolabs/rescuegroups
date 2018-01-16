@@ -11,66 +11,24 @@ namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Contact
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\CallsQueuesMember[]
      */
-    private $memberContactID = null;
+    protected $addObjects = [];
 
     /**
-     * Queue
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $memberQueueID = null;
-
-    /**
-     * Manager
-     *
-     * @var string
-     */
-    private $memberManager = null;
-
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\CallsQueuesMember $addObject
      * @return $this
      */
-    public function setMemberContactID($value)
+    public function addCallsQueuesMember(\RescueGroups\Objects\CallsQueuesMember $addObject)
     {
-        $this->memberContactID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Queue
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setMemberQueueID($value)
-    {
-        $this->memberQueueID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Manager
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setMemberManager($value)
-    {
-        $this->memberManager = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -107,10 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->memberContactID !== null) $parameterArray['values'][] = ["memberContactID"=>$this->memberContactID];
-        if ($this->memberQueueID !== null) $parameterArray['values'][] = ["memberQueueID"=>$this->memberQueueID];
-        if ($this->memberManager !== null) $parameterArray['values'][] = ["memberManager"=>$this->memberManager];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

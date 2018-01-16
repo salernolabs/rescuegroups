@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -80,12 +80,13 @@ class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->outcomesTransferID !== null) $output['outcomesTransferID'] = $this->outcomesTransferID;
+        if ($includeId && $this->outcomesTransferID !== null) $output['outcomesTransferID'] = $this->outcomesTransferID;
         if ($this->outcomesTransferAnimalConditionID !== null) $output['outcomesTransferAnimalConditionID'] = $this->outcomesTransferAnimalConditionID;
         if ($this->outcomesTransferDate !== null) $output['outcomesTransferDate'] = $this->outcomesTransferDate;
         if ($this->outcomesTransferNotes !== null) $output['outcomesTransferNotes'] = $this->outcomesTransferNotes;

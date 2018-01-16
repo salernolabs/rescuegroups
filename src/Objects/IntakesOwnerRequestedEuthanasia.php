@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesOwnerRequestedEuthanasia implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Owner requestedeuthanasia
+     * Owner requestedeuthanasia, Primary Key
      *
      * @var integer
      */
@@ -80,12 +80,13 @@ class IntakesOwnerRequestedEuthanasia implements \RescueGroups\Objects\APIEncoda
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesOwnerrequestedeuthanasiaID !== null) $output['intakesOwnerrequestedeuthanasiaID'] = $this->intakesOwnerrequestedeuthanasiaID;
+        if ($includeId && $this->intakesOwnerrequestedeuthanasiaID !== null) $output['intakesOwnerrequestedeuthanasiaID'] = $this->intakesOwnerrequestedeuthanasiaID;
         if ($this->intakesOwnerrequestedeuthanasiaAnimalID !== null) $output['intakesOwnerrequestedeuthanasiaAnimalID'] = $this->intakesOwnerrequestedeuthanasiaAnimalID;
         if ($this->intakesOwnerrequestedeuthanasiaAnimalConditionID !== null) $output['intakesOwnerrequestedeuthanasiaAnimalConditionID'] = $this->intakesOwnerrequestedeuthanasiaAnimalConditionID;
         if ($this->intakesOwnerrequestedeuthanasiaDate !== null) $output['intakesOwnerrequestedeuthanasiaDate'] = $this->intakesOwnerrequestedeuthanasiaDate;

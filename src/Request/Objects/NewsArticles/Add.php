@@ -11,66 +11,24 @@ namespace RescueGroups\Request\Objects\NewsArticles;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Title
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\NewsArticle[]
      */
-    private $articleTitle = null;
+    protected $addObjects = [];
 
     /**
-     * Description
+     * Set the addable object
      *
-     * @var string
-     */
-    private $articleDescription = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $articleDate = null;
-
-
-    /**
-     * Set Title
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\NewsArticle $addObject
      * @return $this
      */
-    public function setArticleTitle($value)
+    public function addNewsArticle(\RescueGroups\Objects\NewsArticle $addObject)
     {
-        $this->articleTitle = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Description
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setArticleDescription($value)
-    {
-        $this->articleDescription = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setArticleDate($value)
-    {
-        $this->articleDate = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -107,10 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->articleTitle !== null) $parameterArray['values'][] = ["articleTitle"=>$this->articleTitle];
-        if ($this->articleDescription !== null) $parameterArray['values'][] = ["articleDescription"=>$this->articleDescription];
-        if ($this->articleDate !== null) $parameterArray['values'][] = ["articleDate"=>$this->articleDate];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

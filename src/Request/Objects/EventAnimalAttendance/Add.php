@@ -11,66 +11,24 @@ namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\EventAnimalAttendance[]
      */
-    private $attendanceAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Status
+     * Set the addable object
      *
-     * @var string
-     */
-    private $attendanceStatus = null;
-
-    /**
-     * Event
-     *
-     * @var integer
-     */
-    private $attendanceEventID = null;
-
-
-    /**
-     * Set Animal
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\EventAnimalAttendance $addObject
      * @return $this
      */
-    public function setAttendanceAnimalID($value)
+    public function addEventAnimalAttendance(\RescueGroups\Objects\EventAnimalAttendance $addObject)
     {
-        $this->attendanceAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Status
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setAttendanceStatus($value)
-    {
-        $this->attendanceStatus = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Event
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setAttendanceEventID($value)
-    {
-        $this->attendanceEventID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -107,10 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->attendanceAnimalID !== null) $parameterArray['values'][] = ["attendanceAnimalID"=>$this->attendanceAnimalID];
-        if ($this->attendanceStatus !== null) $parameterArray['values'][] = ["attendanceStatus"=>$this->attendanceStatus];
-        if ($this->attendanceEventID !== null) $parameterArray['values'][] = ["attendanceEventID"=>$this->attendanceEventID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

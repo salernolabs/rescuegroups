@@ -11,86 +11,24 @@ namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\IntakesBornInRescueShelter[]
      */
-    private $animalID = null;
+    protected $addObjects = [];
 
     /**
-     * Condition
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     *
-     * @var string
-     */
-    private $notes = null;
-
-
-    /**
-     * Set Animal
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\IntakesBornInRescueShelter $addObject
      * @return $this
      */
-    public function setAnimalID($value)
+    public function addIntakesBornInRescueShelter(\RescueGroups\Objects\IntakesBornInRescueShelter $addObject)
     {
-        $this->animalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setAnimalConditionID($value)
-    {
-        $this->animalConditionID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setDate($value)
-    {
-        $this->date = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setNotes($value)
-    {
-        $this->notes = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -127,11 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->animalID !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterAnimalID"=>$this->animalID];
-        if ($this->animalConditionID !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterAnimalConditionID"=>$this->animalConditionID];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterNotes"=>$this->notes];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

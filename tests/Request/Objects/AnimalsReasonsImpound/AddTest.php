@@ -20,9 +20,16 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Add();
+
+        $testObject = new \RescueGroups\Objects\AnimalsReasonsImpound();
+        $testObject->reasonName = 'testValue Reason';
+
+        $query->addAnimalsReasonsImpound($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsReasonsImpound', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Reason', $data['values'][0]['reasonName']);
     }
 }

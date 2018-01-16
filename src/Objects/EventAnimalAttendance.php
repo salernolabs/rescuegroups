@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class EventAnimalAttendance implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class EventAnimalAttendance implements \RescueGroups\Objects\APIEncodableInterfa
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->attendanceID !== null) $output['attendanceID'] = $this->attendanceID;
+        if ($includeId && $this->attendanceID !== null) $output['attendanceID'] = $this->attendanceID;
         if ($this->attendanceAnimalID !== null) $output['attendanceAnimalID'] = $this->attendanceAnimalID;
         if ($this->attendanceStatus !== null) $output['attendanceStatus'] = $this->attendanceStatus;
         if ($this->attendanceEventID !== null) $output['attendanceEventID'] = $this->attendanceEventID;

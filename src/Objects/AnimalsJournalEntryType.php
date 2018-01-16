@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Entrytype ID
+     * Entrytype ID, Primary Key
      *
      * @var integer
      */
@@ -48,12 +48,13 @@ class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInter
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->journalEntrytypeID !== null) $output['journalEntrytypeID'] = $this->journalEntrytypeID;
+        if ($includeId && $this->journalEntrytypeID !== null) $output['journalEntrytypeID'] = $this->journalEntrytypeID;
         if ($this->journalEntrytypeDescription !== null) $output['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
         if ($this->journalEntrytypeCategoryID !== null) $output['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
 

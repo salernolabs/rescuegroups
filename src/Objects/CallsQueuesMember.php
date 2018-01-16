@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->memberID !== null) $output['memberID'] = $this->memberID;
+        if ($includeId && $this->memberID !== null) $output['memberID'] = $this->memberID;
         if ($this->memberContactID !== null) $output['memberContactID'] = $this->memberContactID;
         if ($this->memberQueueID !== null) $output['memberQueueID'] = $this->memberQueueID;
         if ($this->memberManager !== null) $output['memberManager'] = $this->memberManager;

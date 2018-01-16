@@ -11,126 +11,24 @@ namespace RescueGroups\Request\Objects\IntakesServices;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\IntakesService[]
      */
-    private $intakesServiceAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Condition
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $intakesServiceAnimalConditionID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $intakesServiceDate = null;
-
-    /**
-     * Notes
-     *
-     * @var string
-     */
-    private $intakesServiceNotes = null;
-
-    /**
-     * Owner
-     *
-     * @var integer
-     */
-    private $intakesServiceOwnerID = null;
-
-    /**
-     * Service
-     *
-     * @var integer
-     */
-    private $intakesServiceServicetypeID = null;
-
-
-    /**
-     * Set Animal
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\IntakesService $addObject
      * @return $this
      */
-    public function setIntakesServiceAnimalID($value)
+    public function addIntakesService(\RescueGroups\Objects\IntakesService $addObject)
     {
-        $this->intakesServiceAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesServiceAnimalConditionID($value)
-    {
-        $this->intakesServiceAnimalConditionID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setIntakesServiceDate($value)
-    {
-        $this->intakesServiceDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesServiceNotes($value)
-    {
-        $this->intakesServiceNotes = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Owner
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesServiceOwnerID($value)
-    {
-        $this->intakesServiceOwnerID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Service
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesServiceServicetypeID($value)
-    {
-        $this->intakesServiceServicetypeID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -167,13 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->intakesServiceAnimalID !== null) $parameterArray['values'][] = ["intakesServiceAnimalID"=>$this->intakesServiceAnimalID];
-        if ($this->intakesServiceAnimalConditionID !== null) $parameterArray['values'][] = ["intakesServiceAnimalConditionID"=>$this->intakesServiceAnimalConditionID];
-        if ($this->intakesServiceDate !== null) $parameterArray['values'][] = ["intakesServiceDate"=>$this->intakesServiceDate];
-        if ($this->intakesServiceNotes !== null) $parameterArray['values'][] = ["intakesServiceNotes"=>$this->intakesServiceNotes];
-        if ($this->intakesServiceOwnerID !== null) $parameterArray['values'][] = ["intakesServiceOwnerID"=>$this->intakesServiceOwnerID];
-        if ($this->intakesServiceServicetypeID !== null) $parameterArray['values'][] = ["intakesServiceServicetypeID"=>$this->intakesServiceServicetypeID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Service
+     * Service, Primary Key
      *
      * @var integer
      */
@@ -80,12 +80,13 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesServiceID !== null) $output['intakesServiceID'] = $this->intakesServiceID;
+        if ($includeId && $this->intakesServiceID !== null) $output['intakesServiceID'] = $this->intakesServiceID;
         if ($this->intakesServiceAnimalID !== null) $output['intakesServiceAnimalID'] = $this->intakesServiceAnimalID;
         if ($this->intakesServiceAnimalConditionID !== null) $output['intakesServiceAnimalConditionID'] = $this->intakesServiceAnimalConditionID;
         if ($this->intakesServiceDate !== null) $output['intakesServiceDate'] = $this->intakesServiceDate;

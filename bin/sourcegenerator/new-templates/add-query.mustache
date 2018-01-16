@@ -1,29 +1,29 @@
 <?php
 /**
- * ContactFiles Add Request
+ * {{className}} {{requestClassName}} Request
  *
  * @package RescueGroups
  * @subpackage Request
  * @author SourceGenerator
  */
-namespace RescueGroups\Request\Objects\ContactFiles;
+namespace RescueGroups\Request\Objects\{{className}};
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
+     * Addable {{$className}} array
      *
-     * @var \RescueGroups\Objects\ContactFile[]
+     * @var \RescueGroups\Objects\{{responseClassName}}[]
      */
     protected $addObjects = [];
 
     /**
      * Set the addable object
      *
-     * @param \RescueGroups\Objects\ContactFile $addObject
+     * @param \RescueGroups\Objects\{{responseClassName}} $addObject
      * @return $this
      */
-    public function addContactFile(\RescueGroups\Objects\ContactFile $addObject)
+    public function add{{responseClassName}}(\RescueGroups\Objects\{{responseClassName}} $addObject)
     {
         $this->addObjects[] = $addObject;
 
@@ -35,7 +35,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function loginRequired()
     {
-        return true;
+        return {{loginRequired}};
     }
 
     /**
@@ -45,7 +45,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function getObjectType()
     {
-        return 'contactFiles';
+        return '{{typeName}}';
     }
 
     /**
@@ -55,7 +55,7 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function getObjectAction()
     {
-        return 'add';
+        return '{{objectAction}}';
     }
 
     /**

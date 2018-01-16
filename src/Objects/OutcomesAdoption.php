@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class OutcomesAdoption implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class OutcomesAdoption implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->outcomesAdoptionID !== null) $output['outcomesAdoptionID'] = $this->outcomesAdoptionID;
+        if ($includeId && $this->outcomesAdoptionID !== null) $output['outcomesAdoptionID'] = $this->outcomesAdoptionID;
         if ($this->outcomesAdoptionAnimalConditionID !== null) $output['outcomesAdoptionAnimalConditionID'] = $this->outcomesAdoptionAnimalConditionID;
         if ($this->outcomesAdoptionDate !== null) $output['outcomesAdoptionDate'] = $this->outcomesAdoptionDate;
         if ($this->outcomesAdoptionNotes !== null) $output['outcomesAdoptionNotes'] = $this->outcomesAdoptionNotes;

@@ -11,106 +11,24 @@ namespace RescueGroups\Request\Objects\OutcomesReturnToOwner;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Outcome Returntoowner Intake
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\OutcomesReturnToOwner[]
      */
-    private $intakeID = null;
+    protected $addObjects = [];
 
     /**
-     * Condition
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $animalConditionID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $date = null;
-
-    /**
-     * Notes
-     *
-     * @var string
-     */
-    private $notes = null;
-
-    /**
-     * Return To
-     *
-     * @var integer
-     */
-    private $ownerID = null;
-
-
-    /**
-     * Set Outcome Returntoowner Intake
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\OutcomesReturnToOwner $addObject
      * @return $this
      */
-    public function setIntakeID($value)
+    public function addOutcomesReturnToOwner(\RescueGroups\Objects\OutcomesReturnToOwner $addObject)
     {
-        $this->intakeID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setAnimalConditionID($value)
-    {
-        $this->animalConditionID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setDate($value)
-    {
-        $this->date = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setNotes($value)
-    {
-        $this->notes = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Return To
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setOwnerID($value)
-    {
-        $this->ownerID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -147,12 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["outcomesReturntoownerIntakeID"=>$this->intakeID];
-        if ($this->animalConditionID !== null) $parameterArray['values'][] = ["outcomesReturntoownerAnimalConditionID"=>$this->animalConditionID];
-        if ($this->date !== null) $parameterArray['values'][] = ["outcomesReturntoownerDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesReturntoownerNotes"=>$this->notes];
-        if ($this->ownerID !== null) $parameterArray['values'][] = ["outcomesReturntoownerOwnerID"=>$this->ownerID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

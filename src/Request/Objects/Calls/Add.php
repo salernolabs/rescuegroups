@@ -11,146 +11,24 @@ namespace RescueGroups\Request\Objects\Calls;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Contact
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\Call[]
      */
-    private $callContactID = null;
+    protected $addObjects = [];
 
     /**
-     * Assigned
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $callAssignedID = null;
-
-    /**
-     * Status
-     *
-     * @var integer
-     */
-    private $callStatusID = null;
-
-    /**
-     * Urgency
-     *
-     * @var integer
-     */
-    private $callUrgencyID = null;
-
-    /**
-     * Category
-     *
-     * @var integer
-     */
-    private $callCategoryID = null;
-
-    /**
-     * Queue
-     *
-     * @var integer
-     */
-    private $callQueueID = null;
-
-    /**
-     * Call date
-     *
-     * @var \DateTime
-     */
-    private $callDate = null;
-
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\Call $addObject
      * @return $this
      */
-    public function setCallContactID($value)
+    public function addCall(\RescueGroups\Objects\Call $addObject)
     {
-        $this->callContactID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Assigned
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCallAssignedID($value)
-    {
-        $this->callAssignedID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCallStatusID($value)
-    {
-        $this->callStatusID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Urgency
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCallUrgencyID($value)
-    {
-        $this->callUrgencyID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Category
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCallCategoryID($value)
-    {
-        $this->callCategoryID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Queue
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCallQueueID($value)
-    {
-        $this->callQueueID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Call date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setCallDate($value)
-    {
-        $this->callDate = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -187,14 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->callContactID !== null) $parameterArray['values'][] = ["callContactID"=>$this->callContactID];
-        if ($this->callAssignedID !== null) $parameterArray['values'][] = ["callAssignedID"=>$this->callAssignedID];
-        if ($this->callStatusID !== null) $parameterArray['values'][] = ["callStatusID"=>$this->callStatusID];
-        if ($this->callUrgencyID !== null) $parameterArray['values'][] = ["callUrgencyID"=>$this->callUrgencyID];
-        if ($this->callCategoryID !== null) $parameterArray['values'][] = ["callCategoryID"=>$this->callCategoryID];
-        if ($this->callQueueID !== null) $parameterArray['values'][] = ["callQueueID"=>$this->callQueueID];
-        if ($this->callDate !== null) $parameterArray['values'][] = ["callDate"=>$this->callDate];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

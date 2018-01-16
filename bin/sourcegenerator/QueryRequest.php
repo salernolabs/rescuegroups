@@ -75,6 +75,7 @@ class QueryRequest
 
         if (!empty($requestData->fields))
         {
+            $foundKey = false;
             foreach ($requestData->fields as $fieldName => $fieldData)
             {
                 if (empty($fieldData->type)) return;
@@ -89,6 +90,13 @@ class QueryRequest
                 if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
 
                 $field = new QueryField($fieldName, $sdkFieldName, $fieldData);
+
+                if (!$foundKey && $fieldData->type == 'key')
+                {
+                    $foundKey = true;
+                    $field->isKey = true;
+                }
+
                 $this->fields[] = $field;
             }
         }
@@ -116,6 +124,14 @@ class QueryRequest
     public function isEdit()
     {
         return ($this->requestName == 'edit');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdd()
+    {
+        return ($this->requestName == 'add');
     }
 
     /**

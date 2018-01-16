@@ -20,9 +20,26 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\IntakesTransfers\Add();
+
+        $testObject = new \RescueGroups\Objects\IntakesTransfer();
+        $testObject->intakesTransferAnimalConditionID = 'testValue Condition';
+        $testObject->intakesTransferDate = 'testValue Date';
+        $testObject->intakesTransferNotes = 'testValue Notes';
+        $testObject->intakesTransferFromID = 'testValue Transferred From';
+        $testObject->intakesTransferCoalitionMember = 'testValue Coalition Member';
+        $testObject->intakesTransferReasonID = 'testValue Transfer Reason';
+
+        $query->addIntakesTransfer($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesTransfers', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['intakesTransferAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['intakesTransferDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['intakesTransferNotes']);
+        $this->assertEquals('testValue Transferred From', $data['values'][0]['intakesTransferFromID']);
+        $this->assertEquals('testValue Coalition Member', $data['values'][0]['intakesTransferCoalitionMember']);
+        $this->assertEquals('testValue Transfer Reason', $data['values'][0]['intakesTransferReasonID']);
     }
 }

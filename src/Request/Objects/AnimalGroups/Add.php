@@ -11,46 +11,24 @@ namespace RescueGroups\Request\Objects\AnimalGroups;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\AnimalGroup[]
      */
-    private $groupName = null;
+    protected $addObjects = [];
 
     /**
-     * Header
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $groupHeaderID = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\AnimalGroup $addObject
      * @return $this
      */
-    public function setGroupName($value)
+    public function addAnimalGroup(\RescueGroups\Objects\AnimalGroup $addObject)
     {
-        $this->groupName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Header
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setGroupHeaderID($value)
-    {
-        $this->groupHeaderID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -87,9 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->groupName !== null) $parameterArray['values'][] = ["groupName"=>$this->groupName];
-        if ($this->groupHeaderID !== null) $parameterArray['values'][] = ["groupHeaderID"=>$this->groupHeaderID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

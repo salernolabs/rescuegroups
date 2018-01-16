@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class InventoryItem implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -120,12 +120,13 @@ class InventoryItem implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->inventoryitemID !== null) $output['inventoryitemID'] = $this->inventoryitemID;
+        if ($includeId && $this->inventoryitemID !== null) $output['inventoryitemID'] = $this->inventoryitemID;
         if ($this->inventoryitemName !== null) $output['inventoryitemName'] = $this->inventoryitemName;
         if ($this->inventoryitemItemID !== null) $output['inventoryitemItemID'] = $this->inventoryitemItemID;
         if ($this->inventoryitemDescription !== null) $output['inventoryitemDescription'] = $this->inventoryitemDescription;

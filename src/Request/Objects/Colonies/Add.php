@@ -11,106 +11,24 @@ namespace RescueGroups\Request\Objects\Colonies;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\Colony[]
      */
-    private $colonyName = null;
+    protected $addObjects = [];
 
     /**
-     * Location
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $colonyLocationID = null;
-
-    /**
-     * Number of animals
-     *
-     * @var string
-     */
-    private $colonyTotalAnimals = null;
-
-    /**
-     * Registered
-     *
-     * @var \DateTime
-     */
-    private $colonyRegisteredDate = null;
-
-    /**
-     * Specific location
-     *
-     * @var string
-     */
-    private $colonySpecificLocation = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\Colony $addObject
      * @return $this
      */
-    public function setColonyName($value)
+    public function addColony(\RescueGroups\Objects\Colony $addObject)
     {
-        $this->colonyName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Location
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setColonyLocationID($value)
-    {
-        $this->colonyLocationID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Number of animals
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setColonyTotalAnimals($value)
-    {
-        $this->colonyTotalAnimals = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Registered
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setColonyRegisteredDate($value)
-    {
-        $this->colonyRegisteredDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Specific location
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setColonySpecificLocation($value)
-    {
-        $this->colonySpecificLocation = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -147,12 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->colonyName !== null) $parameterArray['values'][] = ["colonyName"=>$this->colonyName];
-        if ($this->colonyLocationID !== null) $parameterArray['values'][] = ["colonyLocationID"=>$this->colonyLocationID];
-        if ($this->colonyTotalAnimals !== null) $parameterArray['values'][] = ["colonyTotalAnimals"=>$this->colonyTotalAnimals];
-        if ($this->colonyRegisteredDate !== null) $parameterArray['values'][] = ["colonyRegisteredDate"=>$this->colonyRegisteredDate];
-        if ($this->colonySpecificLocation !== null) $parameterArray['values'][] = ["colonySpecificLocation"=>$this->colonySpecificLocation];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

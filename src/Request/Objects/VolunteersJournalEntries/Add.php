@@ -11,86 +11,24 @@ namespace RescueGroups\Request\Objects\VolunteersJournalEntries;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Contact
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\VolunteersJournalEntry[]
      */
-    private $journalEntryContactID = null;
+    protected $addObjects = [];
 
     /**
-     * Date
+     * Set the addable object
      *
-     * @var \DateTime
-     */
-    private $journalEntryDate = null;
-
-    /**
-     * Comment
-     *
-     * @var string
-     */
-    private $journalEntryComment = null;
-
-    /**
-     * Entry Type
-     *
-     * @var string
-     */
-    private $journalEntryType = null;
-
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\VolunteersJournalEntry $addObject
      * @return $this
      */
-    public function setJournalEntryContactID($value)
+    public function addVolunteersJournalEntry(\RescueGroups\Objects\VolunteersJournalEntry $addObject)
     {
-        $this->journalEntryContactID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setJournalEntryDate($value)
-    {
-        $this->journalEntryDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setJournalEntryComment($value)
-    {
-        $this->journalEntryComment = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Entry Type
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setJournalEntryType($value)
-    {
-        $this->journalEntryType = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -127,11 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->journalEntryContactID !== null) $parameterArray['values'][] = ["journalEntryContactID"=>$this->journalEntryContactID];
-        if ($this->journalEntryDate !== null) $parameterArray['values'][] = ["journalEntryDate"=>$this->journalEntryDate];
-        if ($this->journalEntryComment !== null) $parameterArray['values'][] = ["journalEntryComment"=>$this->journalEntryComment];
-        if ($this->journalEntryType !== null) $parameterArray['values'][] = ["journalEntryType"=>$this->journalEntryType];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class WebPage implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -104,12 +104,13 @@ class WebPage implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->webpageID !== null) $output['webpageID'] = $this->webpageID;
+        if ($includeId && $this->webpageID !== null) $output['webpageID'] = $this->webpageID;
         if ($this->webpageName !== null) $output['webpageName'] = $this->webpageName;
         if ($this->webpageContent !== null) $output['webpageContent'] = $this->webpageContent;
         if ($this->webpageStatus !== null) $output['webpageStatus'] = $this->webpageStatus;

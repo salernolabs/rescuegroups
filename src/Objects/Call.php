@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Call implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -88,12 +88,13 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->callID !== null) $output['callID'] = $this->callID;
+        if ($includeId && $this->callID !== null) $output['callID'] = $this->callID;
         if ($this->callContactID !== null) $output['callContactID'] = $this->callContactID;
         if ($this->callAssignedID !== null) $output['callAssignedID'] = $this->callAssignedID;
         if ($this->callStatusID !== null) $output['callStatusID'] = $this->callStatusID;

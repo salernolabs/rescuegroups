@@ -11,66 +11,24 @@ namespace RescueGroups\Request\Objects\WaitingLists;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\WaitingList[]
      */
-    private $waitinglistName = null;
+    protected $addObjects = [];
 
     /**
-     * Type
+     * Set the addable object
      *
-     * @var string
-     */
-    private $waitinglistType = null;
-
-    /**
-     * Comment
-     *
-     * @var string
-     */
-    private $waitinglistComment = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\WaitingList $addObject
      * @return $this
      */
-    public function setWaitinglistName($value)
+    public function addWaitingList(\RescueGroups\Objects\WaitingList $addObject)
     {
-        $this->waitinglistName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Type
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWaitinglistType($value)
-    {
-        $this->waitinglistType = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setWaitinglistComment($value)
-    {
-        $this->waitinglistComment = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -107,10 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->waitinglistName !== null) $parameterArray['values'][] = ["waitinglistName"=>$this->waitinglistName];
-        if ($this->waitinglistType !== null) $parameterArray['values'][] = ["waitinglistType"=>$this->waitinglistType];
-        if ($this->waitinglistComment !== null) $parameterArray['values'][] = ["waitinglistComment"=>$this->waitinglistComment];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

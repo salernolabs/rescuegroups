@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesOwnerSurrender implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Owner Surrender
+     * Owner Surrender, Primary Key
      *
      * @var integer
      */
@@ -80,12 +80,13 @@ class IntakesOwnerSurrender implements \RescueGroups\Objects\APIEncodableInterfa
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesOwnersurrenderID !== null) $output['intakesOwnersurrenderID'] = $this->intakesOwnersurrenderID;
+        if ($includeId && $this->intakesOwnersurrenderID !== null) $output['intakesOwnersurrenderID'] = $this->intakesOwnersurrenderID;
         if ($this->intakesOwnersurrenderAnimalID !== null) $output['intakesOwnersurrenderAnimalID'] = $this->intakesOwnersurrenderAnimalID;
         if ($this->intakesOwnersurrenderAnimalConditionID !== null) $output['intakesOwnersurrenderAnimalConditionID'] = $this->intakesOwnersurrenderAnimalConditionID;
         if ($this->intakesOwnersurrenderDate !== null) $output['intakesOwnersurrenderDate'] = $this->intakesOwnersurrenderDate;

@@ -11,106 +11,24 @@ namespace RescueGroups\Request\Objects\AnimalsMeetRequests;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal ID
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\AnimalsMeetRequest[]
      */
-    private $meetrequestAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Contact ID
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $meetrequestContactID = null;
-
-    /**
-     * Event ID
-     *
-     * @var integer
-     */
-    private $meetrequestEventID = null;
-
-    /**
-     * Location ID
-     *
-     * @var integer
-     */
-    private $meetrequestLocationID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $meetrequestDate = null;
-
-
-    /**
-     * Set Animal ID
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\AnimalsMeetRequest $addObject
      * @return $this
      */
-    public function setMeetrequestAnimalID($value)
+    public function addAnimalsMeetRequest(\RescueGroups\Objects\AnimalsMeetRequest $addObject)
     {
-        $this->meetrequestAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Contact ID
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setMeetrequestContactID($value)
-    {
-        $this->meetrequestContactID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Event ID
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setMeetrequestEventID($value)
-    {
-        $this->meetrequestEventID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Location ID
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setMeetrequestLocationID($value)
-    {
-        $this->meetrequestLocationID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setMeetrequestDate($value)
-    {
-        $this->meetrequestDate = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -147,12 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->meetrequestAnimalID !== null) $parameterArray['values'][] = ["meetrequestAnimalID"=>$this->meetrequestAnimalID];
-        if ($this->meetrequestContactID !== null) $parameterArray['values'][] = ["meetrequestContactID"=>$this->meetrequestContactID];
-        if ($this->meetrequestEventID !== null) $parameterArray['values'][] = ["meetrequestEventID"=>$this->meetrequestEventID];
-        if ($this->meetrequestLocationID !== null) $parameterArray['values'][] = ["meetrequestLocationID"=>$this->meetrequestLocationID];
-        if ($this->meetrequestDate !== null) $parameterArray['values'][] = ["meetrequestDate"=>$this->meetrequestDate];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

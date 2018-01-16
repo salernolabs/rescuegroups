@@ -11,26 +11,24 @@ namespace RescueGroups\Request\Objects\AnimalsReasonsSurrender;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Reason
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\AnimalsReasonsSurrender[]
      */
-    private $reasonName = null;
-
+    protected $addObjects = [];
 
     /**
-     * Set Reason
+     * Set the addable object
      *
-     * @param string $value
+     * @param \RescueGroups\Objects\AnimalsReasonsSurrender $addObject
      * @return $this
      */
-    public function setReasonName($value)
+    public function addAnimalsReasonsSurrender(\RescueGroups\Objects\AnimalsReasonsSurrender $addObject)
     {
-        $this->reasonName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
 
     /**
      * @return bool
@@ -67,8 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->reasonName !== null) $parameterArray['values'][] = ["reasonName"=>$this->reasonName];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -234,6 +234,10 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/edit-query.mustache'), $query);
         }
+        elseif ($query->isAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query.mustache'), $query);
+        }
         else
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query.mustache'), $query);
@@ -263,6 +267,10 @@ class RequestGenerator
         elseif ($query->isEdit())
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/edit-query-test.mustache'), $query);
+        }
+        elseif ($query->isAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query-test.mustache'), $query);
         }
         else
         {

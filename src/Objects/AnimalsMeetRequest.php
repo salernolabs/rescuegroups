@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalsMeetRequest implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Meet Request ID
+     * Meet Request ID, Primary Key
      *
      * @var integer
      */
@@ -72,12 +72,13 @@ class AnimalsMeetRequest implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->meetrequestID !== null) $output['meetrequestID'] = $this->meetrequestID;
+        if ($includeId && $this->meetrequestID !== null) $output['meetrequestID'] = $this->meetrequestID;
         if ($this->meetrequestAnimalID !== null) $output['meetrequestAnimalID'] = $this->meetrequestAnimalID;
         if ($this->meetrequestContactID !== null) $output['meetrequestContactID'] = $this->meetrequestContactID;
         if ($this->meetrequestEventID !== null) $output['meetrequestEventID'] = $this->meetrequestEventID;

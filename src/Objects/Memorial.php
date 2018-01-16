@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Memorial implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class Memorial implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->memorialID !== null) $output['memorialID'] = $this->memorialID;
+        if ($includeId && $this->memorialID !== null) $output['memorialID'] = $this->memorialID;
         if ($this->memorialPictureBinary !== null) $output['memorialPictureBinary'] = $this->memorialPictureBinary;
         if ($this->memorialPictureOldFileName !== null) $output['memorialPictureOldFileName'] = $this->memorialPictureOldFileName;
         if ($this->memorialName !== null) $output['memorialName'] = $this->memorialName;

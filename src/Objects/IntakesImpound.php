@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Impound
+     * Impound, Primary Key
      *
      * @var integer
      */
@@ -128,12 +128,13 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesImpoundID !== null) $output['intakesImpoundID'] = $this->intakesImpoundID;
+        if ($includeId && $this->intakesImpoundID !== null) $output['intakesImpoundID'] = $this->intakesImpoundID;
         if ($this->intakesImpoundAnimalID !== null) $output['intakesImpoundAnimalID'] = $this->intakesImpoundAnimalID;
         if ($this->intakesImpoundAnimalConditionID !== null) $output['intakesImpoundAnimalConditionID'] = $this->intakesImpoundAnimalConditionID;
         if ($this->intakesImpoundDate !== null) $output['intakesImpoundDate'] = $this->intakesImpoundDate;

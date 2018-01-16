@@ -20,9 +20,20 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\CallsCategories\Add();
+
+        $testObject = new \RescueGroups\Objects\CallsCategory();
+        $testObject->categoryName = 'testValue Name';
+        $testObject->categoryDescription = 'testValue Description';
+        $testObject->categoryPublic = 'testValue Public';
+
+        $query->addCallsCategory($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('callsCategories', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Name', $data['values'][0]['categoryName']);
+        $this->assertEquals('testValue Description', $data['values'][0]['categoryDescription']);
+        $this->assertEquals('testValue Public', $data['values'][0]['categoryPublic']);
     }
 }

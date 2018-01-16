@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Adoption ID
+     * Adoption ID, Primary Key
      *
      * @var integer
      */
@@ -112,12 +112,13 @@ class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->adoptionID !== null) $output['adoptionID'] = $this->adoptionID;
+        if ($includeId && $this->adoptionID !== null) $output['adoptionID'] = $this->adoptionID;
         if ($this->adoptionAnimalID !== null) $output['adoptionAnimalID'] = $this->adoptionAnimalID;
         if ($this->adoptionAdopterID !== null) $output['adoptionAdopterID'] = $this->adoptionAdopterID;
         if ($this->adoptionLeadID !== null) $output['adoptionLeadID'] = $this->adoptionLeadID;

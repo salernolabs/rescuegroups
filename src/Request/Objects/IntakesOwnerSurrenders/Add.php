@@ -11,126 +11,24 @@ namespace RescueGroups\Request\Objects\IntakesOwnerSurrenders;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\IntakesOwnerSurrender[]
      */
-    private $intakesOwnersurrenderAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Condition
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $intakesOwnersurrenderAnimalConditionID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $intakesOwnersurrenderDate = null;
-
-    /**
-     * Notes
-     *
-     * @var string
-     */
-    private $intakesOwnersurrenderNotes = null;
-
-    /**
-     * Surrendered By
-     *
-     * @var integer
-     */
-    private $intakesOwnersurrenderOwnerID = null;
-
-    /**
-     * Surrender Reason
-     *
-     * @var integer
-     */
-    private $intakesOwnersurrenderReasonID = null;
-
-
-    /**
-     * Set Animal
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\IntakesOwnerSurrender $addObject
      * @return $this
      */
-    public function setIntakesOwnersurrenderAnimalID($value)
+    public function addIntakesOwnerSurrender(\RescueGroups\Objects\IntakesOwnerSurrender $addObject)
     {
-        $this->intakesOwnersurrenderAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderAnimalConditionID($value)
-    {
-        $this->intakesOwnersurrenderAnimalConditionID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderDate($value)
-    {
-        $this->intakesOwnersurrenderDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderNotes($value)
-    {
-        $this->intakesOwnersurrenderNotes = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Surrendered By
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderOwnerID($value)
-    {
-        $this->intakesOwnersurrenderOwnerID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Surrender Reason
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesOwnersurrenderReasonID($value)
-    {
-        $this->intakesOwnersurrenderReasonID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -167,13 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->intakesOwnersurrenderAnimalID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderAnimalID"=>$this->intakesOwnersurrenderAnimalID];
-        if ($this->intakesOwnersurrenderAnimalConditionID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderAnimalConditionID"=>$this->intakesOwnersurrenderAnimalConditionID];
-        if ($this->intakesOwnersurrenderDate !== null) $parameterArray['values'][] = ["intakesOwnersurrenderDate"=>$this->intakesOwnersurrenderDate];
-        if ($this->intakesOwnersurrenderNotes !== null) $parameterArray['values'][] = ["intakesOwnersurrenderNotes"=>$this->intakesOwnersurrenderNotes];
-        if ($this->intakesOwnersurrenderOwnerID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderOwnerID"=>$this->intakesOwnersurrenderOwnerID];
-        if ($this->intakesOwnersurrenderReasonID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderReasonID"=>$this->intakesOwnersurrenderReasonID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

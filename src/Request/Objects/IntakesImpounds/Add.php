@@ -11,246 +11,24 @@ namespace RescueGroups\Request\Objects\IntakesImpounds;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Animal
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\IntakesImpound[]
      */
-    private $intakesImpoundAnimalID = null;
+    protected $addObjects = [];
 
     /**
-     * Condition
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $intakesImpoundAnimalConditionID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $intakesImpoundDate = null;
-
-    /**
-     * Notes
-     *
-     * @var string
-     */
-    private $intakesImpoundNotes = null;
-
-    /**
-     * Impound Location
-     *
-     * @var string
-     */
-    private $intakesImpoundLocation = null;
-
-    /**
-     * Impound Street address
-     *
-     * @var string
-     */
-    private $intakesImpoundAddress = null;
-
-    /**
-     * Impound City
-     *
-     * @var string
-     */
-    private $intakesImpoundCity = null;
-
-    /**
-     * Impound State/Province
-     *
-     * @var string
-     */
-    private $intakesImpoundState = null;
-
-    /**
-     * Impound Postal Code
-     *
-     * @var string
-     */
-    private $intakesImpoundPostalcode = null;
-
-    /**
-     * Impound From
-     *
-     * @var integer
-     */
-    private $intakesImpoundFromID = null;
-
-    /**
-     * Impound Performed By
-     *
-     * @var integer
-     */
-    private $intakesImpoundStaffID = null;
-
-    /**
-     * Reason
-     *
-     * @var integer
-     */
-    private $intakesImpoundReasonID = null;
-
-
-    /**
-     * Set Animal
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\IntakesImpound $addObject
      * @return $this
      */
-    public function setIntakesImpoundAnimalID($value)
+    public function addIntakesImpound(\RescueGroups\Objects\IntakesImpound $addObject)
     {
-        $this->intakesImpoundAnimalID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Condition
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesImpoundAnimalConditionID($value)
-    {
-        $this->intakesImpoundAnimalConditionID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setIntakesImpoundDate($value)
-    {
-        $this->intakesImpoundDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Notes
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundNotes($value)
-    {
-        $this->intakesImpoundNotes = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Location
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundLocation($value)
-    {
-        $this->intakesImpoundLocation = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Street address
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundAddress($value)
-    {
-        $this->intakesImpoundAddress = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound City
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundCity($value)
-    {
-        $this->intakesImpoundCity = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound State/Province
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundState($value)
-    {
-        $this->intakesImpoundState = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Postal Code
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setIntakesImpoundPostalcode($value)
-    {
-        $this->intakesImpoundPostalcode = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound From
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesImpoundFromID($value)
-    {
-        $this->intakesImpoundFromID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Impound Performed By
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesImpoundStaffID($value)
-    {
-        $this->intakesImpoundStaffID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Reason
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setIntakesImpoundReasonID($value)
-    {
-        $this->intakesImpoundReasonID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -287,19 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->intakesImpoundAnimalID !== null) $parameterArray['values'][] = ["intakesImpoundAnimalID"=>$this->intakesImpoundAnimalID];
-        if ($this->intakesImpoundAnimalConditionID !== null) $parameterArray['values'][] = ["intakesImpoundAnimalConditionID"=>$this->intakesImpoundAnimalConditionID];
-        if ($this->intakesImpoundDate !== null) $parameterArray['values'][] = ["intakesImpoundDate"=>$this->intakesImpoundDate];
-        if ($this->intakesImpoundNotes !== null) $parameterArray['values'][] = ["intakesImpoundNotes"=>$this->intakesImpoundNotes];
-        if ($this->intakesImpoundLocation !== null) $parameterArray['values'][] = ["intakesImpoundLocation"=>$this->intakesImpoundLocation];
-        if ($this->intakesImpoundAddress !== null) $parameterArray['values'][] = ["intakesImpoundAddress"=>$this->intakesImpoundAddress];
-        if ($this->intakesImpoundCity !== null) $parameterArray['values'][] = ["intakesImpoundCity"=>$this->intakesImpoundCity];
-        if ($this->intakesImpoundState !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->intakesImpoundState];
-        if ($this->intakesImpoundPostalcode !== null) $parameterArray['values'][] = ["intakesImpoundPostalcode"=>$this->intakesImpoundPostalcode];
-        if ($this->intakesImpoundFromID !== null) $parameterArray['values'][] = ["intakesImpoundFromID"=>$this->intakesImpoundFromID];
-        if ($this->intakesImpoundStaffID !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->intakesImpoundStaffID];
-        if ($this->intakesImpoundReasonID !== null) $parameterArray['values'][] = ["intakesImpoundReasonID"=>$this->intakesImpoundReasonID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -20,9 +20,24 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\InventoryFiles\Add();
+
+        $testObject = new \RescueGroups\Objects\InventoryFile();
+        $testObject->inventoryfileBinary = 'testValue File';
+        $testObject->inventoryfileOldFileName = 'testValue Old file name';
+        $testObject->inventoryfileDescription = 'testValue Description';
+        $testObject->inventoryfileStatus = 'testValue Status';
+        $testObject->inventoryfileDisplayInline = 'testValue Inline';
+
+        $query->addInventoryFile($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('inventoryfiles', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue File', $data['values'][0]['inventoryfileBinary']);
+        $this->assertEquals('testValue Old file name', $data['values'][0]['inventoryfileOldFileName']);
+        $this->assertEquals('testValue Description', $data['values'][0]['inventoryfileDescription']);
+        $this->assertEquals('testValue Status', $data['values'][0]['inventoryfileStatus']);
+        $this->assertEquals('testValue Inline', $data['values'][0]['inventoryfileDisplayInline']);
     }
 }

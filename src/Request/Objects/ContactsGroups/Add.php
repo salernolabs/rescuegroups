@@ -11,46 +11,24 @@ namespace RescueGroups\Request\Objects\ContactsGroups;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\ContactsGroup[]
      */
-    private $groupName = null;
+    protected $addObjects = [];
 
     /**
-     * Business
+     * Set the addable object
      *
-     * @var string
-     */
-    private $groupBusiness = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\ContactsGroup $addObject
      * @return $this
      */
-    public function setGroupName($value)
+    public function addContactsGroup(\RescueGroups\Objects\ContactsGroup $addObject)
     {
-        $this->groupName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Business
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setGroupBusiness($value)
-    {
-        $this->groupBusiness = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -87,9 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->groupName !== null) $parameterArray['values'][] = ["groupName"=>$this->groupName];
-        if ($this->groupBusiness !== null) $parameterArray['values'][] = ["groupBusiness"=>$this->groupBusiness];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

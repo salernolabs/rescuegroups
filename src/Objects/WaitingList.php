@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->waitinglistID !== null) $output['waitinglistID'] = $this->waitinglistID;
+        if ($includeId && $this->waitinglistID !== null) $output['waitinglistID'] = $this->waitinglistID;
         if ($this->waitinglistName !== null) $output['waitinglistName'] = $this->waitinglistName;
         if ($this->waitinglistType !== null) $output['waitinglistType'] = $this->waitinglistType;
         if ($this->waitinglistComment !== null) $output['waitinglistComment'] = $this->waitinglistComment;

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesTransfer implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Owner Surrender
+     * Owner Surrender, Primary Key
      *
      * @var integer
      */
@@ -88,12 +88,13 @@ class IntakesTransfer implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesTransferID !== null) $output['intakesTransferID'] = $this->intakesTransferID;
+        if ($includeId && $this->intakesTransferID !== null) $output['intakesTransferID'] = $this->intakesTransferID;
         if ($this->intakesTransferAnimalID !== null) $output['intakesTransferAnimalID'] = $this->intakesTransferAnimalID;
         if ($this->intakesTransferAnimalConditionID !== null) $output['intakesTransferAnimalConditionID'] = $this->intakesTransferAnimalConditionID;
         if ($this->intakesTransferDate !== null) $output['intakesTransferDate'] = $this->intakesTransferDate;

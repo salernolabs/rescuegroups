@@ -11,26 +11,24 @@ namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Service
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\IntakesServiceType[]
      */
-    private $serviceName = null;
-
+    protected $addObjects = [];
 
     /**
-     * Set Service
+     * Set the addable object
      *
-     * @param string $value
+     * @param \RescueGroups\Objects\IntakesServiceType $addObject
      * @return $this
      */
-    public function setServiceName($value)
+    public function addIntakesServiceType(\RescueGroups\Objects\IntakesServiceType $addObject)
     {
-        $this->serviceName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
 
     /**
      * @return bool
@@ -67,8 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->serviceName !== null) $parameterArray['values'][] = ["serviceName"=>$this->serviceName];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

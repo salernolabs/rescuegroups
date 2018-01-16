@@ -20,9 +20,24 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Add();
+
+        $testObject = new \RescueGroups\Objects\IntakesOwnerSurrender();
+        $testObject->intakesOwnersurrenderAnimalConditionID = 'testValue Condition';
+        $testObject->intakesOwnersurrenderDate = 'testValue Date';
+        $testObject->intakesOwnersurrenderNotes = 'testValue Notes';
+        $testObject->intakesOwnersurrenderOwnerID = 'testValue Surrendered By';
+        $testObject->intakesOwnersurrenderReasonID = 'testValue Surrender Reason';
+
+        $query->addIntakesOwnerSurrender($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesOwnersurrenders', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['intakesOwnersurrenderAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['intakesOwnersurrenderDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['intakesOwnersurrenderNotes']);
+        $this->assertEquals('testValue Surrendered By', $data['values'][0]['intakesOwnersurrenderOwnerID']);
+        $this->assertEquals('testValue Surrender Reason', $data['values'][0]['intakesOwnersurrenderReasonID']);
     }
 }

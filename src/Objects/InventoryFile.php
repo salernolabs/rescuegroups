@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * File
+     * File, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->inventoryfileID !== null) $output['inventoryfileID'] = $this->inventoryfileID;
+        if ($includeId && $this->inventoryfileID !== null) $output['inventoryfileID'] = $this->inventoryfileID;
         if ($this->inventoryfileItemID !== null) $output['inventoryfileItemID'] = $this->inventoryfileItemID;
         if ($this->inventoryfileDescription !== null) $output['inventoryfileDescription'] = $this->inventoryfileDescription;
         if ($this->inventoryfileStatus !== null) $output['inventoryfileStatus'] = $this->inventoryfileStatus;

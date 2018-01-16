@@ -20,9 +20,22 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Add();
+
+        $testObject = new \RescueGroups\Objects\OutcomesDeceased();
+        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->reason = 'testValue Reason';
+
+        $query->addOutcomesDeceased($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('outcomesDeceased', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['outcomesDeceasedAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['outcomesDeceasedDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['outcomesDeceasedNotes']);
+        $this->assertEquals('testValue Reason', $data['values'][0]['outcomesDeceasedReason']);
     }
 }

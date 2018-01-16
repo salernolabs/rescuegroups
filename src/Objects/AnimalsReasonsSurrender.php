@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalsReasonsSurrender implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Reason ID
+     * Reason ID, Primary Key
      *
      * @var integer
      */
@@ -40,12 +40,13 @@ class AnimalsReasonsSurrender implements \RescueGroups\Objects\APIEncodableInter
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->reasonID !== null) $output['reasonID'] = $this->reasonID;
+        if ($includeId && $this->reasonID !== null) $output['reasonID'] = $this->reasonID;
         if ($this->reasonName !== null) $output['reasonName'] = $this->reasonName;
 
         return $output;

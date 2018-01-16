@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->id !== null) $output['outcomesReturntoownerID'] = $this->id;
+        if ($includeId && $this->id !== null) $output['outcomesReturntoownerID'] = $this->id;
         if ($this->animalConditionID !== null) $output['outcomesReturntoownerAnimalConditionID'] = $this->animalConditionID;
         if ($this->date !== null) $output['outcomesReturntoownerDate'] = $this->date;
         if ($this->notes !== null) $output['outcomesReturntoownerNotes'] = $this->notes;

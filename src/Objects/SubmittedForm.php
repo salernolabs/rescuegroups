@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -48,12 +48,13 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->submittedformID !== null) $output['submittedformID'] = $this->submittedformID;
+        if ($includeId && $this->submittedformID !== null) $output['submittedformID'] = $this->submittedformID;
         if ($this->submittedformAnimalID !== null) $output['submittedformAnimalID'] = $this->submittedformAnimalID;
         if ($this->submittedformStatusID !== null) $output['submittedformStatusID'] = $this->submittedformStatusID;
 

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * File ID
+     * File ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->contactfileID !== null) $output['contactfileID'] = $this->contactfileID;
+        if ($includeId && $this->contactfileID !== null) $output['contactfileID'] = $this->contactfileID;
         if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
         if ($this->contactfileStatus !== null) $output['contactfileStatus'] = $this->contactfileStatus;
         if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;

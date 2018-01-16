@@ -20,9 +20,22 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Colonies\Add();
+
+        $testObject = new \RescueGroups\Objects\Colony();
+        $testObject->colonyName = 'testValue Name';
+        $testObject->colonyTotalAnimals = 'testValue Number of animals';
+        $testObject->colonyRegisteredDate = 'testValue Registered';
+        $testObject->colonySpecificLocation = 'testValue Specific location';
+
+        $query->addColony($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('colonies', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Name', $data['values'][0]['colonyName']);
+        $this->assertEquals('testValue Number of animals', $data['values'][0]['colonyTotalAnimals']);
+        $this->assertEquals('testValue Registered', $data['values'][0]['colonyRegisteredDate']);
+        $this->assertEquals('testValue Specific location', $data['values'][0]['colonySpecificLocation']);
     }
 }

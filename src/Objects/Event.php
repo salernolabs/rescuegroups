@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Event implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -88,12 +88,13 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->eventID !== null) $output['eventID'] = $this->eventID;
+        if ($includeId && $this->eventID !== null) $output['eventID'] = $this->eventID;
         if ($this->eventName !== null) $output['eventName'] = $this->eventName;
         if ($this->eventStart !== null) $output['eventStart'] = $this->eventStart;
         if ($this->eventEnd !== null) $output['eventEnd'] = $this->eventEnd;

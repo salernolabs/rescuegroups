@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * File ID
+     * File ID, Primary Key
      *
      * @var integer
      */
@@ -72,12 +72,13 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->animalfileID !== null) $output['animalfileID'] = $this->animalfileID;
+        if ($includeId && $this->animalfileID !== null) $output['animalfileID'] = $this->animalfileID;
         if ($this->animalfileAnimalID !== null) $output['animalfileAnimalID'] = $this->animalfileAnimalID;
         if ($this->animalfileDescription !== null) $output['animalfileDescription'] = $this->animalfileDescription;
         if ($this->animalfileStatus !== null) $output['animalfileStatus'] = $this->animalfileStatus;

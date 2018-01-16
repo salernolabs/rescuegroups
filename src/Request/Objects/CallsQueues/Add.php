@@ -11,66 +11,24 @@ namespace RescueGroups\Request\Objects\CallsQueues;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Name
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\CallsQueue[]
      */
-    private $queueName = null;
+    protected $addObjects = [];
 
     /**
-     * From Email Address
+     * Set the addable object
      *
-     * @var string
-     */
-    private $queueFromEmail = null;
-
-    /**
-     * Default Urgency
-     *
-     * @var integer
-     */
-    private $queueDefaultUrgencyID = null;
-
-
-    /**
-     * Set Name
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\CallsQueue $addObject
      * @return $this
      */
-    public function setQueueName($value)
+    public function addCallsQueue(\RescueGroups\Objects\CallsQueue $addObject)
     {
-        $this->queueName = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set From Email Address
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setQueueFromEmail($value)
-    {
-        $this->queueFromEmail = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Default Urgency
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setQueueDefaultUrgencyID($value)
-    {
-        $this->queueDefaultUrgencyID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -107,10 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->queueName !== null) $parameterArray['values'][] = ["queueName"=>$this->queueName];
-        if ($this->queueFromEmail !== null) $parameterArray['values'][] = ["queueFromEmail"=>$this->queueFromEmail];
-        if ($this->queueDefaultUrgencyID !== null) $parameterArray['values'][] = ["queueDefaultUrgencyID"=>$this->queueDefaultUrgencyID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class CallsCategory implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class CallsCategory implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->categoryID !== null) $output['categoryID'] = $this->categoryID;
+        if ($includeId && $this->categoryID !== null) $output['categoryID'] = $this->categoryID;
         if ($this->categoryName !== null) $output['categoryName'] = $this->categoryName;
         if ($this->categoryDescription !== null) $output['categoryDescription'] = $this->categoryDescription;
         if ($this->categoryPublic !== null) $output['categoryPublic'] = $this->categoryPublic;

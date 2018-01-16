@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Colony implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -72,12 +72,13 @@ class Colony implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->colonyID !== null) $output['colonyID'] = $this->colonyID;
+        if ($includeId && $this->colonyID !== null) $output['colonyID'] = $this->colonyID;
         if ($this->colonyName !== null) $output['colonyName'] = $this->colonyName;
         if ($this->colonyLocationID !== null) $output['colonyLocationID'] = $this->colonyLocationID;
         if ($this->colonyTotalAnimals !== null) $output['colonyTotalAnimals'] = $this->colonyTotalAnimals;

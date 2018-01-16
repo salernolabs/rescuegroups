@@ -11,46 +11,24 @@ namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Description
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\AnimalsJournalEntryType[]
      */
-    private $journalEntrytypeDescription = null;
+    protected $addObjects = [];
 
     /**
-     * Category ID
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $journalEntrytypeCategoryID = null;
-
-
-    /**
-     * Set Description
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\AnimalsJournalEntryType $addObject
      * @return $this
      */
-    public function setJournalEntrytypeDescription($value)
+    public function addAnimalsJournalEntryType(\RescueGroups\Objects\AnimalsJournalEntryType $addObject)
     {
-        $this->journalEntrytypeDescription = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Category ID
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setJournalEntrytypeCategoryID($value)
-    {
-        $this->journalEntrytypeCategoryID = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -87,9 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->journalEntrytypeDescription !== null) $parameterArray['values'][] = ["journalEntrytypeDescription"=>$this->journalEntrytypeDescription];
-        if ($this->journalEntrytypeCategoryID !== null) $parameterArray['values'][] = ["journalEntrytypeCategoryID"=>$this->journalEntrytypeCategoryID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

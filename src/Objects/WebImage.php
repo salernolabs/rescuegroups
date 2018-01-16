@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class WebImage implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -40,12 +40,13 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->webimageID !== null) $output['webimageID'] = $this->webimageID;
+        if ($includeId && $this->webimageID !== null) $output['webimageID'] = $this->webimageID;
         if ($this->webimageName !== null) $output['webimageName'] = $this->webimageName;
 
         return $output;

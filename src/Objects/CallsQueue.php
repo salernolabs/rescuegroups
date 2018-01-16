@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class CallsQueue implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class CallsQueue implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->queueID !== null) $output['queueID'] = $this->queueID;
+        if ($includeId && $this->queueID !== null) $output['queueID'] = $this->queueID;
         if ($this->queueName !== null) $output['queueName'] = $this->queueName;
         if ($this->queueFromEmail !== null) $output['queueFromEmail'] = $this->queueFromEmail;
         if ($this->queueDefaultUrgencyID !== null) $output['queueDefaultUrgencyID'] = $this->queueDefaultUrgencyID;

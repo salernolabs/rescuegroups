@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class InventoryLoaner implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -88,12 +88,13 @@ class InventoryLoaner implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->inventoryLoanerID !== null) $output['inventoryLoanerID'] = $this->inventoryLoanerID;
+        if ($includeId && $this->inventoryLoanerID !== null) $output['inventoryLoanerID'] = $this->inventoryLoanerID;
         if ($this->inventoryLoanerItemID !== null) $output['inventoryLoanerItemID'] = $this->inventoryLoanerItemID;
         if ($this->inventoryLoanerLoanDate !== null) $output['inventoryLoanerLoanDate'] = $this->inventoryLoanerLoanDate;
         if ($this->inventoryLoanerLoanConditionID !== null) $output['inventoryLoanerLoanConditionID'] = $this->inventoryLoanerLoanConditionID;

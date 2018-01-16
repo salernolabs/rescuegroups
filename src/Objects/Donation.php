@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class Donation implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -88,12 +88,13 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->donationID !== null) $output['donationID'] = $this->donationID;
+        if ($includeId && $this->donationID !== null) $output['donationID'] = $this->donationID;
         if ($this->donationContactID !== null) $output['donationContactID'] = $this->donationContactID;
         if ($this->donationAmount !== null) $output['donationAmount'] = $this->donationAmount;
         if ($this->donationInkind !== null) $output['donationInkind'] = $this->donationInkind;

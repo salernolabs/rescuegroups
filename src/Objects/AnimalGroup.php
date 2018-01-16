@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -48,12 +48,13 @@ class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->groupID !== null) $output['groupID'] = $this->groupID;
+        if ($includeId && $this->groupID !== null) $output['groupID'] = $this->groupID;
         if ($this->groupName !== null) $output['groupName'] = $this->groupName;
         if ($this->groupHeaderID !== null) $output['groupHeaderID'] = $this->groupHeaderID;
 

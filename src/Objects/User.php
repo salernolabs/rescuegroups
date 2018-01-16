@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class User implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -200,12 +200,13 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->userID !== null) $output['userID'] = $this->userID;
+        if ($includeId && $this->userID !== null) $output['userID'] = $this->userID;
         if ($this->userLogin !== null) $output['userLogin'] = $this->userLogin;
         if ($this->userPassword !== null) $output['userPassword'] = $this->userPassword;
         if ($this->userSalutation !== null) $output['userSalutation'] = $this->userSalutation;

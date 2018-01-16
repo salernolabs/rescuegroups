@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Stray Pickup
+     * Stray Pickup, Primary Key
      *
      * @var integer
      */
@@ -120,12 +120,13 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->intakesStraypickupID !== null) $output['intakesStraypickupID'] = $this->intakesStraypickupID;
+        if ($includeId && $this->intakesStraypickupID !== null) $output['intakesStraypickupID'] = $this->intakesStraypickupID;
         if ($this->intakesStraypickupAnimalID !== null) $output['intakesStraypickupAnimalID'] = $this->intakesStraypickupAnimalID;
         if ($this->intakesStraypickupAnimalConditionID !== null) $output['intakesStraypickupAnimalConditionID'] = $this->intakesStraypickupAnimalConditionID;
         if ($this->intakesStraypickupDate !== null) $output['intakesStraypickupDate'] = $this->intakesStraypickupDate;

@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Born In Rescue/Shelter
+     * Born In Rescue/Shelter, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->id !== null) $output['intakesBorninrescueshelterID'] = $this->id;
+        if ($includeId && $this->id !== null) $output['intakesBorninrescueshelterID'] = $this->id;
         if ($this->animalID !== null) $output['intakesBorninrescueshelterAnimalID'] = $this->animalID;
         if ($this->animalConditionID !== null) $output['intakesBorninrescueshelterAnimalConditionID'] = $this->animalConditionID;
         if ($this->date !== null) $output['intakesBorninrescueshelterDate'] = $this->date;

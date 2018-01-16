@@ -11,106 +11,24 @@ namespace RescueGroups\Request\Objects\Memorials;
 class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
 {
     /**
-     * File
+     * Addable  array
      *
-     * @var string
+     * @var \RescueGroups\Objects\Memorial[]
      */
-    private $memorialPictureBinary = null;
+    protected $addObjects = [];
 
     /**
-     * File name
+     * Set the addable object
      *
-     * @var string
-     */
-    private $memorialName = null;
-
-    /**
-     * Old file name
-     *
-     * @var string
-     */
-    private $memorialPictureOldFileName = null;
-
-    /**
-     * Description
-     *
-     * @var string
-     */
-    private $memorialDescription = null;
-
-    /**
-     * Order
-     *
-     * @var string
-     */
-    private $memorialOrder = null;
-
-
-    /**
-     * Set File
-     *
-     * @param string $value
+     * @param \RescueGroups\Objects\Memorial $addObject
      * @return $this
      */
-    public function setMemorialPictureBinary($value)
+    public function addMemorial(\RescueGroups\Objects\Memorial $addObject)
     {
-        $this->memorialPictureBinary = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set File name
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setMemorialName($value)
-    {
-        $this->memorialName = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setMemorialPictureOldFileName($value)
-    {
-        $this->memorialPictureOldFileName = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setMemorialDescription($value)
-    {
-        $this->memorialDescription = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Order
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setMemorialOrder($value)
-    {
-        $this->memorialOrder = $value;
-
-        return $this;
-    }
-
 
     /**
      * @return bool
@@ -147,12 +65,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->memorialPictureBinary !== null) $parameterArray['values'][] = ["memorialPictureBinary"=>$this->memorialPictureBinary];
-        if ($this->memorialName !== null) $parameterArray['values'][] = ["memorialName"=>$this->memorialName];
-        if ($this->memorialPictureOldFileName !== null) $parameterArray['values'][] = ["memorialPictureOldFileName"=>$this->memorialPictureOldFileName];
-        if ($this->memorialDescription !== null) $parameterArray['values'][] = ["memorialDescription"=>$this->memorialDescription];
-        if ($this->memorialOrder !== null) $parameterArray['values'][] = ["memorialOrder"=>$this->memorialOrder];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

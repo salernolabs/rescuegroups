@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class WebFile implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -64,12 +64,13 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->webfileID !== null) $output['webfileID'] = $this->webfileID;
+        if ($includeId && $this->webfileID !== null) $output['webfileID'] = $this->webfileID;
         if ($this->webfileDescription !== null) $output['webfileDescription'] = $this->webfileDescription;
         if ($this->webfileStatus !== null) $output['webfileStatus'] = $this->webfileStatus;
         if ($this->webfileDisplayInline !== null) $output['webfileDisplayInline'] = $this->webfileDisplayInline;

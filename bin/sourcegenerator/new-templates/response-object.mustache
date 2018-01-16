@@ -12,7 +12,7 @@ class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterfa
 {
     {{# fields}}
     /**
-     * {{friendlyName}}
+     * {{friendlyName}}{{# isKey}}, Primary Key{{/ isKey}}
      *
      * @var {{type}}
      */
@@ -36,13 +36,14 @@ class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterfa
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
         {{# fields}}
-        if ($this->{{sdkFieldName}} !== null) $output['{{name}}'] = $this->{{sdkFieldName}};
+        if ({{# isKey}}$includeId && {{/ isKey}}$this->{{sdkFieldName}} !== null) $output['{{name}}'] = $this->{{sdkFieldName}};
         {{/ fields}}
 
         return $output;

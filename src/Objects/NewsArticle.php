@@ -11,7 +11,7 @@ namespace RescueGroups\Objects;
 class NewsArticle implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -56,12 +56,13 @@ class NewsArticle implements \RescueGroups\Objects\APIEncodableInterface
     /**
      * Get array mapping for API functions
      *
+     * @param bool $includeId
      * @return array
      */
-    public function getArray()
+    public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->articleID !== null) $output['articleID'] = $this->articleID;
+        if ($includeId && $this->articleID !== null) $output['articleID'] = $this->articleID;
         if ($this->articleTitle !== null) $output['articleTitle'] = $this->articleTitle;
         if ($this->articleDescription !== null) $output['articleDescription'] = $this->articleDescription;
         if ($this->articleDate !== null) $output['articleDate'] = $this->articleDate;
