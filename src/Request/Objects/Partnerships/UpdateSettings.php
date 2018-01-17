@@ -8,71 +8,64 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'partnerships';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateSettings';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Enable the Partnerships feature
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "enablePartnerships" => 0,
-        "setPartnershipAlertEmailAddresses" => 0,
-    ];
+    private $enablePartnerships = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Partnership alert email address(es)
      *
-     * @return string
+     * @var string
      */
-    public function getObjectType()
-    {
-        return 'partnerships';
-    }
+    private $setPartnershipAlertEmailAddresses = null;
+
 
     /**
-     * Return the object action
+     * Set Enable the Partnerships feature
      *
-     * @return mixed
+     * @param string $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setEnablePartnerships($value)
     {
-        return 'updateSettings';
+        $this->enablePartnerships = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Partnership[]
+     * Set Partnership alert email address(es)
+     *
+     * @param string $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setSetPartnershipAlertEmailAddresses($value)
     {
-        if (empty($data)) return [];
+        $this->setPartnershipAlertEmailAddresses = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Partnership($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Partnership($data)];
+        return $this;
     }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -81,6 +74,9 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enablePartnerships !== null) $parameterArray['values'][] = ["enablePartnerships"=>$this->enablePartnerships];
+        if ($this->setPartnershipAlertEmailAddresses !== null) $parameterArray['values'][] = ["setPartnershipAlertEmailAddresses"=>$this->setPartnershipAlertEmailAddresses];
     }
 }

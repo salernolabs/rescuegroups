@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 
-class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'eventanimalattendance';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicView';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
+
+    /**
+     * ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "attendanceID" => 1,
-    ];
+    private $attendanceID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set ID
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setAttendanceID($value)
     {
-        return 'eventanimalattendance';
+        $this->attendanceID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicView';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\EventAnimalAttendance[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\EventAnimalAttendance($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\EventAnimalAttendance($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->attendanceID !== null) $parameterArray['values'][] = ["attendanceID"=>$this->attendanceID];
     }
 }

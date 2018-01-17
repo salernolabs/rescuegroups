@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\ContactFiles;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'contactFiles';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,43 +35,15 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "contactfileID" => 0,
-        "contactfileContactID" => 1,
-        "contactfileOldName" => 0,
-        "contactfileDescription" => 0,
-        "contactfileStatus" => 0,
-        "contactfileDisplayInline" => 0,
-        "contactfileSize" => 0,
-        "contactfileCreatedDate" => 0,
+        "contactfileID" => [0, 'contactfileID'],
+        "contactfileContactID" => [1, 'contactfileContactID'],
+        "contactfileOldName" => [0, 'contactfileOldName'],
+        "contactfileDescription" => [0, 'contactfileDescription'],
+        "contactfileStatus" => [0, 'contactfileStatus'],
+        "contactfileDisplayInline" => [0, 'contactfileDisplayInline'],
+        "contactfileSize" => [0, 'contactfileSize'],
+        "contactfileCreatedDate" => [0, 'contactfileCreatedDate'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'contactFiles';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

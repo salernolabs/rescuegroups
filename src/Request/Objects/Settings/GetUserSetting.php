@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\Settings;
 
-class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class GetUserSetting extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'settings';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'getUserSetting';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Pattern
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "settingName" => 0,
-    ];
+    private $settingName = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Pattern
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setSettingName($value)
     {
-        return 'settings';
+        $this->settingName = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'getUserSetting';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Setting[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Setting($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Setting($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class GetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->settingName !== null) $parameterArray['values'][] = ["settingName"=>$this->settingName];
     }
 }

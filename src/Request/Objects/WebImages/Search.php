@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\WebImages;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'webimages';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,42 +35,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "webimageID" => 1,
-        "webimageName" => 0,
-        "webimageFileName" => 0,
-        "webimageUrl" => 0,
-        "webimageSize" => 0,
-        "webimageWidth" => 0,
-        "webimageHeight" => 0,
+        "webimageID" => [1, 'webimageID'],
+        "webimageName" => [0, 'webimageName'],
+        "webimageFileName" => [0, 'webimageFileName'],
+        "webimageUrl" => [0, 'webimageUrl'],
+        "webimageSize" => [0, 'webimageSize'],
+        "webimageWidth" => [0, 'webimageWidth'],
+        "webimageHeight" => [0, 'webimageHeight'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'webimages';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

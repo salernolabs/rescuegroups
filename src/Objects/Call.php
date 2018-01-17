@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class Call
+class Call implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -69,10 +69,12 @@ class Call
 
     /**
      * Call Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->callID)) $this->callID = $inputData->callID;
         if (!empty($inputData->callContactID)) $this->callContactID = $inputData->callContactID;
         if (!empty($inputData->callAssignedID)) $this->callAssignedID = $inputData->callAssignedID;
@@ -81,5 +83,26 @@ class Call
         if (!empty($inputData->callCategoryID)) $this->callCategoryID = $inputData->callCategoryID;
         if (!empty($inputData->callQueueID)) $this->callQueueID = $inputData->callQueueID;
         if (!empty($inputData->callDate)) $this->callDate = $inputData->callDate;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->callID !== null) $output['callID'] = $this->callID;
+        if ($this->callContactID !== null) $output['callContactID'] = $this->callContactID;
+        if ($this->callAssignedID !== null) $output['callAssignedID'] = $this->callAssignedID;
+        if ($this->callStatusID !== null) $output['callStatusID'] = $this->callStatusID;
+        if ($this->callUrgencyID !== null) $output['callUrgencyID'] = $this->callUrgencyID;
+        if ($this->callCategoryID !== null) $output['callCategoryID'] = $this->callCategoryID;
+        if ($this->callQueueID !== null) $output['callQueueID'] = $this->callQueueID;
+        if ($this->callDate !== null) $output['callDate'] = $this->callDate;
+
+        return $output;
     }
 }

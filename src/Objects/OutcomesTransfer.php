@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class OutcomesTransfer
+class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -62,10 +62,12 @@ class OutcomesTransfer
 
     /**
      * OutcomesTransfer Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->outcomesTransferID)) $this->outcomesTransferID = $inputData->outcomesTransferID;
         if (!empty($inputData->outcomesTransferAnimalConditionID)) $this->outcomesTransferAnimalConditionID = $inputData->outcomesTransferAnimalConditionID;
         if (!empty($inputData->outcomesTransferDate)) $this->outcomesTransferDate = $inputData->outcomesTransferDate;
@@ -73,5 +75,25 @@ class OutcomesTransfer
         if (!empty($inputData->outcomesTransferReceiveID)) $this->outcomesTransferReceiveID = $inputData->outcomesTransferReceiveID;
         if (!empty($inputData->outcomesTransferCoalitionMember)) $this->outcomesTransferCoalitionMember = $inputData->outcomesTransferCoalitionMember;
         if (!empty($inputData->outcomesTransferReasonID)) $this->outcomesTransferReasonID = $inputData->outcomesTransferReasonID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->outcomesTransferID !== null) $output['outcomesTransferID'] = $this->outcomesTransferID;
+        if ($this->outcomesTransferAnimalConditionID !== null) $output['outcomesTransferAnimalConditionID'] = $this->outcomesTransferAnimalConditionID;
+        if ($this->outcomesTransferDate !== null) $output['outcomesTransferDate'] = $this->outcomesTransferDate;
+        if ($this->outcomesTransferNotes !== null) $output['outcomesTransferNotes'] = $this->outcomesTransferNotes;
+        if ($this->outcomesTransferReceiveID !== null) $output['outcomesTransferReceiveID'] = $this->outcomesTransferReceiveID;
+        if ($this->outcomesTransferCoalitionMember !== null) $output['outcomesTransferCoalitionMember'] = $this->outcomesTransferCoalitionMember;
+        if ($this->outcomesTransferReasonID !== null) $output['outcomesTransferReasonID'] = $this->outcomesTransferReasonID;
+
+        return $output;
     }
 }

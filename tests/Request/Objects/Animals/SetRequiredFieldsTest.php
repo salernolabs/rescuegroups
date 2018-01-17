@@ -20,7 +20,6 @@ class SetRequiredFieldsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\SetRequiredFields();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animals', $data['objectType']);

@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalPatterns;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicSearch extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalPatterns';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicSearch';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
 
     /**
      * Filterable Fields
@@ -18,39 +35,11 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
      * @var array
      */
     private $objectFields = [
-        "patternID" => 1,
-        "patternName" => 0,
-        "patternSpecies" => 0,
-        "patternSpeciesID" => 0,
+        "patternID" => [1, 'patternID'],
+        "patternName" => [0, 'patternName'],
+        "patternSpecies" => [0, 'patternSpecies'],
+        "patternSpeciesID" => [0, 'patternSpeciesID'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalPatterns';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicSearch';
-    }
 
     /**
      * Process the response with associated output object

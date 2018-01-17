@@ -8,90 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\Users;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'users';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\Create\User[]
      */
-    private $objectFields = [
-        "userLogin" => 1,
-        "userPassword" => 0,
-        "userSalutation" => 0,
-        "userFirstname" => 0,
-        "userLastname" => 0,
-        "userAddress" => 0,
-        "userCity" => 0,
-        "userState" => 0,
-        "userPostalcode" => 0,
-        "userPlus4" => 0,
-        "userCountry" => 0,
-        "userPhoneHome" => 0,
-        "userPhoneWork" => 0,
-        "userPhoneWorkExt" => 0,
-        "userPhoneCell" => 0,
-        "userFax" => 0,
-        "userEmail" => 0,
-        "userEmailAlt" => 0,
-        "userEmailPager" => 0,
-        "userContactID" => 1,
-        "userType" => 1,
-        "userStatus" => 0,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\Create\User $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addUser(\RescueGroups\Objects\Create\User $addObject)
     {
-        return 'users';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\User[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\User($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\User($data)];
+        return $this;
     }
 
     /**
@@ -101,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

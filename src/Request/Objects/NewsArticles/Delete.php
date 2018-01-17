@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'newsarticles';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'delete';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "articleID" => 1,
-    ];
+    private $articleID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set ID
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setArticleID($value)
     {
-        return 'newsarticles';
+        $this->articleID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'delete';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\NewsArticle[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\NewsArticle($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\NewsArticle($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->articleID !== null) $parameterArray['values'][] = ["articleID"=>$this->articleID];
     }
 }

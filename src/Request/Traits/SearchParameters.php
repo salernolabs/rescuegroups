@@ -41,6 +41,11 @@ trait SearchParameters
     private $filterProcessing;
 
     /**
+     * @var bool
+     */
+    private $calculateFoundRows = false;
+
+    /**
      * Set result start
      *
      * @param $resultStart
@@ -93,6 +98,19 @@ trait SearchParameters
     }
 
     /**
+     * Set calculate found rows
+     *
+     * @param $calcFoundRows
+     * @return $this
+     */
+    public function setCalculateFoundRows($calcFoundRows)
+    {
+        $this->calculateFoundRows = $calcFoundRows;
+
+        return $this;
+    }
+
+    /**
      * Add a filter
      *
      * @param $field
@@ -107,7 +125,7 @@ trait SearchParameters
             throw new \RescueGroups\Exceptions\InvalidParameter();
         }
 
-        $filter = new \RescueGroups\Request\Search\Filter($field, $operation, $criteria);
+        $filter = new \RescueGroups\Request\Search\Filter($this->objectFields[$field][1], $operation, $criteria);
 
         $this->filters[] = $filter;
 
@@ -128,7 +146,7 @@ trait SearchParameters
             throw new \RescueGroups\Exceptions\InvalidParameter();
         }
 
-        $this->objectFields[$fieldName] = true;
+        $this->objectFields[$fieldName][0] = true;
 
         return $this;
     }
@@ -147,6 +165,15 @@ trait SearchParameters
         if (!empty($this->resultSort)) $parameters['search']->resultSort = $this->resultSort;
         if (!empty($this->resultOrder)) $parameters['search']->resultOrder = $this->resultOrder;
 
+        if (!empty($this->calculateFoundRows))
+        {
+            $parameters['search']->calcFoundRows = 'Yes';
+        }
+        else
+        {
+            $parameters['search']->calcFoundRows = 'No';
+        }
+
         $parameters['search']->filters = [];
         $parameters['search']->fields = [];
 
@@ -164,9 +191,9 @@ trait SearchParameters
         if (!empty($this->objectFields))
         {
             $fieldList = [];
-            foreach ($this->objectFields as $filterName => $enabled)
+            foreach ($this->objectFields as $filterName => $data)
             {
-                if ($enabled) $fieldList[] = $filterName;
+                if ($data[0]) $fieldList[] = $data[1];
             }
             if (!empty($fieldList)) $parameters['search']->fields = $fieldList;
         }

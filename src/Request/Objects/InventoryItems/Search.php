@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\InventoryItems;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'inventoryitems';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,50 +35,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "inventoryitemID" => 1,
-        "inventoryitemName" => 0,
-        "inventoryitemItemID" => 0,
-        "inventoryitemDescription" => 0,
-        "inventoryitemReceivedDate" => 0,
-        "inventoryitemSource" => 0,
-        "inventoryitemCost" => 0,
-        "inventoryitemConditionID" => 0,
-        "inventoryitemCondition" => 0,
-        "inventoryitemCategory" => 0,
-        "inventoryitemDisposedDate" => 0,
-        "inventoryitemDisposedDestination" => 0,
-        "inventoryitemStorageLocation" => 0,
-        "inventoryitemFiles" => 0,
-        "inventoryitemLoaners" => 0,
+        "inventoryitemID" => [1, 'inventoryitemID'],
+        "inventoryitemName" => [0, 'inventoryitemName'],
+        "inventoryitemItemID" => [0, 'inventoryitemItemID'],
+        "inventoryitemDescription" => [0, 'inventoryitemDescription'],
+        "inventoryitemReceivedDate" => [0, 'inventoryitemReceivedDate'],
+        "inventoryitemSource" => [0, 'inventoryitemSource'],
+        "inventoryitemCost" => [0, 'inventoryitemCost'],
+        "inventoryitemConditionID" => [0, 'inventoryitemConditionID'],
+        "inventoryitemCondition" => [0, 'inventoryitemCondition'],
+        "inventoryitemCategory" => [0, 'inventoryitemCategory'],
+        "inventoryitemDisposedDate" => [0, 'inventoryitemDisposedDate'],
+        "inventoryitemDisposedDestination" => [0, 'inventoryitemDisposedDestination'],
+        "inventoryitemStorageLocation" => [0, 'inventoryitemStorageLocation'],
+        "inventoryitemFiles" => [0, 'inventoryitemFiles'],
+        "inventoryitemLoaners" => [0, 'inventoryitemLoaners'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'inventoryitems';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

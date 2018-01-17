@@ -21,9 +21,15 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalGroups\Add();
 
+        $testObject = new \RescueGroups\Objects\AnimalGroup();
+        $testObject->groupName = 'testValue Name';
+
+        $query->addAnimalGroup($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalGroups', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Name', $data['values'][0]['groupName']);
     }
 }

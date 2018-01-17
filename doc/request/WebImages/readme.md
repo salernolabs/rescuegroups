@@ -1,48 +1,89 @@
 # WebImages
 
-This is the documentation for the WebImages queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the WebImages queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
-[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-)
+[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webimages)
 
-## WebImages\GetList
+## Define
+Performs webimages.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
-Performs webimages.list query.
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebImages\Define();
+
+    $result = $api->executeRequest($query);
+## GetList
+Performs webimages.list list query, typically suitable for filling HTML select fields.
+
+### Example List Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\GetList();
+    $result = $api->executeRequest($query);
+## Search
+Performs webimages.search search query. This query returns an array of [\RescueGroups\Objects\WebImage](../../../src/Objects/WebImage.php) objects.
 
-
-## WebImages\Search
-
-Performs webimages.search query.
+### Example Search Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\Search();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
 
-
-## WebImages\View
-
+    $result = $api->executeRequest($query);
+## View
 Performs webimages.view query.
+
+### Example Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\View();
 
+    $query->setwebimageID("ID");
 
-## WebImages\Add
+    $result = $api->executeRequest($query);
 
-Performs webimages.add query.
+## Add
+Performs webimages.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\WebImage](../../../src/Objects/WebImage.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+
+### Example Add Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\Add();
 
+    $addObject = new \RescueGroups\Objects\Create\WebImage();
+    $addObject->webimageBinary = "File"
+    $addObject->webimageOldFileName = "Original File Name"
+    $addObject->webimageName = "Name"
 
-## WebImages\Edit
+    $query->addWebImage($addObject);
 
-Performs webimages.edit query.
+    $result = $api->executeRequest($query);
+## Edit
+Performs webimages.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\WebImage](../../../src/Objects/WebImage.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+
+### Example Edit Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\Edit();
 
+    $editObject = new \RescueGroups\Objects\WebImage();
+    $editObject->webimageID = "ID"
+    $editObject->webimageName = "Name"
 
-## WebImages\Delete
+    $query->updateWebImage($editObject);
 
+    $result = $api->executeRequest($query);
+## Delete
 Performs webimages.delete query.
+
+### Example Query
 
     $query = new \RescueGroups\Request\Objects\WebImages\Delete();
 
+    $query->setwebimageID("ID");
+
+    $result = $api->executeRequest($query);
 

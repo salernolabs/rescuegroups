@@ -20,7 +20,6 @@ class GetExportsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsExports\GetExports();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsExports', $data['objectType']);

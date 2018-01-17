@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Users;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'users';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,60 +35,32 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "userID" => 1,
-        "userLogin" => 0,
-        "userSalutation" => 0,
-        "userName" => 0,
-        "userFirstname" => 0,
-        "userLastname" => 0,
-        "userAddress" => 0,
-        "userCity" => 0,
-        "userState" => 0,
-        "userPostalcode" => 0,
-        "userPlus4" => 0,
-        "userCountry" => 0,
-        "userPhoneHome" => 0,
-        "userPhoneWork" => 0,
-        "userPhoneWorkExt" => 0,
-        "userPhoneCell" => 0,
-        "userFax" => 0,
-        "userEmail" => 0,
-        "userEmailAlt" => 0,
-        "userEmailPager" => 0,
-        "userContactID" => 0,
-        "userRegisteredDate" => 0,
-        "userLastPasswordResetDate" => 0,
-        "userPasswordResetCount" => 0,
-        "userStatus" => 0,
+        "userID" => [1, 'userID'],
+        "userLogin" => [0, 'userLogin'],
+        "userSalutation" => [0, 'userSalutation'],
+        "userName" => [0, 'userName'],
+        "userFirstname" => [0, 'userFirstname'],
+        "userLastname" => [0, 'userLastname'],
+        "userAddress" => [0, 'userAddress'],
+        "userCity" => [0, 'userCity'],
+        "userState" => [0, 'userState'],
+        "userPostalcode" => [0, 'userPostalcode'],
+        "userPlus4" => [0, 'userPlus4'],
+        "userCountry" => [0, 'userCountry'],
+        "userPhoneHome" => [0, 'userPhoneHome'],
+        "userPhoneWork" => [0, 'userPhoneWork'],
+        "userPhoneWorkExt" => [0, 'userPhoneWorkExt'],
+        "userPhoneCell" => [0, 'userPhoneCell'],
+        "userFax" => [0, 'userFax'],
+        "userEmail" => [0, 'userEmail'],
+        "userEmailAlt" => [0, 'userEmailAlt'],
+        "userEmailPager" => [0, 'userEmailPager'],
+        "userContactID" => [0, 'userContactID'],
+        "userRegisteredDate" => [0, 'userRegisteredDate'],
+        "userLastPasswordResetDate" => [0, 'userLastPasswordResetDate'],
+        "userPasswordResetCount" => [0, 'userPasswordResetCount'],
+        "userStatus" => [0, 'userStatus'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'users';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

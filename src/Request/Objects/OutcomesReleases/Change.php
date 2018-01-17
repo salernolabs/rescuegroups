@@ -8,79 +8,224 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReleases;
 
-class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'outcomesReleases';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'change';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Outcome
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "outcomeID" => 1,
-        "outcomesReleaseAnimalConditionID" => 1,
-        "outcomesReleaseDate" => 1,
-        "outcomesReleaseNotes" => 0,
-        "outcomesReleaseLocation" => 0,
-        "outcomesReleaseAddress" => 0,
-        "outcomesReleaseCity" => 0,
-        "outcomesReleaseState" => 0,
-        "outcomesReleasePostalcode" => 0,
-        "outcomesReleaseByID" => 1,
-    ];
+    private $outcomeID = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Condition
      *
-     * @return string
+     * @var integer
      */
-    public function getObjectType()
-    {
-        return 'outcomesReleases';
-    }
+    private $outcomesReleaseAnimalConditionID = null;
 
     /**
-     * Return the object action
+     * Date
      *
-     * @return mixed
+     * @var \DateTime
      */
-    public function getObjectAction()
+    private $outcomesReleaseDate = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $outcomesReleaseNotes = null;
+
+    /**
+     * Location
+     *
+     * @var string
+     */
+    private $outcomesReleaseLocation = null;
+
+    /**
+     * Street address
+     *
+     * @var string
+     */
+    private $outcomesReleaseAddress = null;
+
+    /**
+     * City
+     *
+     * @var string
+     */
+    private $outcomesReleaseCity = null;
+
+    /**
+     * State/Province
+     *
+     * @var string
+     */
+    private $outcomesReleaseState = null;
+
+    /**
+     * Postal Code
+     *
+     * @var string
+     */
+    private $outcomesReleasePostalcode = null;
+
+    /**
+     * Released By
+     *
+     * @var integer
+     */
+    private $outcomesReleaseByID = null;
+
+
+    /**
+     * Set Outcome
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setOutcomeID($value)
     {
-        return 'change';
+        $this->outcomeID = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\OutcomesReleas[]
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setOutcomesReleaseAnimalConditionID($value)
     {
-        if (empty($data)) return [];
+        $this->outcomesReleaseAnimalConditionID = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\OutcomesReleas($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\OutcomesReleas($data)];
+        return $this;
     }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setOutcomesReleaseDate($value)
+    {
+        $this->outcomesReleaseDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleaseNotes($value)
+    {
+        $this->outcomesReleaseNotes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Location
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleaseLocation($value)
+    {
+        $this->outcomesReleaseLocation = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Street address
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleaseAddress($value)
+    {
+        $this->outcomesReleaseAddress = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set City
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleaseCity($value)
+    {
+        $this->outcomesReleaseCity = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set State/Province
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleaseState($value)
+    {
+        $this->outcomesReleaseState = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Postal Code
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setOutcomesReleasePostalcode($value)
+    {
+        $this->outcomesReleasePostalcode = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Released By
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setOutcomesReleaseByID($value)
+    {
+        $this->outcomesReleaseByID = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -89,6 +234,17 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
+        if ($this->outcomesReleaseAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesReleaseAnimalConditionID"=>$this->outcomesReleaseAnimalConditionID];
+        if ($this->outcomesReleaseDate !== null) $parameterArray['values'][] = ["outcomesReleaseDate"=>$this->outcomesReleaseDate];
+        if ($this->outcomesReleaseNotes !== null) $parameterArray['values'][] = ["outcomesReleaseNotes"=>$this->outcomesReleaseNotes];
+        if ($this->outcomesReleaseLocation !== null) $parameterArray['values'][] = ["outcomesReleaseLocation"=>$this->outcomesReleaseLocation];
+        if ($this->outcomesReleaseAddress !== null) $parameterArray['values'][] = ["outcomesReleaseAddress"=>$this->outcomesReleaseAddress];
+        if ($this->outcomesReleaseCity !== null) $parameterArray['values'][] = ["outcomesReleaseCity"=>$this->outcomesReleaseCity];
+        if ($this->outcomesReleaseState !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->outcomesReleaseState];
+        if ($this->outcomesReleasePostalcode !== null) $parameterArray['values'][] = ["outcomesReleasePostalcode"=>$this->outcomesReleasePostalcode];
+        if ($this->outcomesReleaseByID !== null) $parameterArray['values'][] = ["outcomesReleaseByID"=>$this->outcomesReleaseByID];
     }
 }

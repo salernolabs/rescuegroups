@@ -8,77 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\Locations;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'locations';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\Location[]
      */
-    private $objectFields = [
-        "locationName" => 1,
-        "locationUrl" => 0,
-        "locationAddress" => 0,
-        "locationCity" => 0,
-        "locationState" => 0,
-        "locationPostalcode" => 1,
-        "locationCountry" => 0,
-        "locationPhone" => 0,
-        "locationPhoneExt" => 0,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\Location $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addLocation(\RescueGroups\Objects\Location $addObject)
     {
-        return 'locations';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Location[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Location($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Location($data)];
+        return $this;
     }
 
     /**
@@ -88,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

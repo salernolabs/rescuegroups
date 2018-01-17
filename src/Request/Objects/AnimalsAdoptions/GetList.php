@@ -8,77 +8,20 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class GetList extends \RescueGroups\Request\Objects\Base
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsAdoptions';
 
     /**
-     * Filterable Fields
-     *
-     * @var array
+     * Query object action
      */
-    private $objectFields = [
-    ];
+    const QUERY_OBJECT_ACTION = 'list';
 
     /**
-     * @return bool
+     * Query login is required
      */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalsAdoptions';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'list';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsAdoption[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsAdoption($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsAdoption($data)];
-    }
-
-    /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-        $this->addSearchParameters($parameterArray);
-    }
+    const QUERY_LOGIN_REQUIRED = true;
 }

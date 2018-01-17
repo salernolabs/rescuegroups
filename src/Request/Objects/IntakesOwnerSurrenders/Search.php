@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerSurrenders;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesOwnersurrenders';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,46 +35,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakesOwnersurrenderID" => 0,
-        "intakesOwnersurrenderAnimalID" => 0,
-        "intakesOwnersurrenderAnimalConditionID" => 0,
-        "intakesOwnersurrenderDate" => 0,
-        "intakesOwnersurrenderNotes" => 0,
-        "intakesOwnersurrenderOwnerID" => 0,
-        "intakesOwnersurrenderReasonID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "ownerName" => 0,
-        "surrenderReason" => 0,
+        "intakesOwnersurrenderID" => [0, 'intakesOwnersurrenderID'],
+        "intakesOwnersurrenderAnimalID" => [0, 'intakesOwnersurrenderAnimalID'],
+        "intakesOwnersurrenderAnimalConditionID" => [0, 'intakesOwnersurrenderAnimalConditionID'],
+        "intakesOwnersurrenderDate" => [0, 'intakesOwnersurrenderDate'],
+        "intakesOwnersurrenderNotes" => [0, 'intakesOwnersurrenderNotes'],
+        "intakesOwnersurrenderOwnerID" => [0, 'intakesOwnersurrenderOwnerID'],
+        "intakesOwnersurrenderReasonID" => [0, 'intakesOwnersurrenderReasonID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "ownerName" => [0, 'ownerName'],
+        "surrenderReason" => [0, 'surrenderReason'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'intakesOwnersurrenders';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

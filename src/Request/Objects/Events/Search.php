@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Events;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'events';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,59 +35,31 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "eventID" => 1,
-        "eventName" => 0,
-        "eventStart" => 0,
-        "eventEnd" => 0,
-        "eventUrl" => 0,
-        "eventDescription" => 0,
-        "eventLocationID" => 0,
-        "eventAnimalAttendance" => 0,
-        "eventMeetrequests" => 0,
-        "eventSpecies" => 0,
-        "locationID" => 0,
-        "locationName" => 0,
-        "locationUrl" => 0,
-        "locationAddress" => 0,
-        "locationCity" => 0,
-        "locationState" => 0,
-        "locationPostalcode" => 0,
-        "locationCountry" => 0,
-        "locationPhone" => 0,
-        "locationPhoneExt" => 0,
-        "locationAnimals" => 0,
-        "locationEvents" => 0,
-        "locationColonies" => 0,
-        "locationMeetrequests" => 0,
+        "eventID" => [1, 'eventID'],
+        "eventName" => [0, 'eventName'],
+        "eventStart" => [0, 'eventStart'],
+        "eventEnd" => [0, 'eventEnd'],
+        "eventUrl" => [0, 'eventUrl'],
+        "eventDescription" => [0, 'eventDescription'],
+        "eventLocationID" => [0, 'eventLocationID'],
+        "eventAnimalAttendance" => [0, 'eventAnimalAttendance'],
+        "eventMeetrequests" => [0, 'eventMeetrequests'],
+        "eventSpecies" => [0, 'eventSpecies'],
+        "locationID" => [0, 'locationID'],
+        "locationName" => [0, 'locationName'],
+        "locationUrl" => [0, 'locationUrl'],
+        "locationAddress" => [0, 'locationAddress'],
+        "locationCity" => [0, 'locationCity'],
+        "locationState" => [0, 'locationState'],
+        "locationPostalcode" => [0, 'locationPostalcode'],
+        "locationCountry" => [0, 'locationCountry'],
+        "locationPhone" => [0, 'locationPhone'],
+        "locationPhoneExt" => [0, 'locationPhoneExt'],
+        "locationAnimals" => [0, 'locationAnimals'],
+        "locationEvents" => [0, 'locationEvents'],
+        "locationColonies" => [0, 'locationColonies'],
+        "locationMeetrequests" => [0, 'locationMeetrequests'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'events';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class YoutubeUrls implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class YoutubeUrls extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animals';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'youtubeUrls';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "animalID" => 1,
-    ];
+    private $animalID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set ID
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setAnimalID($value)
     {
-        return 'animals';
+        $this->animalID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'youtubeUrls';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Animal[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Animal($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Animal($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class YoutubeUrls implements \RescueGroups\Request\RequestInterface, \RescueGrou
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
     }
 }

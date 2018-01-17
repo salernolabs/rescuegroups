@@ -8,73 +8,104 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class AddPicture extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animals';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'addPicture';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "animalID" => 1,
-        "pictureBinary" => 1,
-        "fileName" => 1,
-        "mediaOrder" => 0,
-    ];
+    private $animalID = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Picture
      *
-     * @return string
+     * @var string
      */
-    public function getObjectType()
-    {
-        return 'animals';
-    }
+    private $pictureBinary = null;
 
     /**
-     * Return the object action
+     * File name
      *
-     * @return mixed
+     * @var string
      */
-    public function getObjectAction()
+    private $fileName = null;
+
+    /**
+     * Order
+     *
+     * @var string
+     */
+    private $mediaOrder = null;
+
+
+    /**
+     * Set ID
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setAnimalID($value)
     {
-        return 'addPicture';
+        $this->animalID = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Animal[]
+     * Set Picture
+     *
+     * @param string $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setPictureBinary($value)
     {
-        if (empty($data)) return [];
+        $this->pictureBinary = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Animal($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Animal($data)];
+        return $this;
     }
+
+    /**
+     * Set File name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setFileName($value)
+    {
+        $this->fileName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Order
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMediaOrder($value)
+    {
+        $this->mediaOrder = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -83,6 +114,11 @@ class AddPicture implements \RescueGroups\Request\RequestInterface, \RescueGroup
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
+        if ($this->pictureBinary !== null) $parameterArray['values'][] = ["pictureBinary"=>$this->pictureBinary];
+        if ($this->fileName !== null) $parameterArray['values'][] = ["fileName"=>$this->fileName];
+        if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];
     }
 }

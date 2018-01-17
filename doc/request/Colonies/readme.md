@@ -1,48 +1,94 @@
 # Colonies
 
-This is the documentation for the Colonies queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the Colonies queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
-[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-)
+[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-colonies)
 
-## Colonies\GetList
+## Define
+Performs colonies.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
-Performs colonies.list query.
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Colonies\Define();
+
+    $result = $api->executeRequest($query);
+## GetList
+Performs colonies.list list query, typically suitable for filling HTML select fields.
+
+### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\GetList();
-
-
-## Colonies\View
-
+    $result = $api->executeRequest($query);
+## View
 Performs colonies.view query.
+
+### Example Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\View();
 
+    $query->setcolonyID("ID");
 
-## Colonies\Search
+    $result = $api->executeRequest($query);
 
-Performs colonies.search query.
+## Search
+Performs colonies.search search query. This query returns an array of [\RescueGroups\Objects\Colony](../../../src/Objects/Colony.php) objects.
+
+### Example Search Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\Search();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
 
+    $result = $api->executeRequest($query);
+## Add
+Performs colonies.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Colony](../../../src/Objects/Colony.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
-## Colonies\Add
-
-Performs colonies.add query.
+### Example Add Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\Add();
 
+    $addObject = new \RescueGroups\Objects\Colony();
+    $addObject->colonyName = "Name"
+    $addObject->colonyTotalAnimals = "Number of animals"
+    $addObject->colonyRegisteredDate = "Registered"
+    $addObject->colonySpecificLocation = "Specific location"
 
-## Colonies\Edit
+    $query->addColony($addObject);
 
-Performs colonies.edit query.
+    $result = $api->executeRequest($query);
+## Edit
+Performs colonies.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Colony](../../../src/Objects/Colony.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+
+### Example Edit Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\Edit();
 
+    $editObject = new \RescueGroups\Objects\Colony();
+    $editObject->colonyID = "ID"
+    $editObject->colonyName = "Name"
+    $editObject->colonyLocationID = "Location"
+    $editObject->colonyTotalAnimals = "Number of animals"
+    $editObject->colonyRegisteredDate = "Registered"
+    $editObject->colonySpecificLocation = "Specific location"
 
-## Colonies\Delete
+    $query->updateColony($editObject);
 
+    $result = $api->executeRequest($query);
+## Delete
 Performs colonies.delete query.
+
+### Example Query
 
     $query = new \RescueGroups\Request\Objects\Colonies\Delete();
 
+    $query->setcolonyID("ID");
+
+    $result = $api->executeRequest($query);
 

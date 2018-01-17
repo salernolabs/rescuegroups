@@ -20,7 +20,6 @@ class GetListTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\CallsStatuses\GetList();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('callsStatuses', $data['objectType']);

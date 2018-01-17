@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\CallsCategories;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'callsCategories';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,46 +35,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "categoryID" => 1,
-        "categoryName" => 0,
-        "categoryDescription" => 0,
-        "categoryPublic" => 0,
-        "categoryDefaultQueueID" => 0,
-        "categoryDefaultQueueName" => 0,
-        "categoryCreatedDate" => 0,
-        "categoryCreatedByID" => 0,
-        "categoryUpdatedDate" => 0,
-        "categoryUpdatedByID" => 0,
-        "categoryCallsCount" => 0,
+        "categoryID" => [1, 'categoryID'],
+        "categoryName" => [0, 'categoryName'],
+        "categoryDescription" => [0, 'categoryDescription'],
+        "categoryPublic" => [0, 'categoryPublic'],
+        "categoryDefaultQueueID" => [0, 'categoryDefaultQueueID'],
+        "categoryDefaultQueueName" => [0, 'categoryDefaultQueueName'],
+        "categoryCreatedDate" => [0, 'categoryCreatedDate'],
+        "categoryCreatedByID" => [0, 'categoryCreatedByID'],
+        "categoryUpdatedDate" => [0, 'categoryUpdatedDate'],
+        "categoryUpdatedByID" => [0, 'categoryUpdatedByID'],
+        "categoryCallsCount" => [0, 'categoryCallsCount'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'callsCategories';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

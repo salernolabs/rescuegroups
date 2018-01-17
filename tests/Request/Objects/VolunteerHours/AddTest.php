@@ -21,9 +21,19 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\VolunteerHours\Add();
 
+        $testObject = new \RescueGroups\Objects\VolunteerHour();
+        $testObject->volunteerDate = 'testValue Date';
+        $testObject->volunteerLength = 'testValue Hours';
+        $testObject->volunteerTask = 'testValue Task';
+
+        $query->addVolunteerHour($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('volunteerHours', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Date', $data['values'][0]['volunteerHoursVolunteerDate']);
+        $this->assertEquals('testValue Hours', $data['values'][0]['volunteerHoursVolunteerLength']);
+        $this->assertEquals('testValue Task', $data['values'][0]['volunteerHoursVolunteerTask']);
     }
 }

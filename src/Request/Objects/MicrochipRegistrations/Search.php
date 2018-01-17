@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\MicrochipRegistrations;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'microchipRegistrations';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,60 +35,32 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "microchipRegistrationID" => 1,
-        "microchipRegistrationCreatedDate" => 0,
-        "microchipRegistrationCreatedByID" => 0,
-        "microchipRegistrationUpdatedDate" => 0,
-        "microchipRegistrationUpdatedByID" => 0,
-        "microchipRegistrationMicrochipNumber" => 0,
-        "microchipRegistrationMicrochipVendor" => 0,
-        "microchipRegistrationRegistry" => 0,
-        "microchipRegistrationOrgID" => 0,
-        "microchipRegistrationAnimalID" => 0,
-        "microchipRegistrationRegistrantName" => 0,
-        "microchipRegistrationRegistrantFirstname" => 0,
-        "microchipRegistrationRegistrantLastname" => 0,
-        "microchipRegistrationRegistrantAddress" => 0,
-        "microchipRegistrationRegistrantCity" => 0,
-        "microchipRegistrationRegistrantState" => 0,
-        "microchipRegistrationRegistrantPostalcode" => 0,
-        "microchipRegistrationRegistrantCountry" => 0,
-        "microchipRegistrationRegistrantPrimaryPhone" => 0,
-        "microchipRegistrationRegistrantSecondaryPhone" => 0,
-        "microchipRegistrationRegistrantPrimaryEmail" => 0,
-        "microchipRegistrationRegistrantSecondaryEmail" => 0,
-        "microchipRegistrationDate" => 0,
-        "microchipRegistrationCode" => 0,
-        "microchipRegistrationComplete" => 0,
+        "microchipRegistrationID" => [1, 'microchipRegistrationID'],
+        "microchipRegistrationCreatedDate" => [0, 'microchipRegistrationCreatedDate'],
+        "microchipRegistrationCreatedByID" => [0, 'microchipRegistrationCreatedByID'],
+        "microchipRegistrationUpdatedDate" => [0, 'microchipRegistrationUpdatedDate'],
+        "microchipRegistrationUpdatedByID" => [0, 'microchipRegistrationUpdatedByID'],
+        "microchipRegistrationMicrochipNumber" => [0, 'microchipRegistrationMicrochipNumber'],
+        "microchipRegistrationMicrochipVendor" => [0, 'microchipRegistrationMicrochipVendor'],
+        "microchipRegistrationRegistry" => [0, 'microchipRegistrationRegistry'],
+        "microchipRegistrationOrgID" => [0, 'microchipRegistrationOrgID'],
+        "microchipRegistrationAnimalID" => [0, 'microchipRegistrationAnimalID'],
+        "microchipRegistrationRegistrantName" => [0, 'microchipRegistrationRegistrantName'],
+        "microchipRegistrationRegistrantFirstname" => [0, 'microchipRegistrationRegistrantFirstname'],
+        "microchipRegistrationRegistrantLastname" => [0, 'microchipRegistrationRegistrantLastname'],
+        "microchipRegistrationRegistrantAddress" => [0, 'microchipRegistrationRegistrantAddress'],
+        "microchipRegistrationRegistrantCity" => [0, 'microchipRegistrationRegistrantCity'],
+        "microchipRegistrationRegistrantState" => [0, 'microchipRegistrationRegistrantState'],
+        "microchipRegistrationRegistrantPostalcode" => [0, 'microchipRegistrationRegistrantPostalcode'],
+        "microchipRegistrationRegistrantCountry" => [0, 'microchipRegistrationRegistrantCountry'],
+        "microchipRegistrationRegistrantPrimaryPhone" => [0, 'microchipRegistrationRegistrantPrimaryPhone'],
+        "microchipRegistrationRegistrantSecondaryPhone" => [0, 'microchipRegistrationRegistrantSecondaryPhone'],
+        "microchipRegistrationRegistrantPrimaryEmail" => [0, 'microchipRegistrationRegistrantPrimaryEmail'],
+        "microchipRegistrationRegistrantSecondaryEmail" => [0, 'microchipRegistrationRegistrantSecondaryEmail'],
+        "microchipRegistrationDate" => [0, 'microchipRegistrationDate'],
+        "microchipRegistrationCode" => [0, 'microchipRegistrationCode'],
+        "microchipRegistrationComplete" => [0, 'microchipRegistrationComplete'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'microchipRegistrations';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

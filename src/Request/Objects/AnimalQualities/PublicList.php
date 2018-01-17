@@ -8,78 +8,20 @@
  */
 namespace RescueGroups\Request\Objects\AnimalQualities;
 
-class PublicList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicList extends \RescueGroups\Request\Objects\Base
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalQualities';
 
     /**
-     * Filterable Fields
-     *
-     * @var array
+     * Query object action
      */
-    private $objectFields = [
-        "animalQualities" => 0,
-    ];
+    const QUERY_OBJECT_ACTION = 'publicList';
 
     /**
-     * @return bool
+     * Query login is required
      */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalQualities';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicList';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalQuality[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalQuality($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalQuality($data)];
-    }
-
-    /**
-     * Apply request parameters to the outgoing request
-     *
-     * @param $parameterArray
-     */
-    public function applyParameters(&$parameterArray)
-    {
-        $this->addSearchParameters($parameterArray);
-    }
+    const QUERY_LOGIN_REQUIRED = false;
 }

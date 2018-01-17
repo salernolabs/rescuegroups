@@ -21,9 +21,21 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Edit();
 
+        $testObject = new \RescueGroups\Objects\EventAnimalAttendance();
+        $testObject->attendanceID = 'testValue ID';
+        $testObject->attendanceAnimalID = 'testValue Animal';
+        $testObject->attendanceStatus = 'testValue Status';
+        $testObject->attendanceEventID = 'testValue Event';
+
+        $query->updateEventAnimalAttendance($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('eventanimalattendance', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['attendanceID']);
+        $this->assertEquals('testValue Animal', $data['values'][0]['attendanceAnimalID']);
+        $this->assertEquals('testValue Status', $data['values'][0]['attendanceStatus']);
+        $this->assertEquals('testValue Event', $data['values'][0]['attendanceEventID']);
     }
 }

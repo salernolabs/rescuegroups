@@ -1,27 +1,49 @@
 # Outcomes
 
-This is the documentation for the Outcomes queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the Outcomes queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
-[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-)
+[Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomes)
 
-## Outcomes\GetList
+## Define
+Performs outcomes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
-Performs outcomes.list query.
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Outcomes\Define();
+
+    $result = $api->executeRequest($query);
+## GetList
+Performs outcomes.list list query, typically suitable for filling HTML select fields.
+
+### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Outcomes\GetList();
+    $result = $api->executeRequest($query);
+## Search
+Performs outcomes.search search query. This query returns an array of [\RescueGroups\Objects\Outcome](../../../src/Objects/Outcome.php) objects.
 
-
-## Outcomes\Search
-
-Performs outcomes.search query.
+### Example Search Query
 
     $query = new \RescueGroups\Request\Objects\Outcomes\Search();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
 
-
-## Outcomes\View
-
+    $result = $api->executeRequest($query);
+## View
 Performs outcomes.view query.
+
+### Example Query
 
     $query = new \RescueGroups\Request\Objects\Outcomes\View();
 
+    $query->setoutcomeID("Outcome ID");
+
+    $result = $api->executeRequest($query);
 

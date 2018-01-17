@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\WaitingLists;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'waitinglists';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,40 +35,12 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "waitinglistID" => 1,
-        "waitinglistName" => 0,
-        "waitinglistType" => 0,
-        "waitinglistComment" => 0,
-        "waitinglistMembersCount" => 0,
+        "waitinglistID" => [1, 'waitinglistID'],
+        "waitinglistName" => [0, 'waitinglistName'],
+        "waitinglistType" => [0, 'waitinglistType'],
+        "waitinglistComment" => [0, 'waitinglistComment'],
+        "waitinglistMembersCount" => [0, 'waitinglistMembersCount'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'waitinglists';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

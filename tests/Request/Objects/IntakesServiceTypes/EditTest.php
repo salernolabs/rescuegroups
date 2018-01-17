@@ -21,9 +21,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Edit();
 
+        $testObject = new \RescueGroups\Objects\IntakesServiceType();
+        $testObject->serviceID = 'testValue Service';
+        $testObject->serviceName = 'testValue Service';
+
+        $query->updateIntakesServiceType($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesServicetypes', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue Service', $data['values'][0]['serviceID']);
+        $this->assertEquals('testValue Service', $data['values'][0]['serviceName']);
     }
 }

@@ -20,7 +20,6 @@ class VideoReorderTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\VideoReorder();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animals', $data['objectType']);

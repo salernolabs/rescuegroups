@@ -8,70 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServiceTypes;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesServicetypes';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'edit';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Editable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\IntakesServiceType[]
      */
-    private $objectFields = [
-        "serviceID" => 1,
-        "serviceName" => 0,
-    ];
+    protected $editObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the editable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\IntakesServiceType $editObject
+     * @return $this
      */
-    public function getObjectType()
+    public function updateIntakesServiceType(\RescueGroups\Objects\IntakesServiceType $editObject)
     {
-        return 'intakesServicetypes';
-    }
+        $this->editObjects[] = $editObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'edit';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesServiceType[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesServiceType($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesServiceType($data)];
+        return $this;
     }
 
     /**
@@ -81,6 +52,16 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

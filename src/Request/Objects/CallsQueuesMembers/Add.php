@@ -8,71 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'callsQueuesMembers';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\CallsQueuesMember[]
      */
-    private $objectFields = [
-        "memberContactID" => 1,
-        "memberQueueID" => 1,
-        "memberManager" => 0,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\CallsQueuesMember $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addCallsQueuesMember(\RescueGroups\Objects\CallsQueuesMember $addObject)
     {
-        return 'callsQueuesMembers';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\CallsQueuesMember[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\CallsQueuesMember($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\CallsQueuesMember($data)];
+        return $this;
     }
 
     /**
@@ -82,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

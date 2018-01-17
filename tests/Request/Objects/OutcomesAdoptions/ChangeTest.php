@@ -20,7 +20,6 @@ class ChangeTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Change();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('outcomesAdoptions', $data['objectType']);

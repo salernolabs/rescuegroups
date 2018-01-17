@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\IntakesStrayDropoffs;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesStraydropoffs';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,49 +35,21 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakesStraydropoffID" => 0,
-        "intakesStraydropoffAnimalID" => 0,
-        "intakesStraydropoffAnimalConditionID" => 0,
-        "intakesStraydropoffDate" => 0,
-        "intakesStraydropoffNotes" => 0,
-        "intakesStraydropoffFoundLocation" => 0,
-        "intakesStraydropoffFoundAddress" => 0,
-        "intakesStraydropoffFoundCity" => 0,
-        "intakesStraydropoffFoundState" => 0,
-        "intakesStraydropoffFoundPostalcode" => 0,
-        "intakesStraydropoffFinderID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "finderName" => 0,
+        "intakesStraydropoffID" => [0, 'intakesStraydropoffID'],
+        "intakesStraydropoffAnimalID" => [0, 'intakesStraydropoffAnimalID'],
+        "intakesStraydropoffAnimalConditionID" => [0, 'intakesStraydropoffAnimalConditionID'],
+        "intakesStraydropoffDate" => [0, 'intakesStraydropoffDate'],
+        "intakesStraydropoffNotes" => [0, 'intakesStraydropoffNotes'],
+        "intakesStraydropoffFoundLocation" => [0, 'intakesStraydropoffFoundLocation'],
+        "intakesStraydropoffFoundAddress" => [0, 'intakesStraydropoffFoundAddress'],
+        "intakesStraydropoffFoundCity" => [0, 'intakesStraydropoffFoundCity'],
+        "intakesStraydropoffFoundState" => [0, 'intakesStraydropoffFoundState'],
+        "intakesStraydropoffFoundPostalcode" => [0, 'intakesStraydropoffFoundPostalcode'],
+        "intakesStraydropoffFinderID" => [0, 'intakesStraydropoffFinderID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "finderName" => [0, 'finderName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'intakesStraydropoffs';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

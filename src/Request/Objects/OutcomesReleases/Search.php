@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReleases;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'outcomesReleases';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,50 +35,22 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "outcomesReleaseID" => 1,
-        "outcomesReleaseIntakeID" => 0,
-        "outcomesReleaseAnimalConditionID" => 0,
-        "outcomesReleaseDate" => 0,
-        "outcomesReleaseNotes" => 0,
-        "outcomesReleaseLocation" => 0,
-        "outcomesReleaseAddress" => 0,
-        "outcomesReleaseCity" => 0,
-        "outcomesReleaseState" => 0,
-        "outcomesReleasePostalcode" => 0,
-        "outcomesReleaseByID" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "releaseByName" => 0,
+        "outcomesReleaseID" => [1, 'outcomesReleaseID'],
+        "outcomesReleaseIntakeID" => [0, 'outcomesReleaseIntakeID'],
+        "outcomesReleaseAnimalConditionID" => [0, 'outcomesReleaseAnimalConditionID'],
+        "outcomesReleaseDate" => [0, 'outcomesReleaseDate'],
+        "outcomesReleaseNotes" => [0, 'outcomesReleaseNotes'],
+        "outcomesReleaseLocation" => [0, 'outcomesReleaseLocation'],
+        "outcomesReleaseAddress" => [0, 'outcomesReleaseAddress'],
+        "outcomesReleaseCity" => [0, 'outcomesReleaseCity'],
+        "outcomesReleaseState" => [0, 'outcomesReleaseState'],
+        "outcomesReleasePostalcode" => [0, 'outcomesReleasePostalcode'],
+        "outcomesReleaseByID" => [0, 'outcomesReleaseByID'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "releaseByName" => [0, 'releaseByName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'outcomesReleases';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

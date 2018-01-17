@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class SubmittedForm
+class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -34,12 +34,30 @@ class SubmittedForm
 
     /**
      * SubmittedForm Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->submittedformID)) $this->submittedformID = $inputData->submittedformID;
         if (!empty($inputData->submittedformAnimalID)) $this->submittedformAnimalID = $inputData->submittedformAnimalID;
         if (!empty($inputData->submittedformStatusID)) $this->submittedformStatusID = $inputData->submittedformStatusID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->submittedformID !== null) $output['submittedformID'] = $this->submittedformID;
+        if ($this->submittedformAnimalID !== null) $output['submittedformAnimalID'] = $this->submittedformAnimalID;
+        if ($this->submittedformStatusID !== null) $output['submittedformStatusID'] = $this->submittedformStatusID;
+
+        return $output;
     }
 }

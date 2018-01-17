@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class AnimalsJournalEntryType
+class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Entrytype ID
+     * Entrytype ID, Primary Key
      *
      * @var integer
      */
@@ -34,12 +34,30 @@ class AnimalsJournalEntryType
 
     /**
      * AnimalsJournalEntryType Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->journalEntrytypeID)) $this->journalEntrytypeID = $inputData->journalEntrytypeID;
         if (!empty($inputData->journalEntrytypeDescription)) $this->journalEntrytypeDescription = $inputData->journalEntrytypeDescription;
         if (!empty($inputData->journalEntrytypeCategoryID)) $this->journalEntrytypeCategoryID = $inputData->journalEntrytypeCategoryID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->journalEntrytypeID !== null) $output['journalEntrytypeID'] = $this->journalEntrytypeID;
+        if ($this->journalEntrytypeDescription !== null) $output['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
+        if ($this->journalEntrytypeCategoryID !== null) $output['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
+
+        return $output;
     }
 }

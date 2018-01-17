@@ -8,73 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsMeetRequests;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsMeetrequests';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\AnimalsMeetRequest[]
      */
-    private $objectFields = [
-        "meetrequestAnimalID" => 1,
-        "meetrequestContactID" => 1,
-        "meetrequestEventID" => 1,
-        "meetrequestLocationID" => 0,
-        "meetrequestDate" => 0,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\AnimalsMeetRequest $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addAnimalsMeetRequest(\RescueGroups\Objects\AnimalsMeetRequest $addObject)
     {
-        return 'animalsMeetrequests';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsMeetRequest[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsMeetRequest($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsMeetRequest($data)];
+        return $this;
     }
 
     /**
@@ -84,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

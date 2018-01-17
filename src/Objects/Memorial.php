@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class Memorial
+class Memorial implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -48,14 +48,34 @@ class Memorial
 
     /**
      * Memorial Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->memorialID)) $this->memorialID = $inputData->memorialID;
         if (!empty($inputData->memorialPictureBinary)) $this->memorialPictureBinary = $inputData->memorialPictureBinary;
         if (!empty($inputData->memorialPictureOldFileName)) $this->memorialPictureOldFileName = $inputData->memorialPictureOldFileName;
         if (!empty($inputData->memorialName)) $this->memorialName = $inputData->memorialName;
         if (!empty($inputData->memorialDescription)) $this->memorialDescription = $inputData->memorialDescription;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->memorialID !== null) $output['memorialID'] = $this->memorialID;
+        if ($this->memorialPictureBinary !== null) $output['memorialPictureBinary'] = $this->memorialPictureBinary;
+        if ($this->memorialPictureOldFileName !== null) $output['memorialPictureOldFileName'] = $this->memorialPictureOldFileName;
+        if ($this->memorialName !== null) $output['memorialName'] = $this->memorialName;
+        if ($this->memorialDescription !== null) $output['memorialDescription'] = $this->memorialDescription;
+
+        return $output;
     }
 }

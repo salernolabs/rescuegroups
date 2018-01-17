@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'newsarticles';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateSettings';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Enable the News Articles feature
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "enableNewsarticles" => 0,
-    ];
+    private $enableNewsarticles = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Enable the News Articles feature
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setEnableNewsarticles($value)
     {
-        return 'newsarticles';
+        $this->enableNewsarticles = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'updateSettings';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\NewsArticle[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\NewsArticle($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\NewsArticle($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enableNewsarticles !== null) $parameterArray['values'][] = ["enableNewsarticles"=>$this->enableNewsarticles];
     }
 }

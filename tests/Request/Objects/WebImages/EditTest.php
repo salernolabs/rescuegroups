@@ -21,9 +21,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WebImages\Edit();
 
+        $testObject = new \RescueGroups\Objects\WebImage();
+        $testObject->webimageID = 'testValue ID';
+        $testObject->webimageName = 'testValue Name';
+
+        $query->updateWebImage($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('webimages', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['webimageID']);
+        $this->assertEquals('testValue Name', $data['values'][0]['webimageName']);
     }
 }

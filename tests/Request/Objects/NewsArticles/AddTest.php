@@ -21,9 +21,19 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\Add();
 
+        $testObject = new \RescueGroups\Objects\NewsArticle();
+        $testObject->articleTitle = 'testValue Title';
+        $testObject->articleDescription = 'testValue Description';
+        $testObject->articleDate = 'testValue Date';
+
+        $query->addNewsArticle($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('newsarticles', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Title', $data['values'][0]['articleTitle']);
+        $this->assertEquals('testValue Description', $data['values'][0]['articleDescription']);
+        $this->assertEquals('testValue Date', $data['values'][0]['articleDate']);
     }
 }

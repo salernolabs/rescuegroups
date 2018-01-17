@@ -8,76 +8,164 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsAdoptions';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'delete';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Adoption ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "adoptionID" => 1,
-        "adoptionRemoveContact" => 0,
-        "adoptionChangeAnimal" => 0,
-        "adoptionChangeSubmittedform" => 0,
-        "adoptionRemoveUser" => 0,
-        "adoptionDonationAmount" => 0,
-        "adoptionLetterSent" => 0,
-    ];
+    private $adoptionID = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Remove contact from adopters group
      *
-     * @return string
+     * @var string
      */
-    public function getObjectType()
-    {
-        return 'animalsAdoptions';
-    }
+    private $adoptionRemoveContact = null;
 
     /**
-     * Return the object action
+     * Change animal to available
      *
-     * @return mixed
+     * @var string
      */
-    public function getObjectAction()
+    private $adoptionChangeAnimal = null;
+
+    /**
+     * Change submitted form to cancelled
+     *
+     * @var string
+     */
+    private $adoptionChangeSubmittedform = null;
+
+    /**
+     * Remove Adopter role from user
+     *
+     * @var string
+     */
+    private $adoptionRemoveUser = null;
+
+    /**
+     * Donation
+     *
+     * @var float
+     */
+    private $adoptionDonationAmount = null;
+
+    /**
+     * Thank you letter sent
+     *
+     * @var string
+     */
+    private $adoptionLetterSent = null;
+
+
+    /**
+     * Set Adoption ID
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setAdoptionID($value)
     {
-        return 'delete';
+        $this->adoptionID = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsAdoption[]
+     * Set Remove contact from adopters group
+     *
+     * @param string $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setAdoptionRemoveContact($value)
     {
-        if (empty($data)) return [];
+        $this->adoptionRemoveContact = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsAdoption($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsAdoption($data)];
+        return $this;
     }
+
+    /**
+     * Set Change animal to available
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAdoptionChangeAnimal($value)
+    {
+        $this->adoptionChangeAnimal = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Change submitted form to cancelled
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAdoptionChangeSubmittedform($value)
+    {
+        $this->adoptionChangeSubmittedform = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Remove Adopter role from user
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAdoptionRemoveUser($value)
+    {
+        $this->adoptionRemoveUser = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Donation
+     *
+     * @param float $value
+     * @return $this
+     */
+    public function setAdoptionDonationAmount($value)
+    {
+        $this->adoptionDonationAmount = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Thank you letter sent
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAdoptionLetterSent($value)
+    {
+        $this->adoptionLetterSent = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -86,6 +174,14 @@ class Delete implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->adoptionID !== null) $parameterArray['values'][] = ["adoptionID"=>$this->adoptionID];
+        if ($this->adoptionRemoveContact !== null) $parameterArray['values'][] = ["adoptionRemoveContact"=>$this->adoptionRemoveContact];
+        if ($this->adoptionChangeAnimal !== null) $parameterArray['values'][] = ["adoptionChangeAnimal"=>$this->adoptionChangeAnimal];
+        if ($this->adoptionChangeSubmittedform !== null) $parameterArray['values'][] = ["adoptionChangeSubmittedform"=>$this->adoptionChangeSubmittedform];
+        if ($this->adoptionRemoveUser !== null) $parameterArray['values'][] = ["adoptionRemoveUser"=>$this->adoptionRemoveUser];
+        if ($this->adoptionDonationAmount !== null) $parameterArray['values'][] = ["adoptionDonationAmount"=>$this->adoptionDonationAmount];
+        if ($this->adoptionLetterSent !== null) $parameterArray['values'][] = ["adoptionLetterSent"=>$this->adoptionLetterSent];
     }
 }

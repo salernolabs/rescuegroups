@@ -21,9 +21,15 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Add();
 
+        $testObject = new \RescueGroups\Objects\IntakesServiceType();
+        $testObject->serviceName = 'testValue Service';
+
+        $query->addIntakesServiceType($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesServicetypes', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Service', $data['values'][0]['serviceName']);
     }
 }

@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsAdoptions';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'view';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Adoption ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "adoptionID" => 1,
-    ];
+    private $adoptionID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Adoption ID
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setAdoptionID($value)
     {
-        return 'animalsAdoptions';
+        $this->adoptionID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'view';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsAdoption[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsAdoption($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsAdoption($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->adoptionID !== null) $parameterArray['values'][] = ["adoptionID"=>$this->adoptionID];
     }
 }

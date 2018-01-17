@@ -21,9 +21,21 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\WaitingLists\Edit();
 
+        $testObject = new \RescueGroups\Objects\WaitingList();
+        $testObject->waitinglistID = 'testValue ID';
+        $testObject->waitinglistName = 'testValue Name';
+        $testObject->waitinglistType = 'testValue Type';
+        $testObject->waitinglistComment = 'testValue Comment';
+
+        $query->updateWaitingList($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('waitinglists', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['waitinglistID']);
+        $this->assertEquals('testValue Name', $data['values'][0]['waitinglistName']);
+        $this->assertEquals('testValue Type', $data['values'][0]['waitinglistType']);
+        $this->assertEquals('testValue Comment', $data['values'][0]['waitinglistComment']);
     }
 }

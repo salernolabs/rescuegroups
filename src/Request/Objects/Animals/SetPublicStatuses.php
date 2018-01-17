@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class SetPublicStatuses extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animals';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'setPublicStatuses';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Statuses
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "statuslist" => 0,
-    ];
+    private $statuslist = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Statuses
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setStatuslist($value)
     {
-        return 'animals';
+        $this->statuslist = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'setPublicStatuses';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Animal[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Animal($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Animal($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class SetPublicStatuses implements \RescueGroups\Request\RequestInterface, \Resc
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->statuslist !== null) $parameterArray['values'][] = ["statuslist"=>$this->statuslist];
     }
 }

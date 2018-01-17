@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class Donation
+class Donation implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -69,10 +69,12 @@ class Donation
 
     /**
      * Donation Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->donationID)) $this->donationID = $inputData->donationID;
         if (!empty($inputData->donationContactID)) $this->donationContactID = $inputData->donationContactID;
         if (!empty($inputData->donationAmount)) $this->donationAmount = $inputData->donationAmount;
@@ -81,5 +83,26 @@ class Donation
         if (!empty($inputData->donationLettersent)) $this->donationLettersent = $inputData->donationLettersent;
         if (!empty($inputData->donationPurpose)) $this->donationPurpose = $inputData->donationPurpose;
         if (!empty($inputData->donationDate)) $this->donationDate = $inputData->donationDate;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->donationID !== null) $output['donationID'] = $this->donationID;
+        if ($this->donationContactID !== null) $output['donationContactID'] = $this->donationContactID;
+        if ($this->donationAmount !== null) $output['donationAmount'] = $this->donationAmount;
+        if ($this->donationInkind !== null) $output['donationInkind'] = $this->donationInkind;
+        if ($this->donationComment !== null) $output['donationComment'] = $this->donationComment;
+        if ($this->donationLettersent !== null) $output['donationLettersent'] = $this->donationLettersent;
+        if ($this->donationPurpose !== null) $output['donationPurpose'] = $this->donationPurpose;
+        if ($this->donationDate !== null) $output['donationDate'] = $this->donationDate;
+
+        return $output;
     }
 }

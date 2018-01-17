@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class OutcomesReturnToOwner
+class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -48,14 +48,34 @@ class OutcomesReturnToOwner
 
     /**
      * OutcomesReturnToOwner Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->outcomesReturntoownerID)) $this->id = $inputData->outcomesReturntoownerID;
         if (!empty($inputData->outcomesReturntoownerAnimalConditionID)) $this->animalConditionID = $inputData->outcomesReturntoownerAnimalConditionID;
         if (!empty($inputData->outcomesReturntoownerDate)) $this->date = $inputData->outcomesReturntoownerDate;
         if (!empty($inputData->outcomesReturntoownerNotes)) $this->notes = $inputData->outcomesReturntoownerNotes;
         if (!empty($inputData->outcomesReturntoownerOwnerID)) $this->ownerID = $inputData->outcomesReturntoownerOwnerID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->id !== null) $output['outcomesReturntoownerID'] = $this->id;
+        if ($this->animalConditionID !== null) $output['outcomesReturntoownerAnimalConditionID'] = $this->animalConditionID;
+        if ($this->date !== null) $output['outcomesReturntoownerDate'] = $this->date;
+        if ($this->notes !== null) $output['outcomesReturntoownerNotes'] = $this->notes;
+        if ($this->ownerID !== null) $output['outcomesReturntoownerOwnerID'] = $this->ownerID;
+
+        return $output;
     }
 }

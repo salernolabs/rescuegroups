@@ -20,7 +20,6 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Contacts\GetSettings();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('contacts', $data['objectType']);

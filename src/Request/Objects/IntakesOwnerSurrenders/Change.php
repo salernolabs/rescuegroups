@@ -8,76 +8,164 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerSurrenders;
 
-class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesOwnersurrenders';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'change';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Intake
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "intakeID" => 1,
-        "intakesOwnersurrenderAnimalID" => 0,
-        "intakesOwnersurrenderAnimalConditionID" => 1,
-        "intakesOwnersurrenderDate" => 1,
-        "intakesOwnersurrenderNotes" => 0,
-        "intakesOwnersurrenderOwnerID" => 1,
-        "intakesOwnersurrenderReasonID" => 1,
-    ];
+    private $intakeID = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Animal
      *
-     * @return string
+     * @var integer
      */
-    public function getObjectType()
-    {
-        return 'intakesOwnersurrenders';
-    }
+    private $intakesOwnersurrenderAnimalID = null;
 
     /**
-     * Return the object action
+     * Condition
      *
-     * @return mixed
+     * @var integer
      */
-    public function getObjectAction()
+    private $intakesOwnersurrenderAnimalConditionID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $intakesOwnersurrenderDate = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $intakesOwnersurrenderNotes = null;
+
+    /**
+     * Surrendered By
+     *
+     * @var integer
+     */
+    private $intakesOwnersurrenderOwnerID = null;
+
+    /**
+     * Surrender Reason
+     *
+     * @var integer
+     */
+    private $intakesOwnersurrenderReasonID = null;
+
+
+    /**
+     * Set Intake
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakeID($value)
     {
-        return 'change';
+        $this->intakeID = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesOwnerSurrender[]
+     * Set Animal
+     *
+     * @param integer $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setIntakesOwnersurrenderAnimalID($value)
     {
-        if (empty($data)) return [];
+        $this->intakesOwnersurrenderAnimalID = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerSurrender($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesOwnerSurrender($data)];
+        return $this;
     }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnersurrenderAnimalConditionID($value)
+    {
+        $this->intakesOwnersurrenderAnimalConditionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setIntakesOwnersurrenderDate($value)
+    {
+        $this->intakesOwnersurrenderDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setIntakesOwnersurrenderNotes($value)
+    {
+        $this->intakesOwnersurrenderNotes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Surrendered By
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnersurrenderOwnerID($value)
+    {
+        $this->intakesOwnersurrenderOwnerID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Surrender Reason
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakesOwnersurrenderReasonID($value)
+    {
+        $this->intakesOwnersurrenderReasonID = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -86,6 +174,14 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
+        if ($this->intakesOwnersurrenderAnimalID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderAnimalID"=>$this->intakesOwnersurrenderAnimalID];
+        if ($this->intakesOwnersurrenderAnimalConditionID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderAnimalConditionID"=>$this->intakesOwnersurrenderAnimalConditionID];
+        if ($this->intakesOwnersurrenderDate !== null) $parameterArray['values'][] = ["intakesOwnersurrenderDate"=>$this->intakesOwnersurrenderDate];
+        if ($this->intakesOwnersurrenderNotes !== null) $parameterArray['values'][] = ["intakesOwnersurrenderNotes"=>$this->intakesOwnersurrenderNotes];
+        if ($this->intakesOwnersurrenderOwnerID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderOwnerID"=>$this->intakesOwnersurrenderOwnerID];
+        if ($this->intakesOwnersurrenderReasonID !== null) $parameterArray['values'][] = ["intakesOwnersurrenderReasonID"=>$this->intakesOwnersurrenderReasonID];
     }
 }

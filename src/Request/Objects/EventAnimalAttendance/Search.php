@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\EventAnimalAttendance;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'eventanimalattendance';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,64 +35,36 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "attendanceID" => 1,
-        "attendanceStatus" => 0,
-        "attendanceAnimalID" => 0,
-        "attendanceEventID" => 0,
-        "animalName" => 0,
-        "animalOrgID" => 0,
-        "animalStatus" => 0,
-        "eventName" => 0,
-        "eventStart" => 0,
-        "eventEnd" => 0,
-        "eventUrl" => 0,
-        "eventDescription" => 0,
-        "eventLocationID" => 0,
-        "eventAnimalAttendance" => 0,
-        "eventMeetrequests" => 0,
-        "eventSpecies" => 0,
-        "eventLocationName" => 0,
-        "eventLocationUrl" => 0,
-        "eventLocationAddress" => 0,
-        "eventLocationCity" => 0,
-        "eventLocationState" => 0,
-        "eventLocationPostalcode" => 0,
-        "eventLocationCountry" => 0,
-        "eventLocationPhone" => 0,
-        "eventLocationPhoneExt" => 0,
-        "eventLocationAnimals" => 0,
-        "eventLocationEvents" => 0,
-        "eventLocationColonies" => 0,
-        "eventLocationMeetrequests" => 0,
+        "attendanceID" => [1, 'attendanceID'],
+        "attendanceStatus" => [0, 'attendanceStatus'],
+        "attendanceAnimalID" => [0, 'attendanceAnimalID'],
+        "attendanceEventID" => [0, 'attendanceEventID'],
+        "animalName" => [0, 'animalName'],
+        "animalOrgID" => [0, 'animalOrgID'],
+        "animalStatus" => [0, 'animalStatus'],
+        "eventName" => [0, 'eventName'],
+        "eventStart" => [0, 'eventStart'],
+        "eventEnd" => [0, 'eventEnd'],
+        "eventUrl" => [0, 'eventUrl'],
+        "eventDescription" => [0, 'eventDescription'],
+        "eventLocationID" => [0, 'eventLocationID'],
+        "eventAnimalAttendance" => [0, 'eventAnimalAttendance'],
+        "eventMeetrequests" => [0, 'eventMeetrequests'],
+        "eventSpecies" => [0, 'eventSpecies'],
+        "eventLocationName" => [0, 'eventLocationName'],
+        "eventLocationUrl" => [0, 'eventLocationUrl'],
+        "eventLocationAddress" => [0, 'eventLocationAddress'],
+        "eventLocationCity" => [0, 'eventLocationCity'],
+        "eventLocationState" => [0, 'eventLocationState'],
+        "eventLocationPostalcode" => [0, 'eventLocationPostalcode'],
+        "eventLocationCountry" => [0, 'eventLocationCountry'],
+        "eventLocationPhone" => [0, 'eventLocationPhone'],
+        "eventLocationPhoneExt" => [0, 'eventLocationPhoneExt'],
+        "eventLocationAnimals" => [0, 'eventLocationAnimals'],
+        "eventLocationEvents" => [0, 'eventLocationEvents'],
+        "eventLocationColonies" => [0, 'eventLocationColonies'],
+        "eventLocationMeetrequests" => [0, 'eventLocationMeetrequests'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'eventanimalattendance';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

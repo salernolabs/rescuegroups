@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsAdoptions';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,55 +35,27 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "adoptionID" => 0,
-        "adoptionAnimalID" => 0,
-        "adoptionAdopterID" => 0,
-        "adoptionLeadID" => 0,
-        "adoptionLead" => 0,
-        "adoptionFeeAmount" => 0,
-        "adoptionDonationAmount" => 0,
-        "adoptionDonationID" => 0,
-        "adoptionDate" => 0,
-        "adoptionStatusID" => 0,
-        "adoptionStatus" => 0,
-        "adoptionLetterSent" => 0,
-        "adoptionSubmittedformID" => 0,
-        "animalCost" => 0,
-        "animalName" => 0,
-        "animalFosterID" => 0,
-        "animalFosterName" => 0,
-        "adopterName" => 0,
-        "adopterType" => 0,
-        "submitterName" => 0,
+        "adoptionID" => [0, 'adoptionID'],
+        "adoptionAnimalID" => [0, 'adoptionAnimalID'],
+        "adoptionAdopterID" => [0, 'adoptionAdopterID'],
+        "adoptionLeadID" => [0, 'adoptionLeadID'],
+        "adoptionLead" => [0, 'adoptionLead'],
+        "adoptionFeeAmount" => [0, 'adoptionFeeAmount'],
+        "adoptionDonationAmount" => [0, 'adoptionDonationAmount'],
+        "adoptionDonationID" => [0, 'adoptionDonationID'],
+        "adoptionDate" => [0, 'adoptionDate'],
+        "adoptionStatusID" => [0, 'adoptionStatusID'],
+        "adoptionStatus" => [0, 'adoptionStatus'],
+        "adoptionLetterSent" => [0, 'adoptionLetterSent'],
+        "adoptionSubmittedformID" => [0, 'adoptionSubmittedformID'],
+        "animalCost" => [0, 'animalCost'],
+        "animalName" => [0, 'animalName'],
+        "animalFosterID" => [0, 'animalFosterID'],
+        "animalFosterName" => [0, 'animalFosterName'],
+        "adopterName" => [0, 'adopterName'],
+        "adopterType" => [0, 'adopterType'],
+        "submitterName" => [0, 'submitterName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalsAdoptions';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

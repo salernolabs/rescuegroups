@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesBorninrescueshelter';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,42 +35,14 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "id" => 0,
-        "animalID" => 0,
-        "animalConditionID" => 0,
-        "date" => 0,
-        "notes" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
+        "id" => [0, 'intakesBorninrescueshelterID'],
+        "animalID" => [0, 'intakesBorninrescueshelterAnimalID'],
+        "animalConditionID" => [0, 'intakesBorninrescueshelterAnimalConditionID'],
+        "date" => [0, 'intakesBorninrescueshelterDate'],
+        "notes" => [0, 'intakesBorninrescueshelterNotes'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'intakesBorninrescueshelter';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

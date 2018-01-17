@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReturnToOwner;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'outcomesReturntoowner';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,45 +35,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "id" => 1,
-        "intakeID" => 0,
-        "animalConditionID" => 0,
-        "date" => 0,
-        "notes" => 0,
-        "ownerID" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "returntoownerName" => 0,
+        "id" => [1, 'outcomesReturntoownerID'],
+        "intakeID" => [0, 'outcomesReturntoownerIntakeID'],
+        "animalConditionID" => [0, 'outcomesReturntoownerAnimalConditionID'],
+        "date" => [0, 'outcomesReturntoownerDate'],
+        "notes" => [0, 'outcomesReturntoownerNotes'],
+        "ownerID" => [0, 'outcomesReturntoownerOwnerID'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "returntoownerName" => [0, 'returntoownerName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'outcomesReturntoowner';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

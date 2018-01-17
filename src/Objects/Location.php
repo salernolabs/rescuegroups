@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class Location
+class Location implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -83,10 +83,12 @@ class Location
 
     /**
      * Location Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->locationID)) $this->locationID = $inputData->locationID;
         if (!empty($inputData->locationName)) $this->locationName = $inputData->locationName;
         if (!empty($inputData->locationUrl)) $this->locationUrl = $inputData->locationUrl;
@@ -97,5 +99,28 @@ class Location
         if (!empty($inputData->locationCountry)) $this->locationCountry = $inputData->locationCountry;
         if (!empty($inputData->locationPhone)) $this->locationPhone = $inputData->locationPhone;
         if (!empty($inputData->locationPhoneExt)) $this->locationPhoneExt = $inputData->locationPhoneExt;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->locationID !== null) $output['locationID'] = $this->locationID;
+        if ($this->locationName !== null) $output['locationName'] = $this->locationName;
+        if ($this->locationUrl !== null) $output['locationUrl'] = $this->locationUrl;
+        if ($this->locationAddress !== null) $output['locationAddress'] = $this->locationAddress;
+        if ($this->locationCity !== null) $output['locationCity'] = $this->locationCity;
+        if ($this->locationState !== null) $output['locationState'] = $this->locationState;
+        if ($this->locationPostalcode !== null) $output['locationPostalcode'] = $this->locationPostalcode;
+        if ($this->locationCountry !== null) $output['locationCountry'] = $this->locationCountry;
+        if ($this->locationPhone !== null) $output['locationPhone'] = $this->locationPhone;
+        if ($this->locationPhoneExt !== null) $output['locationPhoneExt'] = $this->locationPhoneExt;
+
+        return $output;
     }
 }

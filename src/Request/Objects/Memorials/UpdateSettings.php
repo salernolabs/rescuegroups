@@ -8,72 +8,84 @@
  */
 namespace RescueGroups\Request\Objects\Memorials;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'memorials';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateSettings';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Enable the Memorials feature
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "enableMemorials" => 0,
-        "setMemorialsDonationOnlineStoreItem" => 0,
-        "showMemorialsAlphaLinks" => 0,
-    ];
+    private $enableMemorials = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Select Memorials donation store item
      *
-     * @return string
+     * @var string
      */
-    public function getObjectType()
-    {
-        return 'memorials';
-    }
+    private $setMemorialsDonationOnlineStoreItem = null;
 
     /**
-     * Return the object action
+     * Show alphabetical links (A-Z) on the Memorials page
      *
-     * @return mixed
+     * @var string
      */
-    public function getObjectAction()
+    private $showMemorialsAlphaLinks = null;
+
+
+    /**
+     * Set Enable the Memorials feature
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setEnableMemorials($value)
     {
-        return 'updateSettings';
+        $this->enableMemorials = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Memorial[]
+     * Set Select Memorials donation store item
+     *
+     * @param string $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setSetMemorialsDonationOnlineStoreItem($value)
     {
-        if (empty($data)) return [];
+        $this->setMemorialsDonationOnlineStoreItem = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Memorial($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Memorial($data)];
+        return $this;
     }
+
+    /**
+     * Set Show alphabetical links (A-Z) on the Memorials page
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setShowMemorialsAlphaLinks($value)
+    {
+        $this->showMemorialsAlphaLinks = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -82,6 +94,10 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->enableMemorials !== null) $parameterArray['values'][] = ["enableMemorials"=>$this->enableMemorials];
+        if ($this->setMemorialsDonationOnlineStoreItem !== null) $parameterArray['values'][] = ["setMemorialsDonationOnlineStoreItem"=>$this->setMemorialsDonationOnlineStoreItem];
+        if ($this->showMemorialsAlphaLinks !== null) $parameterArray['values'][] = ["showMemorialsAlphaLinks"=>$this->showMemorialsAlphaLinks];
     }
 }

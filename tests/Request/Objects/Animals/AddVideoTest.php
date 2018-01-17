@@ -20,7 +20,6 @@ class AddVideoTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\AddVideo();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animals', $data['objectType']);

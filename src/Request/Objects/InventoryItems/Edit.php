@@ -8,80 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\InventoryItems;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'inventoryitems';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'edit';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Editable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\InventoryItem[]
      */
-    private $objectFields = [
-        "inventoryitemID" => 1,
-        "inventoryitemName" => 0,
-        "inventoryitemItemID" => 0,
-        "inventoryitemDescription" => 0,
-        "inventoryitemReceivedDate" => 0,
-        "inventoryitemSource" => 0,
-        "inventoryitemCost" => 0,
-        "inventoryitemConditionID" => 0,
-        "inventoryitemCategory" => 0,
-        "inventoryitemDisposedDate" => 0,
-        "inventoryitemDisposedDestination" => 0,
-        "inventoryitemStorageLocation" => 0,
-    ];
+    protected $editObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the editable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\InventoryItem $editObject
+     * @return $this
      */
-    public function getObjectType()
+    public function updateInventoryItem(\RescueGroups\Objects\InventoryItem $editObject)
     {
-        return 'inventoryitems';
-    }
+        $this->editObjects[] = $editObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'edit';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\InventoryItem[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\InventoryItem($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\InventoryItem($data)];
+        return $this;
     }
 
     /**
@@ -91,6 +52,16 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

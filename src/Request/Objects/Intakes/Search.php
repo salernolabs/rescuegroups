@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Intakes;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakes';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,44 +35,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakeID" => 0,
-        "intakeOutcomeID" => 0,
-        "intakeAnimalID" => 0,
-        "intakeAnimalConditionID" => 0,
-        "intakeType" => 0,
-        "intakeDate" => 0,
-        "intakeNotes" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
+        "intakeID" => [0, 'intakeID'],
+        "intakeOutcomeID" => [0, 'intakeOutcomeID'],
+        "intakeAnimalID" => [0, 'intakeAnimalID'],
+        "intakeAnimalConditionID" => [0, 'intakeAnimalConditionID'],
+        "intakeType" => [0, 'intakeType'],
+        "intakeDate" => [0, 'intakeDate'],
+        "intakeNotes" => [0, 'intakeNotes'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'intakes';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

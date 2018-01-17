@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalEntryTypes;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsJournalEntrytypes';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'view';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Entrytype ID
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "journalEntrytypeID" => 1,
-    ];
+    private $journalEntrytypeID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Entrytype ID
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setJournalEntrytypeID($value)
     {
-        return 'animalsJournalEntrytypes';
+        $this->journalEntrytypeID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'view';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsJournalEntryType[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsJournalEntryType($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsJournalEntryType($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->journalEntrytypeID !== null) $parameterArray['values'][] = ["journalEntrytypeID"=>$this->journalEntrytypeID];
     }
 }

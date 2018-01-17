@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\IntakesImpounds;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesImpounds';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,53 +35,25 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "intakesImpoundID" => 0,
-        "intakesImpoundAnimalID" => 0,
-        "intakesImpoundAnimalConditionID" => 0,
-        "intakesImpoundDate" => 0,
-        "intakesImpoundNotes" => 0,
-        "intakesImpoundLocation" => 0,
-        "intakesImpoundAddress" => 0,
-        "intakesImpoundCity" => 0,
-        "intakesImpoundState" => 0,
-        "intakesImpoundPostalcode" => 0,
-        "intakesImpoundFromID" => 0,
-        "intakesImpoundStaffID" => 0,
-        "intakesImpoundReasonID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "impoundFromName" => 0,
-        "impoundStaffName" => 0,
-        "impoundReason" => 0,
+        "intakesImpoundID" => [0, 'intakesImpoundID'],
+        "intakesImpoundAnimalID" => [0, 'intakesImpoundAnimalID'],
+        "intakesImpoundAnimalConditionID" => [0, 'intakesImpoundAnimalConditionID'],
+        "intakesImpoundDate" => [0, 'intakesImpoundDate'],
+        "intakesImpoundNotes" => [0, 'intakesImpoundNotes'],
+        "intakesImpoundLocation" => [0, 'intakesImpoundLocation'],
+        "intakesImpoundAddress" => [0, 'intakesImpoundAddress'],
+        "intakesImpoundCity" => [0, 'intakesImpoundCity'],
+        "intakesImpoundState" => [0, 'intakesImpoundState'],
+        "intakesImpoundPostalcode" => [0, 'intakesImpoundPostalcode'],
+        "intakesImpoundFromID" => [0, 'intakesImpoundFromID'],
+        "intakesImpoundStaffID" => [0, 'intakesImpoundStaffID'],
+        "intakesImpoundReasonID" => [0, 'intakesImpoundReasonID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "impoundFromName" => [0, 'impoundFromName'],
+        "impoundStaffName" => [0, 'impoundStaffName'],
+        "impoundReason" => [0, 'impoundReason'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'intakesImpounds';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

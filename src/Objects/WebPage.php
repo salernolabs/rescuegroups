@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class WebPage
+class WebPage implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -83,10 +83,12 @@ class WebPage
 
     /**
      * WebPage Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->webpageID)) $this->webpageID = $inputData->webpageID;
         if (!empty($inputData->webpageName)) $this->webpageName = $inputData->webpageName;
         if (!empty($inputData->webpageContent)) $this->webpageContent = $inputData->webpageContent;
@@ -97,5 +99,28 @@ class WebPage
         if (!empty($inputData->webpageBackgroundImageID)) $this->webpageBackgroundImageID = $inputData->webpageBackgroundImageID;
         if (!empty($inputData->webpageBackgroundMusicID)) $this->webpageBackgroundMusicID = $inputData->webpageBackgroundMusicID;
         if (!empty($inputData->webpageRoleID)) $this->webpageRoleID = $inputData->webpageRoleID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->webpageID !== null) $output['webpageID'] = $this->webpageID;
+        if ($this->webpageName !== null) $output['webpageName'] = $this->webpageName;
+        if ($this->webpageContent !== null) $output['webpageContent'] = $this->webpageContent;
+        if ($this->webpageStatus !== null) $output['webpageStatus'] = $this->webpageStatus;
+        if ($this->webpageUselayout !== null) $output['webpageUselayout'] = $this->webpageUselayout;
+        if ($this->webpageShowonmenu !== null) $output['webpageShowonmenu'] = $this->webpageShowonmenu;
+        if ($this->webpageMetaDescription !== null) $output['webpageMetaDescription'] = $this->webpageMetaDescription;
+        if ($this->webpageBackgroundImageID !== null) $output['webpageBackgroundImageID'] = $this->webpageBackgroundImageID;
+        if ($this->webpageBackgroundMusicID !== null) $output['webpageBackgroundMusicID'] = $this->webpageBackgroundMusicID;
+        if ($this->webpageRoleID !== null) $output['webpageRoleID'] = $this->webpageRoleID;
+
+        return $output;
     }
 }

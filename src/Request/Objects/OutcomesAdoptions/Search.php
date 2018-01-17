@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesAdoptions;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'outcomesAdoptions';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,46 +35,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "outcomesAdoptionID" => 1,
-        "outcomesAdoptionIntakeID" => 0,
-        "outcomesAdoptionAnimalConditionID" => 0,
-        "outcomesAdoptionDate" => 0,
-        "outcomesAdoptionNotes" => 0,
-        "outcomesAdoptionAdoptionID" => 0,
-        "animalID" => 0,
-        "animalName" => 0,
-        "animalConditionName" => 0,
-        "adopterContactID" => 0,
-        "ownerName" => 0,
+        "outcomesAdoptionID" => [1, 'outcomesAdoptionID'],
+        "outcomesAdoptionIntakeID" => [0, 'outcomesAdoptionIntakeID'],
+        "outcomesAdoptionAnimalConditionID" => [0, 'outcomesAdoptionAnimalConditionID'],
+        "outcomesAdoptionDate" => [0, 'outcomesAdoptionDate'],
+        "outcomesAdoptionNotes" => [0, 'outcomesAdoptionNotes'],
+        "outcomesAdoptionAdoptionID" => [0, 'outcomesAdoptionAdoptionID'],
+        "animalID" => [0, 'animalID'],
+        "animalName" => [0, 'animalName'],
+        "animalConditionName" => [0, 'animalConditionName'],
+        "adopterContactID" => [0, 'adopterContactID'],
+        "ownerName" => [0, 'ownerName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'outcomesAdoptions';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

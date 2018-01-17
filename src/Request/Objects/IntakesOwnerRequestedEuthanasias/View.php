@@ -8,70 +8,44 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesOwnerrequestedeuthanasias';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'view';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Owner requestedeuthanasia
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "intakesOwnerrequestedeuthanasiaID" => 1,
-    ];
+    private $intakesOwnerrequestedeuthanasiaID = null;
+
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set Owner requestedeuthanasia
      *
-     * @return string
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setIntakesOwnerrequestedeuthanasiaID($value)
     {
-        return 'intakesOwnerrequestedeuthanasias';
+        $this->intakesOwnerrequestedeuthanasiaID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'view';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($data)];
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -80,6 +54,8 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakesOwnerrequestedeuthanasiaID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaID"=>$this->intakesOwnerrequestedeuthanasiaID];
     }
 }

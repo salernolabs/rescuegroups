@@ -20,7 +20,6 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\View();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('outcomesEuthanasias', $data['objectType']);

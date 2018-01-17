@@ -21,9 +21,17 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Add();
 
+        $testObject = new \RescueGroups\Objects\ContactsGroup();
+        $testObject->groupName = 'testValue Name';
+        $testObject->groupBusiness = 'testValue Business';
+
+        $query->addContactsGroup($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('contactsGroups', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Name', $data['values'][0]['groupName']);
+        $this->assertEquals('testValue Business', $data['values'][0]['groupBusiness']);
     }
 }

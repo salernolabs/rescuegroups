@@ -5,6 +5,11 @@
 class QueryRequest
 {
     /**
+     * @var array
+     */
+    static private $parameterAddList;
+
+    /**
      * @var string
      */
     public $className;
@@ -68,8 +73,14 @@ class QueryRequest
             $this->requestClassName = 'GetList';
         }
 
+        if ($requestData->permissions == 'Public')
+        {
+            $this->loginRequired = 'false';
+        }
+
         if (!empty($requestData->fields))
         {
+            $foundKey = false;
             foreach ($requestData->fields as $fieldName => $fieldData)
             {
                 if (empty($fieldData->type)) return;
@@ -84,6 +95,13 @@ class QueryRequest
                 if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
 
                 $field = new QueryField($fieldName, $sdkFieldName, $fieldData);
+
+                if (!$foundKey && $fieldData->type == 'key')
+                {
+                    $foundKey = true;
+                    $field->isKey = true;
+                }
+
                 $this->fields[] = $field;
             }
         }
@@ -103,6 +121,55 @@ class QueryRequest
     public function isList()
     {
         return ($this->requestName == 'list' || $this->requestName == 'publicList');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEdit()
+    {
+        return ($this->requestName == 'edit');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdd()
+    {
+        $nonObject = static::getParameterAddList();
+
+        if (!empty($nonObject[$this->typeName]))
+        {
+            return false;
+        }
+
+        return ($this->requestName == 'add');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDefine()
+    {
+        return $this->requestName == 'define';
+    }
+
+    /**
+     * @return bool
+     */
+    public function isParameterAdd()
+    {
+        $nonObject = static::getParameterAddList();
+
+        return !empty($nonObject[$this->typeName]) && $this->requestName == 'add';
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRegular()
+    {
+        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit() && !$this->isDefine();
     }
 
     /**
@@ -138,5 +205,34 @@ class QueryRequest
         }
 
         return $responseClassName;
+    }
+
+    /**
+     * Get parameter add list
+     *
+     * @return array
+     */
+    static private function getParameterAddList()
+    {
+        if (!empty(static::$parameterAddList)) return static::$parameterAddList;
+
+        static::$parameterAddList = [
+            'animalFiles' => 1,
+            'animalsAdoptions' => 1,
+            'callsLogentries' => 1,
+            'coloniesCaretakers' => 1,
+            'contactFiles' => 1,
+            'contacts' => 1,
+            'donations' => 1,
+            'inventoryfiles' => 1,
+            'inventoryitems' => 1,
+            'memorials' => 1,
+            'microchipRegistrations' => 1,
+            'users' => 1,
+            'webfiles' => 1,
+            'webimages' => 1
+        ];
+
+        return static::$parameterAddList;
     }
 }

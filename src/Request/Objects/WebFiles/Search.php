@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\WebFiles;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'webfiles';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,45 +35,17 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "webfileID" => 1,
-        "webfileOldName" => 0,
-        "webfileName" => 0,
-        "webfileDescription" => 0,
-        "webfileStatus" => 0,
-        "webfileDisplayInline" => 0,
-        "webfileRoleID" => 0,
-        "webfileRoleName" => 0,
-        "webfileSize" => 0,
-        "webfileCreatedDate" => 0,
+        "webfileID" => [1, 'webfileID'],
+        "webfileOldName" => [0, 'webfileOldName'],
+        "webfileName" => [0, 'webfileName'],
+        "webfileDescription" => [0, 'webfileDescription'],
+        "webfileStatus" => [0, 'webfileStatus'],
+        "webfileDisplayInline" => [0, 'webfileDisplayInline'],
+        "webfileRoleID" => [0, 'webfileRoleID'],
+        "webfileRoleName" => [0, 'webfileRoleName'],
+        "webfileSize" => [0, 'webfileSize'],
+        "webfileCreatedDate" => [0, 'webfileCreatedDate'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'webfiles';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

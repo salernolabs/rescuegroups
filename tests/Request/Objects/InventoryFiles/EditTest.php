@@ -21,9 +21,23 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\InventoryFiles\Edit();
 
+        $testObject = new \RescueGroups\Objects\InventoryFile();
+        $testObject->inventoryfileID = 'testValue File';
+        $testObject->inventoryfileItemID = 'testValue ID';
+        $testObject->inventoryfileDescription = 'testValue Description';
+        $testObject->inventoryfileStatus = 'testValue Status';
+        $testObject->inventoryfileDisplayInline = 'testValue Inline';
+
+        $query->updateInventoryFile($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('inventoryfiles', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue File', $data['values'][0]['inventoryfileID']);
+        $this->assertEquals('testValue ID', $data['values'][0]['inventoryfileItemID']);
+        $this->assertEquals('testValue Description', $data['values'][0]['inventoryfileDescription']);
+        $this->assertEquals('testValue Status', $data['values'][0]['inventoryfileStatus']);
+        $this->assertEquals('testValue Inline', $data['values'][0]['inventoryfileDisplayInline']);
     }
 }

@@ -21,9 +21,15 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Add();
 
+        $testObject = new \RescueGroups\Objects\AnimalsReasonsTransfer();
+        $testObject->reasonName = 'testValue Reason';
+
+        $query->addAnimalsReasonsTransfer($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsReasonsTransfer', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Reason', $data['values'][0]['reasonName']);
     }
 }

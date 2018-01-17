@@ -18,4 +18,6 @@ require_once('RequestGenerator.php');
 
 $generator = new RequestGenerator();
 
+$time = microtime(true);
 $generator->buildDefinableDataModel();
+echo 'Generation took ' . (microtime(true) - $time) . ' seconds.' . PHP_EOL;

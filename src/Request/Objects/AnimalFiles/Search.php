@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalFiles;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalFiles';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,44 +35,16 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "animalfileID" => 0,
-        "animalfileAnimalID" => 1,
-        "animalfileOldName" => 0,
-        "animalfileDescription" => 0,
-        "animalfileStatus" => 0,
-        "animalfileDisplayInline" => 0,
-        "animalfilePublic" => 0,
-        "animalfileSize" => 0,
-        "animalfileCreatedDate" => 0,
+        "animalfileID" => [0, 'animalfileID'],
+        "animalfileAnimalID" => [1, 'animalfileAnimalID'],
+        "animalfileOldName" => [0, 'animalfileOldName'],
+        "animalfileDescription" => [0, 'animalfileDescription'],
+        "animalfileStatus" => [0, 'animalfileStatus'],
+        "animalfileDisplayInline" => [0, 'animalfileDisplayInline'],
+        "animalfilePublic" => [0, 'animalfilePublic'],
+        "animalfileSize" => [0, 'animalfileSize'],
+        "animalfileCreatedDate" => [0, 'animalfileCreatedDate'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalFiles';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

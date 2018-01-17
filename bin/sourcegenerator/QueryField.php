@@ -29,7 +29,17 @@ class QueryField
     /**
      * @var string
      */
+    public $parameterName;
+
+    /**
+     * @var string
+     */
     public $required = "0";
+
+    /**
+     * @var bool
+     */
+    public $isKey = false;
 
     /**
      * QueryField constructor.
@@ -40,6 +50,7 @@ class QueryField
     public function __construct($fieldName, $sdkFieldName, $fieldData)
     {
         $this->sdkFieldName = $sdkFieldName;
+        $this->parameterName = ucfirst($sdkFieldName);
 
         switch ($fieldData->type)
         {
@@ -70,6 +81,11 @@ class QueryField
         if ($fieldData->friendlyname == 'ID' || (!empty($fieldData->properties[0]) && $fieldData->properties[0] == 'required'))
         {
             $this->required = "1";
+        }
+
+        if (empty($this->friendlyName))
+        {
+            $this->friendlyName = $this->sdkFieldName;
         }
     }
 }

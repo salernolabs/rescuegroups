@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class InventoryLoaner
+class InventoryLoaner implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -69,10 +69,12 @@ class InventoryLoaner
 
     /**
      * InventoryLoaner Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->inventoryLoanerID)) $this->inventoryLoanerID = $inputData->inventoryLoanerID;
         if (!empty($inputData->inventoryLoanerItemID)) $this->inventoryLoanerItemID = $inputData->inventoryLoanerItemID;
         if (!empty($inputData->inventoryLoanerLoanDate)) $this->inventoryLoanerLoanDate = $inputData->inventoryLoanerLoanDate;
@@ -81,5 +83,26 @@ class InventoryLoaner
         if (!empty($inputData->inventoryLoanerReturnDate)) $this->inventoryLoanerReturnDate = $inputData->inventoryLoanerReturnDate;
         if (!empty($inputData->inventoryLoanerReturnConditionID)) $this->inventoryLoanerReturnConditionID = $inputData->inventoryLoanerReturnConditionID;
         if (!empty($inputData->inventoryLoanerNotes)) $this->inventoryLoanerNotes = $inputData->inventoryLoanerNotes;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->inventoryLoanerID !== null) $output['inventoryLoanerID'] = $this->inventoryLoanerID;
+        if ($this->inventoryLoanerItemID !== null) $output['inventoryLoanerItemID'] = $this->inventoryLoanerItemID;
+        if ($this->inventoryLoanerLoanDate !== null) $output['inventoryLoanerLoanDate'] = $this->inventoryLoanerLoanDate;
+        if ($this->inventoryLoanerLoanConditionID !== null) $output['inventoryLoanerLoanConditionID'] = $this->inventoryLoanerLoanConditionID;
+        if ($this->inventoryLoanerDueDate !== null) $output['inventoryLoanerDueDate'] = $this->inventoryLoanerDueDate;
+        if ($this->inventoryLoanerReturnDate !== null) $output['inventoryLoanerReturnDate'] = $this->inventoryLoanerReturnDate;
+        if ($this->inventoryLoanerReturnConditionID !== null) $output['inventoryLoanerReturnConditionID'] = $this->inventoryLoanerReturnConditionID;
+        if ($this->inventoryLoanerNotes !== null) $output['inventoryLoanerNotes'] = $this->inventoryLoanerNotes;
+
+        return $output;
     }
 }

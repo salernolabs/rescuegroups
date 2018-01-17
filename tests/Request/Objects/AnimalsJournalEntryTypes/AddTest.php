@@ -21,9 +21,15 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Add();
 
+        $testObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
+        $testObject->journalEntrytypeDescription = 'testValue Description';
+
+        $query->addAnimalsJournalEntryType($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Description', $data['values'][0]['journalEntrytypeDescription']);
     }
 }

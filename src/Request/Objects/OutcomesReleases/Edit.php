@@ -8,78 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\OutcomesReleases;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Edit extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'outcomesReleases';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'edit';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Editable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\OutcomesReleas[]
      */
-    private $objectFields = [
-        "outcomesReleaseID" => 1,
-        "outcomesReleaseAnimalConditionID" => 0,
-        "outcomesReleaseDate" => 0,
-        "outcomesReleaseNotes" => 0,
-        "outcomesReleaseLocation" => 0,
-        "outcomesReleaseAddress" => 0,
-        "outcomesReleaseCity" => 0,
-        "outcomesReleaseState" => 0,
-        "outcomesReleasePostalcode" => 0,
-        "outcomesReleaseByID" => 0,
-    ];
+    protected $editObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the editable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\OutcomesReleas $editObject
+     * @return $this
      */
-    public function getObjectType()
+    public function updateOutcomesReleas(\RescueGroups\Objects\OutcomesReleas $editObject)
     {
-        return 'outcomesReleases';
-    }
+        $this->editObjects[] = $editObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'edit';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\OutcomesReleas[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\OutcomesReleas($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\OutcomesReleas($data)];
+        return $this;
     }
 
     /**
@@ -89,6 +52,16 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->editObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing editable object for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->editObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray();
+        }
     }
 }

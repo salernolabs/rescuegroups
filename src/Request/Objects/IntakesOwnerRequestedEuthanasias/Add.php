@@ -8,74 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesOwnerrequestedeuthanasias';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
      */
-    private $objectFields = [
-        "intakesOwnerrequestedeuthanasiaAnimalID" => 1,
-        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => 1,
-        "intakesOwnerrequestedeuthanasiaDate" => 1,
-        "intakesOwnerrequestedeuthanasiaNotes" => 0,
-        "intakesOwnerrequestedeuthanasiaOwnerID" => 1,
-        "intakesOwnerrequestedeuthanasiaReasonID" => 1,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addIntakesOwnerRequestedEuthanasia(\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia $addObject)
     {
-        return 'intakesOwnerrequestedeuthanasias';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia($data)];
+        return $this;
     }
 
     /**
@@ -85,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

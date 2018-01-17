@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalSpecies;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalSpecies';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,41 +35,13 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "speciesID" => 1,
-        "speciesSingular" => 0,
-        "speciesPlural" => 0,
-        "speciesSingularYoung" => 0,
-        "speciesPluralYoung" => 0,
-        "speciesFullname" => 0,
+        "speciesID" => [1, 'speciesID'],
+        "speciesSingular" => [0, 'speciesSingular'],
+        "speciesPlural" => [0, 'speciesPlural'],
+        "speciesSingularYoung" => [0, 'speciesSingularYoung'],
+        "speciesPluralYoung" => [0, 'speciesPluralYoung'],
+        "speciesFullname" => [0, 'speciesFullname'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalSpecies';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

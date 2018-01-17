@@ -21,9 +21,19 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Edit();
 
+        $testObject = new \RescueGroups\Objects\ContactsGroup();
+        $testObject->groupID = 'testValue ID';
+        $testObject->groupName = 'testValue Name';
+        $testObject->groupBusiness = 'testValue Business';
+
+        $query->updateContactsGroup($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('contactsGroups', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['groupID']);
+        $this->assertEquals('testValue Name', $data['values'][0]['groupName']);
+        $this->assertEquals('testValue Business', $data['values'][0]['groupBusiness']);
     }
 }

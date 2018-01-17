@@ -21,9 +21,19 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Add();
 
+        $testObject = new \RescueGroups\Objects\IntakesBornInRescueShelter();
+        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+
+        $query->addIntakesBornInRescueShelter($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesBorninrescueshelter', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['intakesBorninrescueshelterAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['intakesBorninrescueshelterDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['intakesBorninrescueshelterNotes']);
     }
 }

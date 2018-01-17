@@ -21,9 +21,17 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Add();
 
+        $testObject = new \RescueGroups\Objects\CallsQueuesMember();
+        $testObject->memberQueueID = 'testValue Queue';
+        $testObject->memberManager = 'testValue Manager';
+
+        $query->addCallsQueuesMember($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('callsQueuesMembers', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Queue', $data['values'][0]['memberQueueID']);
+        $this->assertEquals('testValue Manager', $data['values'][0]['memberManager']);
     }
 }

@@ -21,9 +21,21 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Add();
 
+        $testObject = new \RescueGroups\Objects\OutcomesEuthanasia();
+        $testObject->outcomesEuthanasiaAnimalConditionID = 'testValue Condition';
+        $testObject->outcomesEuthanasiaDate = 'testValue Date';
+        $testObject->outcomesEuthanasiaNotes = 'testValue Notes';
+        $testObject->outcomesEuthanasiaReasonID = 'testValue Euthanasia Reason';
+
+        $query->addOutcomesEuthanasia($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('outcomesEuthanasias', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['outcomesEuthanasiaAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['outcomesEuthanasiaDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['outcomesEuthanasiaNotes']);
+        $this->assertEquals('testValue Euthanasia Reason', $data['values'][0]['outcomesEuthanasiaReasonID']);
     }
 }

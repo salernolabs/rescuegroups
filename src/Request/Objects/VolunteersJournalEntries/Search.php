@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\VolunteersJournalEntries;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'volunteersJournalEntries';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,43 +35,15 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "journalEntryID" => 1,
-        "journalEntryContactID" => 0,
-        "journalEntryDate" => 0,
-        "journalEntryComment" => 0,
-        "journalEntryType" => 0,
-        "volunteerName" => 0,
-        "volunteerType" => 0,
-        "journalEntryCreatedDate" => 0,
+        "journalEntryID" => [1, 'journalEntryID'],
+        "journalEntryContactID" => [0, 'journalEntryContactID'],
+        "journalEntryDate" => [0, 'journalEntryDate'],
+        "journalEntryComment" => [0, 'journalEntryComment'],
+        "journalEntryType" => [0, 'journalEntryType'],
+        "volunteerName" => [0, 'volunteerName'],
+        "volunteerType" => [0, 'volunteerType'],
+        "journalEntryCreatedDate" => [0, 'journalEntryCreatedDate'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'volunteersJournalEntries';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

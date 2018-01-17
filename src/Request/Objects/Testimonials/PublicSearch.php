@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Testimonials;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicSearch extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'testimonials';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicSearch';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
 
     /**
      * Filterable Fields
@@ -18,43 +35,15 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
      * @var array
      */
     private $objectFields = [
-        "testimonialID" => 1,
-        "testimonialLocation" => 0,
-        "testimonialLocationDistance" => 0,
-        "testimonialLocationCitystate" => 0,
-        "testimonialService" => 0,
-        "testimonialUserFirstname" => 0,
-        "testimonialCreatedDate" => 0,
-        "testimonialContent" => 0,
+        "testimonialID" => [1, 'testimonialID'],
+        "testimonialLocation" => [0, 'testimonialLocation'],
+        "testimonialLocationDistance" => [0, 'testimonialLocationDistance'],
+        "testimonialLocationCitystate" => [0, 'testimonialLocationCitystate'],
+        "testimonialService" => [0, 'testimonialService'],
+        "testimonialUserFirstname" => [0, 'testimonialUserFirstname'],
+        "testimonialCreatedDate" => [0, 'testimonialCreatedDate'],
+        "testimonialContent" => [0, 'testimonialContent'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'testimonials';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicSearch';
-    }
 
     /**
      * Process the response with associated output object

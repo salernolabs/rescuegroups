@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'partnerships';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,47 +35,19 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "partnershipID" => 1,
-        "partnershipRequestOrgID" => 0,
-        "partnershipRequestOrgName" => 0,
-        "partnershipSharingOrgID" => 0,
-        "partnershipSharingOrgName" => 0,
-        "partnershipRequestDate" => 0,
-        "partnershipRequestedByID" => 0,
-        "partnershipRequestedBy" => 0,
-        "partnershipResponseByID" => 0,
-        "partnershipResponseBy" => 0,
-        "partnershipStatus" => 0,
-        "partnershipResponseDate" => 0,
+        "partnershipID" => [1, 'partnershipID'],
+        "partnershipRequestOrgID" => [0, 'partnershipRequestOrgID'],
+        "partnershipRequestOrgName" => [0, 'partnershipRequestOrgName'],
+        "partnershipSharingOrgID" => [0, 'partnershipSharingOrgID'],
+        "partnershipSharingOrgName" => [0, 'partnershipSharingOrgName'],
+        "partnershipRequestDate" => [0, 'partnershipRequestDate'],
+        "partnershipRequestedByID" => [0, 'partnershipRequestedByID'],
+        "partnershipRequestedBy" => [0, 'partnershipRequestedBy'],
+        "partnershipResponseByID" => [0, 'partnershipResponseByID'],
+        "partnershipResponseBy" => [0, 'partnershipResponseBy'],
+        "partnershipStatus" => [0, 'partnershipStatus'],
+        "partnershipResponseDate" => [0, 'partnershipResponseDate'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'partnerships';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

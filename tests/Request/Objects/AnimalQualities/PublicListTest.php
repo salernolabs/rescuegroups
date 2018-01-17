@@ -20,7 +20,6 @@ class PublicListTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalQualities\PublicList();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('animalQualities', $data['objectType']);

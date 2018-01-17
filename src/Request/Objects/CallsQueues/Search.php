@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueues;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'callsQueues';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,46 +35,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "queueID" => 1,
-        "queueName" => 0,
-        "queueFromEmail" => 0,
-        "queueDefaultUrgencyID" => 0,
-        "queueDefaultUrgencyName" => 0,
-        "queueCreatedDate" => 0,
-        "queueCreatedByID" => 0,
-        "queueUpdatedDate" => 0,
-        "queueUpdatedByID" => 0,
-        "queueOpenCallsCount" => 0,
-        "queueMembersCount" => 0,
+        "queueID" => [1, 'queueID'],
+        "queueName" => [0, 'queueName'],
+        "queueFromEmail" => [0, 'queueFromEmail'],
+        "queueDefaultUrgencyID" => [0, 'queueDefaultUrgencyID'],
+        "queueDefaultUrgencyName" => [0, 'queueDefaultUrgencyName'],
+        "queueCreatedDate" => [0, 'queueCreatedDate'],
+        "queueCreatedByID" => [0, 'queueCreatedByID'],
+        "queueUpdatedDate" => [0, 'queueUpdatedDate'],
+        "queueUpdatedByID" => [0, 'queueUpdatedByID'],
+        "queueOpenCallsCount" => [0, 'queueOpenCallsCount'],
+        "queueMembersCount" => [0, 'queueMembersCount'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'callsQueues';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

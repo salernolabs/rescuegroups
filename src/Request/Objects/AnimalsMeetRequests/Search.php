@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsMeetRequests;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsMeetrequests';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,46 +35,18 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "meetrequestID" => 0,
-        "meetrequestAnimalID" => 0,
-        "meetrequestContactID" => 0,
-        "meetrequestEventID" => 0,
-        "meetrequestLocationID" => 0,
-        "meetrequestDate" => 0,
-        "animalName" => 0,
-        "contactName" => 0,
-        "contactType" => 0,
-        "eventName" => 0,
-        "locationName" => 0,
+        "meetrequestID" => [0, 'meetrequestID'],
+        "meetrequestAnimalID" => [0, 'meetrequestAnimalID'],
+        "meetrequestContactID" => [0, 'meetrequestContactID'],
+        "meetrequestEventID" => [0, 'meetrequestEventID'],
+        "meetrequestLocationID" => [0, 'meetrequestLocationID'],
+        "meetrequestDate" => [0, 'meetrequestDate'],
+        "animalName" => [0, 'animalName'],
+        "contactName" => [0, 'contactName'],
+        "contactType" => [0, 'contactType'],
+        "eventName" => [0, 'eventName'],
+        "locationName" => [0, 'locationName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalsMeetrequests';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

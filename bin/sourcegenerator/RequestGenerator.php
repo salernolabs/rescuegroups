@@ -140,7 +140,6 @@ class RequestGenerator
                 foreach ($objectQueries->requests as $object)
                 {
                     $this->outputQueryRequestClass($object);
-                    $this->outputResponseClass($object);
                     $this->outputQueryRequestTestClass($object);
                 }
 
@@ -172,18 +171,24 @@ class RequestGenerator
     {
         $output = new \stdClass;
         $output->className = $className;
+        $output->typeName = $type;
         $output->requests = [];
 
         foreach ($definition as $request => $requestData)
         {
-            if ($request == 'define')
-            {
-                continue;
-            }
-
             $queryRequest = new QueryRequest($className, $type, $request, $requestData);
 
             $output->requests[] = $queryRequest;
+
+            if ($queryRequest->requestClassName == 'Edit')
+            {
+                $this->outputResponseClass($queryRequest);
+            }
+
+            if ($queryRequest->isParameterAdd())
+            {
+                $this->outputParameterAddClass($queryRequest);
+            }
         }
 
         return $output;
@@ -201,6 +206,20 @@ class RequestGenerator
         $responseObject = __DIR__ . '/../../src/Objects/' . $query->responseClassName . '.php';
 
         $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/response-object.mustache'), $query);
+
+        file_put_contents($responseObject, $data);
+    }
+
+    /**
+     * Output parameter add class
+     *
+     * @param QueryRequest $query
+     */
+    private function outputParameterAddClass(QueryRequest $query)
+    {
+        $responseObject = __DIR__ . '/../../src/Objects/Create/' . $query->responseClassName . '.php';
+
+        $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/create-object.mustache'), $query);
 
         file_put_contents($responseObject, $data);
     }
@@ -225,10 +244,31 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
         }
-        else
+        elseif ($query->isList())
         {
-            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query.mustache'), $query);
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/list-query.mustache'), $query);
         }
+        elseif ($query->isEdit())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/edit-query.mustache'), $query);
+        }
+        elseif ($query->isAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query.mustache'), $query);
+        }
+        elseif ($query->isParameterAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query.mustache'), $query);
+        }
+        elseif ($query->isDefine())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/define-query.mustache'), $query);
+        }
+        elseif ($query->isRegular())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query.mustache'), $query);
+        }
+
 
         file_put_contents($requestFileName, $data);
     }
@@ -251,9 +291,25 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query-test.mustache'), $query);
         }
-        else
+        elseif ($query->isEdit())
         {
-            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/search-query-test.mustache'), $query);
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/edit-query-test.mustache'), $query);
+        }
+        elseif ($query->isAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query-test.mustache'), $query);
+        }
+        elseif ($query->isParameterAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query-test.mustache'), $query);
+        }
+        elseif ($query->isDefine())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/define-query-test.mustache'), $query);
+        }
+        elseif ($query->isRegular() || $query->isList())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query-test.mustache'), $query);
         }
 
         file_put_contents($requestFileName, $data);

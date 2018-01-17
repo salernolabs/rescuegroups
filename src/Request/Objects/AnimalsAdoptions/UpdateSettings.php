@@ -8,73 +8,104 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsAdoptions;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsAdoptions';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateSettings';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Show a reminder to use the Adoptions feature when changing an animal's status to Adopted
      *
-     * @var array
+     * @var string
      */
-    private $objectFields = [
-        "showAdoptionsTrackingMessage" => 0,
-        "showAppPending" => 0,
-        "showAppPendingAdoptAnyway" => 0,
-        "preventApplicationsForPendingAnimals" => 0,
-    ];
+    private $showAdoptionsTrackingMessage = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Show an &quot;Application Pending&quot; message on public pages for animals when applicable
      *
-     * @return string
+     * @var string
      */
-    public function getObjectType()
-    {
-        return 'animalsAdoptions';
-    }
+    private $showAppPending = null;
 
     /**
-     * Return the object action
+     * Show an &quot;Apply anyway&quot; message on public pages for animals when applicable
      *
-     * @return mixed
+     * @var string
      */
-    public function getObjectAction()
+    private $showAppPendingAdoptAnyway = null;
+
+    /**
+     * Prevent applications from being submitted for animals with a pending application
+     *
+     * @var string
+     */
+    private $preventApplicationsForPendingAnimals = null;
+
+
+    /**
+     * Set Show a reminder to use the Adoptions feature when changing an animal's status to Adopted
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setShowAdoptionsTrackingMessage($value)
     {
-        return 'updateSettings';
+        $this->showAdoptionsTrackingMessage = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\AnimalsAdoption[]
+     * Set Show an &quot;Application Pending&quot; message on public pages for animals when applicable
+     *
+     * @param string $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setShowAppPending($value)
     {
-        if (empty($data)) return [];
+        $this->showAppPending = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\AnimalsAdoption($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\AnimalsAdoption($data)];
+        return $this;
     }
+
+    /**
+     * Set Show an &quot;Apply anyway&quot; message on public pages for animals when applicable
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setShowAppPendingAdoptAnyway($value)
+    {
+        $this->showAppPendingAdoptAnyway = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Prevent applications from being submitted for animals with a pending application
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setPreventApplicationsForPendingAnimals($value)
+    {
+        $this->preventApplicationsForPendingAnimals = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -83,6 +114,11 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->showAdoptionsTrackingMessage !== null) $parameterArray['values'][] = ["showAdoptionsTrackingMessage"=>$this->showAdoptionsTrackingMessage];
+        if ($this->showAppPending !== null) $parameterArray['values'][] = ["showAppPending"=>$this->showAppPending];
+        if ($this->showAppPendingAdoptAnyway !== null) $parameterArray['values'][] = ["showAppPendingAdoptAnyway"=>$this->showAppPendingAdoptAnyway];
+        if ($this->preventApplicationsForPendingAnimals !== null) $parameterArray['values'][] = ["preventApplicationsForPendingAnimals"=>$this->preventApplicationsForPendingAnimals];
     }
 }

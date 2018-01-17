@@ -21,9 +21,23 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Add();
 
+        $testObject = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia();
+        $testObject->intakesOwnerrequestedeuthanasiaAnimalConditionID = 'testValue Condition';
+        $testObject->intakesOwnerrequestedeuthanasiaDate = 'testValue Date';
+        $testObject->intakesOwnerrequestedeuthanasiaNotes = 'testValue Notes';
+        $testObject->intakesOwnerrequestedeuthanasiaOwnerID = 'testValue Owner';
+        $testObject->intakesOwnerrequestedeuthanasiaReasonID = 'testValue Euthanasia Reason';
+
+        $query->addIntakesOwnerRequestedEuthanasia($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('intakesOwnerrequestedeuthanasias', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
+        $this->assertEquals('testValue Condition', $data['values'][0]['intakesOwnerrequestedeuthanasiaAnimalConditionID']);
+        $this->assertEquals('testValue Date', $data['values'][0]['intakesOwnerrequestedeuthanasiaDate']);
+        $this->assertEquals('testValue Notes', $data['values'][0]['intakesOwnerrequestedeuthanasiaNotes']);
+        $this->assertEquals('testValue Owner', $data['values'][0]['intakesOwnerrequestedeuthanasiaOwnerID']);
+        $this->assertEquals('testValue Euthanasia Reason', $data['values'][0]['intakesOwnerrequestedeuthanasiaReasonID']);
     }
 }

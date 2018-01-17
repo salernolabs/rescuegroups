@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\CallsLogEntries;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'callsLogentries';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,43 +35,15 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "logentryID" => 1,
-        "logentryCallID" => 0,
-        "logentryContactID" => 0,
-        "logentryDate" => 0,
-        "logentryOutcomeID" => 0,
-        "logentryComments" => 0,
-        "contactName" => 0,
-        "outcomeName" => 0,
+        "logentryID" => [1, 'logentryID'],
+        "logentryCallID" => [0, 'logentryCallID'],
+        "logentryContactID" => [0, 'logentryContactID'],
+        "logentryDate" => [0, 'logentryDate'],
+        "logentryOutcomeID" => [0, 'logentryOutcomeID'],
+        "logentryComments" => [0, 'logentryComments'],
+        "contactName" => [0, 'contactName'],
+        "outcomeName" => [0, 'outcomeName'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'callsLogentries';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

@@ -8,74 +8,124 @@
  */
 namespace RescueGroups\Request\Objects\IntakesBornInRescueShelter;
 
-class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'intakesBorninrescueshelter';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'change';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Intake
      *
-     * @var array
+     * @var integer
      */
-    private $objectFields = [
-        "intakeID" => 1,
-        "animalID" => 0,
-        "animalConditionID" => 1,
-        "date" => 1,
-        "notes" => 0,
-    ];
+    private $intakeID = null;
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Animal
      *
-     * @return string
+     * @var integer
      */
-    public function getObjectType()
-    {
-        return 'intakesBorninrescueshelter';
-    }
+    private $animalID = null;
 
     /**
-     * Return the object action
+     * Condition
      *
-     * @return mixed
+     * @var integer
      */
-    public function getObjectAction()
+    private $animalConditionID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $date = null;
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    private $notes = null;
+
+
+    /**
+     * Set Intake
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setIntakeID($value)
     {
-        return 'change';
+        $this->intakeID = $value;
+
+        return $this;
     }
 
     /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\IntakesBornInRescueShelter[]
+     * Set Animal
+     *
+     * @param integer $value
+     * @return $this
      */
-    public function processResponse(\RescueGroups\API $api, $data)
+    public function setAnimalID($value)
     {
-        if (empty($data)) return [];
+        $this->animalID = $value;
 
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\IntakesBornInRescueShelter($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\IntakesBornInRescueShelter($data)];
+        return $this;
     }
+
+    /**
+     * Set Condition
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setAnimalConditionID($value)
+    {
+        $this->animalConditionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setDate($value)
+    {
+        $this->date = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Notes
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setNotes($value)
+    {
+        $this->notes = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -84,6 +134,12 @@ class Change implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
+        if ($this->animalID !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterAnimalID"=>$this->animalID];
+        if ($this->animalConditionID !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterAnimalConditionID"=>$this->animalConditionID];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesBorninrescueshelterNotes"=>$this->notes];
     }
 }

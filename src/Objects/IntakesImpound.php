@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class IntakesImpound
+class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * Impound
+     * Impound, Primary Key
      *
      * @var integer
      */
@@ -104,10 +104,12 @@ class IntakesImpound
 
     /**
      * IntakesImpound Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->intakesImpoundID)) $this->intakesImpoundID = $inputData->intakesImpoundID;
         if (!empty($inputData->intakesImpoundAnimalID)) $this->intakesImpoundAnimalID = $inputData->intakesImpoundAnimalID;
         if (!empty($inputData->intakesImpoundAnimalConditionID)) $this->intakesImpoundAnimalConditionID = $inputData->intakesImpoundAnimalConditionID;
@@ -121,5 +123,31 @@ class IntakesImpound
         if (!empty($inputData->intakesImpoundFromID)) $this->intakesImpoundFromID = $inputData->intakesImpoundFromID;
         if (!empty($inputData->intakesImpoundStaffID)) $this->intakesImpoundStaffID = $inputData->intakesImpoundStaffID;
         if (!empty($inputData->intakesImpoundReasonID)) $this->intakesImpoundReasonID = $inputData->intakesImpoundReasonID;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->intakesImpoundID !== null) $output['intakesImpoundID'] = $this->intakesImpoundID;
+        if ($this->intakesImpoundAnimalID !== null) $output['intakesImpoundAnimalID'] = $this->intakesImpoundAnimalID;
+        if ($this->intakesImpoundAnimalConditionID !== null) $output['intakesImpoundAnimalConditionID'] = $this->intakesImpoundAnimalConditionID;
+        if ($this->intakesImpoundDate !== null) $output['intakesImpoundDate'] = $this->intakesImpoundDate;
+        if ($this->intakesImpoundNotes !== null) $output['intakesImpoundNotes'] = $this->intakesImpoundNotes;
+        if ($this->intakesImpoundLocation !== null) $output['intakesImpoundLocation'] = $this->intakesImpoundLocation;
+        if ($this->intakesImpoundAddress !== null) $output['intakesImpoundAddress'] = $this->intakesImpoundAddress;
+        if ($this->intakesImpoundCity !== null) $output['intakesImpoundCity'] = $this->intakesImpoundCity;
+        if ($this->intakesImpoundState !== null) $output['intakesImpoundState'] = $this->intakesImpoundState;
+        if ($this->intakesImpoundPostalcode !== null) $output['intakesImpoundPostalcode'] = $this->intakesImpoundPostalcode;
+        if ($this->intakesImpoundFromID !== null) $output['intakesImpoundFromID'] = $this->intakesImpoundFromID;
+        if ($this->intakesImpoundStaffID !== null) $output['intakesImpoundStaffID'] = $this->intakesImpoundStaffID;
+        if ($this->intakesImpoundReasonID !== null) $output['intakesImpoundReasonID'] = $this->intakesImpoundReasonID;
+
+        return $output;
     }
 }

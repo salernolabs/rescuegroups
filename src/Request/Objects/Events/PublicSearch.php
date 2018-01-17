@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Events;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicSearch extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'events';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicSearch';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
 
     /**
      * Filterable Fields
@@ -18,55 +35,27 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
      * @var array
      */
     private $objectFields = [
-        "eventID" => 1,
-        "eventOrgID" => 0,
-        "eventName" => 0,
-        "eventStart" => 0,
-        "eventEnd" => 0,
-        "eventUrl" => 0,
-        "eventDescription" => 0,
-        "eventLocationID" => 0,
-        "eventSpecies" => 0,
-        "locationName" => 0,
-        "locationUrl" => 0,
-        "locationAddress" => 0,
-        "locationCity" => 0,
-        "locationState" => 0,
-        "locationPostalcode" => 0,
-        "locationCountry" => 0,
-        "locationPhone" => 0,
-        "locationPhoneExt" => 0,
-        "locationEvents" => 0,
-        "locationDistance" => 0,
+        "eventID" => [1, 'eventID'],
+        "eventOrgID" => [0, 'eventOrgID'],
+        "eventName" => [0, 'eventName'],
+        "eventStart" => [0, 'eventStart'],
+        "eventEnd" => [0, 'eventEnd'],
+        "eventUrl" => [0, 'eventUrl'],
+        "eventDescription" => [0, 'eventDescription'],
+        "eventLocationID" => [0, 'eventLocationID'],
+        "eventSpecies" => [0, 'eventSpecies'],
+        "locationName" => [0, 'locationName'],
+        "locationUrl" => [0, 'locationUrl'],
+        "locationAddress" => [0, 'locationAddress'],
+        "locationCity" => [0, 'locationCity'],
+        "locationState" => [0, 'locationState'],
+        "locationPostalcode" => [0, 'locationPostalcode'],
+        "locationCountry" => [0, 'locationCountry'],
+        "locationPhone" => [0, 'locationPhone'],
+        "locationPhoneExt" => [0, 'locationPhoneExt'],
+        "locationEvents" => [0, 'locationEvents'],
+        "locationDistance" => [0, 'locationDistance'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'events';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicSearch';
-    }
 
     /**
      * Process the response with associated output object

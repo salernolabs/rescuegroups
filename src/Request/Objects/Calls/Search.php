@@ -8,9 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Calls;
 
-class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Search extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'calls';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'search';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
 
     /**
      * Filterable Fields
@@ -18,52 +35,24 @@ class Search implements \RescueGroups\Request\RequestInterface, \RescueGroups\Re
      * @var array
      */
     private $objectFields = [
-        "callID" => 1,
-        "callContactID" => 0,
-        "callAssignedID" => 0,
-        "callStatusID" => 0,
-        "callUrgencyID" => 0,
-        "callCategoryID" => 0,
-        "callQueueID" => 0,
-        "callDate" => 0,
-        "contactName" => 0,
-        "contactType" => 0,
-        "assignedName" => 0,
-        "queueName" => 0,
-        "categoryName" => 0,
-        "statusName" => 0,
-        "urgencyName" => 0,
-        "lastOutcome" => 0,
-        "logEntryCount" => 0,
+        "callID" => [1, 'callID'],
+        "callContactID" => [0, 'callContactID'],
+        "callAssignedID" => [0, 'callAssignedID'],
+        "callStatusID" => [0, 'callStatusID'],
+        "callUrgencyID" => [0, 'callUrgencyID'],
+        "callCategoryID" => [0, 'callCategoryID'],
+        "callQueueID" => [0, 'callQueueID'],
+        "callDate" => [0, 'callDate'],
+        "contactName" => [0, 'contactName'],
+        "contactType" => [0, 'contactType'],
+        "assignedName" => [0, 'assignedName'],
+        "queueName" => [0, 'queueName'],
+        "categoryName" => [0, 'categoryName'],
+        "statusName" => [0, 'statusName'],
+        "urgencyName" => [0, 'urgencyName'],
+        "lastOutcome" => [0, 'lastOutcome'],
+        "logEntryCount" => [0, 'logEntryCount'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'calls';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'search';
-    }
 
     /**
      * Process the response with associated output object

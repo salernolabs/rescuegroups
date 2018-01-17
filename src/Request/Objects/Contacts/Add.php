@@ -8,100 +8,41 @@
  */
 namespace RescueGroups\Request\Objects\Contacts;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
-    use \RescueGroups\Request\Traits\SearchParameters;
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'contacts';
 
     /**
-     * Filterable Fields
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Addable  array
      *
-     * @var array
+     * @var \RescueGroups\Objects\Create\Contact[]
      */
-    private $objectFields = [
-        "contactClass" => 1,
-        "contactSalutation" => 0,
-        "contactFirstname" => 0,
-        "contactLastname" => 0,
-        "contactTitle" => 0,
-        "contactAddress" => 0,
-        "contactCity" => 0,
-        "contactState" => 0,
-        "contactPostalcode" => 0,
-        "contactPlus4" => 0,
-        "contactCounty" => 0,
-        "contactCountry" => 0,
-        "contactPhoneHome" => 0,
-        "contactPhoneWork" => 0,
-        "contactPhoneWorkExt" => 0,
-        "contactPhoneCell" => 0,
-        "contactFax" => 0,
-        "contactEmail" => 0,
-        "contactEmailAlt" => 0,
-        "contactEmailPager" => 0,
-        "contactCompany" => 0,
-        "contactReferredBy" => 0,
-        "contactCarrier" => 0,
-        "contactSendMail" => 1,
-        "contactActive" => 1,
-        "contactComment" => 0,
-        "contactCoalitionMember" => 1,
-        "contactTransportation" => 0,
-        "contactAvailability" => 0,
-        "contactCaretakerPublic" => 1,
-        "contactSendInvite" => 0,
-        "contactGroups" => 0,
-    ];
+    protected $addObjects = [];
 
     /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
+     * Set the addable object
      *
-     * @return string
+     * @param \RescueGroups\Objects\Create\Contact $addObject
+     * @return $this
      */
-    public function getObjectType()
+    public function addContact(\RescueGroups\Objects\Create\Contact $addObject)
     {
-        return 'contacts';
-    }
+        $this->addObjects[] = $addObject;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
-
-    /**
-     * Process the response with associated output object
-     * @param \RescueGroups\API $api
-     * @param \stdClass $data
-     * @returns \RescueGroups\Objects\Contact[]
-     */
-    public function processResponse(\RescueGroups\API $api, $data)
-    {
-        if (empty($data)) return [];
-
-        if (is_array($data) || is_object($data))
-        {
-            $output = [];
-            foreach ($data as $object)
-            {
-                $output[] = new \RescueGroups\Objects\Contact($object);
-            }
-
-            return $output;
-        }
-
-        return [new \RescueGroups\Objects\Contact($data)];
+        return $this;
     }
 
     /**
@@ -111,6 +52,16 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        $this->addSearchParameters($parameterArray);
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
+
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

@@ -20,7 +20,6 @@ class ListRecentTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\ListRecent();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('submittedforms', $data['objectType']);

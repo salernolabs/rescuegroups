@@ -21,9 +21,21 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Edit();
 
+        $testObject = new \RescueGroups\Objects\CallsQueuesMember();
+        $testObject->memberID = 'testValue ID';
+        $testObject->memberContactID = 'testValue Contact';
+        $testObject->memberQueueID = 'testValue Queue';
+        $testObject->memberManager = 'testValue Manager';
+
+        $query->updateCallsQueuesMember($testObject);
+
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('callsQueuesMembers', $data['objectType']);
         $this->assertEquals('edit', $data['objectAction']);
+        $this->assertEquals('testValue ID', $data['values'][0]['memberID']);
+        $this->assertEquals('testValue Contact', $data['values'][0]['memberContactID']);
+        $this->assertEquals('testValue Queue', $data['values'][0]['memberQueueID']);
+        $this->assertEquals('testValue Manager', $data['values'][0]['memberManager']);
     }
 }

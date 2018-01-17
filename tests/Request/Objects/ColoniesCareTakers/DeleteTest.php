@@ -20,7 +20,6 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Delete();
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('coloniesCaretakers', $data['objectType']);

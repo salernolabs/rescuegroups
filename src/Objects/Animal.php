@@ -8,10 +8,10 @@
  */
 namespace RescueGroups\Objects;
 
-class Animal
+class Animal implements \RescueGroups\Objects\APIEncodableInterface
 {
     /**
-     * ID
+     * ID, Primary Key
      *
      * @var integer
      */
@@ -881,10 +881,12 @@ class Animal
 
     /**
      * Animal Constructor
-     * @var \stdClass $inputData
+     * @var \stdClass|null $inputData
      */
-    public function __construct($inputData)
+    public function __construct($inputData = null)
     {
+        if (empty($inputData)) return;
+
         if (!empty($inputData->animalID)) $this->animalID = $inputData->animalID;
         if (!empty($inputData->animalActivityLevel)) $this->animalActivityLevel = $inputData->animalActivityLevel;
         if (!empty($inputData->animalAdoptedDate)) $this->animalAdoptedDate = $inputData->animalAdoptedDate;
@@ -1009,5 +1011,142 @@ class Animal
         if (!empty($inputData->animalTimid)) $this->animalTimid = $inputData->animalTimid;
         if (!empty($inputData->animalGroups)) $this->animalGroups = $inputData->animalGroups;
         if (!empty($inputData->animalExportAccounts)) $this->animalExportAccounts = $inputData->animalExportAccounts;
+    }
+
+    /**
+     * Get array mapping for API functions
+     *
+     * @param bool $includeId
+     * @return array
+     */
+    public function getArray($includeId = true)
+    {
+        $output = [];
+        if ($includeId && $this->animalID !== null) $output['animalID'] = $this->animalID;
+        if ($this->animalActivityLevel !== null) $output['animalActivityLevel'] = $this->animalActivityLevel;
+        if ($this->animalAdoptedDate !== null) $output['animalAdoptedDate'] = $this->animalAdoptedDate;
+        if ($this->animalAdoptionFee !== null) $output['animalAdoptionFee'] = $this->animalAdoptionFee;
+        if ($this->animalAdoptionLeadID !== null) $output['animalAdoptionLeadID'] = $this->animalAdoptionLeadID;
+        if ($this->animalAltered !== null) $output['animalAltered'] = $this->animalAltered;
+        if ($this->animalApplicationID !== null) $output['animalApplicationID'] = $this->animalApplicationID;
+        if ($this->animalAvailableDate !== null) $output['animalAvailableDate'] = $this->animalAvailableDate;
+        if ($this->animalBirthdate !== null) $output['animalBirthdate'] = $this->animalBirthdate;
+        if ($this->animalBirthdateExact !== null) $output['animalBirthdateExact'] = $this->animalBirthdateExact;
+        if ($this->animalCoatLength !== null) $output['animalCoatLength'] = $this->animalCoatLength;
+        if ($this->animalColonyID !== null) $output['animalColonyID'] = $this->animalColonyID;
+        if ($this->animalColorID !== null) $output['animalColorID'] = $this->animalColorID;
+        if ($this->animalColorDetails !== null) $output['animalColorDetails'] = $this->animalColorDetails;
+        if ($this->animalConditionID !== null) $output['animalConditionID'] = $this->animalConditionID;
+        if ($this->animalCourtesy !== null) $output['animalCourtesy'] = $this->animalCourtesy;
+        if ($this->animalDeclawed !== null) $output['animalDeclawed'] = $this->animalDeclawed;
+        if ($this->animalDescription !== null) $output['animalDescription'] = $this->animalDescription;
+        if ($this->animalDistinguishingMarks !== null) $output['animalDistinguishingMarks'] = $this->animalDistinguishingMarks;
+        if ($this->animalAllowExport !== null) $output['animalAllowExport'] = $this->animalAllowExport;
+        if ($this->animalEarType !== null) $output['animalEarType'] = $this->animalEarType;
+        if ($this->animalEnergyLevel !== null) $output['animalEnergyLevel'] = $this->animalEnergyLevel;
+        if ($this->animalExerciseNeeds !== null) $output['animalExerciseNeeds'] = $this->animalExerciseNeeds;
+        if ($this->animalEyeColor !== null) $output['animalEyeColor'] = $this->animalEyeColor;
+        if ($this->animalFence !== null) $output['animalFence'] = $this->animalFence;
+        if ($this->animalFosterID !== null) $output['animalFosterID'] = $this->animalFosterID;
+        if ($this->animalFound !== null) $output['animalFound'] = $this->animalFound;
+        if ($this->animalFoundDate !== null) $output['animalFoundDate'] = $this->animalFoundDate;
+        if ($this->animalFoundPostalcode !== null) $output['animalFoundPostalcode'] = $this->animalFoundPostalcode;
+        if ($this->animalGeneralAge !== null) $output['animalGeneralAge'] = $this->animalGeneralAge;
+        if ($this->animalGeneralSizePotential !== null) $output['animalGeneralSizePotential'] = $this->animalGeneralSizePotential;
+        if ($this->animalGroomingNeeds !== null) $output['animalGroomingNeeds'] = $this->animalGroomingNeeds;
+        if ($this->animalHighlightOrder !== null) $output['animalHighlightOrder'] = $this->animalHighlightOrder;
+        if ($this->animalHousetrained !== null) $output['animalHousetrained'] = $this->animalHousetrained;
+        if ($this->animalIndoorOutdoor !== null) $output['animalIndoorOutdoor'] = $this->animalIndoorOutdoor;
+        if ($this->animalInternalID !== null) $output['animalInternalID'] = $this->animalInternalID;
+        if ($this->animalKillDate !== null) $output['animalKillDate'] = $this->animalKillDate;
+        if ($this->animalKillReason !== null) $output['animalKillReason'] = $this->animalKillReason;
+        if ($this->animalLocationID !== null) $output['animalLocationID'] = $this->animalLocationID;
+        if ($this->animalLocationPublic !== null) $output['animalLocationPublic'] = $this->animalLocationPublic;
+        if ($this->animalMicrochipNumber !== null) $output['animalMicrochipNumber'] = $this->animalMicrochipNumber;
+        if ($this->animalMicrochipVendor !== null) $output['animalMicrochipVendor'] = $this->animalMicrochipVendor;
+        if ($this->animalMixedBreed !== null) $output['animalMixedBreed'] = $this->animalMixedBreed;
+        if ($this->animalName !== null) $output['animalName'] = $this->animalName;
+        if ($this->animalSpecialneeds !== null) $output['animalSpecialneeds'] = $this->animalSpecialneeds;
+        if ($this->animalSpecialneedsDescription !== null) $output['animalSpecialneedsDescription'] = $this->animalSpecialneedsDescription;
+        if ($this->animalNeedsFoster !== null) $output['animalNeedsFoster'] = $this->animalNeedsFoster;
+        if ($this->animalNewPeople !== null) $output['animalNewPeople'] = $this->animalNewPeople;
+        if ($this->animalNotes !== null) $output['animalNotes'] = $this->animalNotes;
+        if ($this->animalNotHousetrainedReason !== null) $output['animalNotHousetrainedReason'] = $this->animalNotHousetrainedReason;
+        if ($this->animalObedienceTraining !== null) $output['animalObedienceTraining'] = $this->animalObedienceTraining;
+        if ($this->animalOKWithAdults !== null) $output['animalOKWithAdults'] = $this->animalOKWithAdults;
+        if ($this->animalOKWithCats !== null) $output['animalOKWithCats'] = $this->animalOKWithCats;
+        if ($this->animalOKWithDogs !== null) $output['animalOKWithDogs'] = $this->animalOKWithDogs;
+        if ($this->animalOKWithKids !== null) $output['animalOKWithKids'] = $this->animalOKWithKids;
+        if ($this->animalOrigin !== null) $output['animalOrigin'] = $this->animalOrigin;
+        if ($this->animalOthernames !== null) $output['animalOthernames'] = $this->animalOthernames;
+        if ($this->animalOwnerExperience !== null) $output['animalOwnerExperience'] = $this->animalOwnerExperience;
+        if ($this->animalOwnerID !== null) $output['animalOwnerID'] = $this->animalOwnerID;
+        if ($this->animalPatternID !== null) $output['animalPatternID'] = $this->animalPatternID;
+        if ($this->animalAdoptionPending !== null) $output['animalAdoptionPending'] = $this->animalAdoptionPending;
+        if ($this->animalPrimaryBreedID !== null) $output['animalPrimaryBreedID'] = $this->animalPrimaryBreedID;
+        if ($this->animalReceivedDate !== null) $output['animalReceivedDate'] = $this->animalReceivedDate;
+        if ($this->animalRescueID !== null) $output['animalRescueID'] = $this->animalRescueID;
+        if ($this->animalSecondaryBreedID !== null) $output['animalSecondaryBreedID'] = $this->animalSecondaryBreedID;
+        if ($this->animalSex !== null) $output['animalSex'] = $this->animalSex;
+        if ($this->animalShared !== null) $output['animalShared'] = $this->animalShared;
+        if ($this->animalShedding !== null) $output['animalShedding'] = $this->animalShedding;
+        if ($this->animalSizeCurrent !== null) $output['animalSizeCurrent'] = $this->animalSizeCurrent;
+        if ($this->animalSizePotential !== null) $output['animalSizePotential'] = $this->animalSizePotential;
+        if ($this->animalSizeUOM !== null) $output['animalSizeUOM'] = $this->animalSizeUOM;
+        if ($this->animalSpeciesID !== null) $output['animalSpeciesID'] = $this->animalSpeciesID;
+        if ($this->animalSponsorable !== null) $output['animalSponsorable'] = $this->animalSponsorable;
+        if ($this->animalSponsors !== null) $output['animalSponsors'] = $this->animalSponsors;
+        if ($this->animalSponsorshipDetails !== null) $output['animalSponsorshipDetails'] = $this->animalSponsorshipDetails;
+        if ($this->animalSponsorshipMinimum !== null) $output['animalSponsorshipMinimum'] = $this->animalSponsorshipMinimum;
+        if ($this->animalStatusID !== null) $output['animalStatusID'] = $this->animalStatusID;
+        if ($this->animalSummary !== null) $output['animalSummary'] = $this->animalSummary;
+        if ($this->animalTailType !== null) $output['animalTailType'] = $this->animalTailType;
+        if ($this->animalTransferredToID !== null) $output['animalTransferredToID'] = $this->animalTransferredToID;
+        if ($this->animalUptodate !== null) $output['animalUptodate'] = $this->animalUptodate;
+        if ($this->animalVocal !== null) $output['animalVocal'] = $this->animalVocal;
+        if ($this->animalYardRequired !== null) $output['animalYardRequired'] = $this->animalYardRequired;
+        if ($this->animalAffectionate !== null) $output['animalAffectionate'] = $this->animalAffectionate;
+        if ($this->animalApartment !== null) $output['animalApartment'] = $this->animalApartment;
+        if ($this->animalCratetrained !== null) $output['animalCratetrained'] = $this->animalCratetrained;
+        if ($this->animalDrools !== null) $output['animalDrools'] = $this->animalDrools;
+        if ($this->animalEagerToPlease !== null) $output['animalEagerToPlease'] = $this->animalEagerToPlease;
+        if ($this->animalEscapes !== null) $output['animalEscapes'] = $this->animalEscapes;
+        if ($this->animalEventempered !== null) $output['animalEventempered'] = $this->animalEventempered;
+        if ($this->animalFetches !== null) $output['animalFetches'] = $this->animalFetches;
+        if ($this->animalGentle !== null) $output['animalGentle'] = $this->animalGentle;
+        if ($this->animalGoodInCar !== null) $output['animalGoodInCar'] = $this->animalGoodInCar;
+        if ($this->animalGoofy !== null) $output['animalGoofy'] = $this->animalGoofy;
+        if ($this->animalHasAllergies !== null) $output['animalHasAllergies'] = $this->animalHasAllergies;
+        if ($this->animalHearingImpaired !== null) $output['animalHearingImpaired'] = $this->animalHearingImpaired;
+        if ($this->animalHypoallergenic !== null) $output['animalHypoallergenic'] = $this->animalHypoallergenic;
+        if ($this->animalIndependent !== null) $output['animalIndependent'] = $this->animalIndependent;
+        if ($this->animalIntelligent !== null) $output['animalIntelligent'] = $this->animalIntelligent;
+        if ($this->animalLap !== null) $output['animalLap'] = $this->animalLap;
+        if ($this->animalLeashtrained !== null) $output['animalLeashtrained'] = $this->animalLeashtrained;
+        if ($this->animalNeedsCompanionAnimal !== null) $output['animalNeedsCompanionAnimal'] = $this->animalNeedsCompanionAnimal;
+        if ($this->animalNoCold !== null) $output['animalNoCold'] = $this->animalNoCold;
+        if ($this->animalNoFemaleDogs !== null) $output['animalNoFemaleDogs'] = $this->animalNoFemaleDogs;
+        if ($this->animalNoHeat !== null) $output['animalNoHeat'] = $this->animalNoHeat;
+        if ($this->animalNoLargeDogs !== null) $output['animalNoLargeDogs'] = $this->animalNoLargeDogs;
+        if ($this->animalNoMaleDogs !== null) $output['animalNoMaleDogs'] = $this->animalNoMaleDogs;
+        if ($this->animalNoSmallDogs !== null) $output['animalNoSmallDogs'] = $this->animalNoSmallDogs;
+        if ($this->animalObedient !== null) $output['animalObedient'] = $this->animalObedient;
+        if ($this->animalOKForSeniors !== null) $output['animalOKForSeniors'] = $this->animalOKForSeniors;
+        if ($this->animalOKWithFarmAnimals !== null) $output['animalOKWithFarmAnimals'] = $this->animalOKWithFarmAnimals;
+        if ($this->animalOlderKidsOnly !== null) $output['animalOlderKidsOnly'] = $this->animalOlderKidsOnly;
+        if ($this->animalOngoingMedical !== null) $output['animalOngoingMedical'] = $this->animalOngoingMedical;
+        if ($this->animalPlayful !== null) $output['animalPlayful'] = $this->animalPlayful;
+        if ($this->animalPlaysToys !== null) $output['animalPlaysToys'] = $this->animalPlaysToys;
+        if ($this->animalPredatory !== null) $output['animalPredatory'] = $this->animalPredatory;
+        if ($this->animalProtective !== null) $output['animalProtective'] = $this->animalProtective;
+        if ($this->animalSightImpaired !== null) $output['animalSightImpaired'] = $this->animalSightImpaired;
+        if ($this->animalSkittish !== null) $output['animalSkittish'] = $this->animalSkittish;
+        if ($this->animalSpecialDiet !== null) $output['animalSpecialDiet'] = $this->animalSpecialDiet;
+        if ($this->animalSwims !== null) $output['animalSwims'] = $this->animalSwims;
+        if ($this->animalTimid !== null) $output['animalTimid'] = $this->animalTimid;
+        if ($this->animalGroups !== null) $output['animalGroups'] = $this->animalGroups;
+        if ($this->animalExportAccounts !== null) $output['animalExportAccounts'] = $this->animalExportAccounts;
+
+        return $output;
     }
 }
