@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Contacts;
 
-class ListRescues extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class ListRescues extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\IntakesServices;
 
-class Change extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

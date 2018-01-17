@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Affiliates;
 
-class UpdateSettings extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

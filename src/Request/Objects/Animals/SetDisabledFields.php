@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class SetDisabledFields extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class SetDisabledFields extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

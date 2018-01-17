@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class ListPending extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class ListPending extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\CallsQueuesMembers;
 
-class View extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

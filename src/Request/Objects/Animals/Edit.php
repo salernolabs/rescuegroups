@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class Edit extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class Edit extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class VideoUrlReorder extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class VideoUrlReorder extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

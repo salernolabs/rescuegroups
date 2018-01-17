@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\NewsArticles;
 
-class PublicView extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

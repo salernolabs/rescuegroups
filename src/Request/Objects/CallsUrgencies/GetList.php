@@ -8,8 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\CallsUrgencies;
 
-class GetList extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface
+class GetList extends \RescueGroups\Request\Objects\Base
 {
     /**
      * Query object type

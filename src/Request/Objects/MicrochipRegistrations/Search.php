@@ -9,7 +9,6 @@
 namespace RescueGroups\Request\Objects\MicrochipRegistrations;
 
 class Search extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
     \RescueGroups\Request\ParametersInterface,
     \RescueGroups\Request\ProcessResponseInterface
 {

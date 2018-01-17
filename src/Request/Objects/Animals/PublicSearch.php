@@ -9,7 +9,6 @@
 namespace RescueGroups\Request\Objects\Animals;
 
 class PublicSearch extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
     \RescueGroups\Request\ParametersInterface,
     \RescueGroups\Request\ProcessResponseInterface
 {

@@ -8,8 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalBreeds;
 
-class PublicList extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface
+class PublicList extends \RescueGroups\Request\Objects\Base
 {
     /**
      * Query object type

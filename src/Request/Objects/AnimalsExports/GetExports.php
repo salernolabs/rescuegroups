@@ -8,9 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsExports;
 
-class GetExports extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface,
-    \RescueGroups\Request\ParametersInterface
+class GetExports extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type

@@ -8,8 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class GetList extends \RescueGroups\Request\Objects\Base implements
-    \RescueGroups\Request\ObjectActionInterface
+class GetList extends \RescueGroups\Request\Objects\Base
 {
     /**
      * Query object type

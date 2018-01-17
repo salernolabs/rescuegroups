@@ -8,7 +8,9 @@
  */
 namespace RescueGroups\Request\Objects;
 
-class Base implements \RescueGroups\Request\RequestInterface
+class Base implements
+    \RescueGroups\Request\RequestInterface,
+    \RescueGroups\Request\ObjectActionInterface
 {
     /**
      * Query object type
