@@ -26,166 +26,24 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
     const QUERY_LOGIN_REQUIRED = true;
 
     /**
-     * Contact
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\Create\Donation[]
      */
-    private $donationContactID = null;
+    protected $addObjects = [];
 
     /**
-     * Amount
+     * Set the addable object
      *
-     * @var float
-     */
-    private $donationAmount = null;
-
-    /**
-     * Inkind type
-     *
-     * @var string
-     */
-    private $donationInkind = null;
-
-    /**
-     * Comment
-     *
-     * @var string
-     */
-    private $donationComment = null;
-
-    /**
-     * Letter sent
-     *
-     * @var string
-     */
-    private $donationLettersent = null;
-
-    /**
-     * Purpose
-     *
-     * @var string
-     */
-    private $donationPurpose = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $donationDate = null;
-
-    /**
-     * Add contact to Donor group
-     *
-     * @var string
-     */
-    private $donationAddDonorGroup = null;
-
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\Create\Donation $addObject
      * @return $this
      */
-    public function setDonationContactID($value)
+    public function addDonation(\RescueGroups\Objects\Create\Donation $addObject)
     {
-        $this->donationContactID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Amount
-     *
-     * @param float $value
-     * @return $this
-     */
-    public function setDonationAmount($value)
-    {
-        $this->donationAmount = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Inkind type
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setDonationInkind($value)
-    {
-        $this->donationInkind = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Comment
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setDonationComment($value)
-    {
-        $this->donationComment = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Letter sent
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setDonationLettersent($value)
-    {
-        $this->donationLettersent = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Purpose
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setDonationPurpose($value)
-    {
-        $this->donationPurpose = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setDonationDate($value)
-    {
-        $this->donationDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Add contact to Donor group
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setDonationAddDonorGroup($value)
-    {
-        $this->donationAddDonorGroup = $value;
-
-        return $this;
-    }
-
 
     /**
      * Apply request parameters to the outgoing request
@@ -194,15 +52,16 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->donationContactID !== null) $parameterArray['values'][] = ["donationContactID"=>$this->donationContactID];
-        if ($this->donationAmount !== null) $parameterArray['values'][] = ["donationAmount"=>$this->donationAmount];
-        if ($this->donationInkind !== null) $parameterArray['values'][] = ["donationInkind"=>$this->donationInkind];
-        if ($this->donationComment !== null) $parameterArray['values'][] = ["donationComment"=>$this->donationComment];
-        if ($this->donationLettersent !== null) $parameterArray['values'][] = ["donationLettersent"=>$this->donationLettersent];
-        if ($this->donationPurpose !== null) $parameterArray['values'][] = ["donationPurpose"=>$this->donationPurpose];
-        if ($this->donationDate !== null) $parameterArray['values'][] = ["donationDate"=>$this->donationDate];
-        if ($this->donationAddDonorGroup !== null) $parameterArray['values'][] = ["donationAddDonorGroup"=>$this->donationAddDonorGroup];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

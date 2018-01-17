@@ -159,6 +159,14 @@ class QueryRequest
     /**
      * @return bool
      */
+    public function isRegular()
+    {
+        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit();
+    }
+
+    /**
+     * @return bool
+     */
     public function needsParametersInterface()
     {
         return !empty($this->fields);

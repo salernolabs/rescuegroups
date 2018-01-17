@@ -1,13 +1,20 @@
 # Roles
 
-This is the documentation for the Roles queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the Roles queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-roles)
 
-## Roles\
+## GetList
 
-Performs roles. query.
 
-    $query = new \RescueGroups\Request\Objects\Roles\();
+Performs roles.list list query, typically suitable for filling HTML select fields.
+
+### Example List Query
+
+    $query = new \RescueGroups\Request\Objects\Roles\GetList();
+    $result = $api->executeRequest($query);
+
+
+
 
 

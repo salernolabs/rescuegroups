@@ -183,7 +183,7 @@ class RequestGenerator
 
             $queryRequest = new QueryRequest($className, $type, $request, $requestData);
 
-            $output->requests[$queryRequest->requestClassName] = $queryRequest;
+            $output->requests[] = $queryRequest;
 
             if ($queryRequest->requestClassName == 'Edit')
             {
@@ -261,7 +261,11 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query.mustache'), $query);
         }
-        else
+        elseif ($query->isParameterAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query.mustache'), $query);
+        }
+        elseif ($query->isRegular())
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query.mustache'), $query);
         }
@@ -294,6 +298,10 @@ class RequestGenerator
         elseif ($query->isAdd())
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-query-test.mustache'), $query);
+        }
+        elseif ($query->isParameterAdd())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query-test.mustache'), $query);
         }
         else
         {

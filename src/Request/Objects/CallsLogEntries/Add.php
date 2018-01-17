@@ -26,106 +26,24 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
     const QUERY_LOGIN_REQUIRED = true;
 
     /**
-     * Call
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\Create\CallsLogEntry[]
      */
-    private $logentryCallID = null;
+    protected $addObjects = [];
 
     /**
-     * Contact
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $logentryContactID = null;
-
-    /**
-     * Date
-     *
-     * @var \DateTime
-     */
-    private $logentryDate = null;
-
-    /**
-     * Outcome
-     *
-     * @var integer
-     */
-    private $logentryOutcomeID = null;
-
-    /**
-     * Comments
-     *
-     * @var string
-     */
-    private $logentryComments = null;
-
-
-    /**
-     * Set Call
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\Create\CallsLogEntry $addObject
      * @return $this
      */
-    public function setLogentryCallID($value)
+    public function addCallsLogEntry(\RescueGroups\Objects\Create\CallsLogEntry $addObject)
     {
-        $this->logentryCallID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setLogentryContactID($value)
-    {
-        $this->logentryContactID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Date
-     *
-     * @param \DateTime $value
-     * @return $this
-     */
-    public function setLogentryDate($value)
-    {
-        $this->logentryDate = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Outcome
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setLogentryOutcomeID($value)
-    {
-        $this->logentryOutcomeID = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Comments
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setLogentryComments($value)
-    {
-        $this->logentryComments = $value;
-
-        return $this;
-    }
-
 
     /**
      * Apply request parameters to the outgoing request
@@ -134,12 +52,16 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->logentryCallID !== null) $parameterArray['values'][] = ["logentryCallID"=>$this->logentryCallID];
-        if ($this->logentryContactID !== null) $parameterArray['values'][] = ["logentryContactID"=>$this->logentryContactID];
-        if ($this->logentryDate !== null) $parameterArray['values'][] = ["logentryDate"=>$this->logentryDate];
-        if ($this->logentryOutcomeID !== null) $parameterArray['values'][] = ["logentryOutcomeID"=>$this->logentryOutcomeID];
-        if ($this->logentryComments !== null) $parameterArray['values'][] = ["logentryComments"=>$this->logentryComments];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

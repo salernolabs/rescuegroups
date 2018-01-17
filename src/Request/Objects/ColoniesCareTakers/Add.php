@@ -26,46 +26,24 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
     const QUERY_LOGIN_REQUIRED = true;
 
     /**
-     * Colony
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\Create\ColoniesCareTaker[]
      */
-    private $caretakerColonyID = null;
+    protected $addObjects = [];
 
     /**
-     * Contact
+     * Set the addable object
      *
-     * @var integer
-     */
-    private $caretakerContactID = null;
-
-
-    /**
-     * Set Colony
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\Create\ColoniesCareTaker $addObject
      * @return $this
      */
-    public function setCaretakerColonyID($value)
+    public function addColoniesCareTaker(\RescueGroups\Objects\Create\ColoniesCareTaker $addObject)
     {
-        $this->caretakerColonyID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set Contact
-     *
-     * @param integer $value
-     * @return $this
-     */
-    public function setCaretakerContactID($value)
-    {
-        $this->caretakerContactID = $value;
-
-        return $this;
-    }
-
 
     /**
      * Apply request parameters to the outgoing request
@@ -74,9 +52,16 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->caretakerColonyID !== null) $parameterArray['values'][] = ["caretakerColonyID"=>$this->caretakerColonyID];
-        if ($this->caretakerContactID !== null) $parameterArray['values'][] = ["caretakerContactID"=>$this->caretakerContactID];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

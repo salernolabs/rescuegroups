@@ -26,126 +26,24 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
     const QUERY_LOGIN_REQUIRED = true;
 
     /**
-     * ID
+     * Addable  array
      *
-     * @var integer
+     * @var \RescueGroups\Objects\Create\InventoryFile[]
      */
-    private $inventoryfileItemID = null;
+    protected $addObjects = [];
 
     /**
-     * File
+     * Set the addable object
      *
-     * @var string
-     */
-    private $inventoryfileBinary = null;
-
-    /**
-     * Old file name
-     *
-     * @var string
-     */
-    private $inventoryfileOldFileName = null;
-
-    /**
-     * Description
-     *
-     * @var string
-     */
-    private $inventoryfileDescription = null;
-
-    /**
-     * Status
-     *
-     * @var string
-     */
-    private $inventoryfileStatus = null;
-
-    /**
-     * Inline
-     *
-     * @var string
-     */
-    private $inventoryfileDisplayInline = null;
-
-
-    /**
-     * Set ID
-     *
-     * @param integer $value
+     * @param \RescueGroups\Objects\Create\InventoryFile $addObject
      * @return $this
      */
-    public function setInventoryfileItemID($value)
+    public function addInventoryFile(\RescueGroups\Objects\Create\InventoryFile $addObject)
     {
-        $this->inventoryfileItemID = $value;
+        $this->addObjects[] = $addObject;
 
         return $this;
     }
-
-    /**
-     * Set File
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setInventoryfileBinary($value)
-    {
-        $this->inventoryfileBinary = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Old file name
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setInventoryfileOldFileName($value)
-    {
-        $this->inventoryfileOldFileName = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Description
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setInventoryfileDescription($value)
-    {
-        $this->inventoryfileDescription = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Status
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setInventoryfileStatus($value)
-    {
-        $this->inventoryfileStatus = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set Inline
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setInventoryfileDisplayInline($value)
-    {
-        $this->inventoryfileDisplayInline = $value;
-
-        return $this;
-    }
-
 
     /**
      * Apply request parameters to the outgoing request
@@ -154,13 +52,16 @@ class Add extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Re
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+        if (empty($this->addObjects))
+        {
+            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
+        }
 
-        if ($this->inventoryfileItemID !== null) $parameterArray['values'][] = ["inventoryfileItemID"=>$this->inventoryfileItemID];
-        if ($this->inventoryfileBinary !== null) $parameterArray['values'][] = ["inventoryfileBinary"=>$this->inventoryfileBinary];
-        if ($this->inventoryfileOldFileName !== null) $parameterArray['values'][] = ["inventoryfileOldFileName"=>$this->inventoryfileOldFileName];
-        if ($this->inventoryfileDescription !== null) $parameterArray['values'][] = ["inventoryfileDescription"=>$this->inventoryfileDescription];
-        if ($this->inventoryfileStatus !== null) $parameterArray['values'][] = ["inventoryfileStatus"=>$this->inventoryfileStatus];
-        if ($this->inventoryfileDisplayInline !== null) $parameterArray['values'][] = ["inventoryfileDisplayInline"=>$this->inventoryfileDisplayInline];
+        $parameterArray['values'] = [];
+
+        foreach ($this->addObjects as $object)
+        {
+            $parameterArray['values'][] = $object->getArray(false);
+        }
     }
 }

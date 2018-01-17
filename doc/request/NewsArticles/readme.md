@@ -1,13 +1,179 @@
 # NewsArticles
 
-This is the documentation for the NewsArticles queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the NewsArticles queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-newsarticles)
 
-## NewsArticles\
+## View
 
-Performs newsarticles. query.
 
-    $query = new \RescueGroups\Request\Objects\NewsArticles\();
+
+
+
+
+Performs newsarticles.view query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\View();
+
+    $result = $api->executeRequest($query);
+
+
+## PublicView
+
+
+
+
+
+
+Performs newsarticles.publicView query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\PublicView();
+
+    $result = $api->executeRequest($query);
+
+
+## PublicSearch
+
+Performs newsarticles.publicSearch search query. This query returns an array of [\RescueGroups\Objects\NewsArticle](../../src/Objects/NewsArticle.php) objects.
+
+### Example Search Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\PublicSearch();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
+
+    $result = $api->executeRequest($query);
+
+
+
+
+
+
+## Search
+
+Performs newsarticles.search search query. This query returns an array of [\RescueGroups\Objects\NewsArticle](../../src/Objects/NewsArticle.php) objects.
+
+### Example Search Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Search();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
+
+    $result = $api->executeRequest($query);
+
+
+
+
+
+
+## Add
+
+
+
+
+Performs newsarticles.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\NewsArticle](../../src/Objects/NewsArticle.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+
+### Example Add Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Add();
+
+    $addObject = new \RescueGroups\Objects\NewsArticle();
+    $addObject->articleTitle = "Title"
+    $addObject->articleDescription = "Description"
+    $addObject->articleDate = "Date"
+
+    $query->addNewsArticle($addObject);
+
+    $result = $api->executeRequest($query);
+
+
+
+## Edit
+
+
+
+Performs newsarticles.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\NewsArticle](../../src/Objects/NewsArticle.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+
+### Example Edit Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Edit();
+
+    $editObject = new \RescueGroups\Objects\NewsArticle();
+    $editObject->articleID = "ID"
+    $editObject->articleTitle = "Title"
+    $editObject->articleDescription = "Description"
+    $editObject->articleDate = "Date"
+
+    $query->updateNewsArticle($editObject);
+
+    $result = $api->executeRequest($query);
+
+
+
+
+## Delete
+
+
+
+
+
+
+Performs newsarticles.delete query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Delete();
+
+    $result = $api->executeRequest($query);
+
+
+## GetSettings
+
+
+
+
+
+
+Performs newsarticles.getSettings query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\GetSettings();
+
+    $result = $api->executeRequest($query);
+
+
+## UpdateSettings
+
+
+
+
+
+
+Performs newsarticles.updateSettings query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\UpdateSettings();
+
+    $result = $api->executeRequest($query);
 
 

@@ -1,13 +1,122 @@
 # IntakesStrayPickups
 
-This is the documentation for the IntakesStrayPickups queries against the RescueGroups.org HTTP API v2.
+This is the documentation for the IntakesStrayPickups queries against the [RescueGroups.org](https://www.rescuegroups.org/) HTTP API v2.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraypickups)
 
-## IntakesStrayPickups\
+## View
 
-Performs intakesStraypickups. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\();
+
+
+
+
+Performs intakesStraypickups.view query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
+
+    $result = $api->executeRequest($query);
+
+
+## Search
+
+Performs intakesStraypickups.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) objects.
+
+### Example Search Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Search();
+    $query
+        ->setResultStart(10)
+        ->setResultLimit(20)
+        ->setResultSort('objectField')
+        ->setResultOrder('asc')
+        ->setCalculateFoundRows(true)
+        ->addFilter('someObjectField', 'equals', 33)
+        ->addField('objectField')
+        ->addField('someOtherObjectField');
+
+    $result = $api->executeRequest($query);
+
+
+
+
+
+
+## Add
+
+
+
+
+Performs intakesStraypickups.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+
+### Example Add Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Add();
+
+    $addObject = new \RescueGroups\Objects\IntakesStrayPickup();
+    $addObject->intakesStraypickupAnimalConditionID = "Condition"
+    $addObject->intakesStraypickupDate = "Date"
+    $addObject->intakesStraypickupNotes = "Notes"
+    $addObject->intakesStraypickupLocation = "Pickup Location"
+    $addObject->intakesStraypickupAddress = "Pickup Street address"
+    $addObject->intakesStraypickupCity = "Pickup City"
+    $addObject->intakesStraypickupState = "Pickup State/Province"
+    $addObject->intakesStraypickupPostalcode = "Pickup Postal Code"
+    $addObject->intakesStraypickupFinderID = "Found By"
+    $addObject->intakesStraypickupStaffID = "Pickup By"
+
+    $query->addIntakesStrayPickup($addObject);
+
+    $result = $api->executeRequest($query);
+
+
+
+## Edit
+
+
+
+Performs intakesStraypickups.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+
+### Example Edit Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Edit();
+
+    $editObject = new \RescueGroups\Objects\IntakesStrayPickup();
+    $editObject->intakesStraypickupID = "Stray Pickup"
+    $editObject->intakesStraypickupAnimalID = "Animal"
+    $editObject->intakesStraypickupAnimalConditionID = "Condition"
+    $editObject->intakesStraypickupDate = "Date"
+    $editObject->intakesStraypickupNotes = "Notes"
+    $editObject->intakesStraypickupLocation = "Pickup Location"
+    $editObject->intakesStraypickupAddress = "Pickup Street address"
+    $editObject->intakesStraypickupCity = "Pickup City"
+    $editObject->intakesStraypickupState = "Pickup State/Province"
+    $editObject->intakesStraypickupPostalcode = "Pickup Postal Code"
+    $editObject->intakesStraypickupFinderID = "Found By"
+    $editObject->intakesStraypickupStaffID = "Pickup By"
+
+    $query->updateIntakesStrayPickup($editObject);
+
+    $result = $api->executeRequest($query);
+
+
+
+
+## Change
+
+
+
+
+
+
+Performs intakesStraypickups.change query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Change();
+
+    $result = $api->executeRequest($query);
 
 
