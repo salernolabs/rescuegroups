@@ -141,7 +141,6 @@ class RequestGenerator
                 {
                     $this->outputQueryRequestClass($object);
                     $this->outputQueryRequestTestClass($object);
-                    $this->outputResponseClass($object);
                 }
 
                 $this->outputQueryDocumentation($objectQueries);
@@ -185,6 +184,16 @@ class RequestGenerator
             $queryRequest = new QueryRequest($className, $type, $request, $requestData);
 
             $output->requests[$queryRequest->requestClassName] = $queryRequest;
+
+            if ($queryRequest->requestClassName == 'Edit')
+            {
+                $this->outputResponseClass($queryRequest);
+            }
+
+            if ($queryRequest->isParameterAdd())
+            {
+                $this->outputParameterAddClass($queryRequest);
+            }
         }
 
         return $output;
@@ -202,6 +211,20 @@ class RequestGenerator
         $responseObject = __DIR__ . '/../../src/Objects/' . $query->responseClassName . '.php';
 
         $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/response-object.mustache'), $query);
+
+        file_put_contents($responseObject, $data);
+    }
+
+    /**
+     * Output parameter add class
+     *
+     * @param QueryRequest $query
+     */
+    private function outputParameterAddClass(QueryRequest $query)
+    {
+        $responseObject = __DIR__ . '/../../src/Objects/Create/' . $query->responseClassName . '.php';
+
+        $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/create-object.mustache'), $query);
 
         file_put_contents($responseObject, $data);
     }
