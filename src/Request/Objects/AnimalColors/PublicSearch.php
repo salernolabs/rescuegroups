@@ -8,9 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\AnimalColors;
 
-class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class PublicSearch extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalColors';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicSearch';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
 
     /**
      * Filterable Fields
@@ -23,34 +41,6 @@ class PublicSearch implements \RescueGroups\Request\RequestInterface, \RescueGro
         "colorSpecies" => [0, 'colorSpecies'],
         "colorSpeciesID" => [0, 'colorSpeciesID'],
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return false;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalColors';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicSearch';
-    }
 
     /**
      * Process the response with associated output object

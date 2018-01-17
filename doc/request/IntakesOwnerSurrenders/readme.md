@@ -4,38 +4,10 @@ This is the documentation for the IntakesOwnerSurrenders queries against the Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnersurrenders)
 
-## IntakesOwnerSurrenders\View
+## IntakesOwnerSurrenders\
 
-Performs intakesOwnersurrenders.view query.
+Performs intakesOwnersurrenders. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
-
-
-## IntakesOwnerSurrenders\Search
-
-Performs intakesOwnersurrenders.search query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Search();
-
-
-## IntakesOwnerSurrenders\Add
-
-Performs intakesOwnersurrenders.add query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Add();
-
-
-## IntakesOwnerSurrenders\Edit
-
-Performs intakesOwnersurrenders.edit query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Edit();
-
-
-## IntakesOwnerSurrenders\Change
-
-Performs intakesOwnersurrenders.change query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\();
 
 

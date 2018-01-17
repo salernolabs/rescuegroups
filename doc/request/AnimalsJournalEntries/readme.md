@@ -4,38 +4,10 @@ This is the documentation for the AnimalsJournalEntries queries against the Resc
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsJournalEntries)
 
-## AnimalsJournalEntries\Search
+## AnimalsJournalEntries\
 
-Performs animalsJournalEntries.search query.
+Performs animalsJournalEntries. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Search();
-
-
-## AnimalsJournalEntries\View
-
-Performs animalsJournalEntries.view query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\View();
-
-
-## AnimalsJournalEntries\Add
-
-Performs animalsJournalEntries.add query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Add();
-
-
-## AnimalsJournalEntries\Edit
-
-Performs animalsJournalEntries.edit query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Edit();
-
-
-## AnimalsJournalEntries\Delete
-
-Performs animalsJournalEntries.delete query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Delete();
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\();
 
 

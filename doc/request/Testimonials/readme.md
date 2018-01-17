@@ -4,10 +4,10 @@ This is the documentation for the Testimonials queries against the RescueGroups.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-testimonials)
 
-## Testimonials\PublicSearch
+## Testimonials\
 
-Performs testimonials.publicSearch query.
+Performs testimonials. query.
 
-    $query = new \RescueGroups\Request\Objects\Testimonials\PublicSearch();
+    $query = new \RescueGroups\Request\Objects\Testimonials\();
 
 

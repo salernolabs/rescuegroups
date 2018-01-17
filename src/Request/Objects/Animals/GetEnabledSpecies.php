@@ -8,37 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class GetEnabledSpecies implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class GetEnabledSpecies extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
-
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animals';
 
     /**
-     * @return bool
+     * Query object action
      */
-    public function loginRequired()
-    {
-        return true;
-    }
+    const QUERY_OBJECT_ACTION = 'getEnabledSpecies';
 
     /**
-     * Return the object type
-     *
-     * @return string
+     * Query login is required
      */
-    public function getObjectType()
-    {
-        return 'animals';
-    }
+    const QUERY_LOGIN_REQUIRED = true;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'getEnabledSpecies';
-    }
+
 
     /**
      * Apply request parameters to the outgoing request

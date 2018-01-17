@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Settings;
 
-class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class SetUserSetting extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'settings';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'setUserSetting';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      *  Default template to load when adding an animal
      *
@@ -31,34 +48,6 @@ class SetUserSetting implements \RescueGroups\Request\RequestInterface, \RescueG
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'settings';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'setUserSetting';
-    }
 
     /**
      * Apply request parameters to the outgoing request

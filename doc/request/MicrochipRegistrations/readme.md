@@ -4,38 +4,10 @@ This is the documentation for the MicrochipRegistrations queries against the Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-microchipRegistrations)
 
-## MicrochipRegistrations\View
+## MicrochipRegistrations\
 
-Performs microchipRegistrations.view query.
+Performs microchipRegistrations. query.
 
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\View();
-
-
-## MicrochipRegistrations\Search
-
-Performs microchipRegistrations.search query.
-
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Search();
-
-
-## MicrochipRegistrations\Add
-
-Performs microchipRegistrations.add query.
-
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Add();
-
-
-## MicrochipRegistrations\GetSettings
-
-Performs microchipRegistrations.getSettings query.
-
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\GetSettings();
-
-
-## MicrochipRegistrations\UpdateSettings
-
-Performs microchipRegistrations.updateSettings query.
-
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\UpdateSettings();
+    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\();
 
 

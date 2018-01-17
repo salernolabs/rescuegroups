@@ -4,45 +4,10 @@ This is the documentation for the WebImages queries against the RescueGroups.org
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webimages)
 
-## WebImages\GetList
+## WebImages\
 
-Performs webimages.list query.
+Performs webimages. query.
 
-    $query = new \RescueGroups\Request\Objects\WebImages\GetList();
-
-
-## WebImages\Search
-
-Performs webimages.search query.
-
-    $query = new \RescueGroups\Request\Objects\WebImages\Search();
-
-
-## WebImages\View
-
-Performs webimages.view query.
-
-    $query = new \RescueGroups\Request\Objects\WebImages\View();
-
-
-## WebImages\Add
-
-Performs webimages.add query.
-
-    $query = new \RescueGroups\Request\Objects\WebImages\Add();
-
-
-## WebImages\Edit
-
-Performs webimages.edit query.
-
-    $query = new \RescueGroups\Request\Objects\WebImages\Edit();
-
-
-## WebImages\Delete
-
-Performs webimages.delete query.
-
-    $query = new \RescueGroups\Request\Objects\WebImages\Delete();
+    $query = new \RescueGroups\Request\Objects\WebImages\();
 
 

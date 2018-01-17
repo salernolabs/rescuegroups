@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\WebPages;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'webpages';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * Addable  array
      *
@@ -28,34 +45,6 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
         $this->addObjects[] = $addObject;
 
         return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'webpages';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
     }
 
     /**

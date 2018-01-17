@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsExports;
 
-class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class UpdateSettings extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsExports';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateSettings';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * Prevent adopted animals from being uploaded to Petfinder
      *
@@ -291,34 +308,6 @@ class UpdateSettings implements \RescueGroups\Request\RequestInterface, \RescueG
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalsExports';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'updateSettings';
-    }
 
     /**
      * Apply request parameters to the outgoing request

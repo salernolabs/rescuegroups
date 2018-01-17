@@ -4,10 +4,10 @@ This is the documentation for the Countries queries against the RescueGroups.org
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-countries)
 
-## Countries\GetList
+## Countries\
 
-Performs countries.list query.
+Performs countries. query.
 
-    $query = new \RescueGroups\Request\Objects\Countries\GetList();
+    $query = new \RescueGroups\Request\Objects\Countries\();
 
 

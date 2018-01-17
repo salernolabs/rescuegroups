@@ -4,45 +4,10 @@ This is the documentation for the OutcomesTransfers queries against the RescueGr
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesTransfers)
 
-## OutcomesTransfers\GetList
+## OutcomesTransfers\
 
-Performs outcomesTransfers.list query.
+Performs outcomesTransfers. query.
 
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\GetList();
-
-
-## OutcomesTransfers\View
-
-Performs outcomesTransfers.view query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\View();
-
-
-## OutcomesTransfers\Search
-
-Performs outcomesTransfers.search query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Search();
-
-
-## OutcomesTransfers\Add
-
-Performs outcomesTransfers.add query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Add();
-
-
-## OutcomesTransfers\Edit
-
-Performs outcomesTransfers.edit query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Edit();
-
-
-## OutcomesTransfers\Change
-
-Performs outcomesTransfers.change query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Change();
+    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\();
 
 

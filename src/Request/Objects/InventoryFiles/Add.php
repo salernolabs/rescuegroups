@@ -8,55 +8,146 @@
  */
 namespace RescueGroups\Request\Objects\InventoryFiles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\InventoryFile[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'inventoryfiles';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * ID
      *
-     * @param \RescueGroups\Objects\InventoryFile $addObject
+     * @var integer
+     */
+    private $inventoryfileItemID = null;
+
+    /**
+     * File
+     *
+     * @var string
+     */
+    private $inventoryfileBinary = null;
+
+    /**
+     * Old file name
+     *
+     * @var string
+     */
+    private $inventoryfileOldFileName = null;
+
+    /**
+     * Description
+     *
+     * @var string
+     */
+    private $inventoryfileDescription = null;
+
+    /**
+     * Status
+     *
+     * @var string
+     */
+    private $inventoryfileStatus = null;
+
+    /**
+     * Inline
+     *
+     * @var string
+     */
+    private $inventoryfileDisplayInline = null;
+
+
+    /**
+     * Set ID
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addInventoryFile(\RescueGroups\Objects\InventoryFile $addObject)
+    public function setInventoryfileItemID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->inventoryfileItemID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set File
+     *
+     * @param string $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setInventoryfileBinary($value)
     {
-        return true;
+        $this->inventoryfileBinary = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object type
+     * Set Old file name
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setInventoryfileOldFileName($value)
     {
-        return 'inventoryfiles';
+        $this->inventoryfileOldFileName = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object action
+     * Set Description
      *
-     * @return mixed
+     * @param string $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setInventoryfileDescription($value)
     {
-        return 'add';
+        $this->inventoryfileDescription = $value;
+
+        return $this;
     }
+
+    /**
+     * Set Status
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setInventoryfileStatus($value)
+    {
+        $this->inventoryfileStatus = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Inline
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setInventoryfileDisplayInline($value)
+    {
+        $this->inventoryfileDisplayInline = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +156,13 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->inventoryfileItemID !== null) $parameterArray['values'][] = ["inventoryfileItemID"=>$this->inventoryfileItemID];
+        if ($this->inventoryfileBinary !== null) $parameterArray['values'][] = ["inventoryfileBinary"=>$this->inventoryfileBinary];
+        if ($this->inventoryfileOldFileName !== null) $parameterArray['values'][] = ["inventoryfileOldFileName"=>$this->inventoryfileOldFileName];
+        if ($this->inventoryfileDescription !== null) $parameterArray['values'][] = ["inventoryfileDescription"=>$this->inventoryfileDescription];
+        if ($this->inventoryfileStatus !== null) $parameterArray['values'][] = ["inventoryfileStatus"=>$this->inventoryfileStatus];
+        if ($this->inventoryfileDisplayInline !== null) $parameterArray['values'][] = ["inventoryfileDisplayInline"=>$this->inventoryfileDisplayInline];
     }
 }

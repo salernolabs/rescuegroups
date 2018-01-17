@@ -4,10 +4,10 @@ This is the documentation for the MicrochipVendors queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-microchipVendors)
 
-## MicrochipVendors\GetList
+## MicrochipVendors\
 
-Performs microchipVendors.list query.
+Performs microchipVendors. query.
 
-    $query = new \RescueGroups\Request\Objects\MicrochipVendors\GetList();
+    $query = new \RescueGroups\Request\Objects\MicrochipVendors\();
 
 

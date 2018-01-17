@@ -8,55 +8,126 @@
  */
 namespace RescueGroups\Request\Objects\CallsLogEntries;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\CallsLogEntry[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'callsLogentries';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Call
      *
-     * @param \RescueGroups\Objects\CallsLogEntry $addObject
+     * @var integer
+     */
+    private $logentryCallID = null;
+
+    /**
+     * Contact
+     *
+     * @var integer
+     */
+    private $logentryContactID = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $logentryDate = null;
+
+    /**
+     * Outcome
+     *
+     * @var integer
+     */
+    private $logentryOutcomeID = null;
+
+    /**
+     * Comments
+     *
+     * @var string
+     */
+    private $logentryComments = null;
+
+
+    /**
+     * Set Call
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addCallsLogEntry(\RescueGroups\Objects\CallsLogEntry $addObject)
+    public function setLogentryCallID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->logentryCallID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set Contact
+     *
+     * @param integer $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setLogentryContactID($value)
     {
-        return true;
+        $this->logentryContactID = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object type
+     * Set Date
      *
-     * @return string
+     * @param \DateTime $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setLogentryDate($value)
     {
-        return 'callsLogentries';
+        $this->logentryDate = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object action
+     * Set Outcome
      *
-     * @return mixed
+     * @param integer $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setLogentryOutcomeID($value)
     {
-        return 'add';
+        $this->logentryOutcomeID = $value;
+
+        return $this;
     }
+
+    /**
+     * Set Comments
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setLogentryComments($value)
+    {
+        $this->logentryComments = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +136,12 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->logentryCallID !== null) $parameterArray['values'][] = ["logentryCallID"=>$this->logentryCallID];
+        if ($this->logentryContactID !== null) $parameterArray['values'][] = ["logentryContactID"=>$this->logentryContactID];
+        if ($this->logentryDate !== null) $parameterArray['values'][] = ["logentryDate"=>$this->logentryDate];
+        if ($this->logentryOutcomeID !== null) $parameterArray['values'][] = ["logentryOutcomeID"=>$this->logentryOutcomeID];
+        if ($this->logentryComments !== null) $parameterArray['values'][] = ["logentryComments"=>$this->logentryComments];
     }
 }

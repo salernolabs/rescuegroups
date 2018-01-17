@@ -4,38 +4,10 @@ This is the documentation for the AnimalsMeetRequests queries against the Rescue
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsMeetrequests)
 
-## AnimalsMeetRequests\Search
+## AnimalsMeetRequests\
 
-Performs animalsMeetrequests.search query.
+Performs animalsMeetrequests. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Search();
-
-
-## AnimalsMeetRequests\View
-
-Performs animalsMeetrequests.view query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\View();
-
-
-## AnimalsMeetRequests\Add
-
-Performs animalsMeetrequests.add query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Add();
-
-
-## AnimalsMeetRequests\Edit
-
-Performs animalsMeetrequests.edit query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Edit();
-
-
-## AnimalsMeetRequests\Delete
-
-Performs animalsMeetrequests.delete query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\();
 
 

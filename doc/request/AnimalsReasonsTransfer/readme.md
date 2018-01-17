@@ -4,45 +4,10 @@ This is the documentation for the AnimalsReasonsTransfer queries against the Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsReasonsTransfer)
 
-## AnimalsReasonsTransfer\GetList
+## AnimalsReasonsTransfer\
 
-Performs animalsReasonsTransfer.list query.
+Performs animalsReasonsTransfer. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\GetList();
-
-
-## AnimalsReasonsTransfer\View
-
-Performs animalsReasonsTransfer.view query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\View();
-
-
-## AnimalsReasonsTransfer\Search
-
-Performs animalsReasonsTransfer.search query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Search();
-
-
-## AnimalsReasonsTransfer\Add
-
-Performs animalsReasonsTransfer.add query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Add();
-
-
-## AnimalsReasonsTransfer\Edit
-
-Performs animalsReasonsTransfer.edit query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Edit();
-
-
-## AnimalsReasonsTransfer\Delete
-
-Performs animalsReasonsTransfer.delete query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Delete();
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\();
 
 

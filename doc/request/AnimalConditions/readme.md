@@ -4,10 +4,10 @@ This is the documentation for the AnimalConditions queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalConditions)
 
-## AnimalConditions\GetList
+## AnimalConditions\
 
-Performs animalConditions.list query.
+Performs animalConditions. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalConditions\GetList();
+    $query = new \RescueGroups\Request\Objects\AnimalConditions\();
 
 

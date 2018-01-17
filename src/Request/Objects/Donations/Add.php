@@ -8,55 +8,186 @@
  */
 namespace RescueGroups\Request\Objects\Donations;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\Donation[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'donations';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Contact
      *
-     * @param \RescueGroups\Objects\Donation $addObject
+     * @var integer
+     */
+    private $donationContactID = null;
+
+    /**
+     * Amount
+     *
+     * @var float
+     */
+    private $donationAmount = null;
+
+    /**
+     * Inkind type
+     *
+     * @var string
+     */
+    private $donationInkind = null;
+
+    /**
+     * Comment
+     *
+     * @var string
+     */
+    private $donationComment = null;
+
+    /**
+     * Letter sent
+     *
+     * @var string
+     */
+    private $donationLettersent = null;
+
+    /**
+     * Purpose
+     *
+     * @var string
+     */
+    private $donationPurpose = null;
+
+    /**
+     * Date
+     *
+     * @var \DateTime
+     */
+    private $donationDate = null;
+
+    /**
+     * Add contact to Donor group
+     *
+     * @var string
+     */
+    private $donationAddDonorGroup = null;
+
+
+    /**
+     * Set Contact
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addDonation(\RescueGroups\Objects\Donation $addObject)
+    public function setDonationContactID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->donationContactID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set Amount
+     *
+     * @param float $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setDonationAmount($value)
     {
-        return true;
+        $this->donationAmount = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object type
+     * Set Inkind type
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setDonationInkind($value)
     {
-        return 'donations';
+        $this->donationInkind = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object action
+     * Set Comment
      *
-     * @return mixed
+     * @param string $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setDonationComment($value)
     {
-        return 'add';
+        $this->donationComment = $value;
+
+        return $this;
     }
+
+    /**
+     * Set Letter sent
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setDonationLettersent($value)
+    {
+        $this->donationLettersent = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Purpose
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setDonationPurpose($value)
+    {
+        $this->donationPurpose = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Date
+     *
+     * @param \DateTime $value
+     * @return $this
+     */
+    public function setDonationDate($value)
+    {
+        $this->donationDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Add contact to Donor group
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setDonationAddDonorGroup($value)
+    {
+        $this->donationAddDonorGroup = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +196,15 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->donationContactID !== null) $parameterArray['values'][] = ["donationContactID"=>$this->donationContactID];
+        if ($this->donationAmount !== null) $parameterArray['values'][] = ["donationAmount"=>$this->donationAmount];
+        if ($this->donationInkind !== null) $parameterArray['values'][] = ["donationInkind"=>$this->donationInkind];
+        if ($this->donationComment !== null) $parameterArray['values'][] = ["donationComment"=>$this->donationComment];
+        if ($this->donationLettersent !== null) $parameterArray['values'][] = ["donationLettersent"=>$this->donationLettersent];
+        if ($this->donationPurpose !== null) $parameterArray['values'][] = ["donationPurpose"=>$this->donationPurpose];
+        if ($this->donationDate !== null) $parameterArray['values'][] = ["donationDate"=>$this->donationDate];
+        if ($this->donationAddDonorGroup !== null) $parameterArray['values'][] = ["donationAddDonorGroup"=>$this->donationAddDonorGroup];
     }
 }

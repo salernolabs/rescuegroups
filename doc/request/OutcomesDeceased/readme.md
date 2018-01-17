@@ -4,45 +4,10 @@ This is the documentation for the OutcomesDeceased queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesDeceased)
 
-## OutcomesDeceased\GetList
+## OutcomesDeceased\
 
-Performs outcomesDeceased.list query.
+Performs outcomesDeceased. query.
 
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\GetList();
-
-
-## OutcomesDeceased\View
-
-Performs outcomesDeceased.view query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\View();
-
-
-## OutcomesDeceased\Search
-
-Performs outcomesDeceased.search query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Search();
-
-
-## OutcomesDeceased\Add
-
-Performs outcomesDeceased.add query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Add();
-
-
-## OutcomesDeceased\Edit
-
-Performs outcomesDeceased.edit query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Edit();
-
-
-## OutcomesDeceased\Change
-
-Performs outcomesDeceased.change query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Change();
+    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\();
 
 

@@ -4,45 +4,10 @@ This is the documentation for the CallsCategories queries against the RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsCategories)
 
-## CallsCategories\GetList
+## CallsCategories\
 
-Performs callsCategories.list query.
+Performs callsCategories. query.
 
-    $query = new \RescueGroups\Request\Objects\CallsCategories\GetList();
-
-
-## CallsCategories\View
-
-Performs callsCategories.view query.
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\View();
-
-
-## CallsCategories\Search
-
-Performs callsCategories.search query.
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\Search();
-
-
-## CallsCategories\Add
-
-Performs callsCategories.add query.
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\Add();
-
-
-## CallsCategories\Edit
-
-Performs callsCategories.edit query.
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\Edit();
-
-
-## CallsCategories\Delete
-
-Performs callsCategories.delete query.
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\Delete();
+    $query = new \RescueGroups\Request\Objects\CallsCategories\();
 
 

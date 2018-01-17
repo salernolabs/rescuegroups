@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\InventoryFiles;
 
-class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Edit extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'inventoryfiles';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'edit';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * Editable  array
      *
@@ -28,34 +45,6 @@ class Edit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
         $this->editObjects[] = $editObject;
 
         return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'inventoryfiles';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'edit';
     }
 
     /**

@@ -8,9 +8,27 @@
  */
 namespace RescueGroups\Request\Objects\{{className}};
 
-class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface, \RescueGroups\Request\ProcessResponseInterface
+class {{requestClassName}} extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface,
+    \RescueGroups\Request\ProcessResponseInterface
 {
     use \RescueGroups\Request\Traits\SearchParameters;
+
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = '{{typeName}}';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = '{{objectAction}}';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = {{loginRequired}};
 
     /**
      * Filterable Fields
@@ -22,34 +40,6 @@ class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \R
         "{{sdkFieldName}}" => [{{{required}}}, '{{name}}'],
     {{/fields}}
     ];
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return {{loginRequired}};
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return '{{typeName}}';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return '{{objectAction}}';
-    }
 
     /**
      * Process the response with associated output object

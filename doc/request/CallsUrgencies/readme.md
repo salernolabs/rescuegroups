@@ -4,10 +4,10 @@ This is the documentation for the CallsUrgencies queries against the RescueGroup
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsUrgencies)
 
-## CallsUrgencies\GetList
+## CallsUrgencies\
 
-Performs callsUrgencies.list query.
+Performs callsUrgencies. query.
 
-    $query = new \RescueGroups\Request\Objects\CallsUrgencies\GetList();
+    $query = new \RescueGroups\Request\Objects\CallsUrgencies\();
 
 

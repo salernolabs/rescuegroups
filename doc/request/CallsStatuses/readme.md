@@ -4,10 +4,10 @@ This is the documentation for the CallsStatuses queries against the RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsStatuses)
 
-## CallsStatuses\GetList
+## CallsStatuses\
 
-Performs callsStatuses.list query.
+Performs callsStatuses. query.
 
-    $query = new \RescueGroups\Request\Objects\CallsStatuses\GetList();
+    $query = new \RescueGroups\Request\Objects\CallsStatuses\();
 
 

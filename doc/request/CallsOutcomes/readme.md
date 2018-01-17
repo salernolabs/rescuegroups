@@ -4,10 +4,10 @@ This is the documentation for the CallsOutcomes queries against the RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsOutcomes)
 
-## CallsOutcomes\GetList
+## CallsOutcomes\
 
-Performs callsOutcomes.list query.
+Performs callsOutcomes. query.
 
-    $query = new \RescueGroups\Request\Objects\CallsOutcomes\GetList();
+    $query = new \RescueGroups\Request\Objects\CallsOutcomes\();
 
 

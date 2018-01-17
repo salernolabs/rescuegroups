@@ -8,55 +8,326 @@
  */
 namespace RescueGroups\Request\Objects\MicrochipRegistrations;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\MicrochipRegistration[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'microchipRegistrations';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Animal
      *
-     * @param \RescueGroups\Objects\MicrochipRegistration $addObject
+     * @var integer
+     */
+    private $microchipRegistrationAnimalID = null;
+
+    /**
+     * Microchip number
+     *
+     * @var string
+     */
+    private $microchipRegistrationMicrochipNumber = null;
+
+    /**
+     * Microchip vendor
+     *
+     * @var string
+     */
+    private $microchipRegistrationMicrochipVendor = null;
+
+    /**
+     * Registry
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistry = null;
+
+    /**
+     * First name
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantFirstname = null;
+
+    /**
+     * Last name
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantLastname = null;
+
+    /**
+     * Street address
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantAddress = null;
+
+    /**
+     * City
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantCity = null;
+
+    /**
+     * State/Province
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantState = null;
+
+    /**
+     * Postal Code
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantPostalcode = null;
+
+    /**
+     * Country
+     *
+     * @var integer
+     */
+    private $microchipRegistrationRegistrantCountry = null;
+
+    /**
+     * Primary phone number
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantPrimaryPhone = null;
+
+    /**
+     * Secondary phone number
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantSecondaryPhone = null;
+
+    /**
+     * Primary email address
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantPrimaryEmail = null;
+
+    /**
+     * Secondary email address
+     *
+     * @var string
+     */
+    private $microchipRegistrationRegistrantSecondaryEmail = null;
+
+
+    /**
+     * Set Animal
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addMicrochipRegistration(\RescueGroups\Objects\MicrochipRegistration $addObject)
+    public function setMicrochipRegistrationAnimalID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->microchipRegistrationAnimalID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set Microchip number
+     *
+     * @param string $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setMicrochipRegistrationMicrochipNumber($value)
     {
-        return true;
+        $this->microchipRegistrationMicrochipNumber = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object type
+     * Set Microchip vendor
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setMicrochipRegistrationMicrochipVendor($value)
     {
-        return 'microchipRegistrations';
+        $this->microchipRegistrationMicrochipVendor = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object action
+     * Set Registry
      *
-     * @return mixed
+     * @param string $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setMicrochipRegistrationRegistry($value)
     {
-        return 'add';
+        $this->microchipRegistrationRegistry = $value;
+
+        return $this;
     }
+
+    /**
+     * Set First name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantFirstname($value)
+    {
+        $this->microchipRegistrationRegistrantFirstname = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Last name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantLastname($value)
+    {
+        $this->microchipRegistrationRegistrantLastname = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Street address
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantAddress($value)
+    {
+        $this->microchipRegistrationRegistrantAddress = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set City
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantCity($value)
+    {
+        $this->microchipRegistrationRegistrantCity = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set State/Province
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantState($value)
+    {
+        $this->microchipRegistrationRegistrantState = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Postal Code
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantPostalcode($value)
+    {
+        $this->microchipRegistrationRegistrantPostalcode = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Country
+     *
+     * @param integer $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantCountry($value)
+    {
+        $this->microchipRegistrationRegistrantCountry = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Primary phone number
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantPrimaryPhone($value)
+    {
+        $this->microchipRegistrationRegistrantPrimaryPhone = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Secondary phone number
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantSecondaryPhone($value)
+    {
+        $this->microchipRegistrationRegistrantSecondaryPhone = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Primary email address
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantPrimaryEmail($value)
+    {
+        $this->microchipRegistrationRegistrantPrimaryEmail = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Secondary email address
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMicrochipRegistrationRegistrantSecondaryEmail($value)
+    {
+        $this->microchipRegistrationRegistrantSecondaryEmail = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +336,22 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->microchipRegistrationAnimalID !== null) $parameterArray['values'][] = ["microchipRegistrationAnimalID"=>$this->microchipRegistrationAnimalID];
+        if ($this->microchipRegistrationMicrochipNumber !== null) $parameterArray['values'][] = ["microchipRegistrationMicrochipNumber"=>$this->microchipRegistrationMicrochipNumber];
+        if ($this->microchipRegistrationMicrochipVendor !== null) $parameterArray['values'][] = ["microchipRegistrationMicrochipVendor"=>$this->microchipRegistrationMicrochipVendor];
+        if ($this->microchipRegistrationRegistry !== null) $parameterArray['values'][] = ["microchipRegistrationRegistry"=>$this->microchipRegistrationRegistry];
+        if ($this->microchipRegistrationRegistrantFirstname !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantFirstname"=>$this->microchipRegistrationRegistrantFirstname];
+        if ($this->microchipRegistrationRegistrantLastname !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantLastname"=>$this->microchipRegistrationRegistrantLastname];
+        if ($this->microchipRegistrationRegistrantAddress !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantAddress"=>$this->microchipRegistrationRegistrantAddress];
+        if ($this->microchipRegistrationRegistrantCity !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantCity"=>$this->microchipRegistrationRegistrantCity];
+        if ($this->microchipRegistrationRegistrantState !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantState"=>$this->microchipRegistrationRegistrantState];
+        if ($this->microchipRegistrationRegistrantPostalcode !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantPostalcode"=>$this->microchipRegistrationRegistrantPostalcode];
+        if ($this->microchipRegistrationRegistrantCountry !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantCountry"=>$this->microchipRegistrationRegistrantCountry];
+        if ($this->microchipRegistrationRegistrantPrimaryPhone !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantPrimaryPhone"=>$this->microchipRegistrationRegistrantPrimaryPhone];
+        if ($this->microchipRegistrationRegistrantSecondaryPhone !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantSecondaryPhone"=>$this->microchipRegistrationRegistrantSecondaryPhone];
+        if ($this->microchipRegistrationRegistrantPrimaryEmail !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantPrimaryEmail"=>$this->microchipRegistrationRegistrantPrimaryEmail];
+        if ($this->microchipRegistrationRegistrantSecondaryEmail !== null) $parameterArray['values'][] = ["microchipRegistrationRegistrantSecondaryEmail"=>$this->microchipRegistrationRegistrantSecondaryEmail];
     }
 }

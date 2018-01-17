@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsExports;
 
-class UpdateExports implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class UpdateExports extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsExports';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'updateExports';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * Export ID
      *
@@ -51,34 +68,6 @@ class UpdateExports implements \RescueGroups\Request\RequestInterface, \RescueGr
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animalsExports';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'updateExports';
-    }
 
     /**
      * Apply request parameters to the outgoing request

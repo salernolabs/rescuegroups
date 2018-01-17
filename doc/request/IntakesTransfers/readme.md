@@ -4,38 +4,10 @@ This is the documentation for the IntakesTransfers queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesTransfers)
 
-## IntakesTransfers\View
+## IntakesTransfers\
 
-Performs intakesTransfers.view query.
+Performs intakesTransfers. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\View();
-
-
-## IntakesTransfers\Search
-
-Performs intakesTransfers.search query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Search();
-
-
-## IntakesTransfers\Add
-
-Performs intakesTransfers.add query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Add();
-
-
-## IntakesTransfers\Edit
-
-Performs intakesTransfers.edit query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Edit();
-
-
-## IntakesTransfers\Change
-
-Performs intakesTransfers.change query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesTransfers\();
 
 

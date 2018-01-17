@@ -4,10 +4,10 @@ This is the documentation for the AnimalAdoptionStatuses queries against the Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalAdoptionStatuses)
 
-## AnimalAdoptionStatuses\GetList
+## AnimalAdoptionStatuses\
 
-Performs animalAdoptionStatuses.list query.
+Performs animalAdoptionStatuses. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalAdoptionStatuses\GetList();
+    $query = new \RescueGroups\Request\Objects\AnimalAdoptionStatuses\();
 
 

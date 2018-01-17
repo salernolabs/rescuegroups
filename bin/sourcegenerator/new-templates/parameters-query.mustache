@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\{{className}};
 
-class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class {{requestClassName}} extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = '{{typeName}}';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = '{{objectAction}}';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = {{loginRequired}};
+
     {{#fields}}
     /**
      * {{friendlyName}}
@@ -35,34 +52,6 @@ class {{requestClassName}} implements \RescueGroups\Request\RequestInterface, \R
     }
 
     {{/fields}}
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return {{loginRequired}};
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return '{{typeName}}';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return '{{objectAction}}';
-    }
 
     /**
      * Apply request parameters to the outgoing request

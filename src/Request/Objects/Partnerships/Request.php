@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Partnerships;
 
-class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Request extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'partnerships';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'request';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * Sharing Org
      *
@@ -31,34 +48,6 @@ class Request implements \RescueGroups\Request\RequestInterface, \RescueGroups\R
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'partnerships';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'request';
-    }
 
     /**
      * Apply request parameters to the outgoing request

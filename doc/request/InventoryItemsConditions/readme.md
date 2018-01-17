@@ -4,10 +4,10 @@ This is the documentation for the InventoryItemsConditions queries against the R
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-inventoryitemsConditions)
 
-## InventoryItemsConditions\GetList
+## InventoryItemsConditions\
 
-Performs inventoryitemsConditions.list query.
+Performs inventoryitemsConditions. query.
 
-    $query = new \RescueGroups\Request\Objects\InventoryItemsConditions\GetList();
+    $query = new \RescueGroups\Request\Objects\InventoryItemsConditions\();
 
 

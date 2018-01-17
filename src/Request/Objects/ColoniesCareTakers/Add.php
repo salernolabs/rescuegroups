@@ -8,55 +8,66 @@
  */
 namespace RescueGroups\Request\Objects\ColoniesCareTakers;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\ColoniesCareTaker[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'coloniesCaretakers';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Colony
      *
-     * @param \RescueGroups\Objects\ColoniesCareTaker $addObject
+     * @var integer
+     */
+    private $caretakerColonyID = null;
+
+    /**
+     * Contact
+     *
+     * @var integer
+     */
+    private $caretakerContactID = null;
+
+
+    /**
+     * Set Colony
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addColoniesCareTaker(\RescueGroups\Objects\ColoniesCareTaker $addObject)
+    public function setCaretakerColonyID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->caretakerColonyID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set Contact
+     *
+     * @param integer $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setCaretakerContactID($value)
     {
-        return true;
+        $this->caretakerContactID = $value;
+
+        return $this;
     }
 
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'coloniesCaretakers';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'add';
-    }
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +76,9 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->caretakerColonyID !== null) $parameterArray['values'][] = ["caretakerColonyID"=>$this->caretakerColonyID];
+        if ($this->caretakerContactID !== null) $parameterArray['values'][] = ["caretakerContactID"=>$this->caretakerContactID];
     }
 }

@@ -4,17 +4,10 @@ This is the documentation for the Affiliates queries against the RescueGroups.or
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-affiliates)
 
-## Affiliates\GetSettings
+## Affiliates\
 
-Performs affiliates.getSettings query.
+Performs affiliates. query.
 
-    $query = new \RescueGroups\Request\Objects\Affiliates\GetSettings();
-
-
-## Affiliates\UpdateSettings
-
-Performs affiliates.updateSettings query.
-
-    $query = new \RescueGroups\Request\Objects\Affiliates\UpdateSettings();
+    $query = new \RescueGroups\Request\Objects\Affiliates\();
 
 

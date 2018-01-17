@@ -8,55 +8,166 @@
  */
 namespace RescueGroups\Request\Objects\AnimalFiles;
 
-class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class Add extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
     /**
-     * Addable  array
-     *
-     * @var \RescueGroups\Objects\AnimalFile[]
+     * Query object type
      */
-    protected $addObjects = [];
+    const QUERY_OBJECT_TYPE = 'animalFiles';
 
     /**
-     * Set the addable object
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'add';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
+    /**
+     * Animal
      *
-     * @param \RescueGroups\Objects\AnimalFile $addObject
+     * @var integer
+     */
+    private $animalfileAnimalID = null;
+
+    /**
+     * File
+     *
+     * @var string
+     */
+    private $animalfileBinary = null;
+
+    /**
+     * Old file name
+     *
+     * @var string
+     */
+    private $animalfileOldFileName = null;
+
+    /**
+     * Description
+     *
+     * @var string
+     */
+    private $animalfileDescription = null;
+
+    /**
+     * Status
+     *
+     * @var string
+     */
+    private $animalfileStatus = null;
+
+    /**
+     * Inline
+     *
+     * @var string
+     */
+    private $animalfileDisplayInline = null;
+
+    /**
+     * Public
+     *
+     * @var string
+     */
+    private $animalfilePublic = null;
+
+
+    /**
+     * Set Animal
+     *
+     * @param integer $value
      * @return $this
      */
-    public function addAnimalFile(\RescueGroups\Objects\AnimalFile $addObject)
+    public function setAnimalfileAnimalID($value)
     {
-        $this->addObjects[] = $addObject;
+        $this->animalfileAnimalID = $value;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Set File
+     *
+     * @param string $value
+     * @return $this
      */
-    public function loginRequired()
+    public function setAnimalfileBinary($value)
     {
-        return true;
+        $this->animalfileBinary = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object type
+     * Set Old file name
      *
-     * @return string
+     * @param string $value
+     * @return $this
      */
-    public function getObjectType()
+    public function setAnimalfileOldFileName($value)
     {
-        return 'animalFiles';
+        $this->animalfileOldFileName = $value;
+
+        return $this;
     }
 
     /**
-     * Return the object action
+     * Set Description
      *
-     * @return mixed
+     * @param string $value
+     * @return $this
      */
-    public function getObjectAction()
+    public function setAnimalfileDescription($value)
     {
-        return 'add';
+        $this->animalfileDescription = $value;
+
+        return $this;
     }
+
+    /**
+     * Set Status
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAnimalfileStatus($value)
+    {
+        $this->animalfileStatus = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Inline
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAnimalfileDisplayInline($value)
+    {
+        $this->animalfileDisplayInline = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Public
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setAnimalfilePublic($value)
+    {
+        $this->animalfilePublic = $value;
+
+        return $this;
+    }
+
 
     /**
      * Apply request parameters to the outgoing request
@@ -65,16 +176,14 @@ class Add implements \RescueGroups\Request\RequestInterface, \RescueGroups\Reque
      */
     public function applyParameters(&$parameterArray)
     {
-        if (empty($this->addObjects))
-        {
-            throw new \RescueGroups\Exceptions\InvalidParameter("Missing add objects for query " . __CLASS__);
-        }
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        $parameterArray['values'] = [];
-
-        foreach ($this->addObjects as $object)
-        {
-            $parameterArray['values'][] = $object->getArray(false);
-        }
+        if ($this->animalfileAnimalID !== null) $parameterArray['values'][] = ["animalfileAnimalID"=>$this->animalfileAnimalID];
+        if ($this->animalfileBinary !== null) $parameterArray['values'][] = ["animalfileBinary"=>$this->animalfileBinary];
+        if ($this->animalfileOldFileName !== null) $parameterArray['values'][] = ["animalfileOldFileName"=>$this->animalfileOldFileName];
+        if ($this->animalfileDescription !== null) $parameterArray['values'][] = ["animalfileDescription"=>$this->animalfileDescription];
+        if ($this->animalfileStatus !== null) $parameterArray['values'][] = ["animalfileStatus"=>$this->animalfileStatus];
+        if ($this->animalfileDisplayInline !== null) $parameterArray['values'][] = ["animalfileDisplayInline"=>$this->animalfileDisplayInline];
+        if ($this->animalfilePublic !== null) $parameterArray['values'][] = ["animalfilePublic"=>$this->animalfilePublic];
     }
 }

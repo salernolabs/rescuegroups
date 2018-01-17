@@ -20,16 +20,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Add();
-
-        $testObject = new \RescueGroups\Objects\ColoniesCareTaker();
-        $testObject->caretakerContactID = 'testValue Contact';
-
-        $query->addColoniesCareTaker($testObject);
-
         $data = $this->api->getPostObject($query);
 
         $this->assertEquals('coloniesCaretakers', $data['objectType']);
         $this->assertEquals('add', $data['objectAction']);
-        $this->assertEquals('testValue Contact', $data['values'][0]['caretakerContactID']);
     }
 }

@@ -4,31 +4,10 @@ This is the documentation for the AnimalSpecies queries against the RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalSpecies)
 
-## AnimalSpecies\PublicList
+## AnimalSpecies\
 
-Performs animalSpecies.publicList query.
+Performs animalSpecies. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalSpecies\PublicList();
-
-
-## AnimalSpecies\GetList
-
-Performs animalSpecies.list query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalSpecies\GetList();
-
-
-## AnimalSpecies\ListActive
-
-Performs animalSpecies.listActive query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalSpecies\ListActive();
-
-
-## AnimalSpecies\Search
-
-Performs animalSpecies.search query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalSpecies\Search();
+    $query = new \RescueGroups\Request\Objects\AnimalSpecies\();
 
 

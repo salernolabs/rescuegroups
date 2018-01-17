@@ -4,38 +4,10 @@ This is the documentation for the InventoryLoaners queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-inventoryLoaners)
 
-## InventoryLoaners\View
+## InventoryLoaners\
 
-Performs inventoryLoaners.view query.
+Performs inventoryLoaners. query.
 
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\View();
-
-
-## InventoryLoaners\Search
-
-Performs inventoryLoaners.search query.
-
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Search();
-
-
-## InventoryLoaners\Add
-
-Performs inventoryLoaners.add query.
-
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Add();
-
-
-## InventoryLoaners\Edit
-
-Performs inventoryLoaners.edit query.
-
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Edit();
-
-
-## InventoryLoaners\Delete
-
-Performs inventoryLoaners.delete query.
-
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Delete();
+    $query = new \RescueGroups\Request\Objects\InventoryLoaners\();
 
 

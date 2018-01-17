@@ -4,38 +4,10 @@ This is the documentation for the WaitingLists queries against the RescueGroups.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-waitinglists)
 
-## WaitingLists\View
+## WaitingLists\
 
-Performs waitinglists.view query.
+Performs waitinglists. query.
 
-    $query = new \RescueGroups\Request\Objects\WaitingLists\View();
-
-
-## WaitingLists\Search
-
-Performs waitinglists.search query.
-
-    $query = new \RescueGroups\Request\Objects\WaitingLists\Search();
-
-
-## WaitingLists\Add
-
-Performs waitinglists.add query.
-
-    $query = new \RescueGroups\Request\Objects\WaitingLists\Add();
-
-
-## WaitingLists\Edit
-
-Performs waitinglists.edit query.
-
-    $query = new \RescueGroups\Request\Objects\WaitingLists\Edit();
-
-
-## WaitingLists\Delete
-
-Performs waitinglists.delete query.
-
-    $query = new \RescueGroups\Request\Objects\WaitingLists\Delete();
+    $query = new \RescueGroups\Request\Objects\WaitingLists\();
 
 

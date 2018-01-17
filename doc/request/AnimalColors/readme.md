@@ -4,31 +4,10 @@ This is the documentation for the AnimalColors queries against the RescueGroups.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalColors)
 
-## AnimalColors\GetList
+## AnimalColors\
 
-Performs animalColors.list query.
+Performs animalColors. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalColors\GetList();
-
-
-## AnimalColors\PublicList
-
-Performs animalColors.publicList query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalColors\PublicList();
-
-
-## AnimalColors\Search
-
-Performs animalColors.search query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalColors\Search();
-
-
-## AnimalColors\PublicSearch
-
-Performs animalColors.publicSearch query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalColors\PublicSearch();
+    $query = new \RescueGroups\Request\Objects\AnimalColors\();
 
 

@@ -4,38 +4,10 @@ This is the documentation for the IntakesStrayDropoffs queries against the Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraydropoffs)
 
-## IntakesStrayDropoffs\View
+## IntakesStrayDropoffs\
 
-Performs intakesStraydropoffs.view query.
+Performs intakesStraydropoffs. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
-
-
-## IntakesStrayDropoffs\Search
-
-Performs intakesStraydropoffs.search query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Search();
-
-
-## IntakesStrayDropoffs\Add
-
-Performs intakesStraydropoffs.add query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Add();
-
-
-## IntakesStrayDropoffs\Edit
-
-Performs intakesStraydropoffs.edit query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Edit();
-
-
-## IntakesStrayDropoffs\Change
-
-Performs intakesStraydropoffs.change query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\();
 
 

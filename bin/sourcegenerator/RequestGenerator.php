@@ -140,8 +140,8 @@ class RequestGenerator
                 foreach ($objectQueries->requests as $object)
                 {
                     $this->outputQueryRequestClass($object);
-                    $this->outputResponseClass($object);
                     $this->outputQueryRequestTestClass($object);
+                    $this->outputResponseClass($object);
                 }
 
                 $this->outputQueryDocumentation($objectQueries);
@@ -184,7 +184,7 @@ class RequestGenerator
 
             $queryRequest = new QueryRequest($className, $type, $request, $requestData);
 
-            $output->requests[] = $queryRequest;
+            $output->requests[$queryRequest->requestClassName] = $queryRequest;
         }
 
         return $output;

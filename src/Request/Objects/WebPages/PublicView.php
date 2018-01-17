@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\WebPages;
 
-class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicView extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'webpages';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicView';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
+
     /**
      * ID
      *
@@ -31,34 +48,6 @@ class PublicView implements \RescueGroups\Request\RequestInterface, \RescueGroup
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return false;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'webpages';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicView';
-    }
 
     /**
      * Apply request parameters to the outgoing request

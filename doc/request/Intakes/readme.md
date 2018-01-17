@@ -4,31 +4,10 @@ This is the documentation for the Intakes queries against the RescueGroups.org H
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakes)
 
-## Intakes\GetList
+## Intakes\
 
-Performs intakes.list query.
+Performs intakes. query.
 
-    $query = new \RescueGroups\Request\Objects\Intakes\GetList();
-
-
-## Intakes\Search
-
-Performs intakes.search query.
-
-    $query = new \RescueGroups\Request\Objects\Intakes\Search();
-
-
-## Intakes\View
-
-Performs intakes.view query.
-
-    $query = new \RescueGroups\Request\Objects\Intakes\View();
-
-
-## Intakes\Delete
-
-Performs intakes.delete query.
-
-    $query = new \RescueGroups\Request\Objects\Intakes\Delete();
+    $query = new \RescueGroups\Request\Objects\Intakes\();
 
 

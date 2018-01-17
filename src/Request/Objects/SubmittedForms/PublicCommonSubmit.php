@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\SubmittedForms;
 
-class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'submittedforms';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'publicCommonSubmit';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = false;
+
     /**
      * Animal
      *
@@ -431,34 +448,6 @@ class PublicCommonSubmit implements \RescueGroups\Request\RequestInterface, \Res
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return false;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'submittedforms';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'publicCommonSubmit';
-    }
 
     /**
      * Apply request parameters to the outgoing request

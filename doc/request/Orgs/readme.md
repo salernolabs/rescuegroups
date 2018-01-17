@@ -4,24 +4,10 @@ This is the documentation for the Orgs queries against the RescueGroups.org HTTP
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-orgs)
 
-## Orgs\GetList
+## Orgs\
 
-Performs orgs.list query.
+Performs orgs. query.
 
-    $query = new \RescueGroups\Request\Objects\Orgs\GetList();
-
-
-## Orgs\PublicView
-
-Performs orgs.publicView query.
-
-    $query = new \RescueGroups\Request\Objects\Orgs\PublicView();
-
-
-## Orgs\PublicSearch
-
-Performs orgs.publicSearch query.
-
-    $query = new \RescueGroups\Request\Objects\Orgs\PublicSearch();
+    $query = new \RescueGroups\Request\Objects\Orgs\();
 
 

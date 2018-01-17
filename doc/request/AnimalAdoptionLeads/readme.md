@@ -4,10 +4,10 @@ This is the documentation for the AnimalAdoptionLeads queries against the Rescue
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalAdoptionLeads)
 
-## AnimalAdoptionLeads\GetList
+## AnimalAdoptionLeads\
 
-Performs animalAdoptionLeads.list query.
+Performs animalAdoptionLeads. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalAdoptionLeads\GetList();
+    $query = new \RescueGroups\Request\Objects\AnimalAdoptionLeads\();
 
 

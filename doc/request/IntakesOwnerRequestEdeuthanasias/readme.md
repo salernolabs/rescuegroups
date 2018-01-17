@@ -4,38 +4,10 @@ This is the documentation for the IntakesOwnerRequestedEuthanasias queries again
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnerrequestedeuthanasias)
 
-## IntakesOwnerRequestedEuthanasias\View
+## IntakesOwnerRequestedEuthanasias\
 
-Performs intakesOwnerrequestedeuthanasias.view query.
+Performs intakesOwnerrequestedeuthanasias. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
-
-
-## IntakesOwnerRequestedEuthanasias\Search
-
-Performs intakesOwnerrequestedeuthanasias.search query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Search();
-
-
-## IntakesOwnerRequestedEuthanasias\Add
-
-Performs intakesOwnerrequestedeuthanasias.add query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Add();
-
-
-## IntakesOwnerRequestedEuthanasias\Edit
-
-Performs intakesOwnerrequestedeuthanasias.edit query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Edit();
-
-
-## IntakesOwnerRequestedEuthanasias\Change
-
-Performs intakesOwnerrequestedeuthanasias.change query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\();
 
 

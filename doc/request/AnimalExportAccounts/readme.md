@@ -4,10 +4,10 @@ This is the documentation for the AnimalExportAccounts queries against the Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalExportAccounts)
 
-## AnimalExportAccounts\GetList
+## AnimalExportAccounts\
 
-Performs animalExportAccounts.list query.
+Performs animalExportAccounts. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalExportAccounts\GetList();
+    $query = new \RescueGroups\Request\Objects\AnimalExportAccounts\();
 
 

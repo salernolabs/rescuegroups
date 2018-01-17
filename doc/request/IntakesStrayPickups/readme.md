@@ -4,38 +4,10 @@ This is the documentation for the IntakesStrayPickups queries against the Rescue
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraypickups)
 
-## IntakesStrayPickups\View
+## IntakesStrayPickups\
 
-Performs intakesStraypickups.view query.
+Performs intakesStraypickups. query.
 
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
-
-
-## IntakesStrayPickups\Search
-
-Performs intakesStraypickups.search query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Search();
-
-
-## IntakesStrayPickups\Add
-
-Performs intakesStraypickups.add query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Add();
-
-
-## IntakesStrayPickups\Edit
-
-Performs intakesStraypickups.edit query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Edit();
-
-
-## IntakesStrayPickups\Change
-
-Performs intakesStraypickups.change query.
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Change();
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\();
 
 

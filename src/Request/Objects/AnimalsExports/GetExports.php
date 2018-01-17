@@ -8,37 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsExports;
 
-class GetExports implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class GetExports extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
-
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animalsExports';
 
     /**
-     * @return bool
+     * Query object action
      */
-    public function loginRequired()
-    {
-        return true;
-    }
+    const QUERY_OBJECT_ACTION = 'getExports';
 
     /**
-     * Return the object type
-     *
-     * @return string
+     * Query login is required
      */
-    public function getObjectType()
-    {
-        return 'animalsExports';
-    }
+    const QUERY_LOGIN_REQUIRED = true;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'getExports';
-    }
+
 
     /**
      * Apply request parameters to the outgoing request

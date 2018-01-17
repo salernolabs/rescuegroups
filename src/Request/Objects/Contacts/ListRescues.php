@@ -8,37 +8,26 @@
  */
 namespace RescueGroups\Request\Objects\Contacts;
 
-class ListRescues implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class ListRescues extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
-
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'contacts';
 
     /**
-     * @return bool
+     * Query object action
      */
-    public function loginRequired()
-    {
-        return true;
-    }
+    const QUERY_OBJECT_ACTION = 'listRescues';
 
     /**
-     * Return the object type
-     *
-     * @return string
+     * Query login is required
      */
-    public function getObjectType()
-    {
-        return 'contacts';
-    }
+    const QUERY_LOGIN_REQUIRED = true;
 
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'listRescues';
-    }
+
 
     /**
      * Apply request parameters to the outgoing request

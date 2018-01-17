@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\VolunteerHours;
 
-class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class View extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'volunteerHours';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'view';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * ID
      *
@@ -31,34 +48,6 @@ class View implements \RescueGroups\Request\RequestInterface, \RescueGroups\Requ
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'volunteerHours';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'view';
-    }
 
     /**
      * Apply request parameters to the outgoing request

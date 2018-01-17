@@ -8,34 +8,21 @@
  */
 namespace RescueGroups\Request\Objects\InventoryItemsConditions;
 
-class GetList implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface
+class GetList extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface
 {
     /**
-     * @return bool
+     * Query object type
      */
-    public function loginRequired()
-    {
-        return true;
-    }
+    const QUERY_OBJECT_TYPE = 'inventoryitemsConditions';
 
     /**
-     * Return the object type
-     *
-     * @return string
+     * Query object action
      */
-    public function getObjectType()
-    {
-        return 'inventoryitemsConditions';
-    }
+    const QUERY_OBJECT_ACTION = 'list';
 
     /**
-     * Return the object action
-     *
-     * @return mixed
+     * Query login is required
      */
-    public function getObjectAction()
-    {
-        return 'list';
-    }
-
+    const QUERY_LOGIN_REQUIRED = true;
 }

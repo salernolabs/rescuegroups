@@ -8,8 +8,25 @@
  */
 namespace RescueGroups\Request\Objects\Animals;
 
-class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\Request\ObjectActionInterface, \RescueGroups\Request\ParametersInterface
+class AddVideo extends \RescueGroups\Request\Objects\Base implements
+    \RescueGroups\Request\ObjectActionInterface,
+    \RescueGroups\Request\ParametersInterface
 {
+    /**
+     * Query object type
+     */
+    const QUERY_OBJECT_TYPE = 'animals';
+
+    /**
+     * Query object action
+     */
+    const QUERY_OBJECT_ACTION = 'addVideo';
+
+    /**
+     * Query login is required
+     */
+    const QUERY_LOGIN_REQUIRED = true;
+
     /**
      * ID
      *
@@ -91,34 +108,6 @@ class AddVideo implements \RescueGroups\Request\RequestInterface, \RescueGroups\
         return $this;
     }
 
-
-    /**
-     * @return bool
-     */
-    public function loginRequired()
-    {
-        return true;
-    }
-
-    /**
-     * Return the object type
-     *
-     * @return string
-     */
-    public function getObjectType()
-    {
-        return 'animals';
-    }
-
-    /**
-     * Return the object action
-     *
-     * @return mixed
-     */
-    public function getObjectAction()
-    {
-        return 'addVideo';
-    }
 
     /**
      * Apply request parameters to the outgoing request

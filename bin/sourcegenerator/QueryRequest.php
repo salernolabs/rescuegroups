@@ -5,6 +5,11 @@
 class QueryRequest
 {
     /**
+     * @var array
+     */
+    static private $parameterAddList;
+
+    /**
      * @var string
      */
     public $className;
@@ -131,7 +136,24 @@ class QueryRequest
      */
     public function isAdd()
     {
+        $nonObject = static::getParameterAddList();
+
+        if (!empty($nonObject[$this->typeName]))
+        {
+            return false;
+        }
+
         return ($this->requestName == 'add');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isParameterAdd()
+    {
+        $nonObject = static::getParameterAddList();
+
+        return !empty($nonObject[$this->typeName]) && $this->requestName == 'add';
     }
 
     /**
@@ -167,5 +189,34 @@ class QueryRequest
         }
 
         return $responseClassName;
+    }
+
+    /**
+     * Get parameter add list
+     *
+     * @return array
+     */
+    static private function getParameterAddList()
+    {
+        if (!empty(static::$parameterAddList)) return static::$parameterAddList;
+
+        static::$parameterAddList = [
+            'animalFiles' => 1,
+            'animalsAdoptions' => 1,
+            'callsLogentries' => 1,
+            'coloniesCaretakers' => 1,
+            'contactFiles' => 1,
+            'contacts' => 1,
+            'donations' => 1,
+            'inventoryfiles' => 1,
+            'inventoryitems' => 1,
+            'memorials' => 1,
+            'microchipRegistrations' => 1,
+            'users' => 1,
+            'webfiles' => 1,
+            'webimages' => 1
+        ];
+
+        return static::$parameterAddList;
     }
 }

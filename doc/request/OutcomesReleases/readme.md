@@ -4,45 +4,10 @@ This is the documentation for the OutcomesReleases queries against the RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesReleases)
 
-## OutcomesReleases\GetList
+## OutcomesReleases\
 
-Performs outcomesReleases.list query.
+Performs outcomesReleases. query.
 
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\GetList();
-
-
-## OutcomesReleases\View
-
-Performs outcomesReleases.view query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\View();
-
-
-## OutcomesReleases\Search
-
-Performs outcomesReleases.search query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Search();
-
-
-## OutcomesReleases\Add
-
-Performs outcomesReleases.add query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Add();
-
-
-## OutcomesReleases\Edit
-
-Performs outcomesReleases.edit query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Edit();
-
-
-## OutcomesReleases\Change
-
-Performs outcomesReleases.change query.
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Change();
+    $query = new \RescueGroups\Request\Objects\OutcomesReleases\();
 
 

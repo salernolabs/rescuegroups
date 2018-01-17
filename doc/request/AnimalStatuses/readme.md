@@ -4,17 +4,10 @@ This is the documentation for the AnimalStatuses queries against the RescueGroup
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalStatuses)
 
-## AnimalStatuses\GetList
+## AnimalStatuses\
 
-Performs animalStatuses.list query.
+Performs animalStatuses. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalStatuses\GetList();
-
-
-## AnimalStatuses\Search
-
-Performs animalStatuses.search query.
-
-    $query = new \RescueGroups\Request\Objects\AnimalStatuses\Search();
+    $query = new \RescueGroups\Request\Objects\AnimalStatuses\();
 
 

@@ -4,24 +4,10 @@ This is the documentation for the Outcomes queries against the RescueGroups.org 
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomes)
 
-## Outcomes\GetList
+## Outcomes\
 
-Performs outcomes.list query.
+Performs outcomes. query.
 
-    $query = new \RescueGroups\Request\Objects\Outcomes\GetList();
-
-
-## Outcomes\Search
-
-Performs outcomes.search query.
-
-    $query = new \RescueGroups\Request\Objects\Outcomes\Search();
-
-
-## Outcomes\View
-
-Performs outcomes.view query.
-
-    $query = new \RescueGroups\Request\Objects\Outcomes\View();
+    $query = new \RescueGroups\Request\Objects\Outcomes\();
 
 

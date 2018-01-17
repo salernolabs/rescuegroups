@@ -4,10 +4,10 @@ This is the documentation for the Roles queries against the RescueGroups.org HTT
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-roles)
 
-## Roles\GetList
+## Roles\
 
-Performs roles.list query.
+Performs roles. query.
 
-    $query = new \RescueGroups\Request\Objects\Roles\GetList();
+    $query = new \RescueGroups\Request\Objects\Roles\();
 
 

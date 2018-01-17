@@ -4,52 +4,10 @@ This is the documentation for the EventAnimalAttendance queries against the Resc
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-eventanimalattendance)
 
-## EventAnimalAttendance\PublicView
+## EventAnimalAttendance\
 
-Performs eventanimalattendance.publicView query.
+Performs eventanimalattendance. query.
 
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\PublicView();
-
-
-## EventAnimalAttendance\View
-
-Performs eventanimalattendance.view query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\View();
-
-
-## EventAnimalAttendance\PublicSearch
-
-Performs eventanimalattendance.publicSearch query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\PublicSearch();
-
-
-## EventAnimalAttendance\Search
-
-Performs eventanimalattendance.search query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Search();
-
-
-## EventAnimalAttendance\Add
-
-Performs eventanimalattendance.add query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Add();
-
-
-## EventAnimalAttendance\Edit
-
-Performs eventanimalattendance.edit query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Edit();
-
-
-## EventAnimalAttendance\Delete
-
-Performs eventanimalattendance.delete query.
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Delete();
+    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\();
 
 

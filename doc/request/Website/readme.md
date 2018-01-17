@@ -4,17 +4,10 @@ This is the documentation for the Website queries against the RescueGroups.org H
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-website)
 
-## Website\GetSettings
+## Website\
 
-Performs website.getSettings query.
+Performs website. query.
 
-    $query = new \RescueGroups\Request\Objects\Website\GetSettings();
-
-
-## Website\UpdateSettings
-
-Performs website.updateSettings query.
-
-    $query = new \RescueGroups\Request\Objects\Website\UpdateSettings();
+    $query = new \RescueGroups\Request\Objects\Website\();
 
 

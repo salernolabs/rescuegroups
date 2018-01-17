@@ -4,24 +4,10 @@ This is the documentation for the CallsLogEntries queries against the RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsLogentries)
 
-## CallsLogEntries\View
+## CallsLogEntries\
 
-Performs callsLogentries.view query.
+Performs callsLogentries. query.
 
-    $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
-
-
-## CallsLogEntries\Search
-
-Performs callsLogentries.search query.
-
-    $query = new \RescueGroups\Request\Objects\CallsLogEntries\Search();
-
-
-## CallsLogEntries\Add
-
-Performs callsLogentries.add query.
-
-    $query = new \RescueGroups\Request\Objects\CallsLogEntries\Add();
+    $query = new \RescueGroups\Request\Objects\CallsLogEntries\();
 
 

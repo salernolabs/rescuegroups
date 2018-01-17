@@ -4,10 +4,10 @@ This is the documentation for the AnimalsJournalCategories queries against the R
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsJournalCategories)
 
-## AnimalsJournalCategories\GetList
+## AnimalsJournalCategories\
 
-Performs animalsJournalCategories.list query.
+Performs animalsJournalCategories. query.
 
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalCategories\GetList();
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalCategories\();
 
 
