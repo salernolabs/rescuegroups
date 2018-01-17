@@ -5,12 +5,6 @@ This is the documentation for the Orgs queries against the [RescueGroups.org](ht
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-orgs)
 
 ## Define
-
-
-
-
-
-
 Performs orgs.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs orgs.define query. This gives information about the API interface to yo
     $query = new \RescueGroups\Request\Objects\Orgs\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs orgs.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Orgs\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## PublicView
-
-
-
-
-
-
-
 Performs orgs.publicView query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Orgs\PublicView();
 
+    $query->setorgID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## PublicSearch
-
-Performs orgs.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Org](../../src/Objects/Org.php) objects.
+Performs orgs.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Org](../../../src/Objects/Org.php) objects.
 
 ### Example Search Query
 
@@ -70,10 +47,3 @@ Performs orgs.publicSearch search query. This query returns an array of [\Rescue
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-

@@ -5,12 +5,6 @@ This is the documentation for the Locations queries against the [RescueGroups.or
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-locations)
 
 ## Define
-
-
-
-
-
-
 Performs locations.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs locations.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Locations\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs locations.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Locations\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs locations.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Locations\View();
 
+    $query->setlocationID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs locations.search search query. This query returns an array of [\RescueGroups\Objects\Location](../../src/Objects/Location.php) objects.
+Performs locations.search search query. This query returns an array of [\RescueGroups\Objects\Location](../../../src/Objects/Location.php) objects.
 
 ### Example Search Query
 
@@ -70,19 +47,8 @@ Performs locations.search search query. This query returns an array of [\RescueG
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs locations.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Location](../../src/Objects/Location.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs locations.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Location](../../../src/Objects/Location.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -101,15 +67,8 @@ Performs locations.add add query to create an instance of an object. Uses classe
     $query->addLocation($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs locations.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Location](../../src/Objects/Location.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs locations.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Location](../../../src/Objects/Location.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -130,25 +89,14 @@ Performs locations.edit edit query to edit an object. Uses classes of type [\Res
     $query->updateLocation($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs locations.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Locations\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setlocationID("ID");
 
+    $result = $api->executeRequest($query);
 

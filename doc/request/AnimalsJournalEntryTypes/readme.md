@@ -5,12 +5,6 @@ This is the documentation for the AnimalsJournalEntryTypes queries against the [
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsJournalEntrytypes)
 
 ## Define
-
-
-
-
-
-
 Performs animalsJournalEntrytypes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,26 +12,15 @@ Performs animalsJournalEntrytypes.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs animalsJournalEntrytypes.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs animalsJournalEntrytypes.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntryType](../../src/Objects/AnimalsJournalEntryType.php) objects.
+Performs animalsJournalEntrytypes.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntryType](../../../src/Objects/AnimalsJournalEntryType.php) objects.
 
 ### Example Search Query
 
@@ -53,36 +36,19 @@ Performs animalsJournalEntrytypes.search search query. This query returns an arr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs animalsJournalEntrytypes.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\View();
 
+    $query->setjournalEntrytypeID("Entrytype ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Add
-
-
-
-
-Performs animalsJournalEntrytypes.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\AnimalsJournalEntryType](../../src/Objects/AnimalsJournalEntryType.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs animalsJournalEntrytypes.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\AnimalsJournalEntryType](../../../src/Objects/AnimalsJournalEntryType.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -94,15 +60,8 @@ Performs animalsJournalEntrytypes.add add query to create an instance of an obje
     $query->addAnimalsJournalEntryType($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs animalsJournalEntrytypes.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\AnimalsJournalEntryType](../../src/Objects/AnimalsJournalEntryType.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs animalsJournalEntrytypes.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\AnimalsJournalEntryType](../../../src/Objects/AnimalsJournalEntryType.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -116,8 +75,3 @@ Performs animalsJournalEntrytypes.edit edit query to edit an object. Uses classe
     $query->updateAnimalsJournalEntryType($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-

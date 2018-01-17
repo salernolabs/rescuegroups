@@ -5,12 +5,6 @@ This is the documentation for the WebPages queries against the [RescueGroups.org
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webpages)
 
 ## Define
-
-
-
-
-
-
 Performs webpages.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,60 +12,37 @@ Performs webpages.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\WebPages\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs webpages.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\WebPages\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## PublicView
-
-
-
-
-
-
-
 Performs webpages.publicView query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\WebPages\PublicView();
 
+    $query->setwebpageID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## View
-
-
-
-
-
-
-
 Performs webpages.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\WebPages\View();
 
+    $query->setwebpageID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## PublicSearch
-
-Performs webpages.publicSearch search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../src/Objects/WebPage.php) objects.
+Performs webpages.publicSearch search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) objects.
 
 ### Example Search Query
 
@@ -87,16 +58,8 @@ Performs webpages.publicSearch search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Search
-
-Performs webpages.search search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../src/Objects/WebPage.php) objects.
+Performs webpages.search search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) objects.
 
 ### Example Search Query
 
@@ -112,19 +75,8 @@ Performs webpages.search search query. This query returns an array of [\RescueGr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs webpages.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\WebPage](../../src/Objects/WebPage.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs webpages.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -143,15 +95,8 @@ Performs webpages.add add query to create an instance of an object. Uses classes
     $query->addWebPage($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs webpages.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\WebPage](../../src/Objects/WebPage.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs webpages.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -172,8 +117,3 @@ Performs webpages.edit edit query to edit an object. Uses classes of type [\Resc
     $query->updateWebPage($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-

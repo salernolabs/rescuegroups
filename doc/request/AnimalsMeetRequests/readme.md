@@ -5,12 +5,6 @@ This is the documentation for the AnimalsMeetRequests queries against the [Rescu
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsMeetrequests)
 
 ## Define
-
-
-
-
-
-
 Performs animalsMeetrequests.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,11 +12,8 @@ Performs animalsMeetrequests.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## Search
-
-Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../src/Objects/AnimalsMeetRequest.php) objects.
+Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) objects.
 
 ### Example Search Query
 
@@ -38,36 +29,19 @@ Performs animalsMeetrequests.search search query. This query returns an array of
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs animalsMeetrequests.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\View();
 
+    $query->setmeetrequestID("Meet Request ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Add
-
-
-
-
-Performs animalsMeetrequests.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\AnimalsMeetRequest](../../src/Objects/AnimalsMeetRequest.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs animalsMeetrequests.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -82,15 +56,8 @@ Performs animalsMeetrequests.add add query to create an instance of an object. U
     $query->addAnimalsMeetRequest($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs animalsMeetrequests.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\AnimalsMeetRequest](../../src/Objects/AnimalsMeetRequest.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs animalsMeetrequests.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -107,25 +74,14 @@ Performs animalsMeetrequests.edit edit query to edit an object. Uses classes of 
     $query->updateAnimalsMeetRequest($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs animalsMeetrequests.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setmeetrequestID("Meet Request ID");
 
+    $result = $api->executeRequest($query);
 

@@ -5,12 +5,6 @@ This is the documentation for the Events queries against the [RescueGroups.org](
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-events)
 
 ## Define
-
-
-
-
-
-
 Performs events.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,60 +12,37 @@ Performs events.define query. This gives information about the API interface to 
     $query = new \RescueGroups\Request\Objects\Events\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs events.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Events\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## PublicView
-
-
-
-
-
-
-
 Performs events.publicView query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Events\PublicView();
 
+    $query->seteventID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## View
-
-
-
-
-
-
-
 Performs events.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Events\View();
 
+    $query->seteventID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## PublicSearch
-
-Performs events.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Event](../../src/Objects/Event.php) objects.
+Performs events.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) objects.
 
 ### Example Search Query
 
@@ -87,16 +58,8 @@ Performs events.publicSearch search query. This query returns an array of [\Resc
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Search
-
-Performs events.search search query. This query returns an array of [\RescueGroups\Objects\Event](../../src/Objects/Event.php) objects.
+Performs events.search search query. This query returns an array of [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) objects.
 
 ### Example Search Query
 
@@ -112,19 +75,8 @@ Performs events.search search query. This query returns an array of [\RescueGrou
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs events.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Event](../../src/Objects/Event.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs events.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -141,15 +93,8 @@ Performs events.add add query to create an instance of an object. Uses classes o
     $query->addEvent($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs events.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Event](../../src/Objects/Event.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs events.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -168,59 +113,36 @@ Performs events.edit edit query to edit an object. Uses classes of type [\Rescue
     $query->updateEvent($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs events.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Events\Delete();
 
+    $query->seteventID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## GetSettings
-
-
-
-
-
-
-
 Performs events.getSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Events\GetSettings();
 
+
     $result = $api->executeRequest($query);
 
-
 ## UpdateSettings
-
-
-
-
-
-
-
 Performs events.updateSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
 
-    $result = $api->executeRequest($query);
+    $query->setenableEvents("Enable the Events feature");
+    $query->setsetEventsMapWebsite("Map website to use with the Events feature");
 
+    $result = $api->executeRequest($query);
 

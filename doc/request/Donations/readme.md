@@ -5,12 +5,6 @@ This is the documentation for the Donations queries against the [RescueGroups.or
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-donations)
 
 ## Define
-
-
-
-
-
-
 Performs donations.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs donations.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Donations\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs donations.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Donations\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs donations.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Donations\View();
 
+    $query->setdonationID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs donations.search search query. This query returns an array of [\RescueGroups\Objects\Donation](../../src/Objects/Donation.php) objects.
+Performs donations.search search query. This query returns an array of [\RescueGroups\Objects\Donation](../../../src/Objects/Donation.php) objects.
 
 ### Example Search Query
 
@@ -70,20 +47,8 @@ Performs donations.search search query. This query returns an array of [\RescueG
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs donations.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Donation](../../src/Objects/Donation.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs donations.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Donation](../../../src/Objects/Donation.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -101,14 +66,8 @@ Performs donations.add add query to create an instance of an object. Uses specia
     $query->addDonation($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## Edit
-
-
-
-Performs donations.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Donation](../../src/Objects/Donation.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs donations.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Donation](../../../src/Objects/Donation.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -127,25 +86,14 @@ Performs donations.edit edit query to edit an object. Uses classes of type [\Res
     $query->updateDonation($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs donations.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Donations\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setdonationID("ID");
 
+    $result = $api->executeRequest($query);
 

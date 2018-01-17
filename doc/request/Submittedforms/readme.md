@@ -5,12 +5,6 @@ This is the documentation for the SubmittedForms queries against the [RescueGrou
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-submittedforms)
 
 ## Define
-
-
-
-
-
-
 Performs submittedforms.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,77 +12,66 @@ Performs submittedforms.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\SubmittedForms\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs submittedforms.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## ListRecent
-
-
-
-
-
-
-
 Performs submittedforms.listRecent query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\ListRecent();
 
+
     $result = $api->executeRequest($query);
 
-
 ## ListPending
-
-
-
-
-
-
-
 Performs submittedforms.listPending query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\ListPending();
 
+
     $result = $api->executeRequest($query);
 
-
 ## PublicCommonSubmit
-
-
-
-
-
-
-
 Performs submittedforms.publicCommonSubmit query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
 
+    $query->setsubmittedformAnimalID("Animal");
+    $query->setsubmitterSalutation("Salutation");
+    $query->setsubmitterFirstname("First name");
+    $query->setsubmitterLastname("Last name");
+    $query->setsubmitterAddress("Street address");
+    $query->setsubmitterCity("City");
+    $query->setsubmitterState("State/Province");
+    $query->setsubmitterPostalcode("Postal Code");
+    $query->setsubmitterPlus4("Zip code plus 4");
+    $query->setsubmitterCounty("County");
+    $query->setsubmitterCountry("Country");
+    $query->setsubmitterPhoneHome("Home phone number");
+    $query->setsubmitterPhoneWork("Work phone number");
+    $query->setsubmitterPhoneWorkExt("Work phone extension");
+    $query->setsubmitterPhoneCell("Cell phone number");
+    $query->setsubmitterFax("Fax number");
+    $query->setsubmitterEmail("Email address");
+    $query->setsubmitterEmailAlt("Alternate email address");
+    $query->setsubmitterEmailPager("Pager email address");
+    $query->setsubmitterReferredBy("Referred by");
+    $query->setsubmittedformAnswers("Answers");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs submittedforms.search search query. This query returns an array of [\RescueGroups\Objects\SubmittedForm](../../src/Objects/SubmittedForm.php) objects.
+Performs submittedforms.search search query. This query returns an array of [\RescueGroups\Objects\SubmittedForm](../../../src/Objects/SubmittedForm.php) objects.
 
 ### Example Search Query
 
@@ -104,35 +87,18 @@ Performs submittedforms.search search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs submittedforms.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\View();
 
+
     $result = $api->executeRequest($query);
 
-
 ## Edit
-
-
-
-Performs submittedforms.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\SubmittedForm](../../src/Objects/SubmittedForm.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs submittedforms.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\SubmittedForm](../../../src/Objects/SubmittedForm.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -146,8 +112,3 @@ Performs submittedforms.edit edit query to edit an object. Uses classes of type 
     $query->updateSubmittedForm($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-

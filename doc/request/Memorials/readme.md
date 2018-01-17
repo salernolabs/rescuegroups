@@ -5,12 +5,6 @@ This is the documentation for the Memorials queries against the [RescueGroups.or
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-memorials)
 
 ## Define
-
-
-
-
-
-
 Performs memorials.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs memorials.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Memorials\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs memorials.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Memorials\View();
 
+    $query->setmemorialID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs memorials.search search query. This query returns an array of [\RescueGroups\Objects\Memorial](../../src/Objects/Memorial.php) objects.
+Performs memorials.search search query. This query returns an array of [\RescueGroups\Objects\Memorial](../../../src/Objects/Memorial.php) objects.
 
 ### Example Search Query
 
@@ -55,20 +40,8 @@ Performs memorials.search search query. This query returns an array of [\RescueG
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs memorials.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Memorial](../../src/Objects/Memorial.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs memorials.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Memorial](../../../src/Objects/Memorial.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -84,14 +57,8 @@ Performs memorials.add add query to create an instance of an object. Uses specia
     $query->addMemorial($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## Edit
-
-
-
-Performs memorials.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Memorial](../../src/Objects/Memorial.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs memorials.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Memorial](../../../src/Objects/Memorial.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -107,59 +74,37 @@ Performs memorials.edit edit query to edit an object. Uses classes of type [\Res
     $query->updateMemorial($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs memorials.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Memorials\Delete();
 
+    $query->setmemorialID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## GetSettings
-
-
-
-
-
-
-
 Performs memorials.getSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Memorials\GetSettings();
 
+
     $result = $api->executeRequest($query);
 
-
 ## UpdateSettings
-
-
-
-
-
-
-
 Performs memorials.updateSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Memorials\UpdateSettings();
 
-    $result = $api->executeRequest($query);
+    $query->setenableMemorials("Enable the Memorials feature");
+    $query->setsetMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
+    $query->setshowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
 
+    $result = $api->executeRequest($query);
 

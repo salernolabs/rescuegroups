@@ -5,12 +5,6 @@ This is the documentation for the Users queries against the [RescueGroups.org](h
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-users)
 
 ## Define
-
-
-
-
-
-
 Performs users.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs users.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Users\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs users.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Users\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs users.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Users\View();
 
+    $query->setuserID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs users.search search query. This query returns an array of [\RescueGroups\Objects\User](../../src/Objects/User.php) objects.
+Performs users.search search query. This query returns an array of [\RescueGroups\Objects\User](../../../src/Objects/User.php) objects.
 
 ### Example Search Query
 
@@ -70,20 +47,8 @@ Performs users.search search query. This query returns an array of [\RescueGroup
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs users.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\User](../../src/Objects/User.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs users.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\User](../../../src/Objects/User.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -115,14 +80,8 @@ Performs users.add add query to create an instance of an object. Uses special cl
     $query->addUser($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## Edit
-
-
-
-Performs users.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\User](../../src/Objects/User.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs users.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\User](../../../src/Objects/User.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -155,8 +114,3 @@ Performs users.edit edit query to edit an object. Uses classes of type [\RescueG
     $query->updateUser($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-

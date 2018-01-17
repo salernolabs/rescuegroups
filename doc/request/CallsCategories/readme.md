@@ -5,12 +5,6 @@ This is the documentation for the CallsCategories queries against the [RescueGro
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsCategories)
 
 ## Define
-
-
-
-
-
-
 Performs callsCategories.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs callsCategories.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs callsCategories.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs callsCategories.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\View();
 
+    $query->setcategoryID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs callsCategories.search search query. This query returns an array of [\RescueGroups\Objects\CallsCategory](../../src/Objects/CallsCategory.php) objects.
+Performs callsCategories.search search query. This query returns an array of [\RescueGroups\Objects\CallsCategory](../../../src/Objects/CallsCategory.php) objects.
 
 ### Example Search Query
 
@@ -70,19 +47,8 @@ Performs callsCategories.search search query. This query returns an array of [\R
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs callsCategories.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\CallsCategory](../../src/Objects/CallsCategory.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs callsCategories.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\CallsCategory](../../../src/Objects/CallsCategory.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -96,15 +62,8 @@ Performs callsCategories.add add query to create an instance of an object. Uses 
     $query->addCallsCategory($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs callsCategories.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\CallsCategory](../../src/Objects/CallsCategory.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs callsCategories.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\CallsCategory](../../../src/Objects/CallsCategory.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -120,25 +79,14 @@ Performs callsCategories.edit edit query to edit an object. Uses classes of type
     $query->updateCallsCategory($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs callsCategories.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setcategoryID("ID");
 
+    $result = $api->executeRequest($query);
 

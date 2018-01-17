@@ -5,12 +5,6 @@ This is the documentation for the AnimalPatterns queries against the [RescueGrou
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalPatterns)
 
 ## Define
-
-
-
-
-
-
 Performs animalPatterns.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,41 +12,22 @@ Performs animalPatterns.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\AnimalPatterns\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## PublicList
-
-
 Performs animalPatterns.publicList list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalPatterns\PublicList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## GetList
-
-
 Performs animalPatterns.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalPatterns\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs animalPatterns.search search query. This query returns an array of [\RescueGroups\Objects\AnimalPattern](../../src/Objects/AnimalPattern.php) objects.
+Performs animalPatterns.search search query. This query returns an array of [\RescueGroups\Objects\AnimalPattern](../../../src/Objects/AnimalPattern.php) objects.
 
 ### Example Search Query
 
@@ -68,16 +43,8 @@ Performs animalPatterns.search search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## PublicSearch
-
-Performs animalPatterns.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalPattern](../../src/Objects/AnimalPattern.php) objects.
+Performs animalPatterns.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalPattern](../../../src/Objects/AnimalPattern.php) objects.
 
 ### Example Search Query
 
@@ -93,10 +60,3 @@ Performs animalPatterns.publicSearch search query. This query returns an array o
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-

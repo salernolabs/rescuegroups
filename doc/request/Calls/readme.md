@@ -5,12 +5,6 @@ This is the documentation for the Calls queries against the [RescueGroups.org](h
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-calls)
 
 ## Define
-
-
-
-
-
-
 Performs calls.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs calls.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Calls\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs calls.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Calls\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs calls.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Calls\View();
 
+    $query->setcallID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs calls.search search query. This query returns an array of [\RescueGroups\Objects\Call](../../src/Objects/Call.php) objects.
+Performs calls.search search query. This query returns an array of [\RescueGroups\Objects\Call](../../../src/Objects/Call.php) objects.
 
 ### Example Search Query
 
@@ -70,19 +47,8 @@ Performs calls.search search query. This query returns an array of [\RescueGroup
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs calls.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Call](../../src/Objects/Call.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs calls.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Call](../../../src/Objects/Call.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -99,15 +65,8 @@ Performs calls.add add query to create an instance of an object. Uses classes of
     $query->addCall($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs calls.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Call](../../src/Objects/Call.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs calls.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Call](../../../src/Objects/Call.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -126,8 +85,3 @@ Performs calls.edit edit query to edit an object. Uses classes of type [\RescueG
     $query->updateCall($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-

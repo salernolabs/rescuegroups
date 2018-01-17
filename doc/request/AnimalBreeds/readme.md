@@ -5,12 +5,6 @@ This is the documentation for the AnimalBreeds queries against the [RescueGroups
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalBreeds)
 
 ## Define
-
-
-
-
-
-
 Performs animalBreeds.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,41 +12,22 @@ Performs animalBreeds.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\AnimalBreeds\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## PublicList
-
-
 Performs animalBreeds.publicList list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalBreeds\PublicList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## GetList
-
-
 Performs animalBreeds.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalBreeds\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs animalBreeds.search search query. This query returns an array of [\RescueGroups\Objects\AnimalBreed](../../src/Objects/AnimalBreed.php) objects.
+Performs animalBreeds.search search query. This query returns an array of [\RescueGroups\Objects\AnimalBreed](../../../src/Objects/AnimalBreed.php) objects.
 
 ### Example Search Query
 
@@ -68,16 +43,8 @@ Performs animalBreeds.search search query. This query returns an array of [\Resc
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## PublicSearch
-
-Performs animalBreeds.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalBreed](../../src/Objects/AnimalBreed.php) objects.
+Performs animalBreeds.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalBreed](../../../src/Objects/AnimalBreed.php) objects.
 
 ### Example Search Query
 
@@ -93,10 +60,3 @@ Performs animalBreeds.publicSearch search query. This query returns an array of 
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-

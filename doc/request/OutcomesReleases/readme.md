@@ -5,12 +5,6 @@ This is the documentation for the OutcomesReleases queries against the [RescueGr
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesReleases)
 
 ## Define
-
-
-
-
-
-
 Performs outcomesReleases.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs outcomesReleases.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs outcomesReleases.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs outcomesReleases.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\View();
 
+    $query->setoutcomesReleaseID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs outcomesReleases.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesReleas](../../src/Objects/OutcomesReleas.php) objects.
+Performs outcomesReleases.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesReleas](../../../src/Objects/OutcomesReleas.php) objects.
 
 ### Example Search Query
 
@@ -70,19 +47,8 @@ Performs outcomesReleases.search search query. This query returns an array of [\
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs outcomesReleases.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\OutcomesReleas](../../src/Objects/OutcomesReleas.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs outcomesReleases.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\OutcomesReleas](../../../src/Objects/OutcomesReleas.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -102,15 +68,8 @@ Performs outcomesReleases.add add query to create an instance of an object. Uses
     $query->addOutcomesReleas($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs outcomesReleases.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\OutcomesReleas](../../src/Objects/OutcomesReleas.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs outcomesReleases.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\OutcomesReleas](../../../src/Objects/OutcomesReleas.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -131,25 +90,23 @@ Performs outcomesReleases.edit edit query to edit an object. Uses classes of typ
     $query->updateOutcomesReleas($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs outcomesReleases.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setoutcomeID("Outcome");
+    $query->setoutcomesReleaseAnimalConditionID("Condition");
+    $query->setoutcomesReleaseDate("Date");
+    $query->setoutcomesReleaseNotes("Notes");
+    $query->setoutcomesReleaseLocation("Location");
+    $query->setoutcomesReleaseAddress("Street address");
+    $query->setoutcomesReleaseCity("City");
+    $query->setoutcomesReleaseState("State/Province");
+    $query->setoutcomesReleasePostalcode("Postal Code");
+    $query->setoutcomesReleaseByID("Released By");
 
+    $result = $api->executeRequest($query);
 

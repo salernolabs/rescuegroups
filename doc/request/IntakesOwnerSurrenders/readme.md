@@ -5,12 +5,6 @@ This is the documentation for the IntakesOwnerSurrenders queries against the [Re
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnersurrenders)
 
 ## Define
-
-
-
-
-
-
 Performs intakesOwnersurrenders.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs intakesOwnersurrenders.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs intakesOwnersurrenders.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
 
+    $query->setintakesOwnersurrenderID("Owner Surrender");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs intakesOwnersurrenders.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerSurrender](../../src/Objects/IntakesOwnerSurrender.php) objects.
+Performs intakesOwnersurrenders.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerSurrender](../../../src/Objects/IntakesOwnerSurrender.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs intakesOwnersurrenders.search search query. This query returns an array
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs intakesOwnersurrenders.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerSurrender](../../src/Objects/IntakesOwnerSurrender.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs intakesOwnersurrenders.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerSurrender](../../../src/Objects/IntakesOwnerSurrender.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -83,15 +57,8 @@ Performs intakesOwnersurrenders.add add query to create an instance of an object
     $query->addIntakesOwnerSurrender($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs intakesOwnersurrenders.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerSurrender](../../src/Objects/IntakesOwnerSurrender.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs intakesOwnersurrenders.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerSurrender](../../../src/Objects/IntakesOwnerSurrender.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -109,25 +76,20 @@ Performs intakesOwnersurrenders.edit edit query to edit an object. Uses classes 
     $query->updateIntakesOwnerSurrender($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs intakesOwnersurrenders.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setintakeID("Intake");
+    $query->setintakesOwnersurrenderAnimalID("Animal");
+    $query->setintakesOwnersurrenderAnimalConditionID("Condition");
+    $query->setintakesOwnersurrenderDate("Date");
+    $query->setintakesOwnersurrenderNotes("Notes");
+    $query->setintakesOwnersurrenderOwnerID("Surrendered By");
+    $query->setintakesOwnersurrenderReasonID("Surrender Reason");
 
+    $result = $api->executeRequest($query);
 

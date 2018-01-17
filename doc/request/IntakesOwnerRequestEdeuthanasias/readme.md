@@ -5,12 +5,6 @@ This is the documentation for the IntakesOwnerRequestedEuthanasias queries again
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnerrequestedeuthanasias)
 
 ## Define
-
-
-
-
-
-
 Performs intakesOwnerrequestedeuthanasias.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs intakesOwnerrequestedeuthanasias.define query. This gives information a
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs intakesOwnerrequestedeuthanasias.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
+    $query->setintakesOwnerrequestedeuthanasiaID("Owner requestedeuthanasia");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs intakesOwnerrequestedeuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../src/Objects/IntakesOwnerRequestedEuthanasia.php) objects.
+Performs intakesOwnerrequestedeuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../../src/Objects/IntakesOwnerRequestedEuthanasia.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs intakesOwnerrequestedeuthanasias.search search query. This query return
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs intakesOwnerrequestedeuthanasias.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../src/Objects/IntakesOwnerRequestedEuthanasia.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs intakesOwnerrequestedeuthanasias.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../../src/Objects/IntakesOwnerRequestedEuthanasia.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -83,15 +57,8 @@ Performs intakesOwnerrequestedeuthanasias.add add query to create an instance of
     $query->addIntakesOwnerRequestedEuthanasia($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs intakesOwnerrequestedeuthanasias.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../src/Objects/IntakesOwnerRequestedEuthanasia.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs intakesOwnerrequestedeuthanasias.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../../src/Objects/IntakesOwnerRequestedEuthanasia.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -109,25 +76,20 @@ Performs intakesOwnerrequestedeuthanasias.edit edit query to edit an object. Use
     $query->updateIntakesOwnerRequestedEuthanasia($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs intakesOwnerrequestedeuthanasias.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setintakeID("Intake");
+    $query->setintakesOwnerrequestedeuthanasiaAnimalID("Animal");
+    $query->setintakesOwnerrequestedeuthanasiaAnimalConditionID("Condition");
+    $query->setintakesOwnerrequestedeuthanasiaDate("Date");
+    $query->setintakesOwnerrequestedeuthanasiaNotes("Notes");
+    $query->setintakesOwnerrequestedeuthanasiaOwnerID("Owner");
+    $query->setintakesOwnerrequestedeuthanasiaReasonID("Euthanasia Reason");
 
+    $result = $api->executeRequest($query);
 

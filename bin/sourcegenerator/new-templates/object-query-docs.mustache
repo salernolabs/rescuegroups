@@ -6,9 +6,8 @@ This is the documentation for the {{className}} queries against the [RescueGroup
 
 {{# requests}}
 ## {{requestClassName}}
-
     {{# isSearch}}
-Performs {{typeName}}.{{objectAction}} search query. This query returns an array of [\RescueGroups\Objects\{{responseClassName}}](../../src/Objects/{{responseClassName}}.php) objects.
+Performs {{typeName}}.{{objectAction}} search query. This query returns an array of [\RescueGroups\Objects\{{responseClassName}}](../../../src/Objects/{{responseClassName}}.php) objects.
 
 ### Example Search Query
 
@@ -25,7 +24,6 @@ Performs {{typeName}}.{{objectAction}} search query. This query returns an array
 
     $result = $api->executeRequest($query);
     {{/ isSearch}}
-
     {{# isList}}
 Performs {{typeName}}.{{objectAction}} list query, typically suitable for filling HTML select fields.
 
@@ -34,9 +32,8 @@ Performs {{typeName}}.{{objectAction}} list query, typically suitable for fillin
     $query = new \RescueGroups\Request\Objects\{{className}}\{{requestClassName}}();
     $result = $api->executeRequest($query);
     {{/ isList}}
-
     {{# isEdit}}
-Performs {{typeName}}.{{objectAction}} edit query to edit an object. Uses classes of type [\RescueGroups\Objects\{{responseClassName}}](../../src/Objects/{{responseClassName}}.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs {{typeName}}.{{objectAction}} edit query to edit an object. Uses classes of type [\RescueGroups\Objects\{{responseClassName}}](../../../src/Objects/{{responseClassName}}.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -51,9 +48,8 @@ Performs {{typeName}}.{{objectAction}} edit query to edit an object. Uses classe
 
     $result = $api->executeRequest($query);
     {{/ isEdit}}
-
     {{# isAdd}}
-Performs {{typeName}}.{{objectAction}} add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\{{responseClassName}}](../../src/Objects/{{responseClassName}}.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs {{typeName}}.{{objectAction}} add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\{{responseClassName}}](../../../src/Objects/{{responseClassName}}.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -70,9 +66,8 @@ Performs {{typeName}}.{{objectAction}} add query to create an instance of an obj
 
     $result = $api->executeRequest($query);
     {{/ isAdd}}
-
     {{# isParameterAdd}}
-Performs {{typeName}}.{{objectAction}} add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\{{responseClassName}}](../../src/Objects/{{responseClassName}}.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs {{typeName}}.{{objectAction}} add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\{{responseClassName}}](../../../src/Objects/{{responseClassName}}.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -89,7 +84,6 @@ Performs {{typeName}}.{{objectAction}} add query to create an instance of an obj
 
     $result = $api->executeRequest($query);
     {{/ isParameterAdd}}
-
     {{# isDefine}}
 Performs {{typeName}}.{{objectAction}} query. This gives information about the API interface to your application. These are also used to build this SDK.
 
@@ -99,7 +93,6 @@ Performs {{typeName}}.{{objectAction}} query. This gives information about the A
 
     $result = $api->executeRequest($query);
     {{/ isDefine}}
-
     {{# isRegular}}
 Performs {{typeName}}.{{objectAction}} query.
 
@@ -107,8 +100,11 @@ Performs {{typeName}}.{{objectAction}} query.
 
     $query = new \RescueGroups\Request\Objects\{{className}}\{{requestClassName}}();
 
+    {{# fields}}
+    $query->set{{ sdkFieldName }}("{{friendlyName}}");
+    {{/ fields}}
+
     $result = $api->executeRequest($query);
 
     {{/ isRegular}}
-
 {{/ requests}}

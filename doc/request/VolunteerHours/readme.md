@@ -5,12 +5,6 @@ This is the documentation for the VolunteerHours queries against the [RescueGrou
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-volunteerHours)
 
 ## Define
-
-
-
-
-
-
 Performs volunteerHours.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,11 +12,8 @@ Performs volunteerHours.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\VolunteerHours\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## Search
-
-Performs volunteerHours.search search query. This query returns an array of [\RescueGroups\Objects\VolunteerHour](../../src/Objects/VolunteerHour.php) objects.
+Performs volunteerHours.search search query. This query returns an array of [\RescueGroups\Objects\VolunteerHour](../../../src/Objects/VolunteerHour.php) objects.
 
 ### Example Search Query
 
@@ -38,36 +29,19 @@ Performs volunteerHours.search search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs volunteerHours.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\VolunteerHours\View();
 
+    $query->setid("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Add
-
-
-
-
-Performs volunteerHours.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\VolunteerHour](../../src/Objects/VolunteerHour.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs volunteerHours.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\VolunteerHour](../../../src/Objects/VolunteerHour.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -81,15 +55,8 @@ Performs volunteerHours.add add query to create an instance of an object. Uses c
     $query->addVolunteerHour($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs volunteerHours.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\VolunteerHour](../../src/Objects/VolunteerHour.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs volunteerHours.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\VolunteerHour](../../../src/Objects/VolunteerHour.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -105,25 +72,14 @@ Performs volunteerHours.edit edit query to edit an object. Uses classes of type 
     $query->updateVolunteerHour($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs volunteerHours.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\VolunteerHours\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setid("ID");
 
+    $result = $api->executeRequest($query);
 

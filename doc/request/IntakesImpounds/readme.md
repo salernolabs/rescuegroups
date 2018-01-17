@@ -5,12 +5,6 @@ This is the documentation for the IntakesImpounds queries against the [RescueGro
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesImpounds)
 
 ## Define
-
-
-
-
-
-
 Performs intakesImpounds.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs intakesImpounds.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs intakesImpounds.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\View();
 
+    $query->setintakesImpoundID("Impound");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs intakesImpounds.search search query. This query returns an array of [\RescueGroups\Objects\IntakesImpound](../../src/Objects/IntakesImpound.php) objects.
+Performs intakesImpounds.search search query. This query returns an array of [\RescueGroups\Objects\IntakesImpound](../../../src/Objects/IntakesImpound.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs intakesImpounds.search search query. This query returns an array of [\R
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs intakesImpounds.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesImpound](../../src/Objects/IntakesImpound.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs intakesImpounds.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesImpound](../../../src/Objects/IntakesImpound.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -89,15 +63,8 @@ Performs intakesImpounds.add add query to create an instance of an object. Uses 
     $query->addIntakesImpound($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs intakesImpounds.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesImpound](../../src/Objects/IntakesImpound.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs intakesImpounds.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesImpound](../../../src/Objects/IntakesImpound.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -121,25 +88,26 @@ Performs intakesImpounds.edit edit query to edit an object. Uses classes of type
     $query->updateIntakesImpound($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs intakesImpounds.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setintakeID("Intake");
+    $query->setintakesImpoundAnimalID("Animal");
+    $query->setintakesImpoundAnimalConditionID("Condition");
+    $query->setintakesImpoundDate("Date");
+    $query->setintakesImpoundNotes("Notes");
+    $query->setintakesImpoundLocation("Impound Location");
+    $query->setintakesImpoundAddress("Impound Street address");
+    $query->setintakesImpoundCity("Impound City");
+    $query->setintakesImpoundState("Impound State/Province");
+    $query->setintakesImpoundPostalcode("Impound Postal Code");
+    $query->setintakesImpoundFromID("Impound From");
+    $query->setintakesImpoundStaffID("Impound Performed By");
+    $query->setintakesImpoundReasonID("Reason");
 
+    $result = $api->executeRequest($query);
 

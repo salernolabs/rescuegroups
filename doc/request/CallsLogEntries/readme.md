@@ -5,12 +5,6 @@ This is the documentation for the CallsLogEntries queries against the [RescueGro
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsLogentries)
 
 ## Define
-
-
-
-
-
-
 Performs callsLogentries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs callsLogentries.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs callsLogentries.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
 
+    $query->setlogentryID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs callsLogentries.search search query. This query returns an array of [\RescueGroups\Objects\CallsLogEntry](../../src/Objects/CallsLogEntry.php) objects.
+Performs callsLogentries.search search query. This query returns an array of [\RescueGroups\Objects\CallsLogEntry](../../../src/Objects/CallsLogEntry.php) objects.
 
 ### Example Search Query
 
@@ -55,20 +40,8 @@ Performs callsLogentries.search search query. This query returns an array of [\R
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs callsLogentries.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\CallsLogEntry](../../src/Objects/CallsLogEntry.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs callsLogentries.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\CallsLogEntry](../../../src/Objects/CallsLogEntry.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -83,6 +56,3 @@ Performs callsLogentries.add add query to create an instance of an object. Uses 
     $query->addCallsLogEntry($addObject);
 
     $result = $api->executeRequest($query);
-
-
-

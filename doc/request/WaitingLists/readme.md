@@ -5,12 +5,6 @@ This is the documentation for the WaitingLists queries against the [RescueGroups
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-waitinglists)
 
 ## Define
-
-
-
-
-
-
 Performs waitinglists.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs waitinglists.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs waitinglists.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\View();
 
+    $query->setwaitinglistID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs waitinglists.search search query. This query returns an array of [\RescueGroups\Objects\WaitingList](../../src/Objects/WaitingList.php) objects.
+Performs waitinglists.search search query. This query returns an array of [\RescueGroups\Objects\WaitingList](../../../src/Objects/WaitingList.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs waitinglists.search search query. This query returns an array of [\Resc
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs waitinglists.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\WaitingList](../../src/Objects/WaitingList.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs waitinglists.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\WaitingList](../../../src/Objects/WaitingList.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -81,15 +55,8 @@ Performs waitinglists.add add query to create an instance of an object. Uses cla
     $query->addWaitingList($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs waitinglists.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\WaitingList](../../src/Objects/WaitingList.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs waitinglists.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\WaitingList](../../../src/Objects/WaitingList.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -104,25 +71,14 @@ Performs waitinglists.edit edit query to edit an object. Uses classes of type [\
     $query->updateWaitingList($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs waitinglists.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setwaitinglistID("ID");
 
+    $result = $api->executeRequest($query);
 

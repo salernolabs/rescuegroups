@@ -5,12 +5,6 @@ This is the documentation for the Contacts queries against the [RescueGroups.org
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-contacts)
 
 ## Define
-
-
-
-
-
-
 Performs contacts.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,77 +12,46 @@ Performs contacts.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Contacts\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs contacts.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\View();
 
+    $query->setcontactID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## GetList
-
-
 Performs contacts.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## ListRescues
-
-
-
-
-
-
-
 Performs contacts.listRescues query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\ListRescues();
 
+
     $result = $api->executeRequest($query);
 
-
 ## ListFosters
-
-
-
-
-
-
-
 Performs contacts.listFosters query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\ListFosters();
 
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs contacts.search search query. This query returns an array of [\RescueGroups\Objects\Contact](../../src/Objects/Contact.php) objects.
+Performs contacts.search search query. This query returns an array of [\RescueGroups\Objects\Contact](../../../src/Objects/Contact.php) objects.
 
 ### Example Search Query
 
@@ -104,20 +67,8 @@ Performs contacts.search search query. This query returns an array of [\RescueGr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs contacts.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Contact](../../src/Objects/Contact.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs contacts.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\Contact](../../../src/Objects/Contact.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -159,14 +110,8 @@ Performs contacts.add add query to create an instance of an object. Uses special
     $query->addContact($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## Edit
-
-
-
-Performs contacts.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Contact](../../src/Objects/Contact.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs contacts.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Contact](../../../src/Objects/Contact.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -209,59 +154,42 @@ Performs contacts.edit edit query to edit an object. Uses classes of type [\Resc
     $query->updateContact($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs contacts.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\Delete();
 
+    $query->setcontactID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## GetSettings
-
-
-
-
-
-
-
 Performs contacts.getSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\GetSettings();
 
+
     $result = $api->executeRequest($query);
 
-
 ## UpdateSettings
-
-
-
-
-
-
-
 Performs contacts.updateSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Contacts\UpdateSettings();
 
-    $result = $api->executeRequest($query);
+    $query->setenableContactsDoNotAdoptListSharing("Share your organization's Do Not Adopt list");
+    $query->setenableContactsAutoSelectRegistrationInvitation("Automatically select to send Registration Invitation");
+    $query->setenableContactsAutoSelectCaretakerInfoPublic("Automatically select to set caretaker information public");
+    $query->setenableAddContactOnlineFormSubmission("Add a Contact record when an Online Form is submitted");
+    $query->setenableContactsAddContactMeetRequest("Add a Contact record when an Meet Request is submitted");
+    $query->setenableContactsAddContactCallCreation("Add a Contact record when a Call is created from the Contact Us page");
+    $query->setenableContactsAddContactAnimalSponsorship("Add a Contact record when an Animal Sponsorship is submitted");
+    $query->setenableContactsAddContactUserRegistration("Add a Contact record when a user registers");
 
+    $result = $api->executeRequest($query);
 

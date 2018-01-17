@@ -5,12 +5,6 @@ This is the documentation for the IntakesStrayDropoffs queries against the [Resc
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraydropoffs)
 
 ## Define
-
-
-
-
-
-
 Performs intakesStraydropoffs.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs intakesStraydropoffs.define query. This gives information about the API
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs intakesStraydropoffs.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
 
+    $query->setintakesStraydropoffID("Stray Pickup");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs intakesStraydropoffs.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayDropoff](../../src/Objects/IntakesStrayDropoff.php) objects.
+Performs intakesStraydropoffs.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayDropoff](../../../src/Objects/IntakesStrayDropoff.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs intakesStraydropoffs.search search query. This query returns an array o
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs intakesStraydropoffs.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayDropoff](../../src/Objects/IntakesStrayDropoff.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs intakesStraydropoffs.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayDropoff](../../../src/Objects/IntakesStrayDropoff.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -87,15 +61,8 @@ Performs intakesStraydropoffs.add add query to create an instance of an object. 
     $query->addIntakesStrayDropoff($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs intakesStraydropoffs.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayDropoff](../../src/Objects/IntakesStrayDropoff.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs intakesStraydropoffs.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayDropoff](../../../src/Objects/IntakesStrayDropoff.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -117,25 +84,24 @@ Performs intakesStraydropoffs.edit edit query to edit an object. Uses classes of
     $query->updateIntakesStrayDropoff($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs intakesStraydropoffs.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setintakeID("Intake");
+    $query->setintakesStraydropoffAnimalID("Animal");
+    $query->setintakesStraydropoffAnimalConditionID("Condition");
+    $query->setintakesStraydropoffDate("Date");
+    $query->setintakesStraydropoffNotes("Notes");
+    $query->setintakesStraydropoffFoundLocation("Found Location");
+    $query->setintakesStraydropoffFoundAddress("Found Street address");
+    $query->setintakesStraydropoffFoundCity("Found City");
+    $query->setintakesStraydropoffFoundState("Found State/Province");
+    $query->setintakesStraydropoffFoundPostalcode("Found Postal Code");
+    $query->setintakesStraydropoffFinderID("Dropped off by");
 
+    $result = $api->executeRequest($query);
 

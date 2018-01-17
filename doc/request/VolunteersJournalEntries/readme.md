@@ -5,12 +5,6 @@ This is the documentation for the VolunteersJournalEntries queries against the [
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-volunteersJournalEntries)
 
 ## Define
-
-
-
-
-
-
 Performs volunteersJournalEntries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,11 +12,8 @@ Performs volunteersJournalEntries.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## Search
-
-Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../src/Objects/VolunteersJournalEntry.php) objects.
+Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) objects.
 
 ### Example Search Query
 
@@ -38,36 +29,19 @@ Performs volunteersJournalEntries.search search query. This query returns an arr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs volunteersJournalEntries.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\View();
 
+    $query->setjournalEntryID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Add
-
-
-
-
-Performs volunteersJournalEntries.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\VolunteersJournalEntry](../../src/Objects/VolunteersJournalEntry.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs volunteersJournalEntries.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -81,15 +55,8 @@ Performs volunteersJournalEntries.add add query to create an instance of an obje
     $query->addVolunteersJournalEntry($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs volunteersJournalEntries.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\VolunteersJournalEntry](../../src/Objects/VolunteersJournalEntry.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs volunteersJournalEntries.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -105,25 +72,14 @@ Performs volunteersJournalEntries.edit edit query to edit an object. Uses classe
     $query->updateVolunteersJournalEntry($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs volunteersJournalEntries.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setjournalEntryID("ID");
 
+    $result = $api->executeRequest($query);
 

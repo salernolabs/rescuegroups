@@ -5,12 +5,6 @@ This is the documentation for the Animals queries against the [RescueGroups.org]
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animals)
 
 ## Define
-
-
-
-
-
-
 Performs animals.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,60 +12,37 @@ Performs animals.define query. This gives information about the API interface to
     $query = new \RescueGroups\Request\Objects\Animals\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs animals.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## PublicView
-
-
-
-
-
-
-
 Performs animals.publicView query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\PublicView();
 
+    $query->setanimalID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## View
-
-
-
-
-
-
-
 Performs animals.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\View();
 
+    $query->setanimalID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## PublicSearch
-
-Performs animals.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Animal](../../src/Objects/Animal.php) objects.
+Performs animals.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) objects.
 
 ### Example Search Query
 
@@ -87,16 +58,8 @@ Performs animals.publicSearch search query. This query returns an array of [\Res
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Search
-
-Performs animals.search search query. This query returns an array of [\RescueGroups\Objects\Animal](../../src/Objects/Animal.php) objects.
+Performs animals.search search query. This query returns an array of [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) objects.
 
 ### Example Search Query
 
@@ -112,19 +75,8 @@ Performs animals.search search query. This query returns an array of [\RescueGro
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs animals.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Animal](../../src/Objects/Animal.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs animals.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -257,15 +209,8 @@ Performs animals.add add query to create an instance of an object. Uses classes 
     $query->addAnimal($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs animals.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Animal](../../src/Objects/Animal.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs animals.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -400,416 +345,344 @@ Performs animals.edit edit query to edit an object. Uses classes of type [\Rescu
     $query->updateAnimal($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## AddPicture
-
-
-
-
-
-
-
 Performs animals.addPicture query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\AddPicture();
 
+    $query->setanimalID("ID");
+    $query->setpictureBinary("Picture");
+    $query->setfileName("File name");
+    $query->setmediaOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## AddPictureUrl
-
-
-
-
-
-
-
 Performs animals.addPictureUrl query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\AddPictureUrl();
 
+    $query->setanimalID("ID");
+    $query->setpictureUrl("Picture Url");
+    $query->setmediaOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## AddVideo
-
-
-
-
-
-
-
 Performs animals.addVideo query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\AddVideo();
 
+    $query->setanimalID("ID");
+    $query->setvideoBinary("Video");
+    $query->setfileName("File name");
+    $query->setmediaOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## AddYoutubeUrl
-
-
-
-
-
-
-
 Performs animals.addYoutubeUrl query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\AddYoutubeUrl();
 
+    $query->setanimalID("ID");
+    $query->setyoutubeUrl("YouTube Url");
+    $query->setmediaOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## PictureReorder
-
-
-
-
-
-
-
 Performs animals.pictureReorder query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\PictureReorder();
 
+    $query->setanimalID("ID");
+    $query->setmediaID("ID");
+    $query->setnewOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## VideoReorder
-
-
-
-
-
-
-
 Performs animals.videoReorder query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\VideoReorder();
 
+    $query->setanimalID("ID");
+    $query->setmediaID("ID");
+    $query->setnewOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## VideoUrlReorder
-
-
-
-
-
-
-
 Performs animals.videoUrlReorder query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\VideoUrlReorder();
 
+    $query->setanimalID("ID");
+    $query->setmediaID("ID");
+    $query->setnewOrder("Order");
+
     $result = $api->executeRequest($query);
 
-
 ## Pictures
-
-
-
-
-
-
-
 Performs animals.pictures query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\Pictures();
 
+    $query->setanimalID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Videos
-
-
-
-
-
-
-
 Performs animals.videos query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\Videos();
 
+    $query->setanimalID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## YoutubeUrls
-
-
-
-
-
-
-
 Performs animals.youtubeUrls query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\YoutubeUrls();
 
+    $query->setanimalID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## GetRequireableFields
-
-
-
-
-
-
-
 Performs animals.getRequireableFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetRequireableFields();
 
+
     $result = $api->executeRequest($query);
 
-
 ## GetRequiredFields
-
-
-
-
-
-
-
 Performs animals.getRequiredFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetRequiredFields();
 
+
     $result = $api->executeRequest($query);
 
-
 ## SetRequiredFields
-
-
-
-
-
-
-
 Performs animals.setRequiredFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\SetRequiredFields();
 
+    $query->setfieldlist("Field list");
+
     $result = $api->executeRequest($query);
 
-
 ## GetDisableableFields
-
-
-
-
-
-
-
 Performs animals.getDisableableFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetDisableableFields();
 
+
     $result = $api->executeRequest($query);
 
-
 ## GetDisabledFields
-
-
-
-
-
-
-
 Performs animals.getDisabledFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetDisabledFields();
 
+
     $result = $api->executeRequest($query);
 
-
 ## SetDisabledFields
-
-
-
-
-
-
-
 Performs animals.setDisabledFields query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\SetDisabledFields();
 
+    $query->setfieldlist("Field list");
+
     $result = $api->executeRequest($query);
 
-
 ## GetSpecies
-
-
-
-
-
-
-
 Performs animals.getSpecies query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetSpecies();
 
+
     $result = $api->executeRequest($query);
 
-
 ## GetEnabledSpecies
-
-
-
-
-
-
-
 Performs animals.getEnabledSpecies query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetEnabledSpecies();
 
+
     $result = $api->executeRequest($query);
 
-
 ## SetEnabledSpecies
-
-
-
-
-
-
-
 Performs animals.setEnabledSpecies query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\SetEnabledSpecies();
 
+    $query->setfieldlist("Field list");
+
     $result = $api->executeRequest($query);
 
-
 ## GetPublicableStatuses
-
-
-
-
-
-
-
 Performs animals.getPublicableStatuses query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetPublicableStatuses();
 
+
     $result = $api->executeRequest($query);
 
-
 ## GetPublicStatuses
-
-
-
-
-
-
-
 Performs animals.getPublicStatuses query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetPublicStatuses();
 
+
     $result = $api->executeRequest($query);
 
-
 ## SetPublicStatuses
-
-
-
-
-
-
-
 Performs animals.setPublicStatuses query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\SetPublicStatuses();
 
+    $query->setstatuslist("Statuses");
+
     $result = $api->executeRequest($query);
 
-
 ## GetSettings
-
-
-
-
-
-
-
 Performs animals.getSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\GetSettings();
 
+
     $result = $api->executeRequest($query);
 
-
 ## UpdateSettings
-
-
-
-
-
-
-
 Performs animals.updateSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Animals\UpdateSettings();
 
-    $result = $api->executeRequest($query);
+    $query->setenableAnimalsSpecialListBabies("Babies (Kittens, Puppies) enabled");
+    $query->setsetAnimalsSpecialListBabiesYoungest("Babies (Kittens, Puppies) Youngest Age");
+    $query->setsetAnimalsSpecialListBabiesOldest("Babies (Kittens, Puppies) Oldest Age");
+    $query->setenableAnimalsSpecialListTeens("Teens enabled");
+    $query->setsetAnimalsSpecialListTeensYoungest("Teens Youngest Age");
+    $query->setsetAnimalsSpecialListTeensOldest("Teens Oldest Age");
+    $query->setenableAnimalsSpecialListAdults("Adults enabled");
+    $query->setsetAnimalsSpecialListAdultsYoungest("Adults Youngest Age");
+    $query->setsetAnimalsSpecialListAdultsOldest("Adults Oldest Age");
+    $query->setenableAnimalsSpecialListSeniors("Seniors enabled");
+    $query->setsetAnimalsSpecialListSeniorsYoungest("Seniors Youngest Age");
+    $query->setenableAnimalsSpecialListLongtime("Long Time/Must Adopt enabled");
+    $query->setsetAnimalsSpecialListLongtimeYoungest("Long Time/Must Adopt Shortest length of time");
+    $query->setsetAnimalsSpecialListLongtimeOldest("Long Time/Must Adopt Longest length of time");
+    $query->setenableAnimalsSpecialListRecent("Recent Arrivals enabled");
+    $query->setsetAnimalsSpecialListRecentDays("Recent Arrivals Shortest length of time");
+    $query->setenableAnimalsSpecialListSpecialNeeds("Special Needs enabled");
+    $query->setenableAnimalsSpecialListUrgent("Urgent enabled");
+    $query->setenableAnimalsSpecialListFoster("Needs a Caretaker/Foster enabled");
+    $query->setenableAnimalsSpecialListCourtesy("Courtesy Listings enabled");
+    $query->setenableAnimalAutoRescueID("Automatically set animal's Rescue ID");
+    $query->setsetAnimalAutoRescueIDFormat("Format for Rescue IDs");
+    $query->setdisableAnimalAutoRescueIDCourtesyListings("Do not automatically assign Rescue ID for courtesy listings");
+    $query->setenablePortalWebsite("Enable the Portal website");
+    $query->setshowAnimalMicrochip("Show if the animal is microchipped");
+    $query->setshowAnimalAltered("Show if the animal is altered");
+    $query->setshowAnimalWillBeAltered("Show if the animal will be altered before adoption");
+    $query->setshowAnimalRescueID("Show the animal's Rescue ID");
+    $query->setshowAnimalAdoptionFee("Show the animal's adoption fee");
+    $query->setshowAnimalEuthanasiaInfo("Show the animal's euthanasia information");
+    $query->setdisableAnimalCourtesyHeaderFooter("Disable the animal header/footer to courtesy animals");
+    $query->setshowAnimalKennelcardJournalEntries("Show journal entries on the kennel card");
+    $query->setshowAnimalKennelcardJournalCost("Show cost on the kennel card");
+    $query->setdisableAnimalExportAdopted("Prevent adopted animals from being uploaded to Petfinder");
+    $query->setenableExportAdoptedToAdoptapet("Export adopted pets to Adopt-a-Pet.com");
+    $query->setdisableAnimalExportCourtesy("Prevent courtesy animals from being uploaded to other sites");
+    $query->setdisableAnimalExportAnimalWebPageLink("Disable the link to the animal's web page");
+    $query->setdisableAnimalExportWebsiteLink("Disable the link to your organization's website");
+    $query->setdisableAnimalExportAdoptionFormLink("Disable the link to your adoption form");
+    $query->setenableAnimalExportDescriptionHeader("Include the Animal Description Header in the animal description");
+    $query->setenableAnimalExportDescriptionFooter("Include the Animal Description Footer in the animal description");
+    $query->setenableAnimalExportUniqueAnimalID("Use the RescueGroups.org Animal ID as a Unique ID");
+    $query->setenableAnimalExportContactFieldFirstname("Show the foster/caretaker's first name");
+    $query->setenableAnimalExportContactFieldLastname("Show the foster/caretaker's last name");
+    $query->setenableAnimalExportContactFieldEmail("Show the foster/caretaker's email address");
+    $query->setenableAnimalExportContactFieldPhoneHome("Show the foster/caretaker's home phone number");
+    $query->setenableAnimalExportContactFieldPhoneCell("Show the foster/caretaker's cell phone number");
+    $query->setsetAnimalExportYouTubeAccount("Account to use for YouTube video upload");
+    $query->setsetAnimalExportYouTubeAuthorizationCode("YouTube authorization code");
+    $query->setsetAnimalExportDefaultCategory1("By default, export to services that list animals for adoption");
+    $query->setsetAnimalExportDefaultCategory4("By default, export to services that list animals for adoption (from non-rescue/shelters)");
+    $query->setsetAnimalExportDefaultCategory3("By default, export to services that list animals for sale by breeder");
+    $query->setsetAnimalExportDefaultCategory2("By default, export to services that list animals for sale by owner");
+    $query->setsetAnimalExportDefaultCategory5("By default, export to services that provide animal related classifieds");
+    $query->setsetAnimalExportDefaultCategory6("By default, export to services that provide animal related community discussion/forums");
+    $query->setsetAnimalExportDefaultCategory8("By default, export to services that provide animal related educational information");
+    $query->setsetAnimalExportDefaultCategory7("By default, export to services that provide animal related news");
+    $query->setsetAnimalExportDefaultCategory13("By default, export to services that provide event calendars");
+    $query->setsetAnimalExportDefaultCategory9("By default, export to services that sell/promote animal related products (food, toys, treats, etc)");
+    $query->setsetAnimalExportDefaultCategory11("By default, export to services that sell/promote animal related services (training, grooming)");
+    $query->setsetAnimalExportDefaultCategory10("By default, export to services that sell/promote non-animal related products");
+    $query->setsetAnimalExportDefaultCategory12("By default, export to services that sell/promote non-animal related services");
+    $query->setdisableAnimalDescriptionVideo("Disable videos in Animal descriptions");
+    $query->setenableAnimalDescriptionVideoLink("Use a link instead of embedding the video in Animal descriptions");
+    $query->setenableFreePetChipRegistry("Enable FreePetChipRegistry registrations");
+    $query->setsetFreePetChipRegistryUserName("FreePetChipRegistry user name");
+    $query->setenablePetLinkRegistry("Enable PetLink registrations");
+    $query->setsetPetLinkUserName("PetLink user name");
+    $query->setsetPetLinkPassword("PetLink password");
+    $query->setdisableMicrochipUserAlert("Disable the email alert to the volunteer concerning microchip registration (success or failure)");
+    $query->setsetMicrochipAlertEmails("Email address(es) to alert concerning microchip registration (success or failure)");
 
+    $result = $api->executeRequest($query);
 

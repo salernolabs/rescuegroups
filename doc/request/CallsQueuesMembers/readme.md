@@ -5,12 +5,6 @@ This is the documentation for the CallsQueuesMembers queries against the [Rescue
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsQueuesMembers)
 
 ## Define
-
-
-
-
-
-
 Performs callsQueuesMembers.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,43 +12,26 @@ Performs callsQueuesMembers.define query. This gives information about the API i
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs callsQueuesMembers.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs callsQueuesMembers.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\View();
 
+    $query->setmemberID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs callsQueuesMembers.search search query. This query returns an array of [\RescueGroups\Objects\CallsQueuesMember](../../src/Objects/CallsQueuesMember.php) objects.
+Performs callsQueuesMembers.search search query. This query returns an array of [\RescueGroups\Objects\CallsQueuesMember](../../../src/Objects/CallsQueuesMember.php) objects.
 
 ### Example Search Query
 
@@ -70,19 +47,8 @@ Performs callsQueuesMembers.search search query. This query returns an array of 
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs callsQueuesMembers.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\CallsQueuesMember](../../src/Objects/CallsQueuesMember.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs callsQueuesMembers.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\CallsQueuesMember](../../../src/Objects/CallsQueuesMember.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -95,15 +61,8 @@ Performs callsQueuesMembers.add add query to create an instance of an object. Us
     $query->addCallsQueuesMember($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs callsQueuesMembers.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\CallsQueuesMember](../../src/Objects/CallsQueuesMember.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs callsQueuesMembers.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\CallsQueuesMember](../../../src/Objects/CallsQueuesMember.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -118,25 +77,14 @@ Performs callsQueuesMembers.edit edit query to edit an object. Uses classes of t
     $query->updateCallsQueuesMember($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Delete
-
-
-
-
-
-
-
 Performs callsQueuesMembers.delete query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Delete();
 
-    $result = $api->executeRequest($query);
+    $query->setmemberID("ID");
 
+    $result = $api->executeRequest($query);
 

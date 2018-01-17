@@ -5,12 +5,6 @@ This is the documentation for the Outcomes queries against the [RescueGroups.org
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomes)
 
 ## Define
-
-
-
-
-
-
 Performs outcomes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,26 +12,15 @@ Performs outcomes.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Outcomes\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs outcomes.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\Outcomes\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs outcomes.search search query. This query returns an array of [\RescueGroups\Objects\Outcome](../../src/Objects/Outcome.php) objects.
+Performs outcomes.search search query. This query returns an array of [\RescueGroups\Objects\Outcome](../../../src/Objects/Outcome.php) objects.
 
 ### Example Search Query
 
@@ -53,27 +36,14 @@ Performs outcomes.search search query. This query returns an array of [\RescueGr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs outcomes.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\Outcomes\View();
 
-    $result = $api->executeRequest($query);
+    $query->setoutcomeID("Outcome ID");
 
+    $result = $api->executeRequest($query);
 

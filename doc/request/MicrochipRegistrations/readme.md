@@ -5,12 +5,6 @@ This is the documentation for the MicrochipRegistrations queries against the [Re
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-microchipRegistrations)
 
 ## Define
-
-
-
-
-
-
 Performs microchipRegistrations.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs microchipRegistrations.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs microchipRegistrations.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\View();
 
+    $query->setmicrochipRegistrationID("ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs microchipRegistrations.search search query. This query returns an array of [\RescueGroups\Objects\MicrochipRegistration](../../src/Objects/MicrochipRegistration.php) objects.
+Performs microchipRegistrations.search search query. This query returns an array of [\RescueGroups\Objects\MicrochipRegistration](../../../src/Objects/MicrochipRegistration.php) objects.
 
 ### Example Search Query
 
@@ -55,20 +40,8 @@ Performs microchipRegistrations.search search query. This query returns an array
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-
-Performs microchipRegistrations.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\MicrochipRegistration](../../src/Objects/MicrochipRegistration.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs microchipRegistrations.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\MicrochipRegistration](../../../src/Objects/MicrochipRegistration.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -93,40 +66,23 @@ Performs microchipRegistrations.add add query to create an instance of an object
     $query->addMicrochipRegistration($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## GetSettings
-
-
-
-
-
-
-
 Performs microchipRegistrations.getSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\GetSettings();
 
+
     $result = $api->executeRequest($query);
 
-
 ## UpdateSettings
-
-
-
-
-
-
-
 Performs microchipRegistrations.updateSettings query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\UpdateSettings();
 
-    $result = $api->executeRequest($query);
 
+    $result = $api->executeRequest($query);
 

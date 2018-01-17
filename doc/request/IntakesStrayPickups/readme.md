@@ -5,12 +5,6 @@ This is the documentation for the IntakesStrayPickups queries against the [Rescu
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraypickups)
 
 ## Define
-
-
-
-
-
-
 Performs intakesStraypickups.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,28 +12,19 @@ Performs intakesStraypickups.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## View
-
-
-
-
-
-
-
 Performs intakesStraypickups.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
 
+    $query->setintakesStraypickupID("Stray Pickup");
+
     $result = $api->executeRequest($query);
 
-
 ## Search
-
-Performs intakesStraypickups.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) objects.
+Performs intakesStraypickups.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayPickup](../../../src/Objects/IntakesStrayPickup.php) objects.
 
 ### Example Search Query
 
@@ -55,19 +40,8 @@ Performs intakesStraypickups.search search query. This query returns an array of
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## Add
-
-
-
-
-Performs intakesStraypickups.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs intakesStraypickups.add add query to create an instance of an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../../src/Objects/IntakesStrayPickup.php) as input to create a record. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -88,15 +62,8 @@ Performs intakesStraypickups.add add query to create an instance of an object. U
     $query->addIntakesStrayPickup($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
 ## Edit
-
-
-
-Performs intakesStraypickups.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../src/Objects/IntakesStrayPickup.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs intakesStraypickups.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\IntakesStrayPickup](../../../src/Objects/IntakesStrayPickup.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -119,25 +86,25 @@ Performs intakesStraypickups.edit edit query to edit an object. Uses classes of 
     $query->updateIntakesStrayPickup($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
 ## Change
-
-
-
-
-
-
-
 Performs intakesStraypickups.change query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Change();
 
-    $result = $api->executeRequest($query);
+    $query->setintakeID("Intake");
+    $query->setintakesStraypickupAnimalID("Animal");
+    $query->setintakesStraypickupAnimalConditionID("Condition");
+    $query->setintakesStraypickupDate("Date");
+    $query->setintakesStraypickupNotes("Notes");
+    $query->setintakesStraypickupLocation("Pickup Location");
+    $query->setintakesStraypickupAddress("Pickup Street address");
+    $query->setintakesStraypickupCity("Pickup City");
+    $query->setintakesStraypickupState("Pickup State/Province");
+    $query->setintakesStraypickupPostalcode("Pickup Postal Code");
+    $query->setintakesStraypickupFinderID("Found By");
+    $query->setintakesStraypickupStaffID("Pickup By");
 
+    $result = $api->executeRequest($query);
 

@@ -5,12 +5,6 @@ This is the documentation for the AnimalStatuses queries against the [RescueGrou
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalStatuses)
 
 ## Define
-
-
-
-
-
-
 Performs animalStatuses.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,26 +12,15 @@ Performs animalStatuses.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\AnimalStatuses\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs animalStatuses.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\AnimalStatuses\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs animalStatuses.search search query. This query returns an array of [\RescueGroups\Objects\AnimalStatus](../../src/Objects/AnimalStatus.php) objects.
+Performs animalStatuses.search search query. This query returns an array of [\RescueGroups\Objects\AnimalStatus](../../../src/Objects/AnimalStatus.php) objects.
 
 ### Example Search Query
 
@@ -53,10 +36,3 @@ Performs animalStatuses.search search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-

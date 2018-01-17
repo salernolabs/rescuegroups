@@ -5,12 +5,6 @@ This is the documentation for the ContactFiles queries against the [RescueGroups
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-contactFiles)
 
 ## Define
-
-
-
-
-
-
 Performs contactFiles.define query. This gives information about the API interface to your application. These are also used to build this SDK.
 
 ### Example Query
@@ -18,26 +12,15 @@ Performs contactFiles.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\ContactFiles\Define();
 
     $result = $api->executeRequest($query);
-
-
 ## GetList
-
-
 Performs contactFiles.list list query, typically suitable for filling HTML select fields.
 
 ### Example List Query
 
     $query = new \RescueGroups\Request\Objects\ContactFiles\GetList();
     $result = $api->executeRequest($query);
-
-
-
-
-
-
 ## Search
-
-Performs contactFiles.search search query. This query returns an array of [\RescueGroups\Objects\ContactFile](../../src/Objects/ContactFile.php) objects.
+Performs contactFiles.search search query. This query returns an array of [\RescueGroups\Objects\ContactFile](../../../src/Objects/ContactFile.php) objects.
 
 ### Example Search Query
 
@@ -53,37 +36,19 @@ Performs contactFiles.search search query. This query returns an array of [\Resc
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
-
-
-
-
-
-
-
 ## View
-
-
-
-
-
-
-
 Performs contactFiles.view query.
 
 ### Example Query
 
     $query = new \RescueGroups\Request\Objects\ContactFiles\View();
 
+    $query->setcontactfileID("File ID");
+
     $result = $api->executeRequest($query);
 
-
 ## Add
-
-
-
-
-
-Performs contactFiles.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\ContactFile](../../src/Objects/ContactFile.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
+Performs contactFiles.add add query to create an instance of an object. Uses special classes of type [\RescueGroups\Objects\Create\ContactFile](../../../src/Objects/ContactFile.php) as input to create a record. There are several fields that differ from the standard edit model. The ID field is ignored. You may specify multiple objects to create multiple records in one request.
 
 ### Example Add Query
 
@@ -99,14 +64,8 @@ Performs contactFiles.add add query to create an instance of an object. Uses spe
     $query->addContactFile($addObject);
 
     $result = $api->executeRequest($query);
-
-
-
 ## Edit
-
-
-
-Performs contactFiles.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\ContactFile](../../src/Objects/ContactFile.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
+Performs contactFiles.edit edit query to edit an object. Uses classes of type [\RescueGroups\Objects\ContactFile](../../../src/Objects/ContactFile.php) as input to perform an edit on a record. The ID field is required to be set for this to work. You may specify multiple objects to perform multiple edits in one request.
 
 ### Example Edit Query
 
@@ -121,8 +80,3 @@ Performs contactFiles.edit edit query to edit an object. Uses classes of type [\
     $query->updateContactFile($editObject);
 
     $result = $api->executeRequest($query);
-
-
-
-
-
