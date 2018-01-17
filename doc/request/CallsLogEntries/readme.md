@@ -4,7 +4,24 @@ This is the documentation for the CallsLogEntries queries against the [RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsLogentries)
 
+## Define
+
+
+
+
+
+
+Performs callsLogentries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs callsLogentries.search search query. This query returns an array of [\R
 
 
 
+
 ## Add
 
 
@@ -65,5 +83,6 @@ Performs callsLogentries.add add query to create an instance of an object. Uses 
     $query->addCallsLogEntry($addObject);
 
     $result = $api->executeRequest($query);
+
 
 

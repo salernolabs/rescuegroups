@@ -4,6 +4,22 @@ This is the documentation for the Users queries against the [RescueGroups.org](h
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-users)
 
+## Define
+
+
+
+
+
+
+Performs users.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Users\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs users.list list query, typically suitable for filling HTML select field
 
 
 
+
 ## View
+
 
 
 
@@ -52,6 +70,7 @@ Performs users.search search query. This query returns an array of [\RescueGroup
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -98,6 +117,7 @@ Performs users.add add query to create an instance of an object. Uses special cl
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -135,6 +155,7 @@ Performs users.edit edit query to edit an object. Uses classes of type [\RescueG
     $query->updateUser($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

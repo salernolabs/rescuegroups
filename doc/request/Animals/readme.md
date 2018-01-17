@@ -4,6 +4,22 @@ This is the documentation for the Animals queries against the [RescueGroups.org]
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animals)
 
+## Define
+
+
+
+
+
+
+Performs animals.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Animals\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs animals.list list query, typically suitable for filling HTML select fie
 
 
 
+
 ## PublicView
+
 
 
 
@@ -35,6 +53,7 @@ Performs animals.publicView query.
 
 
 ## View
+
 
 
 
@@ -74,6 +93,7 @@ Performs animals.publicSearch search query. This query returns an array of [\Res
 
 
 
+
 ## Search
 
 Performs animals.search search query. This query returns an array of [\RescueGroups\Objects\Animal](../../src/Objects/Animal.php) objects.
@@ -92,6 +112,7 @@ Performs animals.search search query. This query returns an array of [\RescueGro
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -239,6 +260,7 @@ Performs animals.add add query to create an instance of an object. Uses classes 
 
 
 
+
 ## Edit
 
 
@@ -382,7 +404,9 @@ Performs animals.edit edit query to edit an object. Uses classes of type [\Rescu
 
 
 
+
 ## AddPicture
+
 
 
 
@@ -405,6 +429,7 @@ Performs animals.addPicture query.
 
 
 
+
 Performs animals.addPictureUrl query.
 
 ### Example Query
@@ -415,6 +440,7 @@ Performs animals.addPictureUrl query.
 
 
 ## AddVideo
+
 
 
 
@@ -437,6 +463,7 @@ Performs animals.addVideo query.
 
 
 
+
 Performs animals.addYoutubeUrl query.
 
 ### Example Query
@@ -447,6 +474,7 @@ Performs animals.addYoutubeUrl query.
 
 
 ## PictureReorder
+
 
 
 
@@ -469,6 +497,7 @@ Performs animals.pictureReorder query.
 
 
 
+
 Performs animals.videoReorder query.
 
 ### Example Query
@@ -479,6 +508,7 @@ Performs animals.videoReorder query.
 
 
 ## VideoUrlReorder
+
 
 
 
@@ -501,6 +531,7 @@ Performs animals.videoUrlReorder query.
 
 
 
+
 Performs animals.pictures query.
 
 ### Example Query
@@ -511,6 +542,7 @@ Performs animals.pictures query.
 
 
 ## Videos
+
 
 
 
@@ -533,6 +565,7 @@ Performs animals.videos query.
 
 
 
+
 Performs animals.youtubeUrls query.
 
 ### Example Query
@@ -543,6 +576,7 @@ Performs animals.youtubeUrls query.
 
 
 ## GetRequireableFields
+
 
 
 
@@ -565,6 +599,7 @@ Performs animals.getRequireableFields query.
 
 
 
+
 Performs animals.getRequiredFields query.
 
 ### Example Query
@@ -575,6 +610,7 @@ Performs animals.getRequiredFields query.
 
 
 ## SetRequiredFields
+
 
 
 
@@ -597,6 +633,7 @@ Performs animals.setRequiredFields query.
 
 
 
+
 Performs animals.getDisableableFields query.
 
 ### Example Query
@@ -607,6 +644,7 @@ Performs animals.getDisableableFields query.
 
 
 ## GetDisabledFields
+
 
 
 
@@ -629,6 +667,7 @@ Performs animals.getDisabledFields query.
 
 
 
+
 Performs animals.setDisabledFields query.
 
 ### Example Query
@@ -639,6 +678,7 @@ Performs animals.setDisabledFields query.
 
 
 ## GetSpecies
+
 
 
 
@@ -661,6 +701,7 @@ Performs animals.getSpecies query.
 
 
 
+
 Performs animals.getEnabledSpecies query.
 
 ### Example Query
@@ -671,6 +712,7 @@ Performs animals.getEnabledSpecies query.
 
 
 ## SetEnabledSpecies
+
 
 
 
@@ -693,6 +735,7 @@ Performs animals.setEnabledSpecies query.
 
 
 
+
 Performs animals.getPublicableStatuses query.
 
 ### Example Query
@@ -703,6 +746,7 @@ Performs animals.getPublicableStatuses query.
 
 
 ## GetPublicStatuses
+
 
 
 
@@ -725,6 +769,7 @@ Performs animals.getPublicStatuses query.
 
 
 
+
 Performs animals.setPublicStatuses query.
 
 ### Example Query
@@ -741,6 +786,7 @@ Performs animals.setPublicStatuses query.
 
 
 
+
 Performs animals.getSettings query.
 
 ### Example Query
@@ -751,6 +797,7 @@ Performs animals.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

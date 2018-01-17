@@ -4,7 +4,24 @@ This is the documentation for the EventAnimalAttendance queries against the [Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-eventanimalattendance)
 
+## Define
+
+
+
+
+
+
+Performs eventanimalattendance.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## PublicView
+
 
 
 
@@ -21,6 +38,7 @@ Performs eventanimalattendance.publicView query.
 
 
 ## View
+
 
 
 
@@ -60,6 +78,7 @@ Performs eventanimalattendance.publicSearch search query. This query returns an 
 
 
 
+
 ## Search
 
 Performs eventanimalattendance.search search query. This query returns an array of [\RescueGroups\Objects\EventAnimalAttendance](../../src/Objects/EventAnimalAttendance.php) objects.
@@ -78,6 +97,7 @@ Performs eventanimalattendance.search search query. This query returns an array 
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -105,6 +125,7 @@ Performs eventanimalattendance.add add query to create an instance of an object.
 
 
 
+
 ## Edit
 
 
@@ -128,7 +149,9 @@ Performs eventanimalattendance.edit edit query to edit an object. Uses classes o
 
 
 
+
 ## Delete
+
 
 
 

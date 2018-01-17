@@ -4,6 +4,22 @@ This is the documentation for the OutcomesDeceased queries against the [RescueGr
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesDeceased)
 
+## Define
+
+
+
+
+
+
+Performs outcomesDeceased.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesDeceased.list list query, typically suitable for filling HTML s
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesDeceased.search search query. This query returns an array of [\
 
 
 
+
 ## Add
 
 
@@ -78,6 +97,7 @@ Performs outcomesDeceased.add add query to create an instance of an object. Uses
     $query->addOutcomesDeceased($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -105,7 +125,9 @@ Performs outcomesDeceased.edit edit query to edit an object. Uses classes of typ
 
 
 
+
 ## Change
+
 
 
 

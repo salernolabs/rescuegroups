@@ -4,6 +4,22 @@ This is the documentation for the OutcomesEuthanasias queries against the [Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesEuthanasias)
 
+## Define
+
+
+
+
+
+
+Performs outcomesEuthanasias.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesEuthanasias.list list query, typically suitable for filling HTM
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesEuthanasias.search search query. This query returns an array of
 
 
 
+
 ## Add
 
 
@@ -78,6 +97,7 @@ Performs outcomesEuthanasias.add add query to create an instance of an object. U
     $query->addOutcomesEuthanasia($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -105,7 +125,9 @@ Performs outcomesEuthanasias.edit edit query to edit an object. Uses classes of 
 
 
 
+
 ## Change
+
 
 
 

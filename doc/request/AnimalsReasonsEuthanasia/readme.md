@@ -4,6 +4,22 @@ This is the documentation for the AnimalsReasonsEuthanasia queries against the [
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsReasonsEuthanasia)
 
+## Define
+
+
+
+
+
+
+Performs animalsReasonsEuthanasia.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs animalsReasonsEuthanasia.list list query, typically suitable for fillin
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs animalsReasonsEuthanasia.search search query. This query returns an arr
 
 
 
+
 ## Add
 
 
@@ -75,6 +94,7 @@ Performs animalsReasonsEuthanasia.add add query to create an instance of an obje
     $query->addAnimalsReasonsEuthanasia($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -99,7 +119,9 @@ Performs animalsReasonsEuthanasia.edit edit query to edit an object. Uses classe
 
 
 
+
 ## Delete
+
 
 
 

@@ -4,6 +4,22 @@ This is the documentation for the WebFiles queries against the [RescueGroups.org
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webfiles)
 
+## Define
+
+
+
+
+
+
+Performs webfiles.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebFiles\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs webfiles.list list query, typically suitable for filling HTML select fi
 
     $query = new \RescueGroups\Request\Objects\WebFiles\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs webfiles.search search query. This query returns an array of [\RescueGr
 
 
 
+
 ## View
+
 
 
 
@@ -82,6 +101,7 @@ Performs webfiles.add add query to create an instance of an object. Uses special
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -102,6 +122,7 @@ Performs webfiles.edit edit query to edit an object. Uses classes of type [\Resc
     $query->updateWebFile($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

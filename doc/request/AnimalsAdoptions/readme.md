@@ -4,6 +4,22 @@ This is the documentation for the AnimalsAdoptions queries against the [RescueGr
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsAdoptions)
 
+## Define
+
+
+
+
+
+
+Performs animalsAdoptions.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs animalsAdoptions.list list query, typically suitable for filling HTML s
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs animalsAdoptions.search search query. This query returns an array of [\
 
 
 
+
 ## View
+
 
 
 
@@ -87,6 +106,7 @@ Performs animalsAdoptions.add add query to create an instance of an object. Uses
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -117,7 +137,9 @@ Performs animalsAdoptions.edit edit query to edit an object. Uses classes of typ
 
 
 
+
 ## Delete
+
 
 
 
@@ -140,6 +162,7 @@ Performs animalsAdoptions.delete query.
 
 
 
+
 Performs animalsAdoptions.getSettings query.
 
 ### Example Query
@@ -150,6 +173,7 @@ Performs animalsAdoptions.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

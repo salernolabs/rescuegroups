@@ -4,6 +4,22 @@ This is the documentation for the OutcomesReturnToOwner queries against the [Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesReturntoowner)
 
+## Define
+
+
+
+
+
+
+Performs outcomesReturntoowner.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesReturntoowner.list list query, typically suitable for filling H
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesReturntoowner.search search query. This query returns an array 
 
 
 
+
 ## Add
 
 
@@ -78,6 +97,7 @@ Performs outcomesReturntoowner.add add query to create an instance of an object.
     $query->addOutcomesReturnToOwner($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -105,7 +125,9 @@ Performs outcomesReturntoowner.edit edit query to edit an object. Uses classes o
 
 
 
+
 ## Change
+
 
 
 

@@ -4,7 +4,24 @@ This is the documentation for the Affiliates queries against the [RescueGroups.o
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-affiliates)
 
+## Define
+
+
+
+
+
+
+Performs affiliates.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Affiliates\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetSettings
+
 
 
 
@@ -21,6 +38,7 @@ Performs affiliates.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

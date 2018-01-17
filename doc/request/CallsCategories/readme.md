@@ -4,6 +4,22 @@ This is the documentation for the CallsCategories queries against the [RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-callsCategories)
 
+## Define
+
+
+
+
+
+
+Performs callsCategories.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs callsCategories.list list query, typically suitable for filling HTML se
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs callsCategories.search search query. This query returns an array of [\R
 
 
 
+
 ## Add
 
 
@@ -77,6 +96,7 @@ Performs callsCategories.add add query to create an instance of an object. Uses 
     $query->addCallsCategory($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -104,7 +124,9 @@ Performs callsCategories.edit edit query to edit an object. Uses classes of type
 
 
 
+
 ## Delete
+
 
 
 

@@ -4,6 +4,22 @@ This is the documentation for the Countries queries against the [RescueGroups.or
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-countries)
 
+## Define
+
+
+
+
+
+
+Performs countries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Countries\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs countries.list list query, typically suitable for filling HTML select f
 
     $query = new \RescueGroups\Request\Objects\Countries\GetList();
     $result = $api->executeRequest($query);
+
 
 
 

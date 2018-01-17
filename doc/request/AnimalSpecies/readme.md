@@ -4,6 +4,22 @@ This is the documentation for the AnimalSpecies queries against the [RescueGroup
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalSpecies)
 
+## Define
+
+
+
+
+
+
+Performs animalSpecies.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalSpecies\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## PublicList
 
 
@@ -13,6 +29,7 @@ Performs animalSpecies.publicList list query, typically suitable for filling HTM
 
     $query = new \RescueGroups\Request\Objects\AnimalSpecies\PublicList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -32,7 +49,9 @@ Performs animalSpecies.list list query, typically suitable for filling HTML sele
 
 
 
+
 ## ListActive
+
 
 
 
@@ -66,6 +85,7 @@ Performs animalSpecies.search search query. This query returns an array of [\Res
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 

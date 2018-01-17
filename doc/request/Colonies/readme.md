@@ -4,6 +4,22 @@ This is the documentation for the Colonies queries against the [RescueGroups.org
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-colonies)
 
+## Define
+
+
+
+
+
+
+Performs colonies.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Colonies\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs colonies.list list query, typically suitable for filling HTML select fi
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs colonies.search search query. This query returns an array of [\RescueGr
 
 
 
+
 ## Add
 
 
@@ -78,6 +97,7 @@ Performs colonies.add add query to create an instance of an object. Uses classes
     $query->addColony($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -106,7 +126,9 @@ Performs colonies.edit edit query to edit an object. Uses classes of type [\Resc
 
 
 
+
 ## Delete
+
 
 
 

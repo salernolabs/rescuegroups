@@ -4,7 +4,24 @@ This is the documentation for the AnimalsExports queries against the [RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsExports)
 
+## Define
+
+
+
+
+
+
+Performs animalsExports.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsExports\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetExports
+
 
 
 
@@ -27,6 +44,7 @@ Performs animalsExports.getExports query.
 
 
 
+
 Performs animalsExports.updateExports query.
 
 ### Example Query
@@ -43,6 +61,7 @@ Performs animalsExports.updateExports query.
 
 
 
+
 Performs animalsExports.getSettings query.
 
 ### Example Query
@@ -53,6 +72,7 @@ Performs animalsExports.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

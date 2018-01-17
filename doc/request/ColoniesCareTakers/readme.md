@@ -4,6 +4,22 @@ This is the documentation for the ColoniesCareTakers queries against the [Rescue
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-coloniesCaretakers)
 
+## Define
+
+
+
+
+
+
+Performs coloniesCaretakers.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs coloniesCaretakers.list list query, typically suitable for filling HTML
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs coloniesCaretakers.search search query. This query returns an array of 
 
 
 
+
 ## Add
 
 
@@ -78,7 +97,9 @@ Performs coloniesCaretakers.add add query to create an instance of an object. Us
     $result = $api->executeRequest($query);
 
 
+
 ## Delete
+
 
 
 

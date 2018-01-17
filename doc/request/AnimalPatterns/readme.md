@@ -4,6 +4,22 @@ This is the documentation for the AnimalPatterns queries against the [RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalPatterns)
 
+## Define
+
+
+
+
+
+
+Performs animalPatterns.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalPatterns\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## PublicList
 
 
@@ -18,6 +34,7 @@ Performs animalPatterns.publicList list query, typically suitable for filling HT
 
 
 
+
 ## GetList
 
 
@@ -27,6 +44,7 @@ Performs animalPatterns.list list query, typically suitable for filling HTML sel
 
     $query = new \RescueGroups\Request\Objects\AnimalPatterns\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -56,6 +74,7 @@ Performs animalPatterns.search search query. This query returns an array of [\Re
 
 
 
+
 ## PublicSearch
 
 Performs animalPatterns.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalPattern](../../src/Objects/AnimalPattern.php) objects.
@@ -74,6 +93,7 @@ Performs animalPatterns.publicSearch search query. This query returns an array o
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 

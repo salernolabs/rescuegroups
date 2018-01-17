@@ -4,6 +4,22 @@ This is the documentation for the Intakes queries against the [RescueGroups.org]
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakes)
 
+## Define
+
+
+
+
+
+
+Performs intakes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Intakes\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs intakes.list list query, typically suitable for filling HTML select fie
 
     $query = new \RescueGroups\Request\Objects\Intakes\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs intakes.search search query. This query returns an array of [\RescueGro
 
 
 
+
 ## View
+
 
 
 
@@ -59,6 +78,7 @@ Performs intakes.view query.
 
 
 ## Delete
+
 
 
 

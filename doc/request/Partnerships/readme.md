@@ -4,7 +4,24 @@ This is the documentation for the Partnerships queries against the [RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-partnerships)
 
+## Define
+
+
+
+
+
+
+Performs partnerships.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Partnerships\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,7 +61,9 @@ Performs partnerships.search search query. This query returns an array of [\Resc
 
 
 
+
 ## Request
+
 
 
 
@@ -67,6 +86,7 @@ Performs partnerships.request query.
 
 
 
+
 Performs partnerships.getSettings query.
 
 ### Example Query
@@ -77,6 +97,7 @@ Performs partnerships.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

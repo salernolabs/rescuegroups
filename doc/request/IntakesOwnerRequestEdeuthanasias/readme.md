@@ -4,7 +4,24 @@ This is the documentation for the IntakesOwnerRequestedEuthanasias queries again
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnerrequestedeuthanasias)
 
+## Define
+
+
+
+
+
+
+Performs intakesOwnerrequestedeuthanasias.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs intakesOwnerrequestedeuthanasias.search search query. This query return
 
 
 
+
 ## Add
 
 
@@ -65,6 +83,7 @@ Performs intakesOwnerrequestedeuthanasias.add add query to create an instance of
     $query->addIntakesOwnerRequestedEuthanasia($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -94,7 +113,9 @@ Performs intakesOwnerrequestedeuthanasias.edit edit query to edit an object. Use
 
 
 
+
 ## Change
+
 
 
 

@@ -4,7 +4,24 @@ This is the documentation for the NewsArticles queries against the [RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-newsarticles)
 
+## Define
+
+
+
+
+
+
+Performs newsarticles.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -21,6 +38,7 @@ Performs newsarticles.view query.
 
 
 ## PublicView
+
 
 
 
@@ -60,6 +78,7 @@ Performs newsarticles.publicSearch search query. This query returns an array of 
 
 
 
+
 ## Search
 
 Performs newsarticles.search search query. This query returns an array of [\RescueGroups\Objects\NewsArticle](../../src/Objects/NewsArticle.php) objects.
@@ -78,6 +97,7 @@ Performs newsarticles.search search query. This query returns an array of [\Resc
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -106,6 +126,7 @@ Performs newsarticles.add add query to create an instance of an object. Uses cla
 
 
 
+
 ## Edit
 
 
@@ -129,7 +150,9 @@ Performs newsarticles.edit edit query to edit an object. Uses classes of type [\
 
 
 
+
 ## Delete
+
 
 
 
@@ -152,6 +175,7 @@ Performs newsarticles.delete query.
 
 
 
+
 Performs newsarticles.getSettings query.
 
 ### Example Query
@@ -162,6 +186,7 @@ Performs newsarticles.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

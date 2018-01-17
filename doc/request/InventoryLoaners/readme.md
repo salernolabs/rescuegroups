@@ -4,7 +4,24 @@ This is the documentation for the InventoryLoaners queries against the [RescueGr
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-inventoryLoaners)
 
+## Define
+
+
+
+
+
+
+Performs inventoryLoaners.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs inventoryLoaners.search search query. This query returns an array of [\
 
 
 
+
 ## Add
 
 
@@ -67,6 +85,7 @@ Performs inventoryLoaners.add add query to create an instance of an object. Uses
     $query->addInventoryLoaner($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -97,7 +116,9 @@ Performs inventoryLoaners.edit edit query to edit an object. Uses classes of typ
 
 
 
+
 ## Delete
+
 
 
 

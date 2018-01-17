@@ -149,6 +149,14 @@ class QueryRequest
     /**
      * @return bool
      */
+    public function isDefine()
+    {
+        return $this->requestName == 'define';
+    }
+
+    /**
+     * @return bool
+     */
     public function isParameterAdd()
     {
         $nonObject = static::getParameterAddList();
@@ -161,7 +169,7 @@ class QueryRequest
      */
     public function isRegular()
     {
-        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit();
+        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit() && !$this->isDefine();
     }
 
     /**

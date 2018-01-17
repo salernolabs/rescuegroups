@@ -4,7 +4,24 @@ This is the documentation for the MicrochipRegistrations queries against the [Re
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-microchipRegistrations)
 
+## Define
+
+
+
+
+
+
+Performs microchipRegistrations.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs microchipRegistrations.search search query. This query returns an array
 
 
 
+
 ## Add
 
 
@@ -77,7 +95,9 @@ Performs microchipRegistrations.add add query to create an instance of an object
     $result = $api->executeRequest($query);
 
 
+
 ## GetSettings
+
 
 
 
@@ -94,6 +114,7 @@ Performs microchipRegistrations.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

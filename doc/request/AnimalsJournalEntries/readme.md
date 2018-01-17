@@ -4,6 +4,22 @@ This is the documentation for the AnimalsJournalEntries queries against the [Res
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsJournalEntries)
 
+## Define
+
+
+
+
+
+
+Performs animalsJournalEntries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## Search
 
 Performs animalsJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntry](../../src/Objects/AnimalsJournalEntry.php) objects.
@@ -28,7 +44,9 @@ Performs animalsJournalEntries.search search query. This query returns an array 
 
 
 
+
 ## View
+
 
 
 
@@ -69,6 +87,7 @@ Performs animalsJournalEntries.add add query to create an instance of an object.
 
 
 
+
 ## Edit
 
 
@@ -96,7 +115,9 @@ Performs animalsJournalEntries.edit edit query to edit an object. Uses classes o
 
 
 
+
 ## Delete
+
 
 
 

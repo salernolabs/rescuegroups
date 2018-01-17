@@ -4,6 +4,22 @@ This is the documentation for the AnimalsJournalEntryTypes queries against the [
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsJournalEntrytypes)
 
+## Define
+
+
+
+
+
+
+Performs animalsJournalEntrytypes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs animalsJournalEntrytypes.list list query, typically suitable for fillin
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs animalsJournalEntrytypes.search search query. This query returns an arr
 
 
 
+
 ## View
+
 
 
 
@@ -78,6 +97,7 @@ Performs animalsJournalEntrytypes.add add query to create an instance of an obje
 
 
 
+
 ## Edit
 
 
@@ -96,6 +116,7 @@ Performs animalsJournalEntrytypes.edit edit query to edit an object. Uses classe
     $query->updateAnimalsJournalEntryType($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

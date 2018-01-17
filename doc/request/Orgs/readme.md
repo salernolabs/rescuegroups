@@ -4,6 +4,22 @@ This is the documentation for the Orgs queries against the [RescueGroups.org](ht
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-orgs)
 
+## Define
+
+
+
+
+
+
+Performs orgs.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Orgs\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs orgs.list list query, typically suitable for filling HTML select fields
 
 
 
+
 ## PublicView
+
 
 
 
@@ -52,6 +70,7 @@ Performs orgs.publicSearch search query. This query returns an array of [\Rescue
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 

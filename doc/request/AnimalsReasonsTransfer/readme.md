@@ -4,6 +4,22 @@ This is the documentation for the AnimalsReasonsTransfer queries against the [Re
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsReasonsTransfer)
 
+## Define
+
+
+
+
+
+
+Performs animalsReasonsTransfer.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs animalsReasonsTransfer.list list query, typically suitable for filling 
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs animalsReasonsTransfer.search search query. This query returns an array
 
 
 
+
 ## Add
 
 
@@ -75,6 +94,7 @@ Performs animalsReasonsTransfer.add add query to create an instance of an object
     $query->addAnimalsReasonsTransfer($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -99,7 +119,9 @@ Performs animalsReasonsTransfer.edit edit query to edit an object. Uses classes 
 
 
 
+
 ## Delete
+
 
 
 

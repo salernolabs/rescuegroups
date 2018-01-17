@@ -4,6 +4,22 @@ This is the documentation for the InventoryFiles queries against the [RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-inventoryfiles)
 
+## Define
+
+
+
+
+
+
+Performs inventoryfiles.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryFiles\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs inventoryfiles.list list query, typically suitable for filling HTML sel
 
     $query = new \RescueGroups\Request\Objects\InventoryFiles\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs inventoryfiles.search search query. This query returns an array of [\Re
 
 
 
+
 ## View
+
 
 
 
@@ -82,6 +101,7 @@ Performs inventoryfiles.add add query to create an instance of an object. Uses s
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -102,6 +122,7 @@ Performs inventoryfiles.edit edit query to edit an object. Uses classes of type 
     $query->updateInventoryFile($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

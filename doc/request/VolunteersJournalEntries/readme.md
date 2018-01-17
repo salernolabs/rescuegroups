@@ -4,6 +4,22 @@ This is the documentation for the VolunteersJournalEntries queries against the [
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-volunteersJournalEntries)
 
+## Define
+
+
+
+
+
+
+Performs volunteersJournalEntries.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## Search
 
 Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../src/Objects/VolunteersJournalEntry.php) objects.
@@ -28,7 +44,9 @@ Performs volunteersJournalEntries.search search query. This query returns an arr
 
 
 
+
 ## View
+
 
 
 
@@ -66,6 +84,7 @@ Performs volunteersJournalEntries.add add query to create an instance of an obje
 
 
 
+
 ## Edit
 
 
@@ -90,7 +109,9 @@ Performs volunteersJournalEntries.edit edit query to edit an object. Uses classe
 
 
 
+
 ## Delete
+
 
 
 

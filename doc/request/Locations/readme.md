@@ -4,6 +4,22 @@ This is the documentation for the Locations queries against the [RescueGroups.or
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-locations)
 
+## Define
+
+
+
+
+
+
+Performs locations.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Locations\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs locations.list list query, typically suitable for filling HTML select f
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs locations.search search query. This query returns an array of [\RescueG
 
 
 
+
 ## Add
 
 
@@ -82,6 +101,7 @@ Performs locations.add add query to create an instance of an object. Uses classe
     $query->addLocation($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -114,7 +134,9 @@ Performs locations.edit edit query to edit an object. Uses classes of type [\Res
 
 
 
+
 ## Delete
+
 
 
 

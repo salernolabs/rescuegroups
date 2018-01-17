@@ -4,6 +4,22 @@ This is the documentation for the AnimalBreeds queries against the [RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalBreeds)
 
+## Define
+
+
+
+
+
+
+Performs animalBreeds.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalBreeds\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## PublicList
 
 
@@ -18,6 +34,7 @@ Performs animalBreeds.publicList list query, typically suitable for filling HTML
 
 
 
+
 ## GetList
 
 
@@ -27,6 +44,7 @@ Performs animalBreeds.list list query, typically suitable for filling HTML selec
 
     $query = new \RescueGroups\Request\Objects\AnimalBreeds\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -56,6 +74,7 @@ Performs animalBreeds.search search query. This query returns an array of [\Resc
 
 
 
+
 ## PublicSearch
 
 Performs animalBreeds.publicSearch search query. This query returns an array of [\RescueGroups\Objects\AnimalBreed](../../src/Objects/AnimalBreed.php) objects.
@@ -74,6 +93,7 @@ Performs animalBreeds.publicSearch search query. This query returns an array of 
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 

@@ -4,6 +4,22 @@ This is the documentation for the Events queries against the [RescueGroups.org](
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-events)
 
+## Define
+
+
+
+
+
+
+Performs events.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Events\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs events.list list query, typically suitable for filling HTML select fiel
 
 
 
+
 ## PublicView
+
 
 
 
@@ -35,6 +53,7 @@ Performs events.publicView query.
 
 
 ## View
+
 
 
 
@@ -74,6 +93,7 @@ Performs events.publicSearch search query. This query returns an array of [\Resc
 
 
 
+
 ## Search
 
 Performs events.search search query. This query returns an array of [\RescueGroups\Objects\Event](../../src/Objects/Event.php) objects.
@@ -92,6 +112,7 @@ Performs events.search search query. This query returns an array of [\RescueGrou
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -123,6 +144,7 @@ Performs events.add add query to create an instance of an object. Uses classes o
 
 
 
+
 ## Edit
 
 
@@ -150,7 +172,9 @@ Performs events.edit edit query to edit an object. Uses classes of type [\Rescue
 
 
 
+
 ## Delete
+
 
 
 
@@ -173,6 +197,7 @@ Performs events.delete query.
 
 
 
+
 Performs events.getSettings query.
 
 ### Example Query
@@ -183,6 +208,7 @@ Performs events.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

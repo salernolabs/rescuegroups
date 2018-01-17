@@ -4,6 +4,22 @@ This is the documentation for the AnimalsMeetRequests queries against the [Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsMeetrequests)
 
+## Define
+
+
+
+
+
+
+Performs animalsMeetrequests.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## Search
 
 Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../src/Objects/AnimalsMeetRequest.php) objects.
@@ -28,7 +44,9 @@ Performs animalsMeetrequests.search search query. This query returns an array of
 
 
 
+
 ## View
+
 
 
 
@@ -67,6 +85,7 @@ Performs animalsMeetrequests.add add query to create an instance of an object. U
 
 
 
+
 ## Edit
 
 
@@ -92,7 +111,9 @@ Performs animalsMeetrequests.edit edit query to edit an object. Uses classes of 
 
 
 
+
 ## Delete
+
 
 
 

@@ -4,6 +4,22 @@ This is the documentation for the OutcomesTransfers queries against the [RescueG
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesTransfers)
 
+## Define
+
+
+
+
+
+
+Performs outcomesTransfers.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesTransfers.list list query, typically suitable for filling HTML 
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesTransfers.search search query. This query returns an array of [
 
 
 
+
 ## Add
 
 
@@ -80,6 +99,7 @@ Performs outcomesTransfers.add add query to create an instance of an object. Use
     $query->addOutcomesTransfer($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -109,7 +129,9 @@ Performs outcomesTransfers.edit edit query to edit an object. Uses classes of ty
 
 
 
+
 ## Change
+
 
 
 

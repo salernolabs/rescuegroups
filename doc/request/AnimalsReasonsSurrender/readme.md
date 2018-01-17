@@ -4,6 +4,22 @@ This is the documentation for the AnimalsReasonsSurrender queries against the [R
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalsReasonsSurrender)
 
+## Define
+
+
+
+
+
+
+Performs animalsReasonsSurrender.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs animalsReasonsSurrender.list list query, typically suitable for filling
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs animalsReasonsSurrender.search search query. This query returns an arra
 
 
 
+
 ## Add
 
 
@@ -75,6 +94,7 @@ Performs animalsReasonsSurrender.add add query to create an instance of an objec
     $query->addAnimalsReasonsSurrender($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -99,7 +119,9 @@ Performs animalsReasonsSurrender.edit edit query to edit an object. Uses classes
 
 
 
+
 ## Delete
+
 
 
 

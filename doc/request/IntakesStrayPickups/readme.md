@@ -4,7 +4,24 @@ This is the documentation for the IntakesStrayPickups queries against the [Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesStraypickups)
 
+## Define
+
+
+
+
+
+
+Performs intakesStraypickups.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs intakesStraypickups.search search query. This query returns an array of
 
 
 
+
 ## Add
 
 
@@ -70,6 +88,7 @@ Performs intakesStraypickups.add add query to create an instance of an object. U
     $query->addIntakesStrayPickup($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -104,7 +123,9 @@ Performs intakesStraypickups.edit edit query to edit an object. Uses classes of 
 
 
 
+
 ## Change
+
 
 
 

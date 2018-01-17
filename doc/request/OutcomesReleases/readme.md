@@ -4,6 +4,22 @@ This is the documentation for the OutcomesReleases queries against the [RescueGr
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesReleases)
 
+## Define
+
+
+
+
+
+
+Performs outcomesReleases.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesReleases.list list query, typically suitable for filling HTML s
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesReleases.search search query. This query returns an array of [\
 
 
 
+
 ## Add
 
 
@@ -83,6 +102,7 @@ Performs outcomesReleases.add add query to create an instance of an object. Uses
     $query->addOutcomesReleas($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -115,7 +135,9 @@ Performs outcomesReleases.edit edit query to edit an object. Uses classes of typ
 
 
 
+
 ## Change
+
 
 
 

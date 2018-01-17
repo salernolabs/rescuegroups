@@ -4,7 +4,24 @@ This is the documentation for the IntakesOwnerSurrenders queries against the [Re
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesOwnersurrenders)
 
+## Define
+
+
+
+
+
+
+Performs intakesOwnersurrenders.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs intakesOwnersurrenders.search search query. This query returns an array
 
 
 
+
 ## Add
 
 
@@ -65,6 +83,7 @@ Performs intakesOwnersurrenders.add add query to create an instance of an object
     $query->addIntakesOwnerSurrender($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -94,7 +113,9 @@ Performs intakesOwnersurrenders.edit edit query to edit an object. Uses classes 
 
 
 
+
 ## Change
+
 
 
 

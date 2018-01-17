@@ -4,6 +4,22 @@ This is the documentation for the WebPages queries against the [RescueGroups.org
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webpages)
 
+## Define
+
+
+
+
+
+
+Performs webpages.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebPages\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs webpages.list list query, typically suitable for filling HTML select fi
 
 
 
+
 ## PublicView
+
 
 
 
@@ -35,6 +53,7 @@ Performs webpages.publicView query.
 
 
 ## View
+
 
 
 
@@ -74,6 +93,7 @@ Performs webpages.publicSearch search query. This query returns an array of [\Re
 
 
 
+
 ## Search
 
 Performs webpages.search search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../src/Objects/WebPage.php) objects.
@@ -92,6 +112,7 @@ Performs webpages.search search query. This query returns an array of [\RescueGr
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -125,6 +146,7 @@ Performs webpages.add add query to create an instance of an object. Uses classes
 
 
 
+
 ## Edit
 
 
@@ -150,6 +172,7 @@ Performs webpages.edit edit query to edit an object. Uses classes of type [\Resc
     $query->updateWebPage($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

@@ -90,6 +90,16 @@ Performs {{typeName}}.{{objectAction}} add query to create an instance of an obj
     $result = $api->executeRequest($query);
     {{/ isParameterAdd}}
 
+    {{# isDefine}}
+Performs {{typeName}}.{{objectAction}} query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\{{className}}\{{requestClassName}}();
+
+    $result = $api->executeRequest($query);
+    {{/ isDefine}}
+
     {{# isRegular}}
 Performs {{typeName}}.{{objectAction}} query.
 

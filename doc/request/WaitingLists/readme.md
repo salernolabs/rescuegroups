@@ -4,7 +4,24 @@ This is the documentation for the WaitingLists queries against the [RescueGroups
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-waitinglists)
 
+## Define
+
+
+
+
+
+
+Performs waitinglists.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs waitinglists.search search query. This query returns an array of [\Resc
 
 
 
+
 ## Add
 
 
@@ -63,6 +81,7 @@ Performs waitinglists.add add query to create an instance of an object. Uses cla
     $query->addWaitingList($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -89,7 +108,9 @@ Performs waitinglists.edit edit query to edit an object. Uses classes of type [\
 
 
 
+
 ## Delete
+
 
 
 

@@ -176,11 +176,6 @@ class RequestGenerator
 
         foreach ($definition as $request => $requestData)
         {
-            if ($request == 'define')
-            {
-                continue;
-            }
-
             $queryRequest = new QueryRequest($className, $type, $request, $requestData);
 
             $output->requests[] = $queryRequest;
@@ -265,10 +260,15 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query.mustache'), $query);
         }
+        elseif ($query->isDefine())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/define-query.mustache'), $query);
+        }
         elseif ($query->isRegular())
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query.mustache'), $query);
         }
+
 
         file_put_contents($requestFileName, $data);
     }
@@ -303,7 +303,11 @@ class RequestGenerator
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/add-create-query-test.mustache'), $query);
         }
-        else
+        elseif ($query->isDefine())
+        {
+            $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/define-query-test.mustache'), $query);
+        }
+        elseif ($query->isRegular() || $query->isList())
         {
             $data = $this->mustache->render(file_get_contents(__DIR__.'/new-templates/parameters-query-test.mustache'), $query);
         }

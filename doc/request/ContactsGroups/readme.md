@@ -4,7 +4,24 @@ This is the documentation for the ContactsGroups queries against the [RescueGrou
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-contactsGroups)
 
+## Define
+
+
+
+
+
+
+Performs contactsGroups.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\ContactsGroups\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -34,6 +51,7 @@ Performs contactsGroups.list list query, typically suitable for filling HTML sel
 
 
 
+
 ## Search
 
 Performs contactsGroups.search search query. This query returns an array of [\RescueGroups\Objects\ContactsGroup](../../src/Objects/ContactsGroup.php) objects.
@@ -52,6 +70,7 @@ Performs contactsGroups.search search query. This query returns an array of [\Re
         ->addField('someOtherObjectField');
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -79,6 +98,7 @@ Performs contactsGroups.add add query to create an instance of an object. Uses c
 
 
 
+
 ## Edit
 
 
@@ -101,7 +121,9 @@ Performs contactsGroups.edit edit query to edit an object. Uses classes of type 
 
 
 
+
 ## Delete
+
 
 
 

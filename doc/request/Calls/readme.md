@@ -4,6 +4,22 @@ This is the documentation for the Calls queries against the [RescueGroups.org](h
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-calls)
 
+## Define
+
+
+
+
+
+
+Performs calls.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Calls\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs calls.list list query, typically suitable for filling HTML select field
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs calls.search search query. This query returns an array of [\RescueGroup
 
 
 
+
 ## Add
 
 
@@ -80,6 +99,7 @@ Performs calls.add add query to create an instance of an object. Uses classes of
     $query->addCall($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -106,6 +126,7 @@ Performs calls.edit edit query to edit an object. Uses classes of type [\RescueG
     $query->updateCall($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

@@ -4,7 +4,24 @@ This is the documentation for the Memorials queries against the [RescueGroups.or
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-memorials)
 
+## Define
+
+
+
+
+
+
+Performs memorials.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Memorials\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs memorials.search search query. This query returns an array of [\RescueG
 
 
 
+
 ## Add
 
 
@@ -66,6 +84,7 @@ Performs memorials.add add query to create an instance of an object. Uses specia
     $query->addMemorial($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 ## Edit
@@ -92,7 +111,9 @@ Performs memorials.edit edit query to edit an object. Uses classes of type [\Res
 
 
 
+
 ## Delete
+
 
 
 
@@ -115,6 +136,7 @@ Performs memorials.delete query.
 
 
 
+
 Performs memorials.getSettings query.
 
 ### Example Query
@@ -125,6 +147,7 @@ Performs memorials.getSettings query.
 
 
 ## UpdateSettings
+
 
 
 

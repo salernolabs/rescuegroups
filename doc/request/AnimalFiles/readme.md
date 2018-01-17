@@ -4,6 +4,22 @@ This is the documentation for the AnimalFiles queries against the [RescueGroups.
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalFiles)
 
+## Define
+
+
+
+
+
+
+Performs animalFiles.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalFiles\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs animalFiles.list list query, typically suitable for filling HTML select
 
     $query = new \RescueGroups\Request\Objects\AnimalFiles\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs animalFiles.search search query. This query returns an array of [\Rescu
 
 
 
+
 ## View
+
 
 
 
@@ -83,6 +102,7 @@ Performs animalFiles.add add query to create an instance of an object. Uses spec
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -104,6 +124,7 @@ Performs animalFiles.edit edit query to edit an object. Uses classes of type [\R
     $query->updateAnimalFile($editObject);
 
     $result = $api->executeRequest($query);
+
 
 
 

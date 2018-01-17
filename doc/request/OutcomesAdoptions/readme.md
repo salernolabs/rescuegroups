@@ -4,6 +4,22 @@ This is the documentation for the OutcomesAdoptions queries against the [RescueG
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-outcomesAdoptions)
 
+## Define
+
+
+
+
+
+
+Performs outcomesAdoptions.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs outcomesAdoptions.list list query, typically suitable for filling HTML 
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs outcomesAdoptions.search search query. This query returns an array of [
 
 
 
+
 ## Add
 
 
@@ -78,6 +97,7 @@ Performs outcomesAdoptions.add add query to create an instance of an object. Use
     $query->addOutcomesAdoption($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -105,7 +125,9 @@ Performs outcomesAdoptions.edit edit query to edit an object. Uses classes of ty
 
 
 
+
 ## Change
+
 
 
 

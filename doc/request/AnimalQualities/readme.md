@@ -4,6 +4,22 @@ This is the documentation for the AnimalQualities queries against the [RescueGro
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-animalQualities)
 
+## Define
+
+
+
+
+
+
+Performs animalQualities.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalQualities\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## PublicList
 
 
@@ -18,6 +34,7 @@ Performs animalQualities.publicList list query, typically suitable for filling H
 
 
 
+
 ## GetList
 
 
@@ -27,6 +44,7 @@ Performs animalQualities.list list query, typically suitable for filling HTML se
 
     $query = new \RescueGroups\Request\Objects\AnimalQualities\GetList();
     $result = $api->executeRequest($query);
+
 
 
 

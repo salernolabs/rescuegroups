@@ -4,6 +4,22 @@ This is the documentation for the WebImages queries against the [RescueGroups.or
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-webimages)
 
+## Define
+
+
+
+
+
+
+Performs webimages.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebImages\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -13,6 +29,7 @@ Performs webimages.list list query, typically suitable for filling HTML select f
 
     $query = new \RescueGroups\Request\Objects\WebImages\GetList();
     $result = $api->executeRequest($query);
+
 
 
 
@@ -42,7 +59,9 @@ Performs webimages.search search query. This query returns an array of [\RescueG
 
 
 
+
 ## View
+
 
 
 
@@ -80,6 +99,7 @@ Performs webimages.add add query to create an instance of an object. Uses specia
     $result = $api->executeRequest($query);
 
 
+
 ## Edit
 
 
@@ -101,7 +121,9 @@ Performs webimages.edit edit query to edit an object. Uses classes of type [\Res
 
 
 
+
 ## Delete
+
 
 
 

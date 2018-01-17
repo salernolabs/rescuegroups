@@ -4,7 +4,24 @@ This is the documentation for the IntakesBornInRescueShelter queries against the
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesBorninrescueshelter)
 
+## Define
+
+
+
+
+
+
+Performs intakesBorninrescueshelter.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## View
+
 
 
 
@@ -44,6 +61,7 @@ Performs intakesBorninrescueshelter.search search query. This query returns an a
 
 
 
+
 ## Add
 
 
@@ -63,6 +81,7 @@ Performs intakesBorninrescueshelter.add add query to create an instance of an ob
     $query->addIntakesBornInRescueShelter($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -90,7 +109,9 @@ Performs intakesBorninrescueshelter.edit edit query to edit an object. Uses clas
 
 
 
+
 ## Change
+
 
 
 

@@ -4,6 +4,22 @@ This is the documentation for the IntakesServiceTypes queries against the [Rescu
 
 [Full Documentation on RescueGroups.org](https://userguide.rescuegroups.org/display/APIDG/Object+definitions#Objectdefinitions-intakesServicetypes)
 
+## Define
+
+
+
+
+
+
+Performs intakesServicetypes.define query. This gives information about the API interface to your application. These are also used to build this SDK.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Define();
+
+    $result = $api->executeRequest($query);
+
+
 ## GetList
 
 
@@ -18,7 +34,9 @@ Performs intakesServicetypes.list list query, typically suitable for filling HTM
 
 
 
+
 ## View
+
 
 
 
@@ -58,6 +76,7 @@ Performs intakesServicetypes.search search query. This query returns an array of
 
 
 
+
 ## Add
 
 
@@ -75,6 +94,7 @@ Performs intakesServicetypes.add add query to create an instance of an object. U
     $query->addIntakesServiceType($addObject);
 
     $result = $api->executeRequest($query);
+
 
 
 
@@ -99,7 +119,9 @@ Performs intakesServicetypes.edit edit query to edit an object. Uses classes of 
 
 
 
+
 ## Delete
+
 
 
 
