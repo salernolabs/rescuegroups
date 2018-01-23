@@ -14,7 +14,7 @@ try
 {
     $query = new \RescueGroups\Request\Objects\Animals\Search();
     //$query->addFilter('animalRescueID', 'equals', 1);
-    $query->addField('animalName');
+    $query->addField('name');
 
     $result = $api->executeRequest($query);
 }
@@ -26,5 +26,5 @@ catch (\Throwable $exception)
 
 foreach ($result->data as $animal)
 {
-    echo 'Animal with id ' . $animal->animalID . ' is ' . $animal->animalName . PHP_EOL;
+    echo 'Animal with id ' . $animal->id . ' is ' . $animal->name . PHP_EOL;
 }
