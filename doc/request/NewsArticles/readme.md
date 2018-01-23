@@ -12,6 +12,15 @@ Performs newsarticles.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\NewsArticles\Define();
 
     $result = $api->executeRequest($query);
+Performs newsarticles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\NewsArticles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs newsarticles.view query.
 
@@ -19,7 +28,7 @@ Performs newsarticles.view query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\View();
 
-    $query->setarticleID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -30,7 +39,7 @@ Performs newsarticles.publicView query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\PublicView();
 
-    $query->setarticleID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -76,9 +85,9 @@ Performs newsarticles.add add query to create an instance of an object. Uses cla
     $query = new \RescueGroups\Request\Objects\NewsArticles\Add();
 
     $addObject = new \RescueGroups\Objects\NewsArticle();
-    $addObject->articleTitle = "Title"
-    $addObject->articleDescription = "Description"
-    $addObject->articleDate = "Date"
+    $addObject->title = "Title"
+    $addObject->description = "Description"
+    $addObject->date = "Date"
 
     $query->addNewsArticle($addObject);
 
@@ -91,10 +100,10 @@ Performs newsarticles.edit edit query to edit an object. Uses classes of type [\
     $query = new \RescueGroups\Request\Objects\NewsArticles\Edit();
 
     $editObject = new \RescueGroups\Objects\NewsArticle();
-    $editObject->articleID = "ID"
-    $editObject->articleTitle = "Title"
-    $editObject->articleDescription = "Description"
-    $editObject->articleDate = "Date"
+    $editObject->id = "ID"
+    $editObject->title = "Title"
+    $editObject->description = "Description"
+    $editObject->date = "Date"
 
     $query->updateNewsArticle($editObject);
 
@@ -106,7 +115,7 @@ Performs newsarticles.delete query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\Delete();
 
-    $query->setarticleID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

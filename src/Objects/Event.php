@@ -10,62 +10,92 @@ namespace RescueGroups\Objects;
 
 class Event implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $eventID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $eventName = null;
+    public $name = null;
 
     /**
      * Start Date/Time
      *
      * @var \DateTime
      */
-    public $eventStart = null;
+    public $start = null;
 
     /**
      * End Date/Time
      *
      * @var \DateTime
      */
-    public $eventEnd = null;
+    public $end = null;
 
     /**
      * Web address
      *
      * @var string
      */
-    public $eventUrl = null;
+    public $url = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $eventDescription = null;
+    public $description = null;
 
     /**
      * Location
      *
      * @var integer
      */
-    public $eventLocationID = null;
+    public $locationId = null;
 
     /**
      * Species attending
      *
      * @var integer
      */
-    public $eventSpecies = null;
+    public $species = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'eventID' => 'id',
+            'eventName' => 'name',
+            'eventStart' => 'start',
+            'eventEnd' => 'end',
+            'eventUrl' => 'url',
+            'eventDescription' => 'description',
+            'eventLocationID' => 'locationId',
+            'eventSpecies' => 'species',
+        ],
+        'output' => [
+            'id' => 'eventID',
+            'name' => 'eventName',
+            'start' => 'eventStart',
+            'end' => 'eventEnd',
+            'url' => 'eventUrl',
+            'description' => 'eventDescription',
+            'locationId' => 'eventLocationID',
+            'species' => 'eventSpecies',
+        ]
+    ];
 
     /**
      * Event Constructor
@@ -75,14 +105,7 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->eventID)) $this->eventID = $inputData->eventID;
-        if (!empty($inputData->eventName)) $this->eventName = $inputData->eventName;
-        if (!empty($inputData->eventStart)) $this->eventStart = $inputData->eventStart;
-        if (!empty($inputData->eventEnd)) $this->eventEnd = $inputData->eventEnd;
-        if (!empty($inputData->eventUrl)) $this->eventUrl = $inputData->eventUrl;
-        if (!empty($inputData->eventDescription)) $this->eventDescription = $inputData->eventDescription;
-        if (!empty($inputData->eventLocationID)) $this->eventLocationID = $inputData->eventLocationID;
-        if (!empty($inputData->eventSpecies)) $this->eventSpecies = $inputData->eventSpecies;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -93,16 +116,6 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->eventID !== null) $output['eventID'] = $this->eventID;
-        if ($this->eventName !== null) $output['eventName'] = $this->eventName;
-        if ($this->eventStart !== null) $output['eventStart'] = $this->eventStart;
-        if ($this->eventEnd !== null) $output['eventEnd'] = $this->eventEnd;
-        if ($this->eventUrl !== null) $output['eventUrl'] = $this->eventUrl;
-        if ($this->eventDescription !== null) $output['eventDescription'] = $this->eventDescription;
-        if ($this->eventLocationID !== null) $output['eventLocationID'] = $this->eventLocationID;
-        if ($this->eventSpecies !== null) $output['eventSpecies'] = $this->eventSpecies;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

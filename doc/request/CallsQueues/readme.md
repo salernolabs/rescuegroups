@@ -12,6 +12,15 @@ Performs callsQueues.define query. This gives information about the API interfac
     $query = new \RescueGroups\Request\Objects\CallsQueues\Define();
 
     $result = $api->executeRequest($query);
+Performs callsQueues.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsQueues\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs callsQueues.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs callsQueues.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueues\View();
 
-    $query->setqueueID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,8 +64,8 @@ Performs callsQueues.add add query to create an instance of an object. Uses clas
     $query = new \RescueGroups\Request\Objects\CallsQueues\Add();
 
     $addObject = new \RescueGroups\Objects\CallsQueue();
-    $addObject->queueName = "Name"
-    $addObject->queueFromEmail = "From Email Address"
+    $addObject->name = "Name"
+    $addObject->fromEmail = "From Email Address"
 
     $query->addCallsQueue($addObject);
 
@@ -69,10 +78,10 @@ Performs callsQueues.edit edit query to edit an object. Uses classes of type [\R
     $query = new \RescueGroups\Request\Objects\CallsQueues\Edit();
 
     $editObject = new \RescueGroups\Objects\CallsQueue();
-    $editObject->queueID = "ID"
-    $editObject->queueName = "Name"
-    $editObject->queueFromEmail = "From Email Address"
-    $editObject->queueDefaultUrgencyID = "Default Urgency"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->fromEmail = "From Email Address"
+    $editObject->defaultUrgencyId = "Default Urgency"
 
     $query->updateCallsQueue($editObject);
 
@@ -84,7 +93,7 @@ Performs callsQueues.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueues\Delete();
 
-    $query->setqueueID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

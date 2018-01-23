@@ -22,14 +22,14 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebPages\Add();
 
         $testObject = new \RescueGroups\Objects\WebPage();
-        $testObject->webpageName = 'testValue Name';
-        $testObject->webpageContent = 'testValue Content';
-        $testObject->webpageStatus = 'testValue Status';
-        $testObject->webpageUselayout = 'testValue Use Layout';
-        $testObject->webpageShowonmenu = 'testValue Show on Menu';
-        $testObject->webpageMetaDescription = 'testValue Meta Description';
-        $testObject->webpageBackgroundMusicID = 'testValue Background Music';
-        $testObject->webpageRoleID = 'testValue Security Role';
+        $testObject->name = 'testValue Name';
+        $testObject->content = 'testValue Content';
+        $testObject->status = 'testValue Status';
+        $testObject->uselayout = 'testValue Use Layout';
+        $testObject->showonmenu = 'testValue Show on Menu';
+        $testObject->metaDescription = 'testValue Meta Description';
+        $testObject->backgroundMusicId = 'testValue Background Music';
+        $testObject->roleId = 'testValue Security Role';
 
         $query->addWebPage($testObject);
 

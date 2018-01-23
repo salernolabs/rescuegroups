@@ -22,17 +22,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesStrayDropoff();
-        $testObject->intakesStraydropoffID = 'testValue Stray Pickup';
-        $testObject->intakesStraydropoffAnimalID = 'testValue Animal';
-        $testObject->intakesStraydropoffAnimalConditionID = 'testValue Condition';
-        $testObject->intakesStraydropoffDate = 'testValue Date';
-        $testObject->intakesStraydropoffNotes = 'testValue Notes';
-        $testObject->intakesStraydropoffFoundLocation = 'testValue Found Location';
-        $testObject->intakesStraydropoffFoundAddress = 'testValue Found Street address';
-        $testObject->intakesStraydropoffFoundCity = 'testValue Found City';
-        $testObject->intakesStraydropoffFoundState = 'testValue Found State/Province';
-        $testObject->intakesStraydropoffFoundPostalcode = 'testValue Found Postal Code';
-        $testObject->intakesStraydropoffFinderID = 'testValue Dropped off by';
+        $testObject->id = 'testValue Stray Pickup';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->foundLocation = 'testValue Found Location';
+        $testObject->foundAddress = 'testValue Found Street address';
+        $testObject->foundCity = 'testValue Found City';
+        $testObject->foundState = 'testValue Found State/Province';
+        $testObject->foundPostalcode = 'testValue Found Postal Code';
+        $testObject->finderId = 'testValue Dropped off by';
 
         $query->updateIntakesStrayDropoff($testObject);
 

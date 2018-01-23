@@ -35,19 +35,19 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "webpageID" => [1, 'webpageID'],
-        "webpageOrgID" => [0, 'webpageOrgID'],
-        "webpageName" => [0, 'webpageName'],
-        "webpageContent" => [0, 'webpageContent'],
-        "webpageStatus" => [0, 'webpageStatus'],
-        "webpageUselayout" => [0, 'webpageUselayout'],
-        "webpageShowonmenu" => [0, 'webpageShowonmenu'],
-        "webpageMetaDescription" => [0, 'webpageMetaDescription'],
-        "webpageBackgroundImageID" => [0, 'webpageBackgroundImageID'],
-        "webpageBackgroundImageFileName" => [0, 'webpageBackgroundImageFileName'],
-        "webpageBackgroundMusicID" => [0, 'webpageBackgroundMusicID'],
-        "webpageBackgroundMusicFileName" => [0, 'webpageBackgroundMusicFileName'],
-        "webpageRoles" => [0, 'webpageRoles'],
+        "id" => [1, 'webpageID'],
+        "orgId" => [0, 'webpageOrgID'],
+        "name" => [0, 'webpageName'],
+        "content" => [0, 'webpageContent'],
+        "status" => [0, 'webpageStatus'],
+        "uselayout" => [0, 'webpageUselayout'],
+        "showonmenu" => [0, 'webpageShowonmenu'],
+        "metaDescription" => [0, 'webpageMetaDescription'],
+        "backgroundImageId" => [0, 'webpageBackgroundImageID'],
+        "backgroundImageFileName" => [0, 'webpageBackgroundImageFileName'],
+        "backgroundMusicId" => [0, 'webpageBackgroundMusicID'],
+        "backgroundMusicFileName" => [0, 'webpageBackgroundMusicFileName'],
+        "roles" => [0, 'webpageRoles'],
     ];
 
     /**

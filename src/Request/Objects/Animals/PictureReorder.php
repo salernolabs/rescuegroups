@@ -30,14 +30,14 @@ class PictureReorder extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var integer
      */
-    private $animalID = null;
+    private $id = null;
 
     /**
      * ID
      *
      * @var string
      */
-    private $mediaID = null;
+    private $mediaId = null;
 
     /**
      * Order
@@ -53,9 +53,9 @@ class PictureReorder extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setAnimalID($value)
+    public function setId($value)
     {
-        $this->animalID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -66,9 +66,9 @@ class PictureReorder extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setMediaID($value)
+    public function setMediaId($value)
     {
-        $this->mediaID = $value;
+        $this->mediaId = $value;
 
         return $this;
     }
@@ -96,8 +96,8 @@ class PictureReorder extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
-        if ($this->mediaID !== null) $parameterArray['values'][] = ["mediaID"=>$this->mediaID];
+        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
+        if ($this->mediaId !== null) $parameterArray['values'][] = ["mediaID"=>$this->mediaId];
         if ($this->newOrder !== null) $parameterArray['values'][] = ["newOrder"=>$this->newOrder];
     }
 }

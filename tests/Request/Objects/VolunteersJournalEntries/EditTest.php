@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Edit();
 
         $testObject = new \RescueGroups\Objects\VolunteersJournalEntry();
-        $testObject->journalEntryID = 'testValue ID';
-        $testObject->journalEntryContactID = 'testValue Contact';
-        $testObject->journalEntryDate = 'testValue Date';
-        $testObject->journalEntryComment = 'testValue Comment';
-        $testObject->journalEntryType = 'testValue Entry Type';
+        $testObject->id = 'testValue ID';
+        $testObject->contactId = 'testValue Contact';
+        $testObject->date = 'testValue Date';
+        $testObject->comment = 'testValue Comment';
+        $testObject->type = 'testValue Entry Type';
 
         $query->updateVolunteersJournalEntry($testObject);
 

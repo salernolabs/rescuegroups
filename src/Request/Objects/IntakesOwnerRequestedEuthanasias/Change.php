@@ -30,49 +30,49 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakeID = null;
+    private $intakeId = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    private $intakesOwnerrequestedeuthanasiaAnimalID = null;
+    private $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $intakesOwnerrequestedeuthanasiaAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $intakesOwnerrequestedeuthanasiaDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $intakesOwnerrequestedeuthanasiaNotes = null;
+    private $notes = null;
 
     /**
      * Owner
      *
      * @var integer
      */
-    private $intakesOwnerrequestedeuthanasiaOwnerID = null;
+    private $ownerId = null;
 
     /**
      * Euthanasia Reason
      *
      * @var integer
      */
-    private $intakesOwnerrequestedeuthanasiaReasonID = null;
+    private $reasonId = null;
 
 
     /**
@@ -81,9 +81,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakeID($value)
+    public function setIntakeId($value)
     {
-        $this->intakeID = $value;
+        $this->intakeId = $value;
 
         return $this;
     }
@@ -94,9 +94,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -107,9 +107,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -120,9 +120,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaDate($value)
+    public function setDate($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -133,9 +133,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaNotes($value)
+    public function setNotes($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -146,9 +146,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaOwnerID($value)
+    public function setOwnerId($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaOwnerID = $value;
+        $this->ownerId = $value;
 
         return $this;
     }
@@ -159,9 +159,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesOwnerrequestedeuthanasiaReasonID($value)
+    public function setReasonId($value)
     {
-        $this->intakesOwnerrequestedeuthanasiaReasonID = $value;
+        $this->reasonId = $value;
 
         return $this;
     }
@@ -176,12 +176,12 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
-        if ($this->intakesOwnerrequestedeuthanasiaAnimalID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalID"=>$this->intakesOwnerrequestedeuthanasiaAnimalID];
-        if ($this->intakesOwnerrequestedeuthanasiaAnimalConditionID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalConditionID"=>$this->intakesOwnerrequestedeuthanasiaAnimalConditionID];
-        if ($this->intakesOwnerrequestedeuthanasiaDate !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaDate"=>$this->intakesOwnerrequestedeuthanasiaDate];
-        if ($this->intakesOwnerrequestedeuthanasiaNotes !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaNotes"=>$this->intakesOwnerrequestedeuthanasiaNotes];
-        if ($this->intakesOwnerrequestedeuthanasiaOwnerID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaOwnerID"=>$this->intakesOwnerrequestedeuthanasiaOwnerID];
-        if ($this->intakesOwnerrequestedeuthanasiaReasonID !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaReasonID"=>$this->intakesOwnerrequestedeuthanasiaReasonID];
+        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalID"=>$this->animalId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaNotes"=>$this->notes];
+        if ($this->ownerId !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaOwnerID"=>$this->ownerId];
+        if ($this->reasonId !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaReasonID"=>$this->reasonId];
     }
 }

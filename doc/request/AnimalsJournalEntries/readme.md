@@ -12,6 +12,15 @@ Performs animalsJournalEntries.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsJournalEntries.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## Search
 Performs animalsJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntry](../../../src/Objects/AnimalsJournalEntry.php) objects.
 
@@ -36,7 +45,7 @@ Performs animalsJournalEntries.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\View();
 
-    $query->setjournalEntryID("Entry ID");
+    $query->setid("Entry ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,12 +57,12 @@ Performs animalsJournalEntries.add add query to create an instance of an object.
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsJournalEntry();
-    $addObject->journalEntryDate = "Date"
-    $addObject->journalEntryComment = "Comment"
-    $addObject->journalEntryEntrytypeID = "Entrytype ID"
-    $addObject->journalEntryCost = "Cost"
-    $addObject->journalEntryDueDate = "Due Date"
-    $addObject->journalEntryReminderDate = "Reminder Date"
+    $addObject->date = "Date"
+    $addObject->comment = "Comment"
+    $addObject->entrytypeId = "Entrytype ID"
+    $addObject->cost = "Cost"
+    $addObject->dueDate = "Due Date"
+    $addObject->reminderDate = "Reminder Date"
 
     $query->addAnimalsJournalEntry($addObject);
 
@@ -66,14 +75,14 @@ Performs animalsJournalEntries.edit edit query to edit an object. Uses classes o
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsJournalEntry();
-    $editObject->journalEntryID = "Entry ID"
-    $editObject->journalEntryAnimalID = "Animal ID"
-    $editObject->journalEntryDate = "Date"
-    $editObject->journalEntryComment = "Comment"
-    $editObject->journalEntryEntrytypeID = "Entrytype ID"
-    $editObject->journalEntryCost = "Cost"
-    $editObject->journalEntryDueDate = "Due Date"
-    $editObject->journalEntryReminderDate = "Reminder Date"
+    $editObject->id = "Entry ID"
+    $editObject->animalId = "Animal ID"
+    $editObject->date = "Date"
+    $editObject->comment = "Comment"
+    $editObject->entrytypeId = "Entrytype ID"
+    $editObject->cost = "Cost"
+    $editObject->dueDate = "Due Date"
+    $editObject->reminderDate = "Reminder Date"
 
     $query->updateAnimalsJournalEntry($editObject);
 
@@ -85,7 +94,7 @@ Performs animalsJournalEntries.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Delete();
 
-    $query->setjournalEntryID("Entry ID");
+    $query->setid("Entry ID");
 
     $result = $api->executeRequest($query);
 

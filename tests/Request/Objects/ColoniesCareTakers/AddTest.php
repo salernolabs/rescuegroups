@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Add();
 
         $testObject = new \RescueGroups\Objects\Create\ColoniesCareTaker();
-        $testObject->caretakerContactID = 'testValue Contact';
+        $testObject->contactId = 'testValue Contact';
 
         $query->addColoniesCareTaker($testObject);
 

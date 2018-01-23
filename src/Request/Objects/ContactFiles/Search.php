@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "contactfileID" => [0, 'contactfileID'],
-        "contactfileContactID" => [1, 'contactfileContactID'],
-        "contactfileOldName" => [0, 'contactfileOldName'],
-        "contactfileDescription" => [0, 'contactfileDescription'],
-        "contactfileStatus" => [0, 'contactfileStatus'],
-        "contactfileDisplayInline" => [0, 'contactfileDisplayInline'],
-        "contactfileSize" => [0, 'contactfileSize'],
-        "contactfileCreatedDate" => [0, 'contactfileCreatedDate'],
+        "id" => [0, 'contactfileID'],
+        "contactId" => [1, 'contactfileContactID'],
+        "oldName" => [0, 'contactfileOldName'],
+        "description" => [0, 'contactfileDescription'],
+        "status" => [0, 'contactfileStatus'],
+        "displayInline" => [0, 'contactfileDisplayInline'],
+        "size" => [0, 'contactfileSize'],
+        "createdDate" => [0, 'contactfileCreatedDate'],
     ];
 
     /**

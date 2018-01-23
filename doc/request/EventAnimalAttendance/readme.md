@@ -12,6 +12,15 @@ Performs eventanimalattendance.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Define();
 
     $result = $api->executeRequest($query);
+Performs eventanimalattendance.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## PublicView
 Performs eventanimalattendance.publicView query.
 
@@ -19,7 +28,7 @@ Performs eventanimalattendance.publicView query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\PublicView();
 
-    $query->setattendanceID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -30,7 +39,7 @@ Performs eventanimalattendance.view query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\View();
 
-    $query->setattendanceID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -76,8 +85,8 @@ Performs eventanimalattendance.add add query to create an instance of an object.
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Add();
 
     $addObject = new \RescueGroups\Objects\EventAnimalAttendance();
-    $addObject->attendanceStatus = "Status"
-    $addObject->attendanceEventID = "Event"
+    $addObject->status = "Status"
+    $addObject->eventId = "Event"
 
     $query->addEventAnimalAttendance($addObject);
 
@@ -90,10 +99,10 @@ Performs eventanimalattendance.edit edit query to edit an object. Uses classes o
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Edit();
 
     $editObject = new \RescueGroups\Objects\EventAnimalAttendance();
-    $editObject->attendanceID = "ID"
-    $editObject->attendanceAnimalID = "Animal"
-    $editObject->attendanceStatus = "Status"
-    $editObject->attendanceEventID = "Event"
+    $editObject->id = "ID"
+    $editObject->animalId = "Animal"
+    $editObject->status = "Status"
+    $editObject->eventId = "Event"
 
     $query->updateEventAnimalAttendance($editObject);
 
@@ -105,7 +114,7 @@ Performs eventanimalattendance.delete query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Delete();
 
-    $query->setattendanceID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

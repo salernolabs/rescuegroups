@@ -35,9 +35,9 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "statusID" => [1, 'statusID'],
-        "statusName" => [0, 'statusName'],
-        "statusDescription" => [0, 'statusDescription'],
+        "id" => [1, 'statusID'],
+        "name" => [0, 'statusName'],
+        "description" => [0, 'statusDescription'],
     ];
 
     /**

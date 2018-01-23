@@ -15,56 +15,56 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $donationContactID = null;
+    public $contactId = null;
 
     /**
      * Amount
      *
      * @var float
      */
-    public $donationAmount = null;
+    public $amount = null;
 
     /**
      * Inkind type
      *
      * @var string
      */
-    public $donationInkind = null;
+    public $inkind = null;
 
     /**
      * Comment
      *
      * @var string
      */
-    public $donationComment = null;
+    public $comment = null;
 
     /**
      * Letter sent
      *
      * @var string
      */
-    public $donationLettersent = null;
+    public $lettersent = null;
 
     /**
      * Purpose
      *
      * @var string
      */
-    public $donationPurpose = null;
+    public $purpose = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $donationDate = null;
+    public $date = null;
 
     /**
      * Add contact to Donor group
      *
      * @var string
      */
-    public $donationAddDonorGroup = null;
+    public $addDonorGroup = null;
 
 
     /**
@@ -75,14 +75,14 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->donationContactID)) $this->donationContactID = $inputData->donationContactID;
-        if (!empty($inputData->donationAmount)) $this->donationAmount = $inputData->donationAmount;
-        if (!empty($inputData->donationInkind)) $this->donationInkind = $inputData->donationInkind;
-        if (!empty($inputData->donationComment)) $this->donationComment = $inputData->donationComment;
-        if (!empty($inputData->donationLettersent)) $this->donationLettersent = $inputData->donationLettersent;
-        if (!empty($inputData->donationPurpose)) $this->donationPurpose = $inputData->donationPurpose;
-        if (!empty($inputData->donationDate)) $this->donationDate = $inputData->donationDate;
-        if (!empty($inputData->donationAddDonorGroup)) $this->donationAddDonorGroup = $inputData->donationAddDonorGroup;
+        if (!empty($inputData->donationContactID)) $this->contactId = $inputData->donationContactID;
+        if (!empty($inputData->donationAmount)) $this->amount = $inputData->donationAmount;
+        if (!empty($inputData->donationInkind)) $this->inkind = $inputData->donationInkind;
+        if (!empty($inputData->donationComment)) $this->comment = $inputData->donationComment;
+        if (!empty($inputData->donationLettersent)) $this->lettersent = $inputData->donationLettersent;
+        if (!empty($inputData->donationPurpose)) $this->purpose = $inputData->donationPurpose;
+        if (!empty($inputData->donationDate)) $this->date = $inputData->donationDate;
+        if (!empty($inputData->donationAddDonorGroup)) $this->addDonorGroup = $inputData->donationAddDonorGroup;
     }
 
     /**
@@ -94,14 +94,14 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->donationContactID !== null) $output['donationContactID'] = $this->donationContactID;
-        if ($this->donationAmount !== null) $output['donationAmount'] = $this->donationAmount;
-        if ($this->donationInkind !== null) $output['donationInkind'] = $this->donationInkind;
-        if ($this->donationComment !== null) $output['donationComment'] = $this->donationComment;
-        if ($this->donationLettersent !== null) $output['donationLettersent'] = $this->donationLettersent;
-        if ($this->donationPurpose !== null) $output['donationPurpose'] = $this->donationPurpose;
-        if ($this->donationDate !== null) $output['donationDate'] = $this->donationDate;
-        if ($this->donationAddDonorGroup !== null) $output['donationAddDonorGroup'] = $this->donationAddDonorGroup;
+        if ($includeId && $this->contactId !== null) $output['donationContactID'] = $this->contactId;
+        if ($this->amount !== null) $output['donationAmount'] = $this->amount;
+        if ($this->inkind !== null) $output['donationInkind'] = $this->inkind;
+        if ($this->comment !== null) $output['donationComment'] = $this->comment;
+        if ($this->lettersent !== null) $output['donationLettersent'] = $this->lettersent;
+        if ($this->purpose !== null) $output['donationPurpose'] = $this->purpose;
+        if ($this->date !== null) $output['donationDate'] = $this->date;
+        if ($this->addDonorGroup !== null) $output['donationAddDonorGroup'] = $this->addDonorGroup;
 
         return $output;
     }

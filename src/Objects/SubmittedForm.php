@@ -10,27 +10,47 @@ namespace RescueGroups\Objects;
 
 class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $submittedformID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $submittedformAnimalID = null;
+    public $animalId = null;
 
     /**
      * Status
      *
      * @var integer
      */
-    public $submittedformStatusID = null;
+    public $statusId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'submittedformID' => 'id',
+            'submittedformAnimalID' => 'animalId',
+            'submittedformStatusID' => 'statusId',
+        ],
+        'output' => [
+            'id' => 'submittedformID',
+            'animalId' => 'submittedformAnimalID',
+            'statusId' => 'submittedformStatusID',
+        ]
+    ];
 
     /**
      * SubmittedForm Constructor
@@ -40,9 +60,7 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->submittedformID)) $this->submittedformID = $inputData->submittedformID;
-        if (!empty($inputData->submittedformAnimalID)) $this->submittedformAnimalID = $inputData->submittedformAnimalID;
-        if (!empty($inputData->submittedformStatusID)) $this->submittedformStatusID = $inputData->submittedformStatusID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -53,11 +71,6 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->submittedformID !== null) $output['submittedformID'] = $this->submittedformID;
-        if ($this->submittedformAnimalID !== null) $output['submittedformAnimalID'] = $this->submittedformAnimalID;
-        if ($this->submittedformStatusID !== null) $output['submittedformStatusID'] = $this->submittedformStatusID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

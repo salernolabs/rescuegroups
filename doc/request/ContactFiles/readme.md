@@ -12,6 +12,15 @@ Performs contactFiles.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\ContactFiles\Define();
 
     $result = $api->executeRequest($query);
+Performs contactFiles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\ContactFiles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs contactFiles.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs contactFiles.view query.
 
     $query = new \RescueGroups\Request\Objects\ContactFiles\View();
 
-    $query->setcontactfileID("File ID");
+    $query->setid("File ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,11 +64,11 @@ Performs contactFiles.add add query to create an instance of an object. Uses spe
     $query = new \RescueGroups\Request\Objects\ContactFiles\Add();
 
     $addObject = new \RescueGroups\Objects\Create\ContactFile();
-    $addObject->contactfileBinary = "File"
-    $addObject->contactfileOldFileName = "Old file name"
-    $addObject->contactfileDescription = "Description"
-    $addObject->contactfileStatus = "Status"
-    $addObject->contactfileDisplayInline = "Inline"
+    $addObject->binary = "File"
+    $addObject->oldFileName = "Old file name"
+    $addObject->description = "Description"
+    $addObject->status = "Status"
+    $addObject->displayInline = "Inline"
 
     $query->addContactFile($addObject);
 
@@ -72,10 +81,10 @@ Performs contactFiles.edit edit query to edit an object. Uses classes of type [\
     $query = new \RescueGroups\Request\Objects\ContactFiles\Edit();
 
     $editObject = new \RescueGroups\Objects\ContactFile();
-    $editObject->contactfileID = "File ID"
-    $editObject->contactfileDescription = "Description"
-    $editObject->contactfileStatus = "Status"
-    $editObject->contactfileDisplayInline = "Inline"
+    $editObject->id = "File ID"
+    $editObject->description = "Description"
+    $editObject->status = "Status"
+    $editObject->displayInline = "Inline"
 
     $query->updateContactFile($editObject);
 

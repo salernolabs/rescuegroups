@@ -12,6 +12,15 @@ Performs submittedforms.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\SubmittedForms\Define();
 
     $result = $api->executeRequest($query);
+Performs submittedforms.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\SubmittedForms\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs submittedforms.list list query, typically suitable for filling HTML select fields.
 
@@ -46,7 +55,7 @@ Performs submittedforms.publicCommonSubmit query.
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
 
-    $query->setsubmittedformAnimalID("Animal");
+    $query->setanimalId("Animal");
     $query->setsubmitterSalutation("Salutation");
     $query->setsubmitterFirstname("First name");
     $query->setsubmitterLastname("Last name");
@@ -66,7 +75,7 @@ Performs submittedforms.publicCommonSubmit query.
     $query->setsubmitterEmailAlt("Alternate email address");
     $query->setsubmitterEmailPager("Pager email address");
     $query->setsubmitterReferredBy("Referred by");
-    $query->setsubmittedformAnswers("Answers");
+    $query->setanswers("Answers");
 
     $result = $api->executeRequest($query);
 
@@ -105,9 +114,9 @@ Performs submittedforms.edit edit query to edit an object. Uses classes of type 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\Edit();
 
     $editObject = new \RescueGroups\Objects\SubmittedForm();
-    $editObject->submittedformID = "ID"
-    $editObject->submittedformAnimalID = "Animal"
-    $editObject->submittedformStatusID = "Status"
+    $editObject->id = "ID"
+    $editObject->animalId = "Animal"
+    $editObject->statusId = "Status"
 
     $query->updateSubmittedForm($editObject);
 

@@ -10,62 +10,92 @@ namespace RescueGroups\Objects;
 
 class Donation implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $donationID = null;
+    public $id = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $donationContactID = null;
+    public $contactId = null;
 
     /**
      * Amount
      *
      * @var float
      */
-    public $donationAmount = null;
+    public $amount = null;
 
     /**
      * Inkind type
      *
      * @var string
      */
-    public $donationInkind = null;
+    public $inkind = null;
 
     /**
      * Comment
      *
      * @var string
      */
-    public $donationComment = null;
+    public $comment = null;
 
     /**
      * Letter sent
      *
      * @var string
      */
-    public $donationLettersent = null;
+    public $lettersent = null;
 
     /**
      * Purpose
      *
      * @var string
      */
-    public $donationPurpose = null;
+    public $purpose = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $donationDate = null;
+    public $date = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'donationID' => 'id',
+            'donationContactID' => 'contactId',
+            'donationAmount' => 'amount',
+            'donationInkind' => 'inkind',
+            'donationComment' => 'comment',
+            'donationLettersent' => 'lettersent',
+            'donationPurpose' => 'purpose',
+            'donationDate' => 'date',
+        ],
+        'output' => [
+            'id' => 'donationID',
+            'contactId' => 'donationContactID',
+            'amount' => 'donationAmount',
+            'inkind' => 'donationInkind',
+            'comment' => 'donationComment',
+            'lettersent' => 'donationLettersent',
+            'purpose' => 'donationPurpose',
+            'date' => 'donationDate',
+        ]
+    ];
 
     /**
      * Donation Constructor
@@ -75,14 +105,7 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->donationID)) $this->donationID = $inputData->donationID;
-        if (!empty($inputData->donationContactID)) $this->donationContactID = $inputData->donationContactID;
-        if (!empty($inputData->donationAmount)) $this->donationAmount = $inputData->donationAmount;
-        if (!empty($inputData->donationInkind)) $this->donationInkind = $inputData->donationInkind;
-        if (!empty($inputData->donationComment)) $this->donationComment = $inputData->donationComment;
-        if (!empty($inputData->donationLettersent)) $this->donationLettersent = $inputData->donationLettersent;
-        if (!empty($inputData->donationPurpose)) $this->donationPurpose = $inputData->donationPurpose;
-        if (!empty($inputData->donationDate)) $this->donationDate = $inputData->donationDate;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -93,16 +116,6 @@ class Donation implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->donationID !== null) $output['donationID'] = $this->donationID;
-        if ($this->donationContactID !== null) $output['donationContactID'] = $this->donationContactID;
-        if ($this->donationAmount !== null) $output['donationAmount'] = $this->donationAmount;
-        if ($this->donationInkind !== null) $output['donationInkind'] = $this->donationInkind;
-        if ($this->donationComment !== null) $output['donationComment'] = $this->donationComment;
-        if ($this->donationLettersent !== null) $output['donationLettersent'] = $this->donationLettersent;
-        if ($this->donationPurpose !== null) $output['donationPurpose'] = $this->donationPurpose;
-        if ($this->donationDate !== null) $output['donationDate'] = $this->donationDate;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

@@ -30,7 +30,7 @@ class Request extends \RescueGroups\Request\Objects\Base implements \RescueGroup
      *
      * @var integer
      */
-    private $partnershipSharingOrgID = null;
+    private $sharingOrgId = null;
 
 
     /**
@@ -39,9 +39,9 @@ class Request extends \RescueGroups\Request\Objects\Base implements \RescueGroup
      * @param integer $value
      * @return $this
      */
-    public function setPartnershipSharingOrgID($value)
+    public function setSharingOrgId($value)
     {
-        $this->partnershipSharingOrgID = $value;
+        $this->sharingOrgId = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class Request extends \RescueGroups\Request\Objects\Base implements \RescueGroup
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->partnershipSharingOrgID !== null) $parameterArray['values'][] = ["partnershipSharingOrgID"=>$this->partnershipSharingOrgID];
+        if ($this->sharingOrgId !== null) $parameterArray['values'][] = ["partnershipSharingOrgID"=>$this->sharingOrgId];
     }
 }

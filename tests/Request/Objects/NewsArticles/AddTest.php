@@ -22,9 +22,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\NewsArticles\Add();
 
         $testObject = new \RescueGroups\Objects\NewsArticle();
-        $testObject->articleTitle = 'testValue Title';
-        $testObject->articleDescription = 'testValue Description';
-        $testObject->articleDate = 'testValue Date';
+        $testObject->title = 'testValue Title';
+        $testObject->description = 'testValue Description';
+        $testObject->date = 'testValue Date';
 
         $query->addNewsArticle($testObject);
 

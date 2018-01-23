@@ -12,6 +12,15 @@ Performs microchipRegistrations.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
 
     $result = $api->executeRequest($query);
+Performs microchipRegistrations.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs microchipRegistrations.view query.
 
@@ -19,7 +28,7 @@ Performs microchipRegistrations.view query.
 
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\View();
 
-    $query->setmicrochipRegistrationID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,20 +57,20 @@ Performs microchipRegistrations.add add query to create an instance of an object
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Add();
 
     $addObject = new \RescueGroups\Objects\Create\MicrochipRegistration();
-    $addObject->microchipRegistrationMicrochipNumber = "Microchip number"
-    $addObject->microchipRegistrationMicrochipVendor = "Microchip vendor"
-    $addObject->microchipRegistrationRegistry = "Registry"
-    $addObject->microchipRegistrationRegistrantFirstname = "First name"
-    $addObject->microchipRegistrationRegistrantLastname = "Last name"
-    $addObject->microchipRegistrationRegistrantAddress = "Street address"
-    $addObject->microchipRegistrationRegistrantCity = "City"
-    $addObject->microchipRegistrationRegistrantState = "State/Province"
-    $addObject->microchipRegistrationRegistrantPostalcode = "Postal Code"
-    $addObject->microchipRegistrationRegistrantCountry = "Country"
-    $addObject->microchipRegistrationRegistrantPrimaryPhone = "Primary phone number"
-    $addObject->microchipRegistrationRegistrantSecondaryPhone = "Secondary phone number"
-    $addObject->microchipRegistrationRegistrantPrimaryEmail = "Primary email address"
-    $addObject->microchipRegistrationRegistrantSecondaryEmail = "Secondary email address"
+    $addObject->microchipNumber = "Microchip number"
+    $addObject->microchipVendor = "Microchip vendor"
+    $addObject->registry = "Registry"
+    $addObject->registrantFirstname = "First name"
+    $addObject->registrantLastname = "Last name"
+    $addObject->registrantAddress = "Street address"
+    $addObject->registrantCity = "City"
+    $addObject->registrantState = "State/Province"
+    $addObject->registrantPostalcode = "Postal Code"
+    $addObject->registrantCountry = "Country"
+    $addObject->registrantPrimaryPhone = "Primary phone number"
+    $addObject->registrantSecondaryPhone = "Secondary phone number"
+    $addObject->registrantPrimaryEmail = "Primary email address"
+    $addObject->registrantSecondaryEmail = "Secondary email address"
 
     $query->addMicrochipRegistration($addObject);
 

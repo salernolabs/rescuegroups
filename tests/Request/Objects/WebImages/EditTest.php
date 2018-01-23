@@ -22,8 +22,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebImages\Edit();
 
         $testObject = new \RescueGroups\Objects\WebImage();
-        $testObject->webimageID = 'testValue ID';
-        $testObject->webimageName = 'testValue Name';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
 
         $query->updateWebImage($testObject);
 

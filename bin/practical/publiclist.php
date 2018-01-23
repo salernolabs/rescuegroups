@@ -24,6 +24,5 @@ catch (\Throwable $exception)
 
 foreach ($result->data as $key => $value)
 {
-    print_r($value);die();
     echo $key . ' -> ' . $value->speciesSingular . PHP_EOL;
 }

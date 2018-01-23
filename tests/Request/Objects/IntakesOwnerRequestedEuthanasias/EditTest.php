@@ -22,13 +22,13 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia();
-        $testObject->intakesOwnerrequestedeuthanasiaID = 'testValue Owner requestedeuthanasia';
-        $testObject->intakesOwnerrequestedeuthanasiaAnimalID = 'testValue Animal';
-        $testObject->intakesOwnerrequestedeuthanasiaAnimalConditionID = 'testValue Condition';
-        $testObject->intakesOwnerrequestedeuthanasiaDate = 'testValue Date';
-        $testObject->intakesOwnerrequestedeuthanasiaNotes = 'testValue Notes';
-        $testObject->intakesOwnerrequestedeuthanasiaOwnerID = 'testValue Owner';
-        $testObject->intakesOwnerrequestedeuthanasiaReasonID = 'testValue Euthanasia Reason';
+        $testObject->id = 'testValue Owner requestedeuthanasia';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->ownerId = 'testValue Owner';
+        $testObject->reasonId = 'testValue Euthanasia Reason';
 
         $query->updateIntakesOwnerRequestedEuthanasia($testObject);
 

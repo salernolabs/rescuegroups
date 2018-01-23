@@ -12,6 +12,15 @@ Performs users.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Users\Define();
 
     $result = $api->executeRequest($query);
+Performs users.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Users\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs users.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs users.view query.
 
     $query = new \RescueGroups\Request\Objects\Users\View();
 
-    $query->setuserID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,27 +64,27 @@ Performs users.add add query to create an instance of an object. Uses special cl
     $query = new \RescueGroups\Request\Objects\Users\Add();
 
     $addObject = new \RescueGroups\Objects\Create\User();
-    $addObject->userLogin = "Login"
-    $addObject->userPassword = "Password"
-    $addObject->userSalutation = "Salutation"
-    $addObject->userFirstname = "First name"
-    $addObject->userLastname = "Last name"
-    $addObject->userAddress = "Street address"
-    $addObject->userCity = "City"
-    $addObject->userState = "State/Province"
-    $addObject->userPostalcode = "Postal Code"
-    $addObject->userPlus4 = "Zip code plus 4"
-    $addObject->userPhoneHome = "Home phone number"
-    $addObject->userPhoneWork = "Work phone number"
-    $addObject->userPhoneWorkExt = "Work phone extension"
-    $addObject->userPhoneCell = "Cell phone number"
-    $addObject->userFax = "Fax number"
-    $addObject->userEmail = "Email address"
-    $addObject->userEmailAlt = "Alternate email address"
-    $addObject->userEmailPager = "Pager email address"
-    $addObject->userContactID = "User Contact"
-    $addObject->userType = "Type"
-    $addObject->userStatus = "Status"
+    $addObject->login = "Login"
+    $addObject->password = "Password"
+    $addObject->salutation = "Salutation"
+    $addObject->firstname = "First name"
+    $addObject->lastname = "Last name"
+    $addObject->address = "Street address"
+    $addObject->city = "City"
+    $addObject->state = "State/Province"
+    $addObject->postalcode = "Postal Code"
+    $addObject->plus4 = "Zip code plus 4"
+    $addObject->phoneHome = "Home phone number"
+    $addObject->phoneWork = "Work phone number"
+    $addObject->phoneWorkExt = "Work phone extension"
+    $addObject->phoneCell = "Cell phone number"
+    $addObject->fax = "Fax number"
+    $addObject->email = "Email address"
+    $addObject->emailAlt = "Alternate email address"
+    $addObject->emailPager = "Pager email address"
+    $addObject->contactId = "User Contact"
+    $addObject->type = "Type"
+    $addObject->status = "Status"
 
     $query->addUser($addObject);
 
@@ -88,28 +97,28 @@ Performs users.edit edit query to edit an object. Uses classes of type [\RescueG
     $query = new \RescueGroups\Request\Objects\Users\Edit();
 
     $editObject = new \RescueGroups\Objects\User();
-    $editObject->userID = "ID"
-    $editObject->userLogin = "Login"
-    $editObject->userPassword = "Password"
-    $editObject->userSalutation = "Salutation"
-    $editObject->userFirstname = "First name"
-    $editObject->userLastname = "Last name"
-    $editObject->userAddress = "Street address"
-    $editObject->userCity = "City"
-    $editObject->userState = "State/Province"
-    $editObject->userPostalcode = "Postal Code"
-    $editObject->userPlus4 = "Zip code plus 4"
-    $editObject->userCountry = "Country"
-    $editObject->userPhoneHome = "Home phone number"
-    $editObject->userPhoneWork = "Work phone number"
-    $editObject->userPhoneWorkExt = "Work phone extension"
-    $editObject->userPhoneCell = "Cell phone number"
-    $editObject->userFax = "Fax number"
-    $editObject->userEmail = "Email address"
-    $editObject->userEmailAlt = "Alternate email address"
-    $editObject->userEmailPager = "Pager email address"
-    $editObject->userContactID = "User Contact"
-    $editObject->userStatus = "Status"
+    $editObject->id = "ID"
+    $editObject->login = "Login"
+    $editObject->password = "Password"
+    $editObject->salutation = "Salutation"
+    $editObject->firstname = "First name"
+    $editObject->lastname = "Last name"
+    $editObject->address = "Street address"
+    $editObject->city = "City"
+    $editObject->state = "State/Province"
+    $editObject->postalcode = "Postal Code"
+    $editObject->plus4 = "Zip code plus 4"
+    $editObject->country = "Country"
+    $editObject->phoneHome = "Home phone number"
+    $editObject->phoneWork = "Work phone number"
+    $editObject->phoneWorkExt = "Work phone extension"
+    $editObject->phoneCell = "Cell phone number"
+    $editObject->fax = "Fax number"
+    $editObject->email = "Email address"
+    $editObject->emailAlt = "Alternate email address"
+    $editObject->emailPager = "Pager email address"
+    $editObject->contactId = "User Contact"
+    $editObject->status = "Status"
 
     $query->updateUser($editObject);
 

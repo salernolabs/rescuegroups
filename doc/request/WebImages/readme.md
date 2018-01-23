@@ -12,6 +12,15 @@ Performs webimages.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\WebImages\Define();
 
     $result = $api->executeRequest($query);
+Performs webimages.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebImages\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs webimages.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs webimages.view query.
 
     $query = new \RescueGroups\Request\Objects\WebImages\View();
 
-    $query->setwebimageID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,9 +64,9 @@ Performs webimages.add add query to create an instance of an object. Uses specia
     $query = new \RescueGroups\Request\Objects\WebImages\Add();
 
     $addObject = new \RescueGroups\Objects\Create\WebImage();
-    $addObject->webimageBinary = "File"
-    $addObject->webimageOldFileName = "Original File Name"
-    $addObject->webimageName = "Name"
+    $addObject->binary = "File"
+    $addObject->oldFileName = "Original File Name"
+    $addObject->name = "Name"
 
     $query->addWebImage($addObject);
 
@@ -70,8 +79,8 @@ Performs webimages.edit edit query to edit an object. Uses classes of type [\Res
     $query = new \RescueGroups\Request\Objects\WebImages\Edit();
 
     $editObject = new \RescueGroups\Objects\WebImage();
-    $editObject->webimageID = "ID"
-    $editObject->webimageName = "Name"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
 
     $query->updateWebImage($editObject);
 
@@ -83,7 +92,7 @@ Performs webimages.delete query.
 
     $query = new \RescueGroups\Request\Objects\WebImages\Delete();
 
-    $query->setwebimageID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

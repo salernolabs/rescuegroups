@@ -22,12 +22,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesTransfers\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesTransfer();
-        $testObject->intakesTransferAnimalConditionID = 'testValue Condition';
-        $testObject->intakesTransferDate = 'testValue Date';
-        $testObject->intakesTransferNotes = 'testValue Notes';
-        $testObject->intakesTransferFromID = 'testValue Transferred From';
-        $testObject->intakesTransferCoalitionMember = 'testValue Coalition Member';
-        $testObject->intakesTransferReasonID = 'testValue Transfer Reason';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->fromId = 'testValue Transferred From';
+        $testObject->coalitionMember = 'testValue Coalition Member';
+        $testObject->reasonId = 'testValue Transfer Reason';
 
         $query->addIntakesTransfer($testObject);
 

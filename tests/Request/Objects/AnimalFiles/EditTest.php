@@ -22,12 +22,12 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalFiles\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalFile();
-        $testObject->animalfileID = 'testValue File ID';
-        $testObject->animalfileAnimalID = 'testValue Animal';
-        $testObject->animalfileDescription = 'testValue Description';
-        $testObject->animalfileStatus = 'testValue Status';
-        $testObject->animalfileDisplayInline = 'testValue Inline';
-        $testObject->animalfilePublic = 'testValue Public';
+        $testObject->id = 'testValue File ID';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
+        $testObject->public = 'testValue Public';
 
         $query->updateAnimalFile($testObject);
 

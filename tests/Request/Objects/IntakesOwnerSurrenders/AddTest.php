@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesOwnerSurrender();
-        $testObject->intakesOwnersurrenderAnimalConditionID = 'testValue Condition';
-        $testObject->intakesOwnersurrenderDate = 'testValue Date';
-        $testObject->intakesOwnersurrenderNotes = 'testValue Notes';
-        $testObject->intakesOwnersurrenderOwnerID = 'testValue Surrendered By';
-        $testObject->intakesOwnersurrenderReasonID = 'testValue Surrender Reason';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->ownerId = 'testValue Surrendered By';
+        $testObject->reasonId = 'testValue Surrender Reason';
 
         $query->addIntakesOwnerSurrender($testObject);
 

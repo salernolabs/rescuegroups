@@ -30,35 +30,35 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $outcomesEuthanasiaAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $outcomesEuthanasiaDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $outcomesEuthanasiaNotes = null;
+    private $notes = null;
 
     /**
      * Euthanasia Reason
      *
      * @var integer
      */
-    private $outcomesEuthanasiaReasonID = null;
+    private $reasonId = null;
 
 
     /**
@@ -67,9 +67,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -80,9 +80,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesEuthanasiaAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->outcomesEuthanasiaAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -93,9 +93,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setOutcomesEuthanasiaDate($value)
+    public function setDate($value)
     {
-        $this->outcomesEuthanasiaDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -106,9 +106,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesEuthanasiaNotes($value)
+    public function setNotes($value)
     {
-        $this->outcomesEuthanasiaNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -119,9 +119,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesEuthanasiaReasonID($value)
+    public function setReasonId($value)
     {
-        $this->outcomesEuthanasiaReasonID = $value;
+        $this->reasonId = $value;
 
         return $this;
     }
@@ -136,10 +136,10 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->outcomesEuthanasiaAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaAnimalConditionID"=>$this->outcomesEuthanasiaAnimalConditionID];
-        if ($this->outcomesEuthanasiaDate !== null) $parameterArray['values'][] = ["outcomesEuthanasiaDate"=>$this->outcomesEuthanasiaDate];
-        if ($this->outcomesEuthanasiaNotes !== null) $parameterArray['values'][] = ["outcomesEuthanasiaNotes"=>$this->outcomesEuthanasiaNotes];
-        if ($this->outcomesEuthanasiaReasonID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaReasonID"=>$this->outcomesEuthanasiaReasonID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesEuthanasiaAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["outcomesEuthanasiaDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesEuthanasiaNotes"=>$this->notes];
+        if ($this->reasonId !== null) $parameterArray['values'][] = ["outcomesEuthanasiaReasonID"=>$this->reasonId];
     }
 }

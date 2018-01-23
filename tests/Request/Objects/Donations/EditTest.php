@@ -22,14 +22,14 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Donations\Edit();
 
         $testObject = new \RescueGroups\Objects\Donation();
-        $testObject->donationID = 'testValue ID';
-        $testObject->donationContactID = 'testValue Contact';
-        $testObject->donationAmount = 'testValue Amount';
-        $testObject->donationInkind = 'testValue Inkind type';
-        $testObject->donationComment = 'testValue Comment';
-        $testObject->donationLettersent = 'testValue Letter sent';
-        $testObject->donationPurpose = 'testValue Purpose';
-        $testObject->donationDate = 'testValue Date';
+        $testObject->id = 'testValue ID';
+        $testObject->contactId = 'testValue Contact';
+        $testObject->amount = 'testValue Amount';
+        $testObject->inkind = 'testValue Inkind type';
+        $testObject->comment = 'testValue Comment';
+        $testObject->lettersent = 'testValue Letter sent';
+        $testObject->purpose = 'testValue Purpose';
+        $testObject->date = 'testValue Date';
 
         $query->updateDonation($testObject);
 

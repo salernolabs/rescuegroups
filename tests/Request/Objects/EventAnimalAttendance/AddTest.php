@@ -22,8 +22,8 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Add();
 
         $testObject = new \RescueGroups\Objects\EventAnimalAttendance();
-        $testObject->attendanceStatus = 'testValue Status';
-        $testObject->attendanceEventID = 'testValue Event';
+        $testObject->status = 'testValue Status';
+        $testObject->eventId = 'testValue Event';
 
         $query->addEventAnimalAttendance($testObject);
 

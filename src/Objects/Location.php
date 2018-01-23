@@ -10,76 +10,110 @@ namespace RescueGroups\Objects;
 
 class Location implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $locationID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $locationName = null;
+    public $name = null;
 
     /**
      * Web address
      *
      * @var string
      */
-    public $locationUrl = null;
+    public $url = null;
 
     /**
      * Street address
      *
      * @var string
      */
-    public $locationAddress = null;
+    public $address = null;
 
     /**
      * City
      *
      * @var string
      */
-    public $locationCity = null;
+    public $city = null;
 
     /**
      * State/Province
      *
      * @var string
      */
-    public $locationState = null;
+    public $state = null;
 
     /**
      * Postal Code
      *
      * @var string
      */
-    public $locationPostalcode = null;
+    public $postalcode = null;
 
     /**
      * Country
      *
      * @var integer
      */
-    public $locationCountry = null;
+    public $country = null;
 
     /**
      * Phone
      *
      * @var string
      */
-    public $locationPhone = null;
+    public $phone = null;
 
     /**
      * Phone extension
      *
      * @var string
      */
-    public $locationPhoneExt = null;
+    public $phoneExt = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'locationID' => 'id',
+            'locationName' => 'name',
+            'locationUrl' => 'url',
+            'locationAddress' => 'address',
+            'locationCity' => 'city',
+            'locationState' => 'state',
+            'locationPostalcode' => 'postalcode',
+            'locationCountry' => 'country',
+            'locationPhone' => 'phone',
+            'locationPhoneExt' => 'phoneExt',
+        ],
+        'output' => [
+            'id' => 'locationID',
+            'name' => 'locationName',
+            'url' => 'locationUrl',
+            'address' => 'locationAddress',
+            'city' => 'locationCity',
+            'state' => 'locationState',
+            'postalcode' => 'locationPostalcode',
+            'country' => 'locationCountry',
+            'phone' => 'locationPhone',
+            'phoneExt' => 'locationPhoneExt',
+        ]
+    ];
 
     /**
      * Location Constructor
@@ -89,16 +123,7 @@ class Location implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->locationID)) $this->locationID = $inputData->locationID;
-        if (!empty($inputData->locationName)) $this->locationName = $inputData->locationName;
-        if (!empty($inputData->locationUrl)) $this->locationUrl = $inputData->locationUrl;
-        if (!empty($inputData->locationAddress)) $this->locationAddress = $inputData->locationAddress;
-        if (!empty($inputData->locationCity)) $this->locationCity = $inputData->locationCity;
-        if (!empty($inputData->locationState)) $this->locationState = $inputData->locationState;
-        if (!empty($inputData->locationPostalcode)) $this->locationPostalcode = $inputData->locationPostalcode;
-        if (!empty($inputData->locationCountry)) $this->locationCountry = $inputData->locationCountry;
-        if (!empty($inputData->locationPhone)) $this->locationPhone = $inputData->locationPhone;
-        if (!empty($inputData->locationPhoneExt)) $this->locationPhoneExt = $inputData->locationPhoneExt;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -109,18 +134,6 @@ class Location implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->locationID !== null) $output['locationID'] = $this->locationID;
-        if ($this->locationName !== null) $output['locationName'] = $this->locationName;
-        if ($this->locationUrl !== null) $output['locationUrl'] = $this->locationUrl;
-        if ($this->locationAddress !== null) $output['locationAddress'] = $this->locationAddress;
-        if ($this->locationCity !== null) $output['locationCity'] = $this->locationCity;
-        if ($this->locationState !== null) $output['locationState'] = $this->locationState;
-        if ($this->locationPostalcode !== null) $output['locationPostalcode'] = $this->locationPostalcode;
-        if ($this->locationCountry !== null) $output['locationCountry'] = $this->locationCountry;
-        if ($this->locationPhone !== null) $output['locationPhone'] = $this->locationPhone;
-        if ($this->locationPhoneExt !== null) $output['locationPhoneExt'] = $this->locationPhoneExt;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

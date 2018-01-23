@@ -23,7 +23,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $testObject = new \RescueGroups\Objects\VolunteerHour();
         $testObject->id = 'testValue ID';
-        $testObject->volunteerID = 'testValue Volunteer';
+        $testObject->volunteerId = 'testValue Volunteer';
         $testObject->volunteerDate = 'testValue Date';
         $testObject->volunteerLength = 'testValue Hours';
         $testObject->volunteerTask = 'testValue Task';

@@ -10,27 +10,47 @@ namespace RescueGroups\Objects;
 
 class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Entrytype ID, Primary Key
      *
      * @var integer
      */
-    public $journalEntrytypeID = null;
+    public $id = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $journalEntrytypeDescription = null;
+    public $description = null;
 
     /**
      * Category ID
      *
      * @var integer
      */
-    public $journalEntrytypeCategoryID = null;
+    public $categoryId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'journalEntrytypeID' => 'id',
+            'journalEntrytypeDescription' => 'description',
+            'journalEntrytypeCategoryID' => 'categoryId',
+        ],
+        'output' => [
+            'id' => 'journalEntrytypeID',
+            'description' => 'journalEntrytypeDescription',
+            'categoryId' => 'journalEntrytypeCategoryID',
+        ]
+    ];
 
     /**
      * AnimalsJournalEntryType Constructor
@@ -40,9 +60,7 @@ class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInter
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->journalEntrytypeID)) $this->journalEntrytypeID = $inputData->journalEntrytypeID;
-        if (!empty($inputData->journalEntrytypeDescription)) $this->journalEntrytypeDescription = $inputData->journalEntrytypeDescription;
-        if (!empty($inputData->journalEntrytypeCategoryID)) $this->journalEntrytypeCategoryID = $inputData->journalEntrytypeCategoryID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -53,11 +71,6 @@ class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInter
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->journalEntrytypeID !== null) $output['journalEntrytypeID'] = $this->journalEntrytypeID;
-        if ($this->journalEntrytypeDescription !== null) $output['journalEntrytypeDescription'] = $this->journalEntrytypeDescription;
-        if ($this->journalEntrytypeCategoryID !== null) $output['journalEntrytypeCategoryID'] = $this->journalEntrytypeCategoryID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

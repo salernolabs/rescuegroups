@@ -12,6 +12,15 @@ Performs intakesOwnerrequestedeuthanasias.define query. This gives information a
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesOwnerrequestedeuthanasias.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesOwnerrequestedeuthanasias.view query.
 
@@ -19,7 +28,7 @@ Performs intakesOwnerrequestedeuthanasias.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
-    $query->setintakesOwnerrequestedeuthanasiaID("Owner requestedeuthanasia");
+    $query->setid("Owner requestedeuthanasia");
 
     $result = $api->executeRequest($query);
 
@@ -48,11 +57,11 @@ Performs intakesOwnerrequestedeuthanasias.add add query to create an instance of
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia();
-    $addObject->intakesOwnerrequestedeuthanasiaAnimalConditionID = "Condition"
-    $addObject->intakesOwnerrequestedeuthanasiaDate = "Date"
-    $addObject->intakesOwnerrequestedeuthanasiaNotes = "Notes"
-    $addObject->intakesOwnerrequestedeuthanasiaOwnerID = "Owner"
-    $addObject->intakesOwnerrequestedeuthanasiaReasonID = "Euthanasia Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->ownerId = "Owner"
+    $addObject->reasonId = "Euthanasia Reason"
 
     $query->addIntakesOwnerRequestedEuthanasia($addObject);
 
@@ -65,13 +74,13 @@ Performs intakesOwnerrequestedeuthanasias.edit edit query to edit an object. Use
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesOwnerRequestedEuthanasia();
-    $editObject->intakesOwnerrequestedeuthanasiaID = "Owner requestedeuthanasia"
-    $editObject->intakesOwnerrequestedeuthanasiaAnimalID = "Animal"
-    $editObject->intakesOwnerrequestedeuthanasiaAnimalConditionID = "Condition"
-    $editObject->intakesOwnerrequestedeuthanasiaDate = "Date"
-    $editObject->intakesOwnerrequestedeuthanasiaNotes = "Notes"
-    $editObject->intakesOwnerrequestedeuthanasiaOwnerID = "Owner"
-    $editObject->intakesOwnerrequestedeuthanasiaReasonID = "Euthanasia Reason"
+    $editObject->id = "Owner requestedeuthanasia"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->ownerId = "Owner"
+    $editObject->reasonId = "Euthanasia Reason"
 
     $query->updateIntakesOwnerRequestedEuthanasia($editObject);
 
@@ -83,13 +92,13 @@ Performs intakesOwnerrequestedeuthanasias.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesOwnerrequestedeuthanasiaAnimalID("Animal");
-    $query->setintakesOwnerrequestedeuthanasiaAnimalConditionID("Condition");
-    $query->setintakesOwnerrequestedeuthanasiaDate("Date");
-    $query->setintakesOwnerrequestedeuthanasiaNotes("Notes");
-    $query->setintakesOwnerrequestedeuthanasiaOwnerID("Owner");
-    $query->setintakesOwnerrequestedeuthanasiaReasonID("Euthanasia Reason");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setownerId("Owner");
+    $query->setreasonId("Euthanasia Reason");
 
     $result = $api->executeRequest($query);
 

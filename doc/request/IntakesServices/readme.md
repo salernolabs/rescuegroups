@@ -12,6 +12,15 @@ Performs intakesServices.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\IntakesServices\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesServices.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesServices\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesServices.view query.
 
@@ -19,7 +28,7 @@ Performs intakesServices.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServices\View();
 
-    $query->setintakesServiceID("Service");
+    $query->setid("Service");
 
     $result = $api->executeRequest($query);
 
@@ -48,11 +57,11 @@ Performs intakesServices.add add query to create an instance of an object. Uses 
     $query = new \RescueGroups\Request\Objects\IntakesServices\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesService();
-    $addObject->intakesServiceAnimalConditionID = "Condition"
-    $addObject->intakesServiceDate = "Date"
-    $addObject->intakesServiceNotes = "Notes"
-    $addObject->intakesServiceOwnerID = "Owner"
-    $addObject->intakesServiceServicetypeID = "Service"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->ownerId = "Owner"
+    $addObject->servicetypeId = "Service"
 
     $query->addIntakesService($addObject);
 
@@ -65,13 +74,13 @@ Performs intakesServices.edit edit query to edit an object. Uses classes of type
     $query = new \RescueGroups\Request\Objects\IntakesServices\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesService();
-    $editObject->intakesServiceID = "Service"
-    $editObject->intakesServiceAnimalID = "Animal"
-    $editObject->intakesServiceAnimalConditionID = "Condition"
-    $editObject->intakesServiceDate = "Date"
-    $editObject->intakesServiceNotes = "Notes"
-    $editObject->intakesServiceOwnerID = "Owner"
-    $editObject->intakesServiceServicetypeID = "Service"
+    $editObject->id = "Service"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->ownerId = "Owner"
+    $editObject->servicetypeId = "Service"
 
     $query->updateIntakesService($editObject);
 
@@ -83,13 +92,13 @@ Performs intakesServices.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServices\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesServiceAnimalID("Animal");
-    $query->setintakesServiceAnimalConditionID("Condition");
-    $query->setintakesServiceDate("Date");
-    $query->setintakesServiceNotes("Notes");
-    $query->setintakesServiceOwnerID("Owner");
-    $query->setintakesServiceServicetypeID("Service");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setownerId("Owner");
+    $query->setservicetypeId("Service");
 
     $result = $api->executeRequest($query);
 

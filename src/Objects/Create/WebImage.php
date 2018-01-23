@@ -15,21 +15,21 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $webimageBinary = null;
+    public $binary = null;
 
     /**
      * Original File Name
      *
      * @var string
      */
-    public $webimageOldFileName = null;
+    public $oldFileName = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $webimageName = null;
+    public $name = null;
 
 
     /**
@@ -40,9 +40,9 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->webimageBinary)) $this->webimageBinary = $inputData->webimageBinary;
-        if (!empty($inputData->webimageOldFileName)) $this->webimageOldFileName = $inputData->webimageOldFileName;
-        if (!empty($inputData->webimageName)) $this->webimageName = $inputData->webimageName;
+        if (!empty($inputData->webimageBinary)) $this->binary = $inputData->webimageBinary;
+        if (!empty($inputData->webimageOldFileName)) $this->oldFileName = $inputData->webimageOldFileName;
+        if (!empty($inputData->webimageName)) $this->name = $inputData->webimageName;
     }
 
     /**
@@ -54,9 +54,9 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->webimageBinary !== null) $output['webimageBinary'] = $this->webimageBinary;
-        if ($this->webimageOldFileName !== null) $output['webimageOldFileName'] = $this->webimageOldFileName;
-        if ($this->webimageName !== null) $output['webimageName'] = $this->webimageName;
+        if ($this->binary !== null) $output['webimageBinary'] = $this->binary;
+        if ($this->oldFileName !== null) $output['webimageOldFileName'] = $this->oldFileName;
+        if ($this->name !== null) $output['webimageName'] = $this->name;
 
         return $output;
     }

@@ -22,14 +22,14 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Locations\Add();
 
         $testObject = new \RescueGroups\Objects\Location();
-        $testObject->locationName = 'testValue Name';
-        $testObject->locationUrl = 'testValue Web address';
-        $testObject->locationAddress = 'testValue Street address';
-        $testObject->locationCity = 'testValue City';
-        $testObject->locationState = 'testValue State/Province';
-        $testObject->locationPostalcode = 'testValue Postal Code';
-        $testObject->locationPhone = 'testValue Phone';
-        $testObject->locationPhoneExt = 'testValue Phone extension';
+        $testObject->name = 'testValue Name';
+        $testObject->url = 'testValue Web address';
+        $testObject->address = 'testValue Street address';
+        $testObject->city = 'testValue City';
+        $testObject->state = 'testValue State/Province';
+        $testObject->postalcode = 'testValue Postal Code';
+        $testObject->phone = 'testValue Phone';
+        $testObject->phoneExt = 'testValue Phone extension';
 
         $query->addLocation($testObject);
 

@@ -10,6 +10,8 @@ namespace RescueGroups\Objects;
 
 class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
@@ -22,7 +24,7 @@ class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $volunteerID = null;
+    public $volunteerId = null;
 
     /**
      * Date
@@ -47,6 +49,28 @@ class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
 
 
     /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'volunteerHoursID' => 'id',
+            'volunteerHoursVolunteerID' => 'volunteerId',
+            'volunteerHoursVolunteerDate' => 'volunteerDate',
+            'volunteerHoursVolunteerLength' => 'volunteerLength',
+            'volunteerHoursVolunteerTask' => 'volunteerTask',
+        ],
+        'output' => [
+            'id' => 'volunteerHoursID',
+            'volunteerId' => 'volunteerHoursVolunteerID',
+            'volunteerDate' => 'volunteerHoursVolunteerDate',
+            'volunteerLength' => 'volunteerHoursVolunteerLength',
+            'volunteerTask' => 'volunteerHoursVolunteerTask',
+        ]
+    ];
+
+    /**
      * VolunteerHour Constructor
      * @var \stdClass|null $inputData
      */
@@ -54,11 +78,7 @@ class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->volunteerHoursID)) $this->id = $inputData->volunteerHoursID;
-        if (!empty($inputData->volunteerHoursVolunteerID)) $this->volunteerID = $inputData->volunteerHoursVolunteerID;
-        if (!empty($inputData->volunteerHoursVolunteerDate)) $this->volunteerDate = $inputData->volunteerHoursVolunteerDate;
-        if (!empty($inputData->volunteerHoursVolunteerLength)) $this->volunteerLength = $inputData->volunteerHoursVolunteerLength;
-        if (!empty($inputData->volunteerHoursVolunteerTask)) $this->volunteerTask = $inputData->volunteerHoursVolunteerTask;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class VolunteerHour implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->id !== null) $output['volunteerHoursID'] = $this->id;
-        if ($this->volunteerID !== null) $output['volunteerHoursVolunteerID'] = $this->volunteerID;
-        if ($this->volunteerDate !== null) $output['volunteerHoursVolunteerDate'] = $this->volunteerDate;
-        if ($this->volunteerLength !== null) $output['volunteerHoursVolunteerLength'] = $this->volunteerLength;
-        if ($this->volunteerTask !== null) $output['volunteerHoursVolunteerTask'] = $this->volunteerTask;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

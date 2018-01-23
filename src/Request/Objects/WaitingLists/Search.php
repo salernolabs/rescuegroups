@@ -35,11 +35,11 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "waitinglistID" => [1, 'waitinglistID'],
-        "waitinglistName" => [0, 'waitinglistName'],
-        "waitinglistType" => [0, 'waitinglistType'],
-        "waitinglistComment" => [0, 'waitinglistComment'],
-        "waitinglistMembersCount" => [0, 'waitinglistMembersCount'],
+        "id" => [1, 'waitinglistID'],
+        "name" => [0, 'waitinglistName'],
+        "type" => [0, 'waitinglistType'],
+        "comment" => [0, 'waitinglistComment'],
+        "membersCount" => [0, 'waitinglistMembersCount'],
     ];
 
     /**

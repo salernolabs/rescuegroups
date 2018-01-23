@@ -15,35 +15,35 @@ class CallsLogEntry implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $logentryCallID = null;
+    public $callId = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $logentryContactID = null;
+    public $contactId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $logentryDate = null;
+    public $date = null;
 
     /**
      * Outcome
      *
      * @var integer
      */
-    public $logentryOutcomeID = null;
+    public $outcomeId = null;
 
     /**
      * Comments
      *
      * @var string
      */
-    public $logentryComments = null;
+    public $comments = null;
 
 
     /**
@@ -54,11 +54,11 @@ class CallsLogEntry implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->logentryCallID)) $this->logentryCallID = $inputData->logentryCallID;
-        if (!empty($inputData->logentryContactID)) $this->logentryContactID = $inputData->logentryContactID;
-        if (!empty($inputData->logentryDate)) $this->logentryDate = $inputData->logentryDate;
-        if (!empty($inputData->logentryOutcomeID)) $this->logentryOutcomeID = $inputData->logentryOutcomeID;
-        if (!empty($inputData->logentryComments)) $this->logentryComments = $inputData->logentryComments;
+        if (!empty($inputData->logentryCallID)) $this->callId = $inputData->logentryCallID;
+        if (!empty($inputData->logentryContactID)) $this->contactId = $inputData->logentryContactID;
+        if (!empty($inputData->logentryDate)) $this->date = $inputData->logentryDate;
+        if (!empty($inputData->logentryOutcomeID)) $this->outcomeId = $inputData->logentryOutcomeID;
+        if (!empty($inputData->logentryComments)) $this->comments = $inputData->logentryComments;
     }
 
     /**
@@ -70,11 +70,11 @@ class CallsLogEntry implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->logentryCallID !== null) $output['logentryCallID'] = $this->logentryCallID;
-        if ($this->logentryContactID !== null) $output['logentryContactID'] = $this->logentryContactID;
-        if ($this->logentryDate !== null) $output['logentryDate'] = $this->logentryDate;
-        if ($this->logentryOutcomeID !== null) $output['logentryOutcomeID'] = $this->logentryOutcomeID;
-        if ($this->logentryComments !== null) $output['logentryComments'] = $this->logentryComments;
+        if ($includeId && $this->callId !== null) $output['logentryCallID'] = $this->callId;
+        if ($this->contactId !== null) $output['logentryContactID'] = $this->contactId;
+        if ($this->date !== null) $output['logentryDate'] = $this->date;
+        if ($this->outcomeId !== null) $output['logentryOutcomeID'] = $this->outcomeId;
+        if ($this->comments !== null) $output['logentryComments'] = $this->comments;
 
         return $output;
     }

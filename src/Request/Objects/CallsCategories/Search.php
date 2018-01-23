@@ -35,17 +35,17 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "categoryID" => [1, 'categoryID'],
-        "categoryName" => [0, 'categoryName'],
-        "categoryDescription" => [0, 'categoryDescription'],
-        "categoryPublic" => [0, 'categoryPublic'],
-        "categoryDefaultQueueID" => [0, 'categoryDefaultQueueID'],
-        "categoryDefaultQueueName" => [0, 'categoryDefaultQueueName'],
-        "categoryCreatedDate" => [0, 'categoryCreatedDate'],
-        "categoryCreatedByID" => [0, 'categoryCreatedByID'],
-        "categoryUpdatedDate" => [0, 'categoryUpdatedDate'],
-        "categoryUpdatedByID" => [0, 'categoryUpdatedByID'],
-        "categoryCallsCount" => [0, 'categoryCallsCount'],
+        "id" => [1, 'categoryID'],
+        "name" => [0, 'categoryName'],
+        "description" => [0, 'categoryDescription'],
+        "public" => [0, 'categoryPublic'],
+        "defaultQueueId" => [0, 'categoryDefaultQueueID'],
+        "defaultQueueName" => [0, 'categoryDefaultQueueName'],
+        "createdDate" => [0, 'categoryCreatedDate'],
+        "createdById" => [0, 'categoryCreatedByID'],
+        "updatedDate" => [0, 'categoryUpdatedDate'],
+        "updatedById" => [0, 'categoryUpdatedByID'],
+        "callsCount" => [0, 'categoryCallsCount'],
     ];
 
     /**

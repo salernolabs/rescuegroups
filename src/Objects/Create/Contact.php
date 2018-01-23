@@ -15,224 +15,224 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactClass = null;
+    public $class = null;
 
     /**
      * Salutation
      *
      * @var string
      */
-    public $contactSalutation = null;
+    public $salutation = null;
 
     /**
      * First name
      *
      * @var string
      */
-    public $contactFirstname = null;
+    public $firstname = null;
 
     /**
      * Last name
      *
      * @var string
      */
-    public $contactLastname = null;
+    public $lastname = null;
 
     /**
      * Title
      *
      * @var string
      */
-    public $contactTitle = null;
+    public $title = null;
 
     /**
      * Street address
      *
      * @var string
      */
-    public $contactAddress = null;
+    public $address = null;
 
     /**
      * City
      *
      * @var string
      */
-    public $contactCity = null;
+    public $city = null;
 
     /**
      * State/Province
      *
      * @var string
      */
-    public $contactState = null;
+    public $state = null;
 
     /**
      * Postal Code
      *
      * @var string
      */
-    public $contactPostalcode = null;
+    public $postalcode = null;
 
     /**
      * Zip code plus 4
      *
      * @var string
      */
-    public $contactPlus4 = null;
+    public $plus4 = null;
 
     /**
      * County
      *
      * @var string
      */
-    public $contactCounty = null;
+    public $county = null;
 
     /**
      * Country, Primary Key
      *
      * @var integer
      */
-    public $contactCountry = null;
+    public $country = null;
 
     /**
      * Home phone number
      *
      * @var string
      */
-    public $contactPhoneHome = null;
+    public $phoneHome = null;
 
     /**
      * Work phone number
      *
      * @var string
      */
-    public $contactPhoneWork = null;
+    public $phoneWork = null;
 
     /**
      * Work phone extension
      *
      * @var string
      */
-    public $contactPhoneWorkExt = null;
+    public $phoneWorkExt = null;
 
     /**
      * Cell phone number
      *
      * @var string
      */
-    public $contactPhoneCell = null;
+    public $phoneCell = null;
 
     /**
      * Fax number
      *
      * @var string
      */
-    public $contactFax = null;
+    public $fax = null;
 
     /**
      * Email address
      *
      * @var string
      */
-    public $contactEmail = null;
+    public $email = null;
 
     /**
      * Alternate email address
      *
      * @var string
      */
-    public $contactEmailAlt = null;
+    public $emailAlt = null;
 
     /**
      * Pager email address
      *
      * @var string
      */
-    public $contactEmailPager = null;
+    public $emailPager = null;
 
     /**
      * Company
      *
      * @var string
      */
-    public $contactCompany = null;
+    public $company = null;
 
     /**
      * Referred by
      *
      * @var string
      */
-    public $contactReferredBy = null;
+    public $referredBy = null;
 
     /**
      * Carrier
      *
      * @var string
      */
-    public $contactCarrier = null;
+    public $carrier = null;
 
     /**
      * Send mail
      *
      * @var string
      */
-    public $contactSendMail = null;
+    public $sendMail = null;
 
     /**
      * Active
      *
      * @var string
      */
-    public $contactActive = null;
+    public $active = null;
 
     /**
      * Comment
      *
      * @var string
      */
-    public $contactComment = null;
+    public $comment = null;
 
     /**
      * Coalition member
      *
      * @var string
      */
-    public $contactCoalitionMember = null;
+    public $coalitionMember = null;
 
     /**
      * Transportation
      *
      * @var string
      */
-    public $contactTransportation = null;
+    public $transportation = null;
 
     /**
      * Availability
      *
      * @var string
      */
-    public $contactAvailability = null;
+    public $availability = null;
 
     /**
      * Caretaker public
      *
      * @var string
      */
-    public $contactCaretakerPublic = null;
+    public $caretakerPublic = null;
 
     /**
      * Send website invitation
      *
      * @var string
      */
-    public $contactSendInvite = null;
+    public $sendInvite = null;
 
     /**
      * Groups
      *
      * @var integer
      */
-    public $contactGroups = null;
+    public $groups = null;
 
 
     /**
@@ -243,38 +243,38 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->contactClass)) $this->contactClass = $inputData->contactClass;
-        if (!empty($inputData->contactSalutation)) $this->contactSalutation = $inputData->contactSalutation;
-        if (!empty($inputData->contactFirstname)) $this->contactFirstname = $inputData->contactFirstname;
-        if (!empty($inputData->contactLastname)) $this->contactLastname = $inputData->contactLastname;
-        if (!empty($inputData->contactTitle)) $this->contactTitle = $inputData->contactTitle;
-        if (!empty($inputData->contactAddress)) $this->contactAddress = $inputData->contactAddress;
-        if (!empty($inputData->contactCity)) $this->contactCity = $inputData->contactCity;
-        if (!empty($inputData->contactState)) $this->contactState = $inputData->contactState;
-        if (!empty($inputData->contactPostalcode)) $this->contactPostalcode = $inputData->contactPostalcode;
-        if (!empty($inputData->contactPlus4)) $this->contactPlus4 = $inputData->contactPlus4;
-        if (!empty($inputData->contactCounty)) $this->contactCounty = $inputData->contactCounty;
-        if (!empty($inputData->contactCountry)) $this->contactCountry = $inputData->contactCountry;
-        if (!empty($inputData->contactPhoneHome)) $this->contactPhoneHome = $inputData->contactPhoneHome;
-        if (!empty($inputData->contactPhoneWork)) $this->contactPhoneWork = $inputData->contactPhoneWork;
-        if (!empty($inputData->contactPhoneWorkExt)) $this->contactPhoneWorkExt = $inputData->contactPhoneWorkExt;
-        if (!empty($inputData->contactPhoneCell)) $this->contactPhoneCell = $inputData->contactPhoneCell;
-        if (!empty($inputData->contactFax)) $this->contactFax = $inputData->contactFax;
-        if (!empty($inputData->contactEmail)) $this->contactEmail = $inputData->contactEmail;
-        if (!empty($inputData->contactEmailAlt)) $this->contactEmailAlt = $inputData->contactEmailAlt;
-        if (!empty($inputData->contactEmailPager)) $this->contactEmailPager = $inputData->contactEmailPager;
-        if (!empty($inputData->contactCompany)) $this->contactCompany = $inputData->contactCompany;
-        if (!empty($inputData->contactReferredBy)) $this->contactReferredBy = $inputData->contactReferredBy;
-        if (!empty($inputData->contactCarrier)) $this->contactCarrier = $inputData->contactCarrier;
-        if (!empty($inputData->contactSendMail)) $this->contactSendMail = $inputData->contactSendMail;
-        if (!empty($inputData->contactActive)) $this->contactActive = $inputData->contactActive;
-        if (!empty($inputData->contactComment)) $this->contactComment = $inputData->contactComment;
-        if (!empty($inputData->contactCoalitionMember)) $this->contactCoalitionMember = $inputData->contactCoalitionMember;
-        if (!empty($inputData->contactTransportation)) $this->contactTransportation = $inputData->contactTransportation;
-        if (!empty($inputData->contactAvailability)) $this->contactAvailability = $inputData->contactAvailability;
-        if (!empty($inputData->contactCaretakerPublic)) $this->contactCaretakerPublic = $inputData->contactCaretakerPublic;
-        if (!empty($inputData->contactSendInvite)) $this->contactSendInvite = $inputData->contactSendInvite;
-        if (!empty($inputData->contactGroups)) $this->contactGroups = $inputData->contactGroups;
+        if (!empty($inputData->contactClass)) $this->class = $inputData->contactClass;
+        if (!empty($inputData->contactSalutation)) $this->salutation = $inputData->contactSalutation;
+        if (!empty($inputData->contactFirstname)) $this->firstname = $inputData->contactFirstname;
+        if (!empty($inputData->contactLastname)) $this->lastname = $inputData->contactLastname;
+        if (!empty($inputData->contactTitle)) $this->title = $inputData->contactTitle;
+        if (!empty($inputData->contactAddress)) $this->address = $inputData->contactAddress;
+        if (!empty($inputData->contactCity)) $this->city = $inputData->contactCity;
+        if (!empty($inputData->contactState)) $this->state = $inputData->contactState;
+        if (!empty($inputData->contactPostalcode)) $this->postalcode = $inputData->contactPostalcode;
+        if (!empty($inputData->contactPlus4)) $this->plus4 = $inputData->contactPlus4;
+        if (!empty($inputData->contactCounty)) $this->county = $inputData->contactCounty;
+        if (!empty($inputData->contactCountry)) $this->country = $inputData->contactCountry;
+        if (!empty($inputData->contactPhoneHome)) $this->phoneHome = $inputData->contactPhoneHome;
+        if (!empty($inputData->contactPhoneWork)) $this->phoneWork = $inputData->contactPhoneWork;
+        if (!empty($inputData->contactPhoneWorkExt)) $this->phoneWorkExt = $inputData->contactPhoneWorkExt;
+        if (!empty($inputData->contactPhoneCell)) $this->phoneCell = $inputData->contactPhoneCell;
+        if (!empty($inputData->contactFax)) $this->fax = $inputData->contactFax;
+        if (!empty($inputData->contactEmail)) $this->email = $inputData->contactEmail;
+        if (!empty($inputData->contactEmailAlt)) $this->emailAlt = $inputData->contactEmailAlt;
+        if (!empty($inputData->contactEmailPager)) $this->emailPager = $inputData->contactEmailPager;
+        if (!empty($inputData->contactCompany)) $this->company = $inputData->contactCompany;
+        if (!empty($inputData->contactReferredBy)) $this->referredBy = $inputData->contactReferredBy;
+        if (!empty($inputData->contactCarrier)) $this->carrier = $inputData->contactCarrier;
+        if (!empty($inputData->contactSendMail)) $this->sendMail = $inputData->contactSendMail;
+        if (!empty($inputData->contactActive)) $this->active = $inputData->contactActive;
+        if (!empty($inputData->contactComment)) $this->comment = $inputData->contactComment;
+        if (!empty($inputData->contactCoalitionMember)) $this->coalitionMember = $inputData->contactCoalitionMember;
+        if (!empty($inputData->contactTransportation)) $this->transportation = $inputData->contactTransportation;
+        if (!empty($inputData->contactAvailability)) $this->availability = $inputData->contactAvailability;
+        if (!empty($inputData->contactCaretakerPublic)) $this->caretakerPublic = $inputData->contactCaretakerPublic;
+        if (!empty($inputData->contactSendInvite)) $this->sendInvite = $inputData->contactSendInvite;
+        if (!empty($inputData->contactGroups)) $this->groups = $inputData->contactGroups;
     }
 
     /**
@@ -286,38 +286,38 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->contactClass !== null) $output['contactClass'] = $this->contactClass;
-        if ($this->contactSalutation !== null) $output['contactSalutation'] = $this->contactSalutation;
-        if ($this->contactFirstname !== null) $output['contactFirstname'] = $this->contactFirstname;
-        if ($this->contactLastname !== null) $output['contactLastname'] = $this->contactLastname;
-        if ($this->contactTitle !== null) $output['contactTitle'] = $this->contactTitle;
-        if ($this->contactAddress !== null) $output['contactAddress'] = $this->contactAddress;
-        if ($this->contactCity !== null) $output['contactCity'] = $this->contactCity;
-        if ($this->contactState !== null) $output['contactState'] = $this->contactState;
-        if ($this->contactPostalcode !== null) $output['contactPostalcode'] = $this->contactPostalcode;
-        if ($this->contactPlus4 !== null) $output['contactPlus4'] = $this->contactPlus4;
-        if ($this->contactCounty !== null) $output['contactCounty'] = $this->contactCounty;
-        if ($includeId && $this->contactCountry !== null) $output['contactCountry'] = $this->contactCountry;
-        if ($this->contactPhoneHome !== null) $output['contactPhoneHome'] = $this->contactPhoneHome;
-        if ($this->contactPhoneWork !== null) $output['contactPhoneWork'] = $this->contactPhoneWork;
-        if ($this->contactPhoneWorkExt !== null) $output['contactPhoneWorkExt'] = $this->contactPhoneWorkExt;
-        if ($this->contactPhoneCell !== null) $output['contactPhoneCell'] = $this->contactPhoneCell;
-        if ($this->contactFax !== null) $output['contactFax'] = $this->contactFax;
-        if ($this->contactEmail !== null) $output['contactEmail'] = $this->contactEmail;
-        if ($this->contactEmailAlt !== null) $output['contactEmailAlt'] = $this->contactEmailAlt;
-        if ($this->contactEmailPager !== null) $output['contactEmailPager'] = $this->contactEmailPager;
-        if ($this->contactCompany !== null) $output['contactCompany'] = $this->contactCompany;
-        if ($this->contactReferredBy !== null) $output['contactReferredBy'] = $this->contactReferredBy;
-        if ($this->contactCarrier !== null) $output['contactCarrier'] = $this->contactCarrier;
-        if ($this->contactSendMail !== null) $output['contactSendMail'] = $this->contactSendMail;
-        if ($this->contactActive !== null) $output['contactActive'] = $this->contactActive;
-        if ($this->contactComment !== null) $output['contactComment'] = $this->contactComment;
-        if ($this->contactCoalitionMember !== null) $output['contactCoalitionMember'] = $this->contactCoalitionMember;
-        if ($this->contactTransportation !== null) $output['contactTransportation'] = $this->contactTransportation;
-        if ($this->contactAvailability !== null) $output['contactAvailability'] = $this->contactAvailability;
-        if ($this->contactCaretakerPublic !== null) $output['contactCaretakerPublic'] = $this->contactCaretakerPublic;
-        if ($this->contactSendInvite !== null) $output['contactSendInvite'] = $this->contactSendInvite;
-        if ($this->contactGroups !== null) $output['contactGroups'] = $this->contactGroups;
+        if ($this->class !== null) $output['contactClass'] = $this->class;
+        if ($this->salutation !== null) $output['contactSalutation'] = $this->salutation;
+        if ($this->firstname !== null) $output['contactFirstname'] = $this->firstname;
+        if ($this->lastname !== null) $output['contactLastname'] = $this->lastname;
+        if ($this->title !== null) $output['contactTitle'] = $this->title;
+        if ($this->address !== null) $output['contactAddress'] = $this->address;
+        if ($this->city !== null) $output['contactCity'] = $this->city;
+        if ($this->state !== null) $output['contactState'] = $this->state;
+        if ($this->postalcode !== null) $output['contactPostalcode'] = $this->postalcode;
+        if ($this->plus4 !== null) $output['contactPlus4'] = $this->plus4;
+        if ($this->county !== null) $output['contactCounty'] = $this->county;
+        if ($includeId && $this->country !== null) $output['contactCountry'] = $this->country;
+        if ($this->phoneHome !== null) $output['contactPhoneHome'] = $this->phoneHome;
+        if ($this->phoneWork !== null) $output['contactPhoneWork'] = $this->phoneWork;
+        if ($this->phoneWorkExt !== null) $output['contactPhoneWorkExt'] = $this->phoneWorkExt;
+        if ($this->phoneCell !== null) $output['contactPhoneCell'] = $this->phoneCell;
+        if ($this->fax !== null) $output['contactFax'] = $this->fax;
+        if ($this->email !== null) $output['contactEmail'] = $this->email;
+        if ($this->emailAlt !== null) $output['contactEmailAlt'] = $this->emailAlt;
+        if ($this->emailPager !== null) $output['contactEmailPager'] = $this->emailPager;
+        if ($this->company !== null) $output['contactCompany'] = $this->company;
+        if ($this->referredBy !== null) $output['contactReferredBy'] = $this->referredBy;
+        if ($this->carrier !== null) $output['contactCarrier'] = $this->carrier;
+        if ($this->sendMail !== null) $output['contactSendMail'] = $this->sendMail;
+        if ($this->active !== null) $output['contactActive'] = $this->active;
+        if ($this->comment !== null) $output['contactComment'] = $this->comment;
+        if ($this->coalitionMember !== null) $output['contactCoalitionMember'] = $this->coalitionMember;
+        if ($this->transportation !== null) $output['contactTransportation'] = $this->transportation;
+        if ($this->availability !== null) $output['contactAvailability'] = $this->availability;
+        if ($this->caretakerPublic !== null) $output['contactCaretakerPublic'] = $this->caretakerPublic;
+        if ($this->sendInvite !== null) $output['contactSendInvite'] = $this->sendInvite;
+        if ($this->groups !== null) $output['contactGroups'] = $this->groups;
 
         return $output;
     }

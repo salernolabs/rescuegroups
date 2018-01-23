@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Add();
 
         $testObject = new \RescueGroups\Objects\AnimalsMeetRequest();
-        $testObject->meetrequestContactID = 'testValue Contact ID';
-        $testObject->meetrequestEventID = 'testValue Event ID';
-        $testObject->meetrequestLocationID = 'testValue Location ID';
-        $testObject->meetrequestDate = 'testValue Date';
+        $testObject->contactId = 'testValue Contact ID';
+        $testObject->eventId = 'testValue Event ID';
+        $testObject->locationId = 'testValue Location ID';
+        $testObject->date = 'testValue Date';
 
         $query->addAnimalsMeetRequest($testObject);
 

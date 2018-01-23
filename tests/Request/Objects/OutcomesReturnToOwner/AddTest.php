@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesReturnToOwner();
-        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->animalConditionId = 'testValue Condition';
         $testObject->date = 'testValue Date';
         $testObject->notes = 'testValue Notes';
-        $testObject->ownerID = 'testValue Return To';
+        $testObject->ownerId = 'testValue Return To';
 
         $query->addOutcomesReturnToOwner($testObject);
 

@@ -12,6 +12,15 @@ Performs callsQueuesMembers.define query. This gives information about the API i
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Define();
 
     $result = $api->executeRequest($query);
+Performs callsQueuesMembers.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs callsQueuesMembers.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs callsQueuesMembers.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\View();
 
-    $query->setmemberID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,8 +64,8 @@ Performs callsQueuesMembers.add add query to create an instance of an object. Us
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Add();
 
     $addObject = new \RescueGroups\Objects\CallsQueuesMember();
-    $addObject->memberQueueID = "Queue"
-    $addObject->memberManager = "Manager"
+    $addObject->queueId = "Queue"
+    $addObject->manager = "Manager"
 
     $query->addCallsQueuesMember($addObject);
 
@@ -69,10 +78,10 @@ Performs callsQueuesMembers.edit edit query to edit an object. Uses classes of t
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Edit();
 
     $editObject = new \RescueGroups\Objects\CallsQueuesMember();
-    $editObject->memberID = "ID"
-    $editObject->memberContactID = "Contact"
-    $editObject->memberQueueID = "Queue"
-    $editObject->memberManager = "Manager"
+    $editObject->id = "ID"
+    $editObject->contactId = "Contact"
+    $editObject->queueId = "Queue"
+    $editObject->manager = "Manager"
 
     $query->updateCallsQueuesMember($editObject);
 
@@ -84,7 +93,7 @@ Performs callsQueuesMembers.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Delete();
 
-    $query->setmemberID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

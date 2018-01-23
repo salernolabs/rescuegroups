@@ -35,11 +35,11 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "articleID" => [1, 'articleID'],
-        "articleTitle" => [0, 'articleTitle'],
-        "articleDescription" => [0, 'articleDescription'],
-        "articleDate" => [0, 'articleDate'],
-        "articleUpdatedDate" => [0, 'articleUpdatedDate'],
+        "id" => [1, 'articleID'],
+        "title" => [0, 'articleTitle'],
+        "description" => [0, 'articleDescription'],
+        "date" => [0, 'articleDate'],
+        "updatedDate" => [0, 'articleUpdatedDate'],
     ];
 
     /**

@@ -12,6 +12,15 @@ Performs intakesServicetypes.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesServicetypes.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs intakesServicetypes.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs intakesServicetypes.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\View();
 
-    $query->setserviceID("Service");
+    $query->setid("Service");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs intakesServicetypes.add add query to create an instance of an object. U
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesServiceType();
-    $addObject->serviceName = "Service"
+    $addObject->name = "Service"
 
     $query->addIntakesServiceType($addObject);
 
@@ -68,8 +77,8 @@ Performs intakesServicetypes.edit edit query to edit an object. Uses classes of 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesServiceType();
-    $editObject->serviceID = "Service"
-    $editObject->serviceName = "Service"
+    $editObject->id = "Service"
+    $editObject->name = "Service"
 
     $query->updateIntakesServiceType($editObject);
 
@@ -81,7 +90,7 @@ Performs intakesServicetypes.delete query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Delete();
 
-    $query->setserviceID("Service");
+    $query->setid("Service");
 
     $result = $api->executeRequest($query);
 

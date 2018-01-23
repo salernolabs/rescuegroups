@@ -22,17 +22,17 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\InventoryItems\Add();
 
         $testObject = new \RescueGroups\Objects\Create\InventoryItem();
-        $testObject->inventoryitemName = 'testValue Name';
-        $testObject->inventoryitemItemID = 'testValue Item Number/ID';
-        $testObject->inventoryitemDescription = 'testValue Description';
-        $testObject->inventoryitemReceivedDate = 'testValue Received Date';
-        $testObject->inventoryitemSource = 'testValue Source';
-        $testObject->inventoryitemCost = 'testValue Cost';
-        $testObject->inventoryitemCategory = 'testValue Category';
-        $testObject->inventoryitemDisposedDate = 'testValue Disposed Date';
-        $testObject->inventoryitemDisposedDestination = 'testValue Disposed Destination';
-        $testObject->inventoryitemStorageLocation = 'testValue Storage Location';
-        $testObject->inventoryitemQuantity = 'testValue Quantity';
+        $testObject->name = 'testValue Name';
+        $testObject->itemId = 'testValue Item Number/ID';
+        $testObject->description = 'testValue Description';
+        $testObject->receivedDate = 'testValue Received Date';
+        $testObject->source = 'testValue Source';
+        $testObject->cost = 'testValue Cost';
+        $testObject->category = 'testValue Category';
+        $testObject->disposedDate = 'testValue Disposed Date';
+        $testObject->disposedDestination = 'testValue Disposed Destination';
+        $testObject->storageLocation = 'testValue Storage Location';
+        $testObject->quantity = 'testValue Quantity';
 
         $query->addInventoryItem($testObject);
 

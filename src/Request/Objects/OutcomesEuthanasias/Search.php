@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "outcomesEuthanasiaID" => [1, 'outcomesEuthanasiaID'],
-        "outcomesEuthanasiaIntakeID" => [0, 'outcomesEuthanasiaIntakeID'],
-        "outcomesEuthanasiaAnimalConditionID" => [0, 'outcomesEuthanasiaAnimalConditionID'],
-        "outcomesEuthanasiaDate" => [0, 'outcomesEuthanasiaDate'],
-        "outcomesEuthanasiaNotes" => [0, 'outcomesEuthanasiaNotes'],
-        "outcomesEuthanasiaReasonID" => [0, 'outcomesEuthanasiaReasonID'],
-        "outcomesEuthanasiaReason" => [0, 'outcomesEuthanasiaReason'],
-        "animalID" => [0, 'animalID'],
+        "id" => [1, 'outcomesEuthanasiaID'],
+        "intakeId" => [0, 'outcomesEuthanasiaIntakeID'],
+        "animalConditionId" => [0, 'outcomesEuthanasiaAnimalConditionID'],
+        "date" => [0, 'outcomesEuthanasiaDate'],
+        "notes" => [0, 'outcomesEuthanasiaNotes'],
+        "reasonId" => [0, 'outcomesEuthanasiaReasonID'],
+        "reason" => [0, 'outcomesEuthanasiaReason'],
+        "animalId" => [0, 'animalID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
     ];

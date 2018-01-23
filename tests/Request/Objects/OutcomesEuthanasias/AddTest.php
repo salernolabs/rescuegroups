@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesEuthanasia();
-        $testObject->outcomesEuthanasiaAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesEuthanasiaDate = 'testValue Date';
-        $testObject->outcomesEuthanasiaNotes = 'testValue Notes';
-        $testObject->outcomesEuthanasiaReasonID = 'testValue Euthanasia Reason';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->reasonId = 'testValue Euthanasia Reason';
 
         $query->addOutcomesEuthanasia($testObject);
 

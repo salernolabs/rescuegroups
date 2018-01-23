@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * File ID, Primary Key
      *
      * @var integer
      */
-    public $contactfileID = null;
+    public $id = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $contactfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $contactfileStatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $contactfileDisplayInline = null;
+    public $displayInline = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'contactfileID' => 'id',
+            'contactfileDescription' => 'description',
+            'contactfileStatus' => 'status',
+            'contactfileDisplayInline' => 'displayInline',
+        ],
+        'output' => [
+            'id' => 'contactfileID',
+            'description' => 'contactfileDescription',
+            'status' => 'contactfileStatus',
+            'displayInline' => 'contactfileDisplayInline',
+        ]
+    ];
 
     /**
      * ContactFile Constructor
@@ -47,10 +69,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->contactfileID)) $this->contactfileID = $inputData->contactfileID;
-        if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
-        if (!empty($inputData->contactfileStatus)) $this->contactfileStatus = $inputData->contactfileStatus;
-        if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->contactfileID !== null) $output['contactfileID'] = $this->contactfileID;
-        if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->contactfileStatus !== null) $output['contactfileStatus'] = $this->contactfileStatus;
-        if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

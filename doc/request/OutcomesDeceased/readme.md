@@ -12,6 +12,15 @@ Performs outcomesDeceased.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesDeceased.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesDeceased.list list query, typically suitable for filling HTML select fields.
 
@@ -55,7 +64,7 @@ Performs outcomesDeceased.add add query to create an instance of an object. Uses
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesDeceased();
-    $addObject->animalConditionID = "Condition"
+    $addObject->animalConditionId = "Condition"
     $addObject->date = "Date"
     $addObject->notes = "Notes"
     $addObject->reason = "Reason"
@@ -72,7 +81,7 @@ Performs outcomesDeceased.edit edit query to edit an object. Uses classes of typ
 
     $editObject = new \RescueGroups\Objects\OutcomesDeceased();
     $editObject->id = "ID"
-    $editObject->animalConditionID = "Condition"
+    $editObject->animalConditionId = "Condition"
     $editObject->date = "Date"
     $editObject->notes = "Notes"
     $editObject->reason = "Reason"
@@ -87,8 +96,8 @@ Performs outcomesDeceased.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setanimalConditionID("Condition");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
     $query->setdate("Date");
     $query->setnotes("Notes");
     $query->setreason("Reason");

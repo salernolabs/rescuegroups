@@ -22,9 +22,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
-        $testObject->journalEntrytypeID = 'testValue Entrytype ID';
-        $testObject->journalEntrytypeDescription = 'testValue Description';
-        $testObject->journalEntrytypeCategoryID = 'testValue Category ID';
+        $testObject->id = 'testValue Entrytype ID';
+        $testObject->description = 'testValue Description';
+        $testObject->categoryId = 'testValue Category ID';
 
         $query->updateAnimalsJournalEntryType($testObject);
 

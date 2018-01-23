@@ -22,9 +22,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebImages\Add();
 
         $testObject = new \RescueGroups\Objects\Create\WebImage();
-        $testObject->webimageBinary = 'testValue File';
-        $testObject->webimageOldFileName = 'testValue Original File Name';
-        $testObject->webimageName = 'testValue Name';
+        $testObject->binary = 'testValue File';
+        $testObject->oldFileName = 'testValue Original File Name';
+        $testObject->name = 'testValue Name';
 
         $query->addWebImage($testObject);
 

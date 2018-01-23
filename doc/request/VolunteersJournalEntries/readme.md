@@ -12,6 +12,15 @@ Performs volunteersJournalEntries.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
 
     $result = $api->executeRequest($query);
+Performs volunteersJournalEntries.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## Search
 Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) objects.
 
@@ -36,7 +45,7 @@ Performs volunteersJournalEntries.view query.
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\View();
 
-    $query->setjournalEntryID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,9 +57,9 @@ Performs volunteersJournalEntries.add add query to create an instance of an obje
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Add();
 
     $addObject = new \RescueGroups\Objects\VolunteersJournalEntry();
-    $addObject->journalEntryDate = "Date"
-    $addObject->journalEntryComment = "Comment"
-    $addObject->journalEntryType = "Entry Type"
+    $addObject->date = "Date"
+    $addObject->comment = "Comment"
+    $addObject->type = "Entry Type"
 
     $query->addVolunteersJournalEntry($addObject);
 
@@ -63,11 +72,11 @@ Performs volunteersJournalEntries.edit edit query to edit an object. Uses classe
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Edit();
 
     $editObject = new \RescueGroups\Objects\VolunteersJournalEntry();
-    $editObject->journalEntryID = "ID"
-    $editObject->journalEntryContactID = "Contact"
-    $editObject->journalEntryDate = "Date"
-    $editObject->journalEntryComment = "Comment"
-    $editObject->journalEntryType = "Entry Type"
+    $editObject->id = "ID"
+    $editObject->contactId = "Contact"
+    $editObject->date = "Date"
+    $editObject->comment = "Comment"
+    $editObject->type = "Entry Type"
 
     $query->updateVolunteersJournalEntry($editObject);
 
@@ -79,7 +88,7 @@ Performs volunteersJournalEntries.delete query.
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Delete();
 
-    $query->setjournalEntryID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

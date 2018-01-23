@@ -22,13 +22,13 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesServices\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesService();
-        $testObject->intakesServiceID = 'testValue Service';
-        $testObject->intakesServiceAnimalID = 'testValue Animal';
-        $testObject->intakesServiceAnimalConditionID = 'testValue Condition';
-        $testObject->intakesServiceDate = 'testValue Date';
-        $testObject->intakesServiceNotes = 'testValue Notes';
-        $testObject->intakesServiceOwnerID = 'testValue Owner';
-        $testObject->intakesServiceServicetypeID = 'testValue Service';
+        $testObject->id = 'testValue Service';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->ownerId = 'testValue Owner';
+        $testObject->servicetypeId = 'testValue Service';
 
         $query->updateIntakesService($testObject);
 

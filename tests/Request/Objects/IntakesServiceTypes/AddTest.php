@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesServiceType();
-        $testObject->serviceName = 'testValue Service';
+        $testObject->name = 'testValue Service';
 
         $query->addIntakesServiceType($testObject);
 

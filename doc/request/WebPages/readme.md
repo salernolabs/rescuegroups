@@ -12,6 +12,15 @@ Performs webpages.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\WebPages\Define();
 
     $result = $api->executeRequest($query);
+Performs webpages.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebPages\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs webpages.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs webpages.publicView query.
 
     $query = new \RescueGroups\Request\Objects\WebPages\PublicView();
 
-    $query->setwebpageID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -37,7 +46,7 @@ Performs webpages.view query.
 
     $query = new \RescueGroups\Request\Objects\WebPages\View();
 
-    $query->setwebpageID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -83,14 +92,14 @@ Performs webpages.add add query to create an instance of an object. Uses classes
     $query = new \RescueGroups\Request\Objects\WebPages\Add();
 
     $addObject = new \RescueGroups\Objects\WebPage();
-    $addObject->webpageName = "Name"
-    $addObject->webpageContent = "Content"
-    $addObject->webpageStatus = "Status"
-    $addObject->webpageUselayout = "Use Layout"
-    $addObject->webpageShowonmenu = "Show on Menu"
-    $addObject->webpageMetaDescription = "Meta Description"
-    $addObject->webpageBackgroundMusicID = "Background Music"
-    $addObject->webpageRoleID = "Security Role"
+    $addObject->name = "Name"
+    $addObject->content = "Content"
+    $addObject->status = "Status"
+    $addObject->uselayout = "Use Layout"
+    $addObject->showonmenu = "Show on Menu"
+    $addObject->metaDescription = "Meta Description"
+    $addObject->backgroundMusicId = "Background Music"
+    $addObject->roleId = "Security Role"
 
     $query->addWebPage($addObject);
 
@@ -103,16 +112,16 @@ Performs webpages.edit edit query to edit an object. Uses classes of type [\Resc
     $query = new \RescueGroups\Request\Objects\WebPages\Edit();
 
     $editObject = new \RescueGroups\Objects\WebPage();
-    $editObject->webpageID = "ID"
-    $editObject->webpageName = "Name"
-    $editObject->webpageContent = "Content"
-    $editObject->webpageStatus = "Status"
-    $editObject->webpageUselayout = "Use Layout"
-    $editObject->webpageShowonmenu = "Show on Menu"
-    $editObject->webpageMetaDescription = "Meta Description"
-    $editObject->webpageBackgroundImageID = "Background Image"
-    $editObject->webpageBackgroundMusicID = "Background Music"
-    $editObject->webpageRoleID = "Security Role"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->content = "Content"
+    $editObject->status = "Status"
+    $editObject->uselayout = "Use Layout"
+    $editObject->showonmenu = "Show on Menu"
+    $editObject->metaDescription = "Meta Description"
+    $editObject->backgroundImageId = "Background Image"
+    $editObject->backgroundMusicId = "Background Music"
+    $editObject->roleId = "Security Role"
 
     $query->updateWebPage($editObject);
 

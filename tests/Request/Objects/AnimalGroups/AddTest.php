@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalGroups\Add();
 
         $testObject = new \RescueGroups\Objects\AnimalGroup();
-        $testObject->groupName = 'testValue Name';
+        $testObject->name = 'testValue Name';
 
         $query->addAnimalGroup($testObject);
 

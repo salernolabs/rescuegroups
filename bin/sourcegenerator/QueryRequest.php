@@ -81,18 +81,33 @@ class QueryRequest
         if (!empty($requestData->fields))
         {
             $foundKey = false;
+            $fieldList = [];
+
             foreach ($requestData->fields as $fieldName => $fieldData)
             {
                 if (empty($fieldData->type)) return;
 
                 //Create friendly field name
-                $sdkFieldName = $fieldName;
+                //$sdkFieldName = QueryField::getFieldSDKName($this->className, $type, $fieldName);
 
-                //AnimalQualities is the exception here, the field would be blank because it's name is animalQualities
-                if ($this->className != 'AnimalQualities' && $this->className != 'EventAnimalAttendance')
-                    $sdkFieldName = lcfirst(str_replace($type, '', $fieldName));
+                $replacer = [$this->responseClassName, $type];
 
-                if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
+                if (isset(QueryField::$specialFieldMaps[$className])) $replacer = QueryField::$specialFieldMaps[$className];
+                if (isset(QueryField::$specialFieldMaps[$className.'-'.$request])) $replacer = QueryField::$specialFieldMaps[$className.'-'.$request];
+
+                if ($request != 'updateSettings')
+                {
+                    $sdkFieldName = lcfirst(str_ireplace($replacer, "", $fieldName));
+                    $sdkFieldName = str_replace(['iD', 'oK', 'ID'], ['id', 'ok', 'Id'], $sdkFieldName);
+                }
+                else
+                {
+                    $sdkFieldName = $fieldName;
+                }
+
+                //Optimization for search queries that have multiple fields that equate to the same thing due to child object queries
+                if (!empty($fieldList[$sdkFieldName])) continue;
+                $fieldList[$sdkFieldName] = true;
 
                 $field = new QueryField($fieldName, $sdkFieldName, $fieldData);
 
@@ -146,9 +161,6 @@ class QueryRequest
         return ($this->requestName == 'add');
     }
 
-    /**
-     * @return bool
-     */
     public function isDefine()
     {
         return $this->requestName == 'define';
@@ -169,7 +181,7 @@ class QueryRequest
      */
     public function isRegular()
     {
-        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit() && !$this->isDefine();
+        return !$this->isSearch() && !$this->isList() && !$this->isAdd() && !$this->isParameterAdd() && !$this->isEdit();
     }
 
     /**

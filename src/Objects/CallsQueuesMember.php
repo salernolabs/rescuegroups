@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $memberID = null;
+    public $id = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $memberContactID = null;
+    public $contactId = null;
 
     /**
      * Queue
      *
      * @var integer
      */
-    public $memberQueueID = null;
+    public $queueId = null;
 
     /**
      * Manager
      *
      * @var string
      */
-    public $memberManager = null;
+    public $manager = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'memberID' => 'id',
+            'memberContactID' => 'contactId',
+            'memberQueueID' => 'queueId',
+            'memberManager' => 'manager',
+        ],
+        'output' => [
+            'id' => 'memberID',
+            'contactId' => 'memberContactID',
+            'queueId' => 'memberQueueID',
+            'manager' => 'memberManager',
+        ]
+    ];
 
     /**
      * CallsQueuesMember Constructor
@@ -47,10 +69,7 @@ class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->memberID)) $this->memberID = $inputData->memberID;
-        if (!empty($inputData->memberContactID)) $this->memberContactID = $inputData->memberContactID;
-        if (!empty($inputData->memberQueueID)) $this->memberQueueID = $inputData->memberQueueID;
-        if (!empty($inputData->memberManager)) $this->memberManager = $inputData->memberManager;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class CallsQueuesMember implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->memberID !== null) $output['memberID'] = $this->memberID;
-        if ($this->memberContactID !== null) $output['memberContactID'] = $this->memberContactID;
-        if ($this->memberQueueID !== null) $output['memberQueueID'] = $this->memberQueueID;
-        if ($this->memberManager !== null) $output['memberManager'] = $this->memberManager;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

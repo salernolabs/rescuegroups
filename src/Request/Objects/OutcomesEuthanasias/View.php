@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $outcomesEuthanasiaID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesEuthanasiaID($value)
+    public function setId($value)
     {
-        $this->outcomesEuthanasiaID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomesEuthanasiaID !== null) $parameterArray['values'][] = ["outcomesEuthanasiaID"=>$this->outcomesEuthanasiaID];
+        if ($this->id !== null) $parameterArray['values'][] = ["outcomesEuthanasiaID"=>$this->id];
     }
 }

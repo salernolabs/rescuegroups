@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class CallsCategory implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $categoryID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $categoryName = null;
+    public $name = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $categoryDescription = null;
+    public $description = null;
 
     /**
      * Public
      *
      * @var string
      */
-    public $categoryPublic = null;
+    public $public = null;
 
     /**
      * Default Queue
      *
      * @var integer
      */
-    public $categoryDefaultQueueID = null;
+    public $defaultQueueId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'categoryID' => 'id',
+            'categoryName' => 'name',
+            'categoryDescription' => 'description',
+            'categoryPublic' => 'public',
+            'categoryDefaultQueueID' => 'defaultQueueId',
+        ],
+        'output' => [
+            'id' => 'categoryID',
+            'name' => 'categoryName',
+            'description' => 'categoryDescription',
+            'public' => 'categoryPublic',
+            'defaultQueueId' => 'categoryDefaultQueueID',
+        ]
+    ];
 
     /**
      * CallsCategory Constructor
@@ -54,11 +78,7 @@ class CallsCategory implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->categoryID)) $this->categoryID = $inputData->categoryID;
-        if (!empty($inputData->categoryName)) $this->categoryName = $inputData->categoryName;
-        if (!empty($inputData->categoryDescription)) $this->categoryDescription = $inputData->categoryDescription;
-        if (!empty($inputData->categoryPublic)) $this->categoryPublic = $inputData->categoryPublic;
-        if (!empty($inputData->categoryDefaultQueueID)) $this->categoryDefaultQueueID = $inputData->categoryDefaultQueueID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class CallsCategory implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->categoryID !== null) $output['categoryID'] = $this->categoryID;
-        if ($this->categoryName !== null) $output['categoryName'] = $this->categoryName;
-        if ($this->categoryDescription !== null) $output['categoryDescription'] = $this->categoryDescription;
-        if ($this->categoryPublic !== null) $output['categoryPublic'] = $this->categoryPublic;
-        if ($this->categoryDefaultQueueID !== null) $output['categoryDefaultQueueID'] = $this->categoryDefaultQueueID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

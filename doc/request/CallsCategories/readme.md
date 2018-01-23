@@ -12,6 +12,15 @@ Performs callsCategories.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
 
     $result = $api->executeRequest($query);
+Performs callsCategories.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs callsCategories.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs callsCategories.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\View();
 
-    $query->setcategoryID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,9 +64,9 @@ Performs callsCategories.add add query to create an instance of an object. Uses 
     $query = new \RescueGroups\Request\Objects\CallsCategories\Add();
 
     $addObject = new \RescueGroups\Objects\CallsCategory();
-    $addObject->categoryName = "Name"
-    $addObject->categoryDescription = "Description"
-    $addObject->categoryPublic = "Public"
+    $addObject->name = "Name"
+    $addObject->description = "Description"
+    $addObject->public = "Public"
 
     $query->addCallsCategory($addObject);
 
@@ -70,11 +79,11 @@ Performs callsCategories.edit edit query to edit an object. Uses classes of type
     $query = new \RescueGroups\Request\Objects\CallsCategories\Edit();
 
     $editObject = new \RescueGroups\Objects\CallsCategory();
-    $editObject->categoryID = "ID"
-    $editObject->categoryName = "Name"
-    $editObject->categoryDescription = "Description"
-    $editObject->categoryPublic = "Public"
-    $editObject->categoryDefaultQueueID = "Default Queue"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->description = "Description"
+    $editObject->public = "Public"
+    $editObject->defaultQueueId = "Default Queue"
 
     $query->updateCallsCategory($editObject);
 
@@ -86,7 +95,7 @@ Performs callsCategories.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\Delete();
 
-    $query->setcategoryID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

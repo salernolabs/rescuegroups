@@ -30,7 +30,7 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
      *
      * @var integer
      */
-    private $orgID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
      * @param integer $value
      * @return $this
      */
-    public function setOrgID($value)
+    public function setId($value)
     {
-        $this->orgID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->orgID !== null) $parameterArray['values'][] = ["orgID"=>$this->orgID];
+        if ($this->id !== null) $parameterArray['values'][] = ["orgID"=>$this->id];
     }
 }

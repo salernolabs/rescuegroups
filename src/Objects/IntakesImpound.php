@@ -10,97 +10,137 @@ namespace RescueGroups\Objects;
 
 class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Impound, Primary Key
      *
      * @var integer
      */
-    public $intakesImpoundID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $intakesImpoundAnimalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $intakesImpoundAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $intakesImpoundDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $intakesImpoundNotes = null;
+    public $notes = null;
 
     /**
      * Impound Location
      *
      * @var string
      */
-    public $intakesImpoundLocation = null;
+    public $location = null;
 
     /**
      * Impound Street address
      *
      * @var string
      */
-    public $intakesImpoundAddress = null;
+    public $address = null;
 
     /**
      * Impound City
      *
      * @var string
      */
-    public $intakesImpoundCity = null;
+    public $city = null;
 
     /**
      * Impound State/Province
      *
      * @var string
      */
-    public $intakesImpoundState = null;
+    public $state = null;
 
     /**
      * Impound Postal Code
      *
      * @var string
      */
-    public $intakesImpoundPostalcode = null;
+    public $postalcode = null;
 
     /**
      * Impound From
      *
      * @var integer
      */
-    public $intakesImpoundFromID = null;
+    public $fromId = null;
 
     /**
      * Impound Performed By
      *
      * @var integer
      */
-    public $intakesImpoundStaffID = null;
+    public $staffId = null;
 
     /**
      * Reason
      *
      * @var integer
      */
-    public $intakesImpoundReasonID = null;
+    public $reasonId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesImpoundID' => 'id',
+            'intakesImpoundAnimalID' => 'animalId',
+            'intakesImpoundAnimalConditionID' => 'animalConditionId',
+            'intakesImpoundDate' => 'date',
+            'intakesImpoundNotes' => 'notes',
+            'intakesImpoundLocation' => 'location',
+            'intakesImpoundAddress' => 'address',
+            'intakesImpoundCity' => 'city',
+            'intakesImpoundState' => 'state',
+            'intakesImpoundPostalcode' => 'postalcode',
+            'intakesImpoundFromID' => 'fromId',
+            'intakesImpoundStaffID' => 'staffId',
+            'intakesImpoundReasonID' => 'reasonId',
+        ],
+        'output' => [
+            'id' => 'intakesImpoundID',
+            'animalId' => 'intakesImpoundAnimalID',
+            'animalConditionId' => 'intakesImpoundAnimalConditionID',
+            'date' => 'intakesImpoundDate',
+            'notes' => 'intakesImpoundNotes',
+            'location' => 'intakesImpoundLocation',
+            'address' => 'intakesImpoundAddress',
+            'city' => 'intakesImpoundCity',
+            'state' => 'intakesImpoundState',
+            'postalcode' => 'intakesImpoundPostalcode',
+            'fromId' => 'intakesImpoundFromID',
+            'staffId' => 'intakesImpoundStaffID',
+            'reasonId' => 'intakesImpoundReasonID',
+        ]
+    ];
 
     /**
      * IntakesImpound Constructor
@@ -110,19 +150,7 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesImpoundID)) $this->intakesImpoundID = $inputData->intakesImpoundID;
-        if (!empty($inputData->intakesImpoundAnimalID)) $this->intakesImpoundAnimalID = $inputData->intakesImpoundAnimalID;
-        if (!empty($inputData->intakesImpoundAnimalConditionID)) $this->intakesImpoundAnimalConditionID = $inputData->intakesImpoundAnimalConditionID;
-        if (!empty($inputData->intakesImpoundDate)) $this->intakesImpoundDate = $inputData->intakesImpoundDate;
-        if (!empty($inputData->intakesImpoundNotes)) $this->intakesImpoundNotes = $inputData->intakesImpoundNotes;
-        if (!empty($inputData->intakesImpoundLocation)) $this->intakesImpoundLocation = $inputData->intakesImpoundLocation;
-        if (!empty($inputData->intakesImpoundAddress)) $this->intakesImpoundAddress = $inputData->intakesImpoundAddress;
-        if (!empty($inputData->intakesImpoundCity)) $this->intakesImpoundCity = $inputData->intakesImpoundCity;
-        if (!empty($inputData->intakesImpoundState)) $this->intakesImpoundState = $inputData->intakesImpoundState;
-        if (!empty($inputData->intakesImpoundPostalcode)) $this->intakesImpoundPostalcode = $inputData->intakesImpoundPostalcode;
-        if (!empty($inputData->intakesImpoundFromID)) $this->intakesImpoundFromID = $inputData->intakesImpoundFromID;
-        if (!empty($inputData->intakesImpoundStaffID)) $this->intakesImpoundStaffID = $inputData->intakesImpoundStaffID;
-        if (!empty($inputData->intakesImpoundReasonID)) $this->intakesImpoundReasonID = $inputData->intakesImpoundReasonID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -133,21 +161,6 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->intakesImpoundID !== null) $output['intakesImpoundID'] = $this->intakesImpoundID;
-        if ($this->intakesImpoundAnimalID !== null) $output['intakesImpoundAnimalID'] = $this->intakesImpoundAnimalID;
-        if ($this->intakesImpoundAnimalConditionID !== null) $output['intakesImpoundAnimalConditionID'] = $this->intakesImpoundAnimalConditionID;
-        if ($this->intakesImpoundDate !== null) $output['intakesImpoundDate'] = $this->intakesImpoundDate;
-        if ($this->intakesImpoundNotes !== null) $output['intakesImpoundNotes'] = $this->intakesImpoundNotes;
-        if ($this->intakesImpoundLocation !== null) $output['intakesImpoundLocation'] = $this->intakesImpoundLocation;
-        if ($this->intakesImpoundAddress !== null) $output['intakesImpoundAddress'] = $this->intakesImpoundAddress;
-        if ($this->intakesImpoundCity !== null) $output['intakesImpoundCity'] = $this->intakesImpoundCity;
-        if ($this->intakesImpoundState !== null) $output['intakesImpoundState'] = $this->intakesImpoundState;
-        if ($this->intakesImpoundPostalcode !== null) $output['intakesImpoundPostalcode'] = $this->intakesImpoundPostalcode;
-        if ($this->intakesImpoundFromID !== null) $output['intakesImpoundFromID'] = $this->intakesImpoundFromID;
-        if ($this->intakesImpoundStaffID !== null) $output['intakesImpoundStaffID'] = $this->intakesImpoundStaffID;
-        if ($this->intakesImpoundReasonID !== null) $output['intakesImpoundReasonID'] = $this->intakesImpoundReasonID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

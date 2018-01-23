@@ -10,27 +10,47 @@ namespace RescueGroups\Objects;
 
 class ContactsGroup implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $groupID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $groupName = null;
+    public $name = null;
 
     /**
      * Business
      *
      * @var string
      */
-    public $groupBusiness = null;
+    public $business = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'groupID' => 'id',
+            'groupName' => 'name',
+            'groupBusiness' => 'business',
+        ],
+        'output' => [
+            'id' => 'groupID',
+            'name' => 'groupName',
+            'business' => 'groupBusiness',
+        ]
+    ];
 
     /**
      * ContactsGroup Constructor
@@ -40,9 +60,7 @@ class ContactsGroup implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->groupID)) $this->groupID = $inputData->groupID;
-        if (!empty($inputData->groupName)) $this->groupName = $inputData->groupName;
-        if (!empty($inputData->groupBusiness)) $this->groupBusiness = $inputData->groupBusiness;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -53,11 +71,6 @@ class ContactsGroup implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->groupID !== null) $output['groupID'] = $this->groupID;
-        if ($this->groupName !== null) $output['groupName'] = $this->groupName;
-        if ($this->groupBusiness !== null) $output['groupBusiness'] = $this->groupBusiness;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\InventoryFiles\Edit();
 
         $testObject = new \RescueGroups\Objects\InventoryFile();
-        $testObject->inventoryfileID = 'testValue File';
-        $testObject->inventoryfileItemID = 'testValue ID';
-        $testObject->inventoryfileDescription = 'testValue Description';
-        $testObject->inventoryfileStatus = 'testValue Status';
-        $testObject->inventoryfileDisplayInline = 'testValue Inline';
+        $testObject->id = 'testValue File';
+        $testObject->itemId = 'testValue ID';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
 
         $query->updateInventoryFile($testObject);
 

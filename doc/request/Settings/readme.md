@@ -12,6 +12,15 @@ Performs settings.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Settings\Define();
 
     $result = $api->executeRequest($query);
+Performs settings.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Settings\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs settings.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs settings.getUserSetting query.
 
     $query = new \RescueGroups\Request\Objects\Settings\GetUserSetting();
 
-    $query->setsettingName("Pattern");
+    $query->setname("Pattern");
 
     $result = $api->executeRequest($query);
 
@@ -37,7 +46,7 @@ Performs settings.setUserSetting query.
 
     $query = new \RescueGroups\Request\Objects\Settings\SetUserSetting();
 
-    $query->setsettingDefaultAnimalTemplate(" Default template to load when adding an animal");
+    $query->setdefaultAnimalTemplate(" Default template to load when adding an animal");
 
     $result = $api->executeRequest($query);
 

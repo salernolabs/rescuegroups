@@ -10,48 +10,74 @@ namespace RescueGroups\Objects;
 
 class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * File ID, Primary Key
      *
      * @var integer
      */
-    public $animalfileID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $animalfileAnimalID = null;
+    public $animalId = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $animalfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $animalfileStatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $animalfileDisplayInline = null;
+    public $displayInline = null;
 
     /**
      * Public
      *
      * @var string
      */
-    public $animalfilePublic = null;
+    public $public = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'animalfileID' => 'id',
+            'animalfileAnimalID' => 'animalId',
+            'animalfileDescription' => 'description',
+            'animalfileStatus' => 'status',
+            'animalfileDisplayInline' => 'displayInline',
+            'animalfilePublic' => 'public',
+        ],
+        'output' => [
+            'id' => 'animalfileID',
+            'animalId' => 'animalfileAnimalID',
+            'description' => 'animalfileDescription',
+            'status' => 'animalfileStatus',
+            'displayInline' => 'animalfileDisplayInline',
+            'public' => 'animalfilePublic',
+        ]
+    ];
 
     /**
      * AnimalFile Constructor
@@ -61,12 +87,7 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->animalfileID)) $this->animalfileID = $inputData->animalfileID;
-        if (!empty($inputData->animalfileAnimalID)) $this->animalfileAnimalID = $inputData->animalfileAnimalID;
-        if (!empty($inputData->animalfileDescription)) $this->animalfileDescription = $inputData->animalfileDescription;
-        if (!empty($inputData->animalfileStatus)) $this->animalfileStatus = $inputData->animalfileStatus;
-        if (!empty($inputData->animalfileDisplayInline)) $this->animalfileDisplayInline = $inputData->animalfileDisplayInline;
-        if (!empty($inputData->animalfilePublic)) $this->animalfilePublic = $inputData->animalfilePublic;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -77,14 +98,6 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->animalfileID !== null) $output['animalfileID'] = $this->animalfileID;
-        if ($this->animalfileAnimalID !== null) $output['animalfileAnimalID'] = $this->animalfileAnimalID;
-        if ($this->animalfileDescription !== null) $output['animalfileDescription'] = $this->animalfileDescription;
-        if ($this->animalfileStatus !== null) $output['animalfileStatus'] = $this->animalfileStatus;
-        if ($this->animalfileDisplayInline !== null) $output['animalfileDisplayInline'] = $this->animalfileDisplayInline;
-        if ($this->animalfilePublic !== null) $output['animalfilePublic'] = $this->animalfilePublic;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

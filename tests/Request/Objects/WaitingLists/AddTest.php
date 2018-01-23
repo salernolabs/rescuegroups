@@ -22,9 +22,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WaitingLists\Add();
 
         $testObject = new \RescueGroups\Objects\WaitingList();
-        $testObject->waitinglistName = 'testValue Name';
-        $testObject->waitinglistType = 'testValue Type';
-        $testObject->waitinglistComment = 'testValue Comment';
+        $testObject->name = 'testValue Name';
+        $testObject->type = 'testValue Type';
+        $testObject->comment = 'testValue Comment';
 
         $query->addWaitingList($testObject);
 

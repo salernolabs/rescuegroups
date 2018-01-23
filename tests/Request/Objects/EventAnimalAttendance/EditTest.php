@@ -22,10 +22,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Edit();
 
         $testObject = new \RescueGroups\Objects\EventAnimalAttendance();
-        $testObject->attendanceID = 'testValue ID';
-        $testObject->attendanceAnimalID = 'testValue Animal';
-        $testObject->attendanceStatus = 'testValue Status';
-        $testObject->attendanceEventID = 'testValue Event';
+        $testObject->id = 'testValue ID';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->status = 'testValue Status';
+        $testObject->eventId = 'testValue Event';
 
         $query->updateEventAnimalAttendance($testObject);
 

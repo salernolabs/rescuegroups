@@ -12,6 +12,15 @@ Performs affiliates.define query. This gives information about the API interface
     $query = new \RescueGroups\Request\Objects\Affiliates\Define();
 
     $result = $api->executeRequest($query);
+Performs affiliates.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Affiliates\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetSettings
 Performs affiliates.getSettings query.
 

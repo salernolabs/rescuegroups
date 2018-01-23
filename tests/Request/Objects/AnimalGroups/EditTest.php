@@ -22,9 +22,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalGroups\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalGroup();
-        $testObject->groupID = 'testValue ID';
-        $testObject->groupName = 'testValue Name';
-        $testObject->groupHeaderID = 'testValue Header';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->headerId = 'testValue Header';
 
         $query->updateAnimalGroup($testObject);
 

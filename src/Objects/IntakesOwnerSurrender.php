@@ -10,55 +10,83 @@ namespace RescueGroups\Objects;
 
 class IntakesOwnerSurrender implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Owner Surrender, Primary Key
      *
      * @var integer
      */
-    public $intakesOwnersurrenderID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $intakesOwnersurrenderAnimalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $intakesOwnersurrenderAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $intakesOwnersurrenderDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $intakesOwnersurrenderNotes = null;
+    public $notes = null;
 
     /**
      * Surrendered By
      *
      * @var integer
      */
-    public $intakesOwnersurrenderOwnerID = null;
+    public $ownerId = null;
 
     /**
      * Surrender Reason
      *
      * @var integer
      */
-    public $intakesOwnersurrenderReasonID = null;
+    public $reasonId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesOwnersurrenderID' => 'id',
+            'intakesOwnersurrenderAnimalID' => 'animalId',
+            'intakesOwnersurrenderAnimalConditionID' => 'animalConditionId',
+            'intakesOwnersurrenderDate' => 'date',
+            'intakesOwnersurrenderNotes' => 'notes',
+            'intakesOwnersurrenderOwnerID' => 'ownerId',
+            'intakesOwnersurrenderReasonID' => 'reasonId',
+        ],
+        'output' => [
+            'id' => 'intakesOwnersurrenderID',
+            'animalId' => 'intakesOwnersurrenderAnimalID',
+            'animalConditionId' => 'intakesOwnersurrenderAnimalConditionID',
+            'date' => 'intakesOwnersurrenderDate',
+            'notes' => 'intakesOwnersurrenderNotes',
+            'ownerId' => 'intakesOwnersurrenderOwnerID',
+            'reasonId' => 'intakesOwnersurrenderReasonID',
+        ]
+    ];
 
     /**
      * IntakesOwnerSurrender Constructor
@@ -68,13 +96,7 @@ class IntakesOwnerSurrender implements \RescueGroups\Objects\APIEncodableInterfa
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesOwnersurrenderID)) $this->intakesOwnersurrenderID = $inputData->intakesOwnersurrenderID;
-        if (!empty($inputData->intakesOwnersurrenderAnimalID)) $this->intakesOwnersurrenderAnimalID = $inputData->intakesOwnersurrenderAnimalID;
-        if (!empty($inputData->intakesOwnersurrenderAnimalConditionID)) $this->intakesOwnersurrenderAnimalConditionID = $inputData->intakesOwnersurrenderAnimalConditionID;
-        if (!empty($inputData->intakesOwnersurrenderDate)) $this->intakesOwnersurrenderDate = $inputData->intakesOwnersurrenderDate;
-        if (!empty($inputData->intakesOwnersurrenderNotes)) $this->intakesOwnersurrenderNotes = $inputData->intakesOwnersurrenderNotes;
-        if (!empty($inputData->intakesOwnersurrenderOwnerID)) $this->intakesOwnersurrenderOwnerID = $inputData->intakesOwnersurrenderOwnerID;
-        if (!empty($inputData->intakesOwnersurrenderReasonID)) $this->intakesOwnersurrenderReasonID = $inputData->intakesOwnersurrenderReasonID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -85,15 +107,6 @@ class IntakesOwnerSurrender implements \RescueGroups\Objects\APIEncodableInterfa
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->intakesOwnersurrenderID !== null) $output['intakesOwnersurrenderID'] = $this->intakesOwnersurrenderID;
-        if ($this->intakesOwnersurrenderAnimalID !== null) $output['intakesOwnersurrenderAnimalID'] = $this->intakesOwnersurrenderAnimalID;
-        if ($this->intakesOwnersurrenderAnimalConditionID !== null) $output['intakesOwnersurrenderAnimalConditionID'] = $this->intakesOwnersurrenderAnimalConditionID;
-        if ($this->intakesOwnersurrenderDate !== null) $output['intakesOwnersurrenderDate'] = $this->intakesOwnersurrenderDate;
-        if ($this->intakesOwnersurrenderNotes !== null) $output['intakesOwnersurrenderNotes'] = $this->intakesOwnersurrenderNotes;
-        if ($this->intakesOwnersurrenderOwnerID !== null) $output['intakesOwnersurrenderOwnerID'] = $this->intakesOwnersurrenderOwnerID;
-        if ($this->intakesOwnersurrenderReasonID !== null) $output['intakesOwnersurrenderReasonID'] = $this->intakesOwnersurrenderReasonID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

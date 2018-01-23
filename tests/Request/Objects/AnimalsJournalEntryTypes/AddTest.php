@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Add();
 
         $testObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
-        $testObject->journalEntrytypeDescription = 'testValue Description';
+        $testObject->description = 'testValue Description';
 
         $query->addAnimalsJournalEntryType($testObject);
 

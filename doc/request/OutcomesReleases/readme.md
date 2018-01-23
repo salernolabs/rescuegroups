@@ -12,6 +12,15 @@ Performs outcomesReleases.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesReleases.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesReleases.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs outcomesReleases.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\View();
 
-    $query->setoutcomesReleaseID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,15 +64,15 @@ Performs outcomesReleases.add add query to create an instance of an object. Uses
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesReleas();
-    $addObject->outcomesReleaseAnimalConditionID = "Condition"
-    $addObject->outcomesReleaseDate = "Date"
-    $addObject->outcomesReleaseNotes = "Notes"
-    $addObject->outcomesReleaseLocation = "Location"
-    $addObject->outcomesReleaseAddress = "Street address"
-    $addObject->outcomesReleaseCity = "City"
-    $addObject->outcomesReleaseState = "State/Province"
-    $addObject->outcomesReleasePostalcode = "Postal Code"
-    $addObject->outcomesReleaseByID = "Released By"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->location = "Location"
+    $addObject->address = "Street address"
+    $addObject->city = "City"
+    $addObject->state = "State/Province"
+    $addObject->postalcode = "Postal Code"
+    $addObject->byId = "Released By"
 
     $query->addOutcomesReleas($addObject);
 
@@ -76,16 +85,16 @@ Performs outcomesReleases.edit edit query to edit an object. Uses classes of typ
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Edit();
 
     $editObject = new \RescueGroups\Objects\OutcomesReleas();
-    $editObject->outcomesReleaseID = "ID"
-    $editObject->outcomesReleaseAnimalConditionID = "Condition"
-    $editObject->outcomesReleaseDate = "Date"
-    $editObject->outcomesReleaseNotes = "Notes"
-    $editObject->outcomesReleaseLocation = "Location"
-    $editObject->outcomesReleaseAddress = "Street address"
-    $editObject->outcomesReleaseCity = "City"
-    $editObject->outcomesReleaseState = "State/Province"
-    $editObject->outcomesReleasePostalcode = "Postal Code"
-    $editObject->outcomesReleaseByID = "Released By"
+    $editObject->id = "ID"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->location = "Location"
+    $editObject->address = "Street address"
+    $editObject->city = "City"
+    $editObject->state = "State/Province"
+    $editObject->postalcode = "Postal Code"
+    $editObject->byId = "Released By"
 
     $query->updateOutcomesReleas($editObject);
 
@@ -97,16 +106,16 @@ Performs outcomesReleases.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setoutcomesReleaseAnimalConditionID("Condition");
-    $query->setoutcomesReleaseDate("Date");
-    $query->setoutcomesReleaseNotes("Notes");
-    $query->setoutcomesReleaseLocation("Location");
-    $query->setoutcomesReleaseAddress("Street address");
-    $query->setoutcomesReleaseCity("City");
-    $query->setoutcomesReleaseState("State/Province");
-    $query->setoutcomesReleasePostalcode("Postal Code");
-    $query->setoutcomesReleaseByID("Released By");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setlocation("Location");
+    $query->setaddress("Street address");
+    $query->setcity("City");
+    $query->setstate("State/Province");
+    $query->setpostalcode("Postal Code");
+    $query->setbyId("Released By");
 
     $result = $api->executeRequest($query);
 

@@ -30,14 +30,14 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $animalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
@@ -67,9 +67,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -80,9 +80,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->animalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -136,8 +136,8 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->animalConditionID !== null) $parameterArray['values'][] = ["outcomesDeceasedAnimalConditionID"=>$this->animalConditionID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesDeceasedAnimalConditionID"=>$this->animalConditionId];
         if ($this->date !== null) $parameterArray['values'][] = ["outcomesDeceasedDate"=>$this->date];
         if ($this->notes !== null) $parameterArray['values'][] = ["outcomesDeceasedNotes"=>$this->notes];
         if ($this->reason !== null) $parameterArray['values'][] = ["outcomesDeceasedReason"=>$this->reason];

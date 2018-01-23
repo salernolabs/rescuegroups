@@ -23,7 +23,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $testObject = new \RescueGroups\Objects\OutcomesDeceased();
         $testObject->id = 'testValue ID';
-        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->animalConditionId = 'testValue Condition';
         $testObject->date = 'testValue Date';
         $testObject->notes = 'testValue Notes';
         $testObject->reason = 'testValue Reason';

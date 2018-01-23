@@ -12,6 +12,15 @@ Performs animalAdoptionStatuses.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\AnimalAdoptionStatuses\Define();
 
     $result = $api->executeRequest($query);
+Performs animalAdoptionStatuses.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalAdoptionStatuses\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalAdoptionStatuses.list list query, typically suitable for filling HTML select fields.
 

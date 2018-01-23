@@ -22,12 +22,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesTransfer();
-        $testObject->outcomesTransferAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesTransferDate = 'testValue Date';
-        $testObject->outcomesTransferNotes = 'testValue Notes';
-        $testObject->outcomesTransferReceiveID = 'testValue Received';
-        $testObject->outcomesTransferCoalitionMember = 'testValue Coalition Member';
-        $testObject->outcomesTransferReasonID = 'testValue Transfer Reason';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->receiveId = 'testValue Received';
+        $testObject->coalitionMember = 'testValue Coalition Member';
+        $testObject->reasonId = 'testValue Transfer Reason';
 
         $query->addOutcomesTransfer($testObject);
 

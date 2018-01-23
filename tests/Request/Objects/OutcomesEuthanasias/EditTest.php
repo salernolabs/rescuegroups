@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Edit();
 
         $testObject = new \RescueGroups\Objects\OutcomesEuthanasia();
-        $testObject->outcomesEuthanasiaID = 'testValue ID';
-        $testObject->outcomesEuthanasiaAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesEuthanasiaDate = 'testValue Date';
-        $testObject->outcomesEuthanasiaNotes = 'testValue Notes';
-        $testObject->outcomesEuthanasiaReasonID = 'testValue Euthanasia Reason';
+        $testObject->id = 'testValue ID';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->reasonId = 'testValue Euthanasia Reason';
 
         $query->updateOutcomesEuthanasia($testObject);
 

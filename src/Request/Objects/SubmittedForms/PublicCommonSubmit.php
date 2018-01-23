@@ -30,7 +30,7 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
      *
      * @var integer
      */
-    private $submittedformAnimalID = null;
+    private $animalId = null;
 
     /**
      * Salutation
@@ -170,7 +170,7 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
      *
      * @var string
      */
-    private $submittedformAnswers = null;
+    private $answers = null;
 
 
     /**
@@ -179,9 +179,9 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
      * @param integer $value
      * @return $this
      */
-    public function setSubmittedformAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->submittedformAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -439,9 +439,9 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
      * @param string $value
      * @return $this
      */
-    public function setSubmittedformAnswers($value)
+    public function setAnswers($value)
     {
-        $this->submittedformAnswers = $value;
+        $this->answers = $value;
 
         return $this;
     }
@@ -456,7 +456,7 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->submittedformAnimalID !== null) $parameterArray['values'][] = ["submittedformAnimalID"=>$this->submittedformAnimalID];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["submittedformAnimalID"=>$this->animalId];
         if ($this->submitterSalutation !== null) $parameterArray['values'][] = ["submitterSalutation"=>$this->submitterSalutation];
         if ($this->submitterFirstname !== null) $parameterArray['values'][] = ["submitterFirstname"=>$this->submitterFirstname];
         if ($this->submitterLastname !== null) $parameterArray['values'][] = ["submitterLastname"=>$this->submitterLastname];
@@ -476,6 +476,6 @@ class PublicCommonSubmit extends \RescueGroups\Request\Objects\Base implements \
         if ($this->submitterEmailAlt !== null) $parameterArray['values'][] = ["submitterEmailAlt"=>$this->submitterEmailAlt];
         if ($this->submitterEmailPager !== null) $parameterArray['values'][] = ["submitterEmailPager"=>$this->submitterEmailPager];
         if ($this->submitterReferredBy !== null) $parameterArray['values'][] = ["submitterReferredBy"=>$this->submitterReferredBy];
-        if ($this->submittedformAnswers !== null) $parameterArray['values'][] = ["submittedformAnswers"=>$this->submittedformAnswers];
+        if ($this->answers !== null) $parameterArray['values'][] = ["submittedformAnswers"=>$this->answers];
     }
 }

@@ -10,55 +10,83 @@ namespace RescueGroups\Objects;
 
 class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Service, Primary Key
      *
      * @var integer
      */
-    public $intakesServiceID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $intakesServiceAnimalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $intakesServiceAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $intakesServiceDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $intakesServiceNotes = null;
+    public $notes = null;
 
     /**
      * Owner
      *
      * @var integer
      */
-    public $intakesServiceOwnerID = null;
+    public $ownerId = null;
 
     /**
      * Service
      *
      * @var integer
      */
-    public $intakesServiceServicetypeID = null;
+    public $servicetypeId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesServiceID' => 'id',
+            'intakesServiceAnimalID' => 'animalId',
+            'intakesServiceAnimalConditionID' => 'animalConditionId',
+            'intakesServiceDate' => 'date',
+            'intakesServiceNotes' => 'notes',
+            'intakesServiceOwnerID' => 'ownerId',
+            'intakesServiceServicetypeID' => 'servicetypeId',
+        ],
+        'output' => [
+            'id' => 'intakesServiceID',
+            'animalId' => 'intakesServiceAnimalID',
+            'animalConditionId' => 'intakesServiceAnimalConditionID',
+            'date' => 'intakesServiceDate',
+            'notes' => 'intakesServiceNotes',
+            'ownerId' => 'intakesServiceOwnerID',
+            'servicetypeId' => 'intakesServiceServicetypeID',
+        ]
+    ];
 
     /**
      * IntakesService Constructor
@@ -68,13 +96,7 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesServiceID)) $this->intakesServiceID = $inputData->intakesServiceID;
-        if (!empty($inputData->intakesServiceAnimalID)) $this->intakesServiceAnimalID = $inputData->intakesServiceAnimalID;
-        if (!empty($inputData->intakesServiceAnimalConditionID)) $this->intakesServiceAnimalConditionID = $inputData->intakesServiceAnimalConditionID;
-        if (!empty($inputData->intakesServiceDate)) $this->intakesServiceDate = $inputData->intakesServiceDate;
-        if (!empty($inputData->intakesServiceNotes)) $this->intakesServiceNotes = $inputData->intakesServiceNotes;
-        if (!empty($inputData->intakesServiceOwnerID)) $this->intakesServiceOwnerID = $inputData->intakesServiceOwnerID;
-        if (!empty($inputData->intakesServiceServicetypeID)) $this->intakesServiceServicetypeID = $inputData->intakesServiceServicetypeID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -85,15 +107,6 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->intakesServiceID !== null) $output['intakesServiceID'] = $this->intakesServiceID;
-        if ($this->intakesServiceAnimalID !== null) $output['intakesServiceAnimalID'] = $this->intakesServiceAnimalID;
-        if ($this->intakesServiceAnimalConditionID !== null) $output['intakesServiceAnimalConditionID'] = $this->intakesServiceAnimalConditionID;
-        if ($this->intakesServiceDate !== null) $output['intakesServiceDate'] = $this->intakesServiceDate;
-        if ($this->intakesServiceNotes !== null) $output['intakesServiceNotes'] = $this->intakesServiceNotes;
-        if ($this->intakesServiceOwnerID !== null) $output['intakesServiceOwnerID'] = $this->intakesServiceOwnerID;
-        if ($this->intakesServiceServicetypeID !== null) $output['intakesServiceServicetypeID'] = $this->intakesServiceServicetypeID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

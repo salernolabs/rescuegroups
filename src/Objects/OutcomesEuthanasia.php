@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class OutcomesEuthanasia implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $outcomesEuthanasiaID = null;
+    public $id = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $outcomesEuthanasiaAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $outcomesEuthanasiaDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $outcomesEuthanasiaNotes = null;
+    public $notes = null;
 
     /**
      * Euthanasia Reason
      *
      * @var integer
      */
-    public $outcomesEuthanasiaReasonID = null;
+    public $reasonId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesEuthanasiaID' => 'id',
+            'outcomesEuthanasiaAnimalConditionID' => 'animalConditionId',
+            'outcomesEuthanasiaDate' => 'date',
+            'outcomesEuthanasiaNotes' => 'notes',
+            'outcomesEuthanasiaReasonID' => 'reasonId',
+        ],
+        'output' => [
+            'id' => 'outcomesEuthanasiaID',
+            'animalConditionId' => 'outcomesEuthanasiaAnimalConditionID',
+            'date' => 'outcomesEuthanasiaDate',
+            'notes' => 'outcomesEuthanasiaNotes',
+            'reasonId' => 'outcomesEuthanasiaReasonID',
+        ]
+    ];
 
     /**
      * OutcomesEuthanasia Constructor
@@ -54,11 +78,7 @@ class OutcomesEuthanasia implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesEuthanasiaID)) $this->outcomesEuthanasiaID = $inputData->outcomesEuthanasiaID;
-        if (!empty($inputData->outcomesEuthanasiaAnimalConditionID)) $this->outcomesEuthanasiaAnimalConditionID = $inputData->outcomesEuthanasiaAnimalConditionID;
-        if (!empty($inputData->outcomesEuthanasiaDate)) $this->outcomesEuthanasiaDate = $inputData->outcomesEuthanasiaDate;
-        if (!empty($inputData->outcomesEuthanasiaNotes)) $this->outcomesEuthanasiaNotes = $inputData->outcomesEuthanasiaNotes;
-        if (!empty($inputData->outcomesEuthanasiaReasonID)) $this->outcomesEuthanasiaReasonID = $inputData->outcomesEuthanasiaReasonID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class OutcomesEuthanasia implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->outcomesEuthanasiaID !== null) $output['outcomesEuthanasiaID'] = $this->outcomesEuthanasiaID;
-        if ($this->outcomesEuthanasiaAnimalConditionID !== null) $output['outcomesEuthanasiaAnimalConditionID'] = $this->outcomesEuthanasiaAnimalConditionID;
-        if ($this->outcomesEuthanasiaDate !== null) $output['outcomesEuthanasiaDate'] = $this->outcomesEuthanasiaDate;
-        if ($this->outcomesEuthanasiaNotes !== null) $output['outcomesEuthanasiaNotes'] = $this->outcomesEuthanasiaNotes;
-        if ($this->outcomesEuthanasiaReasonID !== null) $output['outcomesEuthanasiaReasonID'] = $this->outcomesEuthanasiaReasonID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

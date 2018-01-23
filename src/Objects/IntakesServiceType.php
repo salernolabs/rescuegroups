@@ -10,20 +10,38 @@ namespace RescueGroups\Objects;
 
 class IntakesServiceType implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Service, Primary Key
      *
      * @var integer
      */
-    public $serviceID = null;
+    public $id = null;
 
     /**
      * Service
      *
      * @var string
      */
-    public $serviceName = null;
+    public $name = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'serviceID' => 'id',
+            'serviceName' => 'name',
+        ],
+        'output' => [
+            'id' => 'serviceID',
+            'name' => 'serviceName',
+        ]
+    ];
 
     /**
      * IntakesServiceType Constructor
@@ -33,8 +51,7 @@ class IntakesServiceType implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->serviceID)) $this->serviceID = $inputData->serviceID;
-        if (!empty($inputData->serviceName)) $this->serviceName = $inputData->serviceName;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -45,10 +62,6 @@ class IntakesServiceType implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->serviceID !== null) $output['serviceID'] = $this->serviceID;
-        if ($this->serviceName !== null) $output['serviceName'] = $this->serviceName;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

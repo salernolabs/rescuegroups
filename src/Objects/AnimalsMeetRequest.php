@@ -10,48 +10,74 @@ namespace RescueGroups\Objects;
 
 class AnimalsMeetRequest implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Meet Request ID, Primary Key
      *
      * @var integer
      */
-    public $meetrequestID = null;
+    public $id = null;
 
     /**
      * Animal ID
      *
      * @var integer
      */
-    public $meetrequestAnimalID = null;
+    public $animalId = null;
 
     /**
      * Contact ID
      *
      * @var integer
      */
-    public $meetrequestContactID = null;
+    public $contactId = null;
 
     /**
      * Event ID
      *
      * @var integer
      */
-    public $meetrequestEventID = null;
+    public $eventId = null;
 
     /**
      * Location ID
      *
      * @var integer
      */
-    public $meetrequestLocationID = null;
+    public $locationId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $meetrequestDate = null;
+    public $date = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'meetrequestID' => 'id',
+            'meetrequestAnimalID' => 'animalId',
+            'meetrequestContactID' => 'contactId',
+            'meetrequestEventID' => 'eventId',
+            'meetrequestLocationID' => 'locationId',
+            'meetrequestDate' => 'date',
+        ],
+        'output' => [
+            'id' => 'meetrequestID',
+            'animalId' => 'meetrequestAnimalID',
+            'contactId' => 'meetrequestContactID',
+            'eventId' => 'meetrequestEventID',
+            'locationId' => 'meetrequestLocationID',
+            'date' => 'meetrequestDate',
+        ]
+    ];
 
     /**
      * AnimalsMeetRequest Constructor
@@ -61,12 +87,7 @@ class AnimalsMeetRequest implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->meetrequestID)) $this->meetrequestID = $inputData->meetrequestID;
-        if (!empty($inputData->meetrequestAnimalID)) $this->meetrequestAnimalID = $inputData->meetrequestAnimalID;
-        if (!empty($inputData->meetrequestContactID)) $this->meetrequestContactID = $inputData->meetrequestContactID;
-        if (!empty($inputData->meetrequestEventID)) $this->meetrequestEventID = $inputData->meetrequestEventID;
-        if (!empty($inputData->meetrequestLocationID)) $this->meetrequestLocationID = $inputData->meetrequestLocationID;
-        if (!empty($inputData->meetrequestDate)) $this->meetrequestDate = $inputData->meetrequestDate;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -77,14 +98,6 @@ class AnimalsMeetRequest implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->meetrequestID !== null) $output['meetrequestID'] = $this->meetrequestID;
-        if ($this->meetrequestAnimalID !== null) $output['meetrequestAnimalID'] = $this->meetrequestAnimalID;
-        if ($this->meetrequestContactID !== null) $output['meetrequestContactID'] = $this->meetrequestContactID;
-        if ($this->meetrequestEventID !== null) $output['meetrequestEventID'] = $this->meetrequestEventID;
-        if ($this->meetrequestLocationID !== null) $output['meetrequestLocationID'] = $this->meetrequestLocationID;
-        if ($this->meetrequestDate !== null) $output['meetrequestDate'] = $this->meetrequestDate;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

@@ -12,6 +12,15 @@ Performs locations.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Locations\Define();
 
     $result = $api->executeRequest($query);
+Performs locations.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Locations\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs locations.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs locations.view query.
 
     $query = new \RescueGroups\Request\Objects\Locations\View();
 
-    $query->setlocationID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,14 +64,14 @@ Performs locations.add add query to create an instance of an object. Uses classe
     $query = new \RescueGroups\Request\Objects\Locations\Add();
 
     $addObject = new \RescueGroups\Objects\Location();
-    $addObject->locationName = "Name"
-    $addObject->locationUrl = "Web address"
-    $addObject->locationAddress = "Street address"
-    $addObject->locationCity = "City"
-    $addObject->locationState = "State/Province"
-    $addObject->locationPostalcode = "Postal Code"
-    $addObject->locationPhone = "Phone"
-    $addObject->locationPhoneExt = "Phone extension"
+    $addObject->name = "Name"
+    $addObject->url = "Web address"
+    $addObject->address = "Street address"
+    $addObject->city = "City"
+    $addObject->state = "State/Province"
+    $addObject->postalcode = "Postal Code"
+    $addObject->phone = "Phone"
+    $addObject->phoneExt = "Phone extension"
 
     $query->addLocation($addObject);
 
@@ -75,16 +84,16 @@ Performs locations.edit edit query to edit an object. Uses classes of type [\Res
     $query = new \RescueGroups\Request\Objects\Locations\Edit();
 
     $editObject = new \RescueGroups\Objects\Location();
-    $editObject->locationID = "ID"
-    $editObject->locationName = "Name"
-    $editObject->locationUrl = "Web address"
-    $editObject->locationAddress = "Street address"
-    $editObject->locationCity = "City"
-    $editObject->locationState = "State/Province"
-    $editObject->locationPostalcode = "Postal Code"
-    $editObject->locationCountry = "Country"
-    $editObject->locationPhone = "Phone"
-    $editObject->locationPhoneExt = "Phone extension"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->url = "Web address"
+    $editObject->address = "Street address"
+    $editObject->city = "City"
+    $editObject->state = "State/Province"
+    $editObject->postalcode = "Postal Code"
+    $editObject->country = "Country"
+    $editObject->phone = "Phone"
+    $editObject->phoneExt = "Phone extension"
 
     $query->updateLocation($editObject);
 
@@ -96,7 +105,7 @@ Performs locations.delete query.
 
     $query = new \RescueGroups\Request\Objects\Locations\Delete();
 
-    $query->setlocationID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

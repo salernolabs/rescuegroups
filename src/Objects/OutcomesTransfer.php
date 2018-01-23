@@ -10,55 +10,83 @@ namespace RescueGroups\Objects;
 
 class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $outcomesTransferID = null;
+    public $id = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $outcomesTransferAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $outcomesTransferDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $outcomesTransferNotes = null;
+    public $notes = null;
 
     /**
      * Received
      *
      * @var integer
      */
-    public $outcomesTransferReceiveID = null;
+    public $receiveId = null;
 
     /**
      * Coalition Member
      *
      * @var string
      */
-    public $outcomesTransferCoalitionMember = null;
+    public $coalitionMember = null;
 
     /**
      * Transfer Reason
      *
      * @var integer
      */
-    public $outcomesTransferReasonID = null;
+    public $reasonId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesTransferID' => 'id',
+            'outcomesTransferAnimalConditionID' => 'animalConditionId',
+            'outcomesTransferDate' => 'date',
+            'outcomesTransferNotes' => 'notes',
+            'outcomesTransferReceiveID' => 'receiveId',
+            'outcomesTransferCoalitionMember' => 'coalitionMember',
+            'outcomesTransferReasonID' => 'reasonId',
+        ],
+        'output' => [
+            'id' => 'outcomesTransferID',
+            'animalConditionId' => 'outcomesTransferAnimalConditionID',
+            'date' => 'outcomesTransferDate',
+            'notes' => 'outcomesTransferNotes',
+            'receiveId' => 'outcomesTransferReceiveID',
+            'coalitionMember' => 'outcomesTransferCoalitionMember',
+            'reasonId' => 'outcomesTransferReasonID',
+        ]
+    ];
 
     /**
      * OutcomesTransfer Constructor
@@ -68,13 +96,7 @@ class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesTransferID)) $this->outcomesTransferID = $inputData->outcomesTransferID;
-        if (!empty($inputData->outcomesTransferAnimalConditionID)) $this->outcomesTransferAnimalConditionID = $inputData->outcomesTransferAnimalConditionID;
-        if (!empty($inputData->outcomesTransferDate)) $this->outcomesTransferDate = $inputData->outcomesTransferDate;
-        if (!empty($inputData->outcomesTransferNotes)) $this->outcomesTransferNotes = $inputData->outcomesTransferNotes;
-        if (!empty($inputData->outcomesTransferReceiveID)) $this->outcomesTransferReceiveID = $inputData->outcomesTransferReceiveID;
-        if (!empty($inputData->outcomesTransferCoalitionMember)) $this->outcomesTransferCoalitionMember = $inputData->outcomesTransferCoalitionMember;
-        if (!empty($inputData->outcomesTransferReasonID)) $this->outcomesTransferReasonID = $inputData->outcomesTransferReasonID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -85,15 +107,6 @@ class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->outcomesTransferID !== null) $output['outcomesTransferID'] = $this->outcomesTransferID;
-        if ($this->outcomesTransferAnimalConditionID !== null) $output['outcomesTransferAnimalConditionID'] = $this->outcomesTransferAnimalConditionID;
-        if ($this->outcomesTransferDate !== null) $output['outcomesTransferDate'] = $this->outcomesTransferDate;
-        if ($this->outcomesTransferNotes !== null) $output['outcomesTransferNotes'] = $this->outcomesTransferNotes;
-        if ($this->outcomesTransferReceiveID !== null) $output['outcomesTransferReceiveID'] = $this->outcomesTransferReceiveID;
-        if ($this->outcomesTransferCoalitionMember !== null) $output['outcomesTransferCoalitionMember'] = $this->outcomesTransferCoalitionMember;
-        if ($this->outcomesTransferReasonID !== null) $output['outcomesTransferReasonID'] = $this->outcomesTransferReasonID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

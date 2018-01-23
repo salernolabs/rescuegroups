@@ -2,7 +2,6 @@
 /**
  * Class QueryField
  *
- *
  */
 class QueryField
 {
@@ -88,4 +87,58 @@ class QueryField
             $this->friendlyName = $this->sdkFieldName;
         }
     }
+
+    /**
+     * @param $className
+     * @param $type
+     * @param $fieldName
+     * @return string
+     */
+    static public function getFieldSDKName($className, $type, $fieldName)
+    {
+        //Create friendly field name
+        $sdkFieldName = $fieldName;
+
+        //AnimalQualities is the exception here, the field would be blank because it's name is animalQualities
+        if ($className != 'AnimalQualities' && $className != 'EventAnimalAttendance')
+            $sdkFieldName = lcfirst(str_replace($type, '', $fieldName));
+
+        return $sdkFieldName;
+    }
+
+    /**
+     * @var array
+     */
+    static public $specialFieldMaps = [
+        'AnimalBreeds' => 'breed',
+        'AnimalColors' => 'color',
+        'AnimalGroups' => 'group',
+        'AnimalsAdoptions' => 'adoption',
+        'AnimalsJournalEntryTypes' => 'journalEntrytype',
+        'AnimalsJournalEntries' => 'journalEntry',
+        'AnimalsMeetRequests' => 'meetrequest',
+        'AnimalPatterns' => 'pattern',
+        'AnimalQualities' => 'IGNORE',
+        'AnimalsExports' => 'export',
+        'AnimalsReasonsEuthanasia' => 'reason',
+        'AnimalsReasonsImpound' => 'reason',
+        'AnimalsReasonsSurrender' => 'reason',
+        'AnimalsReasonsTransfer' => 'reason',
+        'AnimalSpecies' => 'species',
+        'AnimalStatuses' => 'status',
+        'CallsCategories' => 'category',
+        'CallsLogEntries' => 'logentry',
+        'CallsQueues' => 'queue',
+        'CallsQueuesMembers' => 'member',
+        'ColoniesCareTakers' => 'caretaker',
+        'ContactsGroups' => 'group',
+        //'Events-search' => '',
+        'EventAnimalAttendance' => 'attendance',
+        'IntakesServiceTypes' => 'service',
+        'NewsArticles' => 'article',
+        'OutcomesReleases' => 'outcomesRelease',
+        'VolunteerHours' => 'volunteerHours',
+        'VolunteersJournalEntries' => 'journalEntry'
+    ];
+
 }

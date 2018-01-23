@@ -12,6 +12,15 @@ Performs animalsMeetrequests.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsMeetrequests.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## Search
 Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) objects.
 
@@ -36,7 +45,7 @@ Performs animalsMeetrequests.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\View();
 
-    $query->setmeetrequestID("Meet Request ID");
+    $query->setid("Meet Request ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,10 +57,10 @@ Performs animalsMeetrequests.add add query to create an instance of an object. U
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsMeetRequest();
-    $addObject->meetrequestContactID = "Contact ID"
-    $addObject->meetrequestEventID = "Event ID"
-    $addObject->meetrequestLocationID = "Location ID"
-    $addObject->meetrequestDate = "Date"
+    $addObject->contactId = "Contact ID"
+    $addObject->eventId = "Event ID"
+    $addObject->locationId = "Location ID"
+    $addObject->date = "Date"
 
     $query->addAnimalsMeetRequest($addObject);
 
@@ -64,12 +73,12 @@ Performs animalsMeetrequests.edit edit query to edit an object. Uses classes of 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsMeetRequest();
-    $editObject->meetrequestID = "Meet Request ID"
-    $editObject->meetrequestAnimalID = "Animal ID"
-    $editObject->meetrequestContactID = "Contact ID"
-    $editObject->meetrequestEventID = "Event ID"
-    $editObject->meetrequestLocationID = "Location ID"
-    $editObject->meetrequestDate = "Date"
+    $editObject->id = "Meet Request ID"
+    $editObject->animalId = "Animal ID"
+    $editObject->contactId = "Contact ID"
+    $editObject->eventId = "Event ID"
+    $editObject->locationId = "Location ID"
+    $editObject->date = "Date"
 
     $query->updateAnimalsMeetRequest($editObject);
 
@@ -81,7 +90,7 @@ Performs animalsMeetrequests.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
 
-    $query->setmeetrequestID("Meet Request ID");
+    $query->setid("Meet Request ID");
 
     $result = $api->executeRequest($query);
 

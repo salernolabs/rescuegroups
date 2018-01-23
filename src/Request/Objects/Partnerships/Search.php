@@ -35,18 +35,18 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "partnershipID" => [1, 'partnershipID'],
-        "partnershipRequestOrgID" => [0, 'partnershipRequestOrgID'],
-        "partnershipRequestOrgName" => [0, 'partnershipRequestOrgName'],
-        "partnershipSharingOrgID" => [0, 'partnershipSharingOrgID'],
-        "partnershipSharingOrgName" => [0, 'partnershipSharingOrgName'],
-        "partnershipRequestDate" => [0, 'partnershipRequestDate'],
-        "partnershipRequestedByID" => [0, 'partnershipRequestedByID'],
-        "partnershipRequestedBy" => [0, 'partnershipRequestedBy'],
-        "partnershipResponseByID" => [0, 'partnershipResponseByID'],
-        "partnershipResponseBy" => [0, 'partnershipResponseBy'],
-        "partnershipStatus" => [0, 'partnershipStatus'],
-        "partnershipResponseDate" => [0, 'partnershipResponseDate'],
+        "id" => [1, 'partnershipID'],
+        "requestOrgId" => [0, 'partnershipRequestOrgID'],
+        "requestOrgName" => [0, 'partnershipRequestOrgName'],
+        "sharingOrgId" => [0, 'partnershipSharingOrgID'],
+        "sharingOrgName" => [0, 'partnershipSharingOrgName'],
+        "requestDate" => [0, 'partnershipRequestDate'],
+        "requestedById" => [0, 'partnershipRequestedByID'],
+        "requestedBy" => [0, 'partnershipRequestedBy'],
+        "responseById" => [0, 'partnershipResponseByID'],
+        "responseBy" => [0, 'partnershipResponseBy'],
+        "status" => [0, 'partnershipStatus'],
+        "responseDate" => [0, 'partnershipResponseDate'],
     ];
 
     /**

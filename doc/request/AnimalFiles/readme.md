@@ -12,6 +12,15 @@ Performs animalFiles.define query. This gives information about the API interfac
     $query = new \RescueGroups\Request\Objects\AnimalFiles\Define();
 
     $result = $api->executeRequest($query);
+Performs animalFiles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalFiles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalFiles.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs animalFiles.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalFiles\View();
 
-    $query->setanimalfileID("File ID");
+    $query->setid("File ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,12 +64,12 @@ Performs animalFiles.add add query to create an instance of an object. Uses spec
     $query = new \RescueGroups\Request\Objects\AnimalFiles\Add();
 
     $addObject = new \RescueGroups\Objects\Create\AnimalFile();
-    $addObject->animalfileBinary = "File"
-    $addObject->animalfileOldFileName = "Old file name"
-    $addObject->animalfileDescription = "Description"
-    $addObject->animalfileStatus = "Status"
-    $addObject->animalfileDisplayInline = "Inline"
-    $addObject->animalfilePublic = "Public"
+    $addObject->binary = "File"
+    $addObject->oldFileName = "Old file name"
+    $addObject->description = "Description"
+    $addObject->status = "Status"
+    $addObject->displayInline = "Inline"
+    $addObject->public = "Public"
 
     $query->addAnimalFile($addObject);
 
@@ -73,12 +82,12 @@ Performs animalFiles.edit edit query to edit an object. Uses classes of type [\R
     $query = new \RescueGroups\Request\Objects\AnimalFiles\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalFile();
-    $editObject->animalfileID = "File ID"
-    $editObject->animalfileAnimalID = "Animal"
-    $editObject->animalfileDescription = "Description"
-    $editObject->animalfileStatus = "Status"
-    $editObject->animalfileDisplayInline = "Inline"
-    $editObject->animalfilePublic = "Public"
+    $editObject->id = "File ID"
+    $editObject->animalId = "Animal"
+    $editObject->description = "Description"
+    $editObject->status = "Status"
+    $editObject->displayInline = "Inline"
+    $editObject->public = "Public"
 
     $query->updateAnimalFile($editObject);
 

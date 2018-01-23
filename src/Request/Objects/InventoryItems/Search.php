@@ -35,21 +35,21 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "inventoryitemID" => [1, 'inventoryitemID'],
-        "inventoryitemName" => [0, 'inventoryitemName'],
-        "inventoryitemItemID" => [0, 'inventoryitemItemID'],
-        "inventoryitemDescription" => [0, 'inventoryitemDescription'],
-        "inventoryitemReceivedDate" => [0, 'inventoryitemReceivedDate'],
-        "inventoryitemSource" => [0, 'inventoryitemSource'],
-        "inventoryitemCost" => [0, 'inventoryitemCost'],
-        "inventoryitemConditionID" => [0, 'inventoryitemConditionID'],
-        "inventoryitemCondition" => [0, 'inventoryitemCondition'],
-        "inventoryitemCategory" => [0, 'inventoryitemCategory'],
-        "inventoryitemDisposedDate" => [0, 'inventoryitemDisposedDate'],
-        "inventoryitemDisposedDestination" => [0, 'inventoryitemDisposedDestination'],
-        "inventoryitemStorageLocation" => [0, 'inventoryitemStorageLocation'],
-        "inventoryitemFiles" => [0, 'inventoryitemFiles'],
-        "inventoryitemLoaners" => [0, 'inventoryitemLoaners'],
+        "id" => [1, 'inventoryitemID'],
+        "name" => [0, 'inventoryitemName'],
+        "itemId" => [0, 'inventoryitemItemID'],
+        "description" => [0, 'inventoryitemDescription'],
+        "receivedDate" => [0, 'inventoryitemReceivedDate'],
+        "source" => [0, 'inventoryitemSource'],
+        "cost" => [0, 'inventoryitemCost'],
+        "conditionId" => [0, 'inventoryitemConditionID'],
+        "condition" => [0, 'inventoryitemCondition'],
+        "category" => [0, 'inventoryitemCategory'],
+        "disposedDate" => [0, 'inventoryitemDisposedDate'],
+        "disposedDestination" => [0, 'inventoryitemDisposedDestination'],
+        "storageLocation" => [0, 'inventoryitemStorageLocation'],
+        "files" => [0, 'inventoryitemFiles'],
+        "loaners" => [0, 'inventoryitemLoaners'],
     ];
 
     /**

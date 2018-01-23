@@ -12,6 +12,15 @@ Performs donations.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Donations\Define();
 
     $result = $api->executeRequest($query);
+Performs donations.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Donations\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs donations.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs donations.view query.
 
     $query = new \RescueGroups\Request\Objects\Donations\View();
 
-    $query->setdonationID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,13 +64,13 @@ Performs donations.add add query to create an instance of an object. Uses specia
     $query = new \RescueGroups\Request\Objects\Donations\Add();
 
     $addObject = new \RescueGroups\Objects\Create\Donation();
-    $addObject->donationAmount = "Amount"
-    $addObject->donationInkind = "Inkind type"
-    $addObject->donationComment = "Comment"
-    $addObject->donationLettersent = "Letter sent"
-    $addObject->donationPurpose = "Purpose"
-    $addObject->donationDate = "Date"
-    $addObject->donationAddDonorGroup = "Add contact to Donor group"
+    $addObject->amount = "Amount"
+    $addObject->inkind = "Inkind type"
+    $addObject->comment = "Comment"
+    $addObject->lettersent = "Letter sent"
+    $addObject->purpose = "Purpose"
+    $addObject->date = "Date"
+    $addObject->addDonorGroup = "Add contact to Donor group"
 
     $query->addDonation($addObject);
 
@@ -74,14 +83,14 @@ Performs donations.edit edit query to edit an object. Uses classes of type [\Res
     $query = new \RescueGroups\Request\Objects\Donations\Edit();
 
     $editObject = new \RescueGroups\Objects\Donation();
-    $editObject->donationID = "ID"
-    $editObject->donationContactID = "Contact"
-    $editObject->donationAmount = "Amount"
-    $editObject->donationInkind = "Inkind type"
-    $editObject->donationComment = "Comment"
-    $editObject->donationLettersent = "Letter sent"
-    $editObject->donationPurpose = "Purpose"
-    $editObject->donationDate = "Date"
+    $editObject->id = "ID"
+    $editObject->contactId = "Contact"
+    $editObject->amount = "Amount"
+    $editObject->inkind = "Inkind type"
+    $editObject->comment = "Comment"
+    $editObject->lettersent = "Letter sent"
+    $editObject->purpose = "Purpose"
+    $editObject->date = "Date"
 
     $query->updateDonation($editObject);
 
@@ -93,7 +102,7 @@ Performs donations.delete query.
 
     $query = new \RescueGroups\Request\Objects\Donations\Delete();
 
-    $query->setdonationID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

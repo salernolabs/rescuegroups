@@ -35,15 +35,15 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "eventID" => [1, 'eventID'],
-        "eventOrgID" => [0, 'eventOrgID'],
-        "eventName" => [0, 'eventName'],
-        "eventStart" => [0, 'eventStart'],
-        "eventEnd" => [0, 'eventEnd'],
-        "eventUrl" => [0, 'eventUrl'],
-        "eventDescription" => [0, 'eventDescription'],
-        "eventLocationID" => [0, 'eventLocationID'],
-        "eventSpecies" => [0, 'eventSpecies'],
+        "id" => [1, 'eventID'],
+        "orgId" => [0, 'eventOrgID'],
+        "name" => [0, 'eventName'],
+        "start" => [0, 'eventStart'],
+        "end" => [0, 'eventEnd'],
+        "url" => [0, 'eventUrl'],
+        "description" => [0, 'eventDescription'],
+        "locationId" => [0, 'eventLocationID'],
+        "species" => [0, 'eventSpecies'],
         "locationName" => [0, 'locationName'],
         "locationUrl" => [0, 'locationUrl'],
         "locationAddress" => [0, 'locationAddress'],
@@ -53,7 +53,7 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
         "locationCountry" => [0, 'locationCountry'],
         "locationPhone" => [0, 'locationPhone'],
         "locationPhoneExt" => [0, 'locationPhoneExt'],
-        "locationEvents" => [0, 'locationEvents'],
+        "locations" => [0, 'locationEvents'],
         "locationDistance" => [0, 'locationDistance'],
     ];
 

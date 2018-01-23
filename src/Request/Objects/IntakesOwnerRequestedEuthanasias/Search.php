@@ -35,13 +35,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "intakesOwnerrequestedeuthanasiaID" => [0, 'intakesOwnerrequestedeuthanasiaID'],
-        "intakesOwnerrequestedeuthanasiaAnimalID" => [0, 'intakesOwnerrequestedeuthanasiaAnimalID'],
-        "intakesOwnerrequestedeuthanasiaAnimalConditionID" => [0, 'intakesOwnerrequestedeuthanasiaAnimalConditionID'],
-        "intakesOwnerrequestedeuthanasiaDate" => [0, 'intakesOwnerrequestedeuthanasiaDate'],
-        "intakesOwnerrequestedeuthanasiaNotes" => [0, 'intakesOwnerrequestedeuthanasiaNotes'],
-        "intakesOwnerrequestedeuthanasiaOwnerID" => [0, 'intakesOwnerrequestedeuthanasiaOwnerID'],
-        "intakesOwnerrequestedeuthanasiaReasonID" => [0, 'intakesOwnerrequestedeuthanasiaReasonID'],
+        "id" => [0, 'intakesOwnerrequestedeuthanasiaID'],
+        "animalId" => [0, 'intakesOwnerrequestedeuthanasiaAnimalID'],
+        "animalConditionId" => [0, 'intakesOwnerrequestedeuthanasiaAnimalConditionID'],
+        "date" => [0, 'intakesOwnerrequestedeuthanasiaDate'],
+        "notes" => [0, 'intakesOwnerrequestedeuthanasiaNotes'],
+        "ownerId" => [0, 'intakesOwnerrequestedeuthanasiaOwnerID'],
+        "reasonId" => [0, 'intakesOwnerrequestedeuthanasiaReasonID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
         "ownerName" => [0, 'ownerName'],

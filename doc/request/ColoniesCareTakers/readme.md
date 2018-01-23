@@ -12,6 +12,15 @@ Performs coloniesCaretakers.define query. This gives information about the API i
     $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Define();
 
     $result = $api->executeRequest($query);
+Performs coloniesCaretakers.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs coloniesCaretakers.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs coloniesCaretakers.view query.
 
     $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\View();
 
-    $query->setcaretakerID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs coloniesCaretakers.add add query to create an instance of an object. Us
     $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Add();
 
     $addObject = new \RescueGroups\Objects\Create\ColoniesCareTaker();
-    $addObject->caretakerContactID = "Contact"
+    $addObject->contactId = "Contact"
 
     $query->addColoniesCareTaker($addObject);
 
@@ -67,7 +76,7 @@ Performs coloniesCaretakers.delete query.
 
     $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\Delete();
 
-    $query->setcaretakerID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

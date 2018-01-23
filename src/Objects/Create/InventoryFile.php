@@ -15,42 +15,42 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $inventoryfileItemID = null;
+    public $itemId = null;
 
     /**
      * File
      *
      * @var string
      */
-    public $inventoryfileBinary = null;
+    public $binary = null;
 
     /**
      * Old file name
      *
      * @var string
      */
-    public $inventoryfileOldFileName = null;
+    public $oldFileName = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $inventoryfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $inventoryfileStatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $inventoryfileDisplayInline = null;
+    public $displayInline = null;
 
 
     /**
@@ -61,12 +61,12 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->inventoryfileItemID)) $this->inventoryfileItemID = $inputData->inventoryfileItemID;
-        if (!empty($inputData->inventoryfileBinary)) $this->inventoryfileBinary = $inputData->inventoryfileBinary;
-        if (!empty($inputData->inventoryfileOldFileName)) $this->inventoryfileOldFileName = $inputData->inventoryfileOldFileName;
-        if (!empty($inputData->inventoryfileDescription)) $this->inventoryfileDescription = $inputData->inventoryfileDescription;
-        if (!empty($inputData->inventoryfileStatus)) $this->inventoryfileStatus = $inputData->inventoryfileStatus;
-        if (!empty($inputData->inventoryfileDisplayInline)) $this->inventoryfileDisplayInline = $inputData->inventoryfileDisplayInline;
+        if (!empty($inputData->inventoryfileItemID)) $this->itemId = $inputData->inventoryfileItemID;
+        if (!empty($inputData->inventoryfileBinary)) $this->binary = $inputData->inventoryfileBinary;
+        if (!empty($inputData->inventoryfileOldFileName)) $this->oldFileName = $inputData->inventoryfileOldFileName;
+        if (!empty($inputData->inventoryfileDescription)) $this->description = $inputData->inventoryfileDescription;
+        if (!empty($inputData->inventoryfileStatus)) $this->status = $inputData->inventoryfileStatus;
+        if (!empty($inputData->inventoryfileDisplayInline)) $this->displayInline = $inputData->inventoryfileDisplayInline;
     }
 
     /**
@@ -78,12 +78,12 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->inventoryfileItemID !== null) $output['inventoryfileItemID'] = $this->inventoryfileItemID;
-        if ($this->inventoryfileBinary !== null) $output['inventoryfileBinary'] = $this->inventoryfileBinary;
-        if ($this->inventoryfileOldFileName !== null) $output['inventoryfileOldFileName'] = $this->inventoryfileOldFileName;
-        if ($this->inventoryfileDescription !== null) $output['inventoryfileDescription'] = $this->inventoryfileDescription;
-        if ($this->inventoryfileStatus !== null) $output['inventoryfileStatus'] = $this->inventoryfileStatus;
-        if ($this->inventoryfileDisplayInline !== null) $output['inventoryfileDisplayInline'] = $this->inventoryfileDisplayInline;
+        if ($includeId && $this->itemId !== null) $output['inventoryfileItemID'] = $this->itemId;
+        if ($this->binary !== null) $output['inventoryfileBinary'] = $this->binary;
+        if ($this->oldFileName !== null) $output['inventoryfileOldFileName'] = $this->oldFileName;
+        if ($this->description !== null) $output['inventoryfileDescription'] = $this->description;
+        if ($this->status !== null) $output['inventoryfileStatus'] = $this->status;
+        if ($this->displayInline !== null) $output['inventoryfileDisplayInline'] = $this->displayInline;
 
         return $output;
     }

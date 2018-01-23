@@ -35,13 +35,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "intakesOwnersurrenderID" => [0, 'intakesOwnersurrenderID'],
-        "intakesOwnersurrenderAnimalID" => [0, 'intakesOwnersurrenderAnimalID'],
-        "intakesOwnersurrenderAnimalConditionID" => [0, 'intakesOwnersurrenderAnimalConditionID'],
-        "intakesOwnersurrenderDate" => [0, 'intakesOwnersurrenderDate'],
-        "intakesOwnersurrenderNotes" => [0, 'intakesOwnersurrenderNotes'],
-        "intakesOwnersurrenderOwnerID" => [0, 'intakesOwnersurrenderOwnerID'],
-        "intakesOwnersurrenderReasonID" => [0, 'intakesOwnersurrenderReasonID'],
+        "id" => [0, 'intakesOwnersurrenderID'],
+        "animalId" => [0, 'intakesOwnersurrenderAnimalID'],
+        "animalConditionId" => [0, 'intakesOwnersurrenderAnimalConditionID'],
+        "date" => [0, 'intakesOwnersurrenderDate'],
+        "notes" => [0, 'intakesOwnersurrenderNotes'],
+        "ownerId" => [0, 'intakesOwnersurrenderOwnerID'],
+        "reasonId" => [0, 'intakesOwnersurrenderReasonID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
         "ownerName" => [0, 'ownerName'],

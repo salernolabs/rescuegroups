@@ -22,8 +22,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsReasonsTransfer();
-        $testObject->reasonID = 'testValue Reason ID';
-        $testObject->reasonName = 'testValue Reason';
+        $testObject->id = 'testValue Reason ID';
+        $testObject->name = 'testValue Reason';
 
         $query->updateAnimalsReasonsTransfer($testObject);
 

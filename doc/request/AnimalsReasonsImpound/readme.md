@@ -12,6 +12,15 @@ Performs animalsReasonsImpound.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsReasonsImpound.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsReasonsImpound.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs animalsReasonsImpound.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\View();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalsReasonsImpound.add add query to create an instance of an object.
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsReasonsImpound();
-    $addObject->reasonName = "Reason"
+    $addObject->name = "Reason"
 
     $query->addAnimalsReasonsImpound($addObject);
 
@@ -68,8 +77,8 @@ Performs animalsReasonsImpound.edit edit query to edit an object. Uses classes o
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsReasonsImpound();
-    $editObject->reasonID = "Reason ID"
-    $editObject->reasonName = "Reason"
+    $editObject->id = "Reason ID"
+    $editObject->name = "Reason"
 
     $query->updateAnimalsReasonsImpound($editObject);
 
@@ -81,7 +90,7 @@ Performs animalsReasonsImpound.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Delete();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 

@@ -22,27 +22,27 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Users\Add();
 
         $testObject = new \RescueGroups\Objects\Create\User();
-        $testObject->userLogin = 'testValue Login';
-        $testObject->userPassword = 'testValue Password';
-        $testObject->userSalutation = 'testValue Salutation';
-        $testObject->userFirstname = 'testValue First name';
-        $testObject->userLastname = 'testValue Last name';
-        $testObject->userAddress = 'testValue Street address';
-        $testObject->userCity = 'testValue City';
-        $testObject->userState = 'testValue State/Province';
-        $testObject->userPostalcode = 'testValue Postal Code';
-        $testObject->userPlus4 = 'testValue Zip code plus 4';
-        $testObject->userPhoneHome = 'testValue Home phone number';
-        $testObject->userPhoneWork = 'testValue Work phone number';
-        $testObject->userPhoneWorkExt = 'testValue Work phone extension';
-        $testObject->userPhoneCell = 'testValue Cell phone number';
-        $testObject->userFax = 'testValue Fax number';
-        $testObject->userEmail = 'testValue Email address';
-        $testObject->userEmailAlt = 'testValue Alternate email address';
-        $testObject->userEmailPager = 'testValue Pager email address';
-        $testObject->userContactID = 'testValue User Contact';
-        $testObject->userType = 'testValue Type';
-        $testObject->userStatus = 'testValue Status';
+        $testObject->login = 'testValue Login';
+        $testObject->password = 'testValue Password';
+        $testObject->salutation = 'testValue Salutation';
+        $testObject->firstname = 'testValue First name';
+        $testObject->lastname = 'testValue Last name';
+        $testObject->address = 'testValue Street address';
+        $testObject->city = 'testValue City';
+        $testObject->state = 'testValue State/Province';
+        $testObject->postalcode = 'testValue Postal Code';
+        $testObject->plus4 = 'testValue Zip code plus 4';
+        $testObject->phoneHome = 'testValue Home phone number';
+        $testObject->phoneWork = 'testValue Work phone number';
+        $testObject->phoneWorkExt = 'testValue Work phone extension';
+        $testObject->phoneCell = 'testValue Cell phone number';
+        $testObject->fax = 'testValue Fax number';
+        $testObject->email = 'testValue Email address';
+        $testObject->emailAlt = 'testValue Alternate email address';
+        $testObject->emailPager = 'testValue Pager email address';
+        $testObject->contactId = 'testValue User Contact';
+        $testObject->type = 'testValue Type';
+        $testObject->status = 'testValue Status';
 
         $query->addUser($testObject);
 

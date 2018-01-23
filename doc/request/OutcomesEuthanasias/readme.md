@@ -12,6 +12,15 @@ Performs outcomesEuthanasias.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesEuthanasias.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesEuthanasias.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs outcomesEuthanasias.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\View();
 
-    $query->setoutcomesEuthanasiaID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,10 +64,10 @@ Performs outcomesEuthanasias.add add query to create an instance of an object. U
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesEuthanasia();
-    $addObject->outcomesEuthanasiaAnimalConditionID = "Condition"
-    $addObject->outcomesEuthanasiaDate = "Date"
-    $addObject->outcomesEuthanasiaNotes = "Notes"
-    $addObject->outcomesEuthanasiaReasonID = "Euthanasia Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->reasonId = "Euthanasia Reason"
 
     $query->addOutcomesEuthanasia($addObject);
 
@@ -71,11 +80,11 @@ Performs outcomesEuthanasias.edit edit query to edit an object. Uses classes of 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Edit();
 
     $editObject = new \RescueGroups\Objects\OutcomesEuthanasia();
-    $editObject->outcomesEuthanasiaID = "ID"
-    $editObject->outcomesEuthanasiaAnimalConditionID = "Condition"
-    $editObject->outcomesEuthanasiaDate = "Date"
-    $editObject->outcomesEuthanasiaNotes = "Notes"
-    $editObject->outcomesEuthanasiaReasonID = "Euthanasia Reason"
+    $editObject->id = "ID"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->reasonId = "Euthanasia Reason"
 
     $query->updateOutcomesEuthanasia($editObject);
 
@@ -87,11 +96,11 @@ Performs outcomesEuthanasias.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setoutcomesEuthanasiaAnimalConditionID("Condition");
-    $query->setoutcomesEuthanasiaDate("Date");
-    $query->setoutcomesEuthanasiaNotes("Notes");
-    $query->setoutcomesEuthanasiaReasonID("Euthanasia Reason");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setreasonId("Euthanasia Reason");
 
     $result = $api->executeRequest($query);
 

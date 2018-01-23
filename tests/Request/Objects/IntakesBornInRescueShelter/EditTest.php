@@ -23,8 +23,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $testObject = new \RescueGroups\Objects\IntakesBornInRescueShelter();
         $testObject->id = 'testValue Born In Rescue/Shelter';
-        $testObject->animalID = 'testValue Animal';
-        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
         $testObject->date = 'testValue Date';
         $testObject->notes = 'testValue Notes';
 

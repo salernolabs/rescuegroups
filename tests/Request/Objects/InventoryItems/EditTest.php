@@ -22,18 +22,18 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\InventoryItems\Edit();
 
         $testObject = new \RescueGroups\Objects\InventoryItem();
-        $testObject->inventoryitemID = 'testValue ID';
-        $testObject->inventoryitemName = 'testValue Name';
-        $testObject->inventoryitemItemID = 'testValue Item Number/ID';
-        $testObject->inventoryitemDescription = 'testValue Description';
-        $testObject->inventoryitemReceivedDate = 'testValue Received Date';
-        $testObject->inventoryitemSource = 'testValue Source';
-        $testObject->inventoryitemCost = 'testValue Cost';
-        $testObject->inventoryitemConditionID = 'testValue Condition';
-        $testObject->inventoryitemCategory = 'testValue Category';
-        $testObject->inventoryitemDisposedDate = 'testValue Disposed Date';
-        $testObject->inventoryitemDisposedDestination = 'testValue Disposed Destination';
-        $testObject->inventoryitemStorageLocation = 'testValue Storage Location';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->itemId = 'testValue Item Number/ID';
+        $testObject->description = 'testValue Description';
+        $testObject->receivedDate = 'testValue Received Date';
+        $testObject->source = 'testValue Source';
+        $testObject->cost = 'testValue Cost';
+        $testObject->conditionId = 'testValue Condition';
+        $testObject->category = 'testValue Category';
+        $testObject->disposedDate = 'testValue Disposed Date';
+        $testObject->disposedDestination = 'testValue Disposed Destination';
+        $testObject->storageLocation = 'testValue Storage Location';
 
         $query->updateInventoryItem($testObject);
 

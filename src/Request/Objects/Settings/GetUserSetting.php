@@ -30,7 +30,7 @@ class GetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $settingName = null;
+    private $name = null;
 
 
     /**
@@ -39,9 +39,9 @@ class GetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSettingName($value)
+    public function setName($value)
     {
-        $this->settingName = $value;
+        $this->name = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class GetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->settingName !== null) $parameterArray['values'][] = ["settingName"=>$this->settingName];
+        if ($this->name !== null) $parameterArray['values'][] = ["settingName"=>$this->name];
     }
 }

@@ -12,6 +12,15 @@ Performs inventoryitems.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\InventoryItems\Define();
 
     $result = $api->executeRequest($query);
+Performs inventoryitems.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryItems\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs inventoryitems.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs inventoryitems.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryItems\View();
 
-    $query->setinventoryitemID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,17 +64,17 @@ Performs inventoryitems.add add query to create an instance of an object. Uses s
     $query = new \RescueGroups\Request\Objects\InventoryItems\Add();
 
     $addObject = new \RescueGroups\Objects\Create\InventoryItem();
-    $addObject->inventoryitemName = "Name"
-    $addObject->inventoryitemItemID = "Item Number/ID"
-    $addObject->inventoryitemDescription = "Description"
-    $addObject->inventoryitemReceivedDate = "Received Date"
-    $addObject->inventoryitemSource = "Source"
-    $addObject->inventoryitemCost = "Cost"
-    $addObject->inventoryitemCategory = "Category"
-    $addObject->inventoryitemDisposedDate = "Disposed Date"
-    $addObject->inventoryitemDisposedDestination = "Disposed Destination"
-    $addObject->inventoryitemStorageLocation = "Storage Location"
-    $addObject->inventoryitemQuantity = "Quantity"
+    $addObject->name = "Name"
+    $addObject->itemId = "Item Number/ID"
+    $addObject->description = "Description"
+    $addObject->receivedDate = "Received Date"
+    $addObject->source = "Source"
+    $addObject->cost = "Cost"
+    $addObject->category = "Category"
+    $addObject->disposedDate = "Disposed Date"
+    $addObject->disposedDestination = "Disposed Destination"
+    $addObject->storageLocation = "Storage Location"
+    $addObject->quantity = "Quantity"
 
     $query->addInventoryItem($addObject);
 
@@ -78,18 +87,18 @@ Performs inventoryitems.edit edit query to edit an object. Uses classes of type 
     $query = new \RescueGroups\Request\Objects\InventoryItems\Edit();
 
     $editObject = new \RescueGroups\Objects\InventoryItem();
-    $editObject->inventoryitemID = "ID"
-    $editObject->inventoryitemName = "Name"
-    $editObject->inventoryitemItemID = "Item Number/ID"
-    $editObject->inventoryitemDescription = "Description"
-    $editObject->inventoryitemReceivedDate = "Received Date"
-    $editObject->inventoryitemSource = "Source"
-    $editObject->inventoryitemCost = "Cost"
-    $editObject->inventoryitemConditionID = "Condition"
-    $editObject->inventoryitemCategory = "Category"
-    $editObject->inventoryitemDisposedDate = "Disposed Date"
-    $editObject->inventoryitemDisposedDestination = "Disposed Destination"
-    $editObject->inventoryitemStorageLocation = "Storage Location"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->itemId = "Item Number/ID"
+    $editObject->description = "Description"
+    $editObject->receivedDate = "Received Date"
+    $editObject->source = "Source"
+    $editObject->cost = "Cost"
+    $editObject->conditionId = "Condition"
+    $editObject->category = "Category"
+    $editObject->disposedDate = "Disposed Date"
+    $editObject->disposedDestination = "Disposed Destination"
+    $editObject->storageLocation = "Storage Location"
 
     $query->updateInventoryItem($editObject);
 
@@ -101,7 +110,7 @@ Performs inventoryitems.delete query.
 
     $query = new \RescueGroups\Request\Objects\InventoryItems\Delete();
 
-    $query->setinventoryitemID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

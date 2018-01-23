@@ -22,14 +22,14 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Calls\Edit();
 
         $testObject = new \RescueGroups\Objects\Call();
-        $testObject->callID = 'testValue ID';
-        $testObject->callContactID = 'testValue Contact';
-        $testObject->callAssignedID = 'testValue Assigned';
-        $testObject->callStatusID = 'testValue Status';
-        $testObject->callUrgencyID = 'testValue Urgency';
-        $testObject->callCategoryID = 'testValue Category';
-        $testObject->callQueueID = 'testValue Queue';
-        $testObject->callDate = 'testValue Call date';
+        $testObject->id = 'testValue ID';
+        $testObject->contactId = 'testValue Contact';
+        $testObject->assignedId = 'testValue Assigned';
+        $testObject->statusId = 'testValue Status';
+        $testObject->urgencyId = 'testValue Urgency';
+        $testObject->categoryId = 'testValue Category';
+        $testObject->queueId = 'testValue Queue';
+        $testObject->date = 'testValue Call date';
 
         $query->updateCall($testObject);
 

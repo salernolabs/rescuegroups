@@ -22,8 +22,8 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsQueues\Add();
 
         $testObject = new \RescueGroups\Objects\CallsQueue();
-        $testObject->queueName = 'testValue Name';
-        $testObject->queueFromEmail = 'testValue From Email Address';
+        $testObject->name = 'testValue Name';
+        $testObject->fromEmail = 'testValue From Email Address';
 
         $query->addCallsQueue($testObject);
 

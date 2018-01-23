@@ -12,6 +12,15 @@ Performs animalGroups.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Define();
 
     $result = $api->executeRequest($query);
+Performs animalGroups.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalGroups\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalGroups.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs animalGroups.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalGroups\View();
 
-    $query->setgroupID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalGroups.add add query to create an instance of an object. Uses cla
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalGroup();
-    $addObject->groupName = "Name"
+    $addObject->name = "Name"
 
     $query->addAnimalGroup($addObject);
 
@@ -68,9 +77,9 @@ Performs animalGroups.edit edit query to edit an object. Uses classes of type [\
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalGroup();
-    $editObject->groupID = "ID"
-    $editObject->groupName = "Name"
-    $editObject->groupHeaderID = "Header"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->headerId = "Header"
 
     $query->updateAnimalGroup($editObject);
 
@@ -82,7 +91,7 @@ Performs animalGroups.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Delete();
 
-    $query->setgroupID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

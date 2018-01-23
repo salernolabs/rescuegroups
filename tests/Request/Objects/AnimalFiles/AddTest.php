@@ -22,12 +22,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalFiles\Add();
 
         $testObject = new \RescueGroups\Objects\Create\AnimalFile();
-        $testObject->animalfileBinary = 'testValue File';
-        $testObject->animalfileOldFileName = 'testValue Old file name';
-        $testObject->animalfileDescription = 'testValue Description';
-        $testObject->animalfileStatus = 'testValue Status';
-        $testObject->animalfileDisplayInline = 'testValue Inline';
-        $testObject->animalfilePublic = 'testValue Public';
+        $testObject->binary = 'testValue File';
+        $testObject->oldFileName = 'testValue Old file name';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
+        $testObject->public = 'testValue Public';
 
         $query->addAnimalFile($testObject);
 

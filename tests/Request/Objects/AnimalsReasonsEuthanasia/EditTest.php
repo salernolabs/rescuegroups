@@ -22,8 +22,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsReasonsEuthanasia();
-        $testObject->reasonID = 'testValue Reason ID';
-        $testObject->reasonName = 'testValue Reason';
+        $testObject->id = 'testValue Reason ID';
+        $testObject->name = 'testValue Reason';
 
         $query->updateAnimalsReasonsEuthanasia($testObject);
 

@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesDeceased();
-        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->animalConditionId = 'testValue Condition';
         $testObject->date = 'testValue Date';
         $testObject->notes = 'testValue Notes';
         $testObject->reason = 'testValue Reason';

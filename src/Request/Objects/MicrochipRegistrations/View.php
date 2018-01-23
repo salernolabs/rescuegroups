@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $microchipRegistrationID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setMicrochipRegistrationID($value)
+    public function setId($value)
     {
-        $this->microchipRegistrationID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->microchipRegistrationID !== null) $parameterArray['values'][] = ["microchipRegistrationID"=>$this->microchipRegistrationID];
+        if ($this->id !== null) $parameterArray['values'][] = ["microchipRegistrationID"=>$this->id];
     }
 }

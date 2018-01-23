@@ -23,10 +23,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
 
         $testObject = new \RescueGroups\Objects\OutcomesReturnToOwner();
         $testObject->id = 'testValue ID';
-        $testObject->animalConditionID = 'testValue Condition';
+        $testObject->animalConditionId = 'testValue Condition';
         $testObject->date = 'testValue Date';
         $testObject->notes = 'testValue Notes';
-        $testObject->ownerID = 'testValue Return To';
+        $testObject->ownerId = 'testValue Return To';
 
         $query->updateOutcomesReturnToOwner($testObject);
 

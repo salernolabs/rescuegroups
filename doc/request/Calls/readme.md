@@ -12,6 +12,15 @@ Performs calls.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Calls\Define();
 
     $result = $api->executeRequest($query);
+Performs calls.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Calls\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs calls.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs calls.view query.
 
     $query = new \RescueGroups\Request\Objects\Calls\View();
 
-    $query->setcallID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,12 +64,12 @@ Performs calls.add add query to create an instance of an object. Uses classes of
     $query = new \RescueGroups\Request\Objects\Calls\Add();
 
     $addObject = new \RescueGroups\Objects\Call();
-    $addObject->callAssignedID = "Assigned"
-    $addObject->callStatusID = "Status"
-    $addObject->callUrgencyID = "Urgency"
-    $addObject->callCategoryID = "Category"
-    $addObject->callQueueID = "Queue"
-    $addObject->callDate = "Call date"
+    $addObject->assignedId = "Assigned"
+    $addObject->statusId = "Status"
+    $addObject->urgencyId = "Urgency"
+    $addObject->categoryId = "Category"
+    $addObject->queueId = "Queue"
+    $addObject->date = "Call date"
 
     $query->addCall($addObject);
 
@@ -73,14 +82,14 @@ Performs calls.edit edit query to edit an object. Uses classes of type [\RescueG
     $query = new \RescueGroups\Request\Objects\Calls\Edit();
 
     $editObject = new \RescueGroups\Objects\Call();
-    $editObject->callID = "ID"
-    $editObject->callContactID = "Contact"
-    $editObject->callAssignedID = "Assigned"
-    $editObject->callStatusID = "Status"
-    $editObject->callUrgencyID = "Urgency"
-    $editObject->callCategoryID = "Category"
-    $editObject->callQueueID = "Queue"
-    $editObject->callDate = "Call date"
+    $editObject->id = "ID"
+    $editObject->contactId = "Contact"
+    $editObject->assignedId = "Assigned"
+    $editObject->statusId = "Status"
+    $editObject->urgencyId = "Urgency"
+    $editObject->categoryId = "Category"
+    $editObject->queueId = "Queue"
+    $editObject->date = "Call date"
 
     $query->updateCall($editObject);
 

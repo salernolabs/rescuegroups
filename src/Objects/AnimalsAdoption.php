@@ -10,83 +10,119 @@ namespace RescueGroups\Objects;
 
 class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Adoption ID, Primary Key
      *
      * @var integer
      */
-    public $adoptionID = null;
+    public $id = null;
 
     /**
      * Animal ID
      *
      * @var integer
      */
-    public $adoptionAnimalID = null;
+    public $animalId = null;
 
     /**
      * Adopter ID
      *
      * @var integer
      */
-    public $adoptionAdopterID = null;
+    public $adopterId = null;
 
     /**
      * Lead ID
      *
      * @var integer
      */
-    public $adoptionLeadID = null;
+    public $leadId = null;
 
     /**
      * Fee
      *
      * @var float
      */
-    public $adoptionFeeAmount = null;
+    public $feeAmount = null;
 
     /**
      * Donation
      *
      * @var float
      */
-    public $adoptionDonationAmount = null;
+    public $donationAmount = null;
 
     /**
      * Donation ID
      *
      * @var integer
      */
-    public $adoptionDonationID = null;
+    public $donationId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $adoptionDate = null;
+    public $date = null;
 
     /**
      * Submitted form ID
      *
      * @var integer
      */
-    public $adoptionSubmittedformID = null;
+    public $submittedformId = null;
 
     /**
      * Status ID
      *
      * @var integer
      */
-    public $adoptionStatusID = null;
+    public $statusId = null;
 
     /**
      * Thank you letter sent
      *
      * @var string
      */
-    public $adoptionLetterSent = null;
+    public $letterSent = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'adoptionID' => 'id',
+            'adoptionAnimalID' => 'animalId',
+            'adoptionAdopterID' => 'adopterId',
+            'adoptionLeadID' => 'leadId',
+            'adoptionFeeAmount' => 'feeAmount',
+            'adoptionDonationAmount' => 'donationAmount',
+            'adoptionDonationID' => 'donationId',
+            'adoptionDate' => 'date',
+            'adoptionSubmittedformID' => 'submittedformId',
+            'adoptionStatusID' => 'statusId',
+            'adoptionLetterSent' => 'letterSent',
+        ],
+        'output' => [
+            'id' => 'adoptionID',
+            'animalId' => 'adoptionAnimalID',
+            'adopterId' => 'adoptionAdopterID',
+            'leadId' => 'adoptionLeadID',
+            'feeAmount' => 'adoptionFeeAmount',
+            'donationAmount' => 'adoptionDonationAmount',
+            'donationId' => 'adoptionDonationID',
+            'date' => 'adoptionDate',
+            'submittedformId' => 'adoptionSubmittedformID',
+            'statusId' => 'adoptionStatusID',
+            'letterSent' => 'adoptionLetterSent',
+        ]
+    ];
 
     /**
      * AnimalsAdoption Constructor
@@ -96,17 +132,7 @@ class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->adoptionID)) $this->adoptionID = $inputData->adoptionID;
-        if (!empty($inputData->adoptionAnimalID)) $this->adoptionAnimalID = $inputData->adoptionAnimalID;
-        if (!empty($inputData->adoptionAdopterID)) $this->adoptionAdopterID = $inputData->adoptionAdopterID;
-        if (!empty($inputData->adoptionLeadID)) $this->adoptionLeadID = $inputData->adoptionLeadID;
-        if (!empty($inputData->adoptionFeeAmount)) $this->adoptionFeeAmount = $inputData->adoptionFeeAmount;
-        if (!empty($inputData->adoptionDonationAmount)) $this->adoptionDonationAmount = $inputData->adoptionDonationAmount;
-        if (!empty($inputData->adoptionDonationID)) $this->adoptionDonationID = $inputData->adoptionDonationID;
-        if (!empty($inputData->adoptionDate)) $this->adoptionDate = $inputData->adoptionDate;
-        if (!empty($inputData->adoptionSubmittedformID)) $this->adoptionSubmittedformID = $inputData->adoptionSubmittedformID;
-        if (!empty($inputData->adoptionStatusID)) $this->adoptionStatusID = $inputData->adoptionStatusID;
-        if (!empty($inputData->adoptionLetterSent)) $this->adoptionLetterSent = $inputData->adoptionLetterSent;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -117,19 +143,6 @@ class AnimalsAdoption implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->adoptionID !== null) $output['adoptionID'] = $this->adoptionID;
-        if ($this->adoptionAnimalID !== null) $output['adoptionAnimalID'] = $this->adoptionAnimalID;
-        if ($this->adoptionAdopterID !== null) $output['adoptionAdopterID'] = $this->adoptionAdopterID;
-        if ($this->adoptionLeadID !== null) $output['adoptionLeadID'] = $this->adoptionLeadID;
-        if ($this->adoptionFeeAmount !== null) $output['adoptionFeeAmount'] = $this->adoptionFeeAmount;
-        if ($this->adoptionDonationAmount !== null) $output['adoptionDonationAmount'] = $this->adoptionDonationAmount;
-        if ($this->adoptionDonationID !== null) $output['adoptionDonationID'] = $this->adoptionDonationID;
-        if ($this->adoptionDate !== null) $output['adoptionDate'] = $this->adoptionDate;
-        if ($this->adoptionSubmittedformID !== null) $output['adoptionSubmittedformID'] = $this->adoptionSubmittedformID;
-        if ($this->adoptionStatusID !== null) $output['adoptionStatusID'] = $this->adoptionStatusID;
-        if ($this->adoptionLetterSent !== null) $output['adoptionLetterSent'] = $this->adoptionLetterSent;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

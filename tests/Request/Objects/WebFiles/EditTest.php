@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebFiles\Edit();
 
         $testObject = new \RescueGroups\Objects\WebFile();
-        $testObject->webfileID = 'testValue ID';
-        $testObject->webfileDescription = 'testValue Description';
-        $testObject->webfileStatus = 'testValue Status';
-        $testObject->webfileDisplayInline = 'testValue Inline';
-        $testObject->webfileRoleID = 'testValue Security Role';
+        $testObject->id = 'testValue ID';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
+        $testObject->roleId = 'testValue Security Role';
 
         $query->updateWebFile($testObject);
 

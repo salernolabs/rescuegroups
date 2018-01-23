@@ -15,42 +15,42 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $webfileBinary = null;
+    public $binary = null;
 
     /**
      * Old file name
      *
      * @var string
      */
-    public $webfileOldFileName = null;
+    public $oldFileName = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $webfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $webfileStatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $webfileDisplayInline = null;
+    public $displayInline = null;
 
     /**
      * Security Role, Primary Key
      *
      * @var integer
      */
-    public $webfileRoleID = null;
+    public $roleId = null;
 
 
     /**
@@ -61,12 +61,12 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->webfileBinary)) $this->webfileBinary = $inputData->webfileBinary;
-        if (!empty($inputData->webfileOldFileName)) $this->webfileOldFileName = $inputData->webfileOldFileName;
-        if (!empty($inputData->webfileDescription)) $this->webfileDescription = $inputData->webfileDescription;
-        if (!empty($inputData->webfileStatus)) $this->webfileStatus = $inputData->webfileStatus;
-        if (!empty($inputData->webfileDisplayInline)) $this->webfileDisplayInline = $inputData->webfileDisplayInline;
-        if (!empty($inputData->webfileRoleID)) $this->webfileRoleID = $inputData->webfileRoleID;
+        if (!empty($inputData->webfileBinary)) $this->binary = $inputData->webfileBinary;
+        if (!empty($inputData->webfileOldFileName)) $this->oldFileName = $inputData->webfileOldFileName;
+        if (!empty($inputData->webfileDescription)) $this->description = $inputData->webfileDescription;
+        if (!empty($inputData->webfileStatus)) $this->status = $inputData->webfileStatus;
+        if (!empty($inputData->webfileDisplayInline)) $this->displayInline = $inputData->webfileDisplayInline;
+        if (!empty($inputData->webfileRoleID)) $this->roleId = $inputData->webfileRoleID;
     }
 
     /**
@@ -78,12 +78,12 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->webfileBinary !== null) $output['webfileBinary'] = $this->webfileBinary;
-        if ($this->webfileOldFileName !== null) $output['webfileOldFileName'] = $this->webfileOldFileName;
-        if ($this->webfileDescription !== null) $output['webfileDescription'] = $this->webfileDescription;
-        if ($this->webfileStatus !== null) $output['webfileStatus'] = $this->webfileStatus;
-        if ($this->webfileDisplayInline !== null) $output['webfileDisplayInline'] = $this->webfileDisplayInline;
-        if ($includeId && $this->webfileRoleID !== null) $output['webfileRoleID'] = $this->webfileRoleID;
+        if ($this->binary !== null) $output['webfileBinary'] = $this->binary;
+        if ($this->oldFileName !== null) $output['webfileOldFileName'] = $this->oldFileName;
+        if ($this->description !== null) $output['webfileDescription'] = $this->description;
+        if ($this->status !== null) $output['webfileStatus'] = $this->status;
+        if ($this->displayInline !== null) $output['webfileDisplayInline'] = $this->displayInline;
+        if ($includeId && $this->roleId !== null) $output['webfileRoleID'] = $this->roleId;
 
         return $output;
     }

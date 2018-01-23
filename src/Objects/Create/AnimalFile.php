@@ -15,49 +15,49 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $animalfileAnimalID = null;
+    public $animalId = null;
 
     /**
      * File
      *
      * @var string
      */
-    public $animalfileBinary = null;
+    public $binary = null;
 
     /**
      * Old file name
      *
      * @var string
      */
-    public $animalfileOldFileName = null;
+    public $oldFileName = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $animalfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $animalfileStatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $animalfileDisplayInline = null;
+    public $displayInline = null;
 
     /**
      * Public
      *
      * @var string
      */
-    public $animalfilePublic = null;
+    public $public = null;
 
 
     /**
@@ -68,13 +68,13 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->animalfileAnimalID)) $this->animalfileAnimalID = $inputData->animalfileAnimalID;
-        if (!empty($inputData->animalfileBinary)) $this->animalfileBinary = $inputData->animalfileBinary;
-        if (!empty($inputData->animalfileOldFileName)) $this->animalfileOldFileName = $inputData->animalfileOldFileName;
-        if (!empty($inputData->animalfileDescription)) $this->animalfileDescription = $inputData->animalfileDescription;
-        if (!empty($inputData->animalfileStatus)) $this->animalfileStatus = $inputData->animalfileStatus;
-        if (!empty($inputData->animalfileDisplayInline)) $this->animalfileDisplayInline = $inputData->animalfileDisplayInline;
-        if (!empty($inputData->animalfilePublic)) $this->animalfilePublic = $inputData->animalfilePublic;
+        if (!empty($inputData->animalfileAnimalID)) $this->animalId = $inputData->animalfileAnimalID;
+        if (!empty($inputData->animalfileBinary)) $this->binary = $inputData->animalfileBinary;
+        if (!empty($inputData->animalfileOldFileName)) $this->oldFileName = $inputData->animalfileOldFileName;
+        if (!empty($inputData->animalfileDescription)) $this->description = $inputData->animalfileDescription;
+        if (!empty($inputData->animalfileStatus)) $this->status = $inputData->animalfileStatus;
+        if (!empty($inputData->animalfileDisplayInline)) $this->displayInline = $inputData->animalfileDisplayInline;
+        if (!empty($inputData->animalfilePublic)) $this->public = $inputData->animalfilePublic;
     }
 
     /**
@@ -86,13 +86,13 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->animalfileAnimalID !== null) $output['animalfileAnimalID'] = $this->animalfileAnimalID;
-        if ($this->animalfileBinary !== null) $output['animalfileBinary'] = $this->animalfileBinary;
-        if ($this->animalfileOldFileName !== null) $output['animalfileOldFileName'] = $this->animalfileOldFileName;
-        if ($this->animalfileDescription !== null) $output['animalfileDescription'] = $this->animalfileDescription;
-        if ($this->animalfileStatus !== null) $output['animalfileStatus'] = $this->animalfileStatus;
-        if ($this->animalfileDisplayInline !== null) $output['animalfileDisplayInline'] = $this->animalfileDisplayInline;
-        if ($this->animalfilePublic !== null) $output['animalfilePublic'] = $this->animalfilePublic;
+        if ($includeId && $this->animalId !== null) $output['animalfileAnimalID'] = $this->animalId;
+        if ($this->binary !== null) $output['animalfileBinary'] = $this->binary;
+        if ($this->oldFileName !== null) $output['animalfileOldFileName'] = $this->oldFileName;
+        if ($this->description !== null) $output['animalfileDescription'] = $this->description;
+        if ($this->status !== null) $output['animalfileStatus'] = $this->status;
+        if ($this->displayInline !== null) $output['animalfileDisplayInline'] = $this->displayInline;
+        if ($this->public !== null) $output['animalfilePublic'] = $this->public;
 
         return $output;
     }

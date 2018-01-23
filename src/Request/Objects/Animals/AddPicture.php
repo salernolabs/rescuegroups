@@ -30,7 +30,7 @@ class AddPicture extends \RescueGroups\Request\Objects\Base implements \RescueGr
      *
      * @var integer
      */
-    private $animalID = null;
+    private $id = null;
 
     /**
      * Picture
@@ -60,9 +60,9 @@ class AddPicture extends \RescueGroups\Request\Objects\Base implements \RescueGr
      * @param integer $value
      * @return $this
      */
-    public function setAnimalID($value)
+    public function setId($value)
     {
-        $this->animalID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -116,7 +116,7 @@ class AddPicture extends \RescueGroups\Request\Objects\Base implements \RescueGr
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
+        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
         if ($this->pictureBinary !== null) $parameterArray['values'][] = ["pictureBinary"=>$this->pictureBinary];
         if ($this->fileName !== null) $parameterArray['values'][] = ["fileName"=>$this->fileName];
         if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];

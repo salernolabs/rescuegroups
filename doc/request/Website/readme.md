@@ -12,6 +12,15 @@ Performs website.define query. This gives information about the API interface to
     $query = new \RescueGroups\Request\Objects\Website\Define();
 
     $result = $api->executeRequest($query);
+Performs website.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Website\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetSettings
 Performs website.getSettings query.
 

@@ -12,6 +12,15 @@ Performs contacts.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Contacts\Define();
 
     $result = $api->executeRequest($query);
+Performs contacts.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Contacts\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs contacts.view query.
 
@@ -19,7 +28,7 @@ Performs contacts.view query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\View();
 
-    $query->setcontactID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -75,37 +84,37 @@ Performs contacts.add add query to create an instance of an object. Uses special
     $query = new \RescueGroups\Request\Objects\Contacts\Add();
 
     $addObject = new \RescueGroups\Objects\Create\Contact();
-    $addObject->contactClass = "Class"
-    $addObject->contactSalutation = "Salutation"
-    $addObject->contactFirstname = "First name"
-    $addObject->contactLastname = "Last name"
-    $addObject->contactTitle = "Title"
-    $addObject->contactAddress = "Street address"
-    $addObject->contactCity = "City"
-    $addObject->contactState = "State/Province"
-    $addObject->contactPostalcode = "Postal Code"
-    $addObject->contactPlus4 = "Zip code plus 4"
-    $addObject->contactCounty = "County"
-    $addObject->contactPhoneHome = "Home phone number"
-    $addObject->contactPhoneWork = "Work phone number"
-    $addObject->contactPhoneWorkExt = "Work phone extension"
-    $addObject->contactPhoneCell = "Cell phone number"
-    $addObject->contactFax = "Fax number"
-    $addObject->contactEmail = "Email address"
-    $addObject->contactEmailAlt = "Alternate email address"
-    $addObject->contactEmailPager = "Pager email address"
-    $addObject->contactCompany = "Company"
-    $addObject->contactReferredBy = "Referred by"
-    $addObject->contactCarrier = "Carrier"
-    $addObject->contactSendMail = "Send mail"
-    $addObject->contactActive = "Active"
-    $addObject->contactComment = "Comment"
-    $addObject->contactCoalitionMember = "Coalition member"
-    $addObject->contactTransportation = "Transportation"
-    $addObject->contactAvailability = "Availability"
-    $addObject->contactCaretakerPublic = "Caretaker public"
-    $addObject->contactSendInvite = "Send website invitation"
-    $addObject->contactGroups = "Groups"
+    $addObject->class = "Class"
+    $addObject->salutation = "Salutation"
+    $addObject->firstname = "First name"
+    $addObject->lastname = "Last name"
+    $addObject->title = "Title"
+    $addObject->address = "Street address"
+    $addObject->city = "City"
+    $addObject->state = "State/Province"
+    $addObject->postalcode = "Postal Code"
+    $addObject->plus4 = "Zip code plus 4"
+    $addObject->county = "County"
+    $addObject->phoneHome = "Home phone number"
+    $addObject->phoneWork = "Work phone number"
+    $addObject->phoneWorkExt = "Work phone extension"
+    $addObject->phoneCell = "Cell phone number"
+    $addObject->fax = "Fax number"
+    $addObject->email = "Email address"
+    $addObject->emailAlt = "Alternate email address"
+    $addObject->emailPager = "Pager email address"
+    $addObject->company = "Company"
+    $addObject->referredBy = "Referred by"
+    $addObject->carrier = "Carrier"
+    $addObject->sendMail = "Send mail"
+    $addObject->active = "Active"
+    $addObject->comment = "Comment"
+    $addObject->coalitionMember = "Coalition member"
+    $addObject->transportation = "Transportation"
+    $addObject->availability = "Availability"
+    $addObject->caretakerPublic = "Caretaker public"
+    $addObject->sendInvite = "Send website invitation"
+    $addObject->groups = "Groups"
 
     $query->addContact($addObject);
 
@@ -118,38 +127,38 @@ Performs contacts.edit edit query to edit an object. Uses classes of type [\Resc
     $query = new \RescueGroups\Request\Objects\Contacts\Edit();
 
     $editObject = new \RescueGroups\Objects\Contact();
-    $editObject->contactID = "ID"
-    $editObject->contactClass = "Class"
-    $editObject->contactSalutation = "Salutation"
-    $editObject->contactFirstname = "First name"
-    $editObject->contactLastname = "Last name"
-    $editObject->contactTitle = "Title"
-    $editObject->contactAddress = "Street address"
-    $editObject->contactCity = "City"
-    $editObject->contactState = "State/Province"
-    $editObject->contactPostalcode = "Postal Code"
-    $editObject->contactPlus4 = "Zip code plus 4"
-    $editObject->contactCounty = "County"
-    $editObject->contactCountry = "Country"
-    $editObject->contactPhoneHome = "Home phone number"
-    $editObject->contactPhoneWork = "Work phone number"
-    $editObject->contactPhoneWorkExt = "Work phone extension"
-    $editObject->contactPhoneCell = "Cell phone number"
-    $editObject->contactFax = "Fax number"
-    $editObject->contactEmail = "Email address"
-    $editObject->contactEmailAlt = "Alternate email address"
-    $editObject->contactEmailPager = "Pager email address"
-    $editObject->contactCompany = "Company"
-    $editObject->contactReferredBy = "Referred by"
-    $editObject->contactCarrier = "Carrier"
-    $editObject->contactSendMail = "Send mail"
-    $editObject->contactActive = "Active"
-    $editObject->contactComment = "Comment"
-    $editObject->contactCoalitionMember = "Coalition member"
-    $editObject->contactTransportation = "Transportation"
-    $editObject->contactAvailability = "Availability"
-    $editObject->contactCaretakerPublic = "Caretaker public"
-    $editObject->contactGroups = "Groups"
+    $editObject->id = "ID"
+    $editObject->class = "Class"
+    $editObject->salutation = "Salutation"
+    $editObject->firstname = "First name"
+    $editObject->lastname = "Last name"
+    $editObject->title = "Title"
+    $editObject->address = "Street address"
+    $editObject->city = "City"
+    $editObject->state = "State/Province"
+    $editObject->postalcode = "Postal Code"
+    $editObject->plus4 = "Zip code plus 4"
+    $editObject->county = "County"
+    $editObject->country = "Country"
+    $editObject->phoneHome = "Home phone number"
+    $editObject->phoneWork = "Work phone number"
+    $editObject->phoneWorkExt = "Work phone extension"
+    $editObject->phoneCell = "Cell phone number"
+    $editObject->fax = "Fax number"
+    $editObject->email = "Email address"
+    $editObject->emailAlt = "Alternate email address"
+    $editObject->emailPager = "Pager email address"
+    $editObject->company = "Company"
+    $editObject->referredBy = "Referred by"
+    $editObject->carrier = "Carrier"
+    $editObject->sendMail = "Send mail"
+    $editObject->active = "Active"
+    $editObject->comment = "Comment"
+    $editObject->coalitionMember = "Coalition member"
+    $editObject->transportation = "Transportation"
+    $editObject->availability = "Availability"
+    $editObject->caretakerPublic = "Caretaker public"
+    $editObject->groups = "Groups"
 
     $query->updateContact($editObject);
 
@@ -161,7 +170,7 @@ Performs contacts.delete query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\Delete();
 
-    $query->setcontactID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

@@ -10,6 +10,8 @@ namespace RescueGroups\Objects;
 
 class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
@@ -22,7 +24,7 @@ class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $animalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
@@ -47,6 +49,28 @@ class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
 
 
     /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesDeceasedID' => 'id',
+            'outcomesDeceasedAnimalConditionID' => 'animalConditionId',
+            'outcomesDeceasedDate' => 'date',
+            'outcomesDeceasedNotes' => 'notes',
+            'outcomesDeceasedReason' => 'reason',
+        ],
+        'output' => [
+            'id' => 'outcomesDeceasedID',
+            'animalConditionId' => 'outcomesDeceasedAnimalConditionID',
+            'date' => 'outcomesDeceasedDate',
+            'notes' => 'outcomesDeceasedNotes',
+            'reason' => 'outcomesDeceasedReason',
+        ]
+    ];
+
+    /**
      * OutcomesDeceased Constructor
      * @var \stdClass|null $inputData
      */
@@ -54,11 +78,7 @@ class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesDeceasedID)) $this->id = $inputData->outcomesDeceasedID;
-        if (!empty($inputData->outcomesDeceasedAnimalConditionID)) $this->animalConditionID = $inputData->outcomesDeceasedAnimalConditionID;
-        if (!empty($inputData->outcomesDeceasedDate)) $this->date = $inputData->outcomesDeceasedDate;
-        if (!empty($inputData->outcomesDeceasedNotes)) $this->notes = $inputData->outcomesDeceasedNotes;
-        if (!empty($inputData->outcomesDeceasedReason)) $this->reason = $inputData->outcomesDeceasedReason;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class OutcomesDeceased implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->id !== null) $output['outcomesDeceasedID'] = $this->id;
-        if ($this->animalConditionID !== null) $output['outcomesDeceasedAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $output['outcomesDeceasedDate'] = $this->date;
-        if ($this->notes !== null) $output['outcomesDeceasedNotes'] = $this->notes;
-        if ($this->reason !== null) $output['outcomesDeceasedReason'] = $this->reason;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

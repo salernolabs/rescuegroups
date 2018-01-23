@@ -35,16 +35,16 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "outcomesAdoptionID" => [1, 'outcomesAdoptionID'],
-        "outcomesAdoptionIntakeID" => [0, 'outcomesAdoptionIntakeID'],
-        "outcomesAdoptionAnimalConditionID" => [0, 'outcomesAdoptionAnimalConditionID'],
-        "outcomesAdoptionDate" => [0, 'outcomesAdoptionDate'],
-        "outcomesAdoptionNotes" => [0, 'outcomesAdoptionNotes'],
-        "outcomesAdoptionAdoptionID" => [0, 'outcomesAdoptionAdoptionID'],
-        "animalID" => [0, 'animalID'],
+        "id" => [1, 'outcomesAdoptionID'],
+        "intakeId" => [0, 'outcomesAdoptionIntakeID'],
+        "animalConditionId" => [0, 'outcomesAdoptionAnimalConditionID'],
+        "date" => [0, 'outcomesAdoptionDate'],
+        "notes" => [0, 'outcomesAdoptionNotes'],
+        "adoptionId" => [0, 'outcomesAdoptionAdoptionID'],
+        "animalId" => [0, 'animalID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
-        "adopterContactID" => [0, 'adopterContactID'],
+        "adopterContactId" => [0, 'adopterContactID'],
         "ownerName" => [0, 'ownerName'],
     ];
 

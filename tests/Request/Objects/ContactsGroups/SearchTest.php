@@ -25,14 +25,14 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('groupID')
-            ->addFilter('groupID', 'equals', 'ID')
-            ->addField('groupName')
-            ->addFilter('groupName', 'equals', 'Name')
-            ->addField('groupBusiness')
-            ->addFilter('groupBusiness', 'equals', 'Business')
-            ->addField('groupProtected')
-            ->addFilter('groupProtected', 'equals', 'Protected')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'ID')
+            ->addField('name')
+            ->addFilter('name', 'equals', 'Name')
+            ->addField('business')
+            ->addFilter('business', 'equals', 'Business')
+            ->addField('protected')
+            ->addFilter('protected', 'equals', 'Protected')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

@@ -22,12 +22,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Calls\Add();
 
         $testObject = new \RescueGroups\Objects\Call();
-        $testObject->callAssignedID = 'testValue Assigned';
-        $testObject->callStatusID = 'testValue Status';
-        $testObject->callUrgencyID = 'testValue Urgency';
-        $testObject->callCategoryID = 'testValue Category';
-        $testObject->callQueueID = 'testValue Queue';
-        $testObject->callDate = 'testValue Call date';
+        $testObject->assignedId = 'testValue Assigned';
+        $testObject->statusId = 'testValue Status';
+        $testObject->urgencyId = 'testValue Urgency';
+        $testObject->categoryId = 'testValue Category';
+        $testObject->queueId = 'testValue Queue';
+        $testObject->date = 'testValue Call date';
 
         $query->addCall($testObject);
 

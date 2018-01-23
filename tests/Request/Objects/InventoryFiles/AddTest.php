@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\InventoryFiles\Add();
 
         $testObject = new \RescueGroups\Objects\Create\InventoryFile();
-        $testObject->inventoryfileBinary = 'testValue File';
-        $testObject->inventoryfileOldFileName = 'testValue Old file name';
-        $testObject->inventoryfileDescription = 'testValue Description';
-        $testObject->inventoryfileStatus = 'testValue Status';
-        $testObject->inventoryfileDisplayInline = 'testValue Inline';
+        $testObject->binary = 'testValue File';
+        $testObject->oldFileName = 'testValue Old file name';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
 
         $query->addInventoryFile($testObject);
 

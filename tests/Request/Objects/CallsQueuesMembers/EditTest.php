@@ -22,10 +22,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Edit();
 
         $testObject = new \RescueGroups\Objects\CallsQueuesMember();
-        $testObject->memberID = 'testValue ID';
-        $testObject->memberContactID = 'testValue Contact';
-        $testObject->memberQueueID = 'testValue Queue';
-        $testObject->memberManager = 'testValue Manager';
+        $testObject->id = 'testValue ID';
+        $testObject->contactId = 'testValue Contact';
+        $testObject->queueId = 'testValue Queue';
+        $testObject->manager = 'testValue Manager';
 
         $query->updateCallsQueuesMember($testObject);
 

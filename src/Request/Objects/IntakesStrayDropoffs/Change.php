@@ -30,77 +30,77 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakeID = null;
+    private $intakeId = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    private $intakesStraydropoffAnimalID = null;
+    private $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $intakesStraydropoffAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $intakesStraydropoffDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $intakesStraydropoffNotes = null;
+    private $notes = null;
 
     /**
      * Found Location
      *
      * @var string
      */
-    private $intakesStraydropoffFoundLocation = null;
+    private $foundLocation = null;
 
     /**
      * Found Street address
      *
      * @var string
      */
-    private $intakesStraydropoffFoundAddress = null;
+    private $foundAddress = null;
 
     /**
      * Found City
      *
      * @var string
      */
-    private $intakesStraydropoffFoundCity = null;
+    private $foundCity = null;
 
     /**
      * Found State/Province
      *
      * @var string
      */
-    private $intakesStraydropoffFoundState = null;
+    private $foundState = null;
 
     /**
      * Found Postal Code
      *
      * @var string
      */
-    private $intakesStraydropoffFoundPostalcode = null;
+    private $foundPostalcode = null;
 
     /**
      * Dropped off by
      *
      * @var integer
      */
-    private $intakesStraydropoffFinderID = null;
+    private $finderId = null;
 
 
     /**
@@ -109,9 +109,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakeID($value)
+    public function setIntakeId($value)
     {
-        $this->intakeID = $value;
+        $this->intakeId = $value;
 
         return $this;
     }
@@ -122,9 +122,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraydropoffAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->intakesStraydropoffAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -135,9 +135,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraydropoffAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->intakesStraydropoffAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -148,9 +148,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setIntakesStraydropoffDate($value)
+    public function setDate($value)
     {
-        $this->intakesStraydropoffDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -161,9 +161,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffNotes($value)
+    public function setNotes($value)
     {
-        $this->intakesStraydropoffNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -174,9 +174,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffFoundLocation($value)
+    public function setFoundLocation($value)
     {
-        $this->intakesStraydropoffFoundLocation = $value;
+        $this->foundLocation = $value;
 
         return $this;
     }
@@ -187,9 +187,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffFoundAddress($value)
+    public function setFoundAddress($value)
     {
-        $this->intakesStraydropoffFoundAddress = $value;
+        $this->foundAddress = $value;
 
         return $this;
     }
@@ -200,9 +200,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffFoundCity($value)
+    public function setFoundCity($value)
     {
-        $this->intakesStraydropoffFoundCity = $value;
+        $this->foundCity = $value;
 
         return $this;
     }
@@ -213,9 +213,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffFoundState($value)
+    public function setFoundState($value)
     {
-        $this->intakesStraydropoffFoundState = $value;
+        $this->foundState = $value;
 
         return $this;
     }
@@ -226,9 +226,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraydropoffFoundPostalcode($value)
+    public function setFoundPostalcode($value)
     {
-        $this->intakesStraydropoffFoundPostalcode = $value;
+        $this->foundPostalcode = $value;
 
         return $this;
     }
@@ -239,9 +239,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraydropoffFinderID($value)
+    public function setFinderId($value)
     {
-        $this->intakesStraydropoffFinderID = $value;
+        $this->finderId = $value;
 
         return $this;
     }
@@ -256,16 +256,16 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
-        if ($this->intakesStraydropoffAnimalID !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalID"=>$this->intakesStraydropoffAnimalID];
-        if ($this->intakesStraydropoffAnimalConditionID !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalConditionID"=>$this->intakesStraydropoffAnimalConditionID];
-        if ($this->intakesStraydropoffDate !== null) $parameterArray['values'][] = ["intakesStraydropoffDate"=>$this->intakesStraydropoffDate];
-        if ($this->intakesStraydropoffNotes !== null) $parameterArray['values'][] = ["intakesStraydropoffNotes"=>$this->intakesStraydropoffNotes];
-        if ($this->intakesStraydropoffFoundLocation !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundLocation"=>$this->intakesStraydropoffFoundLocation];
-        if ($this->intakesStraydropoffFoundAddress !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundAddress"=>$this->intakesStraydropoffFoundAddress];
-        if ($this->intakesStraydropoffFoundCity !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundCity"=>$this->intakesStraydropoffFoundCity];
-        if ($this->intakesStraydropoffFoundState !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundState"=>$this->intakesStraydropoffFoundState];
-        if ($this->intakesStraydropoffFoundPostalcode !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundPostalcode"=>$this->intakesStraydropoffFoundPostalcode];
-        if ($this->intakesStraydropoffFinderID !== null) $parameterArray['values'][] = ["intakesStraydropoffFinderID"=>$this->intakesStraydropoffFinderID];
+        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalID"=>$this->animalId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesStraydropoffDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesStraydropoffNotes"=>$this->notes];
+        if ($this->foundLocation !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundLocation"=>$this->foundLocation];
+        if ($this->foundAddress !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundAddress"=>$this->foundAddress];
+        if ($this->foundCity !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundCity"=>$this->foundCity];
+        if ($this->foundState !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundState"=>$this->foundState];
+        if ($this->foundPostalcode !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundPostalcode"=>$this->foundPostalcode];
+        if ($this->finderId !== null) $parameterArray['values'][] = ["intakesStraydropoffFinderID"=>$this->finderId];
     }
 }
