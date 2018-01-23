@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\ColoniesCareTakers\View();
+        $query->setId("ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["caretakerID"]);
 
         $this->assertEquals('coloniesCaretakers', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

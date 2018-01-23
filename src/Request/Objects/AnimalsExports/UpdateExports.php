@@ -76,7 +76,10 @@ class UpdateExports extends \RescueGroups\Request\Objects\Base implements \Rescu
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["exportID"=>$this->id];
-        if ($this->enabled !== null) $parameterArray['values'][] = ["exportEnabled"=>$this->enabled];
+        $value = [];
+        if ($this->id !== null) $value["exportID"] = $this->id;
+        if ($this->enabled !== null) $value["exportEnabled"] = $this->enabled;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

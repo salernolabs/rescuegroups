@@ -56,6 +56,9 @@ class Request extends \RescueGroups\Request\Objects\Base implements \RescueGroup
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->sharingOrgId !== null) $parameterArray['values'][] = ["partnershipSharingOrgID"=>$this->sharingOrgId];
+        $value = [];
+        if ($this->sharingOrgId !== null) $value["partnershipSharingOrgID"] = $this->sharingOrgId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

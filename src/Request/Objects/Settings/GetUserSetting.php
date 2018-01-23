@@ -56,6 +56,9 @@ class GetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->name !== null) $parameterArray['values'][] = ["settingName"=>$this->name];
+        $value = [];
+        if ($this->name !== null) $value["settingName"] = $this->name;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\View();
+        $query->setId("Reason ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Reason ID", $data['values'][0]["reasonID"]);
 
         $this->assertEquals('animalsReasonsTransfer', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
+        $query->setId("Stray Pickup");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Stray Pickup", $data['values'][0]["intakesStraydropoffID"]);
 
         $this->assertEquals('intakesStraydropoffs', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

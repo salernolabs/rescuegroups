@@ -56,6 +56,9 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["attendanceID"=>$this->id];
+        $value = [];
+        if ($this->id !== null) $value["attendanceID"] = $this->id;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

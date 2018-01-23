@@ -20,7 +20,11 @@ class SetPublicStatusesTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\SetPublicStatuses();
+        $query->setStatuslist("Statuses");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Statuses", $data['values'][0]["statuslist"]);
 
         $this->assertEquals('animals', $data['objectType']);
         $this->assertEquals('setPublicStatuses', $data['objectAction']);

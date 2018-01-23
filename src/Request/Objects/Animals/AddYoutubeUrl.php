@@ -96,8 +96,11 @@ class AddYoutubeUrl extends \RescueGroups\Request\Objects\Base implements \Rescu
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
-        if ($this->youtubeUrl !== null) $parameterArray['values'][] = ["youtubeUrl"=>$this->youtubeUrl];
-        if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];
+        $value = [];
+        if ($this->id !== null) $value["animalID"] = $this->id;
+        if ($this->youtubeUrl !== null) $value["youtubeUrl"] = $this->youtubeUrl;
+        if ($this->mediaOrder !== null) $value["mediaOrder"] = $this->mediaOrder;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

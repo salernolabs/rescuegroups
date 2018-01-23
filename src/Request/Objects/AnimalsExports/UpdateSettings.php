@@ -316,19 +316,22 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->disableAnimalExportAdopted !== null) $parameterArray['values'][] = ["disableAnimalExportAdopted"=>$this->disableAnimalExportAdopted];
-        if ($this->disableAnimalExportCourtesy !== null) $parameterArray['values'][] = ["disableAnimalExportCourtesy"=>$this->disableAnimalExportCourtesy];
-        if ($this->disableAnimalExportAnimalWebPageLink !== null) $parameterArray['values'][] = ["disableAnimalExportAnimalWebPageLink"=>$this->disableAnimalExportAnimalWebPageLink];
-        if ($this->disableAnimalExportWebsiteLink !== null) $parameterArray['values'][] = ["disableAnimalExportWebsiteLink"=>$this->disableAnimalExportWebsiteLink];
-        if ($this->disableAnimalExportAdoptionFormLink !== null) $parameterArray['values'][] = ["disableAnimalExportAdoptionFormLink"=>$this->disableAnimalExportAdoptionFormLink];
-        if ($this->enableAnimalExportDescriptionHeader !== null) $parameterArray['values'][] = ["enableAnimalExportDescriptionHeader"=>$this->enableAnimalExportDescriptionHeader];
-        if ($this->enableAnimalExportDescriptionFooter !== null) $parameterArray['values'][] = ["enableAnimalExportDescriptionFooter"=>$this->enableAnimalExportDescriptionFooter];
-        if ($this->enableAnimalExportUniqueAnimalID !== null) $parameterArray['values'][] = ["enableAnimalExportUniqueAnimalID"=>$this->enableAnimalExportUniqueAnimalID];
-        if ($this->enableAnimalExportContactFieldFirstname !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldFirstname"=>$this->enableAnimalExportContactFieldFirstname];
-        if ($this->enableAnimalExportContactFieldLastname !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldLastname"=>$this->enableAnimalExportContactFieldLastname];
-        if ($this->enableAnimalExportContactFieldEmail !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldEmail"=>$this->enableAnimalExportContactFieldEmail];
-        if ($this->enableAnimalExportContactFieldPhoneHome !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldPhoneHome"=>$this->enableAnimalExportContactFieldPhoneHome];
-        if ($this->enableAnimalExportContactFieldPhoneCell !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldPhoneCell"=>$this->enableAnimalExportContactFieldPhoneCell];
-        if ($this->setAnimalExportYouTubeAccount !== null) $parameterArray['values'][] = ["setAnimalExportYouTubeAccount"=>$this->setAnimalExportYouTubeAccount];
+        $value = [];
+        if ($this->disableAnimalExportAdopted !== null) $value["disableAnimalExportAdopted"] = $this->disableAnimalExportAdopted;
+        if ($this->disableAnimalExportCourtesy !== null) $value["disableAnimalExportCourtesy"] = $this->disableAnimalExportCourtesy;
+        if ($this->disableAnimalExportAnimalWebPageLink !== null) $value["disableAnimalExportAnimalWebPageLink"] = $this->disableAnimalExportAnimalWebPageLink;
+        if ($this->disableAnimalExportWebsiteLink !== null) $value["disableAnimalExportWebsiteLink"] = $this->disableAnimalExportWebsiteLink;
+        if ($this->disableAnimalExportAdoptionFormLink !== null) $value["disableAnimalExportAdoptionFormLink"] = $this->disableAnimalExportAdoptionFormLink;
+        if ($this->enableAnimalExportDescriptionHeader !== null) $value["enableAnimalExportDescriptionHeader"] = $this->enableAnimalExportDescriptionHeader;
+        if ($this->enableAnimalExportDescriptionFooter !== null) $value["enableAnimalExportDescriptionFooter"] = $this->enableAnimalExportDescriptionFooter;
+        if ($this->enableAnimalExportUniqueAnimalID !== null) $value["enableAnimalExportUniqueAnimalID"] = $this->enableAnimalExportUniqueAnimalID;
+        if ($this->enableAnimalExportContactFieldFirstname !== null) $value["enableAnimalExportContactFieldFirstname"] = $this->enableAnimalExportContactFieldFirstname;
+        if ($this->enableAnimalExportContactFieldLastname !== null) $value["enableAnimalExportContactFieldLastname"] = $this->enableAnimalExportContactFieldLastname;
+        if ($this->enableAnimalExportContactFieldEmail !== null) $value["enableAnimalExportContactFieldEmail"] = $this->enableAnimalExportContactFieldEmail;
+        if ($this->enableAnimalExportContactFieldPhoneHome !== null) $value["enableAnimalExportContactFieldPhoneHome"] = $this->enableAnimalExportContactFieldPhoneHome;
+        if ($this->enableAnimalExportContactFieldPhoneCell !== null) $value["enableAnimalExportContactFieldPhoneCell"] = $this->enableAnimalExportContactFieldPhoneCell;
+        if ($this->setAnimalExportYouTubeAccount !== null) $value["setAnimalExportYouTubeAccount"] = $this->setAnimalExportYouTubeAccount;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\WebFiles\View();
+        $query->setId("ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["webfileID"]);
 
         $this->assertEquals('webfiles', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

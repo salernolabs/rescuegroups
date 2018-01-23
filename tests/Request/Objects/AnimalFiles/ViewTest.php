@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalFiles\View();
+        $query->setId("File ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("File ID", $data['values'][0]["animalfileID"]);
 
         $this->assertEquals('animalFiles', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

@@ -20,7 +20,11 @@ class SetUserSettingTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Settings\SetUserSetting();
+        $query->setDefaultAnimalTemplate(" Default template to load when adding an animal");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals(" Default template to load when adding an animal", $data['values'][0]["settingDefaultAnimalTemplate"]);
 
         $this->assertEquals('settings', $data['objectType']);
         $this->assertEquals('setUserSetting', $data['objectAction']);

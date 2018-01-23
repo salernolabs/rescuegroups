@@ -76,7 +76,10 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableEvents !== null) $parameterArray['values'][] = ["enableEvents"=>$this->enableEvents];
-        if ($this->setEventsMapWebsite !== null) $parameterArray['values'][] = ["setEventsMapWebsite"=>$this->setEventsMapWebsite];
+        $value = [];
+        if ($this->enableEvents !== null) $value["enableEvents"] = $this->enableEvents;
+        if ($this->setEventsMapWebsite !== null) $value["setEventsMapWebsite"] = $this->setEventsMapWebsite;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

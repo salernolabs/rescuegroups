@@ -60,8 +60,11 @@ class {{requestClassName}} extends \RescueGroups\Request\Objects\Base implements
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
+        $value = [];
         {{#fields}}
-        if ($this->{{sdkFieldName}} !== null) $parameterArray['values'][] = ["{{name}}"=>$this->{{sdkFieldName}}];
+        if ($this->{{sdkFieldName}} !== null) $value["{{name}}"] = $this->{{sdkFieldName}};
         {{/fields}}
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -8,7 +8,7 @@
  */
 namespace RescueGroups\Request\Objects\AnimalsJournalCategories;
 
-class GetList extends \RescueGroups\Request\Objects\Base
+class GetList extends \RescueGroups\Request\Objects\Base implements \RescueGroups\Request\ParametersInterface
 {
     /**
      * Query object type
@@ -24,4 +24,20 @@ class GetList extends \RescueGroups\Request\Objects\Base
      * Query login is required
      */
     const QUERY_LOGIN_REQUIRED = true;
+
+
+
+    /**
+     * Apply request parameters to the outgoing request
+     *
+     * @param $parameterArray
+     */
+    public function applyParameters(&$parameterArray)
+    {
+        if (empty($parameterArray['values'])) $parameterArray['values'] = [];
+
+        $value = [];
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
+    }
 }

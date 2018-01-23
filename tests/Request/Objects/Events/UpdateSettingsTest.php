@@ -20,7 +20,13 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
+        $query->setEnableEvents("Enable the Events feature");
+        $query->setSetEventsMapWebsite("Map website to use with the Events feature");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Enable the Events feature", $data['values'][0]["enableEvents"]);
+        $this->assertEquals("Map website to use with the Events feature", $data['values'][0]["setEventsMapWebsite"]);
 
         $this->assertEquals('events', $data['objectType']);
         $this->assertEquals('updateSettings', $data['objectAction']);

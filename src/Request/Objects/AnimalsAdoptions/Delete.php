@@ -176,12 +176,15 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["adoptionID"=>$this->id];
-        if ($this->removeContact !== null) $parameterArray['values'][] = ["adoptionRemoveContact"=>$this->removeContact];
-        if ($this->changeAnimal !== null) $parameterArray['values'][] = ["adoptionChangeAnimal"=>$this->changeAnimal];
-        if ($this->changeSubmittedform !== null) $parameterArray['values'][] = ["adoptionChangeSubmittedform"=>$this->changeSubmittedform];
-        if ($this->removeUser !== null) $parameterArray['values'][] = ["adoptionRemoveUser"=>$this->removeUser];
-        if ($this->donationAmount !== null) $parameterArray['values'][] = ["adoptionDonationAmount"=>$this->donationAmount];
-        if ($this->letterSent !== null) $parameterArray['values'][] = ["adoptionLetterSent"=>$this->letterSent];
+        $value = [];
+        if ($this->id !== null) $value["adoptionID"] = $this->id;
+        if ($this->removeContact !== null) $value["adoptionRemoveContact"] = $this->removeContact;
+        if ($this->changeAnimal !== null) $value["adoptionChangeAnimal"] = $this->changeAnimal;
+        if ($this->changeSubmittedform !== null) $value["adoptionChangeSubmittedform"] = $this->changeSubmittedform;
+        if ($this->removeUser !== null) $value["adoptionRemoveUser"] = $this->removeUser;
+        if ($this->donationAmount !== null) $value["adoptionDonationAmount"] = $this->donationAmount;
+        if ($this->letterSent !== null) $value["adoptionLetterSent"] = $this->letterSent;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

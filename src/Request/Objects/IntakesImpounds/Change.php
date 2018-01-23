@@ -296,18 +296,21 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
-        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesImpoundAnimalID"=>$this->animalId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesImpoundAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesImpoundDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesImpoundNotes"=>$this->notes];
-        if ($this->location !== null) $parameterArray['values'][] = ["intakesImpoundLocation"=>$this->location];
-        if ($this->address !== null) $parameterArray['values'][] = ["intakesImpoundAddress"=>$this->address];
-        if ($this->city !== null) $parameterArray['values'][] = ["intakesImpoundCity"=>$this->city];
-        if ($this->state !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->state];
-        if ($this->postalcode !== null) $parameterArray['values'][] = ["intakesImpoundPostalcode"=>$this->postalcode];
-        if ($this->fromId !== null) $parameterArray['values'][] = ["intakesImpoundFromID"=>$this->fromId];
-        if ($this->staffId !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->staffId];
-        if ($this->reasonId !== null) $parameterArray['values'][] = ["intakesImpoundReasonID"=>$this->reasonId];
+        $value = [];
+        if ($this->intakeId !== null) $value["intakeID"] = $this->intakeId;
+        if ($this->animalId !== null) $value["intakesImpoundAnimalID"] = $this->animalId;
+        if ($this->animalConditionId !== null) $value["intakesImpoundAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["intakesImpoundDate"] = $this->date;
+        if ($this->notes !== null) $value["intakesImpoundNotes"] = $this->notes;
+        if ($this->location !== null) $value["intakesImpoundLocation"] = $this->location;
+        if ($this->address !== null) $value["intakesImpoundAddress"] = $this->address;
+        if ($this->city !== null) $value["intakesImpoundCity"] = $this->city;
+        if ($this->state !== null) $value["intakesImpoundState"] = $this->state;
+        if ($this->postalcode !== null) $value["intakesImpoundPostalcode"] = $this->postalcode;
+        if ($this->fromId !== null) $value["intakesImpoundFromID"] = $this->fromId;
+        if ($this->staffId !== null) $value["intakesImpoundStaffID"] = $this->staffId;
+        if ($this->reasonId !== null) $value["intakesImpoundReasonID"] = $this->reasonId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

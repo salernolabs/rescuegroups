@@ -36,5 +36,8 @@ class GetPublicableStatuses extends \RescueGroups\Request\Objects\Base implement
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
+        $value = [];
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

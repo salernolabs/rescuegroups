@@ -136,10 +136,13 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesAdoptionAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["outcomesAdoptionDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesAdoptionNotes"=>$this->notes];
-        if ($this->adoptionId !== null) $parameterArray['values'][] = ["outcomesAdoptionAdoptionID"=>$this->adoptionId];
+        $value = [];
+        if ($this->outcomeId !== null) $value["outcomeID"] = $this->outcomeId;
+        if ($this->animalConditionId !== null) $value["outcomesAdoptionAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["outcomesAdoptionDate"] = $this->date;
+        if ($this->notes !== null) $value["outcomesAdoptionNotes"] = $this->notes;
+        if ($this->adoptionId !== null) $value["outcomesAdoptionAdoptionID"] = $this->adoptionId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

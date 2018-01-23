@@ -20,7 +20,9 @@ class ListPendingTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\SubmittedForms\ListPending();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('submittedforms', $data['objectType']);
         $this->assertEquals('listPending', $data['objectAction']);

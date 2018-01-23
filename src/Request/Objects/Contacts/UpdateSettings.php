@@ -196,13 +196,16 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableContactsDoNotAdoptListSharing !== null) $parameterArray['values'][] = ["enableContactsDoNotAdoptListSharing"=>$this->enableContactsDoNotAdoptListSharing];
-        if ($this->enableContactsAutoSelectRegistrationInvitation !== null) $parameterArray['values'][] = ["enableContactsAutoSelectRegistrationInvitation"=>$this->enableContactsAutoSelectRegistrationInvitation];
-        if ($this->enableContactsAutoSelectCaretakerInfoPublic !== null) $parameterArray['values'][] = ["enableContactsAutoSelectCaretakerInfoPublic"=>$this->enableContactsAutoSelectCaretakerInfoPublic];
-        if ($this->enableAddContactOnlineFormSubmission !== null) $parameterArray['values'][] = ["enableAddContactOnlineFormSubmission"=>$this->enableAddContactOnlineFormSubmission];
-        if ($this->enableContactsAddContactMeetRequest !== null) $parameterArray['values'][] = ["enableContactsAddContactMeetRequest"=>$this->enableContactsAddContactMeetRequest];
-        if ($this->enableContactsAddContactCallCreation !== null) $parameterArray['values'][] = ["enableContactsAddContactCallCreation"=>$this->enableContactsAddContactCallCreation];
-        if ($this->enableContactsAddContactAnimalSponsorship !== null) $parameterArray['values'][] = ["enableContactsAddContactAnimalSponsorship"=>$this->enableContactsAddContactAnimalSponsorship];
-        if ($this->enableContactsAddContactUserRegistration !== null) $parameterArray['values'][] = ["enableContactsAddContactUserRegistration"=>$this->enableContactsAddContactUserRegistration];
+        $value = [];
+        if ($this->enableContactsDoNotAdoptListSharing !== null) $value["enableContactsDoNotAdoptListSharing"] = $this->enableContactsDoNotAdoptListSharing;
+        if ($this->enableContactsAutoSelectRegistrationInvitation !== null) $value["enableContactsAutoSelectRegistrationInvitation"] = $this->enableContactsAutoSelectRegistrationInvitation;
+        if ($this->enableContactsAutoSelectCaretakerInfoPublic !== null) $value["enableContactsAutoSelectCaretakerInfoPublic"] = $this->enableContactsAutoSelectCaretakerInfoPublic;
+        if ($this->enableAddContactOnlineFormSubmission !== null) $value["enableAddContactOnlineFormSubmission"] = $this->enableAddContactOnlineFormSubmission;
+        if ($this->enableContactsAddContactMeetRequest !== null) $value["enableContactsAddContactMeetRequest"] = $this->enableContactsAddContactMeetRequest;
+        if ($this->enableContactsAddContactCallCreation !== null) $value["enableContactsAddContactCallCreation"] = $this->enableContactsAddContactCallCreation;
+        if ($this->enableContactsAddContactAnimalSponsorship !== null) $value["enableContactsAddContactAnimalSponsorship"] = $this->enableContactsAddContactAnimalSponsorship;
+        if ($this->enableContactsAddContactUserRegistration !== null) $value["enableContactsAddContactUserRegistration"] = $this->enableContactsAddContactUserRegistration;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
+        $query->setId("Owner Surrender");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Owner Surrender", $data['values'][0]["intakesOwnersurrenderID"]);
 
         $this->assertEquals('intakesOwnersurrenders', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

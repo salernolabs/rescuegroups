@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\View();
+        $query->setId("Entrytype ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Entrytype ID", $data['values'][0]["journalEntrytypeID"]);
 
         $this->assertEquals('animalsJournalEntrytypes', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

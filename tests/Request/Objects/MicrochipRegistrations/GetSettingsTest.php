@@ -20,7 +20,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\GetSettings();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('microchipRegistrations', $data['objectType']);
         $this->assertEquals('getSettings', $data['objectAction']);

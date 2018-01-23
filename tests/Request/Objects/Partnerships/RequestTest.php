@@ -20,7 +20,11 @@ class RequestTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Partnerships\Request();
+        $query->setSharingOrgId("Sharing Org");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Sharing Org", $data['values'][0]["partnershipSharingOrgID"]);
 
         $this->assertEquals('partnerships', $data['objectType']);
         $this->assertEquals('request', $data['objectAction']);

@@ -256,16 +256,19 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
-        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalID"=>$this->animalId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesStraydropoffAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesStraydropoffDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesStraydropoffNotes"=>$this->notes];
-        if ($this->foundLocation !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundLocation"=>$this->foundLocation];
-        if ($this->foundAddress !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundAddress"=>$this->foundAddress];
-        if ($this->foundCity !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundCity"=>$this->foundCity];
-        if ($this->foundState !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundState"=>$this->foundState];
-        if ($this->foundPostalcode !== null) $parameterArray['values'][] = ["intakesStraydropoffFoundPostalcode"=>$this->foundPostalcode];
-        if ($this->finderId !== null) $parameterArray['values'][] = ["intakesStraydropoffFinderID"=>$this->finderId];
+        $value = [];
+        if ($this->intakeId !== null) $value["intakeID"] = $this->intakeId;
+        if ($this->animalId !== null) $value["intakesStraydropoffAnimalID"] = $this->animalId;
+        if ($this->animalConditionId !== null) $value["intakesStraydropoffAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["intakesStraydropoffDate"] = $this->date;
+        if ($this->notes !== null) $value["intakesStraydropoffNotes"] = $this->notes;
+        if ($this->foundLocation !== null) $value["intakesStraydropoffFoundLocation"] = $this->foundLocation;
+        if ($this->foundAddress !== null) $value["intakesStraydropoffFoundAddress"] = $this->foundAddress;
+        if ($this->foundCity !== null) $value["intakesStraydropoffFoundCity"] = $this->foundCity;
+        if ($this->foundState !== null) $value["intakesStraydropoffFoundState"] = $this->foundState;
+        if ($this->foundPostalcode !== null) $value["intakesStraydropoffFoundPostalcode"] = $this->foundPostalcode;
+        if ($this->finderId !== null) $value["intakesStraydropoffFinderID"] = $this->finderId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

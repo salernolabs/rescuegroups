@@ -20,7 +20,9 @@ class GetRequiredFieldsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\GetRequiredFields();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('animals', $data['objectType']);
         $this->assertEquals('getRequiredFields', $data['objectAction']);

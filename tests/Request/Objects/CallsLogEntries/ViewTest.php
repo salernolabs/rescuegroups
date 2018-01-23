@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
+        $query->setId("ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["logentryID"]);
 
         $this->assertEquals('callsLogentries', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);
