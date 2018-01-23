@@ -25,7 +25,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->contactfileBinary = 'testValue File';
         $testObject->contactfileOldFileName = 'testValue Old file name';
         $testObject->contactfileDescription = 'testValue Description';
-        $testObject->contactfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->contactfileDisplayInline = 'testValue Inline';
 
         $query->addContactFile($testObject);

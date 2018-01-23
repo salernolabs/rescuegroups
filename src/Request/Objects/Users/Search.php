@@ -37,13 +37,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
     private $objectFields = [
         "userID" => [1, 'userID'],
         "userLogin" => [0, 'userLogin'],
-        "userSalutation" => [0, 'userSalutation'],
+        "alutation" => [0, 'userSalutation'],
         "userName" => [0, 'userName'],
         "userFirstname" => [0, 'userFirstname'],
         "userLastname" => [0, 'userLastname'],
         "userAddress" => [0, 'userAddress'],
         "userCity" => [0, 'userCity'],
-        "userState" => [0, 'userState'],
+        "tate" => [0, 'userState'],
         "userPostalcode" => [0, 'userPostalcode'],
         "userPlus4" => [0, 'userPlus4'],
         "userCountry" => [0, 'userCountry'],
@@ -59,7 +59,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "userRegisteredDate" => [0, 'userRegisteredDate'],
         "userLastPasswordResetDate" => [0, 'userLastPasswordResetDate'],
         "userPasswordResetCount" => [0, 'userPasswordResetCount'],
-        "userStatus" => [0, 'userStatus'],
+        "tatus" => [0, 'userStatus'],
     ];
 
     /**

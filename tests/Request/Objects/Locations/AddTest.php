@@ -26,7 +26,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->locationUrl = 'testValue Web address';
         $testObject->locationAddress = 'testValue Street address';
         $testObject->locationCity = 'testValue City';
-        $testObject->locationState = 'testValue State/Province';
+        $testObject->tate = 'testValue State/Province';
         $testObject->locationPostalcode = 'testValue Postal Code';
         $testObject->locationPhone = 'testValue Phone';
         $testObject->locationPhoneExt = 'testValue Phone extension';

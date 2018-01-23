@@ -29,7 +29,7 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var \DateTime
      */
-    public $eventStart = null;
+    public $tart = null;
 
     /**
      * End Date/Time
@@ -64,7 +64,7 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $eventSpecies = null;
+    public $pecies = null;
 
 
     /**
@@ -77,12 +77,12 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->eventID)) $this->eventID = $inputData->eventID;
         if (!empty($inputData->eventName)) $this->eventName = $inputData->eventName;
-        if (!empty($inputData->eventStart)) $this->eventStart = $inputData->eventStart;
+        if (!empty($inputData->eventStart)) $this->tart = $inputData->eventStart;
         if (!empty($inputData->eventEnd)) $this->eventEnd = $inputData->eventEnd;
         if (!empty($inputData->eventUrl)) $this->eventUrl = $inputData->eventUrl;
         if (!empty($inputData->eventDescription)) $this->eventDescription = $inputData->eventDescription;
         if (!empty($inputData->eventLocationID)) $this->eventLocationID = $inputData->eventLocationID;
-        if (!empty($inputData->eventSpecies)) $this->eventSpecies = $inputData->eventSpecies;
+        if (!empty($inputData->eventSpecies)) $this->pecies = $inputData->eventSpecies;
     }
 
     /**
@@ -96,12 +96,12 @@ class Event implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($includeId && $this->eventID !== null) $output['eventID'] = $this->eventID;
         if ($this->eventName !== null) $output['eventName'] = $this->eventName;
-        if ($this->eventStart !== null) $output['eventStart'] = $this->eventStart;
+        if ($this->tart !== null) $output['eventStart'] = $this->tart;
         if ($this->eventEnd !== null) $output['eventEnd'] = $this->eventEnd;
         if ($this->eventUrl !== null) $output['eventUrl'] = $this->eventUrl;
         if ($this->eventDescription !== null) $output['eventDescription'] = $this->eventDescription;
         if ($this->eventLocationID !== null) $output['eventLocationID'] = $this->eventLocationID;
-        if ($this->eventSpecies !== null) $output['eventSpecies'] = $this->eventSpecies;
+        if ($this->pecies !== null) $output['eventSpecies'] = $this->pecies;
 
         return $output;
     }

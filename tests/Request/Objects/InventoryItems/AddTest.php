@@ -26,12 +26,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->inventoryitemItemID = 'testValue Item Number/ID';
         $testObject->inventoryitemDescription = 'testValue Description';
         $testObject->inventoryitemReceivedDate = 'testValue Received Date';
-        $testObject->inventoryitemSource = 'testValue Source';
+        $testObject->ource = 'testValue Source';
         $testObject->inventoryitemCost = 'testValue Cost';
         $testObject->inventoryitemCategory = 'testValue Category';
         $testObject->inventoryitemDisposedDate = 'testValue Disposed Date';
         $testObject->inventoryitemDisposedDestination = 'testValue Disposed Destination';
-        $testObject->inventoryitemStorageLocation = 'testValue Storage Location';
+        $testObject->torageLocation = 'testValue Storage Location';
         $testObject->inventoryitemQuantity = 'testValue Quantity';
 
         $query->addInventoryItem($testObject);

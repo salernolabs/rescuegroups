@@ -30,21 +30,21 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enableContactsDoNotAdoptListSharing = null;
+    private $enableDoNotAdoptListSharing = null;
 
     /**
      * Automatically select to send Registration Invitation
      *
      * @var string
      */
-    private $enableContactsAutoSelectRegistrationInvitation = null;
+    private $enableAutoSelectRegistrationInvitation = null;
 
     /**
      * Automatically select to set caretaker information public
      *
      * @var string
      */
-    private $enableContactsAutoSelectCaretakerInfoPublic = null;
+    private $enableAutoSelectCaretakerInfoPublic = null;
 
     /**
      * Add a Contact record when an Online Form is submitted
@@ -58,28 +58,28 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enableContactsAddContactMeetRequest = null;
+    private $enableAddContactMeetRequest = null;
 
     /**
      * Add a Contact record when a Call is created from the Contact Us page
      *
      * @var string
      */
-    private $enableContactsAddContactCallCreation = null;
+    private $enableAddContactCallCreation = null;
 
     /**
      * Add a Contact record when an Animal Sponsorship is submitted
      *
      * @var string
      */
-    private $enableContactsAddContactAnimalSponsorship = null;
+    private $enableAddContactAnimalSponsorship = null;
 
     /**
      * Add a Contact record when a user registers
      *
      * @var string
      */
-    private $enableContactsAddContactUserRegistration = null;
+    private $enableAddContactUserRegistration = null;
 
 
     /**
@@ -88,9 +88,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsDoNotAdoptListSharing($value)
+    public function setEnableDoNotAdoptListSharing($value)
     {
-        $this->enableContactsDoNotAdoptListSharing = $value;
+        $this->enableDoNotAdoptListSharing = $value;
 
         return $this;
     }
@@ -101,9 +101,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAutoSelectRegistrationInvitation($value)
+    public function setEnableAutoSelectRegistrationInvitation($value)
     {
-        $this->enableContactsAutoSelectRegistrationInvitation = $value;
+        $this->enableAutoSelectRegistrationInvitation = $value;
 
         return $this;
     }
@@ -114,9 +114,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAutoSelectCaretakerInfoPublic($value)
+    public function setEnableAutoSelectCaretakerInfoPublic($value)
     {
-        $this->enableContactsAutoSelectCaretakerInfoPublic = $value;
+        $this->enableAutoSelectCaretakerInfoPublic = $value;
 
         return $this;
     }
@@ -140,9 +140,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAddContactMeetRequest($value)
+    public function setEnableAddContactMeetRequest($value)
     {
-        $this->enableContactsAddContactMeetRequest = $value;
+        $this->enableAddContactMeetRequest = $value;
 
         return $this;
     }
@@ -153,9 +153,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAddContactCallCreation($value)
+    public function setEnableAddContactCallCreation($value)
     {
-        $this->enableContactsAddContactCallCreation = $value;
+        $this->enableAddContactCallCreation = $value;
 
         return $this;
     }
@@ -166,9 +166,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAddContactAnimalSponsorship($value)
+    public function setEnableAddContactAnimalSponsorship($value)
     {
-        $this->enableContactsAddContactAnimalSponsorship = $value;
+        $this->enableAddContactAnimalSponsorship = $value;
 
         return $this;
     }
@@ -179,9 +179,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableContactsAddContactUserRegistration($value)
+    public function setEnableAddContactUserRegistration($value)
     {
-        $this->enableContactsAddContactUserRegistration = $value;
+        $this->enableAddContactUserRegistration = $value;
 
         return $this;
     }
@@ -196,13 +196,13 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableContactsDoNotAdoptListSharing !== null) $parameterArray['values'][] = ["enableContactsDoNotAdoptListSharing"=>$this->enableContactsDoNotAdoptListSharing];
-        if ($this->enableContactsAutoSelectRegistrationInvitation !== null) $parameterArray['values'][] = ["enableContactsAutoSelectRegistrationInvitation"=>$this->enableContactsAutoSelectRegistrationInvitation];
-        if ($this->enableContactsAutoSelectCaretakerInfoPublic !== null) $parameterArray['values'][] = ["enableContactsAutoSelectCaretakerInfoPublic"=>$this->enableContactsAutoSelectCaretakerInfoPublic];
+        if ($this->enableDoNotAdoptListSharing !== null) $parameterArray['values'][] = ["enableContactsDoNotAdoptListSharing"=>$this->enableDoNotAdoptListSharing];
+        if ($this->enableAutoSelectRegistrationInvitation !== null) $parameterArray['values'][] = ["enableContactsAutoSelectRegistrationInvitation"=>$this->enableAutoSelectRegistrationInvitation];
+        if ($this->enableAutoSelectCaretakerInfoPublic !== null) $parameterArray['values'][] = ["enableContactsAutoSelectCaretakerInfoPublic"=>$this->enableAutoSelectCaretakerInfoPublic];
         if ($this->enableAddContactOnlineFormSubmission !== null) $parameterArray['values'][] = ["enableAddContactOnlineFormSubmission"=>$this->enableAddContactOnlineFormSubmission];
-        if ($this->enableContactsAddContactMeetRequest !== null) $parameterArray['values'][] = ["enableContactsAddContactMeetRequest"=>$this->enableContactsAddContactMeetRequest];
-        if ($this->enableContactsAddContactCallCreation !== null) $parameterArray['values'][] = ["enableContactsAddContactCallCreation"=>$this->enableContactsAddContactCallCreation];
-        if ($this->enableContactsAddContactAnimalSponsorship !== null) $parameterArray['values'][] = ["enableContactsAddContactAnimalSponsorship"=>$this->enableContactsAddContactAnimalSponsorship];
-        if ($this->enableContactsAddContactUserRegistration !== null) $parameterArray['values'][] = ["enableContactsAddContactUserRegistration"=>$this->enableContactsAddContactUserRegistration];
+        if ($this->enableAddContactMeetRequest !== null) $parameterArray['values'][] = ["enableContactsAddContactMeetRequest"=>$this->enableAddContactMeetRequest];
+        if ($this->enableAddContactCallCreation !== null) $parameterArray['values'][] = ["enableContactsAddContactCallCreation"=>$this->enableAddContactCallCreation];
+        if ($this->enableAddContactAnimalSponsorship !== null) $parameterArray['values'][] = ["enableContactsAddContactAnimalSponsorship"=>$this->enableAddContactAnimalSponsorship];
+        if ($this->enableAddContactUserRegistration !== null) $parameterArray['values'][] = ["enableContactsAddContactUserRegistration"=>$this->enableAddContactUserRegistration];
     }
 }

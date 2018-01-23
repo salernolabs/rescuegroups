@@ -39,9 +39,9 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "contactfileContactID" => [1, 'contactfileContactID'],
         "contactfileOldName" => [0, 'contactfileOldName'],
         "contactfileDescription" => [0, 'contactfileDescription'],
-        "contactfileStatus" => [0, 'contactfileStatus'],
+        "tatus" => [0, 'contactfileStatus'],
         "contactfileDisplayInline" => [0, 'contactfileDisplayInline'],
-        "contactfileSize" => [0, 'contactfileSize'],
+        "ize" => [0, 'contactfileSize'],
         "contactfileCreatedDate" => [0, 'contactfileCreatedDate'],
     ];
 

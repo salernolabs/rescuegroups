@@ -90,7 +90,7 @@ class QueryRequest
 
                 //AnimalQualities is the exception here, the field would be blank because it's name is animalQualities
                 if ($this->className != 'AnimalQualities' && $this->className != 'EventAnimalAttendance')
-                    $sdkFieldName = lcfirst(str_replace($type, '', $fieldName));
+                    $sdkFieldName = lcfirst(str_ireplace($type, '', $fieldName));
 
                 if ($sdkFieldName == 'iD') $sdkFieldName = 'id';
 

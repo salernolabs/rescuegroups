@@ -39,7 +39,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "webimageName" => [0, 'webimageName'],
         "webimageFileName" => [0, 'webimageFileName'],
         "webimageUrl" => [0, 'webimageUrl'],
-        "webimageSize" => [0, 'webimageSize'],
+        "ize" => [0, 'webimageSize'],
         "webimageWidth" => [0, 'webimageWidth'],
         "webimageHeight" => [0, 'webimageHeight'],
     ];

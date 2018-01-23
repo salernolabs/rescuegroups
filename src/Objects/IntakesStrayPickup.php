@@ -71,7 +71,7 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $intakesStraypickupState = null;
+    public $tate = null;
 
     /**
      * Pickup Postal Code
@@ -92,7 +92,7 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $intakesStraypickupStaffID = null;
+    public $taffID = null;
 
 
     /**
@@ -111,10 +111,10 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->intakesStraypickupLocation)) $this->intakesStraypickupLocation = $inputData->intakesStraypickupLocation;
         if (!empty($inputData->intakesStraypickupAddress)) $this->intakesStraypickupAddress = $inputData->intakesStraypickupAddress;
         if (!empty($inputData->intakesStraypickupCity)) $this->intakesStraypickupCity = $inputData->intakesStraypickupCity;
-        if (!empty($inputData->intakesStraypickupState)) $this->intakesStraypickupState = $inputData->intakesStraypickupState;
+        if (!empty($inputData->intakesStraypickupState)) $this->tate = $inputData->intakesStraypickupState;
         if (!empty($inputData->intakesStraypickupPostalcode)) $this->intakesStraypickupPostalcode = $inputData->intakesStraypickupPostalcode;
         if (!empty($inputData->intakesStraypickupFinderID)) $this->intakesStraypickupFinderID = $inputData->intakesStraypickupFinderID;
-        if (!empty($inputData->intakesStraypickupStaffID)) $this->intakesStraypickupStaffID = $inputData->intakesStraypickupStaffID;
+        if (!empty($inputData->intakesStraypickupStaffID)) $this->taffID = $inputData->intakesStraypickupStaffID;
     }
 
     /**
@@ -134,10 +134,10 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->intakesStraypickupLocation !== null) $output['intakesStraypickupLocation'] = $this->intakesStraypickupLocation;
         if ($this->intakesStraypickupAddress !== null) $output['intakesStraypickupAddress'] = $this->intakesStraypickupAddress;
         if ($this->intakesStraypickupCity !== null) $output['intakesStraypickupCity'] = $this->intakesStraypickupCity;
-        if ($this->intakesStraypickupState !== null) $output['intakesStraypickupState'] = $this->intakesStraypickupState;
+        if ($this->tate !== null) $output['intakesStraypickupState'] = $this->tate;
         if ($this->intakesStraypickupPostalcode !== null) $output['intakesStraypickupPostalcode'] = $this->intakesStraypickupPostalcode;
         if ($this->intakesStraypickupFinderID !== null) $output['intakesStraypickupFinderID'] = $this->intakesStraypickupFinderID;
-        if ($this->intakesStraypickupStaffID !== null) $output['intakesStraypickupStaffID'] = $this->intakesStraypickupStaffID;
+        if ($this->taffID !== null) $output['intakesStraypickupStaffID'] = $this->taffID;
 
         return $output;
     }

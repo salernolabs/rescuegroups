@@ -30,175 +30,175 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enableWebsiteDown = null;
+    private $enableDown = null;
 
     /**
      * Disable user email alerts for Favorite Animals and Breeds
      *
      * @var string
      */
-    private $disableWebsiteFavoriteEmails = null;
+    private $disableFavoriteEmails = null;
 
     /**
      * Upload website home page as Petfinder web page
      *
      * @var string
      */
-    private $enableWebsitePetfinderHomePageUpload = null;
+    private $enablePetfinderHomePageUpload = null;
 
     /**
      * Website slogan
      *
      * @var string
      */
-    private $setWebsiteSlogan = null;
+    private $setSlogan = null;
 
     /**
      * Website menu source
      *
      * @var integer
      */
-    private $setWebsiteMenuSource = null;
+    private $setMenuSource = null;
 
     /**
      * Custom front page
      *
      * @var integer
      */
-    private $setWebsiteIndexPageID = null;
+    private $setIndexPageID = null;
 
     /**
      * Display Logo on front page
      *
      * @var string
      */
-    private $enableWebsiteFrontPageLogo = null;
+    private $enableFrontPageLogo = null;
 
     /**
      * Show the latest News articles on the front page
      *
      * @var string
      */
-    private $enableWebsiteFrontPageNews = null;
+    private $enableFrontPageNews = null;
 
     /**
      * Show upcoming Events on the front page
      *
      * @var string
      */
-    private $enableWebsiteFrontPageEvents = null;
+    private $enableFrontPageEvents = null;
 
     /**
      * Show highlighted animals on the front page
      *
      * @var string
      */
-    private $enableWebsiteFrontPageHighlightedAnimals = null;
+    private $enableFrontPageHighlightedAnimals = null;
 
     /**
      * Number of highlighted animals to show on the front page
      *
      * @var string
      */
-    private $setWebsiteFrontPageNumberOfHighlightedAnimals = null;
+    private $setFrontPageNumberOfHighlightedAnimals = null;
 
     /**
      * Amount of highlighted animals' description to show on the front page
      *
      * @var string
      */
-    private $setWebsiteFrontPageHighlightedAnimalsDescriptionLength = null;
+    private $setFrontPageHighlightedAnimalsDescriptionLength = null;
 
     /**
      * Show the Powered by RescueGroups.org image
      *
      * @var string
      */
-    private $enableWebsiteRescueGroupsPoweredByImage = null;
+    private $enableRescueGroupsPoweredByImage = null;
 
     /**
      * Show the user name on the menu next to the Logout option
      *
      * @var string
      */
-    private $enableWebsiteMenuLogoutUsername = null;
+    private $enableMenuLogoutUsername = null;
 
     /**
      * Show the date/time the website was last updated
      *
      * @var string
      */
-    private $enableWebsiteLastUpdated = null;
+    private $enableLastUpdated = null;
 
     /**
      * Set the animal picture mode
      *
      * @var string
      */
-    private $setWebsiteAnimalPictureMode = null;
+    private $setAnimalPictureMode = null;
 
     /**
      * Select the animal for the Featured animal picture
      *
      * @var integer
      */
-    private $setWebsiteAnimalPictureAnimalID = null;
+    private $setAnimalPictureAnimalID = null;
 
     /**
      * Show the animal seach box
      *
      * @var string
      */
-    private $enableWebsiteAnimalSearchBox = null;
+    private $enableAnimalSearchBox = null;
 
     /**
      * Show mailing address on the side bar
      *
      * @var string
      */
-    private $enableWebsiteSideBarAddress = null;
+    private $enableSideBarAddress = null;
 
     /**
      * Show Email Page to a Friend
      *
      * @var string
      */
-    private $enableWebsiteEmailFriend = null;
+    private $enableEmailFriend = null;
 
     /**
      * Show share button
      *
      * @var string
      */
-    private $enableWebsiteShareButton = null;
+    private $enableShareButton = null;
 
     /**
      * Show the DogTime Sparky widget
      *
      * @var string
      */
-    private $enableWebsiteSparky = null;
+    private $enableSparky = null;
 
     /**
      * Set the side bar width
      *
      * @var string
      */
-    private $setWebsiteSideBarWidth = null;
+    private $setSideBarWidth = null;
 
     /**
      * Show logo
      *
      * @var string
      */
-    private $enableWebsiteLogo = null;
+    private $enableLogo = null;
 
     /**
      * Set the background image
      *
      * @var integer
      */
-    private $setWebsiteBackgroundImageID = null;
+    private $setBackgroundImageID = null;
 
     /**
      * Enable the Meet Request feature
@@ -212,70 +212,70 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enableWebsiteContactUsForm = null;
+    private $enableContactUsForm = null;
 
     /**
      * Animal Browse page layout
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowseLayout = null;
+    private $setAnimalBrowseLayout = null;
 
     /**
      * Set the animal browse panel width
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowsePanelWidth = null;
+    private $setAnimalBrowsePanelWidth = null;
 
     /**
      * Animal Browse page columns
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowsePanelColumns = null;
+    private $setAnimalBrowsePanelColumns = null;
 
     /**
      * Animal Browse page number of animals
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowseAnimalsPerPage = null;
+    private $setAnimalBrowseAnimalsPerPage = null;
 
     /**
      * Animal limit
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowseLimit = null;
+    private $setAnimalBrowseLimit = null;
 
     /**
      * Hide courtesy listings on browse/list page
      *
      * @var string
      */
-    private $disableWebsiteAnimalBrowseCourtesyListings = null;
+    private $disableAnimalBrowseCourtesyListings = null;
 
     /**
      * Show sponsorship link on the browse page
      *
      * @var string
      */
-    private $showWebsiteAnimalBrowseSponsorshipLink = null;
+    private $showAnimalBrowseSponsorshipLink = null;
 
     /**
      * How much of each animal's description to display
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowseDescriptionLength = null;
+    private $setAnimalBrowseDescriptionLength = null;
 
     /**
-     * setWebsiteAnimalBrowseFields
+     * setAnimalBrowseFields
      *
      * @var string
      */
-    private $setWebsiteAnimalBrowseFields = null;
+    private $setAnimalBrowseFields = null;
 
     /**
      * List Animals available for adoption
@@ -480,9 +480,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteDown($value)
+    public function setEnableDown($value)
     {
-        $this->enableWebsiteDown = $value;
+        $this->enableDown = $value;
 
         return $this;
     }
@@ -493,9 +493,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setDisableWebsiteFavoriteEmails($value)
+    public function setDisableFavoriteEmails($value)
     {
-        $this->disableWebsiteFavoriteEmails = $value;
+        $this->disableFavoriteEmails = $value;
 
         return $this;
     }
@@ -506,9 +506,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsitePetfinderHomePageUpload($value)
+    public function setEnablePetfinderHomePageUpload($value)
     {
-        $this->enableWebsitePetfinderHomePageUpload = $value;
+        $this->enablePetfinderHomePageUpload = $value;
 
         return $this;
     }
@@ -519,9 +519,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteSlogan($value)
+    public function setSetSlogan($value)
     {
-        $this->setWebsiteSlogan = $value;
+        $this->setSlogan = $value;
 
         return $this;
     }
@@ -532,9 +532,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteMenuSource($value)
+    public function setSetMenuSource($value)
     {
-        $this->setWebsiteMenuSource = $value;
+        $this->setMenuSource = $value;
 
         return $this;
     }
@@ -545,9 +545,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteIndexPageID($value)
+    public function setSetIndexPageID($value)
     {
-        $this->setWebsiteIndexPageID = $value;
+        $this->setIndexPageID = $value;
 
         return $this;
     }
@@ -558,9 +558,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteFrontPageLogo($value)
+    public function setEnableFrontPageLogo($value)
     {
-        $this->enableWebsiteFrontPageLogo = $value;
+        $this->enableFrontPageLogo = $value;
 
         return $this;
     }
@@ -571,9 +571,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteFrontPageNews($value)
+    public function setEnableFrontPageNews($value)
     {
-        $this->enableWebsiteFrontPageNews = $value;
+        $this->enableFrontPageNews = $value;
 
         return $this;
     }
@@ -584,9 +584,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteFrontPageEvents($value)
+    public function setEnableFrontPageEvents($value)
     {
-        $this->enableWebsiteFrontPageEvents = $value;
+        $this->enableFrontPageEvents = $value;
 
         return $this;
     }
@@ -597,9 +597,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteFrontPageHighlightedAnimals($value)
+    public function setEnableFrontPageHighlightedAnimals($value)
     {
-        $this->enableWebsiteFrontPageHighlightedAnimals = $value;
+        $this->enableFrontPageHighlightedAnimals = $value;
 
         return $this;
     }
@@ -610,9 +610,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteFrontPageNumberOfHighlightedAnimals($value)
+    public function setSetFrontPageNumberOfHighlightedAnimals($value)
     {
-        $this->setWebsiteFrontPageNumberOfHighlightedAnimals = $value;
+        $this->setFrontPageNumberOfHighlightedAnimals = $value;
 
         return $this;
     }
@@ -623,9 +623,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength($value)
+    public function setSetFrontPageHighlightedAnimalsDescriptionLength($value)
     {
-        $this->setWebsiteFrontPageHighlightedAnimalsDescriptionLength = $value;
+        $this->setFrontPageHighlightedAnimalsDescriptionLength = $value;
 
         return $this;
     }
@@ -636,9 +636,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteRescueGroupsPoweredByImage($value)
+    public function setEnableRescueGroupsPoweredByImage($value)
     {
-        $this->enableWebsiteRescueGroupsPoweredByImage = $value;
+        $this->enableRescueGroupsPoweredByImage = $value;
 
         return $this;
     }
@@ -649,9 +649,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteMenuLogoutUsername($value)
+    public function setEnableMenuLogoutUsername($value)
     {
-        $this->enableWebsiteMenuLogoutUsername = $value;
+        $this->enableMenuLogoutUsername = $value;
 
         return $this;
     }
@@ -662,9 +662,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteLastUpdated($value)
+    public function setEnableLastUpdated($value)
     {
-        $this->enableWebsiteLastUpdated = $value;
+        $this->enableLastUpdated = $value;
 
         return $this;
     }
@@ -675,9 +675,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalPictureMode($value)
+    public function setSetAnimalPictureMode($value)
     {
-        $this->setWebsiteAnimalPictureMode = $value;
+        $this->setAnimalPictureMode = $value;
 
         return $this;
     }
@@ -688,9 +688,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteAnimalPictureAnimalID($value)
+    public function setSetAnimalPictureAnimalID($value)
     {
-        $this->setWebsiteAnimalPictureAnimalID = $value;
+        $this->setAnimalPictureAnimalID = $value;
 
         return $this;
     }
@@ -701,9 +701,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteAnimalSearchBox($value)
+    public function setEnableAnimalSearchBox($value)
     {
-        $this->enableWebsiteAnimalSearchBox = $value;
+        $this->enableAnimalSearchBox = $value;
 
         return $this;
     }
@@ -714,9 +714,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteSideBarAddress($value)
+    public function setEnableSideBarAddress($value)
     {
-        $this->enableWebsiteSideBarAddress = $value;
+        $this->enableSideBarAddress = $value;
 
         return $this;
     }
@@ -727,9 +727,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteEmailFriend($value)
+    public function setEnableEmailFriend($value)
     {
-        $this->enableWebsiteEmailFriend = $value;
+        $this->enableEmailFriend = $value;
 
         return $this;
     }
@@ -740,9 +740,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteShareButton($value)
+    public function setEnableShareButton($value)
     {
-        $this->enableWebsiteShareButton = $value;
+        $this->enableShareButton = $value;
 
         return $this;
     }
@@ -753,9 +753,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteSparky($value)
+    public function setEnableSparky($value)
     {
-        $this->enableWebsiteSparky = $value;
+        $this->enableSparky = $value;
 
         return $this;
     }
@@ -766,9 +766,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteSideBarWidth($value)
+    public function setSetSideBarWidth($value)
     {
-        $this->setWebsiteSideBarWidth = $value;
+        $this->setSideBarWidth = $value;
 
         return $this;
     }
@@ -779,9 +779,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteLogo($value)
+    public function setEnableLogo($value)
     {
-        $this->enableWebsiteLogo = $value;
+        $this->enableLogo = $value;
 
         return $this;
     }
@@ -792,9 +792,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteBackgroundImageID($value)
+    public function setSetBackgroundImageID($value)
     {
-        $this->setWebsiteBackgroundImageID = $value;
+        $this->setBackgroundImageID = $value;
 
         return $this;
     }
@@ -818,9 +818,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableWebsiteContactUsForm($value)
+    public function setEnableContactUsForm($value)
     {
-        $this->enableWebsiteContactUsForm = $value;
+        $this->enableContactUsForm = $value;
 
         return $this;
     }
@@ -831,9 +831,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseLayout($value)
+    public function setSetAnimalBrowseLayout($value)
     {
-        $this->setWebsiteAnimalBrowseLayout = $value;
+        $this->setAnimalBrowseLayout = $value;
 
         return $this;
     }
@@ -844,9 +844,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowsePanelWidth($value)
+    public function setSetAnimalBrowsePanelWidth($value)
     {
-        $this->setWebsiteAnimalBrowsePanelWidth = $value;
+        $this->setAnimalBrowsePanelWidth = $value;
 
         return $this;
     }
@@ -857,9 +857,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowsePanelColumns($value)
+    public function setSetAnimalBrowsePanelColumns($value)
     {
-        $this->setWebsiteAnimalBrowsePanelColumns = $value;
+        $this->setAnimalBrowsePanelColumns = $value;
 
         return $this;
     }
@@ -870,9 +870,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseAnimalsPerPage($value)
+    public function setSetAnimalBrowseAnimalsPerPage($value)
     {
-        $this->setWebsiteAnimalBrowseAnimalsPerPage = $value;
+        $this->setAnimalBrowseAnimalsPerPage = $value;
 
         return $this;
     }
@@ -883,9 +883,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseLimit($value)
+    public function setSetAnimalBrowseLimit($value)
     {
-        $this->setWebsiteAnimalBrowseLimit = $value;
+        $this->setAnimalBrowseLimit = $value;
 
         return $this;
     }
@@ -896,9 +896,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setDisableWebsiteAnimalBrowseCourtesyListings($value)
+    public function setDisableAnimalBrowseCourtesyListings($value)
     {
-        $this->disableWebsiteAnimalBrowseCourtesyListings = $value;
+        $this->disableAnimalBrowseCourtesyListings = $value;
 
         return $this;
     }
@@ -909,9 +909,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setShowWebsiteAnimalBrowseSponsorshipLink($value)
+    public function setShowAnimalBrowseSponsorshipLink($value)
     {
-        $this->showWebsiteAnimalBrowseSponsorshipLink = $value;
+        $this->showAnimalBrowseSponsorshipLink = $value;
 
         return $this;
     }
@@ -922,22 +922,22 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseDescriptionLength($value)
+    public function setSetAnimalBrowseDescriptionLength($value)
     {
-        $this->setWebsiteAnimalBrowseDescriptionLength = $value;
+        $this->setAnimalBrowseDescriptionLength = $value;
 
         return $this;
     }
 
     /**
-     * Set setWebsiteAnimalBrowseFields
+     * Set setAnimalBrowseFields
      *
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseFields($value)
+    public function setSetAnimalBrowseFields($value)
     {
-        $this->setWebsiteAnimalBrowseFields = $value;
+        $this->setAnimalBrowseFields = $value;
 
         return $this;
     }
@@ -1316,42 +1316,42 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableWebsiteDown !== null) $parameterArray['values'][] = ["enableWebsiteDown"=>$this->enableWebsiteDown];
-        if ($this->disableWebsiteFavoriteEmails !== null) $parameterArray['values'][] = ["disableWebsiteFavoriteEmails"=>$this->disableWebsiteFavoriteEmails];
-        if ($this->enableWebsitePetfinderHomePageUpload !== null) $parameterArray['values'][] = ["enableWebsitePetfinderHomePageUpload"=>$this->enableWebsitePetfinderHomePageUpload];
-        if ($this->setWebsiteSlogan !== null) $parameterArray['values'][] = ["setWebsiteSlogan"=>$this->setWebsiteSlogan];
-        if ($this->setWebsiteMenuSource !== null) $parameterArray['values'][] = ["setWebsiteMenuSource"=>$this->setWebsiteMenuSource];
-        if ($this->setWebsiteIndexPageID !== null) $parameterArray['values'][] = ["setWebsiteIndexPageID"=>$this->setWebsiteIndexPageID];
-        if ($this->enableWebsiteFrontPageLogo !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageLogo"=>$this->enableWebsiteFrontPageLogo];
-        if ($this->enableWebsiteFrontPageNews !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageNews"=>$this->enableWebsiteFrontPageNews];
-        if ($this->enableWebsiteFrontPageEvents !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageEvents"=>$this->enableWebsiteFrontPageEvents];
-        if ($this->enableWebsiteFrontPageHighlightedAnimals !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageHighlightedAnimals"=>$this->enableWebsiteFrontPageHighlightedAnimals];
-        if ($this->setWebsiteFrontPageNumberOfHighlightedAnimals !== null) $parameterArray['values'][] = ["setWebsiteFrontPageNumberOfHighlightedAnimals"=>$this->setWebsiteFrontPageNumberOfHighlightedAnimals];
-        if ($this->setWebsiteFrontPageHighlightedAnimalsDescriptionLength !== null) $parameterArray['values'][] = ["setWebsiteFrontPageHighlightedAnimalsDescriptionLength"=>$this->setWebsiteFrontPageHighlightedAnimalsDescriptionLength];
-        if ($this->enableWebsiteRescueGroupsPoweredByImage !== null) $parameterArray['values'][] = ["enableWebsiteRescueGroupsPoweredByImage"=>$this->enableWebsiteRescueGroupsPoweredByImage];
-        if ($this->enableWebsiteMenuLogoutUsername !== null) $parameterArray['values'][] = ["enableWebsiteMenuLogoutUsername"=>$this->enableWebsiteMenuLogoutUsername];
-        if ($this->enableWebsiteLastUpdated !== null) $parameterArray['values'][] = ["enableWebsiteLastUpdated"=>$this->enableWebsiteLastUpdated];
-        if ($this->setWebsiteAnimalPictureMode !== null) $parameterArray['values'][] = ["setWebsiteAnimalPictureMode"=>$this->setWebsiteAnimalPictureMode];
-        if ($this->setWebsiteAnimalPictureAnimalID !== null) $parameterArray['values'][] = ["setWebsiteAnimalPictureAnimalID"=>$this->setWebsiteAnimalPictureAnimalID];
-        if ($this->enableWebsiteAnimalSearchBox !== null) $parameterArray['values'][] = ["enableWebsiteAnimalSearchBox"=>$this->enableWebsiteAnimalSearchBox];
-        if ($this->enableWebsiteSideBarAddress !== null) $parameterArray['values'][] = ["enableWebsiteSideBarAddress"=>$this->enableWebsiteSideBarAddress];
-        if ($this->enableWebsiteEmailFriend !== null) $parameterArray['values'][] = ["enableWebsiteEmailFriend"=>$this->enableWebsiteEmailFriend];
-        if ($this->enableWebsiteShareButton !== null) $parameterArray['values'][] = ["enableWebsiteShareButton"=>$this->enableWebsiteShareButton];
-        if ($this->enableWebsiteSparky !== null) $parameterArray['values'][] = ["enableWebsiteSparky"=>$this->enableWebsiteSparky];
-        if ($this->setWebsiteSideBarWidth !== null) $parameterArray['values'][] = ["setWebsiteSideBarWidth"=>$this->setWebsiteSideBarWidth];
-        if ($this->enableWebsiteLogo !== null) $parameterArray['values'][] = ["enableWebsiteLogo"=>$this->enableWebsiteLogo];
-        if ($this->setWebsiteBackgroundImageID !== null) $parameterArray['values'][] = ["setWebsiteBackgroundImageID"=>$this->setWebsiteBackgroundImageID];
+        if ($this->enableDown !== null) $parameterArray['values'][] = ["enableWebsiteDown"=>$this->enableDown];
+        if ($this->disableFavoriteEmails !== null) $parameterArray['values'][] = ["disableWebsiteFavoriteEmails"=>$this->disableFavoriteEmails];
+        if ($this->enablePetfinderHomePageUpload !== null) $parameterArray['values'][] = ["enableWebsitePetfinderHomePageUpload"=>$this->enablePetfinderHomePageUpload];
+        if ($this->setSlogan !== null) $parameterArray['values'][] = ["setWebsiteSlogan"=>$this->setSlogan];
+        if ($this->setMenuSource !== null) $parameterArray['values'][] = ["setWebsiteMenuSource"=>$this->setMenuSource];
+        if ($this->setIndexPageID !== null) $parameterArray['values'][] = ["setWebsiteIndexPageID"=>$this->setIndexPageID];
+        if ($this->enableFrontPageLogo !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageLogo"=>$this->enableFrontPageLogo];
+        if ($this->enableFrontPageNews !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageNews"=>$this->enableFrontPageNews];
+        if ($this->enableFrontPageEvents !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageEvents"=>$this->enableFrontPageEvents];
+        if ($this->enableFrontPageHighlightedAnimals !== null) $parameterArray['values'][] = ["enableWebsiteFrontPageHighlightedAnimals"=>$this->enableFrontPageHighlightedAnimals];
+        if ($this->setFrontPageNumberOfHighlightedAnimals !== null) $parameterArray['values'][] = ["setWebsiteFrontPageNumberOfHighlightedAnimals"=>$this->setFrontPageNumberOfHighlightedAnimals];
+        if ($this->setFrontPageHighlightedAnimalsDescriptionLength !== null) $parameterArray['values'][] = ["setWebsiteFrontPageHighlightedAnimalsDescriptionLength"=>$this->setFrontPageHighlightedAnimalsDescriptionLength];
+        if ($this->enableRescueGroupsPoweredByImage !== null) $parameterArray['values'][] = ["enableWebsiteRescueGroupsPoweredByImage"=>$this->enableRescueGroupsPoweredByImage];
+        if ($this->enableMenuLogoutUsername !== null) $parameterArray['values'][] = ["enableWebsiteMenuLogoutUsername"=>$this->enableMenuLogoutUsername];
+        if ($this->enableLastUpdated !== null) $parameterArray['values'][] = ["enableWebsiteLastUpdated"=>$this->enableLastUpdated];
+        if ($this->setAnimalPictureMode !== null) $parameterArray['values'][] = ["setWebsiteAnimalPictureMode"=>$this->setAnimalPictureMode];
+        if ($this->setAnimalPictureAnimalID !== null) $parameterArray['values'][] = ["setWebsiteAnimalPictureAnimalID"=>$this->setAnimalPictureAnimalID];
+        if ($this->enableAnimalSearchBox !== null) $parameterArray['values'][] = ["enableWebsiteAnimalSearchBox"=>$this->enableAnimalSearchBox];
+        if ($this->enableSideBarAddress !== null) $parameterArray['values'][] = ["enableWebsiteSideBarAddress"=>$this->enableSideBarAddress];
+        if ($this->enableEmailFriend !== null) $parameterArray['values'][] = ["enableWebsiteEmailFriend"=>$this->enableEmailFriend];
+        if ($this->enableShareButton !== null) $parameterArray['values'][] = ["enableWebsiteShareButton"=>$this->enableShareButton];
+        if ($this->enableSparky !== null) $parameterArray['values'][] = ["enableWebsiteSparky"=>$this->enableSparky];
+        if ($this->setSideBarWidth !== null) $parameterArray['values'][] = ["setWebsiteSideBarWidth"=>$this->setSideBarWidth];
+        if ($this->enableLogo !== null) $parameterArray['values'][] = ["enableWebsiteLogo"=>$this->enableLogo];
+        if ($this->setBackgroundImageID !== null) $parameterArray['values'][] = ["setWebsiteBackgroundImageID"=>$this->setBackgroundImageID];
         if ($this->enableAnimalMeet !== null) $parameterArray['values'][] = ["enableAnimalMeet"=>$this->enableAnimalMeet];
-        if ($this->enableWebsiteContactUsForm !== null) $parameterArray['values'][] = ["enableWebsiteContactUsForm"=>$this->enableWebsiteContactUsForm];
-        if ($this->setWebsiteAnimalBrowseLayout !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseLayout"=>$this->setWebsiteAnimalBrowseLayout];
-        if ($this->setWebsiteAnimalBrowsePanelWidth !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowsePanelWidth"=>$this->setWebsiteAnimalBrowsePanelWidth];
-        if ($this->setWebsiteAnimalBrowsePanelColumns !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowsePanelColumns"=>$this->setWebsiteAnimalBrowsePanelColumns];
-        if ($this->setWebsiteAnimalBrowseAnimalsPerPage !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseAnimalsPerPage"=>$this->setWebsiteAnimalBrowseAnimalsPerPage];
-        if ($this->setWebsiteAnimalBrowseLimit !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseLimit"=>$this->setWebsiteAnimalBrowseLimit];
-        if ($this->disableWebsiteAnimalBrowseCourtesyListings !== null) $parameterArray['values'][] = ["disableWebsiteAnimalBrowseCourtesyListings"=>$this->disableWebsiteAnimalBrowseCourtesyListings];
-        if ($this->showWebsiteAnimalBrowseSponsorshipLink !== null) $parameterArray['values'][] = ["showWebsiteAnimalBrowseSponsorshipLink"=>$this->showWebsiteAnimalBrowseSponsorshipLink];
-        if ($this->setWebsiteAnimalBrowseDescriptionLength !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseDescriptionLength"=>$this->setWebsiteAnimalBrowseDescriptionLength];
-        if ($this->setWebsiteAnimalBrowseFields !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseFields"=>$this->setWebsiteAnimalBrowseFields];
+        if ($this->enableContactUsForm !== null) $parameterArray['values'][] = ["enableWebsiteContactUsForm"=>$this->enableContactUsForm];
+        if ($this->setAnimalBrowseLayout !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseLayout"=>$this->setAnimalBrowseLayout];
+        if ($this->setAnimalBrowsePanelWidth !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowsePanelWidth"=>$this->setAnimalBrowsePanelWidth];
+        if ($this->setAnimalBrowsePanelColumns !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowsePanelColumns"=>$this->setAnimalBrowsePanelColumns];
+        if ($this->setAnimalBrowseAnimalsPerPage !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseAnimalsPerPage"=>$this->setAnimalBrowseAnimalsPerPage];
+        if ($this->setAnimalBrowseLimit !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseLimit"=>$this->setAnimalBrowseLimit];
+        if ($this->disableAnimalBrowseCourtesyListings !== null) $parameterArray['values'][] = ["disableWebsiteAnimalBrowseCourtesyListings"=>$this->disableAnimalBrowseCourtesyListings];
+        if ($this->showAnimalBrowseSponsorshipLink !== null) $parameterArray['values'][] = ["showWebsiteAnimalBrowseSponsorshipLink"=>$this->showAnimalBrowseSponsorshipLink];
+        if ($this->setAnimalBrowseDescriptionLength !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseDescriptionLength"=>$this->setAnimalBrowseDescriptionLength];
+        if ($this->setAnimalBrowseFields !== null) $parameterArray['values'][] = ["setWebsiteAnimalBrowseFields"=>$this->setAnimalBrowseFields];
         if ($this->enableAnimalAdoptions !== null) $parameterArray['values'][] = ["enableAnimalAdoptions"=>$this->enableAnimalAdoptions];
         if ($this->setAnimalDetailPageStyle !== null) $parameterArray['values'][] = ["setAnimalDetailPageStyle"=>$this->setAnimalDetailPageStyle];
         if ($this->enableAnimalDetailPagePopover !== null) $parameterArray['values'][] = ["enableAnimalDetailPagePopover"=>$this->enableAnimalDetailPagePopover];

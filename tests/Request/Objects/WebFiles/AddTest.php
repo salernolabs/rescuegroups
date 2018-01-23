@@ -25,7 +25,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->webfileBinary = 'testValue File';
         $testObject->webfileOldFileName = 'testValue Old file name';
         $testObject->webfileDescription = 'testValue Description';
-        $testObject->webfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->webfileDisplayInline = 'testValue Inline';
 
         $query->addWebFile($testObject);

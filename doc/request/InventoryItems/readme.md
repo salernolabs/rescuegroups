@@ -59,12 +59,12 @@ Performs inventoryitems.add add query to create an instance of an object. Uses s
     $addObject->inventoryitemItemID = "Item Number/ID"
     $addObject->inventoryitemDescription = "Description"
     $addObject->inventoryitemReceivedDate = "Received Date"
-    $addObject->inventoryitemSource = "Source"
+    $addObject->ource = "Source"
     $addObject->inventoryitemCost = "Cost"
     $addObject->inventoryitemCategory = "Category"
     $addObject->inventoryitemDisposedDate = "Disposed Date"
     $addObject->inventoryitemDisposedDestination = "Disposed Destination"
-    $addObject->inventoryitemStorageLocation = "Storage Location"
+    $addObject->torageLocation = "Storage Location"
     $addObject->inventoryitemQuantity = "Quantity"
 
     $query->addInventoryItem($addObject);
@@ -83,13 +83,13 @@ Performs inventoryitems.edit edit query to edit an object. Uses classes of type 
     $editObject->inventoryitemItemID = "Item Number/ID"
     $editObject->inventoryitemDescription = "Description"
     $editObject->inventoryitemReceivedDate = "Received Date"
-    $editObject->inventoryitemSource = "Source"
+    $editObject->ource = "Source"
     $editObject->inventoryitemCost = "Cost"
     $editObject->inventoryitemConditionID = "Condition"
     $editObject->inventoryitemCategory = "Category"
     $editObject->inventoryitemDisposedDate = "Disposed Date"
     $editObject->inventoryitemDisposedDestination = "Disposed Destination"
-    $editObject->inventoryitemStorageLocation = "Storage Location"
+    $editObject->torageLocation = "Storage Location"
 
     $query->updateInventoryItem($editObject);
 

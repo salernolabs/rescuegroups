@@ -24,7 +24,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject = new \RescueGroups\Objects\WebFile();
         $testObject->webfileID = 'testValue ID';
         $testObject->webfileDescription = 'testValue Description';
-        $testObject->webfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->webfileDisplayInline = 'testValue Inline';
         $testObject->webfileRoleID = 'testValue Security Role';
 

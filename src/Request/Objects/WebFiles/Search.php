@@ -39,11 +39,11 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "webfileOldName" => [0, 'webfileOldName'],
         "webfileName" => [0, 'webfileName'],
         "webfileDescription" => [0, 'webfileDescription'],
-        "webfileStatus" => [0, 'webfileStatus'],
+        "tatus" => [0, 'webfileStatus'],
         "webfileDisplayInline" => [0, 'webfileDisplayInline'],
         "webfileRoleID" => [0, 'webfileRoleID'],
         "webfileRoleName" => [0, 'webfileRoleName'],
-        "webfileSize" => [0, 'webfileSize'],
+        "ize" => [0, 'webfileSize'],
         "webfileCreatedDate" => [0, 'webfileCreatedDate'],
     ];
 

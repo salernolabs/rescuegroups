@@ -76,13 +76,13 @@ Performs contacts.add add query to create an instance of an object. Uses special
 
     $addObject = new \RescueGroups\Objects\Create\Contact();
     $addObject->contactClass = "Class"
-    $addObject->contactSalutation = "Salutation"
+    $addObject->alutation = "Salutation"
     $addObject->contactFirstname = "First name"
     $addObject->contactLastname = "Last name"
     $addObject->contactTitle = "Title"
     $addObject->contactAddress = "Street address"
     $addObject->contactCity = "City"
-    $addObject->contactState = "State/Province"
+    $addObject->tate = "State/Province"
     $addObject->contactPostalcode = "Postal Code"
     $addObject->contactPlus4 = "Zip code plus 4"
     $addObject->contactCounty = "County"
@@ -97,14 +97,14 @@ Performs contacts.add add query to create an instance of an object. Uses special
     $addObject->contactCompany = "Company"
     $addObject->contactReferredBy = "Referred by"
     $addObject->contactCarrier = "Carrier"
-    $addObject->contactSendMail = "Send mail"
+    $addObject->endMail = "Send mail"
     $addObject->contactActive = "Active"
     $addObject->contactComment = "Comment"
     $addObject->contactCoalitionMember = "Coalition member"
     $addObject->contactTransportation = "Transportation"
     $addObject->contactAvailability = "Availability"
     $addObject->contactCaretakerPublic = "Caretaker public"
-    $addObject->contactSendInvite = "Send website invitation"
+    $addObject->endInvite = "Send website invitation"
     $addObject->contactGroups = "Groups"
 
     $query->addContact($addObject);
@@ -120,13 +120,13 @@ Performs contacts.edit edit query to edit an object. Uses classes of type [\Resc
     $editObject = new \RescueGroups\Objects\Contact();
     $editObject->contactID = "ID"
     $editObject->contactClass = "Class"
-    $editObject->contactSalutation = "Salutation"
+    $editObject->alutation = "Salutation"
     $editObject->contactFirstname = "First name"
     $editObject->contactLastname = "Last name"
     $editObject->contactTitle = "Title"
     $editObject->contactAddress = "Street address"
     $editObject->contactCity = "City"
-    $editObject->contactState = "State/Province"
+    $editObject->tate = "State/Province"
     $editObject->contactPostalcode = "Postal Code"
     $editObject->contactPlus4 = "Zip code plus 4"
     $editObject->contactCounty = "County"
@@ -142,7 +142,7 @@ Performs contacts.edit edit query to edit an object. Uses classes of type [\Resc
     $editObject->contactCompany = "Company"
     $editObject->contactReferredBy = "Referred by"
     $editObject->contactCarrier = "Carrier"
-    $editObject->contactSendMail = "Send mail"
+    $editObject->endMail = "Send mail"
     $editObject->contactActive = "Active"
     $editObject->contactComment = "Comment"
     $editObject->contactCoalitionMember = "Coalition member"
@@ -182,14 +182,14 @@ Performs contacts.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\UpdateSettings();
 
-    $query->setenableContactsDoNotAdoptListSharing("Share your organization's Do Not Adopt list");
-    $query->setenableContactsAutoSelectRegistrationInvitation("Automatically select to send Registration Invitation");
-    $query->setenableContactsAutoSelectCaretakerInfoPublic("Automatically select to set caretaker information public");
+    $query->setenableDoNotAdoptListSharing("Share your organization's Do Not Adopt list");
+    $query->setenableAutoSelectRegistrationInvitation("Automatically select to send Registration Invitation");
+    $query->setenableAutoSelectCaretakerInfoPublic("Automatically select to set caretaker information public");
     $query->setenableAddContactOnlineFormSubmission("Add a Contact record when an Online Form is submitted");
-    $query->setenableContactsAddContactMeetRequest("Add a Contact record when an Meet Request is submitted");
-    $query->setenableContactsAddContactCallCreation("Add a Contact record when a Call is created from the Contact Us page");
-    $query->setenableContactsAddContactAnimalSponsorship("Add a Contact record when an Animal Sponsorship is submitted");
-    $query->setenableContactsAddContactUserRegistration("Add a Contact record when a user registers");
+    $query->setenableAddContactMeetRequest("Add a Contact record when an Meet Request is submitted");
+    $query->setenableAddContactCallCreation("Add a Contact record when a Call is created from the Contact Us page");
+    $query->setenableAddContactAnimalSponsorship("Add a Contact record when an Animal Sponsorship is submitted");
+    $query->setenableAddContactUserRegistration("Add a Contact record when a user registers");
 
     $result = $api->executeRequest($query);
 

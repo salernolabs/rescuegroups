@@ -41,7 +41,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "intakesServiceDate" => [0, 'intakesServiceDate'],
         "intakesServiceNotes" => [0, 'intakesServiceNotes'],
         "intakesServiceOwnerID" => [0, 'intakesServiceOwnerID'],
-        "intakesServiceServicetypeID" => [0, 'intakesServiceServicetypeID'],
+        "ervicetypeID" => [0, 'intakesServiceServicetypeID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
         "ownerName" => [0, 'ownerName'],

@@ -24,7 +24,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject = new \RescueGroups\Objects\SubmittedForm();
         $testObject->submittedformID = 'testValue ID';
         $testObject->submittedformAnimalID = 'testValue Animal';
-        $testObject->submittedformStatusID = 'testValue Status';
+        $testObject->tatusID = 'testValue Status';
 
         $query->updateSubmittedForm($testObject);
 

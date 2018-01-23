@@ -25,7 +25,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->inventoryfileID = 'testValue File';
         $testObject->inventoryfileItemID = 'testValue ID';
         $testObject->inventoryfileDescription = 'testValue Description';
-        $testObject->inventoryfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->inventoryfileDisplayInline = 'testValue Inline';
 
         $query->updateInventoryFile($testObject);

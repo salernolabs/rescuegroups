@@ -323,14 +323,14 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $animalSpecialneeds = null;
+    public $pecialneeds = null;
 
     /**
      * Special needs description
      *
      * @var string
      */
-    public $animalSpecialneedsDescription = null;
+    public $pecialneedsDescription = null;
 
     /**
      * Needs a Foster
@@ -463,98 +463,98 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $animalSecondaryBreedID = null;
+    public $econdaryBreedID = null;
 
     /**
      * Sex
      *
      * @var string
      */
-    public $animalSex = null;
+    public $ex = null;
 
     /**
      * Shared
      *
      * @var string
      */
-    public $animalShared = null;
+    public $hared = null;
 
     /**
      * Shedding amount
      *
      * @var string
      */
-    public $animalShedding = null;
+    public $hedding = null;
 
     /**
      * Current size
      *
      * @var float
      */
-    public $animalSizeCurrent = null;
+    public $izeCurrent = null;
 
     /**
      * Size potential
      *
      * @var float
      */
-    public $animalSizePotential = null;
+    public $izePotential = null;
 
     /**
      * Size unit of measure
      *
      * @var string
      */
-    public $animalSizeUOM = null;
+    public $izeUOM = null;
 
     /**
      * Species
      *
      * @var integer
      */
-    public $animalSpeciesID = null;
+    public $peciesID = null;
 
     /**
      * Allow sponsorship
      *
      * @var string
      */
-    public $animalSponsorable = null;
+    public $ponsorable = null;
 
     /**
      * Sponsors
      *
      * @var string
      */
-    public $animalSponsors = null;
+    public $ponsors = null;
 
     /**
      * Sponsorship details
      *
      * @var string
      */
-    public $animalSponsorshipDetails = null;
+    public $ponsorshipDetails = null;
 
     /**
      * Sponsorship minimum
      *
      * @var float
      */
-    public $animalSponsorshipMinimum = null;
+    public $ponsorshipMinimum = null;
 
     /**
      * Status
      *
      * @var integer
      */
-    public $animalStatusID = null;
+    public $tatusID = null;
 
     /**
      * Summary
      *
      * @var string
      */
-    public $animalSummary = null;
+    public $ummary = null;
 
     /**
      * Tail type
@@ -785,7 +785,7 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $animalOKWithFarmAnimals = null;
+    public $animalOKWithFarm = null;
 
     /**
      * Older/ considerate kids only
@@ -834,28 +834,28 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $animalSightImpaired = null;
+    public $ightImpaired = null;
 
     /**
      * Skittish
      *
      * @var string
      */
-    public $animalSkittish = null;
+    public $kittish = null;
 
     /**
      * Special diet required
      *
      * @var string
      */
-    public $animalSpecialDiet = null;
+    public $pecialDiet = null;
 
     /**
      * Likes to swim
      *
      * @var string
      */
-    public $animalSwims = null;
+    public $wims = null;
 
     /**
      * Timid / shy
@@ -931,8 +931,8 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->animalMicrochipVendor)) $this->animalMicrochipVendor = $inputData->animalMicrochipVendor;
         if (!empty($inputData->animalMixedBreed)) $this->animalMixedBreed = $inputData->animalMixedBreed;
         if (!empty($inputData->animalName)) $this->animalName = $inputData->animalName;
-        if (!empty($inputData->animalSpecialneeds)) $this->animalSpecialneeds = $inputData->animalSpecialneeds;
-        if (!empty($inputData->animalSpecialneedsDescription)) $this->animalSpecialneedsDescription = $inputData->animalSpecialneedsDescription;
+        if (!empty($inputData->animalSpecialneeds)) $this->pecialneeds = $inputData->animalSpecialneeds;
+        if (!empty($inputData->animalSpecialneedsDescription)) $this->pecialneedsDescription = $inputData->animalSpecialneedsDescription;
         if (!empty($inputData->animalNeedsFoster)) $this->animalNeedsFoster = $inputData->animalNeedsFoster;
         if (!empty($inputData->animalNewPeople)) $this->animalNewPeople = $inputData->animalNewPeople;
         if (!empty($inputData->animalNotes)) $this->animalNotes = $inputData->animalNotes;
@@ -951,20 +951,20 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->animalPrimaryBreedID)) $this->animalPrimaryBreedID = $inputData->animalPrimaryBreedID;
         if (!empty($inputData->animalReceivedDate)) $this->animalReceivedDate = $inputData->animalReceivedDate;
         if (!empty($inputData->animalRescueID)) $this->animalRescueID = $inputData->animalRescueID;
-        if (!empty($inputData->animalSecondaryBreedID)) $this->animalSecondaryBreedID = $inputData->animalSecondaryBreedID;
-        if (!empty($inputData->animalSex)) $this->animalSex = $inputData->animalSex;
-        if (!empty($inputData->animalShared)) $this->animalShared = $inputData->animalShared;
-        if (!empty($inputData->animalShedding)) $this->animalShedding = $inputData->animalShedding;
-        if (!empty($inputData->animalSizeCurrent)) $this->animalSizeCurrent = $inputData->animalSizeCurrent;
-        if (!empty($inputData->animalSizePotential)) $this->animalSizePotential = $inputData->animalSizePotential;
-        if (!empty($inputData->animalSizeUOM)) $this->animalSizeUOM = $inputData->animalSizeUOM;
-        if (!empty($inputData->animalSpeciesID)) $this->animalSpeciesID = $inputData->animalSpeciesID;
-        if (!empty($inputData->animalSponsorable)) $this->animalSponsorable = $inputData->animalSponsorable;
-        if (!empty($inputData->animalSponsors)) $this->animalSponsors = $inputData->animalSponsors;
-        if (!empty($inputData->animalSponsorshipDetails)) $this->animalSponsorshipDetails = $inputData->animalSponsorshipDetails;
-        if (!empty($inputData->animalSponsorshipMinimum)) $this->animalSponsorshipMinimum = $inputData->animalSponsorshipMinimum;
-        if (!empty($inputData->animalStatusID)) $this->animalStatusID = $inputData->animalStatusID;
-        if (!empty($inputData->animalSummary)) $this->animalSummary = $inputData->animalSummary;
+        if (!empty($inputData->animalSecondaryBreedID)) $this->econdaryBreedID = $inputData->animalSecondaryBreedID;
+        if (!empty($inputData->animalSex)) $this->ex = $inputData->animalSex;
+        if (!empty($inputData->animalShared)) $this->hared = $inputData->animalShared;
+        if (!empty($inputData->animalShedding)) $this->hedding = $inputData->animalShedding;
+        if (!empty($inputData->animalSizeCurrent)) $this->izeCurrent = $inputData->animalSizeCurrent;
+        if (!empty($inputData->animalSizePotential)) $this->izePotential = $inputData->animalSizePotential;
+        if (!empty($inputData->animalSizeUOM)) $this->izeUOM = $inputData->animalSizeUOM;
+        if (!empty($inputData->animalSpeciesID)) $this->peciesID = $inputData->animalSpeciesID;
+        if (!empty($inputData->animalSponsorable)) $this->ponsorable = $inputData->animalSponsorable;
+        if (!empty($inputData->animalSponsors)) $this->ponsors = $inputData->animalSponsors;
+        if (!empty($inputData->animalSponsorshipDetails)) $this->ponsorshipDetails = $inputData->animalSponsorshipDetails;
+        if (!empty($inputData->animalSponsorshipMinimum)) $this->ponsorshipMinimum = $inputData->animalSponsorshipMinimum;
+        if (!empty($inputData->animalStatusID)) $this->tatusID = $inputData->animalStatusID;
+        if (!empty($inputData->animalSummary)) $this->ummary = $inputData->animalSummary;
         if (!empty($inputData->animalTailType)) $this->animalTailType = $inputData->animalTailType;
         if (!empty($inputData->animalTransferredToID)) $this->animalTransferredToID = $inputData->animalTransferredToID;
         if (!empty($inputData->animalUptodate)) $this->animalUptodate = $inputData->animalUptodate;
@@ -997,17 +997,17 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->animalNoSmallDogs)) $this->animalNoSmallDogs = $inputData->animalNoSmallDogs;
         if (!empty($inputData->animalObedient)) $this->animalObedient = $inputData->animalObedient;
         if (!empty($inputData->animalOKForSeniors)) $this->animalOKForSeniors = $inputData->animalOKForSeniors;
-        if (!empty($inputData->animalOKWithFarmAnimals)) $this->animalOKWithFarmAnimals = $inputData->animalOKWithFarmAnimals;
+        if (!empty($inputData->animalOKWithFarmAnimals)) $this->animalOKWithFarm = $inputData->animalOKWithFarmAnimals;
         if (!empty($inputData->animalOlderKidsOnly)) $this->animalOlderKidsOnly = $inputData->animalOlderKidsOnly;
         if (!empty($inputData->animalOngoingMedical)) $this->animalOngoingMedical = $inputData->animalOngoingMedical;
         if (!empty($inputData->animalPlayful)) $this->animalPlayful = $inputData->animalPlayful;
         if (!empty($inputData->animalPlaysToys)) $this->animalPlaysToys = $inputData->animalPlaysToys;
         if (!empty($inputData->animalPredatory)) $this->animalPredatory = $inputData->animalPredatory;
         if (!empty($inputData->animalProtective)) $this->animalProtective = $inputData->animalProtective;
-        if (!empty($inputData->animalSightImpaired)) $this->animalSightImpaired = $inputData->animalSightImpaired;
-        if (!empty($inputData->animalSkittish)) $this->animalSkittish = $inputData->animalSkittish;
-        if (!empty($inputData->animalSpecialDiet)) $this->animalSpecialDiet = $inputData->animalSpecialDiet;
-        if (!empty($inputData->animalSwims)) $this->animalSwims = $inputData->animalSwims;
+        if (!empty($inputData->animalSightImpaired)) $this->ightImpaired = $inputData->animalSightImpaired;
+        if (!empty($inputData->animalSkittish)) $this->kittish = $inputData->animalSkittish;
+        if (!empty($inputData->animalSpecialDiet)) $this->pecialDiet = $inputData->animalSpecialDiet;
+        if (!empty($inputData->animalSwims)) $this->wims = $inputData->animalSwims;
         if (!empty($inputData->animalTimid)) $this->animalTimid = $inputData->animalTimid;
         if (!empty($inputData->animalGroups)) $this->animalGroups = $inputData->animalGroups;
         if (!empty($inputData->animalExportAccounts)) $this->animalExportAccounts = $inputData->animalExportAccounts;
@@ -1066,8 +1066,8 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->animalMicrochipVendor !== null) $output['animalMicrochipVendor'] = $this->animalMicrochipVendor;
         if ($this->animalMixedBreed !== null) $output['animalMixedBreed'] = $this->animalMixedBreed;
         if ($this->animalName !== null) $output['animalName'] = $this->animalName;
-        if ($this->animalSpecialneeds !== null) $output['animalSpecialneeds'] = $this->animalSpecialneeds;
-        if ($this->animalSpecialneedsDescription !== null) $output['animalSpecialneedsDescription'] = $this->animalSpecialneedsDescription;
+        if ($this->pecialneeds !== null) $output['animalSpecialneeds'] = $this->pecialneeds;
+        if ($this->pecialneedsDescription !== null) $output['animalSpecialneedsDescription'] = $this->pecialneedsDescription;
         if ($this->animalNeedsFoster !== null) $output['animalNeedsFoster'] = $this->animalNeedsFoster;
         if ($this->animalNewPeople !== null) $output['animalNewPeople'] = $this->animalNewPeople;
         if ($this->animalNotes !== null) $output['animalNotes'] = $this->animalNotes;
@@ -1086,20 +1086,20 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->animalPrimaryBreedID !== null) $output['animalPrimaryBreedID'] = $this->animalPrimaryBreedID;
         if ($this->animalReceivedDate !== null) $output['animalReceivedDate'] = $this->animalReceivedDate;
         if ($this->animalRescueID !== null) $output['animalRescueID'] = $this->animalRescueID;
-        if ($this->animalSecondaryBreedID !== null) $output['animalSecondaryBreedID'] = $this->animalSecondaryBreedID;
-        if ($this->animalSex !== null) $output['animalSex'] = $this->animalSex;
-        if ($this->animalShared !== null) $output['animalShared'] = $this->animalShared;
-        if ($this->animalShedding !== null) $output['animalShedding'] = $this->animalShedding;
-        if ($this->animalSizeCurrent !== null) $output['animalSizeCurrent'] = $this->animalSizeCurrent;
-        if ($this->animalSizePotential !== null) $output['animalSizePotential'] = $this->animalSizePotential;
-        if ($this->animalSizeUOM !== null) $output['animalSizeUOM'] = $this->animalSizeUOM;
-        if ($this->animalSpeciesID !== null) $output['animalSpeciesID'] = $this->animalSpeciesID;
-        if ($this->animalSponsorable !== null) $output['animalSponsorable'] = $this->animalSponsorable;
-        if ($this->animalSponsors !== null) $output['animalSponsors'] = $this->animalSponsors;
-        if ($this->animalSponsorshipDetails !== null) $output['animalSponsorshipDetails'] = $this->animalSponsorshipDetails;
-        if ($this->animalSponsorshipMinimum !== null) $output['animalSponsorshipMinimum'] = $this->animalSponsorshipMinimum;
-        if ($this->animalStatusID !== null) $output['animalStatusID'] = $this->animalStatusID;
-        if ($this->animalSummary !== null) $output['animalSummary'] = $this->animalSummary;
+        if ($this->econdaryBreedID !== null) $output['animalSecondaryBreedID'] = $this->econdaryBreedID;
+        if ($this->ex !== null) $output['animalSex'] = $this->ex;
+        if ($this->hared !== null) $output['animalShared'] = $this->hared;
+        if ($this->hedding !== null) $output['animalShedding'] = $this->hedding;
+        if ($this->izeCurrent !== null) $output['animalSizeCurrent'] = $this->izeCurrent;
+        if ($this->izePotential !== null) $output['animalSizePotential'] = $this->izePotential;
+        if ($this->izeUOM !== null) $output['animalSizeUOM'] = $this->izeUOM;
+        if ($this->peciesID !== null) $output['animalSpeciesID'] = $this->peciesID;
+        if ($this->ponsorable !== null) $output['animalSponsorable'] = $this->ponsorable;
+        if ($this->ponsors !== null) $output['animalSponsors'] = $this->ponsors;
+        if ($this->ponsorshipDetails !== null) $output['animalSponsorshipDetails'] = $this->ponsorshipDetails;
+        if ($this->ponsorshipMinimum !== null) $output['animalSponsorshipMinimum'] = $this->ponsorshipMinimum;
+        if ($this->tatusID !== null) $output['animalStatusID'] = $this->tatusID;
+        if ($this->ummary !== null) $output['animalSummary'] = $this->ummary;
         if ($this->animalTailType !== null) $output['animalTailType'] = $this->animalTailType;
         if ($this->animalTransferredToID !== null) $output['animalTransferredToID'] = $this->animalTransferredToID;
         if ($this->animalUptodate !== null) $output['animalUptodate'] = $this->animalUptodate;
@@ -1132,17 +1132,17 @@ class Animal implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->animalNoSmallDogs !== null) $output['animalNoSmallDogs'] = $this->animalNoSmallDogs;
         if ($this->animalObedient !== null) $output['animalObedient'] = $this->animalObedient;
         if ($this->animalOKForSeniors !== null) $output['animalOKForSeniors'] = $this->animalOKForSeniors;
-        if ($this->animalOKWithFarmAnimals !== null) $output['animalOKWithFarmAnimals'] = $this->animalOKWithFarmAnimals;
+        if ($this->animalOKWithFarm !== null) $output['animalOKWithFarmAnimals'] = $this->animalOKWithFarm;
         if ($this->animalOlderKidsOnly !== null) $output['animalOlderKidsOnly'] = $this->animalOlderKidsOnly;
         if ($this->animalOngoingMedical !== null) $output['animalOngoingMedical'] = $this->animalOngoingMedical;
         if ($this->animalPlayful !== null) $output['animalPlayful'] = $this->animalPlayful;
         if ($this->animalPlaysToys !== null) $output['animalPlaysToys'] = $this->animalPlaysToys;
         if ($this->animalPredatory !== null) $output['animalPredatory'] = $this->animalPredatory;
         if ($this->animalProtective !== null) $output['animalProtective'] = $this->animalProtective;
-        if ($this->animalSightImpaired !== null) $output['animalSightImpaired'] = $this->animalSightImpaired;
-        if ($this->animalSkittish !== null) $output['animalSkittish'] = $this->animalSkittish;
-        if ($this->animalSpecialDiet !== null) $output['animalSpecialDiet'] = $this->animalSpecialDiet;
-        if ($this->animalSwims !== null) $output['animalSwims'] = $this->animalSwims;
+        if ($this->ightImpaired !== null) $output['animalSightImpaired'] = $this->ightImpaired;
+        if ($this->kittish !== null) $output['animalSkittish'] = $this->kittish;
+        if ($this->pecialDiet !== null) $output['animalSpecialDiet'] = $this->pecialDiet;
+        if ($this->wims !== null) $output['animalSwims'] = $this->wims;
         if ($this->animalTimid !== null) $output['animalTimid'] = $this->animalTimid;
         if ($this->animalGroups !== null) $output['animalGroups'] = $this->animalGroups;
         if ($this->animalExportAccounts !== null) $output['animalExportAccounts'] = $this->animalExportAccounts;

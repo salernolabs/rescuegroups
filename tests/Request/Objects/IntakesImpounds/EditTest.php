@@ -30,10 +30,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->intakesImpoundLocation = 'testValue Impound Location';
         $testObject->intakesImpoundAddress = 'testValue Impound Street address';
         $testObject->intakesImpoundCity = 'testValue Impound City';
-        $testObject->intakesImpoundState = 'testValue Impound State/Province';
+        $testObject->tate = 'testValue Impound State/Province';
         $testObject->intakesImpoundPostalcode = 'testValue Impound Postal Code';
         $testObject->intakesImpoundFromID = 'testValue Impound From';
-        $testObject->intakesImpoundStaffID = 'testValue Impound Performed By';
+        $testObject->taffID = 'testValue Impound Performed By';
         $testObject->intakesImpoundReasonID = 'testValue Reason';
 
         $query->updateIntakesImpound($testObject);

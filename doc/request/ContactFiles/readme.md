@@ -58,7 +58,7 @@ Performs contactFiles.add add query to create an instance of an object. Uses spe
     $addObject->contactfileBinary = "File"
     $addObject->contactfileOldFileName = "Old file name"
     $addObject->contactfileDescription = "Description"
-    $addObject->contactfileStatus = "Status"
+    $addObject->tatus = "Status"
     $addObject->contactfileDisplayInline = "Inline"
 
     $query->addContactFile($addObject);
@@ -74,7 +74,7 @@ Performs contactFiles.edit edit query to edit an object. Uses classes of type [\
     $editObject = new \RescueGroups\Objects\ContactFile();
     $editObject->contactfileID = "File ID"
     $editObject->contactfileDescription = "Description"
-    $editObject->contactfileStatus = "Status"
+    $editObject->tatus = "Status"
     $editObject->contactfileDisplayInline = "Inline"
 
     $query->updateContactFile($editObject);

@@ -25,7 +25,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->animalfileBinary = 'testValue File';
         $testObject->animalfileOldFileName = 'testValue Old file name';
         $testObject->animalfileDescription = 'testValue Description';
-        $testObject->animalfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->animalfileDisplayInline = 'testValue Inline';
         $testObject->animalfilePublic = 'testValue Public';
 

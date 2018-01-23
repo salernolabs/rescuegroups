@@ -24,7 +24,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject = new \RescueGroups\Objects\ContactFile();
         $testObject->contactfileID = 'testValue File ID';
         $testObject->contactfileDescription = 'testValue Description';
-        $testObject->contactfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->contactfileDisplayInline = 'testValue Inline';
 
         $query->updateContactFile($testObject);

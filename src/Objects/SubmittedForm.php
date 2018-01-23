@@ -29,7 +29,7 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $submittedformStatusID = null;
+    public $tatusID = null;
 
 
     /**
@@ -42,7 +42,7 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->submittedformID)) $this->submittedformID = $inputData->submittedformID;
         if (!empty($inputData->submittedformAnimalID)) $this->submittedformAnimalID = $inputData->submittedformAnimalID;
-        if (!empty($inputData->submittedformStatusID)) $this->submittedformStatusID = $inputData->submittedformStatusID;
+        if (!empty($inputData->submittedformStatusID)) $this->tatusID = $inputData->submittedformStatusID;
     }
 
     /**
@@ -56,7 +56,7 @@ class SubmittedForm implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($includeId && $this->submittedformID !== null) $output['submittedformID'] = $this->submittedformID;
         if ($this->submittedformAnimalID !== null) $output['submittedformAnimalID'] = $this->submittedformAnimalID;
-        if ($this->submittedformStatusID !== null) $output['submittedformStatusID'] = $this->submittedformStatusID;
+        if ($this->tatusID !== null) $output['submittedformStatusID'] = $this->tatusID;
 
         return $output;
     }

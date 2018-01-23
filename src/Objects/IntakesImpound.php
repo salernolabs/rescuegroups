@@ -71,7 +71,7 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $intakesImpoundState = null;
+    public $tate = null;
 
     /**
      * Impound Postal Code
@@ -92,7 +92,7 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $intakesImpoundStaffID = null;
+    public $taffID = null;
 
     /**
      * Reason
@@ -118,10 +118,10 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->intakesImpoundLocation)) $this->intakesImpoundLocation = $inputData->intakesImpoundLocation;
         if (!empty($inputData->intakesImpoundAddress)) $this->intakesImpoundAddress = $inputData->intakesImpoundAddress;
         if (!empty($inputData->intakesImpoundCity)) $this->intakesImpoundCity = $inputData->intakesImpoundCity;
-        if (!empty($inputData->intakesImpoundState)) $this->intakesImpoundState = $inputData->intakesImpoundState;
+        if (!empty($inputData->intakesImpoundState)) $this->tate = $inputData->intakesImpoundState;
         if (!empty($inputData->intakesImpoundPostalcode)) $this->intakesImpoundPostalcode = $inputData->intakesImpoundPostalcode;
         if (!empty($inputData->intakesImpoundFromID)) $this->intakesImpoundFromID = $inputData->intakesImpoundFromID;
-        if (!empty($inputData->intakesImpoundStaffID)) $this->intakesImpoundStaffID = $inputData->intakesImpoundStaffID;
+        if (!empty($inputData->intakesImpoundStaffID)) $this->taffID = $inputData->intakesImpoundStaffID;
         if (!empty($inputData->intakesImpoundReasonID)) $this->intakesImpoundReasonID = $inputData->intakesImpoundReasonID;
     }
 
@@ -142,10 +142,10 @@ class IntakesImpound implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->intakesImpoundLocation !== null) $output['intakesImpoundLocation'] = $this->intakesImpoundLocation;
         if ($this->intakesImpoundAddress !== null) $output['intakesImpoundAddress'] = $this->intakesImpoundAddress;
         if ($this->intakesImpoundCity !== null) $output['intakesImpoundCity'] = $this->intakesImpoundCity;
-        if ($this->intakesImpoundState !== null) $output['intakesImpoundState'] = $this->intakesImpoundState;
+        if ($this->tate !== null) $output['intakesImpoundState'] = $this->tate;
         if ($this->intakesImpoundPostalcode !== null) $output['intakesImpoundPostalcode'] = $this->intakesImpoundPostalcode;
         if ($this->intakesImpoundFromID !== null) $output['intakesImpoundFromID'] = $this->intakesImpoundFromID;
-        if ($this->intakesImpoundStaffID !== null) $output['intakesImpoundStaffID'] = $this->intakesImpoundStaffID;
+        if ($this->taffID !== null) $output['intakesImpoundStaffID'] = $this->taffID;
         if ($this->intakesImpoundReasonID !== null) $output['intakesImpoundReasonID'] = $this->intakesImpoundReasonID;
 
         return $output;

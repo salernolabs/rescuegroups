@@ -57,7 +57,7 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $intakesServiceServicetypeID = null;
+    public $ervicetypeID = null;
 
 
     /**
@@ -74,7 +74,7 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->intakesServiceDate)) $this->intakesServiceDate = $inputData->intakesServiceDate;
         if (!empty($inputData->intakesServiceNotes)) $this->intakesServiceNotes = $inputData->intakesServiceNotes;
         if (!empty($inputData->intakesServiceOwnerID)) $this->intakesServiceOwnerID = $inputData->intakesServiceOwnerID;
-        if (!empty($inputData->intakesServiceServicetypeID)) $this->intakesServiceServicetypeID = $inputData->intakesServiceServicetypeID;
+        if (!empty($inputData->intakesServiceServicetypeID)) $this->ervicetypeID = $inputData->intakesServiceServicetypeID;
     }
 
     /**
@@ -92,7 +92,7 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->intakesServiceDate !== null) $output['intakesServiceDate'] = $this->intakesServiceDate;
         if ($this->intakesServiceNotes !== null) $output['intakesServiceNotes'] = $this->intakesServiceNotes;
         if ($this->intakesServiceOwnerID !== null) $output['intakesServiceOwnerID'] = $this->intakesServiceOwnerID;
-        if ($this->intakesServiceServicetypeID !== null) $output['intakesServiceServicetypeID'] = $this->intakesServiceServicetypeID;
+        if ($this->ervicetypeID !== null) $output['intakesServiceServicetypeID'] = $this->ervicetypeID;
 
         return $output;
     }

@@ -26,482 +26,482 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     const QUERY_LOGIN_REQUIRED = true;
 
     /**
-     * setAffiliatesPayPalEmail
+     * setPayPalEmail
      *
      * @var string
      */
-    private $setAffiliatesPayPalEmail = null;
+    private $setPayPalEmail = null;
 
     /**
-     * showAffiliatesPayPalLink
+     * showPayPalLink
      *
      * @var string
      */
-    private $showAffiliatesPayPalLink = null;
+    private $showPayPalLink = null;
 
     /**
-     * setAffiliatesIGiveCauseID
+     * setIGiveCauseID
      *
      * @var string
      */
-    private $setAffiliatesIGiveCauseID = null;
+    private $setIGiveCauseID = null;
 
     /**
-     * showAffiliatesIGiveLink
+     * showIGiveLink
      *
      * @var string
      */
-    private $showAffiliatesIGiveLink = null;
+    private $showIGiveLink = null;
 
     /**
-     * setAffiliatesAmazonTag
+     * setAmazonTag
      *
      * @var string
      */
-    private $setAffiliatesAmazonTag = null;
+    private $setAmazonTag = null;
 
     /**
-     * showAffiliatesAmazonLink
+     * showAmazonLink
      *
      * @var string
      */
-    private $showAffiliatesAmazonLink = null;
+    private $showAmazonLink = null;
 
     /**
-     * setAffiliatesUWID
+     * setUWID
      *
      * @var string
      */
-    private $setAffiliatesUWID = null;
+    private $setUWID = null;
 
     /**
-     * showAffiliatesUWLink
+     * showUWLink
      *
      * @var string
      */
-    private $showAffiliatesUWLink = null;
+    private $showUWLink = null;
 
     /**
-     * setAffiliatesCFCID
+     * setCFCID
      *
      * @var string
      */
-    private $setAffiliatesCFCID = null;
+    private $setCFCID = null;
 
     /**
-     * showAffiliatesCFCLink
+     * showCFCLink
      *
      * @var string
      */
-    private $showAffiliatesCFCLink = null;
+    private $showCFCLink = null;
 
     /**
-     * setAffiliatesVolunteerMatchOrgID
+     * setVolunteerMatchOrgID
      *
      * @var string
      */
-    private $setAffiliatesVolunteerMatchOrgID = null;
+    private $setVolunteerMatchOrgID = null;
 
     /**
-     * showAffiliatesVolunteerMatchLink
+     * showVolunteerMatchLink
      *
      * @var string
      */
-    private $showAffiliatesVolunteerMatchLink = null;
+    private $showVolunteerMatchLink = null;
 
     /**
-     * setAffiliatesEIN
+     * setEIN
      *
      * @var string
      */
-    private $setAffiliatesEIN = null;
+    private $setEIN = null;
 
     /**
-     * showAffiliatesHelpingLink
+     * showHelpingLink
      *
      * @var string
      */
-    private $showAffiliatesHelpingLink = null;
+    private $showHelpingLink = null;
 
     /**
-     * setAffiliatesEbayStoreName
+     * setEbayStoreName
      *
      * @var string
      */
-    private $setAffiliatesEbayStoreName = null;
+    private $setEbayStoreName = null;
 
     /**
-     * showAffiliatesEbayStoreLink
+     * showEbayStoreLink
      *
      * @var string
      */
-    private $showAffiliatesEbayStoreLink = null;
+    private $showEbayStoreLink = null;
 
     /**
-     * setAffiliatesByVetsOnlyPartner
+     * setByVetsOnlyPartner
      *
      * @var string
      */
-    private $setAffiliatesByVetsOnlyPartner = null;
+    private $setByVetsOnlyPartner = null;
 
     /**
-     * showAffiliatesByVetsOnlyLink
+     * showByVetsOnlyLink
      *
      * @var string
      */
-    private $showAffiliatesByVetsOnlyLink = null;
+    private $showByVetsOnlyLink = null;
 
     /**
-     * setAffiliatesFacebookPage
+     * setFacebookPage
      *
      * @var string
      */
-    private $setAffiliatesFacebookPage = null;
+    private $setFacebookPage = null;
 
     /**
-     * showAffiliatesFacebookLink
+     * showFacebookLink
      *
      * @var string
      */
-    private $showAffiliatesFacebookLink = null;
+    private $showFacebookLink = null;
 
     /**
-     * showAffiliatesFacebookBadge
+     * showFacebookBadge
      *
      * @var string
      */
-    private $showAffiliatesFacebookBadge = null;
+    private $showFacebookBadge = null;
 
     /**
-     * setAffiliatesTwitterAccount
+     * setTwitterAccount
      *
      * @var string
      */
-    private $setAffiliatesTwitterAccount = null;
+    private $setTwitterAccount = null;
 
     /**
-     * showAffiliatesTwitterLink
+     * showTwitterLink
      *
      * @var string
      */
-    private $showAffiliatesTwitterLink = null;
+    private $showTwitterLink = null;
 
     /**
-     * showAffiliatesTwitterBadge
+     * showTwitterBadge
      *
      * @var string
      */
-    private $showAffiliatesTwitterBadge = null;
+    private $showTwitterBadge = null;
 
 
     /**
-     * Set setAffiliatesPayPalEmail
+     * Set setPayPalEmail
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesPayPalEmail($value)
+    public function setSetPayPalEmail($value)
     {
-        $this->setAffiliatesPayPalEmail = $value;
+        $this->setPayPalEmail = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesPayPalLink
+     * Set showPayPalLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesPayPalLink($value)
+    public function setShowPayPalLink($value)
     {
-        $this->showAffiliatesPayPalLink = $value;
+        $this->showPayPalLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesIGiveCauseID
+     * Set setIGiveCauseID
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesIGiveCauseID($value)
+    public function setSetIGiveCauseID($value)
     {
-        $this->setAffiliatesIGiveCauseID = $value;
+        $this->setIGiveCauseID = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesIGiveLink
+     * Set showIGiveLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesIGiveLink($value)
+    public function setShowIGiveLink($value)
     {
-        $this->showAffiliatesIGiveLink = $value;
+        $this->showIGiveLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesAmazonTag
+     * Set setAmazonTag
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesAmazonTag($value)
+    public function setSetAmazonTag($value)
     {
-        $this->setAffiliatesAmazonTag = $value;
+        $this->setAmazonTag = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesAmazonLink
+     * Set showAmazonLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesAmazonLink($value)
+    public function setShowAmazonLink($value)
     {
-        $this->showAffiliatesAmazonLink = $value;
+        $this->showAmazonLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesUWID
+     * Set setUWID
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesUWID($value)
+    public function setSetUWID($value)
     {
-        $this->setAffiliatesUWID = $value;
+        $this->setUWID = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesUWLink
+     * Set showUWLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesUWLink($value)
+    public function setShowUWLink($value)
     {
-        $this->showAffiliatesUWLink = $value;
+        $this->showUWLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesCFCID
+     * Set setCFCID
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesCFCID($value)
+    public function setSetCFCID($value)
     {
-        $this->setAffiliatesCFCID = $value;
+        $this->setCFCID = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesCFCLink
+     * Set showCFCLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesCFCLink($value)
+    public function setShowCFCLink($value)
     {
-        $this->showAffiliatesCFCLink = $value;
+        $this->showCFCLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesVolunteerMatchOrgID
+     * Set setVolunteerMatchOrgID
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesVolunteerMatchOrgID($value)
+    public function setSetVolunteerMatchOrgID($value)
     {
-        $this->setAffiliatesVolunteerMatchOrgID = $value;
+        $this->setVolunteerMatchOrgID = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesVolunteerMatchLink
+     * Set showVolunteerMatchLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesVolunteerMatchLink($value)
+    public function setShowVolunteerMatchLink($value)
     {
-        $this->showAffiliatesVolunteerMatchLink = $value;
+        $this->showVolunteerMatchLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesEIN
+     * Set setEIN
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEIN($value)
+    public function setSetEIN($value)
     {
-        $this->setAffiliatesEIN = $value;
+        $this->setEIN = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesHelpingLink
+     * Set showHelpingLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesHelpingLink($value)
+    public function setShowHelpingLink($value)
     {
-        $this->showAffiliatesHelpingLink = $value;
+        $this->showHelpingLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesEbayStoreName
+     * Set setEbayStoreName
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEbayStoreName($value)
+    public function setSetEbayStoreName($value)
     {
-        $this->setAffiliatesEbayStoreName = $value;
+        $this->setEbayStoreName = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesEbayStoreLink
+     * Set showEbayStoreLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesEbayStoreLink($value)
+    public function setShowEbayStoreLink($value)
     {
-        $this->showAffiliatesEbayStoreLink = $value;
+        $this->showEbayStoreLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesByVetsOnlyPartner
+     * Set setByVetsOnlyPartner
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesByVetsOnlyPartner($value)
+    public function setSetByVetsOnlyPartner($value)
     {
-        $this->setAffiliatesByVetsOnlyPartner = $value;
+        $this->setByVetsOnlyPartner = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesByVetsOnlyLink
+     * Set showByVetsOnlyLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesByVetsOnlyLink($value)
+    public function setShowByVetsOnlyLink($value)
     {
-        $this->showAffiliatesByVetsOnlyLink = $value;
+        $this->showByVetsOnlyLink = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesFacebookPage
+     * Set setFacebookPage
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesFacebookPage($value)
+    public function setSetFacebookPage($value)
     {
-        $this->setAffiliatesFacebookPage = $value;
+        $this->setFacebookPage = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesFacebookLink
+     * Set showFacebookLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesFacebookLink($value)
+    public function setShowFacebookLink($value)
     {
-        $this->showAffiliatesFacebookLink = $value;
+        $this->showFacebookLink = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesFacebookBadge
+     * Set showFacebookBadge
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesFacebookBadge($value)
+    public function setShowFacebookBadge($value)
     {
-        $this->showAffiliatesFacebookBadge = $value;
+        $this->showFacebookBadge = $value;
 
         return $this;
     }
 
     /**
-     * Set setAffiliatesTwitterAccount
+     * Set setTwitterAccount
      *
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesTwitterAccount($value)
+    public function setSetTwitterAccount($value)
     {
-        $this->setAffiliatesTwitterAccount = $value;
+        $this->setTwitterAccount = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesTwitterLink
+     * Set showTwitterLink
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesTwitterLink($value)
+    public function setShowTwitterLink($value)
     {
-        $this->showAffiliatesTwitterLink = $value;
+        $this->showTwitterLink = $value;
 
         return $this;
     }
 
     /**
-     * Set showAffiliatesTwitterBadge
+     * Set showTwitterBadge
      *
      * @param string $value
      * @return $this
      */
-    public function setShowAffiliatesTwitterBadge($value)
+    public function setShowTwitterBadge($value)
     {
-        $this->showAffiliatesTwitterBadge = $value;
+        $this->showTwitterBadge = $value;
 
         return $this;
     }
@@ -516,29 +516,29 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->setAffiliatesPayPalEmail !== null) $parameterArray['values'][] = ["setAffiliatesPayPalEmail"=>$this->setAffiliatesPayPalEmail];
-        if ($this->showAffiliatesPayPalLink !== null) $parameterArray['values'][] = ["showAffiliatesPayPalLink"=>$this->showAffiliatesPayPalLink];
-        if ($this->setAffiliatesIGiveCauseID !== null) $parameterArray['values'][] = ["setAffiliatesIGiveCauseID"=>$this->setAffiliatesIGiveCauseID];
-        if ($this->showAffiliatesIGiveLink !== null) $parameterArray['values'][] = ["showAffiliatesIGiveLink"=>$this->showAffiliatesIGiveLink];
-        if ($this->setAffiliatesAmazonTag !== null) $parameterArray['values'][] = ["setAffiliatesAmazonTag"=>$this->setAffiliatesAmazonTag];
-        if ($this->showAffiliatesAmazonLink !== null) $parameterArray['values'][] = ["showAffiliatesAmazonLink"=>$this->showAffiliatesAmazonLink];
-        if ($this->setAffiliatesUWID !== null) $parameterArray['values'][] = ["setAffiliatesUWID"=>$this->setAffiliatesUWID];
-        if ($this->showAffiliatesUWLink !== null) $parameterArray['values'][] = ["showAffiliatesUWLink"=>$this->showAffiliatesUWLink];
-        if ($this->setAffiliatesCFCID !== null) $parameterArray['values'][] = ["setAffiliatesCFCID"=>$this->setAffiliatesCFCID];
-        if ($this->showAffiliatesCFCLink !== null) $parameterArray['values'][] = ["showAffiliatesCFCLink"=>$this->showAffiliatesCFCLink];
-        if ($this->setAffiliatesVolunteerMatchOrgID !== null) $parameterArray['values'][] = ["setAffiliatesVolunteerMatchOrgID"=>$this->setAffiliatesVolunteerMatchOrgID];
-        if ($this->showAffiliatesVolunteerMatchLink !== null) $parameterArray['values'][] = ["showAffiliatesVolunteerMatchLink"=>$this->showAffiliatesVolunteerMatchLink];
-        if ($this->setAffiliatesEIN !== null) $parameterArray['values'][] = ["setAffiliatesEIN"=>$this->setAffiliatesEIN];
-        if ($this->showAffiliatesHelpingLink !== null) $parameterArray['values'][] = ["showAffiliatesHelpingLink"=>$this->showAffiliatesHelpingLink];
-        if ($this->setAffiliatesEbayStoreName !== null) $parameterArray['values'][] = ["setAffiliatesEbayStoreName"=>$this->setAffiliatesEbayStoreName];
-        if ($this->showAffiliatesEbayStoreLink !== null) $parameterArray['values'][] = ["showAffiliatesEbayStoreLink"=>$this->showAffiliatesEbayStoreLink];
-        if ($this->setAffiliatesByVetsOnlyPartner !== null) $parameterArray['values'][] = ["setAffiliatesByVetsOnlyPartner"=>$this->setAffiliatesByVetsOnlyPartner];
-        if ($this->showAffiliatesByVetsOnlyLink !== null) $parameterArray['values'][] = ["showAffiliatesByVetsOnlyLink"=>$this->showAffiliatesByVetsOnlyLink];
-        if ($this->setAffiliatesFacebookPage !== null) $parameterArray['values'][] = ["setAffiliatesFacebookPage"=>$this->setAffiliatesFacebookPage];
-        if ($this->showAffiliatesFacebookLink !== null) $parameterArray['values'][] = ["showAffiliatesFacebookLink"=>$this->showAffiliatesFacebookLink];
-        if ($this->showAffiliatesFacebookBadge !== null) $parameterArray['values'][] = ["showAffiliatesFacebookBadge"=>$this->showAffiliatesFacebookBadge];
-        if ($this->setAffiliatesTwitterAccount !== null) $parameterArray['values'][] = ["setAffiliatesTwitterAccount"=>$this->setAffiliatesTwitterAccount];
-        if ($this->showAffiliatesTwitterLink !== null) $parameterArray['values'][] = ["showAffiliatesTwitterLink"=>$this->showAffiliatesTwitterLink];
-        if ($this->showAffiliatesTwitterBadge !== null) $parameterArray['values'][] = ["showAffiliatesTwitterBadge"=>$this->showAffiliatesTwitterBadge];
+        if ($this->setPayPalEmail !== null) $parameterArray['values'][] = ["setAffiliatesPayPalEmail"=>$this->setPayPalEmail];
+        if ($this->showPayPalLink !== null) $parameterArray['values'][] = ["showAffiliatesPayPalLink"=>$this->showPayPalLink];
+        if ($this->setIGiveCauseID !== null) $parameterArray['values'][] = ["setAffiliatesIGiveCauseID"=>$this->setIGiveCauseID];
+        if ($this->showIGiveLink !== null) $parameterArray['values'][] = ["showAffiliatesIGiveLink"=>$this->showIGiveLink];
+        if ($this->setAmazonTag !== null) $parameterArray['values'][] = ["setAffiliatesAmazonTag"=>$this->setAmazonTag];
+        if ($this->showAmazonLink !== null) $parameterArray['values'][] = ["showAffiliatesAmazonLink"=>$this->showAmazonLink];
+        if ($this->setUWID !== null) $parameterArray['values'][] = ["setAffiliatesUWID"=>$this->setUWID];
+        if ($this->showUWLink !== null) $parameterArray['values'][] = ["showAffiliatesUWLink"=>$this->showUWLink];
+        if ($this->setCFCID !== null) $parameterArray['values'][] = ["setAffiliatesCFCID"=>$this->setCFCID];
+        if ($this->showCFCLink !== null) $parameterArray['values'][] = ["showAffiliatesCFCLink"=>$this->showCFCLink];
+        if ($this->setVolunteerMatchOrgID !== null) $parameterArray['values'][] = ["setAffiliatesVolunteerMatchOrgID"=>$this->setVolunteerMatchOrgID];
+        if ($this->showVolunteerMatchLink !== null) $parameterArray['values'][] = ["showAffiliatesVolunteerMatchLink"=>$this->showVolunteerMatchLink];
+        if ($this->setEIN !== null) $parameterArray['values'][] = ["setAffiliatesEIN"=>$this->setEIN];
+        if ($this->showHelpingLink !== null) $parameterArray['values'][] = ["showAffiliatesHelpingLink"=>$this->showHelpingLink];
+        if ($this->setEbayStoreName !== null) $parameterArray['values'][] = ["setAffiliatesEbayStoreName"=>$this->setEbayStoreName];
+        if ($this->showEbayStoreLink !== null) $parameterArray['values'][] = ["showAffiliatesEbayStoreLink"=>$this->showEbayStoreLink];
+        if ($this->setByVetsOnlyPartner !== null) $parameterArray['values'][] = ["setAffiliatesByVetsOnlyPartner"=>$this->setByVetsOnlyPartner];
+        if ($this->showByVetsOnlyLink !== null) $parameterArray['values'][] = ["showAffiliatesByVetsOnlyLink"=>$this->showByVetsOnlyLink];
+        if ($this->setFacebookPage !== null) $parameterArray['values'][] = ["setAffiliatesFacebookPage"=>$this->setFacebookPage];
+        if ($this->showFacebookLink !== null) $parameterArray['values'][] = ["showAffiliatesFacebookLink"=>$this->showFacebookLink];
+        if ($this->showFacebookBadge !== null) $parameterArray['values'][] = ["showAffiliatesFacebookBadge"=>$this->showFacebookBadge];
+        if ($this->setTwitterAccount !== null) $parameterArray['values'][] = ["setAffiliatesTwitterAccount"=>$this->setTwitterAccount];
+        if ($this->showTwitterLink !== null) $parameterArray['values'][] = ["showAffiliatesTwitterLink"=>$this->showTwitterLink];
+        if ($this->showTwitterBadge !== null) $parameterArray['values'][] = ["showAffiliatesTwitterBadge"=>$this->showTwitterBadge];
     }
 }

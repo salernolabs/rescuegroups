@@ -36,7 +36,7 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $inventoryfileStatus = null;
+    public $tatus = null;
 
     /**
      * Inline
@@ -57,7 +57,7 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->inventoryfileID)) $this->inventoryfileID = $inputData->inventoryfileID;
         if (!empty($inputData->inventoryfileItemID)) $this->inventoryfileItemID = $inputData->inventoryfileItemID;
         if (!empty($inputData->inventoryfileDescription)) $this->inventoryfileDescription = $inputData->inventoryfileDescription;
-        if (!empty($inputData->inventoryfileStatus)) $this->inventoryfileStatus = $inputData->inventoryfileStatus;
+        if (!empty($inputData->inventoryfileStatus)) $this->tatus = $inputData->inventoryfileStatus;
         if (!empty($inputData->inventoryfileDisplayInline)) $this->inventoryfileDisplayInline = $inputData->inventoryfileDisplayInline;
     }
 
@@ -73,7 +73,7 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
         if ($includeId && $this->inventoryfileID !== null) $output['inventoryfileID'] = $this->inventoryfileID;
         if ($this->inventoryfileItemID !== null) $output['inventoryfileItemID'] = $this->inventoryfileItemID;
         if ($this->inventoryfileDescription !== null) $output['inventoryfileDescription'] = $this->inventoryfileDescription;
-        if ($this->inventoryfileStatus !== null) $output['inventoryfileStatus'] = $this->inventoryfileStatus;
+        if ($this->tatus !== null) $output['inventoryfileStatus'] = $this->tatus;
         if ($this->inventoryfileDisplayInline !== null) $output['inventoryfileDisplayInline'] = $this->inventoryfileDisplayInline;
 
         return $output;

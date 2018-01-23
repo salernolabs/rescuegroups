@@ -43,7 +43,7 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $animalfileStatus = null;
+    public $tatus = null;
 
     /**
      * Inline
@@ -72,7 +72,7 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->animalfileBinary)) $this->animalfileBinary = $inputData->animalfileBinary;
         if (!empty($inputData->animalfileOldFileName)) $this->animalfileOldFileName = $inputData->animalfileOldFileName;
         if (!empty($inputData->animalfileDescription)) $this->animalfileDescription = $inputData->animalfileDescription;
-        if (!empty($inputData->animalfileStatus)) $this->animalfileStatus = $inputData->animalfileStatus;
+        if (!empty($inputData->animalfileStatus)) $this->tatus = $inputData->animalfileStatus;
         if (!empty($inputData->animalfileDisplayInline)) $this->animalfileDisplayInline = $inputData->animalfileDisplayInline;
         if (!empty($inputData->animalfilePublic)) $this->animalfilePublic = $inputData->animalfilePublic;
     }
@@ -90,7 +90,7 @@ class AnimalFile implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->animalfileBinary !== null) $output['animalfileBinary'] = $this->animalfileBinary;
         if ($this->animalfileOldFileName !== null) $output['animalfileOldFileName'] = $this->animalfileOldFileName;
         if ($this->animalfileDescription !== null) $output['animalfileDescription'] = $this->animalfileDescription;
-        if ($this->animalfileStatus !== null) $output['animalfileStatus'] = $this->animalfileStatus;
+        if ($this->tatus !== null) $output['animalfileStatus'] = $this->tatus;
         if ($this->animalfileDisplayInline !== null) $output['animalfileDisplayInline'] = $this->animalfileDisplayInline;
         if ($this->animalfilePublic !== null) $output['animalfilePublic'] = $this->animalfilePublic;
 

@@ -54,10 +54,10 @@ Performs intakesImpounds.add add query to create an instance of an object. Uses 
     $addObject->intakesImpoundLocation = "Impound Location"
     $addObject->intakesImpoundAddress = "Impound Street address"
     $addObject->intakesImpoundCity = "Impound City"
-    $addObject->intakesImpoundState = "Impound State/Province"
+    $addObject->tate = "Impound State/Province"
     $addObject->intakesImpoundPostalcode = "Impound Postal Code"
     $addObject->intakesImpoundFromID = "Impound From"
-    $addObject->intakesImpoundStaffID = "Impound Performed By"
+    $addObject->taffID = "Impound Performed By"
     $addObject->intakesImpoundReasonID = "Reason"
 
     $query->addIntakesImpound($addObject);
@@ -79,10 +79,10 @@ Performs intakesImpounds.edit edit query to edit an object. Uses classes of type
     $editObject->intakesImpoundLocation = "Impound Location"
     $editObject->intakesImpoundAddress = "Impound Street address"
     $editObject->intakesImpoundCity = "Impound City"
-    $editObject->intakesImpoundState = "Impound State/Province"
+    $editObject->tate = "Impound State/Province"
     $editObject->intakesImpoundPostalcode = "Impound Postal Code"
     $editObject->intakesImpoundFromID = "Impound From"
-    $editObject->intakesImpoundStaffID = "Impound Performed By"
+    $editObject->taffID = "Impound Performed By"
     $editObject->intakesImpoundReasonID = "Reason"
 
     $query->updateIntakesImpound($editObject);
@@ -103,10 +103,10 @@ Performs intakesImpounds.change query.
     $query->setintakesImpoundLocation("Impound Location");
     $query->setintakesImpoundAddress("Impound Street address");
     $query->setintakesImpoundCity("Impound City");
-    $query->setintakesImpoundState("Impound State/Province");
+    $query->settate("Impound State/Province");
     $query->setintakesImpoundPostalcode("Impound Postal Code");
     $query->setintakesImpoundFromID("Impound From");
-    $query->setintakesImpoundStaffID("Impound Performed By");
+    $query->settaffID("Impound Performed By");
     $query->setintakesImpoundReasonID("Reason");
 
     $result = $api->executeRequest($query);

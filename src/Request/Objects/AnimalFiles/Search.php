@@ -39,10 +39,10 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "animalfileAnimalID" => [1, 'animalfileAnimalID'],
         "animalfileOldName" => [0, 'animalfileOldName'],
         "animalfileDescription" => [0, 'animalfileDescription'],
-        "animalfileStatus" => [0, 'animalfileStatus'],
+        "tatus" => [0, 'animalfileStatus'],
         "animalfileDisplayInline" => [0, 'animalfileDisplayInline'],
         "animalfilePublic" => [0, 'animalfilePublic'],
-        "animalfileSize" => [0, 'animalfileSize'],
+        "ize" => [0, 'animalfileSize'],
         "animalfileCreatedDate" => [0, 'animalfileCreatedDate'],
     ];
 

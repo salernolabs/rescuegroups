@@ -29,7 +29,7 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $webfileStatus = null;
+    public $tatus = null;
 
     /**
      * Inline
@@ -56,7 +56,7 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->webfileID)) $this->webfileID = $inputData->webfileID;
         if (!empty($inputData->webfileDescription)) $this->webfileDescription = $inputData->webfileDescription;
-        if (!empty($inputData->webfileStatus)) $this->webfileStatus = $inputData->webfileStatus;
+        if (!empty($inputData->webfileStatus)) $this->tatus = $inputData->webfileStatus;
         if (!empty($inputData->webfileDisplayInline)) $this->webfileDisplayInline = $inputData->webfileDisplayInline;
         if (!empty($inputData->webfileRoleID)) $this->webfileRoleID = $inputData->webfileRoleID;
     }
@@ -72,7 +72,7 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($includeId && $this->webfileID !== null) $output['webfileID'] = $this->webfileID;
         if ($this->webfileDescription !== null) $output['webfileDescription'] = $this->webfileDescription;
-        if ($this->webfileStatus !== null) $output['webfileStatus'] = $this->webfileStatus;
+        if ($this->tatus !== null) $output['webfileStatus'] = $this->tatus;
         if ($this->webfileDisplayInline !== null) $output['webfileDisplayInline'] = $this->webfileDisplayInline;
         if ($this->webfileRoleID !== null) $output['webfileRoleID'] = $this->webfileRoleID;
 

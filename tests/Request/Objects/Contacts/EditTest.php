@@ -24,13 +24,13 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject = new \RescueGroups\Objects\Contact();
         $testObject->contactID = 'testValue ID';
         $testObject->contactClass = 'testValue Class';
-        $testObject->contactSalutation = 'testValue Salutation';
+        $testObject->alutation = 'testValue Salutation';
         $testObject->contactFirstname = 'testValue First name';
         $testObject->contactLastname = 'testValue Last name';
         $testObject->contactTitle = 'testValue Title';
         $testObject->contactAddress = 'testValue Street address';
         $testObject->contactCity = 'testValue City';
-        $testObject->contactState = 'testValue State/Province';
+        $testObject->tate = 'testValue State/Province';
         $testObject->contactPostalcode = 'testValue Postal Code';
         $testObject->contactPlus4 = 'testValue Zip code plus 4';
         $testObject->contactCounty = 'testValue County';
@@ -46,7 +46,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->contactCompany = 'testValue Company';
         $testObject->contactReferredBy = 'testValue Referred by';
         $testObject->contactCarrier = 'testValue Carrier';
-        $testObject->contactSendMail = 'testValue Send mail';
+        $testObject->endMail = 'testValue Send mail';
         $testObject->contactActive = 'testValue Active';
         $testObject->contactComment = 'testValue Comment';
         $testObject->contactCoalitionMember = 'testValue Coalition member';

@@ -36,7 +36,7 @@ class WebPage implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $webpageStatus = null;
+    public $tatus = null;
 
     /**
      * Use Layout
@@ -50,7 +50,7 @@ class WebPage implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $webpageShowonmenu = null;
+    public $howonmenu = null;
 
     /**
      * Meta Description
@@ -92,9 +92,9 @@ class WebPage implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->webpageID)) $this->webpageID = $inputData->webpageID;
         if (!empty($inputData->webpageName)) $this->webpageName = $inputData->webpageName;
         if (!empty($inputData->webpageContent)) $this->webpageContent = $inputData->webpageContent;
-        if (!empty($inputData->webpageStatus)) $this->webpageStatus = $inputData->webpageStatus;
+        if (!empty($inputData->webpageStatus)) $this->tatus = $inputData->webpageStatus;
         if (!empty($inputData->webpageUselayout)) $this->webpageUselayout = $inputData->webpageUselayout;
-        if (!empty($inputData->webpageShowonmenu)) $this->webpageShowonmenu = $inputData->webpageShowonmenu;
+        if (!empty($inputData->webpageShowonmenu)) $this->howonmenu = $inputData->webpageShowonmenu;
         if (!empty($inputData->webpageMetaDescription)) $this->webpageMetaDescription = $inputData->webpageMetaDescription;
         if (!empty($inputData->webpageBackgroundImageID)) $this->webpageBackgroundImageID = $inputData->webpageBackgroundImageID;
         if (!empty($inputData->webpageBackgroundMusicID)) $this->webpageBackgroundMusicID = $inputData->webpageBackgroundMusicID;
@@ -113,9 +113,9 @@ class WebPage implements \RescueGroups\Objects\APIEncodableInterface
         if ($includeId && $this->webpageID !== null) $output['webpageID'] = $this->webpageID;
         if ($this->webpageName !== null) $output['webpageName'] = $this->webpageName;
         if ($this->webpageContent !== null) $output['webpageContent'] = $this->webpageContent;
-        if ($this->webpageStatus !== null) $output['webpageStatus'] = $this->webpageStatus;
+        if ($this->tatus !== null) $output['webpageStatus'] = $this->tatus;
         if ($this->webpageUselayout !== null) $output['webpageUselayout'] = $this->webpageUselayout;
-        if ($this->webpageShowonmenu !== null) $output['webpageShowonmenu'] = $this->webpageShowonmenu;
+        if ($this->howonmenu !== null) $output['webpageShowonmenu'] = $this->howonmenu;
         if ($this->webpageMetaDescription !== null) $output['webpageMetaDescription'] = $this->webpageMetaDescription;
         if ($this->webpageBackgroundImageID !== null) $output['webpageBackgroundImageID'] = $this->webpageBackgroundImageID;
         if ($this->webpageBackgroundMusicID !== null) $output['webpageBackgroundMusicID'] = $this->webpageBackgroundMusicID;

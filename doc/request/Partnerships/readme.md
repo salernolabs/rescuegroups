@@ -47,7 +47,7 @@ Performs partnerships.request query.
 
     $query = new \RescueGroups\Request\Objects\Partnerships\Request();
 
-    $query->setpartnershipSharingOrgID("Sharing Org");
+    $query->setharingOrgID("Sharing Org");
 
     $result = $api->executeRequest($query);
 
@@ -68,7 +68,7 @@ Performs partnerships.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Partnerships\UpdateSettings();
 
-    $query->setenablePartnerships("Enable the Partnerships feature");
+    $query->setenable("Enable the Partnerships feature");
     $query->setsetPartnershipAlertEmailAddresses("Partnership alert email address(es)");
 
     $result = $api->executeRequest($query);

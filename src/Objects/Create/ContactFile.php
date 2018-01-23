@@ -43,7 +43,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactfileStatus = null;
+    public $tatus = null;
 
     /**
      * Inline
@@ -65,7 +65,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->contactfileBinary)) $this->contactfileBinary = $inputData->contactfileBinary;
         if (!empty($inputData->contactfileOldFileName)) $this->contactfileOldFileName = $inputData->contactfileOldFileName;
         if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
-        if (!empty($inputData->contactfileStatus)) $this->contactfileStatus = $inputData->contactfileStatus;
+        if (!empty($inputData->contactfileStatus)) $this->tatus = $inputData->contactfileStatus;
         if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;
     }
 
@@ -82,7 +82,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->contactfileBinary !== null) $output['contactfileBinary'] = $this->contactfileBinary;
         if ($this->contactfileOldFileName !== null) $output['contactfileOldFileName'] = $this->contactfileOldFileName;
         if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->contactfileStatus !== null) $output['contactfileStatus'] = $this->contactfileStatus;
+        if ($this->tatus !== null) $output['contactfileStatus'] = $this->tatus;
         if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;
 
         return $output;

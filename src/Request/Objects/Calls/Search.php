@@ -38,7 +38,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "callID" => [1, 'callID'],
         "callContactID" => [0, 'callContactID'],
         "callAssignedID" => [0, 'callAssignedID'],
-        "callStatusID" => [0, 'callStatusID'],
+        "tatusID" => [0, 'callStatusID'],
         "callUrgencyID" => [0, 'callUrgencyID'],
         "callCategoryID" => [0, 'callCategoryID'],
         "callQueueID" => [0, 'callQueueID'],

@@ -54,7 +54,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "locationPhoneExt" => [0, 'locationPhoneExt'],
         "locationAnimals" => [0, 'locationAnimals'],
         "locationEvents" => [0, 'locationEvents'],
-        "locationColonies" => [0, 'locationColonies'],
+        "location" => [0, 'locationColonies'],
         "locationMeetrequests" => [0, 'locationMeetrequests'],
     ];
 

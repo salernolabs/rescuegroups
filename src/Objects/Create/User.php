@@ -29,7 +29,7 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $userSalutation = null;
+    public $alutation = null;
 
     /**
      * First name
@@ -64,7 +64,7 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $userState = null;
+    public $tate = null;
 
     /**
      * Postal Code
@@ -162,7 +162,7 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $userStatus = null;
+    public $tatus = null;
 
 
     /**
@@ -175,12 +175,12 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->userLogin)) $this->userLogin = $inputData->userLogin;
         if (!empty($inputData->userPassword)) $this->userPassword = $inputData->userPassword;
-        if (!empty($inputData->userSalutation)) $this->userSalutation = $inputData->userSalutation;
+        if (!empty($inputData->userSalutation)) $this->alutation = $inputData->userSalutation;
         if (!empty($inputData->userFirstname)) $this->userFirstname = $inputData->userFirstname;
         if (!empty($inputData->userLastname)) $this->userLastname = $inputData->userLastname;
         if (!empty($inputData->userAddress)) $this->userAddress = $inputData->userAddress;
         if (!empty($inputData->userCity)) $this->userCity = $inputData->userCity;
-        if (!empty($inputData->userState)) $this->userState = $inputData->userState;
+        if (!empty($inputData->userState)) $this->tate = $inputData->userState;
         if (!empty($inputData->userPostalcode)) $this->userPostalcode = $inputData->userPostalcode;
         if (!empty($inputData->userPlus4)) $this->userPlus4 = $inputData->userPlus4;
         if (!empty($inputData->userCountry)) $this->userCountry = $inputData->userCountry;
@@ -194,7 +194,7 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->userEmailPager)) $this->userEmailPager = $inputData->userEmailPager;
         if (!empty($inputData->userContactID)) $this->userContactID = $inputData->userContactID;
         if (!empty($inputData->userType)) $this->userType = $inputData->userType;
-        if (!empty($inputData->userStatus)) $this->userStatus = $inputData->userStatus;
+        if (!empty($inputData->userStatus)) $this->tatus = $inputData->userStatus;
     }
 
     /**
@@ -208,12 +208,12 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($this->userLogin !== null) $output['userLogin'] = $this->userLogin;
         if ($this->userPassword !== null) $output['userPassword'] = $this->userPassword;
-        if ($this->userSalutation !== null) $output['userSalutation'] = $this->userSalutation;
+        if ($this->alutation !== null) $output['userSalutation'] = $this->alutation;
         if ($this->userFirstname !== null) $output['userFirstname'] = $this->userFirstname;
         if ($this->userLastname !== null) $output['userLastname'] = $this->userLastname;
         if ($this->userAddress !== null) $output['userAddress'] = $this->userAddress;
         if ($this->userCity !== null) $output['userCity'] = $this->userCity;
-        if ($this->userState !== null) $output['userState'] = $this->userState;
+        if ($this->tate !== null) $output['userState'] = $this->tate;
         if ($this->userPostalcode !== null) $output['userPostalcode'] = $this->userPostalcode;
         if ($this->userPlus4 !== null) $output['userPlus4'] = $this->userPlus4;
         if ($includeId && $this->userCountry !== null) $output['userCountry'] = $this->userCountry;
@@ -227,7 +227,7 @@ class User implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->userEmailPager !== null) $output['userEmailPager'] = $this->userEmailPager;
         if ($this->userContactID !== null) $output['userContactID'] = $this->userContactID;
         if ($this->userType !== null) $output['userType'] = $this->userType;
-        if ($this->userStatus !== null) $output['userStatus'] = $this->userStatus;
+        if ($this->tatus !== null) $output['userStatus'] = $this->tatus;
 
         return $output;
     }

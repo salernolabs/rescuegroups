@@ -38,14 +38,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "partnershipID" => [1, 'partnershipID'],
         "partnershipRequestOrgID" => [0, 'partnershipRequestOrgID'],
         "partnershipRequestOrgName" => [0, 'partnershipRequestOrgName'],
-        "partnershipSharingOrgID" => [0, 'partnershipSharingOrgID'],
-        "partnershipSharingOrgName" => [0, 'partnershipSharingOrgName'],
+        "haringOrgID" => [0, 'partnershipSharingOrgID'],
+        "haringOrgName" => [0, 'partnershipSharingOrgName'],
         "partnershipRequestDate" => [0, 'partnershipRequestDate'],
         "partnershipRequestedByID" => [0, 'partnershipRequestedByID'],
         "partnershipRequestedBy" => [0, 'partnershipRequestedBy'],
         "partnershipResponseByID" => [0, 'partnershipResponseByID'],
         "partnershipResponseBy" => [0, 'partnershipResponseBy'],
-        "partnershipStatus" => [0, 'partnershipStatus'],
+        "tatus" => [0, 'partnershipStatus'],
         "partnershipResponseDate" => [0, 'partnershipResponseDate'],
     ];
 

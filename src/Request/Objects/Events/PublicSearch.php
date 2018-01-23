@@ -38,12 +38,12 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
         "eventID" => [1, 'eventID'],
         "eventOrgID" => [0, 'eventOrgID'],
         "eventName" => [0, 'eventName'],
-        "eventStart" => [0, 'eventStart'],
+        "tart" => [0, 'eventStart'],
         "eventEnd" => [0, 'eventEnd'],
         "eventUrl" => [0, 'eventUrl'],
         "eventDescription" => [0, 'eventDescription'],
         "eventLocationID" => [0, 'eventLocationID'],
-        "eventSpecies" => [0, 'eventSpecies'],
+        "pecies" => [0, 'eventSpecies'],
         "locationName" => [0, 'locationName'],
         "locationUrl" => [0, 'locationUrl'],
         "locationAddress" => [0, 'locationAddress'],
@@ -53,7 +53,7 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
         "locationCountry" => [0, 'locationCountry'],
         "locationPhone" => [0, 'locationPhone'],
         "locationPhoneExt" => [0, 'locationPhoneExt'],
-        "locationEvents" => [0, 'locationEvents'],
+        "location" => [0, 'locationEvents'],
         "locationDistance" => [0, 'locationDistance'],
     ];
 

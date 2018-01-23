@@ -61,7 +61,7 @@ Performs outcomesReleases.add add query to create an instance of an object. Uses
     $addObject->outcomesReleaseLocation = "Location"
     $addObject->outcomesReleaseAddress = "Street address"
     $addObject->outcomesReleaseCity = "City"
-    $addObject->outcomesReleaseState = "State/Province"
+    $addObject->tate = "State/Province"
     $addObject->outcomesReleasePostalcode = "Postal Code"
     $addObject->outcomesReleaseByID = "Released By"
 
@@ -83,7 +83,7 @@ Performs outcomesReleases.edit edit query to edit an object. Uses classes of typ
     $editObject->outcomesReleaseLocation = "Location"
     $editObject->outcomesReleaseAddress = "Street address"
     $editObject->outcomesReleaseCity = "City"
-    $editObject->outcomesReleaseState = "State/Province"
+    $editObject->tate = "State/Province"
     $editObject->outcomesReleasePostalcode = "Postal Code"
     $editObject->outcomesReleaseByID = "Released By"
 
@@ -104,7 +104,7 @@ Performs outcomesReleases.change query.
     $query->setoutcomesReleaseLocation("Location");
     $query->setoutcomesReleaseAddress("Street address");
     $query->setoutcomesReleaseCity("City");
-    $query->setoutcomesReleaseState("State/Province");
+    $query->settate("State/Province");
     $query->setoutcomesReleasePostalcode("Postal Code");
     $query->setoutcomesReleaseByID("Released By");
 

@@ -54,10 +54,10 @@ Performs intakesStraypickups.add add query to create an instance of an object. U
     $addObject->intakesStraypickupLocation = "Pickup Location"
     $addObject->intakesStraypickupAddress = "Pickup Street address"
     $addObject->intakesStraypickupCity = "Pickup City"
-    $addObject->intakesStraypickupState = "Pickup State/Province"
+    $addObject->tate = "Pickup State/Province"
     $addObject->intakesStraypickupPostalcode = "Pickup Postal Code"
     $addObject->intakesStraypickupFinderID = "Found By"
-    $addObject->intakesStraypickupStaffID = "Pickup By"
+    $addObject->taffID = "Pickup By"
 
     $query->addIntakesStrayPickup($addObject);
 
@@ -78,10 +78,10 @@ Performs intakesStraypickups.edit edit query to edit an object. Uses classes of 
     $editObject->intakesStraypickupLocation = "Pickup Location"
     $editObject->intakesStraypickupAddress = "Pickup Street address"
     $editObject->intakesStraypickupCity = "Pickup City"
-    $editObject->intakesStraypickupState = "Pickup State/Province"
+    $editObject->tate = "Pickup State/Province"
     $editObject->intakesStraypickupPostalcode = "Pickup Postal Code"
     $editObject->intakesStraypickupFinderID = "Found By"
-    $editObject->intakesStraypickupStaffID = "Pickup By"
+    $editObject->taffID = "Pickup By"
 
     $query->updateIntakesStrayPickup($editObject);
 
@@ -101,10 +101,10 @@ Performs intakesStraypickups.change query.
     $query->setintakesStraypickupLocation("Pickup Location");
     $query->setintakesStraypickupAddress("Pickup Street address");
     $query->setintakesStraypickupCity("Pickup City");
-    $query->setintakesStraypickupState("Pickup State/Province");
+    $query->settate("Pickup State/Province");
     $query->setintakesStraypickupPostalcode("Pickup Postal Code");
     $query->setintakesStraypickupFinderID("Found By");
-    $query->setintakesStraypickupStaffID("Pickup By");
+    $query->settaffID("Pickup By");
 
     $result = $api->executeRequest($query);
 

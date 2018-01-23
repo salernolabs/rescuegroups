@@ -84,11 +84,11 @@ Performs events.add add query to create an instance of an object. Uses classes o
 
     $addObject = new \RescueGroups\Objects\Event();
     $addObject->eventName = "Name"
-    $addObject->eventStart = "Start Date/Time"
+    $addObject->tart = "Start Date/Time"
     $addObject->eventEnd = "End Date/Time"
     $addObject->eventUrl = "Web address"
     $addObject->eventDescription = "Description"
-    $addObject->eventSpecies = "Species attending"
+    $addObject->pecies = "Species attending"
 
     $query->addEvent($addObject);
 
@@ -103,12 +103,12 @@ Performs events.edit edit query to edit an object. Uses classes of type [\Rescue
     $editObject = new \RescueGroups\Objects\Event();
     $editObject->eventID = "ID"
     $editObject->eventName = "Name"
-    $editObject->eventStart = "Start Date/Time"
+    $editObject->tart = "Start Date/Time"
     $editObject->eventEnd = "End Date/Time"
     $editObject->eventUrl = "Web address"
     $editObject->eventDescription = "Description"
     $editObject->eventLocationID = "Location"
-    $editObject->eventSpecies = "Species attending"
+    $editObject->pecies = "Species attending"
 
     $query->updateEvent($editObject);
 
@@ -141,8 +141,8 @@ Performs events.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
 
-    $query->setenableEvents("Enable the Events feature");
-    $query->setsetEventsMapWebsite("Map website to use with the Events feature");
+    $query->setenable("Enable the Events feature");
+    $query->setsetMapWebsite("Map website to use with the Events feature");
 
     $result = $api->executeRequest($query);
 

@@ -28,7 +28,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->outcomesReleaseLocation = 'testValue Location';
         $testObject->outcomesReleaseAddress = 'testValue Street address';
         $testObject->outcomesReleaseCity = 'testValue City';
-        $testObject->outcomesReleaseState = 'testValue State/Province';
+        $testObject->tate = 'testValue State/Province';
         $testObject->outcomesReleasePostalcode = 'testValue Postal Code';
         $testObject->outcomesReleaseByID = 'testValue Released By';
 

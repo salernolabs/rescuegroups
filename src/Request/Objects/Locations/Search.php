@@ -40,7 +40,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "locationUrl" => [0, 'locationUrl'],
         "locationAddress" => [0, 'locationAddress'],
         "locationCity" => [0, 'locationCity'],
-        "locationState" => [0, 'locationState'],
+        "tate" => [0, 'locationState'],
         "locationPostalcode" => [0, 'locationPostalcode'],
         "locationCountry" => [0, 'locationCountry'],
         "locationPhone" => [0, 'locationPhone'],

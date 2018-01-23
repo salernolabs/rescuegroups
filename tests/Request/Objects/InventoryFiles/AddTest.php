@@ -25,7 +25,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->inventoryfileBinary = 'testValue File';
         $testObject->inventoryfileOldFileName = 'testValue Old file name';
         $testObject->inventoryfileDescription = 'testValue Description';
-        $testObject->inventoryfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->inventoryfileDisplayInline = 'testValue Inline';
 
         $query->addInventoryFile($testObject);

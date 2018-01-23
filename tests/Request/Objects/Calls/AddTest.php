@@ -23,7 +23,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
 
         $testObject = new \RescueGroups\Objects\Call();
         $testObject->callAssignedID = 'testValue Assigned';
-        $testObject->callStatusID = 'testValue Status';
+        $testObject->tatusID = 'testValue Status';
         $testObject->callUrgencyID = 'testValue Urgency';
         $testObject->callCategoryID = 'testValue Category';
         $testObject->callQueueID = 'testValue Queue';

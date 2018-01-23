@@ -28,10 +28,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject->intakesStraypickupLocation = 'testValue Pickup Location';
         $testObject->intakesStraypickupAddress = 'testValue Pickup Street address';
         $testObject->intakesStraypickupCity = 'testValue Pickup City';
-        $testObject->intakesStraypickupState = 'testValue Pickup State/Province';
+        $testObject->tate = 'testValue Pickup State/Province';
         $testObject->intakesStraypickupPostalcode = 'testValue Pickup Postal Code';
         $testObject->intakesStraypickupFinderID = 'testValue Found By';
-        $testObject->intakesStraypickupStaffID = 'testValue Pickup By';
+        $testObject->taffID = 'testValue Pickup By';
 
         $query->addIntakesStrayPickup($testObject);
 

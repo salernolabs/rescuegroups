@@ -28,7 +28,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->intakesServiceDate = 'testValue Date';
         $testObject->intakesServiceNotes = 'testValue Notes';
         $testObject->intakesServiceOwnerID = 'testValue Owner';
-        $testObject->intakesServiceServicetypeID = 'testValue Service';
+        $testObject->ervicetypeID = 'testValue Service';
 
         $query->updateIntakesService($testObject);
 

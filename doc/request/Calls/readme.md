@@ -56,7 +56,7 @@ Performs calls.add add query to create an instance of an object. Uses classes of
 
     $addObject = new \RescueGroups\Objects\Call();
     $addObject->callAssignedID = "Assigned"
-    $addObject->callStatusID = "Status"
+    $addObject->tatusID = "Status"
     $addObject->callUrgencyID = "Urgency"
     $addObject->callCategoryID = "Category"
     $addObject->callQueueID = "Queue"
@@ -76,7 +76,7 @@ Performs calls.edit edit query to edit an object. Uses classes of type [\RescueG
     $editObject->callID = "ID"
     $editObject->callContactID = "Contact"
     $editObject->callAssignedID = "Assigned"
-    $editObject->callStatusID = "Status"
+    $editObject->tatusID = "Status"
     $editObject->callUrgencyID = "Urgency"
     $editObject->callCategoryID = "Category"
     $editObject->callQueueID = "Queue"

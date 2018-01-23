@@ -86,7 +86,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var string
      */
-    private $intakesImpoundState = null;
+    private $tate = null;
 
     /**
      * Impound Postal Code
@@ -107,7 +107,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakesImpoundStaffID = null;
+    private $taffID = null;
 
     /**
      * Reason
@@ -227,9 +227,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundState($value)
+    public function setTate($value)
     {
-        $this->intakesImpoundState = $value;
+        $this->tate = $value;
 
         return $this;
     }
@@ -266,9 +266,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesImpoundStaffID($value)
+    public function setTaffID($value)
     {
-        $this->intakesImpoundStaffID = $value;
+        $this->taffID = $value;
 
         return $this;
     }
@@ -304,10 +304,10 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
         if ($this->intakesImpoundLocation !== null) $parameterArray['values'][] = ["intakesImpoundLocation"=>$this->intakesImpoundLocation];
         if ($this->intakesImpoundAddress !== null) $parameterArray['values'][] = ["intakesImpoundAddress"=>$this->intakesImpoundAddress];
         if ($this->intakesImpoundCity !== null) $parameterArray['values'][] = ["intakesImpoundCity"=>$this->intakesImpoundCity];
-        if ($this->intakesImpoundState !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->intakesImpoundState];
+        if ($this->tate !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->tate];
         if ($this->intakesImpoundPostalcode !== null) $parameterArray['values'][] = ["intakesImpoundPostalcode"=>$this->intakesImpoundPostalcode];
         if ($this->intakesImpoundFromID !== null) $parameterArray['values'][] = ["intakesImpoundFromID"=>$this->intakesImpoundFromID];
-        if ($this->intakesImpoundStaffID !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->intakesImpoundStaffID];
+        if ($this->taffID !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->taffID];
         if ($this->intakesImpoundReasonID !== null) $parameterArray['values'][] = ["intakesImpoundReasonID"=>$this->intakesImpoundReasonID];
     }
 }

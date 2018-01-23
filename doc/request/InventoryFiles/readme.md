@@ -58,7 +58,7 @@ Performs inventoryfiles.add add query to create an instance of an object. Uses s
     $addObject->inventoryfileBinary = "File"
     $addObject->inventoryfileOldFileName = "Old file name"
     $addObject->inventoryfileDescription = "Description"
-    $addObject->inventoryfileStatus = "Status"
+    $addObject->tatus = "Status"
     $addObject->inventoryfileDisplayInline = "Inline"
 
     $query->addInventoryFile($addObject);
@@ -75,7 +75,7 @@ Performs inventoryfiles.edit edit query to edit an object. Uses classes of type 
     $editObject->inventoryfileID = "File"
     $editObject->inventoryfileItemID = "ID"
     $editObject->inventoryfileDescription = "Description"
-    $editObject->inventoryfileStatus = "Status"
+    $editObject->tatus = "Status"
     $editObject->inventoryfileDisplayInline = "Inline"
 
     $query->updateInventoryFile($editObject);

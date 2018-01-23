@@ -36,7 +36,7 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $callStatusID = null;
+    public $tatusID = null;
 
     /**
      * Urgency
@@ -78,7 +78,7 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->callID)) $this->callID = $inputData->callID;
         if (!empty($inputData->callContactID)) $this->callContactID = $inputData->callContactID;
         if (!empty($inputData->callAssignedID)) $this->callAssignedID = $inputData->callAssignedID;
-        if (!empty($inputData->callStatusID)) $this->callStatusID = $inputData->callStatusID;
+        if (!empty($inputData->callStatusID)) $this->tatusID = $inputData->callStatusID;
         if (!empty($inputData->callUrgencyID)) $this->callUrgencyID = $inputData->callUrgencyID;
         if (!empty($inputData->callCategoryID)) $this->callCategoryID = $inputData->callCategoryID;
         if (!empty($inputData->callQueueID)) $this->callQueueID = $inputData->callQueueID;
@@ -97,7 +97,7 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
         if ($includeId && $this->callID !== null) $output['callID'] = $this->callID;
         if ($this->callContactID !== null) $output['callContactID'] = $this->callContactID;
         if ($this->callAssignedID !== null) $output['callAssignedID'] = $this->callAssignedID;
-        if ($this->callStatusID !== null) $output['callStatusID'] = $this->callStatusID;
+        if ($this->tatusID !== null) $output['callStatusID'] = $this->tatusID;
         if ($this->callUrgencyID !== null) $output['callUrgencyID'] = $this->callUrgencyID;
         if ($this->callCategoryID !== null) $output['callCategoryID'] = $this->callCategoryID;
         if ($this->callQueueID !== null) $output['callQueueID'] = $this->callQueueID;

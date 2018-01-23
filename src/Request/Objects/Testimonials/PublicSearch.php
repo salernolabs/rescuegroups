@@ -39,7 +39,7 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
         "testimonialLocation" => [0, 'testimonialLocation'],
         "testimonialLocationDistance" => [0, 'testimonialLocationDistance'],
         "testimonialLocationCitystate" => [0, 'testimonialLocationCitystate'],
-        "testimonialService" => [0, 'testimonialService'],
+        "ervice" => [0, 'testimonialService'],
         "testimonialUserFirstname" => [0, 'testimonialUserFirstname'],
         "testimonialCreatedDate" => [0, 'testimonialCreatedDate'],
         "testimonialContent" => [0, 'testimonialContent'],

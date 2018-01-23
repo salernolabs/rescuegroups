@@ -107,7 +107,7 @@ Performs submittedforms.edit edit query to edit an object. Uses classes of type 
     $editObject = new \RescueGroups\Objects\SubmittedForm();
     $editObject->submittedformID = "ID"
     $editObject->submittedformAnimalID = "Animal"
-    $editObject->submittedformStatusID = "Status"
+    $editObject->tatusID = "Status"
 
     $query->updateSubmittedForm($editObject);
 

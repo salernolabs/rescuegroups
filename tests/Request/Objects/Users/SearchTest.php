@@ -29,8 +29,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->addFilter('userID', 'equals', 'ID')
             ->addField('userLogin')
             ->addFilter('userLogin', 'equals', 'Login')
-            ->addField('userSalutation')
-            ->addFilter('userSalutation', 'equals', 'Salutation')
+            ->addField('alutation')
+            ->addFilter('alutation', 'equals', 'Salutation')
             ->addField('userName')
             ->addFilter('userName', 'equals', 'Name')
             ->addField('userFirstname')
@@ -41,8 +41,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->addFilter('userAddress', 'equals', 'Street address')
             ->addField('userCity')
             ->addFilter('userCity', 'equals', 'City')
-            ->addField('userState')
-            ->addFilter('userState', 'equals', 'State/Province')
+            ->addField('tate')
+            ->addFilter('tate', 'equals', 'State/Province')
             ->addField('userPostalcode')
             ->addFilter('userPostalcode', 'equals', 'Postal Code')
             ->addField('userPlus4')
@@ -73,8 +73,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->addFilter('userLastPasswordResetDate', 'equals', 'Last password reset date')
             ->addField('userPasswordResetCount')
             ->addFilter('userPasswordResetCount', 'equals', 'Password reset count')
-            ->addField('userStatus')
-            ->addFilter('userStatus', 'equals', 'Status')
+            ->addField('tatus')
+            ->addFilter('tatus', 'equals', 'Status')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

@@ -50,7 +50,7 @@ class Location implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $locationState = null;
+    public $tate = null;
 
     /**
      * Postal Code
@@ -94,7 +94,7 @@ class Location implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->locationUrl)) $this->locationUrl = $inputData->locationUrl;
         if (!empty($inputData->locationAddress)) $this->locationAddress = $inputData->locationAddress;
         if (!empty($inputData->locationCity)) $this->locationCity = $inputData->locationCity;
-        if (!empty($inputData->locationState)) $this->locationState = $inputData->locationState;
+        if (!empty($inputData->locationState)) $this->tate = $inputData->locationState;
         if (!empty($inputData->locationPostalcode)) $this->locationPostalcode = $inputData->locationPostalcode;
         if (!empty($inputData->locationCountry)) $this->locationCountry = $inputData->locationCountry;
         if (!empty($inputData->locationPhone)) $this->locationPhone = $inputData->locationPhone;
@@ -115,7 +115,7 @@ class Location implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->locationUrl !== null) $output['locationUrl'] = $this->locationUrl;
         if ($this->locationAddress !== null) $output['locationAddress'] = $this->locationAddress;
         if ($this->locationCity !== null) $output['locationCity'] = $this->locationCity;
-        if ($this->locationState !== null) $output['locationState'] = $this->locationState;
+        if ($this->tate !== null) $output['locationState'] = $this->tate;
         if ($this->locationPostalcode !== null) $output['locationPostalcode'] = $this->locationPostalcode;
         if ($this->locationCountry !== null) $output['locationCountry'] = $this->locationCountry;
         if ($this->locationPhone !== null) $output['locationPhone'] = $this->locationPhone;

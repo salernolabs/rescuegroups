@@ -64,7 +64,7 @@ class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $outcomesReleaseState = null;
+    public $tate = null;
 
     /**
      * Postal Code
@@ -96,7 +96,7 @@ class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->outcomesReleaseLocation)) $this->outcomesReleaseLocation = $inputData->outcomesReleaseLocation;
         if (!empty($inputData->outcomesReleaseAddress)) $this->outcomesReleaseAddress = $inputData->outcomesReleaseAddress;
         if (!empty($inputData->outcomesReleaseCity)) $this->outcomesReleaseCity = $inputData->outcomesReleaseCity;
-        if (!empty($inputData->outcomesReleaseState)) $this->outcomesReleaseState = $inputData->outcomesReleaseState;
+        if (!empty($inputData->outcomesReleaseState)) $this->tate = $inputData->outcomesReleaseState;
         if (!empty($inputData->outcomesReleasePostalcode)) $this->outcomesReleasePostalcode = $inputData->outcomesReleasePostalcode;
         if (!empty($inputData->outcomesReleaseByID)) $this->outcomesReleaseByID = $inputData->outcomesReleaseByID;
     }
@@ -117,7 +117,7 @@ class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->outcomesReleaseLocation !== null) $output['outcomesReleaseLocation'] = $this->outcomesReleaseLocation;
         if ($this->outcomesReleaseAddress !== null) $output['outcomesReleaseAddress'] = $this->outcomesReleaseAddress;
         if ($this->outcomesReleaseCity !== null) $output['outcomesReleaseCity'] = $this->outcomesReleaseCity;
-        if ($this->outcomesReleaseState !== null) $output['outcomesReleaseState'] = $this->outcomesReleaseState;
+        if ($this->tate !== null) $output['outcomesReleaseState'] = $this->tate;
         if ($this->outcomesReleasePostalcode !== null) $output['outcomesReleasePostalcode'] = $this->outcomesReleasePostalcode;
         if ($this->outcomesReleaseByID !== null) $output['outcomesReleaseByID'] = $this->outcomesReleaseByID;
 

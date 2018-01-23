@@ -63,8 +63,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->addFilter('locationAnimals', 'equals', 'Animals')
             ->addField('locationEvents')
             ->addFilter('locationEvents', 'equals', 'Events')
-            ->addField('locationColonies')
-            ->addFilter('locationColonies', 'equals', 'Colonies')
+            ->addField('location')
+            ->addFilter('location', 'equals', 'Colonies')
             ->addField('locationMeetrequests')
             ->addFilter('locationMeetrequests', 'equals', 'Meet Requests')
             ->setCalculateFoundRows(true);

@@ -29,7 +29,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactfileStatus = null;
+    public $tatus = null;
 
     /**
      * Inline
@@ -49,7 +49,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->contactfileID)) $this->contactfileID = $inputData->contactfileID;
         if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
-        if (!empty($inputData->contactfileStatus)) $this->contactfileStatus = $inputData->contactfileStatus;
+        if (!empty($inputData->contactfileStatus)) $this->tatus = $inputData->contactfileStatus;
         if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;
     }
 
@@ -64,7 +64,7 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($includeId && $this->contactfileID !== null) $output['contactfileID'] = $this->contactfileID;
         if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->contactfileStatus !== null) $output['contactfileStatus'] = $this->contactfileStatus;
+        if ($this->tatus !== null) $output['contactfileStatus'] = $this->tatus;
         if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;
 
         return $output;

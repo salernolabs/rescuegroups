@@ -30,140 +30,140 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enableAnimalsSpecialListBabies = null;
+    private $enableSpecialListBabies = null;
 
     /**
      * Babies (Kittens, Puppies) Youngest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListBabiesYoungest = null;
+    private $setSpecialListBabiesYoungest = null;
 
     /**
      * Babies (Kittens, Puppies) Oldest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListBabiesOldest = null;
+    private $setSpecialListBabiesOldest = null;
 
     /**
      * Teens enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListTeens = null;
+    private $enableSpecialListTeens = null;
 
     /**
      * Teens Youngest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListTeensYoungest = null;
+    private $setSpecialListTeensYoungest = null;
 
     /**
      * Teens Oldest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListTeensOldest = null;
+    private $setSpecialListTeensOldest = null;
 
     /**
      * Adults enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListAdults = null;
+    private $enableSpecialListAdults = null;
 
     /**
      * Adults Youngest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListAdultsYoungest = null;
+    private $setSpecialListAdultsYoungest = null;
 
     /**
      * Adults Oldest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListAdultsOldest = null;
+    private $setSpecialListAdultsOldest = null;
 
     /**
      * Seniors enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListSeniors = null;
+    private $enableSpecialListSeniors = null;
 
     /**
      * Seniors Youngest Age
      *
      * @var string
      */
-    private $setAnimalsSpecialListSeniorsYoungest = null;
+    private $setSpecialListSeniorsYoungest = null;
 
     /**
      * Long Time/Must Adopt enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListLongtime = null;
+    private $enableSpecialListLongtime = null;
 
     /**
      * Long Time/Must Adopt Shortest length of time
      *
      * @var string
      */
-    private $setAnimalsSpecialListLongtimeYoungest = null;
+    private $setSpecialListLongtimeYoungest = null;
 
     /**
      * Long Time/Must Adopt Longest length of time
      *
      * @var string
      */
-    private $setAnimalsSpecialListLongtimeOldest = null;
+    private $setSpecialListLongtimeOldest = null;
 
     /**
      * Recent Arrivals enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListRecent = null;
+    private $enableSpecialListRecent = null;
 
     /**
      * Recent Arrivals Shortest length of time
      *
      * @var string
      */
-    private $setAnimalsSpecialListRecentDays = null;
+    private $setSpecialListRecentDays = null;
 
     /**
      * Special Needs enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListSpecialNeeds = null;
+    private $enableSpecialListSpecialNeeds = null;
 
     /**
      * Urgent enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListUrgent = null;
+    private $enableSpecialListUrgent = null;
 
     /**
      * Needs a Caretaker/Foster enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListFoster = null;
+    private $enableSpecialListFoster = null;
 
     /**
      * Courtesy Listings enabled
      *
      * @var string
      */
-    private $enableAnimalsSpecialListCourtesy = null;
+    private $enableSpecialListCourtesy = null;
 
     /**
      * Automatically set animal's Rescue ID
@@ -529,9 +529,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListBabies($value)
+    public function setEnableSpecialListBabies($value)
     {
-        $this->enableAnimalsSpecialListBabies = $value;
+        $this->enableSpecialListBabies = $value;
 
         return $this;
     }
@@ -542,9 +542,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesYoungest($value)
+    public function setSetSpecialListBabiesYoungest($value)
     {
-        $this->setAnimalsSpecialListBabiesYoungest = $value;
+        $this->setSpecialListBabiesYoungest = $value;
 
         return $this;
     }
@@ -555,9 +555,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesOldest($value)
+    public function setSetSpecialListBabiesOldest($value)
     {
-        $this->setAnimalsSpecialListBabiesOldest = $value;
+        $this->setSpecialListBabiesOldest = $value;
 
         return $this;
     }
@@ -568,9 +568,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListTeens($value)
+    public function setEnableSpecialListTeens($value)
     {
-        $this->enableAnimalsSpecialListTeens = $value;
+        $this->enableSpecialListTeens = $value;
 
         return $this;
     }
@@ -581,9 +581,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensYoungest($value)
+    public function setSetSpecialListTeensYoungest($value)
     {
-        $this->setAnimalsSpecialListTeensYoungest = $value;
+        $this->setSpecialListTeensYoungest = $value;
 
         return $this;
     }
@@ -594,9 +594,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensOldest($value)
+    public function setSetSpecialListTeensOldest($value)
     {
-        $this->setAnimalsSpecialListTeensOldest = $value;
+        $this->setSpecialListTeensOldest = $value;
 
         return $this;
     }
@@ -607,9 +607,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListAdults($value)
+    public function setEnableSpecialListAdults($value)
     {
-        $this->enableAnimalsSpecialListAdults = $value;
+        $this->enableSpecialListAdults = $value;
 
         return $this;
     }
@@ -620,9 +620,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsYoungest($value)
+    public function setSetSpecialListAdultsYoungest($value)
     {
-        $this->setAnimalsSpecialListAdultsYoungest = $value;
+        $this->setSpecialListAdultsYoungest = $value;
 
         return $this;
     }
@@ -633,9 +633,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsOldest($value)
+    public function setSetSpecialListAdultsOldest($value)
     {
-        $this->setAnimalsSpecialListAdultsOldest = $value;
+        $this->setSpecialListAdultsOldest = $value;
 
         return $this;
     }
@@ -646,9 +646,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListSeniors($value)
+    public function setEnableSpecialListSeniors($value)
     {
-        $this->enableAnimalsSpecialListSeniors = $value;
+        $this->enableSpecialListSeniors = $value;
 
         return $this;
     }
@@ -659,9 +659,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListSeniorsYoungest($value)
+    public function setSetSpecialListSeniorsYoungest($value)
     {
-        $this->setAnimalsSpecialListSeniorsYoungest = $value;
+        $this->setSpecialListSeniorsYoungest = $value;
 
         return $this;
     }
@@ -672,9 +672,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListLongtime($value)
+    public function setEnableSpecialListLongtime($value)
     {
-        $this->enableAnimalsSpecialListLongtime = $value;
+        $this->enableSpecialListLongtime = $value;
 
         return $this;
     }
@@ -685,9 +685,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeYoungest($value)
+    public function setSetSpecialListLongtimeYoungest($value)
     {
-        $this->setAnimalsSpecialListLongtimeYoungest = $value;
+        $this->setSpecialListLongtimeYoungest = $value;
 
         return $this;
     }
@@ -698,9 +698,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeOldest($value)
+    public function setSetSpecialListLongtimeOldest($value)
     {
-        $this->setAnimalsSpecialListLongtimeOldest = $value;
+        $this->setSpecialListLongtimeOldest = $value;
 
         return $this;
     }
@@ -711,9 +711,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListRecent($value)
+    public function setEnableSpecialListRecent($value)
     {
-        $this->enableAnimalsSpecialListRecent = $value;
+        $this->enableSpecialListRecent = $value;
 
         return $this;
     }
@@ -724,9 +724,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListRecentDays($value)
+    public function setSetSpecialListRecentDays($value)
     {
-        $this->setAnimalsSpecialListRecentDays = $value;
+        $this->setSpecialListRecentDays = $value;
 
         return $this;
     }
@@ -737,9 +737,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListSpecialNeeds($value)
+    public function setEnableSpecialListSpecialNeeds($value)
     {
-        $this->enableAnimalsSpecialListSpecialNeeds = $value;
+        $this->enableSpecialListSpecialNeeds = $value;
 
         return $this;
     }
@@ -750,9 +750,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListUrgent($value)
+    public function setEnableSpecialListUrgent($value)
     {
-        $this->enableAnimalsSpecialListUrgent = $value;
+        $this->enableSpecialListUrgent = $value;
 
         return $this;
     }
@@ -763,9 +763,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListFoster($value)
+    public function setEnableSpecialListFoster($value)
     {
-        $this->enableAnimalsSpecialListFoster = $value;
+        $this->enableSpecialListFoster = $value;
 
         return $this;
     }
@@ -776,9 +776,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnableAnimalsSpecialListCourtesy($value)
+    public function setEnableSpecialListCourtesy($value)
     {
-        $this->enableAnimalsSpecialListCourtesy = $value;
+        $this->enableSpecialListCourtesy = $value;
 
         return $this;
     }
@@ -1456,26 +1456,26 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableAnimalsSpecialListBabies !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListBabies"=>$this->enableAnimalsSpecialListBabies];
-        if ($this->setAnimalsSpecialListBabiesYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesYoungest"=>$this->setAnimalsSpecialListBabiesYoungest];
-        if ($this->setAnimalsSpecialListBabiesOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesOldest"=>$this->setAnimalsSpecialListBabiesOldest];
-        if ($this->enableAnimalsSpecialListTeens !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListTeens"=>$this->enableAnimalsSpecialListTeens];
-        if ($this->setAnimalsSpecialListTeensYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensYoungest"=>$this->setAnimalsSpecialListTeensYoungest];
-        if ($this->setAnimalsSpecialListTeensOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensOldest"=>$this->setAnimalsSpecialListTeensOldest];
-        if ($this->enableAnimalsSpecialListAdults !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListAdults"=>$this->enableAnimalsSpecialListAdults];
-        if ($this->setAnimalsSpecialListAdultsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsYoungest"=>$this->setAnimalsSpecialListAdultsYoungest];
-        if ($this->setAnimalsSpecialListAdultsOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsOldest"=>$this->setAnimalsSpecialListAdultsOldest];
-        if ($this->enableAnimalsSpecialListSeniors !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSeniors"=>$this->enableAnimalsSpecialListSeniors];
-        if ($this->setAnimalsSpecialListSeniorsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListSeniorsYoungest"=>$this->setAnimalsSpecialListSeniorsYoungest];
-        if ($this->enableAnimalsSpecialListLongtime !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListLongtime"=>$this->enableAnimalsSpecialListLongtime];
-        if ($this->setAnimalsSpecialListLongtimeYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeYoungest"=>$this->setAnimalsSpecialListLongtimeYoungest];
-        if ($this->setAnimalsSpecialListLongtimeOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeOldest"=>$this->setAnimalsSpecialListLongtimeOldest];
-        if ($this->enableAnimalsSpecialListRecent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListRecent"=>$this->enableAnimalsSpecialListRecent];
-        if ($this->setAnimalsSpecialListRecentDays !== null) $parameterArray['values'][] = ["setAnimalsSpecialListRecentDays"=>$this->setAnimalsSpecialListRecentDays];
-        if ($this->enableAnimalsSpecialListSpecialNeeds !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSpecialNeeds"=>$this->enableAnimalsSpecialListSpecialNeeds];
-        if ($this->enableAnimalsSpecialListUrgent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListUrgent"=>$this->enableAnimalsSpecialListUrgent];
-        if ($this->enableAnimalsSpecialListFoster !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListFoster"=>$this->enableAnimalsSpecialListFoster];
-        if ($this->enableAnimalsSpecialListCourtesy !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListCourtesy"=>$this->enableAnimalsSpecialListCourtesy];
+        if ($this->enableSpecialListBabies !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListBabies"=>$this->enableSpecialListBabies];
+        if ($this->setSpecialListBabiesYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesYoungest"=>$this->setSpecialListBabiesYoungest];
+        if ($this->setSpecialListBabiesOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesOldest"=>$this->setSpecialListBabiesOldest];
+        if ($this->enableSpecialListTeens !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListTeens"=>$this->enableSpecialListTeens];
+        if ($this->setSpecialListTeensYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensYoungest"=>$this->setSpecialListTeensYoungest];
+        if ($this->setSpecialListTeensOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensOldest"=>$this->setSpecialListTeensOldest];
+        if ($this->enableSpecialListAdults !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListAdults"=>$this->enableSpecialListAdults];
+        if ($this->setSpecialListAdultsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsYoungest"=>$this->setSpecialListAdultsYoungest];
+        if ($this->setSpecialListAdultsOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsOldest"=>$this->setSpecialListAdultsOldest];
+        if ($this->enableSpecialListSeniors !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSeniors"=>$this->enableSpecialListSeniors];
+        if ($this->setSpecialListSeniorsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListSeniorsYoungest"=>$this->setSpecialListSeniorsYoungest];
+        if ($this->enableSpecialListLongtime !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListLongtime"=>$this->enableSpecialListLongtime];
+        if ($this->setSpecialListLongtimeYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeYoungest"=>$this->setSpecialListLongtimeYoungest];
+        if ($this->setSpecialListLongtimeOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeOldest"=>$this->setSpecialListLongtimeOldest];
+        if ($this->enableSpecialListRecent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListRecent"=>$this->enableSpecialListRecent];
+        if ($this->setSpecialListRecentDays !== null) $parameterArray['values'][] = ["setAnimalsSpecialListRecentDays"=>$this->setSpecialListRecentDays];
+        if ($this->enableSpecialListSpecialNeeds !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSpecialNeeds"=>$this->enableSpecialListSpecialNeeds];
+        if ($this->enableSpecialListUrgent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListUrgent"=>$this->enableSpecialListUrgent];
+        if ($this->enableSpecialListFoster !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListFoster"=>$this->enableSpecialListFoster];
+        if ($this->enableSpecialListCourtesy !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListCourtesy"=>$this->enableSpecialListCourtesy];
         if ($this->enableAnimalAutoRescueID !== null) $parameterArray['values'][] = ["enableAnimalAutoRescueID"=>$this->enableAnimalAutoRescueID];
         if ($this->setAnimalAutoRescueIDFormat !== null) $parameterArray['values'][] = ["setAnimalAutoRescueIDFormat"=>$this->setAnimalAutoRescueIDFormat];
         if ($this->disableAnimalAutoRescueIDCourtesyListings !== null) $parameterArray['values'][] = ["disableAnimalAutoRescueIDCourtesyListings"=>$this->disableAnimalAutoRescueIDCourtesyListings];

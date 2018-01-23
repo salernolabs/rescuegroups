@@ -86,7 +86,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var string
      */
-    private $intakesStraypickupState = null;
+    private $tate = null;
 
     /**
      * Pickup Postal Code
@@ -107,7 +107,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakesStraypickupStaffID = null;
+    private $taffID = null;
 
 
     /**
@@ -220,9 +220,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupState($value)
+    public function setTate($value)
     {
-        $this->intakesStraypickupState = $value;
+        $this->tate = $value;
 
         return $this;
     }
@@ -259,9 +259,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraypickupStaffID($value)
+    public function setTaffID($value)
     {
-        $this->intakesStraypickupStaffID = $value;
+        $this->taffID = $value;
 
         return $this;
     }
@@ -284,9 +284,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
         if ($this->intakesStraypickupLocation !== null) $parameterArray['values'][] = ["intakesStraypickupLocation"=>$this->intakesStraypickupLocation];
         if ($this->intakesStraypickupAddress !== null) $parameterArray['values'][] = ["intakesStraypickupAddress"=>$this->intakesStraypickupAddress];
         if ($this->intakesStraypickupCity !== null) $parameterArray['values'][] = ["intakesStraypickupCity"=>$this->intakesStraypickupCity];
-        if ($this->intakesStraypickupState !== null) $parameterArray['values'][] = ["intakesStraypickupState"=>$this->intakesStraypickupState];
+        if ($this->tate !== null) $parameterArray['values'][] = ["intakesStraypickupState"=>$this->tate];
         if ($this->intakesStraypickupPostalcode !== null) $parameterArray['values'][] = ["intakesStraypickupPostalcode"=>$this->intakesStraypickupPostalcode];
         if ($this->intakesStraypickupFinderID !== null) $parameterArray['values'][] = ["intakesStraypickupFinderID"=>$this->intakesStraypickupFinderID];
-        if ($this->intakesStraypickupStaffID !== null) $parameterArray['values'][] = ["intakesStraypickupStaffID"=>$this->intakesStraypickupStaffID];
+        if ($this->taffID !== null) $parameterArray['values'][] = ["intakesStraypickupStaffID"=>$this->taffID];
     }
 }

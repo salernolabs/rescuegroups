@@ -58,7 +58,7 @@ Performs webfiles.add add query to create an instance of an object. Uses special
     $addObject->webfileBinary = "File"
     $addObject->webfileOldFileName = "Old file name"
     $addObject->webfileDescription = "Description"
-    $addObject->webfileStatus = "Status"
+    $addObject->tatus = "Status"
     $addObject->webfileDisplayInline = "Inline"
 
     $query->addWebFile($addObject);
@@ -74,7 +74,7 @@ Performs webfiles.edit edit query to edit an object. Uses classes of type [\Resc
     $editObject = new \RescueGroups\Objects\WebFile();
     $editObject->webfileID = "ID"
     $editObject->webfileDescription = "Description"
-    $editObject->webfileStatus = "Status"
+    $editObject->tatus = "Status"
     $editObject->webfileDisplayInline = "Inline"
     $editObject->webfileRoleID = "Security Role"
 

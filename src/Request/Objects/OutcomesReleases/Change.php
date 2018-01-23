@@ -79,7 +79,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var string
      */
-    private $outcomesReleaseState = null;
+    private $tate = null;
 
     /**
      * Postal Code
@@ -193,9 +193,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleaseState($value)
+    public function setTate($value)
     {
-        $this->outcomesReleaseState = $value;
+        $this->tate = $value;
 
         return $this;
     }
@@ -243,7 +243,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
         if ($this->outcomesReleaseLocation !== null) $parameterArray['values'][] = ["outcomesReleaseLocation"=>$this->outcomesReleaseLocation];
         if ($this->outcomesReleaseAddress !== null) $parameterArray['values'][] = ["outcomesReleaseAddress"=>$this->outcomesReleaseAddress];
         if ($this->outcomesReleaseCity !== null) $parameterArray['values'][] = ["outcomesReleaseCity"=>$this->outcomesReleaseCity];
-        if ($this->outcomesReleaseState !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->outcomesReleaseState];
+        if ($this->tate !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->tate];
         if ($this->outcomesReleasePostalcode !== null) $parameterArray['values'][] = ["outcomesReleasePostalcode"=>$this->outcomesReleasePostalcode];
         if ($this->outcomesReleaseByID !== null) $parameterArray['values'][] = ["outcomesReleaseByID"=>$this->outcomesReleaseByID];
     }

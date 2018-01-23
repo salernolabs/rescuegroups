@@ -143,22 +143,22 @@ Performs animals.add add query to create an instance of an object. Uses classes 
     $addObject->animalPrimaryBreedID = "Primary breed"
     $addObject->animalReceivedDate = "Received date"
     $addObject->animalRescueID = "Rescue ID"
-    $addObject->animalSecondaryBreedID = "Secondary Breed"
-    $addObject->animalSex = "Sex"
-    $addObject->animalShared = "Shared"
-    $addObject->animalShedding = "Shedding amount"
-    $addObject->animalSizeCurrent = "Current size"
-    $addObject->animalSizePotential = "Size potential"
-    $addObject->animalSizeUOM = "Size unit of measure"
-    $addObject->animalSpecialneeds = "Has special needs"
-    $addObject->animalSpecialneedsDescription = "Special needs description"
-    $addObject->animalSpeciesID = "Species"
-    $addObject->animalSponsorable = "Allow sponsorship"
-    $addObject->animalSponsors = "Sponsors"
-    $addObject->animalSponsorshipDetails = "Sponsorship details"
-    $addObject->animalSponsorshipMinimum = "Sponsorship minimum"
-    $addObject->animalStatusID = "Status"
-    $addObject->animalSummary = "Summary"
+    $addObject->econdaryBreedID = "Secondary Breed"
+    $addObject->ex = "Sex"
+    $addObject->hared = "Shared"
+    $addObject->hedding = "Shedding amount"
+    $addObject->izeCurrent = "Current size"
+    $addObject->izePotential = "Size potential"
+    $addObject->izeUOM = "Size unit of measure"
+    $addObject->pecialneeds = "Has special needs"
+    $addObject->pecialneedsDescription = "Special needs description"
+    $addObject->peciesID = "Species"
+    $addObject->ponsorable = "Allow sponsorship"
+    $addObject->ponsors = "Sponsors"
+    $addObject->ponsorshipDetails = "Sponsorship details"
+    $addObject->ponsorshipMinimum = "Sponsorship minimum"
+    $addObject->tatusID = "Status"
+    $addObject->ummary = "Summary"
     $addObject->animalTailType = "Tail type"
     $addObject->animalTransferredToID = "Transferred to"
     $addObject->animalUptodate = "Up-to-date"
@@ -191,17 +191,17 @@ Performs animals.add add query to create an instance of an object. Uses classes 
     $addObject->animalNoSmallDogs = "Not good with small dogs"
     $addObject->animalObedient = "Obedient"
     $addObject->animalOKForSeniors = "Good for seniors / elderly"
-    $addObject->animalOKWithFarmAnimals = "Good with farm animals"
+    $addObject->animalOKWithFarm = "Good with farm animals"
     $addObject->animalOlderKidsOnly = "Older/ considerate kids only"
     $addObject->animalOngoingMedical = "Needs ongoing medical care"
     $addObject->animalPlayful = "Playful"
     $addObject->animalPlaysToys = "Likes toys"
     $addObject->animalPredatory = "Predatory"
     $addObject->animalProtective = "Protective / territorial"
-    $addObject->animalSightImpaired = "Sight impaired"
-    $addObject->animalSkittish = "Skittish"
-    $addObject->animalSpecialDiet = "Special diet required"
-    $addObject->animalSwims = "Likes to swim"
+    $addObject->ightImpaired = "Sight impaired"
+    $addObject->kittish = "Skittish"
+    $addObject->pecialDiet = "Special diet required"
+    $addObject->wims = "Likes to swim"
     $addObject->animalTimid = "Timid / shy"
     $addObject->animalGroups = "Groups"
     $addObject->animalExportAccounts = "Export accounts"
@@ -261,8 +261,8 @@ Performs animals.edit edit query to edit an object. Uses classes of type [\Rescu
     $editObject->animalMicrochipVendor = "Microchip vendor"
     $editObject->animalMixedBreed = "Mixed breed"
     $editObject->animalName = "Name"
-    $editObject->animalSpecialneeds = "Has special needs"
-    $editObject->animalSpecialneedsDescription = "Special needs description"
+    $editObject->pecialneeds = "Has special needs"
+    $editObject->pecialneedsDescription = "Special needs description"
     $editObject->animalNeedsFoster = "Needs a Foster"
     $editObject->animalNewPeople = "Reaction to new people"
     $editObject->animalNotes = "Private notes"
@@ -281,20 +281,20 @@ Performs animals.edit edit query to edit an object. Uses classes of type [\Rescu
     $editObject->animalPrimaryBreedID = "Primary breed"
     $editObject->animalReceivedDate = "Received date"
     $editObject->animalRescueID = "Rescue ID"
-    $editObject->animalSecondaryBreedID = "Secondary Breed"
-    $editObject->animalSex = "Sex"
-    $editObject->animalShared = "Shared"
-    $editObject->animalShedding = "Shedding amount"
-    $editObject->animalSizeCurrent = "Current size"
-    $editObject->animalSizePotential = "Size potential"
-    $editObject->animalSizeUOM = "Size unit of measure"
-    $editObject->animalSpeciesID = "Species"
-    $editObject->animalSponsorable = "Allow sponsorship"
-    $editObject->animalSponsors = "Sponsors"
-    $editObject->animalSponsorshipDetails = "Sponsorship details"
-    $editObject->animalSponsorshipMinimum = "Sponsorship minimum"
-    $editObject->animalStatusID = "Status"
-    $editObject->animalSummary = "Summary"
+    $editObject->econdaryBreedID = "Secondary Breed"
+    $editObject->ex = "Sex"
+    $editObject->hared = "Shared"
+    $editObject->hedding = "Shedding amount"
+    $editObject->izeCurrent = "Current size"
+    $editObject->izePotential = "Size potential"
+    $editObject->izeUOM = "Size unit of measure"
+    $editObject->peciesID = "Species"
+    $editObject->ponsorable = "Allow sponsorship"
+    $editObject->ponsors = "Sponsors"
+    $editObject->ponsorshipDetails = "Sponsorship details"
+    $editObject->ponsorshipMinimum = "Sponsorship minimum"
+    $editObject->tatusID = "Status"
+    $editObject->ummary = "Summary"
     $editObject->animalTailType = "Tail type"
     $editObject->animalTransferredToID = "Transferred to"
     $editObject->animalUptodate = "Up-to-date"
@@ -327,17 +327,17 @@ Performs animals.edit edit query to edit an object. Uses classes of type [\Rescu
     $editObject->animalNoSmallDogs = "Not good with small dogs"
     $editObject->animalObedient = "Obedient"
     $editObject->animalOKForSeniors = "Good for seniors / elderly"
-    $editObject->animalOKWithFarmAnimals = "Good with farm animals"
+    $editObject->animalOKWithFarm = "Good with farm animals"
     $editObject->animalOlderKidsOnly = "Older/ considerate kids only"
     $editObject->animalOngoingMedical = "Needs ongoing medical care"
     $editObject->animalPlayful = "Playful"
     $editObject->animalPlaysToys = "Likes toys"
     $editObject->animalPredatory = "Predatory"
     $editObject->animalProtective = "Protective / territorial"
-    $editObject->animalSightImpaired = "Sight impaired"
-    $editObject->animalSkittish = "Skittish"
-    $editObject->animalSpecialDiet = "Special diet required"
-    $editObject->animalSwims = "Likes to swim"
+    $editObject->ightImpaired = "Sight impaired"
+    $editObject->kittish = "Skittish"
+    $editObject->pecialDiet = "Special diet required"
+    $editObject->wims = "Likes to swim"
     $editObject->animalTimid = "Timid / shy"
     $editObject->animalGroups = "Groups"
     $editObject->animalExportAccounts = "Export accounts"
@@ -612,26 +612,26 @@ Performs animals.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Animals\UpdateSettings();
 
-    $query->setenableAnimalsSpecialListBabies("Babies (Kittens, Puppies) enabled");
-    $query->setsetAnimalsSpecialListBabiesYoungest("Babies (Kittens, Puppies) Youngest Age");
-    $query->setsetAnimalsSpecialListBabiesOldest("Babies (Kittens, Puppies) Oldest Age");
-    $query->setenableAnimalsSpecialListTeens("Teens enabled");
-    $query->setsetAnimalsSpecialListTeensYoungest("Teens Youngest Age");
-    $query->setsetAnimalsSpecialListTeensOldest("Teens Oldest Age");
-    $query->setenableAnimalsSpecialListAdults("Adults enabled");
-    $query->setsetAnimalsSpecialListAdultsYoungest("Adults Youngest Age");
-    $query->setsetAnimalsSpecialListAdultsOldest("Adults Oldest Age");
-    $query->setenableAnimalsSpecialListSeniors("Seniors enabled");
-    $query->setsetAnimalsSpecialListSeniorsYoungest("Seniors Youngest Age");
-    $query->setenableAnimalsSpecialListLongtime("Long Time/Must Adopt enabled");
-    $query->setsetAnimalsSpecialListLongtimeYoungest("Long Time/Must Adopt Shortest length of time");
-    $query->setsetAnimalsSpecialListLongtimeOldest("Long Time/Must Adopt Longest length of time");
-    $query->setenableAnimalsSpecialListRecent("Recent Arrivals enabled");
-    $query->setsetAnimalsSpecialListRecentDays("Recent Arrivals Shortest length of time");
-    $query->setenableAnimalsSpecialListSpecialNeeds("Special Needs enabled");
-    $query->setenableAnimalsSpecialListUrgent("Urgent enabled");
-    $query->setenableAnimalsSpecialListFoster("Needs a Caretaker/Foster enabled");
-    $query->setenableAnimalsSpecialListCourtesy("Courtesy Listings enabled");
+    $query->setenableSpecialListBabies("Babies (Kittens, Puppies) enabled");
+    $query->setsetSpecialListBabiesYoungest("Babies (Kittens, Puppies) Youngest Age");
+    $query->setsetSpecialListBabiesOldest("Babies (Kittens, Puppies) Oldest Age");
+    $query->setenableSpecialListTeens("Teens enabled");
+    $query->setsetSpecialListTeensYoungest("Teens Youngest Age");
+    $query->setsetSpecialListTeensOldest("Teens Oldest Age");
+    $query->setenableSpecialListAdults("Adults enabled");
+    $query->setsetSpecialListAdultsYoungest("Adults Youngest Age");
+    $query->setsetSpecialListAdultsOldest("Adults Oldest Age");
+    $query->setenableSpecialListSeniors("Seniors enabled");
+    $query->setsetSpecialListSeniorsYoungest("Seniors Youngest Age");
+    $query->setenableSpecialListLongtime("Long Time/Must Adopt enabled");
+    $query->setsetSpecialListLongtimeYoungest("Long Time/Must Adopt Shortest length of time");
+    $query->setsetSpecialListLongtimeOldest("Long Time/Must Adopt Longest length of time");
+    $query->setenableSpecialListRecent("Recent Arrivals enabled");
+    $query->setsetSpecialListRecentDays("Recent Arrivals Shortest length of time");
+    $query->setenableSpecialListSpecialNeeds("Special Needs enabled");
+    $query->setenableSpecialListUrgent("Urgent enabled");
+    $query->setenableSpecialListFoster("Needs a Caretaker/Foster enabled");
+    $query->setenableSpecialListCourtesy("Courtesy Listings enabled");
     $query->setenableAnimalAutoRescueID("Automatically set animal's Rescue ID");
     $query->setsetAnimalAutoRescueIDFormat("Format for Rescue IDs");
     $query->setdisableAnimalAutoRescueIDCourtesyListings("Do not automatically assign Rescue ID for courtesy listings");

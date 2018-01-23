@@ -29,7 +29,7 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactSalutation = null;
+    public $alutation = null;
 
     /**
      * First name
@@ -71,7 +71,7 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactState = null;
+    public $tate = null;
 
     /**
      * Postal Code
@@ -183,7 +183,7 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $contactSendMail = null;
+    public $endMail = null;
 
     /**
      * Active
@@ -245,13 +245,13 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
 
         if (!empty($inputData->contactID)) $this->contactID = $inputData->contactID;
         if (!empty($inputData->contactClass)) $this->contactClass = $inputData->contactClass;
-        if (!empty($inputData->contactSalutation)) $this->contactSalutation = $inputData->contactSalutation;
+        if (!empty($inputData->contactSalutation)) $this->alutation = $inputData->contactSalutation;
         if (!empty($inputData->contactFirstname)) $this->contactFirstname = $inputData->contactFirstname;
         if (!empty($inputData->contactLastname)) $this->contactLastname = $inputData->contactLastname;
         if (!empty($inputData->contactTitle)) $this->contactTitle = $inputData->contactTitle;
         if (!empty($inputData->contactAddress)) $this->contactAddress = $inputData->contactAddress;
         if (!empty($inputData->contactCity)) $this->contactCity = $inputData->contactCity;
-        if (!empty($inputData->contactState)) $this->contactState = $inputData->contactState;
+        if (!empty($inputData->contactState)) $this->tate = $inputData->contactState;
         if (!empty($inputData->contactPostalcode)) $this->contactPostalcode = $inputData->contactPostalcode;
         if (!empty($inputData->contactPlus4)) $this->contactPlus4 = $inputData->contactPlus4;
         if (!empty($inputData->contactCounty)) $this->contactCounty = $inputData->contactCounty;
@@ -267,7 +267,7 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
         if (!empty($inputData->contactCompany)) $this->contactCompany = $inputData->contactCompany;
         if (!empty($inputData->contactReferredBy)) $this->contactReferredBy = $inputData->contactReferredBy;
         if (!empty($inputData->contactCarrier)) $this->contactCarrier = $inputData->contactCarrier;
-        if (!empty($inputData->contactSendMail)) $this->contactSendMail = $inputData->contactSendMail;
+        if (!empty($inputData->contactSendMail)) $this->endMail = $inputData->contactSendMail;
         if (!empty($inputData->contactActive)) $this->contactActive = $inputData->contactActive;
         if (!empty($inputData->contactComment)) $this->contactComment = $inputData->contactComment;
         if (!empty($inputData->contactCoalitionMember)) $this->contactCoalitionMember = $inputData->contactCoalitionMember;
@@ -288,13 +288,13 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
         $output = [];
         if ($includeId && $this->contactID !== null) $output['contactID'] = $this->contactID;
         if ($this->contactClass !== null) $output['contactClass'] = $this->contactClass;
-        if ($this->contactSalutation !== null) $output['contactSalutation'] = $this->contactSalutation;
+        if ($this->alutation !== null) $output['contactSalutation'] = $this->alutation;
         if ($this->contactFirstname !== null) $output['contactFirstname'] = $this->contactFirstname;
         if ($this->contactLastname !== null) $output['contactLastname'] = $this->contactLastname;
         if ($this->contactTitle !== null) $output['contactTitle'] = $this->contactTitle;
         if ($this->contactAddress !== null) $output['contactAddress'] = $this->contactAddress;
         if ($this->contactCity !== null) $output['contactCity'] = $this->contactCity;
-        if ($this->contactState !== null) $output['contactState'] = $this->contactState;
+        if ($this->tate !== null) $output['contactState'] = $this->tate;
         if ($this->contactPostalcode !== null) $output['contactPostalcode'] = $this->contactPostalcode;
         if ($this->contactPlus4 !== null) $output['contactPlus4'] = $this->contactPlus4;
         if ($this->contactCounty !== null) $output['contactCounty'] = $this->contactCounty;
@@ -310,7 +310,7 @@ class Contact implements \RescueGroups\Objects\APIEncodableInterface
         if ($this->contactCompany !== null) $output['contactCompany'] = $this->contactCompany;
         if ($this->contactReferredBy !== null) $output['contactReferredBy'] = $this->contactReferredBy;
         if ($this->contactCarrier !== null) $output['contactCarrier'] = $this->contactCarrier;
-        if ($this->contactSendMail !== null) $output['contactSendMail'] = $this->contactSendMail;
+        if ($this->endMail !== null) $output['contactSendMail'] = $this->endMail;
         if ($this->contactActive !== null) $output['contactActive'] = $this->contactActive;
         if ($this->contactComment !== null) $output['contactComment'] = $this->contactComment;
         if ($this->contactCoalitionMember !== null) $output['contactCoalitionMember'] = $this->contactCoalitionMember;

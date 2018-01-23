@@ -25,12 +25,12 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->userID = 'testValue ID';
         $testObject->userLogin = 'testValue Login';
         $testObject->userPassword = 'testValue Password';
-        $testObject->userSalutation = 'testValue Salutation';
+        $testObject->alutation = 'testValue Salutation';
         $testObject->userFirstname = 'testValue First name';
         $testObject->userLastname = 'testValue Last name';
         $testObject->userAddress = 'testValue Street address';
         $testObject->userCity = 'testValue City';
-        $testObject->userState = 'testValue State/Province';
+        $testObject->tate = 'testValue State/Province';
         $testObject->userPostalcode = 'testValue Postal Code';
         $testObject->userPlus4 = 'testValue Zip code plus 4';
         $testObject->userCountry = 'testValue Country';
@@ -43,7 +43,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->userEmailAlt = 'testValue Alternate email address';
         $testObject->userEmailPager = 'testValue Pager email address';
         $testObject->userContactID = 'testValue User Contact';
-        $testObject->userStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
 
         $query->updateUser($testObject);
 

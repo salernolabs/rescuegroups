@@ -102,9 +102,9 @@ Performs memorials.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\UpdateSettings();
 
-    $query->setenableMemorials("Enable the Memorials feature");
-    $query->setsetMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
-    $query->setshowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
+    $query->setenable("Enable the Memorials feature");
+    $query->setsetDonationOnlineStoreItem("Select Memorials donation store item");
+    $query->setshowAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
 
     $result = $api->executeRequest($query);
 

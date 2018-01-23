@@ -57,12 +57,12 @@ Performs users.add add query to create an instance of an object. Uses special cl
     $addObject = new \RescueGroups\Objects\Create\User();
     $addObject->userLogin = "Login"
     $addObject->userPassword = "Password"
-    $addObject->userSalutation = "Salutation"
+    $addObject->alutation = "Salutation"
     $addObject->userFirstname = "First name"
     $addObject->userLastname = "Last name"
     $addObject->userAddress = "Street address"
     $addObject->userCity = "City"
-    $addObject->userState = "State/Province"
+    $addObject->tate = "State/Province"
     $addObject->userPostalcode = "Postal Code"
     $addObject->userPlus4 = "Zip code plus 4"
     $addObject->userPhoneHome = "Home phone number"
@@ -75,7 +75,7 @@ Performs users.add add query to create an instance of an object. Uses special cl
     $addObject->userEmailPager = "Pager email address"
     $addObject->userContactID = "User Contact"
     $addObject->userType = "Type"
-    $addObject->userStatus = "Status"
+    $addObject->tatus = "Status"
 
     $query->addUser($addObject);
 
@@ -91,12 +91,12 @@ Performs users.edit edit query to edit an object. Uses classes of type [\RescueG
     $editObject->userID = "ID"
     $editObject->userLogin = "Login"
     $editObject->userPassword = "Password"
-    $editObject->userSalutation = "Salutation"
+    $editObject->alutation = "Salutation"
     $editObject->userFirstname = "First name"
     $editObject->userLastname = "Last name"
     $editObject->userAddress = "Street address"
     $editObject->userCity = "City"
-    $editObject->userState = "State/Province"
+    $editObject->tate = "State/Province"
     $editObject->userPostalcode = "Postal Code"
     $editObject->userPlus4 = "Zip code plus 4"
     $editObject->userCountry = "Country"
@@ -109,7 +109,7 @@ Performs users.edit edit query to edit an object. Uses classes of type [\RescueG
     $editObject->userEmailAlt = "Alternate email address"
     $editObject->userEmailPager = "Pager email address"
     $editObject->userContactID = "User Contact"
-    $editObject->userStatus = "Status"
+    $editObject->tatus = "Status"
 
     $query->updateUser($editObject);
 

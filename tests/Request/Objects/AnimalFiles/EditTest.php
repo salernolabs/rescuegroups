@@ -25,7 +25,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->animalfileID = 'testValue File ID';
         $testObject->animalfileAnimalID = 'testValue Animal';
         $testObject->animalfileDescription = 'testValue Description';
-        $testObject->animalfileStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->animalfileDisplayInline = 'testValue Inline';
         $testObject->animalfilePublic = 'testValue Public';
 

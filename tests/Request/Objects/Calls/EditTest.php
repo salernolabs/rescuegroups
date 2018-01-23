@@ -25,7 +25,7 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $testObject->callID = 'testValue ID';
         $testObject->callContactID = 'testValue Contact';
         $testObject->callAssignedID = 'testValue Assigned';
-        $testObject->callStatusID = 'testValue Status';
+        $testObject->tatusID = 'testValue Status';
         $testObject->callUrgencyID = 'testValue Urgency';
         $testObject->callCategoryID = 'testValue Category';
         $testObject->callQueueID = 'testValue Queue';

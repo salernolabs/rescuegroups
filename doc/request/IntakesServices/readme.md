@@ -52,7 +52,7 @@ Performs intakesServices.add add query to create an instance of an object. Uses 
     $addObject->intakesServiceDate = "Date"
     $addObject->intakesServiceNotes = "Notes"
     $addObject->intakesServiceOwnerID = "Owner"
-    $addObject->intakesServiceServicetypeID = "Service"
+    $addObject->ervicetypeID = "Service"
 
     $query->addIntakesService($addObject);
 
@@ -71,7 +71,7 @@ Performs intakesServices.edit edit query to edit an object. Uses classes of type
     $editObject->intakesServiceDate = "Date"
     $editObject->intakesServiceNotes = "Notes"
     $editObject->intakesServiceOwnerID = "Owner"
-    $editObject->intakesServiceServicetypeID = "Service"
+    $editObject->ervicetypeID = "Service"
 
     $query->updateIntakesService($editObject);
 
@@ -89,7 +89,7 @@ Performs intakesServices.change query.
     $query->setintakesServiceDate("Date");
     $query->setintakesServiceNotes("Notes");
     $query->setintakesServiceOwnerID("Owner");
-    $query->setintakesServiceServicetypeID("Service");
+    $query->setervicetypeID("Service");
 
     $result = $api->executeRequest($query);
 

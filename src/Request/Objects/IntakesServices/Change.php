@@ -72,7 +72,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakesServiceServicetypeID = null;
+    private $ervicetypeID = null;
 
 
     /**
@@ -159,9 +159,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesServiceServicetypeID($value)
+    public function setErvicetypeID($value)
     {
-        $this->intakesServiceServicetypeID = $value;
+        $this->ervicetypeID = $value;
 
         return $this;
     }
@@ -182,6 +182,6 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
         if ($this->intakesServiceDate !== null) $parameterArray['values'][] = ["intakesServiceDate"=>$this->intakesServiceDate];
         if ($this->intakesServiceNotes !== null) $parameterArray['values'][] = ["intakesServiceNotes"=>$this->intakesServiceNotes];
         if ($this->intakesServiceOwnerID !== null) $parameterArray['values'][] = ["intakesServiceOwnerID"=>$this->intakesServiceOwnerID];
-        if ($this->intakesServiceServicetypeID !== null) $parameterArray['values'][] = ["intakesServiceServicetypeID"=>$this->intakesServiceServicetypeID];
+        if ($this->ervicetypeID !== null) $parameterArray['values'][] = ["intakesServiceServicetypeID"=>$this->ervicetypeID];
     }
 }

@@ -127,7 +127,7 @@ Performs newsarticles.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\UpdateSettings();
 
-    $query->setenableNewsarticles("Enable the News Articles feature");
+    $query->setenable("Enable the News Articles feature");
 
     $result = $api->executeRequest($query);
 

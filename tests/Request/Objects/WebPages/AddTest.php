@@ -24,9 +24,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $testObject = new \RescueGroups\Objects\WebPage();
         $testObject->webpageName = 'testValue Name';
         $testObject->webpageContent = 'testValue Content';
-        $testObject->webpageStatus = 'testValue Status';
+        $testObject->tatus = 'testValue Status';
         $testObject->webpageUselayout = 'testValue Use Layout';
-        $testObject->webpageShowonmenu = 'testValue Show on Menu';
+        $testObject->howonmenu = 'testValue Show on Menu';
         $testObject->webpageMetaDescription = 'testValue Meta Description';
         $testObject->webpageBackgroundMusicID = 'testValue Background Music';
         $testObject->webpageRoleID = 'testValue Security Role';

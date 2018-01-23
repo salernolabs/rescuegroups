@@ -43,7 +43,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
         "outcomesReleaseLocation" => [0, 'outcomesReleaseLocation'],
         "outcomesReleaseAddress" => [0, 'outcomesReleaseAddress'],
         "outcomesReleaseCity" => [0, 'outcomesReleaseCity'],
-        "outcomesReleaseState" => [0, 'outcomesReleaseState'],
+        "tate" => [0, 'outcomesReleaseState'],
         "outcomesReleasePostalcode" => [0, 'outcomesReleasePostalcode'],
         "outcomesReleaseByID" => [0, 'outcomesReleaseByID'],
         "animalID" => [0, 'animalID'],

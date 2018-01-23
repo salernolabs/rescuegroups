@@ -58,7 +58,7 @@ Performs animalFiles.add add query to create an instance of an object. Uses spec
     $addObject->animalfileBinary = "File"
     $addObject->animalfileOldFileName = "Old file name"
     $addObject->animalfileDescription = "Description"
-    $addObject->animalfileStatus = "Status"
+    $addObject->tatus = "Status"
     $addObject->animalfileDisplayInline = "Inline"
     $addObject->animalfilePublic = "Public"
 
@@ -76,7 +76,7 @@ Performs animalFiles.edit edit query to edit an object. Uses classes of type [\R
     $editObject->animalfileID = "File ID"
     $editObject->animalfileAnimalID = "Animal"
     $editObject->animalfileDescription = "Description"
-    $editObject->animalfileStatus = "Status"
+    $editObject->tatus = "Status"
     $editObject->animalfileDisplayInline = "Inline"
     $editObject->animalfilePublic = "Public"
 
