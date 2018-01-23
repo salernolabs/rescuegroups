@@ -29,6 +29,32 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_LOGIN = 'login';
+    const FIELD_SALUTATION = 'salutation';
+    const FIELD_NAME = 'name';
+    const FIELD_FIRSTNAME = 'firstname';
+    const FIELD_LASTNAME = 'lastname';
+    const FIELD_ADDRESS = 'address';
+    const FIELD_CITY = 'city';
+    const FIELD_STATE = 'state';
+    const FIELD_POSTALCODE = 'postalcode';
+    const FIELD_PLUS4 = 'plus4';
+    const FIELD_COUNTRY = 'country';
+    const FIELD_PHONE_HOME = 'phoneHome';
+    const FIELD_PHONE_WORK = 'phoneWork';
+    const FIELD_PHONE_WORK_EXT = 'phoneWorkExt';
+    const FIELD_PHONE_CELL = 'phoneCell';
+    const FIELD_FAX = 'fax';
+    const FIELD_EMAIL = 'email';
+    const FIELD_EMAIL_ALT = 'emailAlt';
+    const FIELD_EMAIL_PAGER = 'emailPager';
+    const FIELD_CONTACT_ID = 'contactId';
+    const FIELD_REGISTERED_DATE = 'registeredDate';
+    const FIELD_LAST_PASSWORD_RESET_DATE = 'lastPasswordResetDate';
+    const FIELD_PASSWORD_RESET_COUNT = 'passwordResetCount';
+    const FIELD_STATUS = 'status';
+
     /**
      * Filterable Fields
      *

@@ -29,6 +29,10 @@ class {{requestClassName}} extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = {{loginRequired}};
 
+    {{#fields}}
+    const FIELD_{{constantName}} = '{{sdkFieldName}}';
+    {{/fields}}
+
     /**
      * Filterable Fields
      *

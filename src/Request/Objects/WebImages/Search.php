@@ -29,6 +29,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_NAME = 'name';
+    const FIELD_FILE_NAME = 'fileName';
+    const FIELD_URL = 'url';
+    const FIELD_SIZE = 'size';
+    const FIELD_WIDTH = 'width';
+    const FIELD_HEIGHT = 'height';
+
     /**
      * Filterable Fields
      *

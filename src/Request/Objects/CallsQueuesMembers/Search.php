@@ -29,6 +29,18 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_CONTACT_ID = 'contactId';
+    const FIELD_QUEUE_ID = 'queueId';
+    const FIELD_MANAGER = 'manager';
+    const FIELD_CREATED_DATE = 'createdDate';
+    const FIELD_CREATED_BY_ID = 'createdById';
+    const FIELD_UPDATED_DATE = 'updatedDate';
+    const FIELD_UPDATED_BY_ID = 'updatedById';
+    const FIELD_QUEUE_NAME = 'queueName';
+    const FIELD_NAME = 'name';
+    const FIELD_CONTACT_TYPE = 'contactType';
+
     /**
      * Filterable Fields
      *

@@ -41,6 +41,11 @@ class QueryField
     public $isKey = false;
 
     /**
+     * @var string
+     */
+    public $constantName;
+
+    /**
      * QueryField constructor.
      * @param $fieldName
      * @param $sdkFieldName
@@ -86,6 +91,8 @@ class QueryField
         {
             $this->friendlyName = $this->sdkFieldName;
         }
+
+        $this->constantName = strtoupper(preg_replace('#([A-Z])#', '_$1', $this->sdkFieldName));
     }
 
     /**

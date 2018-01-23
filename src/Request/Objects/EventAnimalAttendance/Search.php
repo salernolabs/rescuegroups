@@ -29,6 +29,36 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_STATUS = 'status';
+    const FIELD_ANIMAL_ID = 'animalId';
+    const FIELD_EVENT_ID = 'eventId';
+    const FIELD_ANIMAL_NAME = 'animalName';
+    const FIELD_ANIMAL_ORG_ID = 'animalOrgId';
+    const FIELD_ANIMAL_STATUS = 'animalStatus';
+    const FIELD_EVENT_NAME = 'eventName';
+    const FIELD_EVENT_START = 'eventStart';
+    const FIELD_EVENT_END = 'eventEnd';
+    const FIELD_EVENT_URL = 'eventUrl';
+    const FIELD_EVENT_DESCRIPTION = 'eventDescription';
+    const FIELD_EVENT_LOCATION_ID = 'eventLocationId';
+    const FIELD_EVENT_ANIMAL = 'eventAnimal';
+    const FIELD_EVENT_MEETREQUESTS = 'eventMeetrequests';
+    const FIELD_EVENT_SPECIES = 'eventSpecies';
+    const FIELD_EVENT_LOCATION_NAME = 'eventLocationName';
+    const FIELD_EVENT_LOCATION_URL = 'eventLocationUrl';
+    const FIELD_EVENT_LOCATION_ADDRESS = 'eventLocationAddress';
+    const FIELD_EVENT_LOCATION_CITY = 'eventLocationCity';
+    const FIELD_EVENT_LOCATION_STATE = 'eventLocationState';
+    const FIELD_EVENT_LOCATION_POSTALCODE = 'eventLocationPostalcode';
+    const FIELD_EVENT_LOCATION_COUNTRY = 'eventLocationCountry';
+    const FIELD_EVENT_LOCATION_PHONE = 'eventLocationPhone';
+    const FIELD_EVENT_LOCATION_PHONE_EXT = 'eventLocationPhoneExt';
+    const FIELD_EVENT_LOCATION_ANIMALS = 'eventLocationAnimals';
+    const FIELD_EVENT_LOCATION_EVENTS = 'eventLocationEvents';
+    const FIELD_EVENT_LOCATION_COLONIES = 'eventLocationColonies';
+    const FIELD_EVENT_LOCATION_MEETREQUESTS = 'eventLocationMeetrequests';
+
     /**
      * Filterable Fields
      *

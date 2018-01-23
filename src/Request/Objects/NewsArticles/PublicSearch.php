@@ -29,6 +29,13 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = false;
 
+    const FIELD_ID = 'id';
+    const FIELD_ORG_ID = 'orgId';
+    const FIELD_TITLE = 'title';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_DATE = 'date';
+    const FIELD_UPDATED_DATE = 'updatedDate';
+
     /**
      * Filterable Fields
      *

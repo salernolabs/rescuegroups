@@ -29,6 +29,20 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_ORG_ID = 'orgId';
+    const FIELD_NAME = 'name';
+    const FIELD_CONTENT = 'content';
+    const FIELD_STATUS = 'status';
+    const FIELD_USELAYOUT = 'uselayout';
+    const FIELD_SHOWONMENU = 'showonmenu';
+    const FIELD_META_DESCRIPTION = 'metaDescription';
+    const FIELD_BACKGROUND_IMAGE_ID = 'backgroundImageId';
+    const FIELD_BACKGROUND_IMAGE_FILE_NAME = 'backgroundImageFileName';
+    const FIELD_BACKGROUND_MUSIC_ID = 'backgroundMusicId';
+    const FIELD_BACKGROUND_MUSIC_FILE_NAME = 'backgroundMusicFileName';
+    const FIELD_ROLES = 'roles';
+
     /**
      * Filterable Fields
      *

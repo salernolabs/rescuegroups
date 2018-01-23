@@ -29,6 +29,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_SINGULAR = 'singular';
+    const FIELD_PLURAL = 'plural';
+    const FIELD_SINGULAR_YOUNG = 'singularYoung';
+    const FIELD_PLURAL_YOUNG = 'pluralYoung';
+    const FIELD_FULLNAME = 'fullname';
+
     /**
      * Filterable Fields
      *

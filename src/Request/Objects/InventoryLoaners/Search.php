@@ -29,6 +29,64 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_CONTACT_ID = 'contactId';
+    const FIELD_ITEM_ID = 'itemId';
+    const FIELD_LOAN_DATE = 'loanDate';
+    const FIELD_LOAN_CONDITION = 'loanCondition';
+    const FIELD_LOAN_CONDITION_ID = 'loanConditionId';
+    const FIELD_DUE_DATE = 'dueDate';
+    const FIELD_RETURN_DATE = 'returnDate';
+    const FIELD_RETURN_CONDITION = 'returnCondition';
+    const FIELD_RETURN_CONDITION_ID = 'returnConditionId';
+    const FIELD_NOTES = 'notes';
+    const FIELD_LAST_DUE_REMINDER_DATE = 'lastDueReminderDate';
+    const FIELD_INVENTORYITEM_NAME = 'inventoryitemName';
+    const FIELD_INVENTORYITEM_DESCRIPTION = 'inventoryitemDescription';
+    const FIELD_INVENTORYITEM_RECEIVED_DATE = 'inventoryitemReceivedDate';
+    const FIELD_INVENTORYITEM_SOURCE = 'inventoryitemSource';
+    const FIELD_INVENTORYITEM_COST = 'inventoryitemCost';
+    const FIELD_INVENTORYITEM_CONDITION_ID = 'inventoryitemConditionId';
+    const FIELD_INVENTORYITEM_CONDITION = 'inventoryitemCondition';
+    const FIELD_INVENTORYITEM_CATEGORY = 'inventoryitemCategory';
+    const FIELD_INVENTORYITEM_DISPOSED_DATE = 'inventoryitemDisposedDate';
+    const FIELD_INVENTORYITEM_DISPOSED_DESTINATION = 'inventoryitemDisposedDestination';
+    const FIELD_INVENTORYITEM_STORAGE_LOCATION = 'inventoryitemStorageLocation';
+    const FIELD_CONTACT_CLASS = 'contactClass';
+    const FIELD_CONTACT_SALUTATION = 'contactSalutation';
+    const FIELD_CONTACT_NAME = 'contactName';
+    const FIELD_CONTACT_FIRSTNAME = 'contactFirstname';
+    const FIELD_CONTACT_LASTNAME = 'contactLastname';
+    const FIELD_CONTACT_TITLE = 'contactTitle';
+    const FIELD_CONTACT_ADDRESS = 'contactAddress';
+    const FIELD_CONTACT_CITY = 'contactCity';
+    const FIELD_CONTACT_STATE = 'contactState';
+    const FIELD_CONTACT_POSTALCODE = 'contactPostalcode';
+    const FIELD_CONTACT_PLUS4 = 'contactPlus4';
+    const FIELD_CONTACT_COUNTY = 'contactCounty';
+    const FIELD_CONTACT_COUNTRY = 'contactCountry';
+    const FIELD_CONTACT_PHONE_HOME = 'contactPhoneHome';
+    const FIELD_CONTACT_PHONE_WORK = 'contactPhoneWork';
+    const FIELD_CONTACT_PHONE_WORK_EXT = 'contactPhoneWorkExt';
+    const FIELD_CONTACT_PHONE_CELL = 'contactPhoneCell';
+    const FIELD_CONTACT_FAX = 'contactFax';
+    const FIELD_CONTACT_EMAIL = 'contactEmail';
+    const FIELD_CONTACT_EMAIL_ALT = 'contactEmailAlt';
+    const FIELD_CONTACT_EMAIL_PAGER = 'contactEmailPager';
+    const FIELD_CONTACT_COMPANY = 'contactCompany';
+    const FIELD_CONTACT_REFERRED_BY = 'contactReferredBy';
+    const FIELD_CONTACT_CARRIER = 'contactCarrier';
+    const FIELD_CONTACT_BOUNCES = 'contactBounces';
+    const FIELD_CONTACT_SEND_MAIL = 'contactSendMail';
+    const FIELD_CONTACT_ACTIVE = 'contactActive';
+    const FIELD_CONTACT_COMMENT = 'contactComment';
+    const FIELD_CONTACT_TRANSPORTATION = 'contactTransportation';
+    const FIELD_CONTACT_AVAILABILITY = 'contactAvailability';
+    const FIELD_CONTACT_CARETAKER_PUBLIC = 'contactCaretakerPublic';
+    const FIELD_CONTACT_COALITION_MEMBER = 'contactCoalitionMember';
+    const FIELD_CONTACT_GROUPS = 'contactGroups';
+    const FIELD_CONTACT_ADDED = 'contactAdded';
+
     /**
      * Filterable Fields
      *

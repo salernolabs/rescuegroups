@@ -29,6 +29,32 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = false;
 
+    const FIELD_ID = 'id';
+    const FIELD_LOCATION = 'location';
+    const FIELD_NAME = 'name';
+    const FIELD_ADDRESS = 'address';
+    const FIELD_CITY = 'city';
+    const FIELD_STATE = 'state';
+    const FIELD_POSTALCODE = 'postalcode';
+    const FIELD_PLUS4 = 'plus4';
+    const FIELD_COUNTRY = 'country';
+    const FIELD_PHONE = 'phone';
+    const FIELD_FAX = 'fax';
+    const FIELD_EMAIL = 'email';
+    const FIELD_WEBSITE_URL = 'websiteUrl';
+    const FIELD_FACEBOOK_URL = 'facebookUrl';
+    const FIELD_ADOPTION_URL = 'adoptionUrl';
+    const FIELD_DONATION_URL = 'donationUrl';
+    const FIELD_SPONSORSHIP_URL = 'sponsorshipUrl';
+    const FIELD_SERVE_AREAS = 'serveAreas';
+    const FIELD_ADOPTION_PROCESS = 'adoptionProcess';
+    const FIELD_ABOUT = 'about';
+    const FIELD_SERVICES = 'services';
+    const FIELD_MEET_PETS = 'meetPets';
+    const FIELD_TYPE = 'type';
+    const FIELD_LOCATION_DISTANCE = 'locationDistance';
+    const FIELD_COMMONAPPLICATION_ACCEPT = 'commonapplicationAccept';
+
     /**
      * Filterable Fields
      *

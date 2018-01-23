@@ -29,6 +29,18 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_NAME = 'name';
+    const FIELD_FROM_EMAIL = 'fromEmail';
+    const FIELD_DEFAULT_URGENCY_ID = 'defaultUrgencyId';
+    const FIELD_DEFAULT_URGENCY_NAME = 'defaultUrgencyName';
+    const FIELD_CREATED_DATE = 'createdDate';
+    const FIELD_CREATED_BY_ID = 'createdById';
+    const FIELD_UPDATED_DATE = 'updatedDate';
+    const FIELD_UPDATED_BY_ID = 'updatedById';
+    const FIELD_OPEN_CALLS_COUNT = 'openCallsCount';
+    const FIELD_MEMBERS_COUNT = 'membersCount';
+
     /**
      * Filterable Fields
      *

@@ -29,6 +29,27 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = false;
 
+    const FIELD_ID = 'id';
+    const FIELD_ORG_ID = 'orgId';
+    const FIELD_NAME = 'name';
+    const FIELD_START = 'start';
+    const FIELD_END = 'end';
+    const FIELD_URL = 'url';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_LOCATION_ID = 'locationId';
+    const FIELD_SPECIES = 'species';
+    const FIELD_LOCATION_NAME = 'locationName';
+    const FIELD_LOCATION_URL = 'locationUrl';
+    const FIELD_LOCATION_ADDRESS = 'locationAddress';
+    const FIELD_LOCATION_CITY = 'locationCity';
+    const FIELD_LOCATION_STATE = 'locationState';
+    const FIELD_LOCATION_POSTALCODE = 'locationPostalcode';
+    const FIELD_LOCATION_COUNTRY = 'locationCountry';
+    const FIELD_LOCATION_PHONE = 'locationPhone';
+    const FIELD_LOCATION_PHONE_EXT = 'locationPhoneExt';
+    const FIELD_LOCATIONS = 'locations';
+    const FIELD_LOCATION_DISTANCE = 'locationDistance';
+
     /**
      * Filterable Fields
      *

@@ -13,8 +13,11 @@ echo 'Getting pets...' . PHP_EOL;
 try
 {
     $query = new \RescueGroups\Request\Objects\Animals\Search();
-    //$query->addFilter('animalRescueID', 'equals', 1);
-    $query->addField('name');
+    $query->addFilter(\RescueGroups\Request\Objects\Animals\Search::FIELD_SPECIES, 'equals', 'dog');
+    $query
+        ->addField(\RescueGroups\Request\Objects\Animals\Search::FIELD_NAME)
+        ->addField(\RescueGroups\Request\Objects\Animals\Search::FIELD_SPECIES_ID)
+        ->addField(\RescueGroups\Request\Objects\Animals\Search::FIELD_DESCRIPTION);
 
     $result = $api->executeRequest($query);
 }
@@ -26,5 +29,8 @@ catch (\Throwable $exception)
 
 foreach ($result->data as $animal)
 {
-    echo 'Animal with id ' . $animal->id . ' is ' . $animal->name . PHP_EOL;
+    /**
+     * @var \RescueGroups\Objects\Animal $animal
+     */
+    echo 'Animal with id ' . $animal->id . ' is ' . $animal->name . ', a ' . $animal->speciesId . PHP_EOL . trim($animal->description) . PHP_EOL . PHP_EOL;
 }
