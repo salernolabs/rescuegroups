@@ -10,62 +10,92 @@ namespace RescueGroups\Objects;
 
 class IntakesTransfer implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Owner Surrender, Primary Key
      *
      * @var integer
      */
-    public $intakesTransferID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $intakesTransferAnimalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $intakesTransferAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $intakesTransferDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $intakesTransferNotes = null;
+    public $notes = null;
 
     /**
      * Transferred From
      *
      * @var integer
      */
-    public $intakesTransferFromID = null;
+    public $fromId = null;
 
     /**
      * Coalition Member
      *
      * @var string
      */
-    public $intakesTransferCoalitionMember = null;
+    public $coalitionMember = null;
 
     /**
      * Transfer Reason
      *
      * @var integer
      */
-    public $intakesTransferReasonID = null;
+    public $reasonId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesTransferID' => 'id',
+            'intakesTransferAnimalID' => 'animalId',
+            'intakesTransferAnimalConditionID' => 'animalConditionId',
+            'intakesTransferDate' => 'date',
+            'intakesTransferNotes' => 'notes',
+            'intakesTransferFromID' => 'fromId',
+            'intakesTransferCoalitionMember' => 'coalitionMember',
+            'intakesTransferReasonID' => 'reasonId',
+        ],
+        'output' => [
+            'id' => 'intakesTransferID',
+            'animalId' => 'intakesTransferAnimalID',
+            'animalConditionId' => 'intakesTransferAnimalConditionID',
+            'date' => 'intakesTransferDate',
+            'notes' => 'intakesTransferNotes',
+            'fromId' => 'intakesTransferFromID',
+            'coalitionMember' => 'intakesTransferCoalitionMember',
+            'reasonId' => 'intakesTransferReasonID',
+        ]
+    ];
 
     /**
      * IntakesTransfer Constructor
@@ -75,14 +105,7 @@ class IntakesTransfer implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesTransferID)) $this->intakesTransferID = $inputData->intakesTransferID;
-        if (!empty($inputData->intakesTransferAnimalID)) $this->intakesTransferAnimalID = $inputData->intakesTransferAnimalID;
-        if (!empty($inputData->intakesTransferAnimalConditionID)) $this->intakesTransferAnimalConditionID = $inputData->intakesTransferAnimalConditionID;
-        if (!empty($inputData->intakesTransferDate)) $this->intakesTransferDate = $inputData->intakesTransferDate;
-        if (!empty($inputData->intakesTransferNotes)) $this->intakesTransferNotes = $inputData->intakesTransferNotes;
-        if (!empty($inputData->intakesTransferFromID)) $this->intakesTransferFromID = $inputData->intakesTransferFromID;
-        if (!empty($inputData->intakesTransferCoalitionMember)) $this->intakesTransferCoalitionMember = $inputData->intakesTransferCoalitionMember;
-        if (!empty($inputData->intakesTransferReasonID)) $this->intakesTransferReasonID = $inputData->intakesTransferReasonID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -93,16 +116,6 @@ class IntakesTransfer implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->intakesTransferID !== null) $output['intakesTransferID'] = $this->intakesTransferID;
-        if ($this->intakesTransferAnimalID !== null) $output['intakesTransferAnimalID'] = $this->intakesTransferAnimalID;
-        if ($this->intakesTransferAnimalConditionID !== null) $output['intakesTransferAnimalConditionID'] = $this->intakesTransferAnimalConditionID;
-        if ($this->intakesTransferDate !== null) $output['intakesTransferDate'] = $this->intakesTransferDate;
-        if ($this->intakesTransferNotes !== null) $output['intakesTransferNotes'] = $this->intakesTransferNotes;
-        if ($this->intakesTransferFromID !== null) $output['intakesTransferFromID'] = $this->intakesTransferFromID;
-        if ($this->intakesTransferCoalitionMember !== null) $output['intakesTransferCoalitionMember'] = $this->intakesTransferCoalitionMember;
-        if ($this->intakesTransferReasonID !== null) $output['intakesTransferReasonID'] = $this->intakesTransferReasonID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

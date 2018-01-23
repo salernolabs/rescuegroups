@@ -12,6 +12,15 @@ Performs memorials.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Memorials\Define();
 
     $result = $api->executeRequest($query);
+Performs memorials.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Memorials\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs memorials.view query.
 
@@ -19,7 +28,7 @@ Performs memorials.view query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\View();
 
-    $query->setmemorialID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,11 +57,11 @@ Performs memorials.add add query to create an instance of an object. Uses specia
     $query = new \RescueGroups\Request\Objects\Memorials\Add();
 
     $addObject = new \RescueGroups\Objects\Create\Memorial();
-    $addObject->memorialPictureBinary = "File"
-    $addObject->memorialName = "File name"
-    $addObject->memorialPictureOldFileName = "Old file name"
-    $addObject->memorialDescription = "Description"
-    $addObject->memorialOrder = "Order"
+    $addObject->pictureBinary = "File"
+    $addObject->name = "File name"
+    $addObject->pictureOldFileName = "Old file name"
+    $addObject->description = "Description"
+    $addObject->order = "Order"
 
     $query->addMemorial($addObject);
 
@@ -65,11 +74,11 @@ Performs memorials.edit edit query to edit an object. Uses classes of type [\Res
     $query = new \RescueGroups\Request\Objects\Memorials\Edit();
 
     $editObject = new \RescueGroups\Objects\Memorial();
-    $editObject->memorialID = "ID"
-    $editObject->memorialPictureBinary = "File"
-    $editObject->memorialPictureOldFileName = "Old file name"
-    $editObject->memorialName = "File name"
-    $editObject->memorialDescription = "Description"
+    $editObject->id = "ID"
+    $editObject->pictureBinary = "File"
+    $editObject->pictureOldFileName = "Old file name"
+    $editObject->name = "File name"
+    $editObject->description = "Description"
 
     $query->updateMemorial($editObject);
 
@@ -81,7 +90,7 @@ Performs memorials.delete query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\Delete();
 
-    $query->setmemorialID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -102,9 +111,9 @@ Performs memorials.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\UpdateSettings();
 
-    $query->setenable("Enable the Memorials feature");
-    $query->setsetDonationOnlineStoreItem("Select Memorials donation store item");
-    $query->setshowAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
+    $query->setenableMemorials("Enable the Memorials feature");
+    $query->setsetMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
+    $query->setshowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
 
     $result = $api->executeRequest($query);
 

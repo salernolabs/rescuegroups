@@ -25,14 +25,14 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('journalEntrytypeID')
-            ->addFilter('journalEntrytypeID', 'equals', 'Entrytype ID')
-            ->addField('journalEntrytypeDescription')
-            ->addFilter('journalEntrytypeDescription', 'equals', 'Description')
-            ->addField('journalEntrytypeCategoryID')
-            ->addFilter('journalEntrytypeCategoryID', 'equals', 'Category ID')
-            ->addField('journalEntrytypeCategoryName')
-            ->addFilter('journalEntrytypeCategoryName', 'equals', 'Category')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'Entrytype ID')
+            ->addField('description')
+            ->addFilter('description', 'equals', 'Description')
+            ->addField('categoryId')
+            ->addFilter('categoryId', 'equals', 'Category ID')
+            ->addField('categoryName')
+            ->addFilter('categoryName', 'equals', 'Category')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class CallsQueue implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $queueID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $queueName = null;
+    public $name = null;
 
     /**
      * From Email Address
      *
      * @var string
      */
-    public $queueFromEmail = null;
+    public $fromEmail = null;
 
     /**
      * Default Urgency
      *
      * @var integer
      */
-    public $queueDefaultUrgencyID = null;
+    public $defaultUrgencyId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'queueID' => 'id',
+            'queueName' => 'name',
+            'queueFromEmail' => 'fromEmail',
+            'queueDefaultUrgencyID' => 'defaultUrgencyId',
+        ],
+        'output' => [
+            'id' => 'queueID',
+            'name' => 'queueName',
+            'fromEmail' => 'queueFromEmail',
+            'defaultUrgencyId' => 'queueDefaultUrgencyID',
+        ]
+    ];
 
     /**
      * CallsQueue Constructor
@@ -47,10 +69,7 @@ class CallsQueue implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->queueID)) $this->queueID = $inputData->queueID;
-        if (!empty($inputData->queueName)) $this->queueName = $inputData->queueName;
-        if (!empty($inputData->queueFromEmail)) $this->queueFromEmail = $inputData->queueFromEmail;
-        if (!empty($inputData->queueDefaultUrgencyID)) $this->queueDefaultUrgencyID = $inputData->queueDefaultUrgencyID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class CallsQueue implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->queueID !== null) $output['queueID'] = $this->queueID;
-        if ($this->queueName !== null) $output['queueName'] = $this->queueName;
-        if ($this->queueFromEmail !== null) $output['queueFromEmail'] = $this->queueFromEmail;
-        if ($this->queueDefaultUrgencyID !== null) $output['queueDefaultUrgencyID'] = $this->queueDefaultUrgencyID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

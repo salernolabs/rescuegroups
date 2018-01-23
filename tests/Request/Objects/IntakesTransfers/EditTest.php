@@ -22,14 +22,14 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesTransfers\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesTransfer();
-        $testObject->intakesTransferID = 'testValue Owner Surrender';
-        $testObject->intakesTransferAnimalID = 'testValue Animal';
-        $testObject->intakesTransferAnimalConditionID = 'testValue Condition';
-        $testObject->intakesTransferDate = 'testValue Date';
-        $testObject->intakesTransferNotes = 'testValue Notes';
-        $testObject->intakesTransferFromID = 'testValue Transferred From';
-        $testObject->intakesTransferCoalitionMember = 'testValue Coalition Member';
-        $testObject->intakesTransferReasonID = 'testValue Transfer Reason';
+        $testObject->id = 'testValue Owner Surrender';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->fromId = 'testValue Transferred From';
+        $testObject->coalitionMember = 'testValue Coalition Member';
+        $testObject->reasonId = 'testValue Transfer Reason';
 
         $query->updateIntakesTransfer($testObject);
 

@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Colonies\Add();
 
         $testObject = new \RescueGroups\Objects\Colony();
-        $testObject->colonyName = 'testValue Name';
-        $testObject->colonyTotalAnimals = 'testValue Number of animals';
-        $testObject->colonyRegisteredDate = 'testValue Registered';
-        $testObject->colonySpecificLocation = 'testValue Specific location';
+        $testObject->name = 'testValue Name';
+        $testObject->totalAnimals = 'testValue Number of animals';
+        $testObject->registeredDate = 'testValue Registered';
+        $testObject->specificLocation = 'testValue Specific location';
 
         $query->addColony($testObject);
 

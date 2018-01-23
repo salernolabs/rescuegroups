@@ -12,6 +12,15 @@ Performs animalsReasonsEuthanasia.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsReasonsEuthanasia.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsReasonsEuthanasia.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs animalsReasonsEuthanasia.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\View();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalsReasonsEuthanasia.add add query to create an instance of an obje
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsReasonsEuthanasia();
-    $addObject->reasonName = "Reason"
+    $addObject->name = "Reason"
 
     $query->addAnimalsReasonsEuthanasia($addObject);
 
@@ -68,8 +77,8 @@ Performs animalsReasonsEuthanasia.edit edit query to edit an object. Uses classe
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsReasonsEuthanasia();
-    $editObject->reasonID = "Reason ID"
-    $editObject->reasonName = "Reason"
+    $editObject->id = "Reason ID"
+    $editObject->name = "Reason"
 
     $query->updateAnimalsReasonsEuthanasia($editObject);
 
@@ -81,7 +90,7 @@ Performs animalsReasonsEuthanasia.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Delete();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 

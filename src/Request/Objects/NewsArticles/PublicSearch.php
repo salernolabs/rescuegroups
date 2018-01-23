@@ -35,12 +35,12 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "articleID" => [1, 'articleID'],
-        "articleOrgID" => [0, 'articleOrgID'],
-        "articleTitle" => [0, 'articleTitle'],
-        "articleDescription" => [0, 'articleDescription'],
-        "articleDate" => [0, 'articleDate'],
-        "articleUpdatedDate" => [0, 'articleUpdatedDate'],
+        "id" => [1, 'articleID'],
+        "orgId" => [0, 'articleOrgID'],
+        "title" => [0, 'articleTitle'],
+        "description" => [0, 'articleDescription'],
+        "date" => [0, 'articleDate'],
+        "updatedDate" => [0, 'articleUpdatedDate'],
     ];
 
     /**

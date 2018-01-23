@@ -12,6 +12,15 @@ Performs animalsReasonsSurrender.define query. This gives information about the 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsReasonsSurrender.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsReasonsSurrender.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs animalsReasonsSurrender.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\View();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalsReasonsSurrender.add add query to create an instance of an objec
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsReasonsSurrender();
-    $addObject->reasonName = "Reason"
+    $addObject->name = "Reason"
 
     $query->addAnimalsReasonsSurrender($addObject);
 
@@ -68,8 +77,8 @@ Performs animalsReasonsSurrender.edit edit query to edit an object. Uses classes
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsReasonsSurrender();
-    $editObject->reasonID = "Reason ID"
-    $editObject->reasonName = "Reason"
+    $editObject->id = "Reason ID"
+    $editObject->name = "Reason"
 
     $query->updateAnimalsReasonsSurrender($editObject);
 
@@ -81,7 +90,7 @@ Performs animalsReasonsSurrender.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Delete();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 

@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebFiles\Add();
 
         $testObject = new \RescueGroups\Objects\Create\WebFile();
-        $testObject->webfileBinary = 'testValue File';
-        $testObject->webfileOldFileName = 'testValue Old file name';
-        $testObject->webfileDescription = 'testValue Description';
-        $testObject->tatus = 'testValue Status';
-        $testObject->webfileDisplayInline = 'testValue Inline';
+        $testObject->binary = 'testValue File';
+        $testObject->oldFileName = 'testValue Old file name';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
 
         $query->addWebFile($testObject);
 

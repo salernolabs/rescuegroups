@@ -12,6 +12,15 @@ Performs intakesImpounds.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesImpounds.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesImpounds\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesImpounds.view query.
 
@@ -19,7 +28,7 @@ Performs intakesImpounds.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\View();
 
-    $query->setintakesImpoundID("Impound");
+    $query->setid("Impound");
 
     $result = $api->executeRequest($query);
 
@@ -48,17 +57,17 @@ Performs intakesImpounds.add add query to create an instance of an object. Uses 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesImpound();
-    $addObject->intakesImpoundAnimalConditionID = "Condition"
-    $addObject->intakesImpoundDate = "Date"
-    $addObject->intakesImpoundNotes = "Notes"
-    $addObject->intakesImpoundLocation = "Impound Location"
-    $addObject->intakesImpoundAddress = "Impound Street address"
-    $addObject->intakesImpoundCity = "Impound City"
-    $addObject->tate = "Impound State/Province"
-    $addObject->intakesImpoundPostalcode = "Impound Postal Code"
-    $addObject->intakesImpoundFromID = "Impound From"
-    $addObject->taffID = "Impound Performed By"
-    $addObject->intakesImpoundReasonID = "Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->location = "Impound Location"
+    $addObject->address = "Impound Street address"
+    $addObject->city = "Impound City"
+    $addObject->state = "Impound State/Province"
+    $addObject->postalcode = "Impound Postal Code"
+    $addObject->fromId = "Impound From"
+    $addObject->staffId = "Impound Performed By"
+    $addObject->reasonId = "Reason"
 
     $query->addIntakesImpound($addObject);
 
@@ -71,19 +80,19 @@ Performs intakesImpounds.edit edit query to edit an object. Uses classes of type
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesImpound();
-    $editObject->intakesImpoundID = "Impound"
-    $editObject->intakesImpoundAnimalID = "Animal"
-    $editObject->intakesImpoundAnimalConditionID = "Condition"
-    $editObject->intakesImpoundDate = "Date"
-    $editObject->intakesImpoundNotes = "Notes"
-    $editObject->intakesImpoundLocation = "Impound Location"
-    $editObject->intakesImpoundAddress = "Impound Street address"
-    $editObject->intakesImpoundCity = "Impound City"
-    $editObject->tate = "Impound State/Province"
-    $editObject->intakesImpoundPostalcode = "Impound Postal Code"
-    $editObject->intakesImpoundFromID = "Impound From"
-    $editObject->taffID = "Impound Performed By"
-    $editObject->intakesImpoundReasonID = "Reason"
+    $editObject->id = "Impound"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->location = "Impound Location"
+    $editObject->address = "Impound Street address"
+    $editObject->city = "Impound City"
+    $editObject->state = "Impound State/Province"
+    $editObject->postalcode = "Impound Postal Code"
+    $editObject->fromId = "Impound From"
+    $editObject->staffId = "Impound Performed By"
+    $editObject->reasonId = "Reason"
 
     $query->updateIntakesImpound($editObject);
 
@@ -95,19 +104,19 @@ Performs intakesImpounds.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesImpoundAnimalID("Animal");
-    $query->setintakesImpoundAnimalConditionID("Condition");
-    $query->setintakesImpoundDate("Date");
-    $query->setintakesImpoundNotes("Notes");
-    $query->setintakesImpoundLocation("Impound Location");
-    $query->setintakesImpoundAddress("Impound Street address");
-    $query->setintakesImpoundCity("Impound City");
-    $query->settate("Impound State/Province");
-    $query->setintakesImpoundPostalcode("Impound Postal Code");
-    $query->setintakesImpoundFromID("Impound From");
-    $query->settaffID("Impound Performed By");
-    $query->setintakesImpoundReasonID("Reason");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setlocation("Impound Location");
+    $query->setaddress("Impound Street address");
+    $query->setcity("Impound City");
+    $query->setstate("Impound State/Province");
+    $query->setpostalcode("Impound Postal Code");
+    $query->setfromId("Impound From");
+    $query->setstaffId("Impound Performed By");
+    $query->setreasonId("Reason");
 
     $result = $api->executeRequest($query);
 

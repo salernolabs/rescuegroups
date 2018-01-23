@@ -12,6 +12,15 @@ Performs outcomesAdoptions.define query. This gives information about the API in
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesAdoptions.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesAdoptions.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs outcomesAdoptions.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\View();
 
-    $query->setoutcomesAdoptionID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,10 +64,10 @@ Performs outcomesAdoptions.add add query to create an instance of an object. Use
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesAdoption();
-    $addObject->outcomesAdoptionAnimalConditionID = "Condition"
-    $addObject->outcomesAdoptionDate = "Date"
-    $addObject->outcomesAdoptionNotes = "Notes"
-    $addObject->outcomesAdoptionAdoptionID = "Adoption"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->adoptionId = "Adoption"
 
     $query->addOutcomesAdoption($addObject);
 
@@ -71,11 +80,11 @@ Performs outcomesAdoptions.edit edit query to edit an object. Uses classes of ty
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Edit();
 
     $editObject = new \RescueGroups\Objects\OutcomesAdoption();
-    $editObject->outcomesAdoptionID = "ID"
-    $editObject->outcomesAdoptionAnimalConditionID = "Condition"
-    $editObject->outcomesAdoptionDate = "Date"
-    $editObject->outcomesAdoptionNotes = "Notes"
-    $editObject->outcomesAdoptionAdoptionID = "Adoption"
+    $editObject->id = "ID"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->adoptionId = "Adoption"
 
     $query->updateOutcomesAdoption($editObject);
 
@@ -87,11 +96,11 @@ Performs outcomesAdoptions.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setoutcomesAdoptionAnimalConditionID("Condition");
-    $query->setoutcomesAdoptionDate("Date");
-    $query->setoutcomesAdoptionNotes("Notes");
-    $query->setoutcomesAdoptionAdoptionID("Adoption");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setadoptionId("Adoption");
 
     $result = $api->executeRequest($query);
 

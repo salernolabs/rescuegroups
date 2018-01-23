@@ -12,6 +12,15 @@ Performs webfiles.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\WebFiles\Define();
 
     $result = $api->executeRequest($query);
+Performs webfiles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WebFiles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs webfiles.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs webfiles.view query.
 
     $query = new \RescueGroups\Request\Objects\WebFiles\View();
 
-    $query->setwebfileID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,11 +64,11 @@ Performs webfiles.add add query to create an instance of an object. Uses special
     $query = new \RescueGroups\Request\Objects\WebFiles\Add();
 
     $addObject = new \RescueGroups\Objects\Create\WebFile();
-    $addObject->webfileBinary = "File"
-    $addObject->webfileOldFileName = "Old file name"
-    $addObject->webfileDescription = "Description"
-    $addObject->tatus = "Status"
-    $addObject->webfileDisplayInline = "Inline"
+    $addObject->binary = "File"
+    $addObject->oldFileName = "Old file name"
+    $addObject->description = "Description"
+    $addObject->status = "Status"
+    $addObject->displayInline = "Inline"
 
     $query->addWebFile($addObject);
 
@@ -72,11 +81,11 @@ Performs webfiles.edit edit query to edit an object. Uses classes of type [\Resc
     $query = new \RescueGroups\Request\Objects\WebFiles\Edit();
 
     $editObject = new \RescueGroups\Objects\WebFile();
-    $editObject->webfileID = "ID"
-    $editObject->webfileDescription = "Description"
-    $editObject->tatus = "Status"
-    $editObject->webfileDisplayInline = "Inline"
-    $editObject->webfileRoleID = "Security Role"
+    $editObject->id = "ID"
+    $editObject->description = "Description"
+    $editObject->status = "Status"
+    $editObject->displayInline = "Inline"
+    $editObject->roleId = "Security Role"
 
     $query->updateWebFile($editObject);
 

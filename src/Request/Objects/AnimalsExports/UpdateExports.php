@@ -30,14 +30,14 @@ class UpdateExports extends \RescueGroups\Request\Objects\Base implements \Rescu
      *
      * @var integer
      */
-    private $exportID = null;
+    private $id = null;
 
     /**
      * Export enabled
      *
      * @var string
      */
-    private $exportEnabled = null;
+    private $enabled = null;
 
 
     /**
@@ -46,9 +46,9 @@ class UpdateExports extends \RescueGroups\Request\Objects\Base implements \Rescu
      * @param integer $value
      * @return $this
      */
-    public function setExportID($value)
+    public function setId($value)
     {
-        $this->exportID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -59,9 +59,9 @@ class UpdateExports extends \RescueGroups\Request\Objects\Base implements \Rescu
      * @param string $value
      * @return $this
      */
-    public function setExportEnabled($value)
+    public function setEnabled($value)
     {
-        $this->exportEnabled = $value;
+        $this->enabled = $value;
 
         return $this;
     }
@@ -76,7 +76,7 @@ class UpdateExports extends \RescueGroups\Request\Objects\Base implements \Rescu
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->exportID !== null) $parameterArray['values'][] = ["exportID"=>$this->exportID];
-        if ($this->exportEnabled !== null) $parameterArray['values'][] = ["exportEnabled"=>$this->exportEnabled];
+        if ($this->id !== null) $parameterArray['values'][] = ["exportID"=>$this->id];
+        if ($this->enabled !== null) $parameterArray['values'][] = ["exportEnabled"=>$this->enabled];
     }
 }

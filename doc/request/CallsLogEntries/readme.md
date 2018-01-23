@@ -12,6 +12,15 @@ Performs callsLogentries.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
 
     $result = $api->executeRequest($query);
+Performs callsLogentries.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs callsLogentries.view query.
 
@@ -19,7 +28,7 @@ Performs callsLogentries.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
 
-    $query->setlogentryID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,10 +57,10 @@ Performs callsLogentries.add add query to create an instance of an object. Uses 
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\Add();
 
     $addObject = new \RescueGroups\Objects\Create\CallsLogEntry();
-    $addObject->logentryContactID = "Contact"
-    $addObject->logentryDate = "Date"
-    $addObject->logentryOutcomeID = "Outcome"
-    $addObject->logentryComments = "Comments"
+    $addObject->contactId = "Contact"
+    $addObject->date = "Date"
+    $addObject->outcomeId = "Outcome"
+    $addObject->comments = "Comments"
 
     $query->addCallsLogEntry($addObject);
 

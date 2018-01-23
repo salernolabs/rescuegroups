@@ -22,14 +22,14 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsJournalEntry();
-        $testObject->journalEntryID = 'testValue Entry ID';
-        $testObject->journalEntryAnimalID = 'testValue Animal ID';
-        $testObject->journalEntryDate = 'testValue Date';
-        $testObject->journalEntryComment = 'testValue Comment';
-        $testObject->journalEntryEntrytypeID = 'testValue Entrytype ID';
-        $testObject->journalEntryCost = 'testValue Cost';
-        $testObject->journalEntryDueDate = 'testValue Due Date';
-        $testObject->journalEntryReminderDate = 'testValue Reminder Date';
+        $testObject->id = 'testValue Entry ID';
+        $testObject->animalId = 'testValue Animal ID';
+        $testObject->date = 'testValue Date';
+        $testObject->comment = 'testValue Comment';
+        $testObject->entrytypeId = 'testValue Entrytype ID';
+        $testObject->cost = 'testValue Cost';
+        $testObject->dueDate = 'testValue Due Date';
+        $testObject->reminderDate = 'testValue Reminder Date';
 
         $query->updateAnimalsJournalEntry($testObject);
 

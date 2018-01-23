@@ -10,83 +10,119 @@ namespace RescueGroups\Objects;
 
 class IntakesStrayDropoff implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Stray Pickup, Primary Key
      *
      * @var integer
      */
-    public $intakesStraydropoffID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $intakesStraydropoffAnimalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $intakesStraydropoffAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $intakesStraydropoffDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $intakesStraydropoffNotes = null;
+    public $notes = null;
 
     /**
      * Found Location
      *
      * @var string
      */
-    public $intakesStraydropoffFoundLocation = null;
+    public $foundLocation = null;
 
     /**
      * Found Street address
      *
      * @var string
      */
-    public $intakesStraydropoffFoundAddress = null;
+    public $foundAddress = null;
 
     /**
      * Found City
      *
      * @var string
      */
-    public $intakesStraydropoffFoundCity = null;
+    public $foundCity = null;
 
     /**
      * Found State/Province
      *
      * @var string
      */
-    public $intakesStraydropoffFoundState = null;
+    public $foundState = null;
 
     /**
      * Found Postal Code
      *
      * @var string
      */
-    public $intakesStraydropoffFoundPostalcode = null;
+    public $foundPostalcode = null;
 
     /**
      * Dropped off by
      *
      * @var integer
      */
-    public $intakesStraydropoffFinderID = null;
+    public $finderId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesStraydropoffID' => 'id',
+            'intakesStraydropoffAnimalID' => 'animalId',
+            'intakesStraydropoffAnimalConditionID' => 'animalConditionId',
+            'intakesStraydropoffDate' => 'date',
+            'intakesStraydropoffNotes' => 'notes',
+            'intakesStraydropoffFoundLocation' => 'foundLocation',
+            'intakesStraydropoffFoundAddress' => 'foundAddress',
+            'intakesStraydropoffFoundCity' => 'foundCity',
+            'intakesStraydropoffFoundState' => 'foundState',
+            'intakesStraydropoffFoundPostalcode' => 'foundPostalcode',
+            'intakesStraydropoffFinderID' => 'finderId',
+        ],
+        'output' => [
+            'id' => 'intakesStraydropoffID',
+            'animalId' => 'intakesStraydropoffAnimalID',
+            'animalConditionId' => 'intakesStraydropoffAnimalConditionID',
+            'date' => 'intakesStraydropoffDate',
+            'notes' => 'intakesStraydropoffNotes',
+            'foundLocation' => 'intakesStraydropoffFoundLocation',
+            'foundAddress' => 'intakesStraydropoffFoundAddress',
+            'foundCity' => 'intakesStraydropoffFoundCity',
+            'foundState' => 'intakesStraydropoffFoundState',
+            'foundPostalcode' => 'intakesStraydropoffFoundPostalcode',
+            'finderId' => 'intakesStraydropoffFinderID',
+        ]
+    ];
 
     /**
      * IntakesStrayDropoff Constructor
@@ -96,17 +132,7 @@ class IntakesStrayDropoff implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesStraydropoffID)) $this->intakesStraydropoffID = $inputData->intakesStraydropoffID;
-        if (!empty($inputData->intakesStraydropoffAnimalID)) $this->intakesStraydropoffAnimalID = $inputData->intakesStraydropoffAnimalID;
-        if (!empty($inputData->intakesStraydropoffAnimalConditionID)) $this->intakesStraydropoffAnimalConditionID = $inputData->intakesStraydropoffAnimalConditionID;
-        if (!empty($inputData->intakesStraydropoffDate)) $this->intakesStraydropoffDate = $inputData->intakesStraydropoffDate;
-        if (!empty($inputData->intakesStraydropoffNotes)) $this->intakesStraydropoffNotes = $inputData->intakesStraydropoffNotes;
-        if (!empty($inputData->intakesStraydropoffFoundLocation)) $this->intakesStraydropoffFoundLocation = $inputData->intakesStraydropoffFoundLocation;
-        if (!empty($inputData->intakesStraydropoffFoundAddress)) $this->intakesStraydropoffFoundAddress = $inputData->intakesStraydropoffFoundAddress;
-        if (!empty($inputData->intakesStraydropoffFoundCity)) $this->intakesStraydropoffFoundCity = $inputData->intakesStraydropoffFoundCity;
-        if (!empty($inputData->intakesStraydropoffFoundState)) $this->intakesStraydropoffFoundState = $inputData->intakesStraydropoffFoundState;
-        if (!empty($inputData->intakesStraydropoffFoundPostalcode)) $this->intakesStraydropoffFoundPostalcode = $inputData->intakesStraydropoffFoundPostalcode;
-        if (!empty($inputData->intakesStraydropoffFinderID)) $this->intakesStraydropoffFinderID = $inputData->intakesStraydropoffFinderID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -117,19 +143,6 @@ class IntakesStrayDropoff implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->intakesStraydropoffID !== null) $output['intakesStraydropoffID'] = $this->intakesStraydropoffID;
-        if ($this->intakesStraydropoffAnimalID !== null) $output['intakesStraydropoffAnimalID'] = $this->intakesStraydropoffAnimalID;
-        if ($this->intakesStraydropoffAnimalConditionID !== null) $output['intakesStraydropoffAnimalConditionID'] = $this->intakesStraydropoffAnimalConditionID;
-        if ($this->intakesStraydropoffDate !== null) $output['intakesStraydropoffDate'] = $this->intakesStraydropoffDate;
-        if ($this->intakesStraydropoffNotes !== null) $output['intakesStraydropoffNotes'] = $this->intakesStraydropoffNotes;
-        if ($this->intakesStraydropoffFoundLocation !== null) $output['intakesStraydropoffFoundLocation'] = $this->intakesStraydropoffFoundLocation;
-        if ($this->intakesStraydropoffFoundAddress !== null) $output['intakesStraydropoffFoundAddress'] = $this->intakesStraydropoffFoundAddress;
-        if ($this->intakesStraydropoffFoundCity !== null) $output['intakesStraydropoffFoundCity'] = $this->intakesStraydropoffFoundCity;
-        if ($this->intakesStraydropoffFoundState !== null) $output['intakesStraydropoffFoundState'] = $this->intakesStraydropoffFoundState;
-        if ($this->intakesStraydropoffFoundPostalcode !== null) $output['intakesStraydropoffFoundPostalcode'] = $this->intakesStraydropoffFoundPostalcode;
-        if ($this->intakesStraydropoffFinderID !== null) $output['intakesStraydropoffFinderID'] = $this->intakesStraydropoffFinderID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

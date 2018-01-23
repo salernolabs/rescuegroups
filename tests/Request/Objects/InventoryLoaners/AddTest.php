@@ -22,13 +22,13 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\InventoryLoaners\Add();
 
         $testObject = new \RescueGroups\Objects\InventoryLoaner();
-        $testObject->inventoryLoanerItemID = 'testValue Item';
-        $testObject->inventoryLoanerLoanDate = 'testValue Loan Date';
-        $testObject->inventoryLoanerLoanConditionID = 'testValue Loan Condition';
-        $testObject->inventoryLoanerDueDate = 'testValue Due Date';
-        $testObject->inventoryLoanerReturnDate = 'testValue Return Date';
-        $testObject->inventoryLoanerReturnConditionID = 'testValue Return Condition';
-        $testObject->inventoryLoanerNotes = 'testValue Notes';
+        $testObject->itemId = 'testValue Item';
+        $testObject->loanDate = 'testValue Loan Date';
+        $testObject->loanConditionId = 'testValue Loan Condition';
+        $testObject->dueDate = 'testValue Due Date';
+        $testObject->returnDate = 'testValue Return Date';
+        $testObject->returnConditionId = 'testValue Return Condition';
+        $testObject->notes = 'testValue Notes';
 
         $query->addInventoryLoaner($testObject);
 

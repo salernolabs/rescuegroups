@@ -35,17 +35,17 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "memberID" => [1, 'memberID'],
-        "memberContactID" => [0, 'memberContactID'],
-        "memberQueueID" => [0, 'memberQueueID'],
-        "memberManager" => [0, 'memberManager'],
-        "memberCreatedDate" => [0, 'memberCreatedDate'],
-        "memberCreatedByID" => [0, 'memberCreatedByID'],
-        "memberUpdatedDate" => [0, 'memberUpdatedDate'],
-        "memberUpdatedByID" => [0, 'memberUpdatedByID'],
+        "id" => [1, 'memberID'],
+        "contactId" => [0, 'memberContactID'],
+        "queueId" => [0, 'memberQueueID'],
+        "manager" => [0, 'memberManager'],
+        "createdDate" => [0, 'memberCreatedDate'],
+        "createdById" => [0, 'memberCreatedByID'],
+        "updatedDate" => [0, 'memberUpdatedDate'],
+        "updatedById" => [0, 'memberUpdatedByID'],
         "queueName" => [0, 'queueName'],
-        "memberName" => [0, 'memberName'],
-        "memberContactType" => [0, 'memberContactType'],
+        "name" => [0, 'memberName'],
+        "contactType" => [0, 'memberContactType'],
     ];
 
     /**

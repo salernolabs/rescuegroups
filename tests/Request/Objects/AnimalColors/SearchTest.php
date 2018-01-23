@@ -25,14 +25,14 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('colorID')
-            ->addFilter('colorID', 'equals', 'ID')
-            ->addField('colorName')
-            ->addFilter('colorName', 'equals', 'Color')
-            ->addField('colorSpecies')
-            ->addFilter('colorSpecies', 'equals', 'Species')
-            ->addField('colorSpeciesID')
-            ->addFilter('colorSpeciesID', 'equals', 'Species')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'ID')
+            ->addField('name')
+            ->addFilter('name', 'equals', 'Color')
+            ->addField('species')
+            ->addFilter('species', 'equals', 'Species')
+            ->addField('speciesId')
+            ->addFilter('speciesId', 'equals', 'Species')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

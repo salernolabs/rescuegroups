@@ -10,6 +10,8 @@ namespace RescueGroups\Objects;
 
 class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Born In Rescue/Shelter, Primary Key
      *
@@ -22,14 +24,14 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
      *
      * @var integer
      */
-    public $animalID = null;
+    public $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $animalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
@@ -47,6 +49,28 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
 
 
     /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'intakesBorninrescueshelterID' => 'id',
+            'intakesBorninrescueshelterAnimalID' => 'animalId',
+            'intakesBorninrescueshelterAnimalConditionID' => 'animalConditionId',
+            'intakesBorninrescueshelterDate' => 'date',
+            'intakesBorninrescueshelterNotes' => 'notes',
+        ],
+        'output' => [
+            'id' => 'intakesBorninrescueshelterID',
+            'animalId' => 'intakesBorninrescueshelterAnimalID',
+            'animalConditionId' => 'intakesBorninrescueshelterAnimalConditionID',
+            'date' => 'intakesBorninrescueshelterDate',
+            'notes' => 'intakesBorninrescueshelterNotes',
+        ]
+    ];
+
+    /**
      * IntakesBornInRescueShelter Constructor
      * @var \stdClass|null $inputData
      */
@@ -54,11 +78,7 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->intakesBorninrescueshelterID)) $this->id = $inputData->intakesBorninrescueshelterID;
-        if (!empty($inputData->intakesBorninrescueshelterAnimalID)) $this->animalID = $inputData->intakesBorninrescueshelterAnimalID;
-        if (!empty($inputData->intakesBorninrescueshelterAnimalConditionID)) $this->animalConditionID = $inputData->intakesBorninrescueshelterAnimalConditionID;
-        if (!empty($inputData->intakesBorninrescueshelterDate)) $this->date = $inputData->intakesBorninrescueshelterDate;
-        if (!empty($inputData->intakesBorninrescueshelterNotes)) $this->notes = $inputData->intakesBorninrescueshelterNotes;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->id !== null) $output['intakesBorninrescueshelterID'] = $this->id;
-        if ($this->animalID !== null) $output['intakesBorninrescueshelterAnimalID'] = $this->animalID;
-        if ($this->animalConditionID !== null) $output['intakesBorninrescueshelterAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $output['intakesBorninrescueshelterDate'] = $this->date;
-        if ($this->notes !== null) $output['intakesBorninrescueshelterNotes'] = $this->notes;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

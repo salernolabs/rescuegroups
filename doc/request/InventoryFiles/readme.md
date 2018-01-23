@@ -12,6 +12,15 @@ Performs inventoryfiles.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\InventoryFiles\Define();
 
     $result = $api->executeRequest($query);
+Performs inventoryfiles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryFiles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs inventoryfiles.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs inventoryfiles.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryFiles\View();
 
-    $query->setinventoryfileID("File");
+    $query->setid("File");
 
     $result = $api->executeRequest($query);
 
@@ -55,11 +64,11 @@ Performs inventoryfiles.add add query to create an instance of an object. Uses s
     $query = new \RescueGroups\Request\Objects\InventoryFiles\Add();
 
     $addObject = new \RescueGroups\Objects\Create\InventoryFile();
-    $addObject->inventoryfileBinary = "File"
-    $addObject->inventoryfileOldFileName = "Old file name"
-    $addObject->inventoryfileDescription = "Description"
-    $addObject->tatus = "Status"
-    $addObject->inventoryfileDisplayInline = "Inline"
+    $addObject->binary = "File"
+    $addObject->oldFileName = "Old file name"
+    $addObject->description = "Description"
+    $addObject->status = "Status"
+    $addObject->displayInline = "Inline"
 
     $query->addInventoryFile($addObject);
 
@@ -72,11 +81,11 @@ Performs inventoryfiles.edit edit query to edit an object. Uses classes of type 
     $query = new \RescueGroups\Request\Objects\InventoryFiles\Edit();
 
     $editObject = new \RescueGroups\Objects\InventoryFile();
-    $editObject->inventoryfileID = "File"
-    $editObject->inventoryfileItemID = "ID"
-    $editObject->inventoryfileDescription = "Description"
-    $editObject->tatus = "Status"
-    $editObject->inventoryfileDisplayInline = "Inline"
+    $editObject->id = "File"
+    $editObject->itemId = "ID"
+    $editObject->description = "Description"
+    $editObject->status = "Status"
+    $editObject->displayInline = "Inline"
 
     $query->updateInventoryFile($editObject);
 

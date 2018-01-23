@@ -35,20 +35,20 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "locationID" => [1, 'locationID'],
-        "locationName" => [0, 'locationName'],
-        "locationUrl" => [0, 'locationUrl'],
-        "locationAddress" => [0, 'locationAddress'],
-        "locationCity" => [0, 'locationCity'],
-        "tate" => [0, 'locationState'],
-        "locationPostalcode" => [0, 'locationPostalcode'],
-        "locationCountry" => [0, 'locationCountry'],
-        "locationPhone" => [0, 'locationPhone'],
-        "locationPhoneExt" => [0, 'locationPhoneExt'],
-        "locationAnimals" => [0, 'locationAnimals'],
-        "locationEvents" => [0, 'locationEvents'],
-        "locationColonies" => [0, 'locationColonies'],
-        "locationMeetrequests" => [0, 'locationMeetrequests'],
+        "id" => [1, 'locationID'],
+        "name" => [0, 'locationName'],
+        "url" => [0, 'locationUrl'],
+        "address" => [0, 'locationAddress'],
+        "city" => [0, 'locationCity'],
+        "state" => [0, 'locationState'],
+        "postalcode" => [0, 'locationPostalcode'],
+        "country" => [0, 'locationCountry'],
+        "phone" => [0, 'locationPhone'],
+        "phoneExt" => [0, 'locationPhoneExt'],
+        "animals" => [0, 'locationAnimals'],
+        "events" => [0, 'locationEvents'],
+        "colonies" => [0, 'locationColonies'],
+        "meetrequests" => [0, 'locationMeetrequests'],
     ];
 
     /**

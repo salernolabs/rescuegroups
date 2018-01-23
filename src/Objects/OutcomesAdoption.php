@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class OutcomesAdoption implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $outcomesAdoptionID = null;
+    public $id = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $outcomesAdoptionAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $outcomesAdoptionDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $outcomesAdoptionNotes = null;
+    public $notes = null;
 
     /**
      * Adoption
      *
      * @var integer
      */
-    public $outcomesAdoptionAdoptionID = null;
+    public $adoptionId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesAdoptionID' => 'id',
+            'outcomesAdoptionAnimalConditionID' => 'animalConditionId',
+            'outcomesAdoptionDate' => 'date',
+            'outcomesAdoptionNotes' => 'notes',
+            'outcomesAdoptionAdoptionID' => 'adoptionId',
+        ],
+        'output' => [
+            'id' => 'outcomesAdoptionID',
+            'animalConditionId' => 'outcomesAdoptionAnimalConditionID',
+            'date' => 'outcomesAdoptionDate',
+            'notes' => 'outcomesAdoptionNotes',
+            'adoptionId' => 'outcomesAdoptionAdoptionID',
+        ]
+    ];
 
     /**
      * OutcomesAdoption Constructor
@@ -54,11 +78,7 @@ class OutcomesAdoption implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesAdoptionID)) $this->outcomesAdoptionID = $inputData->outcomesAdoptionID;
-        if (!empty($inputData->outcomesAdoptionAnimalConditionID)) $this->outcomesAdoptionAnimalConditionID = $inputData->outcomesAdoptionAnimalConditionID;
-        if (!empty($inputData->outcomesAdoptionDate)) $this->outcomesAdoptionDate = $inputData->outcomesAdoptionDate;
-        if (!empty($inputData->outcomesAdoptionNotes)) $this->outcomesAdoptionNotes = $inputData->outcomesAdoptionNotes;
-        if (!empty($inputData->outcomesAdoptionAdoptionID)) $this->outcomesAdoptionAdoptionID = $inputData->outcomesAdoptionAdoptionID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class OutcomesAdoption implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->outcomesAdoptionID !== null) $output['outcomesAdoptionID'] = $this->outcomesAdoptionID;
-        if ($this->outcomesAdoptionAnimalConditionID !== null) $output['outcomesAdoptionAnimalConditionID'] = $this->outcomesAdoptionAnimalConditionID;
-        if ($this->outcomesAdoptionDate !== null) $output['outcomesAdoptionDate'] = $this->outcomesAdoptionDate;
-        if ($this->outcomesAdoptionNotes !== null) $output['outcomesAdoptionNotes'] = $this->outcomesAdoptionNotes;
-        if ($this->outcomesAdoptionAdoptionID !== null) $output['outcomesAdoptionAdoptionID'] = $this->outcomesAdoptionAdoptionID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

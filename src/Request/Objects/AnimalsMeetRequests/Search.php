@@ -35,12 +35,12 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "meetrequestID" => [0, 'meetrequestID'],
-        "meetrequestAnimalID" => [0, 'meetrequestAnimalID'],
-        "meetrequestContactID" => [0, 'meetrequestContactID'],
-        "meetrequestEventID" => [0, 'meetrequestEventID'],
-        "meetrequestLocationID" => [0, 'meetrequestLocationID'],
-        "meetrequestDate" => [0, 'meetrequestDate'],
+        "id" => [0, 'meetrequestID'],
+        "animalId" => [0, 'meetrequestAnimalID'],
+        "contactId" => [0, 'meetrequestContactID'],
+        "eventId" => [0, 'meetrequestEventID'],
+        "locationId" => [0, 'meetrequestLocationID'],
+        "date" => [0, 'meetrequestDate'],
         "animalName" => [0, 'animalName'],
         "contactName" => [0, 'contactName'],
         "contactType" => [0, 'contactType'],

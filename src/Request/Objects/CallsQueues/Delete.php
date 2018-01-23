@@ -30,7 +30,7 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $queueID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setQueueID($value)
+    public function setId($value)
     {
-        $this->queueID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->queueID !== null) $parameterArray['values'][] = ["queueID"=>$this->queueID];
+        if ($this->id !== null) $parameterArray['values'][] = ["queueID"=>$this->id];
     }
 }

@@ -10,6 +10,8 @@ namespace RescueGroups\Objects;
 
 class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
@@ -22,7 +24,7 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
      *
      * @var integer
      */
-    public $animalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
@@ -43,8 +45,30 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
      *
      * @var integer
      */
-    public $ownerID = null;
+    public $ownerId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesReturntoownerID' => 'id',
+            'outcomesReturntoownerAnimalConditionID' => 'animalConditionId',
+            'outcomesReturntoownerDate' => 'date',
+            'outcomesReturntoownerNotes' => 'notes',
+            'outcomesReturntoownerOwnerID' => 'ownerId',
+        ],
+        'output' => [
+            'id' => 'outcomesReturntoownerID',
+            'animalConditionId' => 'outcomesReturntoownerAnimalConditionID',
+            'date' => 'outcomesReturntoownerDate',
+            'notes' => 'outcomesReturntoownerNotes',
+            'ownerId' => 'outcomesReturntoownerOwnerID',
+        ]
+    ];
 
     /**
      * OutcomesReturnToOwner Constructor
@@ -54,11 +78,7 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesReturntoownerID)) $this->id = $inputData->outcomesReturntoownerID;
-        if (!empty($inputData->outcomesReturntoownerAnimalConditionID)) $this->animalConditionID = $inputData->outcomesReturntoownerAnimalConditionID;
-        if (!empty($inputData->outcomesReturntoownerDate)) $this->date = $inputData->outcomesReturntoownerDate;
-        if (!empty($inputData->outcomesReturntoownerNotes)) $this->notes = $inputData->outcomesReturntoownerNotes;
-        if (!empty($inputData->outcomesReturntoownerOwnerID)) $this->ownerID = $inputData->outcomesReturntoownerOwnerID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->id !== null) $output['outcomesReturntoownerID'] = $this->id;
-        if ($this->animalConditionID !== null) $output['outcomesReturntoownerAnimalConditionID'] = $this->animalConditionID;
-        if ($this->date !== null) $output['outcomesReturntoownerDate'] = $this->date;
-        if ($this->notes !== null) $output['outcomesReturntoownerNotes'] = $this->notes;
-        if ($this->ownerID !== null) $output['outcomesReturntoownerOwnerID'] = $this->ownerID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

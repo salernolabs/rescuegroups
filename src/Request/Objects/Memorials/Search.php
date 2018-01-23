@@ -35,13 +35,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "memorialID" => [1, 'memorialID'],
-        "memorialPictureFileName" => [0, 'memorialPictureFileName'],
-        "memorialPictureUrl" => [0, 'memorialPictureUrl'],
-        "memorialPictureThumbnailUrl" => [0, 'memorialPictureThumbnailUrl'],
-        "memorialName" => [0, 'memorialName'],
-        "memorialDescription" => [0, 'memorialDescription'],
-        "memorialOrder" => [0, 'memorialOrder'],
+        "id" => [1, 'memorialID'],
+        "pictureFileName" => [0, 'memorialPictureFileName'],
+        "pictureUrl" => [0, 'memorialPictureUrl'],
+        "pictureThumbnailUrl" => [0, 'memorialPictureThumbnailUrl'],
+        "name" => [0, 'memorialName'],
+        "description" => [0, 'memorialDescription'],
+        "order" => [0, 'memorialOrder'],
     ];
 
     /**

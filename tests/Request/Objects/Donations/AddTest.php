@@ -22,13 +22,13 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Donations\Add();
 
         $testObject = new \RescueGroups\Objects\Create\Donation();
-        $testObject->donationAmount = 'testValue Amount';
-        $testObject->donationInkind = 'testValue Inkind type';
-        $testObject->donationComment = 'testValue Comment';
-        $testObject->donationLettersent = 'testValue Letter sent';
-        $testObject->donationPurpose = 'testValue Purpose';
-        $testObject->donationDate = 'testValue Date';
-        $testObject->donationAddDonorGroup = 'testValue Add contact to Donor group';
+        $testObject->amount = 'testValue Amount';
+        $testObject->inkind = 'testValue Inkind type';
+        $testObject->comment = 'testValue Comment';
+        $testObject->lettersent = 'testValue Letter sent';
+        $testObject->purpose = 'testValue Purpose';
+        $testObject->date = 'testValue Date';
+        $testObject->addDonorGroup = 'testValue Add contact to Donor group';
 
         $query->addDonation($testObject);
 

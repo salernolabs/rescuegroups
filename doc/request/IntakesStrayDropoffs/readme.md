@@ -12,6 +12,15 @@ Performs intakesStraydropoffs.define query. This gives information about the API
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesStraydropoffs.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesStraydropoffs.view query.
 
@@ -19,7 +28,7 @@ Performs intakesStraydropoffs.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
 
-    $query->setintakesStraydropoffID("Stray Pickup");
+    $query->setid("Stray Pickup");
 
     $result = $api->executeRequest($query);
 
@@ -48,15 +57,15 @@ Performs intakesStraydropoffs.add add query to create an instance of an object. 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesStrayDropoff();
-    $addObject->intakesStraydropoffAnimalConditionID = "Condition"
-    $addObject->intakesStraydropoffDate = "Date"
-    $addObject->intakesStraydropoffNotes = "Notes"
-    $addObject->intakesStraydropoffFoundLocation = "Found Location"
-    $addObject->intakesStraydropoffFoundAddress = "Found Street address"
-    $addObject->intakesStraydropoffFoundCity = "Found City"
-    $addObject->intakesStraydropoffFoundState = "Found State/Province"
-    $addObject->intakesStraydropoffFoundPostalcode = "Found Postal Code"
-    $addObject->intakesStraydropoffFinderID = "Dropped off by"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->foundLocation = "Found Location"
+    $addObject->foundAddress = "Found Street address"
+    $addObject->foundCity = "Found City"
+    $addObject->foundState = "Found State/Province"
+    $addObject->foundPostalcode = "Found Postal Code"
+    $addObject->finderId = "Dropped off by"
 
     $query->addIntakesStrayDropoff($addObject);
 
@@ -69,17 +78,17 @@ Performs intakesStraydropoffs.edit edit query to edit an object. Uses classes of
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesStrayDropoff();
-    $editObject->intakesStraydropoffID = "Stray Pickup"
-    $editObject->intakesStraydropoffAnimalID = "Animal"
-    $editObject->intakesStraydropoffAnimalConditionID = "Condition"
-    $editObject->intakesStraydropoffDate = "Date"
-    $editObject->intakesStraydropoffNotes = "Notes"
-    $editObject->intakesStraydropoffFoundLocation = "Found Location"
-    $editObject->intakesStraydropoffFoundAddress = "Found Street address"
-    $editObject->intakesStraydropoffFoundCity = "Found City"
-    $editObject->intakesStraydropoffFoundState = "Found State/Province"
-    $editObject->intakesStraydropoffFoundPostalcode = "Found Postal Code"
-    $editObject->intakesStraydropoffFinderID = "Dropped off by"
+    $editObject->id = "Stray Pickup"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->foundLocation = "Found Location"
+    $editObject->foundAddress = "Found Street address"
+    $editObject->foundCity = "Found City"
+    $editObject->foundState = "Found State/Province"
+    $editObject->foundPostalcode = "Found Postal Code"
+    $editObject->finderId = "Dropped off by"
 
     $query->updateIntakesStrayDropoff($editObject);
 
@@ -91,17 +100,17 @@ Performs intakesStraydropoffs.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesStraydropoffAnimalID("Animal");
-    $query->setintakesStraydropoffAnimalConditionID("Condition");
-    $query->setintakesStraydropoffDate("Date");
-    $query->setintakesStraydropoffNotes("Notes");
-    $query->setintakesStraydropoffFoundLocation("Found Location");
-    $query->setintakesStraydropoffFoundAddress("Found Street address");
-    $query->setintakesStraydropoffFoundCity("Found City");
-    $query->setintakesStraydropoffFoundState("Found State/Province");
-    $query->setintakesStraydropoffFoundPostalcode("Found Postal Code");
-    $query->setintakesStraydropoffFinderID("Dropped off by");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setfoundLocation("Found Location");
+    $query->setfoundAddress("Found Street address");
+    $query->setfoundCity("Found City");
+    $query->setfoundState("Found State/Province");
+    $query->setfoundPostalcode("Found Postal Code");
+    $query->setfinderId("Dropped off by");
 
     $result = $api->executeRequest($query);
 

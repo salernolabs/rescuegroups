@@ -22,8 +22,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesServiceType();
-        $testObject->serviceID = 'testValue Service';
-        $testObject->serviceName = 'testValue Service';
+        $testObject->id = 'testValue Service';
+        $testObject->name = 'testValue Service';
 
         $query->updateIntakesServiceType($testObject);
 

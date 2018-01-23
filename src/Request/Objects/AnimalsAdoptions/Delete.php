@@ -30,49 +30,49 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $adoptionID = null;
+    private $id = null;
 
     /**
      * Remove contact from adopters group
      *
      * @var string
      */
-    private $adoptionRemoveContact = null;
+    private $removeContact = null;
 
     /**
      * Change animal to available
      *
      * @var string
      */
-    private $adoptionChangeAnimal = null;
+    private $changeAnimal = null;
 
     /**
      * Change submitted form to cancelled
      *
      * @var string
      */
-    private $adoptionChangeSubmittedform = null;
+    private $changeSubmittedform = null;
 
     /**
      * Remove Adopter role from user
      *
      * @var string
      */
-    private $adoptionRemoveUser = null;
+    private $removeUser = null;
 
     /**
      * Donation
      *
      * @var float
      */
-    private $adoptionDonationAmount = null;
+    private $donationAmount = null;
 
     /**
      * Thank you letter sent
      *
      * @var string
      */
-    private $adoptionLetterSent = null;
+    private $letterSent = null;
 
 
     /**
@@ -81,9 +81,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setAdoptionID($value)
+    public function setId($value)
     {
-        $this->adoptionID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -94,9 +94,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setAdoptionRemoveContact($value)
+    public function setRemoveContact($value)
     {
-        $this->adoptionRemoveContact = $value;
+        $this->removeContact = $value;
 
         return $this;
     }
@@ -107,9 +107,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setAdoptionChangeAnimal($value)
+    public function setChangeAnimal($value)
     {
-        $this->adoptionChangeAnimal = $value;
+        $this->changeAnimal = $value;
 
         return $this;
     }
@@ -120,9 +120,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setAdoptionChangeSubmittedform($value)
+    public function setChangeSubmittedform($value)
     {
-        $this->adoptionChangeSubmittedform = $value;
+        $this->changeSubmittedform = $value;
 
         return $this;
     }
@@ -133,9 +133,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setAdoptionRemoveUser($value)
+    public function setRemoveUser($value)
     {
-        $this->adoptionRemoveUser = $value;
+        $this->removeUser = $value;
 
         return $this;
     }
@@ -146,9 +146,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param float $value
      * @return $this
      */
-    public function setAdoptionDonationAmount($value)
+    public function setDonationAmount($value)
     {
-        $this->adoptionDonationAmount = $value;
+        $this->donationAmount = $value;
 
         return $this;
     }
@@ -159,9 +159,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setAdoptionLetterSent($value)
+    public function setLetterSent($value)
     {
-        $this->adoptionLetterSent = $value;
+        $this->letterSent = $value;
 
         return $this;
     }
@@ -176,12 +176,12 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->adoptionID !== null) $parameterArray['values'][] = ["adoptionID"=>$this->adoptionID];
-        if ($this->adoptionRemoveContact !== null) $parameterArray['values'][] = ["adoptionRemoveContact"=>$this->adoptionRemoveContact];
-        if ($this->adoptionChangeAnimal !== null) $parameterArray['values'][] = ["adoptionChangeAnimal"=>$this->adoptionChangeAnimal];
-        if ($this->adoptionChangeSubmittedform !== null) $parameterArray['values'][] = ["adoptionChangeSubmittedform"=>$this->adoptionChangeSubmittedform];
-        if ($this->adoptionRemoveUser !== null) $parameterArray['values'][] = ["adoptionRemoveUser"=>$this->adoptionRemoveUser];
-        if ($this->adoptionDonationAmount !== null) $parameterArray['values'][] = ["adoptionDonationAmount"=>$this->adoptionDonationAmount];
-        if ($this->adoptionLetterSent !== null) $parameterArray['values'][] = ["adoptionLetterSent"=>$this->adoptionLetterSent];
+        if ($this->id !== null) $parameterArray['values'][] = ["adoptionID"=>$this->id];
+        if ($this->removeContact !== null) $parameterArray['values'][] = ["adoptionRemoveContact"=>$this->removeContact];
+        if ($this->changeAnimal !== null) $parameterArray['values'][] = ["adoptionChangeAnimal"=>$this->changeAnimal];
+        if ($this->changeSubmittedform !== null) $parameterArray['values'][] = ["adoptionChangeSubmittedform"=>$this->changeSubmittedform];
+        if ($this->removeUser !== null) $parameterArray['values'][] = ["adoptionRemoveUser"=>$this->removeUser];
+        if ($this->donationAmount !== null) $parameterArray['values'][] = ["adoptionDonationAmount"=>$this->donationAmount];
+        if ($this->letterSent !== null) $parameterArray['values'][] = ["adoptionLetterSent"=>$this->letterSent];
     }
 }

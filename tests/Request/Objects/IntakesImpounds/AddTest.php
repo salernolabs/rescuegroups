@@ -22,17 +22,17 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesImpounds\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesImpound();
-        $testObject->intakesImpoundAnimalConditionID = 'testValue Condition';
-        $testObject->intakesImpoundDate = 'testValue Date';
-        $testObject->intakesImpoundNotes = 'testValue Notes';
-        $testObject->intakesImpoundLocation = 'testValue Impound Location';
-        $testObject->intakesImpoundAddress = 'testValue Impound Street address';
-        $testObject->intakesImpoundCity = 'testValue Impound City';
-        $testObject->tate = 'testValue Impound State/Province';
-        $testObject->intakesImpoundPostalcode = 'testValue Impound Postal Code';
-        $testObject->intakesImpoundFromID = 'testValue Impound From';
-        $testObject->taffID = 'testValue Impound Performed By';
-        $testObject->intakesImpoundReasonID = 'testValue Reason';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->location = 'testValue Impound Location';
+        $testObject->address = 'testValue Impound Street address';
+        $testObject->city = 'testValue Impound City';
+        $testObject->state = 'testValue Impound State/Province';
+        $testObject->postalcode = 'testValue Impound Postal Code';
+        $testObject->fromId = 'testValue Impound From';
+        $testObject->staffId = 'testValue Impound Performed By';
+        $testObject->reasonId = 'testValue Reason';
 
         $query->addIntakesImpound($testObject);
 

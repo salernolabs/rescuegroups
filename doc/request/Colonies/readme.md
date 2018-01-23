@@ -12,6 +12,15 @@ Performs colonies.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Colonies\Define();
 
     $result = $api->executeRequest($query);
+Performs colonies.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Colonies\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs colonies.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs colonies.view query.
 
     $query = new \RescueGroups\Request\Objects\Colonies\View();
 
-    $query->setcolonyID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,10 +64,10 @@ Performs colonies.add add query to create an instance of an object. Uses classes
     $query = new \RescueGroups\Request\Objects\Colonies\Add();
 
     $addObject = new \RescueGroups\Objects\Colony();
-    $addObject->colonyName = "Name"
-    $addObject->colonyTotalAnimals = "Number of animals"
-    $addObject->colonyRegisteredDate = "Registered"
-    $addObject->colonySpecificLocation = "Specific location"
+    $addObject->name = "Name"
+    $addObject->totalAnimals = "Number of animals"
+    $addObject->registeredDate = "Registered"
+    $addObject->specificLocation = "Specific location"
 
     $query->addColony($addObject);
 
@@ -71,12 +80,12 @@ Performs colonies.edit edit query to edit an object. Uses classes of type [\Resc
     $query = new \RescueGroups\Request\Objects\Colonies\Edit();
 
     $editObject = new \RescueGroups\Objects\Colony();
-    $editObject->colonyID = "ID"
-    $editObject->colonyName = "Name"
-    $editObject->colonyLocationID = "Location"
-    $editObject->colonyTotalAnimals = "Number of animals"
-    $editObject->colonyRegisteredDate = "Registered"
-    $editObject->colonySpecificLocation = "Specific location"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->locationId = "Location"
+    $editObject->totalAnimals = "Number of animals"
+    $editObject->registeredDate = "Registered"
+    $editObject->specificLocation = "Specific location"
 
     $query->updateColony($editObject);
 
@@ -88,7 +97,7 @@ Performs colonies.delete query.
 
     $query = new \RescueGroups\Request\Objects\Colonies\Delete();
 
-    $query->setcolonyID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

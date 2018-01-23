@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $caretakerID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setCaretakerID($value)
+    public function setId($value)
     {
-        $this->caretakerID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->caretakerID !== null) $parameterArray['values'][] = ["caretakerID"=>$this->caretakerID];
+        if ($this->id !== null) $parameterArray['values'][] = ["caretakerID"=>$this->id];
     }
 }

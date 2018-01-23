@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $inventoryLoanerID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setInventoryLoanerID($value)
+    public function setId($value)
     {
-        $this->inventoryLoanerID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->inventoryLoanerID !== null) $parameterArray['values'][] = ["inventoryLoanerID"=>$this->inventoryLoanerID];
+        if ($this->id !== null) $parameterArray['values'][] = ["inventoryLoanerID"=>$this->id];
     }
 }

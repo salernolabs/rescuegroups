@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "intakesTransferID" => [0, 'intakesTransferID'],
-        "intakesTransferAnimalID" => [0, 'intakesTransferAnimalID'],
-        "intakesTransferAnimalConditionID" => [0, 'intakesTransferAnimalConditionID'],
-        "intakesTransferDate" => [0, 'intakesTransferDate'],
-        "intakesTransferNotes" => [0, 'intakesTransferNotes'],
-        "intakesTransferFromID" => [0, 'intakesTransferFromID'],
-        "intakesTransferCoalitionMember" => [0, 'intakesTransferCoalitionMember'],
-        "intakesTransferReasonID" => [0, 'intakesTransferReasonID'],
+        "id" => [0, 'intakesTransferID'],
+        "animalId" => [0, 'intakesTransferAnimalID'],
+        "animalConditionId" => [0, 'intakesTransferAnimalConditionID'],
+        "date" => [0, 'intakesTransferDate'],
+        "notes" => [0, 'intakesTransferNotes'],
+        "fromId" => [0, 'intakesTransferFromID'],
+        "coalitionMember" => [0, 'intakesTransferCoalitionMember'],
+        "reasonId" => [0, 'intakesTransferReasonID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
         "transferFromName" => [0, 'transferFromName'],

@@ -12,6 +12,15 @@ Performs animalPatterns.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\AnimalPatterns\Define();
 
     $result = $api->executeRequest($query);
+Performs animalPatterns.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalPatterns\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## PublicList
 Performs animalPatterns.publicList list query, typically suitable for filling HTML select fields.
 

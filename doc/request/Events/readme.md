@@ -12,6 +12,15 @@ Performs events.define query. This gives information about the API interface to 
     $query = new \RescueGroups\Request\Objects\Events\Define();
 
     $result = $api->executeRequest($query);
+Performs events.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Events\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs events.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs events.publicView query.
 
     $query = new \RescueGroups\Request\Objects\Events\PublicView();
 
-    $query->seteventID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -37,7 +46,7 @@ Performs events.view query.
 
     $query = new \RescueGroups\Request\Objects\Events\View();
 
-    $query->seteventID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -83,12 +92,12 @@ Performs events.add add query to create an instance of an object. Uses classes o
     $query = new \RescueGroups\Request\Objects\Events\Add();
 
     $addObject = new \RescueGroups\Objects\Event();
-    $addObject->eventName = "Name"
-    $addObject->tart = "Start Date/Time"
-    $addObject->eventEnd = "End Date/Time"
-    $addObject->eventUrl = "Web address"
-    $addObject->eventDescription = "Description"
-    $addObject->pecies = "Species attending"
+    $addObject->name = "Name"
+    $addObject->start = "Start Date/Time"
+    $addObject->end = "End Date/Time"
+    $addObject->url = "Web address"
+    $addObject->description = "Description"
+    $addObject->species = "Species attending"
 
     $query->addEvent($addObject);
 
@@ -101,14 +110,14 @@ Performs events.edit edit query to edit an object. Uses classes of type [\Rescue
     $query = new \RescueGroups\Request\Objects\Events\Edit();
 
     $editObject = new \RescueGroups\Objects\Event();
-    $editObject->eventID = "ID"
-    $editObject->eventName = "Name"
-    $editObject->tart = "Start Date/Time"
-    $editObject->eventEnd = "End Date/Time"
-    $editObject->eventUrl = "Web address"
-    $editObject->eventDescription = "Description"
-    $editObject->eventLocationID = "Location"
-    $editObject->pecies = "Species attending"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->start = "Start Date/Time"
+    $editObject->end = "End Date/Time"
+    $editObject->url = "Web address"
+    $editObject->description = "Description"
+    $editObject->locationId = "Location"
+    $editObject->species = "Species attending"
 
     $query->updateEvent($editObject);
 
@@ -120,7 +129,7 @@ Performs events.delete query.
 
     $query = new \RescueGroups\Request\Objects\Events\Delete();
 
-    $query->seteventID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -141,8 +150,8 @@ Performs events.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
 
-    $query->setenable("Enable the Events feature");
-    $query->setsetMapWebsite("Map website to use with the Events feature");
+    $query->setenableEvents("Enable the Events feature");
+    $query->setsetEventsMapWebsite("Map website to use with the Events feature");
 
     $result = $api->executeRequest($query);
 

@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class EventAnimalAttendance implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $attendanceID = null;
+    public $id = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    public $attendanceAnimalID = null;
+    public $animalId = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $attendanceStatus = null;
+    public $status = null;
 
     /**
      * Event
      *
      * @var integer
      */
-    public $attendanceEventID = null;
+    public $eventId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'attendanceID' => 'id',
+            'attendanceAnimalID' => 'animalId',
+            'attendanceStatus' => 'status',
+            'attendanceEventID' => 'eventId',
+        ],
+        'output' => [
+            'id' => 'attendanceID',
+            'animalId' => 'attendanceAnimalID',
+            'status' => 'attendanceStatus',
+            'eventId' => 'attendanceEventID',
+        ]
+    ];
 
     /**
      * EventAnimalAttendance Constructor
@@ -47,10 +69,7 @@ class EventAnimalAttendance implements \RescueGroups\Objects\APIEncodableInterfa
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->attendanceID)) $this->attendanceID = $inputData->attendanceID;
-        if (!empty($inputData->attendanceAnimalID)) $this->attendanceAnimalID = $inputData->attendanceAnimalID;
-        if (!empty($inputData->attendanceStatus)) $this->attendanceStatus = $inputData->attendanceStatus;
-        if (!empty($inputData->attendanceEventID)) $this->attendanceEventID = $inputData->attendanceEventID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class EventAnimalAttendance implements \RescueGroups\Objects\APIEncodableInterfa
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->attendanceID !== null) $output['attendanceID'] = $this->attendanceID;
-        if ($this->attendanceAnimalID !== null) $output['attendanceAnimalID'] = $this->attendanceAnimalID;
-        if ($this->attendanceStatus !== null) $output['attendanceStatus'] = $this->attendanceStatus;
-        if ($this->attendanceEventID !== null) $output['attendanceEventID'] = $this->attendanceEventID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

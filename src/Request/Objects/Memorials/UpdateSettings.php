@@ -30,21 +30,21 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enable = null;
+    private $enableMemorials = null;
 
     /**
      * Select Memorials donation store item
      *
      * @var string
      */
-    private $setDonationOnlineStoreItem = null;
+    private $setMemorialsDonationOnlineStoreItem = null;
 
     /**
      * Show alphabetical links (A-Z) on the Memorials page
      *
      * @var string
      */
-    private $showAlphaLinks = null;
+    private $showMemorialsAlphaLinks = null;
 
 
     /**
@@ -53,9 +53,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnable($value)
+    public function setEnableMemorials($value)
     {
-        $this->enable = $value;
+        $this->enableMemorials = $value;
 
         return $this;
     }
@@ -66,9 +66,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetDonationOnlineStoreItem($value)
+    public function setSetMemorialsDonationOnlineStoreItem($value)
     {
-        $this->setDonationOnlineStoreItem = $value;
+        $this->setMemorialsDonationOnlineStoreItem = $value;
 
         return $this;
     }
@@ -79,9 +79,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setShowAlphaLinks($value)
+    public function setShowMemorialsAlphaLinks($value)
     {
-        $this->showAlphaLinks = $value;
+        $this->showMemorialsAlphaLinks = $value;
 
         return $this;
     }
@@ -96,8 +96,8 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enable !== null) $parameterArray['values'][] = ["enableMemorials"=>$this->enable];
-        if ($this->setDonationOnlineStoreItem !== null) $parameterArray['values'][] = ["setMemorialsDonationOnlineStoreItem"=>$this->setDonationOnlineStoreItem];
-        if ($this->showAlphaLinks !== null) $parameterArray['values'][] = ["showMemorialsAlphaLinks"=>$this->showAlphaLinks];
+        if ($this->enableMemorials !== null) $parameterArray['values'][] = ["enableMemorials"=>$this->enableMemorials];
+        if ($this->setMemorialsDonationOnlineStoreItem !== null) $parameterArray['values'][] = ["setMemorialsDonationOnlineStoreItem"=>$this->setMemorialsDonationOnlineStoreItem];
+        if ($this->showMemorialsAlphaLinks !== null) $parameterArray['values'][] = ["showMemorialsAlphaLinks"=>$this->showMemorialsAlphaLinks];
     }
 }

@@ -12,6 +12,15 @@ Performs roles.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Roles\Define();
 
     $result = $api->executeRequest($query);
+Performs roles.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Roles\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs roles.list list query, typically suitable for filling HTML select fields.
 

@@ -36,12 +36,12 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     private $objectFields = [
         "id" => [1, 'outcomesReturntoownerID'],
-        "intakeID" => [0, 'outcomesReturntoownerIntakeID'],
-        "animalConditionID" => [0, 'outcomesReturntoownerAnimalConditionID'],
+        "intakeId" => [0, 'outcomesReturntoownerIntakeID'],
+        "animalConditionId" => [0, 'outcomesReturntoownerAnimalConditionID'],
         "date" => [0, 'outcomesReturntoownerDate'],
         "notes" => [0, 'outcomesReturntoownerNotes'],
-        "ownerID" => [0, 'outcomesReturntoownerOwnerID'],
-        "animalID" => [0, 'animalID'],
+        "ownerId" => [0, 'outcomesReturntoownerOwnerID'],
+        "animalId" => [0, 'animalID'],
         "animalName" => [0, 'animalName'],
         "animalConditionName" => [0, 'animalConditionName'],
         "returntoownerName" => [0, 'returntoownerName'],

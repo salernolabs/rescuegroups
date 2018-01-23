@@ -22,12 +22,12 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Colonies\Edit();
 
         $testObject = new \RescueGroups\Objects\Colony();
-        $testObject->colonyID = 'testValue ID';
-        $testObject->colonyName = 'testValue Name';
-        $testObject->colonyLocationID = 'testValue Location';
-        $testObject->colonyTotalAnimals = 'testValue Number of animals';
-        $testObject->colonyRegisteredDate = 'testValue Registered';
-        $testObject->colonySpecificLocation = 'testValue Specific location';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->locationId = 'testValue Location';
+        $testObject->totalAnimals = 'testValue Number of animals';
+        $testObject->registeredDate = 'testValue Registered';
+        $testObject->specificLocation = 'testValue Specific location';
 
         $query->updateColony($testObject);
 

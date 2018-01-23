@@ -12,6 +12,15 @@ Performs animalsJournalEntrytypes.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsJournalEntrytypes.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsJournalEntrytypes.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs animalsJournalEntrytypes.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\View();
 
-    $query->setjournalEntrytypeID("Entrytype ID");
+    $query->setid("Entrytype ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalsJournalEntrytypes.add add query to create an instance of an obje
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
-    $addObject->journalEntrytypeDescription = "Description"
+    $addObject->description = "Description"
 
     $query->addAnimalsJournalEntryType($addObject);
 
@@ -68,9 +77,9 @@ Performs animalsJournalEntrytypes.edit edit query to edit an object. Uses classe
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsJournalEntryType();
-    $editObject->journalEntrytypeID = "Entrytype ID"
-    $editObject->journalEntrytypeDescription = "Description"
-    $editObject->journalEntrytypeCategoryID = "Category ID"
+    $editObject->id = "Entrytype ID"
+    $editObject->description = "Description"
+    $editObject->categoryId = "Category ID"
 
     $query->updateAnimalsJournalEntryType($editObject);
 

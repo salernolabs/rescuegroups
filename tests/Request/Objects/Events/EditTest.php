@@ -22,14 +22,14 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Events\Edit();
 
         $testObject = new \RescueGroups\Objects\Event();
-        $testObject->eventID = 'testValue ID';
-        $testObject->eventName = 'testValue Name';
-        $testObject->tart = 'testValue Start Date/Time';
-        $testObject->eventEnd = 'testValue End Date/Time';
-        $testObject->eventUrl = 'testValue Web address';
-        $testObject->eventDescription = 'testValue Description';
-        $testObject->eventLocationID = 'testValue Location';
-        $testObject->pecies = 'testValue Species attending';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->start = 'testValue Start Date/Time';
+        $testObject->end = 'testValue End Date/Time';
+        $testObject->url = 'testValue Web address';
+        $testObject->description = 'testValue Description';
+        $testObject->locationId = 'testValue Location';
+        $testObject->species = 'testValue Species attending';
 
         $query->updateEvent($testObject);
 

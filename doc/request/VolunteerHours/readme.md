@@ -12,6 +12,15 @@ Performs volunteerHours.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\VolunteerHours\Define();
 
     $result = $api->executeRequest($query);
+Performs volunteerHours.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\VolunteerHours\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## Search
 Performs volunteerHours.search search query. This query returns an array of [\RescueGroups\Objects\VolunteerHour](../../../src/Objects/VolunteerHour.php) objects.
 
@@ -64,7 +73,7 @@ Performs volunteerHours.edit edit query to edit an object. Uses classes of type 
 
     $editObject = new \RescueGroups\Objects\VolunteerHour();
     $editObject->id = "ID"
-    $editObject->volunteerID = "Volunteer"
+    $editObject->volunteerId = "Volunteer"
     $editObject->volunteerDate = "Date"
     $editObject->volunteerLength = "Hours"
     $editObject->volunteerTask = "Task"

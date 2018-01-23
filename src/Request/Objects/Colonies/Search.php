@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "colonyID" => [1, 'colonyID'],
-        "colonyAnimals" => [0, 'colonyAnimals'],
-        "colonyCaretakers" => [0, 'colonyCaretakers'],
-        "colonyLocationID" => [0, 'colonyLocationID'],
-        "colonyName" => [1, 'colonyName'],
-        "colonyTotalAnimals" => [0, 'colonyTotalAnimals'],
-        "colonyRegisteredDate" => [0, 'colonyRegisteredDate'],
-        "colonySpecificLocation" => [0, 'colonySpecificLocation'],
+        "id" => [1, 'colonyID'],
+        "animals" => [0, 'colonyAnimals'],
+        "caretakers" => [0, 'colonyCaretakers'],
+        "locationId" => [0, 'colonyLocationID'],
+        "name" => [1, 'colonyName'],
+        "totalAnimals" => [0, 'colonyTotalAnimals'],
+        "registeredDate" => [0, 'colonyRegisteredDate'],
+        "specificLocation" => [0, 'colonySpecificLocation'],
         "locationName" => [0, 'locationName'],
         "locationUrl" => [0, 'locationUrl'],
         "locationAddress" => [0, 'locationAddress'],

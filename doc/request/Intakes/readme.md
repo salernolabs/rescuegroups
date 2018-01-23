@@ -12,6 +12,15 @@ Performs intakes.define query. This gives information about the API interface to
     $query = new \RescueGroups\Request\Objects\Intakes\Define();
 
     $result = $api->executeRequest($query);
+Performs intakes.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Intakes\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs intakes.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs intakes.view query.
 
     $query = new \RescueGroups\Request\Objects\Intakes\View();
 
-    $query->setintakeID("Intake");
+    $query->setid("Intake");
 
     $result = $api->executeRequest($query);
 
@@ -54,7 +63,7 @@ Performs intakes.delete query.
 
     $query = new \RescueGroups\Request\Objects\Intakes\Delete();
 
-    $query->setintakeID("Intake");
+    $query->setid("Intake");
 
     $result = $api->executeRequest($query);
 

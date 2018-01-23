@@ -30,7 +30,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enable = null;
+    private $enableNewsarticles = null;
 
 
     /**
@@ -39,9 +39,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnable($value)
+    public function setEnableNewsarticles($value)
     {
-        $this->enable = $value;
+        $this->enableNewsarticles = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enable !== null) $parameterArray['values'][] = ["enableNewsarticles"=>$this->enable];
+        if ($this->enableNewsarticles !== null) $parameterArray['values'][] = ["enableNewsarticles"=>$this->enableNewsarticles];
     }
 }

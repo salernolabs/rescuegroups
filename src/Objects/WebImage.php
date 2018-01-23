@@ -10,20 +10,38 @@ namespace RescueGroups\Objects;
 
 class WebImage implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $webimageID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $webimageName = null;
+    public $name = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'webimageID' => 'id',
+            'webimageName' => 'name',
+        ],
+        'output' => [
+            'id' => 'webimageID',
+            'name' => 'webimageName',
+        ]
+    ];
 
     /**
      * WebImage Constructor
@@ -33,8 +51,7 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->webimageID)) $this->webimageID = $inputData->webimageID;
-        if (!empty($inputData->webimageName)) $this->webimageName = $inputData->webimageName;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -45,10 +62,6 @@ class WebImage implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->webimageID !== null) $output['webimageID'] = $this->webimageID;
-        if ($this->webimageName !== null) $output['webimageName'] = $this->webimageName;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

@@ -22,17 +22,17 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsAdoption();
-        $testObject->adoptionID = 'testValue Adoption ID';
-        $testObject->adoptionAnimalID = 'testValue Animal ID';
-        $testObject->adoptionAdopterID = 'testValue Adopter ID';
-        $testObject->adoptionLeadID = 'testValue Lead ID';
-        $testObject->adoptionFeeAmount = 'testValue Fee';
-        $testObject->adoptionDonationAmount = 'testValue Donation';
-        $testObject->adoptionDonationID = 'testValue Donation ID';
-        $testObject->adoptionDate = 'testValue Date';
-        $testObject->adoptionSubmittedformID = 'testValue Submitted form ID';
-        $testObject->adoptionStatusID = 'testValue Status ID';
-        $testObject->adoptionLetterSent = 'testValue Thank you letter sent';
+        $testObject->id = 'testValue Adoption ID';
+        $testObject->animalId = 'testValue Animal ID';
+        $testObject->adopterId = 'testValue Adopter ID';
+        $testObject->leadId = 'testValue Lead ID';
+        $testObject->feeAmount = 'testValue Fee';
+        $testObject->donationAmount = 'testValue Donation';
+        $testObject->donationId = 'testValue Donation ID';
+        $testObject->date = 'testValue Date';
+        $testObject->submittedformId = 'testValue Submitted form ID';
+        $testObject->statusId = 'testValue Status ID';
+        $testObject->letterSent = 'testValue Thank you letter sent';
 
         $query->updateAnimalsAdoption($testObject);
 

@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Add();
 
         $testObject = new \RescueGroups\Objects\AnimalsReasonsSurrender();
-        $testObject->reasonName = 'testValue Reason';
+        $testObject->name = 'testValue Reason';
 
         $query->addAnimalsReasonsSurrender($testObject);
 

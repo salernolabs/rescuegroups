@@ -35,16 +35,16 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "donationID" => [1, 'donationID'],
-        "donationContactID" => [0, 'donationContactID'],
-        "donationContactName" => [0, 'donationContactName'],
-        "donationContactType" => [0, 'donationContactType'],
-        "donationAmount" => [0, 'donationAmount'],
-        "donationInkind" => [0, 'donationInkind'],
-        "donationComment" => [0, 'donationComment'],
-        "donationLettersent" => [0, 'donationLettersent'],
-        "donationPurpose" => [0, 'donationPurpose'],
-        "donationDate" => [0, 'donationDate'],
+        "id" => [1, 'donationID'],
+        "contactId" => [0, 'donationContactID'],
+        "contactName" => [0, 'donationContactName'],
+        "contactType" => [0, 'donationContactType'],
+        "amount" => [0, 'donationAmount'],
+        "inkind" => [0, 'donationInkind'],
+        "comment" => [0, 'donationComment'],
+        "lettersent" => [0, 'donationLettersent'],
+        "purpose" => [0, 'donationPurpose'],
+        "date" => [0, 'donationDate'],
     ];
 
     /**

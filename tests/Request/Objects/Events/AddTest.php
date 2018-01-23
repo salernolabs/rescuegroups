@@ -22,12 +22,12 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Events\Add();
 
         $testObject = new \RescueGroups\Objects\Event();
-        $testObject->eventName = 'testValue Name';
-        $testObject->tart = 'testValue Start Date/Time';
-        $testObject->eventEnd = 'testValue End Date/Time';
-        $testObject->eventUrl = 'testValue Web address';
-        $testObject->eventDescription = 'testValue Description';
-        $testObject->pecies = 'testValue Species attending';
+        $testObject->name = 'testValue Name';
+        $testObject->start = 'testValue Start Date/Time';
+        $testObject->end = 'testValue End Date/Time';
+        $testObject->url = 'testValue Web address';
+        $testObject->description = 'testValue Description';
+        $testObject->species = 'testValue Species attending';
 
         $query->addEvent($testObject);
 

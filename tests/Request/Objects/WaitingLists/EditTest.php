@@ -22,10 +22,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WaitingLists\Edit();
 
         $testObject = new \RescueGroups\Objects\WaitingList();
-        $testObject->waitinglistID = 'testValue ID';
-        $testObject->waitinglistName = 'testValue Name';
-        $testObject->waitinglistType = 'testValue Type';
-        $testObject->waitinglistComment = 'testValue Comment';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->type = 'testValue Type';
+        $testObject->comment = 'testValue Comment';
 
         $query->updateWaitingList($testObject);
 

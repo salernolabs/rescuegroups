@@ -22,8 +22,8 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Add();
 
         $testObject = new \RescueGroups\Objects\ContactsGroup();
-        $testObject->groupName = 'testValue Name';
-        $testObject->groupBusiness = 'testValue Business';
+        $testObject->name = 'testValue Name';
+        $testObject->business = 'testValue Business';
 
         $query->addContactsGroup($testObject);
 

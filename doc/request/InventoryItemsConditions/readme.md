@@ -12,6 +12,15 @@ Performs inventoryitemsConditions.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\InventoryItemsConditions\Define();
 
     $result = $api->executeRequest($query);
+Performs inventoryitemsConditions.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryItemsConditions\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs inventoryitemsConditions.list list query, typically suitable for filling HTML select fields.
 

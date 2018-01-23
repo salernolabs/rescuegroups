@@ -30,7 +30,7 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $serviceID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setServiceID($value)
+    public function setId($value)
     {
-        $this->serviceID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->serviceID !== null) $parameterArray['values'][] = ["serviceID"=>$this->serviceID];
+        if ($this->id !== null) $parameterArray['values'][] = ["serviceID"=>$this->id];
     }
 }

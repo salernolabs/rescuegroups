@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class WebFile implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $webfileID = null;
+    public $id = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $webfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $tatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $webfileDisplayInline = null;
+    public $displayInline = null;
 
     /**
      * Security Role
      *
      * @var integer
      */
-    public $webfileRoleID = null;
+    public $roleId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'webfileID' => 'id',
+            'webfileDescription' => 'description',
+            'webfileStatus' => 'status',
+            'webfileDisplayInline' => 'displayInline',
+            'webfileRoleID' => 'roleId',
+        ],
+        'output' => [
+            'id' => 'webfileID',
+            'description' => 'webfileDescription',
+            'status' => 'webfileStatus',
+            'displayInline' => 'webfileDisplayInline',
+            'roleId' => 'webfileRoleID',
+        ]
+    ];
 
     /**
      * WebFile Constructor
@@ -54,11 +78,7 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->webfileID)) $this->webfileID = $inputData->webfileID;
-        if (!empty($inputData->webfileDescription)) $this->webfileDescription = $inputData->webfileDescription;
-        if (!empty($inputData->webfileStatus)) $this->tatus = $inputData->webfileStatus;
-        if (!empty($inputData->webfileDisplayInline)) $this->webfileDisplayInline = $inputData->webfileDisplayInline;
-        if (!empty($inputData->webfileRoleID)) $this->webfileRoleID = $inputData->webfileRoleID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class WebFile implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->webfileID !== null) $output['webfileID'] = $this->webfileID;
-        if ($this->webfileDescription !== null) $output['webfileDescription'] = $this->webfileDescription;
-        if ($this->tatus !== null) $output['webfileStatus'] = $this->tatus;
-        if ($this->webfileDisplayInline !== null) $output['webfileDisplayInline'] = $this->webfileDisplayInline;
-        if ($this->webfileRoleID !== null) $output['webfileRoleID'] = $this->webfileRoleID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

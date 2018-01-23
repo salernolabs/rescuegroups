@@ -30,7 +30,7 @@ class YoutubeUrls extends \RescueGroups\Request\Objects\Base implements \RescueG
      *
      * @var integer
      */
-    private $animalID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class YoutubeUrls extends \RescueGroups\Request\Objects\Base implements \RescueG
      * @param integer $value
      * @return $this
      */
-    public function setAnimalID($value)
+    public function setId($value)
     {
-        $this->animalID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class YoutubeUrls extends \RescueGroups\Request\Objects\Base implements \RescueG
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
+        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
     }
 }

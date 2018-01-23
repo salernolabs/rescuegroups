@@ -15,35 +15,35 @@ class Memorial implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var string
      */
-    public $memorialPictureBinary = null;
+    public $pictureBinary = null;
 
     /**
      * File name
      *
      * @var string
      */
-    public $memorialName = null;
+    public $name = null;
 
     /**
      * Old file name
      *
      * @var string
      */
-    public $memorialPictureOldFileName = null;
+    public $pictureOldFileName = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $memorialDescription = null;
+    public $description = null;
 
     /**
      * Order
      *
      * @var string
      */
-    public $memorialOrder = null;
+    public $order = null;
 
 
     /**
@@ -54,11 +54,11 @@ class Memorial implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->memorialPictureBinary)) $this->memorialPictureBinary = $inputData->memorialPictureBinary;
-        if (!empty($inputData->memorialName)) $this->memorialName = $inputData->memorialName;
-        if (!empty($inputData->memorialPictureOldFileName)) $this->memorialPictureOldFileName = $inputData->memorialPictureOldFileName;
-        if (!empty($inputData->memorialDescription)) $this->memorialDescription = $inputData->memorialDescription;
-        if (!empty($inputData->memorialOrder)) $this->memorialOrder = $inputData->memorialOrder;
+        if (!empty($inputData->memorialPictureBinary)) $this->pictureBinary = $inputData->memorialPictureBinary;
+        if (!empty($inputData->memorialName)) $this->name = $inputData->memorialName;
+        if (!empty($inputData->memorialPictureOldFileName)) $this->pictureOldFileName = $inputData->memorialPictureOldFileName;
+        if (!empty($inputData->memorialDescription)) $this->description = $inputData->memorialDescription;
+        if (!empty($inputData->memorialOrder)) $this->order = $inputData->memorialOrder;
     }
 
     /**
@@ -70,11 +70,11 @@ class Memorial implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($this->memorialPictureBinary !== null) $output['memorialPictureBinary'] = $this->memorialPictureBinary;
-        if ($this->memorialName !== null) $output['memorialName'] = $this->memorialName;
-        if ($this->memorialPictureOldFileName !== null) $output['memorialPictureOldFileName'] = $this->memorialPictureOldFileName;
-        if ($this->memorialDescription !== null) $output['memorialDescription'] = $this->memorialDescription;
-        if ($this->memorialOrder !== null) $output['memorialOrder'] = $this->memorialOrder;
+        if ($this->pictureBinary !== null) $output['memorialPictureBinary'] = $this->pictureBinary;
+        if ($this->name !== null) $output['memorialName'] = $this->name;
+        if ($this->pictureOldFileName !== null) $output['memorialPictureOldFileName'] = $this->pictureOldFileName;
+        if ($this->description !== null) $output['memorialDescription'] = $this->description;
+        if ($this->order !== null) $output['memorialOrder'] = $this->order;
 
         return $output;
     }

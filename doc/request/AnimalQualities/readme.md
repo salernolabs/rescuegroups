@@ -12,6 +12,15 @@ Performs animalQualities.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\AnimalQualities\Define();
 
     $result = $api->executeRequest($query);
+Performs animalQualities.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalQualities\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## PublicList
 Performs animalQualities.publicList list query, typically suitable for filling HTML select fields.
 

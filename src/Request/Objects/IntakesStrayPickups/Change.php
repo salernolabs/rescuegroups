@@ -30,84 +30,84 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakeID = null;
+    private $intakeId = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    private $intakesStraypickupAnimalID = null;
+    private $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $intakesStraypickupAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $intakesStraypickupDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $intakesStraypickupNotes = null;
+    private $notes = null;
 
     /**
      * Pickup Location
      *
      * @var string
      */
-    private $intakesStraypickupLocation = null;
+    private $location = null;
 
     /**
      * Pickup Street address
      *
      * @var string
      */
-    private $intakesStraypickupAddress = null;
+    private $address = null;
 
     /**
      * Pickup City
      *
      * @var string
      */
-    private $intakesStraypickupCity = null;
+    private $city = null;
 
     /**
      * Pickup State/Province
      *
      * @var string
      */
-    private $tate = null;
+    private $state = null;
 
     /**
      * Pickup Postal Code
      *
      * @var string
      */
-    private $intakesStraypickupPostalcode = null;
+    private $postalcode = null;
 
     /**
      * Found By
      *
      * @var integer
      */
-    private $intakesStraypickupFinderID = null;
+    private $finderId = null;
 
     /**
      * Pickup By
      *
      * @var integer
      */
-    private $taffID = null;
+    private $staffId = null;
 
 
     /**
@@ -116,9 +116,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakeID($value)
+    public function setIntakeId($value)
     {
-        $this->intakeID = $value;
+        $this->intakeId = $value;
 
         return $this;
     }
@@ -129,9 +129,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraypickupAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->intakesStraypickupAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -142,9 +142,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraypickupAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->intakesStraypickupAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -155,9 +155,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setIntakesStraypickupDate($value)
+    public function setDate($value)
     {
-        $this->intakesStraypickupDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -168,9 +168,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupNotes($value)
+    public function setNotes($value)
     {
-        $this->intakesStraypickupNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -181,9 +181,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupLocation($value)
+    public function setLocation($value)
     {
-        $this->intakesStraypickupLocation = $value;
+        $this->location = $value;
 
         return $this;
     }
@@ -194,9 +194,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupAddress($value)
+    public function setAddress($value)
     {
-        $this->intakesStraypickupAddress = $value;
+        $this->address = $value;
 
         return $this;
     }
@@ -207,9 +207,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupCity($value)
+    public function setCity($value)
     {
-        $this->intakesStraypickupCity = $value;
+        $this->city = $value;
 
         return $this;
     }
@@ -220,9 +220,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setTate($value)
+    public function setState($value)
     {
-        $this->tate = $value;
+        $this->state = $value;
 
         return $this;
     }
@@ -233,9 +233,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesStraypickupPostalcode($value)
+    public function setPostalcode($value)
     {
-        $this->intakesStraypickupPostalcode = $value;
+        $this->postalcode = $value;
 
         return $this;
     }
@@ -246,9 +246,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraypickupFinderID($value)
+    public function setFinderId($value)
     {
-        $this->intakesStraypickupFinderID = $value;
+        $this->finderId = $value;
 
         return $this;
     }
@@ -259,9 +259,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setTaffID($value)
+    public function setStaffId($value)
     {
-        $this->taffID = $value;
+        $this->staffId = $value;
 
         return $this;
     }
@@ -276,17 +276,17 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
-        if ($this->intakesStraypickupAnimalID !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalID"=>$this->intakesStraypickupAnimalID];
-        if ($this->intakesStraypickupAnimalConditionID !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalConditionID"=>$this->intakesStraypickupAnimalConditionID];
-        if ($this->intakesStraypickupDate !== null) $parameterArray['values'][] = ["intakesStraypickupDate"=>$this->intakesStraypickupDate];
-        if ($this->intakesStraypickupNotes !== null) $parameterArray['values'][] = ["intakesStraypickupNotes"=>$this->intakesStraypickupNotes];
-        if ($this->intakesStraypickupLocation !== null) $parameterArray['values'][] = ["intakesStraypickupLocation"=>$this->intakesStraypickupLocation];
-        if ($this->intakesStraypickupAddress !== null) $parameterArray['values'][] = ["intakesStraypickupAddress"=>$this->intakesStraypickupAddress];
-        if ($this->intakesStraypickupCity !== null) $parameterArray['values'][] = ["intakesStraypickupCity"=>$this->intakesStraypickupCity];
-        if ($this->tate !== null) $parameterArray['values'][] = ["intakesStraypickupState"=>$this->tate];
-        if ($this->intakesStraypickupPostalcode !== null) $parameterArray['values'][] = ["intakesStraypickupPostalcode"=>$this->intakesStraypickupPostalcode];
-        if ($this->intakesStraypickupFinderID !== null) $parameterArray['values'][] = ["intakesStraypickupFinderID"=>$this->intakesStraypickupFinderID];
-        if ($this->taffID !== null) $parameterArray['values'][] = ["intakesStraypickupStaffID"=>$this->taffID];
+        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalID"=>$this->animalId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesStraypickupDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesStraypickupNotes"=>$this->notes];
+        if ($this->location !== null) $parameterArray['values'][] = ["intakesStraypickupLocation"=>$this->location];
+        if ($this->address !== null) $parameterArray['values'][] = ["intakesStraypickupAddress"=>$this->address];
+        if ($this->city !== null) $parameterArray['values'][] = ["intakesStraypickupCity"=>$this->city];
+        if ($this->state !== null) $parameterArray['values'][] = ["intakesStraypickupState"=>$this->state];
+        if ($this->postalcode !== null) $parameterArray['values'][] = ["intakesStraypickupPostalcode"=>$this->postalcode];
+        if ($this->finderId !== null) $parameterArray['values'][] = ["intakesStraypickupFinderID"=>$this->finderId];
+        if ($this->staffId !== null) $parameterArray['values'][] = ["intakesStraypickupStaffID"=>$this->staffId];
     }
 }

@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\ContactFiles\Add();
 
         $testObject = new \RescueGroups\Objects\Create\ContactFile();
-        $testObject->contactfileBinary = 'testValue File';
-        $testObject->contactfileOldFileName = 'testValue Old file name';
-        $testObject->contactfileDescription = 'testValue Description';
-        $testObject->tatus = 'testValue Status';
-        $testObject->contactfileDisplayInline = 'testValue Inline';
+        $testObject->binary = 'testValue File';
+        $testObject->oldFileName = 'testValue Old file name';
+        $testObject->description = 'testValue Description';
+        $testObject->status = 'testValue Status';
+        $testObject->displayInline = 'testValue Inline';
 
         $query->addContactFile($testObject);
 

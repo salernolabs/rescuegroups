@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Edit();
 
         $testObject = new \RescueGroups\Objects\OutcomesAdoption();
-        $testObject->outcomesAdoptionID = 'testValue ID';
-        $testObject->outcomesAdoptionAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesAdoptionDate = 'testValue Date';
-        $testObject->outcomesAdoptionNotes = 'testValue Notes';
-        $testObject->outcomesAdoptionAdoptionID = 'testValue Adoption';
+        $testObject->id = 'testValue ID';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->adoptionId = 'testValue Adoption';
 
         $query->updateOutcomesAdoption($testObject);
 

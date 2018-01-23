@@ -10,6 +10,8 @@ namespace RescueGroups\Objects;
 
 class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     {{# fields}}
     /**
      * {{friendlyName}}{{# isKey}}, Primary Key{{/ isKey}}
@@ -21,6 +23,24 @@ class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterfa
     {{/ fields}}
 
     /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => '{{# fields}}{{# isKey}}{{sdkFieldName}}{{/ isKey}}{{/ fields}}',
+        'input' => [
+            {{# fields}}
+            '{{name}}' => '{{sdkFieldName}}',
+            {{/ fields}}
+        ],
+        'output' => [
+            {{# fields}}
+            '{{sdkFieldName}}' => '{{name}}',
+            {{/ fields}}
+        ]
+    ];
+
+    /**
      * {{responseClassName}} Constructor
      * @var \stdClass|null $inputData
      */
@@ -28,9 +48,7 @@ class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterfa
     {
         if (empty($inputData)) return;
 
-        {{# fields}}
-        if (!empty($inputData->{{name}})) $this->{{sdkFieldName}} = $inputData->{{name}};
-        {{/ fields}}
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -41,11 +59,6 @@ class {{responseClassName}} implements \RescueGroups\Objects\APIEncodableInterfa
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        {{# fields}}
-        if ({{# isKey}}$includeId && {{/ isKey}}$this->{{sdkFieldName}} !== null) $output['{{name}}'] = $this->{{sdkFieldName}};
-        {{/ fields}}
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

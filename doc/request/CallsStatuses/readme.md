@@ -12,6 +12,15 @@ Performs callsStatuses.define query. This gives information about the API interf
     $query = new \RescueGroups\Request\Objects\CallsStatuses\Define();
 
     $result = $api->executeRequest($query);
+Performs callsStatuses.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\CallsStatuses\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs callsStatuses.list list query, typically suitable for filling HTML select fields.
 

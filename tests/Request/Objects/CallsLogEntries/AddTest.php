@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsLogEntries\Add();
 
         $testObject = new \RescueGroups\Objects\Create\CallsLogEntry();
-        $testObject->logentryContactID = 'testValue Contact';
-        $testObject->logentryDate = 'testValue Date';
-        $testObject->logentryOutcomeID = 'testValue Outcome';
-        $testObject->logentryComments = 'testValue Comments';
+        $testObject->contactId = 'testValue Contact';
+        $testObject->date = 'testValue Date';
+        $testObject->outcomeId = 'testValue Outcome';
+        $testObject->comments = 'testValue Comments';
 
         $query->addCallsLogEntry($testObject);
 

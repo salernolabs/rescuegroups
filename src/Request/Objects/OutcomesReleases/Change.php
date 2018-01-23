@@ -30,70 +30,70 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $outcomesReleaseAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $outcomesReleaseDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $outcomesReleaseNotes = null;
+    private $notes = null;
 
     /**
      * Location
      *
      * @var string
      */
-    private $outcomesReleaseLocation = null;
+    private $location = null;
 
     /**
      * Street address
      *
      * @var string
      */
-    private $outcomesReleaseAddress = null;
+    private $address = null;
 
     /**
      * City
      *
      * @var string
      */
-    private $outcomesReleaseCity = null;
+    private $city = null;
 
     /**
      * State/Province
      *
      * @var string
      */
-    private $tate = null;
+    private $state = null;
 
     /**
      * Postal Code
      *
      * @var string
      */
-    private $outcomesReleasePostalcode = null;
+    private $postalcode = null;
 
     /**
      * Released By
      *
      * @var integer
      */
-    private $outcomesReleaseByID = null;
+    private $byId = null;
 
 
     /**
@@ -102,9 +102,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -115,9 +115,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesReleaseAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->outcomesReleaseAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -128,9 +128,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setOutcomesReleaseDate($value)
+    public function setDate($value)
     {
-        $this->outcomesReleaseDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -141,9 +141,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleaseNotes($value)
+    public function setNotes($value)
     {
-        $this->outcomesReleaseNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -154,9 +154,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleaseLocation($value)
+    public function setLocation($value)
     {
-        $this->outcomesReleaseLocation = $value;
+        $this->location = $value;
 
         return $this;
     }
@@ -167,9 +167,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleaseAddress($value)
+    public function setAddress($value)
     {
-        $this->outcomesReleaseAddress = $value;
+        $this->address = $value;
 
         return $this;
     }
@@ -180,9 +180,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleaseCity($value)
+    public function setCity($value)
     {
-        $this->outcomesReleaseCity = $value;
+        $this->city = $value;
 
         return $this;
     }
@@ -193,9 +193,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setTate($value)
+    public function setState($value)
     {
-        $this->tate = $value;
+        $this->state = $value;
 
         return $this;
     }
@@ -206,9 +206,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesReleasePostalcode($value)
+    public function setPostalcode($value)
     {
-        $this->outcomesReleasePostalcode = $value;
+        $this->postalcode = $value;
 
         return $this;
     }
@@ -219,9 +219,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesReleaseByID($value)
+    public function setById($value)
     {
-        $this->outcomesReleaseByID = $value;
+        $this->byId = $value;
 
         return $this;
     }
@@ -236,15 +236,15 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->outcomesReleaseAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesReleaseAnimalConditionID"=>$this->outcomesReleaseAnimalConditionID];
-        if ($this->outcomesReleaseDate !== null) $parameterArray['values'][] = ["outcomesReleaseDate"=>$this->outcomesReleaseDate];
-        if ($this->outcomesReleaseNotes !== null) $parameterArray['values'][] = ["outcomesReleaseNotes"=>$this->outcomesReleaseNotes];
-        if ($this->outcomesReleaseLocation !== null) $parameterArray['values'][] = ["outcomesReleaseLocation"=>$this->outcomesReleaseLocation];
-        if ($this->outcomesReleaseAddress !== null) $parameterArray['values'][] = ["outcomesReleaseAddress"=>$this->outcomesReleaseAddress];
-        if ($this->outcomesReleaseCity !== null) $parameterArray['values'][] = ["outcomesReleaseCity"=>$this->outcomesReleaseCity];
-        if ($this->tate !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->tate];
-        if ($this->outcomesReleasePostalcode !== null) $parameterArray['values'][] = ["outcomesReleasePostalcode"=>$this->outcomesReleasePostalcode];
-        if ($this->outcomesReleaseByID !== null) $parameterArray['values'][] = ["outcomesReleaseByID"=>$this->outcomesReleaseByID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesReleaseAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["outcomesReleaseDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesReleaseNotes"=>$this->notes];
+        if ($this->location !== null) $parameterArray['values'][] = ["outcomesReleaseLocation"=>$this->location];
+        if ($this->address !== null) $parameterArray['values'][] = ["outcomesReleaseAddress"=>$this->address];
+        if ($this->city !== null) $parameterArray['values'][] = ["outcomesReleaseCity"=>$this->city];
+        if ($this->state !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->state];
+        if ($this->postalcode !== null) $parameterArray['values'][] = ["outcomesReleasePostalcode"=>$this->postalcode];
+        if ($this->byId !== null) $parameterArray['values'][] = ["outcomesReleaseByID"=>$this->byId];
     }
 }

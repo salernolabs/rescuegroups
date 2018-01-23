@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class NewsArticle implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $articleID = null;
+    public $id = null;
 
     /**
      * Title
      *
      * @var string
      */
-    public $articleTitle = null;
+    public $title = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $articleDescription = null;
+    public $description = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $articleDate = null;
+    public $date = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'articleID' => 'id',
+            'articleTitle' => 'title',
+            'articleDescription' => 'description',
+            'articleDate' => 'date',
+        ],
+        'output' => [
+            'id' => 'articleID',
+            'title' => 'articleTitle',
+            'description' => 'articleDescription',
+            'date' => 'articleDate',
+        ]
+    ];
 
     /**
      * NewsArticle Constructor
@@ -47,10 +69,7 @@ class NewsArticle implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->articleID)) $this->articleID = $inputData->articleID;
-        if (!empty($inputData->articleTitle)) $this->articleTitle = $inputData->articleTitle;
-        if (!empty($inputData->articleDescription)) $this->articleDescription = $inputData->articleDescription;
-        if (!empty($inputData->articleDate)) $this->articleDate = $inputData->articleDate;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class NewsArticle implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->articleID !== null) $output['articleID'] = $this->articleID;
-        if ($this->articleTitle !== null) $output['articleTitle'] = $this->articleTitle;
-        if ($this->articleDescription !== null) $output['articleDescription'] = $this->articleDescription;
-        if ($this->articleDate !== null) $output['articleDate'] = $this->articleDate;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

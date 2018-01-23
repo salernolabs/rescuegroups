@@ -22,9 +22,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Add();
 
         $testObject = new \RescueGroups\Objects\VolunteersJournalEntry();
-        $testObject->journalEntryDate = 'testValue Date';
-        $testObject->journalEntryComment = 'testValue Comment';
-        $testObject->journalEntryType = 'testValue Entry Type';
+        $testObject->date = 'testValue Date';
+        $testObject->comment = 'testValue Comment';
+        $testObject->type = 'testValue Entry Type';
 
         $query->addVolunteersJournalEntry($testObject);
 

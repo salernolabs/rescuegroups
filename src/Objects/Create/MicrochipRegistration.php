@@ -15,105 +15,105 @@ class MicrochipRegistration implements \RescueGroups\Objects\APIEncodableInterfa
      *
      * @var integer
      */
-    public $microchipRegistrationAnimalID = null;
+    public $animalId = null;
 
     /**
      * Microchip number
      *
      * @var string
      */
-    public $microchipRegistrationMicrochipNumber = null;
+    public $microchipNumber = null;
 
     /**
      * Microchip vendor
      *
      * @var string
      */
-    public $microchipRegistrationMicrochipVendor = null;
+    public $microchipVendor = null;
 
     /**
      * Registry
      *
      * @var string
      */
-    public $microchipRegistrationRegistry = null;
+    public $registry = null;
 
     /**
      * First name
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantFirstname = null;
+    public $registrantFirstname = null;
 
     /**
      * Last name
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantLastname = null;
+    public $registrantLastname = null;
 
     /**
      * Street address
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantAddress = null;
+    public $registrantAddress = null;
 
     /**
      * City
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantCity = null;
+    public $registrantCity = null;
 
     /**
      * State/Province
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantState = null;
+    public $registrantState = null;
 
     /**
      * Postal Code
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantPostalcode = null;
+    public $registrantPostalcode = null;
 
     /**
      * Country
      *
      * @var integer
      */
-    public $microchipRegistrationRegistrantCountry = null;
+    public $registrantCountry = null;
 
     /**
      * Primary phone number
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantPrimaryPhone = null;
+    public $registrantPrimaryPhone = null;
 
     /**
      * Secondary phone number
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantSecondaryPhone = null;
+    public $registrantSecondaryPhone = null;
 
     /**
      * Primary email address
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantPrimaryEmail = null;
+    public $registrantPrimaryEmail = null;
 
     /**
      * Secondary email address
      *
      * @var string
      */
-    public $microchipRegistrationRegistrantSecondaryEmail = null;
+    public $registrantSecondaryEmail = null;
 
 
     /**
@@ -124,21 +124,21 @@ class MicrochipRegistration implements \RescueGroups\Objects\APIEncodableInterfa
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->microchipRegistrationAnimalID)) $this->microchipRegistrationAnimalID = $inputData->microchipRegistrationAnimalID;
-        if (!empty($inputData->microchipRegistrationMicrochipNumber)) $this->microchipRegistrationMicrochipNumber = $inputData->microchipRegistrationMicrochipNumber;
-        if (!empty($inputData->microchipRegistrationMicrochipVendor)) $this->microchipRegistrationMicrochipVendor = $inputData->microchipRegistrationMicrochipVendor;
-        if (!empty($inputData->microchipRegistrationRegistry)) $this->microchipRegistrationRegistry = $inputData->microchipRegistrationRegistry;
-        if (!empty($inputData->microchipRegistrationRegistrantFirstname)) $this->microchipRegistrationRegistrantFirstname = $inputData->microchipRegistrationRegistrantFirstname;
-        if (!empty($inputData->microchipRegistrationRegistrantLastname)) $this->microchipRegistrationRegistrantLastname = $inputData->microchipRegistrationRegistrantLastname;
-        if (!empty($inputData->microchipRegistrationRegistrantAddress)) $this->microchipRegistrationRegistrantAddress = $inputData->microchipRegistrationRegistrantAddress;
-        if (!empty($inputData->microchipRegistrationRegistrantCity)) $this->microchipRegistrationRegistrantCity = $inputData->microchipRegistrationRegistrantCity;
-        if (!empty($inputData->microchipRegistrationRegistrantState)) $this->microchipRegistrationRegistrantState = $inputData->microchipRegistrationRegistrantState;
-        if (!empty($inputData->microchipRegistrationRegistrantPostalcode)) $this->microchipRegistrationRegistrantPostalcode = $inputData->microchipRegistrationRegistrantPostalcode;
-        if (!empty($inputData->microchipRegistrationRegistrantCountry)) $this->microchipRegistrationRegistrantCountry = $inputData->microchipRegistrationRegistrantCountry;
-        if (!empty($inputData->microchipRegistrationRegistrantPrimaryPhone)) $this->microchipRegistrationRegistrantPrimaryPhone = $inputData->microchipRegistrationRegistrantPrimaryPhone;
-        if (!empty($inputData->microchipRegistrationRegistrantSecondaryPhone)) $this->microchipRegistrationRegistrantSecondaryPhone = $inputData->microchipRegistrationRegistrantSecondaryPhone;
-        if (!empty($inputData->microchipRegistrationRegistrantPrimaryEmail)) $this->microchipRegistrationRegistrantPrimaryEmail = $inputData->microchipRegistrationRegistrantPrimaryEmail;
-        if (!empty($inputData->microchipRegistrationRegistrantSecondaryEmail)) $this->microchipRegistrationRegistrantSecondaryEmail = $inputData->microchipRegistrationRegistrantSecondaryEmail;
+        if (!empty($inputData->microchipRegistrationAnimalID)) $this->animalId = $inputData->microchipRegistrationAnimalID;
+        if (!empty($inputData->microchipRegistrationMicrochipNumber)) $this->microchipNumber = $inputData->microchipRegistrationMicrochipNumber;
+        if (!empty($inputData->microchipRegistrationMicrochipVendor)) $this->microchipVendor = $inputData->microchipRegistrationMicrochipVendor;
+        if (!empty($inputData->microchipRegistrationRegistry)) $this->registry = $inputData->microchipRegistrationRegistry;
+        if (!empty($inputData->microchipRegistrationRegistrantFirstname)) $this->registrantFirstname = $inputData->microchipRegistrationRegistrantFirstname;
+        if (!empty($inputData->microchipRegistrationRegistrantLastname)) $this->registrantLastname = $inputData->microchipRegistrationRegistrantLastname;
+        if (!empty($inputData->microchipRegistrationRegistrantAddress)) $this->registrantAddress = $inputData->microchipRegistrationRegistrantAddress;
+        if (!empty($inputData->microchipRegistrationRegistrantCity)) $this->registrantCity = $inputData->microchipRegistrationRegistrantCity;
+        if (!empty($inputData->microchipRegistrationRegistrantState)) $this->registrantState = $inputData->microchipRegistrationRegistrantState;
+        if (!empty($inputData->microchipRegistrationRegistrantPostalcode)) $this->registrantPostalcode = $inputData->microchipRegistrationRegistrantPostalcode;
+        if (!empty($inputData->microchipRegistrationRegistrantCountry)) $this->registrantCountry = $inputData->microchipRegistrationRegistrantCountry;
+        if (!empty($inputData->microchipRegistrationRegistrantPrimaryPhone)) $this->registrantPrimaryPhone = $inputData->microchipRegistrationRegistrantPrimaryPhone;
+        if (!empty($inputData->microchipRegistrationRegistrantSecondaryPhone)) $this->registrantSecondaryPhone = $inputData->microchipRegistrationRegistrantSecondaryPhone;
+        if (!empty($inputData->microchipRegistrationRegistrantPrimaryEmail)) $this->registrantPrimaryEmail = $inputData->microchipRegistrationRegistrantPrimaryEmail;
+        if (!empty($inputData->microchipRegistrationRegistrantSecondaryEmail)) $this->registrantSecondaryEmail = $inputData->microchipRegistrationRegistrantSecondaryEmail;
     }
 
     /**
@@ -150,21 +150,21 @@ class MicrochipRegistration implements \RescueGroups\Objects\APIEncodableInterfa
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->microchipRegistrationAnimalID !== null) $output['microchipRegistrationAnimalID'] = $this->microchipRegistrationAnimalID;
-        if ($this->microchipRegistrationMicrochipNumber !== null) $output['microchipRegistrationMicrochipNumber'] = $this->microchipRegistrationMicrochipNumber;
-        if ($this->microchipRegistrationMicrochipVendor !== null) $output['microchipRegistrationMicrochipVendor'] = $this->microchipRegistrationMicrochipVendor;
-        if ($this->microchipRegistrationRegistry !== null) $output['microchipRegistrationRegistry'] = $this->microchipRegistrationRegistry;
-        if ($this->microchipRegistrationRegistrantFirstname !== null) $output['microchipRegistrationRegistrantFirstname'] = $this->microchipRegistrationRegistrantFirstname;
-        if ($this->microchipRegistrationRegistrantLastname !== null) $output['microchipRegistrationRegistrantLastname'] = $this->microchipRegistrationRegistrantLastname;
-        if ($this->microchipRegistrationRegistrantAddress !== null) $output['microchipRegistrationRegistrantAddress'] = $this->microchipRegistrationRegistrantAddress;
-        if ($this->microchipRegistrationRegistrantCity !== null) $output['microchipRegistrationRegistrantCity'] = $this->microchipRegistrationRegistrantCity;
-        if ($this->microchipRegistrationRegistrantState !== null) $output['microchipRegistrationRegistrantState'] = $this->microchipRegistrationRegistrantState;
-        if ($this->microchipRegistrationRegistrantPostalcode !== null) $output['microchipRegistrationRegistrantPostalcode'] = $this->microchipRegistrationRegistrantPostalcode;
-        if ($this->microchipRegistrationRegistrantCountry !== null) $output['microchipRegistrationRegistrantCountry'] = $this->microchipRegistrationRegistrantCountry;
-        if ($this->microchipRegistrationRegistrantPrimaryPhone !== null) $output['microchipRegistrationRegistrantPrimaryPhone'] = $this->microchipRegistrationRegistrantPrimaryPhone;
-        if ($this->microchipRegistrationRegistrantSecondaryPhone !== null) $output['microchipRegistrationRegistrantSecondaryPhone'] = $this->microchipRegistrationRegistrantSecondaryPhone;
-        if ($this->microchipRegistrationRegistrantPrimaryEmail !== null) $output['microchipRegistrationRegistrantPrimaryEmail'] = $this->microchipRegistrationRegistrantPrimaryEmail;
-        if ($this->microchipRegistrationRegistrantSecondaryEmail !== null) $output['microchipRegistrationRegistrantSecondaryEmail'] = $this->microchipRegistrationRegistrantSecondaryEmail;
+        if ($includeId && $this->animalId !== null) $output['microchipRegistrationAnimalID'] = $this->animalId;
+        if ($this->microchipNumber !== null) $output['microchipRegistrationMicrochipNumber'] = $this->microchipNumber;
+        if ($this->microchipVendor !== null) $output['microchipRegistrationMicrochipVendor'] = $this->microchipVendor;
+        if ($this->registry !== null) $output['microchipRegistrationRegistry'] = $this->registry;
+        if ($this->registrantFirstname !== null) $output['microchipRegistrationRegistrantFirstname'] = $this->registrantFirstname;
+        if ($this->registrantLastname !== null) $output['microchipRegistrationRegistrantLastname'] = $this->registrantLastname;
+        if ($this->registrantAddress !== null) $output['microchipRegistrationRegistrantAddress'] = $this->registrantAddress;
+        if ($this->registrantCity !== null) $output['microchipRegistrationRegistrantCity'] = $this->registrantCity;
+        if ($this->registrantState !== null) $output['microchipRegistrationRegistrantState'] = $this->registrantState;
+        if ($this->registrantPostalcode !== null) $output['microchipRegistrationRegistrantPostalcode'] = $this->registrantPostalcode;
+        if ($this->registrantCountry !== null) $output['microchipRegistrationRegistrantCountry'] = $this->registrantCountry;
+        if ($this->registrantPrimaryPhone !== null) $output['microchipRegistrationRegistrantPrimaryPhone'] = $this->registrantPrimaryPhone;
+        if ($this->registrantSecondaryPhone !== null) $output['microchipRegistrationRegistrantSecondaryPhone'] = $this->registrantSecondaryPhone;
+        if ($this->registrantPrimaryEmail !== null) $output['microchipRegistrationRegistrantPrimaryEmail'] = $this->registrantPrimaryEmail;
+        if ($this->registrantSecondaryEmail !== null) $output['microchipRegistrationRegistrantSecondaryEmail'] = $this->registrantSecondaryEmail;
 
         return $output;
     }

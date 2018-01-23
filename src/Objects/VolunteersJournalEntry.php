@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class VolunteersJournalEntry implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $journalEntryID = null;
+    public $id = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $journalEntryContactID = null;
+    public $contactId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $journalEntryDate = null;
+    public $date = null;
 
     /**
      * Comment
      *
      * @var string
      */
-    public $journalEntryComment = null;
+    public $comment = null;
 
     /**
      * Entry Type
      *
      * @var string
      */
-    public $journalEntryType = null;
+    public $type = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'journalEntryID' => 'id',
+            'journalEntryContactID' => 'contactId',
+            'journalEntryDate' => 'date',
+            'journalEntryComment' => 'comment',
+            'journalEntryType' => 'type',
+        ],
+        'output' => [
+            'id' => 'journalEntryID',
+            'contactId' => 'journalEntryContactID',
+            'date' => 'journalEntryDate',
+            'comment' => 'journalEntryComment',
+            'type' => 'journalEntryType',
+        ]
+    ];
 
     /**
      * VolunteersJournalEntry Constructor
@@ -54,11 +78,7 @@ class VolunteersJournalEntry implements \RescueGroups\Objects\APIEncodableInterf
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->journalEntryID)) $this->journalEntryID = $inputData->journalEntryID;
-        if (!empty($inputData->journalEntryContactID)) $this->journalEntryContactID = $inputData->journalEntryContactID;
-        if (!empty($inputData->journalEntryDate)) $this->journalEntryDate = $inputData->journalEntryDate;
-        if (!empty($inputData->journalEntryComment)) $this->journalEntryComment = $inputData->journalEntryComment;
-        if (!empty($inputData->journalEntryType)) $this->journalEntryType = $inputData->journalEntryType;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class VolunteersJournalEntry implements \RescueGroups\Objects\APIEncodableInterf
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->journalEntryID !== null) $output['journalEntryID'] = $this->journalEntryID;
-        if ($this->journalEntryContactID !== null) $output['journalEntryContactID'] = $this->journalEntryContactID;
-        if ($this->journalEntryDate !== null) $output['journalEntryDate'] = $this->journalEntryDate;
-        if ($this->journalEntryComment !== null) $output['journalEntryComment'] = $this->journalEntryComment;
-        if ($this->journalEntryType !== null) $output['journalEntryType'] = $this->journalEntryType;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

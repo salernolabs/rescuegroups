@@ -30,14 +30,14 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $enable = null;
+    private $enableEvents = null;
 
     /**
      * Map website to use with the Events feature
      *
      * @var string
      */
-    private $setMapWebsite = null;
+    private $setEventsMapWebsite = null;
 
 
     /**
@@ -46,9 +46,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setEnable($value)
+    public function setEnableEvents($value)
     {
-        $this->enable = $value;
+        $this->enableEvents = $value;
 
         return $this;
     }
@@ -59,9 +59,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetMapWebsite($value)
+    public function setSetEventsMapWebsite($value)
     {
-        $this->setMapWebsite = $value;
+        $this->setEventsMapWebsite = $value;
 
         return $this;
     }
@@ -76,7 +76,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enable !== null) $parameterArray['values'][] = ["enableEvents"=>$this->enable];
-        if ($this->setMapWebsite !== null) $parameterArray['values'][] = ["setEventsMapWebsite"=>$this->setMapWebsite];
+        if ($this->enableEvents !== null) $parameterArray['values'][] = ["enableEvents"=>$this->enableEvents];
+        if ($this->setEventsMapWebsite !== null) $parameterArray['values'][] = ["setEventsMapWebsite"=>$this->setEventsMapWebsite];
     }
 }

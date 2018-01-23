@@ -22,16 +22,16 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesStrayPickup();
-        $testObject->intakesStraypickupAnimalConditionID = 'testValue Condition';
-        $testObject->intakesStraypickupDate = 'testValue Date';
-        $testObject->intakesStraypickupNotes = 'testValue Notes';
-        $testObject->intakesStraypickupLocation = 'testValue Pickup Location';
-        $testObject->intakesStraypickupAddress = 'testValue Pickup Street address';
-        $testObject->intakesStraypickupCity = 'testValue Pickup City';
-        $testObject->tate = 'testValue Pickup State/Province';
-        $testObject->intakesStraypickupPostalcode = 'testValue Pickup Postal Code';
-        $testObject->intakesStraypickupFinderID = 'testValue Found By';
-        $testObject->taffID = 'testValue Pickup By';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->location = 'testValue Pickup Location';
+        $testObject->address = 'testValue Pickup Street address';
+        $testObject->city = 'testValue Pickup City';
+        $testObject->state = 'testValue Pickup State/Province';
+        $testObject->postalcode = 'testValue Pickup Postal Code';
+        $testObject->finderId = 'testValue Found By';
+        $testObject->staffId = 'testValue Pickup By';
 
         $query->addIntakesStrayPickup($testObject);
 

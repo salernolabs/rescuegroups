@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $animalfileID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setAnimalfileID($value)
+    public function setId($value)
     {
-        $this->animalfileID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->animalfileID !== null) $parameterArray['values'][] = ["animalfileID"=>$this->animalfileID];
+        if ($this->id !== null) $parameterArray['values'][] = ["animalfileID"=>$this->id];
     }
 }

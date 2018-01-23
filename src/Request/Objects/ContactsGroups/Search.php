@@ -35,10 +35,10 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "groupID" => [1, 'groupID'],
-        "groupName" => [0, 'groupName'],
-        "groupBusiness" => [0, 'groupBusiness'],
-        "groupProtected" => [0, 'groupProtected'],
+        "id" => [1, 'groupID'],
+        "name" => [0, 'groupName'],
+        "business" => [0, 'groupBusiness'],
+        "protected" => [0, 'groupProtected'],
     ];
 
     /**

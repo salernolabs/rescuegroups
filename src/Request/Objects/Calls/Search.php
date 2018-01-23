@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "callID" => [1, 'callID'],
-        "callContactID" => [0, 'callContactID'],
-        "callAssignedID" => [0, 'callAssignedID'],
-        "tatusID" => [0, 'callStatusID'],
-        "callUrgencyID" => [0, 'callUrgencyID'],
-        "callCategoryID" => [0, 'callCategoryID'],
-        "callQueueID" => [0, 'callQueueID'],
-        "callDate" => [0, 'callDate'],
+        "id" => [1, 'callID'],
+        "contactId" => [0, 'callContactID'],
+        "assignedId" => [0, 'callAssignedID'],
+        "statusId" => [0, 'callStatusID'],
+        "urgencyId" => [0, 'callUrgencyID'],
+        "categoryId" => [0, 'callCategoryID'],
+        "queueId" => [0, 'callQueueID'],
+        "date" => [0, 'callDate'],
         "contactName" => [0, 'contactName'],
         "contactType" => [0, 'contactType'],
         "assignedName" => [0, 'assignedName'],

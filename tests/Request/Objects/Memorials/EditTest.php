@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Memorials\Edit();
 
         $testObject = new \RescueGroups\Objects\Memorial();
-        $testObject->memorialID = 'testValue ID';
-        $testObject->memorialPictureBinary = 'testValue File';
-        $testObject->memorialPictureOldFileName = 'testValue Old file name';
-        $testObject->memorialName = 'testValue File name';
-        $testObject->memorialDescription = 'testValue Description';
+        $testObject->id = 'testValue ID';
+        $testObject->pictureBinary = 'testValue File';
+        $testObject->pictureOldFileName = 'testValue Old file name';
+        $testObject->name = 'testValue File name';
+        $testObject->description = 'testValue Description';
 
         $query->updateMemorial($testObject);
 

@@ -12,6 +12,15 @@ Performs inventoryLoaners.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Define();
 
     $result = $api->executeRequest($query);
+Performs inventoryLoaners.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs inventoryLoaners.view query.
 
@@ -19,7 +28,7 @@ Performs inventoryLoaners.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\View();
 
-    $query->setinventoryLoanerID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,13 +57,13 @@ Performs inventoryLoaners.add add query to create an instance of an object. Uses
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Add();
 
     $addObject = new \RescueGroups\Objects\InventoryLoaner();
-    $addObject->inventoryLoanerItemID = "Item"
-    $addObject->inventoryLoanerLoanDate = "Loan Date"
-    $addObject->inventoryLoanerLoanConditionID = "Loan Condition"
-    $addObject->inventoryLoanerDueDate = "Due Date"
-    $addObject->inventoryLoanerReturnDate = "Return Date"
-    $addObject->inventoryLoanerReturnConditionID = "Return Condition"
-    $addObject->inventoryLoanerNotes = "Notes"
+    $addObject->itemId = "Item"
+    $addObject->loanDate = "Loan Date"
+    $addObject->loanConditionId = "Loan Condition"
+    $addObject->dueDate = "Due Date"
+    $addObject->returnDate = "Return Date"
+    $addObject->returnConditionId = "Return Condition"
+    $addObject->notes = "Notes"
 
     $query->addInventoryLoaner($addObject);
 
@@ -67,14 +76,14 @@ Performs inventoryLoaners.edit edit query to edit an object. Uses classes of typ
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Edit();
 
     $editObject = new \RescueGroups\Objects\InventoryLoaner();
-    $editObject->inventoryLoanerID = "ID"
-    $editObject->inventoryLoanerItemID = "Item"
-    $editObject->inventoryLoanerLoanDate = "Loan Date"
-    $editObject->inventoryLoanerLoanConditionID = "Loan Condition"
-    $editObject->inventoryLoanerDueDate = "Due Date"
-    $editObject->inventoryLoanerReturnDate = "Return Date"
-    $editObject->inventoryLoanerReturnConditionID = "Return Condition"
-    $editObject->inventoryLoanerNotes = "Notes"
+    $editObject->id = "ID"
+    $editObject->itemId = "Item"
+    $editObject->loanDate = "Loan Date"
+    $editObject->loanConditionId = "Loan Condition"
+    $editObject->dueDate = "Due Date"
+    $editObject->returnDate = "Return Date"
+    $editObject->returnConditionId = "Return Condition"
+    $editObject->notes = "Notes"
 
     $query->updateInventoryLoaner($editObject);
 
@@ -86,7 +95,7 @@ Performs inventoryLoaners.delete query.
 
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Delete();
 
-    $query->setinventoryLoanerID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

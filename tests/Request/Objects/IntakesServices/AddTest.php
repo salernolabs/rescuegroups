@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesServices\Add();
 
         $testObject = new \RescueGroups\Objects\IntakesService();
-        $testObject->intakesServiceAnimalConditionID = 'testValue Condition';
-        $testObject->intakesServiceDate = 'testValue Date';
-        $testObject->intakesServiceNotes = 'testValue Notes';
-        $testObject->intakesServiceOwnerID = 'testValue Owner';
-        $testObject->ervicetypeID = 'testValue Service';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->ownerId = 'testValue Owner';
+        $testObject->servicetypeId = 'testValue Service';
 
         $query->addIntakesService($testObject);
 

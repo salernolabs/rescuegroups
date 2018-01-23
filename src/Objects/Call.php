@@ -10,62 +10,92 @@ namespace RescueGroups\Objects;
 
 class Call implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $callID = null;
+    public $id = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $callContactID = null;
+    public $contactId = null;
 
     /**
      * Assigned
      *
      * @var integer
      */
-    public $callAssignedID = null;
+    public $assignedId = null;
 
     /**
      * Status
      *
      * @var integer
      */
-    public $tatusID = null;
+    public $statusId = null;
 
     /**
      * Urgency
      *
      * @var integer
      */
-    public $callUrgencyID = null;
+    public $urgencyId = null;
 
     /**
      * Category
      *
      * @var integer
      */
-    public $callCategoryID = null;
+    public $categoryId = null;
 
     /**
      * Queue
      *
      * @var integer
      */
-    public $callQueueID = null;
+    public $queueId = null;
 
     /**
      * Call date
      *
      * @var \DateTime
      */
-    public $callDate = null;
+    public $date = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'callID' => 'id',
+            'callContactID' => 'contactId',
+            'callAssignedID' => 'assignedId',
+            'callStatusID' => 'statusId',
+            'callUrgencyID' => 'urgencyId',
+            'callCategoryID' => 'categoryId',
+            'callQueueID' => 'queueId',
+            'callDate' => 'date',
+        ],
+        'output' => [
+            'id' => 'callID',
+            'contactId' => 'callContactID',
+            'assignedId' => 'callAssignedID',
+            'statusId' => 'callStatusID',
+            'urgencyId' => 'callUrgencyID',
+            'categoryId' => 'callCategoryID',
+            'queueId' => 'callQueueID',
+            'date' => 'callDate',
+        ]
+    ];
 
     /**
      * Call Constructor
@@ -75,14 +105,7 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->callID)) $this->callID = $inputData->callID;
-        if (!empty($inputData->callContactID)) $this->callContactID = $inputData->callContactID;
-        if (!empty($inputData->callAssignedID)) $this->callAssignedID = $inputData->callAssignedID;
-        if (!empty($inputData->callStatusID)) $this->tatusID = $inputData->callStatusID;
-        if (!empty($inputData->callUrgencyID)) $this->callUrgencyID = $inputData->callUrgencyID;
-        if (!empty($inputData->callCategoryID)) $this->callCategoryID = $inputData->callCategoryID;
-        if (!empty($inputData->callQueueID)) $this->callQueueID = $inputData->callQueueID;
-        if (!empty($inputData->callDate)) $this->callDate = $inputData->callDate;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -93,16 +116,6 @@ class Call implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->callID !== null) $output['callID'] = $this->callID;
-        if ($this->callContactID !== null) $output['callContactID'] = $this->callContactID;
-        if ($this->callAssignedID !== null) $output['callAssignedID'] = $this->callAssignedID;
-        if ($this->tatusID !== null) $output['callStatusID'] = $this->tatusID;
-        if ($this->callUrgencyID !== null) $output['callUrgencyID'] = $this->callUrgencyID;
-        if ($this->callCategoryID !== null) $output['callCategoryID'] = $this->callCategoryID;
-        if ($this->callQueueID !== null) $output['callQueueID'] = $this->callQueueID;
-        if ($this->callDate !== null) $output['callDate'] = $this->callDate;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

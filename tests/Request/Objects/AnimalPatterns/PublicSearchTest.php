@@ -25,14 +25,14 @@ class PublicSearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('patternID')
-            ->addFilter('patternID', 'equals', 'ID')
-            ->addField('patternName')
-            ->addFilter('patternName', 'equals', 'pattern')
-            ->addField('patternSpecies')
-            ->addFilter('patternSpecies', 'equals', 'Species')
-            ->addField('patternSpeciesID')
-            ->addFilter('patternSpeciesID', 'equals', 'Species')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'ID')
+            ->addField('name')
+            ->addFilter('name', 'equals', 'pattern')
+            ->addField('species')
+            ->addFilter('species', 'equals', 'Species')
+            ->addField('speciesId')
+            ->addFilter('speciesId', 'equals', 'Species')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

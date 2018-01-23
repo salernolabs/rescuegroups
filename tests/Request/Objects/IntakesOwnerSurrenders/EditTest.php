@@ -22,13 +22,13 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Edit();
 
         $testObject = new \RescueGroups\Objects\IntakesOwnerSurrender();
-        $testObject->intakesOwnersurrenderID = 'testValue Owner Surrender';
-        $testObject->intakesOwnersurrenderAnimalID = 'testValue Animal';
-        $testObject->intakesOwnersurrenderAnimalConditionID = 'testValue Condition';
-        $testObject->intakesOwnersurrenderDate = 'testValue Date';
-        $testObject->intakesOwnersurrenderNotes = 'testValue Notes';
-        $testObject->intakesOwnersurrenderOwnerID = 'testValue Surrendered By';
-        $testObject->intakesOwnersurrenderReasonID = 'testValue Surrender Reason';
+        $testObject->id = 'testValue Owner Surrender';
+        $testObject->animalId = 'testValue Animal';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->ownerId = 'testValue Surrendered By';
+        $testObject->reasonId = 'testValue Surrender Reason';
 
         $query->updateIntakesOwnerSurrender($testObject);
 

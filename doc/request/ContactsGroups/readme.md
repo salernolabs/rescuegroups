@@ -12,6 +12,15 @@ Performs contactsGroups.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Define();
 
     $result = $api->executeRequest($query);
+Performs contactsGroups.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\ContactsGroups\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs contactsGroups.view query.
 
@@ -19,7 +28,7 @@ Performs contactsGroups.view query.
 
     $query = new \RescueGroups\Request\Objects\ContactsGroups\View();
 
-    $query->setgroupID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,8 +64,8 @@ Performs contactsGroups.add add query to create an instance of an object. Uses c
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Add();
 
     $addObject = new \RescueGroups\Objects\ContactsGroup();
-    $addObject->groupName = "Name"
-    $addObject->groupBusiness = "Business"
+    $addObject->name = "Name"
+    $addObject->business = "Business"
 
     $query->addContactsGroup($addObject);
 
@@ -69,9 +78,9 @@ Performs contactsGroups.edit edit query to edit an object. Uses classes of type 
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Edit();
 
     $editObject = new \RescueGroups\Objects\ContactsGroup();
-    $editObject->groupID = "ID"
-    $editObject->groupName = "Name"
-    $editObject->groupBusiness = "Business"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->business = "Business"
 
     $query->updateContactsGroup($editObject);
 
@@ -83,7 +92,7 @@ Performs contactsGroups.delete query.
 
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Delete();
 
-    $query->setgroupID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

@@ -22,15 +22,15 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesReleases\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesReleas();
-        $testObject->outcomesReleaseAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesReleaseDate = 'testValue Date';
-        $testObject->outcomesReleaseNotes = 'testValue Notes';
-        $testObject->outcomesReleaseLocation = 'testValue Location';
-        $testObject->outcomesReleaseAddress = 'testValue Street address';
-        $testObject->outcomesReleaseCity = 'testValue City';
-        $testObject->tate = 'testValue State/Province';
-        $testObject->outcomesReleasePostalcode = 'testValue Postal Code';
-        $testObject->outcomesReleaseByID = 'testValue Released By';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->location = 'testValue Location';
+        $testObject->address = 'testValue Street address';
+        $testObject->city = 'testValue City';
+        $testObject->state = 'testValue State/Province';
+        $testObject->postalcode = 'testValue Postal Code';
+        $testObject->byId = 'testValue Released By';
 
         $query->addOutcomesReleas($testObject);
 

@@ -36,8 +36,8 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     private $objectFields = [
         "id" => [0, 'intakesBorninrescueshelterID'],
-        "animalID" => [0, 'intakesBorninrescueshelterAnimalID'],
-        "animalConditionID" => [0, 'intakesBorninrescueshelterAnimalConditionID'],
+        "animalId" => [0, 'intakesBorninrescueshelterAnimalID'],
+        "animalConditionId" => [0, 'intakesBorninrescueshelterAnimalConditionID'],
         "date" => [0, 'intakesBorninrescueshelterDate'],
         "notes" => [0, 'intakesBorninrescueshelterNotes'],
         "animalName" => [0, 'animalName'],

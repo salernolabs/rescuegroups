@@ -35,10 +35,10 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "journalEntrytypeID" => [0, 'journalEntrytypeID'],
-        "journalEntrytypeDescription" => [0, 'journalEntrytypeDescription'],
-        "journalEntrytypeCategoryID" => [0, 'journalEntrytypeCategoryID'],
-        "journalEntrytypeCategoryName" => [0, 'journalEntrytypeCategoryName'],
+        "id" => [0, 'journalEntrytypeID'],
+        "description" => [0, 'journalEntrytypeDescription'],
+        "categoryId" => [0, 'journalEntrytypeCategoryID'],
+        "categoryName" => [0, 'journalEntrytypeCategoryName'],
     ];
 
     /**

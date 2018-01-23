@@ -22,20 +22,20 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Add();
 
         $testObject = new \RescueGroups\Objects\Create\MicrochipRegistration();
-        $testObject->microchipRegistrationMicrochipNumber = 'testValue Microchip number';
-        $testObject->microchipRegistrationMicrochipVendor = 'testValue Microchip vendor';
-        $testObject->microchipRegistrationRegistry = 'testValue Registry';
-        $testObject->microchipRegistrationRegistrantFirstname = 'testValue First name';
-        $testObject->microchipRegistrationRegistrantLastname = 'testValue Last name';
-        $testObject->microchipRegistrationRegistrantAddress = 'testValue Street address';
-        $testObject->microchipRegistrationRegistrantCity = 'testValue City';
-        $testObject->microchipRegistrationRegistrantState = 'testValue State/Province';
-        $testObject->microchipRegistrationRegistrantPostalcode = 'testValue Postal Code';
-        $testObject->microchipRegistrationRegistrantCountry = 'testValue Country';
-        $testObject->microchipRegistrationRegistrantPrimaryPhone = 'testValue Primary phone number';
-        $testObject->microchipRegistrationRegistrantSecondaryPhone = 'testValue Secondary phone number';
-        $testObject->microchipRegistrationRegistrantPrimaryEmail = 'testValue Primary email address';
-        $testObject->microchipRegistrationRegistrantSecondaryEmail = 'testValue Secondary email address';
+        $testObject->microchipNumber = 'testValue Microchip number';
+        $testObject->microchipVendor = 'testValue Microchip vendor';
+        $testObject->registry = 'testValue Registry';
+        $testObject->registrantFirstname = 'testValue First name';
+        $testObject->registrantLastname = 'testValue Last name';
+        $testObject->registrantAddress = 'testValue Street address';
+        $testObject->registrantCity = 'testValue City';
+        $testObject->registrantState = 'testValue State/Province';
+        $testObject->registrantPostalcode = 'testValue Postal Code';
+        $testObject->registrantCountry = 'testValue Country';
+        $testObject->registrantPrimaryPhone = 'testValue Primary phone number';
+        $testObject->registrantSecondaryPhone = 'testValue Secondary phone number';
+        $testObject->registrantPrimaryEmail = 'testValue Primary email address';
+        $testObject->registrantSecondaryEmail = 'testValue Secondary email address';
 
         $query->addMicrochipRegistration($testObject);
 

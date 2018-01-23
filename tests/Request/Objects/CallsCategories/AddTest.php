@@ -22,9 +22,9 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsCategories\Add();
 
         $testObject = new \RescueGroups\Objects\CallsCategory();
-        $testObject->categoryName = 'testValue Name';
-        $testObject->categoryDescription = 'testValue Description';
-        $testObject->categoryPublic = 'testValue Public';
+        $testObject->name = 'testValue Name';
+        $testObject->description = 'testValue Description';
+        $testObject->public = 'testValue Public';
 
         $query->addCallsCategory($testObject);
 

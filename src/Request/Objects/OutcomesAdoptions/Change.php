@@ -30,35 +30,35 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $outcomesAdoptionAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $outcomesAdoptionDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $outcomesAdoptionNotes = null;
+    private $notes = null;
 
     /**
      * Adoption
      *
      * @var integer
      */
-    private $outcomesAdoptionAdoptionID = null;
+    private $adoptionId = null;
 
 
     /**
@@ -67,9 +67,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -80,9 +80,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesAdoptionAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->outcomesAdoptionAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -93,9 +93,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setOutcomesAdoptionDate($value)
+    public function setDate($value)
     {
-        $this->outcomesAdoptionDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -106,9 +106,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesAdoptionNotes($value)
+    public function setNotes($value)
     {
-        $this->outcomesAdoptionNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -119,9 +119,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesAdoptionAdoptionID($value)
+    public function setAdoptionId($value)
     {
-        $this->outcomesAdoptionAdoptionID = $value;
+        $this->adoptionId = $value;
 
         return $this;
     }
@@ -136,10 +136,10 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->outcomesAdoptionAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesAdoptionAnimalConditionID"=>$this->outcomesAdoptionAnimalConditionID];
-        if ($this->outcomesAdoptionDate !== null) $parameterArray['values'][] = ["outcomesAdoptionDate"=>$this->outcomesAdoptionDate];
-        if ($this->outcomesAdoptionNotes !== null) $parameterArray['values'][] = ["outcomesAdoptionNotes"=>$this->outcomesAdoptionNotes];
-        if ($this->outcomesAdoptionAdoptionID !== null) $parameterArray['values'][] = ["outcomesAdoptionAdoptionID"=>$this->outcomesAdoptionAdoptionID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesAdoptionAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["outcomesAdoptionDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesAdoptionNotes"=>$this->notes];
+        if ($this->adoptionId !== null) $parameterArray['values'][] = ["outcomesAdoptionAdoptionID"=>$this->adoptionId];
     }
 }

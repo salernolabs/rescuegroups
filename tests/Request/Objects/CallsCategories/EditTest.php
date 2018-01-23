@@ -22,11 +22,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsCategories\Edit();
 
         $testObject = new \RescueGroups\Objects\CallsCategory();
-        $testObject->categoryID = 'testValue ID';
-        $testObject->categoryName = 'testValue Name';
-        $testObject->categoryDescription = 'testValue Description';
-        $testObject->categoryPublic = 'testValue Public';
-        $testObject->categoryDefaultQueueID = 'testValue Default Queue';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->description = 'testValue Description';
+        $testObject->public = 'testValue Public';
+        $testObject->defaultQueueId = 'testValue Default Queue';
 
         $query->updateCallsCategory($testObject);
 

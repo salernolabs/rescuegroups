@@ -12,6 +12,15 @@ Performs animalBreeds.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\AnimalBreeds\Define();
 
     $result = $api->executeRequest($query);
+Performs animalBreeds.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalBreeds\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## PublicList
 Performs animalBreeds.publicList list query, typically suitable for filling HTML select fields.
 

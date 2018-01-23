@@ -15,42 +15,42 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $contactfileContactID = null;
+    public $contactId = null;
 
     /**
      * File
      *
      * @var string
      */
-    public $contactfileBinary = null;
+    public $binary = null;
 
     /**
      * Old file name
      *
      * @var string
      */
-    public $contactfileOldFileName = null;
+    public $oldFileName = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $contactfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $tatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $contactfileDisplayInline = null;
+    public $displayInline = null;
 
 
     /**
@@ -61,12 +61,12 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->contactfileContactID)) $this->contactfileContactID = $inputData->contactfileContactID;
-        if (!empty($inputData->contactfileBinary)) $this->contactfileBinary = $inputData->contactfileBinary;
-        if (!empty($inputData->contactfileOldFileName)) $this->contactfileOldFileName = $inputData->contactfileOldFileName;
-        if (!empty($inputData->contactfileDescription)) $this->contactfileDescription = $inputData->contactfileDescription;
-        if (!empty($inputData->contactfileStatus)) $this->tatus = $inputData->contactfileStatus;
-        if (!empty($inputData->contactfileDisplayInline)) $this->contactfileDisplayInline = $inputData->contactfileDisplayInline;
+        if (!empty($inputData->contactfileContactID)) $this->contactId = $inputData->contactfileContactID;
+        if (!empty($inputData->contactfileBinary)) $this->binary = $inputData->contactfileBinary;
+        if (!empty($inputData->contactfileOldFileName)) $this->oldFileName = $inputData->contactfileOldFileName;
+        if (!empty($inputData->contactfileDescription)) $this->description = $inputData->contactfileDescription;
+        if (!empty($inputData->contactfileStatus)) $this->status = $inputData->contactfileStatus;
+        if (!empty($inputData->contactfileDisplayInline)) $this->displayInline = $inputData->contactfileDisplayInline;
     }
 
     /**
@@ -78,12 +78,12 @@ class ContactFile implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->contactfileContactID !== null) $output['contactfileContactID'] = $this->contactfileContactID;
-        if ($this->contactfileBinary !== null) $output['contactfileBinary'] = $this->contactfileBinary;
-        if ($this->contactfileOldFileName !== null) $output['contactfileOldFileName'] = $this->contactfileOldFileName;
-        if ($this->contactfileDescription !== null) $output['contactfileDescription'] = $this->contactfileDescription;
-        if ($this->tatus !== null) $output['contactfileStatus'] = $this->tatus;
-        if ($this->contactfileDisplayInline !== null) $output['contactfileDisplayInline'] = $this->contactfileDisplayInline;
+        if ($includeId && $this->contactId !== null) $output['contactfileContactID'] = $this->contactId;
+        if ($this->binary !== null) $output['contactfileBinary'] = $this->binary;
+        if ($this->oldFileName !== null) $output['contactfileOldFileName'] = $this->oldFileName;
+        if ($this->description !== null) $output['contactfileDescription'] = $this->description;
+        if ($this->status !== null) $output['contactfileStatus'] = $this->status;
+        if ($this->displayInline !== null) $output['contactfileDisplayInline'] = $this->displayInline;
 
         return $output;
     }

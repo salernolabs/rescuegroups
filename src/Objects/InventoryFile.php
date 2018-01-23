@@ -10,41 +10,65 @@ namespace RescueGroups\Objects;
 
 class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * File, Primary Key
      *
      * @var integer
      */
-    public $inventoryfileID = null;
+    public $id = null;
 
     /**
      * ID
      *
      * @var integer
      */
-    public $inventoryfileItemID = null;
+    public $itemId = null;
 
     /**
      * Description
      *
      * @var string
      */
-    public $inventoryfileDescription = null;
+    public $description = null;
 
     /**
      * Status
      *
      * @var string
      */
-    public $tatus = null;
+    public $status = null;
 
     /**
      * Inline
      *
      * @var string
      */
-    public $inventoryfileDisplayInline = null;
+    public $displayInline = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'inventoryfileID' => 'id',
+            'inventoryfileItemID' => 'itemId',
+            'inventoryfileDescription' => 'description',
+            'inventoryfileStatus' => 'status',
+            'inventoryfileDisplayInline' => 'displayInline',
+        ],
+        'output' => [
+            'id' => 'inventoryfileID',
+            'itemId' => 'inventoryfileItemID',
+            'description' => 'inventoryfileDescription',
+            'status' => 'inventoryfileStatus',
+            'displayInline' => 'inventoryfileDisplayInline',
+        ]
+    ];
 
     /**
      * InventoryFile Constructor
@@ -54,11 +78,7 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->inventoryfileID)) $this->inventoryfileID = $inputData->inventoryfileID;
-        if (!empty($inputData->inventoryfileItemID)) $this->inventoryfileItemID = $inputData->inventoryfileItemID;
-        if (!empty($inputData->inventoryfileDescription)) $this->inventoryfileDescription = $inputData->inventoryfileDescription;
-        if (!empty($inputData->inventoryfileStatus)) $this->tatus = $inputData->inventoryfileStatus;
-        if (!empty($inputData->inventoryfileDisplayInline)) $this->inventoryfileDisplayInline = $inputData->inventoryfileDisplayInline;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -69,13 +89,6 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->inventoryfileID !== null) $output['inventoryfileID'] = $this->inventoryfileID;
-        if ($this->inventoryfileItemID !== null) $output['inventoryfileItemID'] = $this->inventoryfileItemID;
-        if ($this->inventoryfileDescription !== null) $output['inventoryfileDescription'] = $this->inventoryfileDescription;
-        if ($this->tatus !== null) $output['inventoryfileStatus'] = $this->tatus;
-        if ($this->inventoryfileDisplayInline !== null) $output['inventoryfileDisplayInline'] = $this->inventoryfileDisplayInline;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

@@ -12,6 +12,15 @@ Performs waitinglists.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
 
     $result = $api->executeRequest($query);
+Performs waitinglists.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs waitinglists.view query.
 
@@ -19,7 +28,7 @@ Performs waitinglists.view query.
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\View();
 
-    $query->setwaitinglistID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -48,9 +57,9 @@ Performs waitinglists.add add query to create an instance of an object. Uses cla
     $query = new \RescueGroups\Request\Objects\WaitingLists\Add();
 
     $addObject = new \RescueGroups\Objects\WaitingList();
-    $addObject->waitinglistName = "Name"
-    $addObject->waitinglistType = "Type"
-    $addObject->waitinglistComment = "Comment"
+    $addObject->name = "Name"
+    $addObject->type = "Type"
+    $addObject->comment = "Comment"
 
     $query->addWaitingList($addObject);
 
@@ -63,10 +72,10 @@ Performs waitinglists.edit edit query to edit an object. Uses classes of type [\
     $query = new \RescueGroups\Request\Objects\WaitingLists\Edit();
 
     $editObject = new \RescueGroups\Objects\WaitingList();
-    $editObject->waitinglistID = "ID"
-    $editObject->waitinglistName = "Name"
-    $editObject->waitinglistType = "Type"
-    $editObject->waitinglistComment = "Comment"
+    $editObject->id = "ID"
+    $editObject->name = "Name"
+    $editObject->type = "Type"
+    $editObject->comment = "Comment"
 
     $query->updateWaitingList($editObject);
 
@@ -78,7 +87,7 @@ Performs waitinglists.delete query.
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\Delete();
 
-    $query->setwaitinglistID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 

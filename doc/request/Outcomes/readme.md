@@ -12,6 +12,15 @@ Performs outcomes.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Outcomes\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomes.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Outcomes\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomes.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs outcomes.view query.
 
     $query = new \RescueGroups\Request\Objects\Outcomes\View();
 
-    $query->setoutcomeID("Outcome ID");
+    $query->setid("Outcome ID");
 
     $result = $api->executeRequest($query);
 

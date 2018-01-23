@@ -35,12 +35,12 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "logentryID" => [1, 'logentryID'],
-        "logentryCallID" => [0, 'logentryCallID'],
-        "logentryContactID" => [0, 'logentryContactID'],
-        "logentryDate" => [0, 'logentryDate'],
-        "logentryOutcomeID" => [0, 'logentryOutcomeID'],
-        "logentryComments" => [0, 'logentryComments'],
+        "id" => [1, 'logentryID'],
+        "callId" => [0, 'logentryCallID'],
+        "contactId" => [0, 'logentryContactID'],
+        "date" => [0, 'logentryDate'],
+        "outcomeId" => [0, 'logentryOutcomeID'],
+        "comments" => [0, 'logentryComments'],
         "contactName" => [0, 'contactName'],
         "outcomeName" => [0, 'outcomeName'],
     ];

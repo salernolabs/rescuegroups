@@ -12,6 +12,15 @@ Performs intakesTransfers.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesTransfers.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesTransfers.view query.
 
@@ -19,7 +28,7 @@ Performs intakesTransfers.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\View();
 
-    $query->setintakesTransferID("Owner Surrender");
+    $query->setid("Owner Surrender");
 
     $result = $api->executeRequest($query);
 
@@ -48,12 +57,12 @@ Performs intakesTransfers.add add query to create an instance of an object. Uses
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesTransfer();
-    $addObject->intakesTransferAnimalConditionID = "Condition"
-    $addObject->intakesTransferDate = "Date"
-    $addObject->intakesTransferNotes = "Notes"
-    $addObject->intakesTransferFromID = "Transferred From"
-    $addObject->intakesTransferCoalitionMember = "Coalition Member"
-    $addObject->intakesTransferReasonID = "Transfer Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->fromId = "Transferred From"
+    $addObject->coalitionMember = "Coalition Member"
+    $addObject->reasonId = "Transfer Reason"
 
     $query->addIntakesTransfer($addObject);
 
@@ -66,14 +75,14 @@ Performs intakesTransfers.edit edit query to edit an object. Uses classes of typ
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesTransfer();
-    $editObject->intakesTransferID = "Owner Surrender"
-    $editObject->intakesTransferAnimalID = "Animal"
-    $editObject->intakesTransferAnimalConditionID = "Condition"
-    $editObject->intakesTransferDate = "Date"
-    $editObject->intakesTransferNotes = "Notes"
-    $editObject->intakesTransferFromID = "Transferred From"
-    $editObject->intakesTransferCoalitionMember = "Coalition Member"
-    $editObject->intakesTransferReasonID = "Transfer Reason"
+    $editObject->id = "Owner Surrender"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->fromId = "Transferred From"
+    $editObject->coalitionMember = "Coalition Member"
+    $editObject->reasonId = "Transfer Reason"
 
     $query->updateIntakesTransfer($editObject);
 
@@ -85,14 +94,14 @@ Performs intakesTransfers.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesTransferAnimalID("Animal");
-    $query->setintakesTransferAnimalConditionID("Condition");
-    $query->setintakesTransferDate("Date");
-    $query->setintakesTransferNotes("Notes");
-    $query->setintakesTransferFromID("Transferred From");
-    $query->setintakesTransferCoalitionMember("Coalition Member");
-    $query->setintakesTransferReasonID("Transfer Reason");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setfromId("Transferred From");
+    $query->setcoalitionMember("Coalition Member");
+    $query->setreasonId("Transfer Reason");
 
     $result = $api->executeRequest($query);
 

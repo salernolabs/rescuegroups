@@ -30,14 +30,14 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $animalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
@@ -58,7 +58,7 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $ownerID = null;
+    private $ownerId = null;
 
 
     /**
@@ -67,9 +67,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -80,9 +80,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->animalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -119,9 +119,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOwnerID($value)
+    public function setOwnerId($value)
     {
-        $this->ownerID = $value;
+        $this->ownerId = $value;
 
         return $this;
     }
@@ -136,10 +136,10 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->animalConditionID !== null) $parameterArray['values'][] = ["outcomesReturntoownerAnimalConditionID"=>$this->animalConditionID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesReturntoownerAnimalConditionID"=>$this->animalConditionId];
         if ($this->date !== null) $parameterArray['values'][] = ["outcomesReturntoownerDate"=>$this->date];
         if ($this->notes !== null) $parameterArray['values'][] = ["outcomesReturntoownerNotes"=>$this->notes];
-        if ($this->ownerID !== null) $parameterArray['values'][] = ["outcomesReturntoownerOwnerID"=>$this->ownerID];
+        if ($this->ownerId !== null) $parameterArray['values'][] = ["outcomesReturntoownerOwnerID"=>$this->ownerId];
     }
 }

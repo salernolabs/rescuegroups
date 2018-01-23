@@ -22,10 +22,10 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Add();
 
         $testObject = new \RescueGroups\Objects\OutcomesAdoption();
-        $testObject->outcomesAdoptionAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesAdoptionDate = 'testValue Date';
-        $testObject->outcomesAdoptionNotes = 'testValue Notes';
-        $testObject->outcomesAdoptionAdoptionID = 'testValue Adoption';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->adoptionId = 'testValue Adoption';
 
         $query->addOutcomesAdoption($testObject);
 

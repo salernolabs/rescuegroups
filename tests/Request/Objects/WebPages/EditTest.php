@@ -22,16 +22,16 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\WebPages\Edit();
 
         $testObject = new \RescueGroups\Objects\WebPage();
-        $testObject->webpageID = 'testValue ID';
-        $testObject->webpageName = 'testValue Name';
-        $testObject->webpageContent = 'testValue Content';
-        $testObject->tatus = 'testValue Status';
-        $testObject->webpageUselayout = 'testValue Use Layout';
-        $testObject->howonmenu = 'testValue Show on Menu';
-        $testObject->webpageMetaDescription = 'testValue Meta Description';
-        $testObject->webpageBackgroundImageID = 'testValue Background Image';
-        $testObject->webpageBackgroundMusicID = 'testValue Background Music';
-        $testObject->webpageRoleID = 'testValue Security Role';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->content = 'testValue Content';
+        $testObject->status = 'testValue Status';
+        $testObject->uselayout = 'testValue Use Layout';
+        $testObject->showonmenu = 'testValue Show on Menu';
+        $testObject->metaDescription = 'testValue Meta Description';
+        $testObject->backgroundImageId = 'testValue Background Image';
+        $testObject->backgroundMusicId = 'testValue Background Music';
+        $testObject->roleId = 'testValue Security Role';
 
         $query->updateWebPage($testObject);
 

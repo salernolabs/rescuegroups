@@ -12,6 +12,15 @@ Performs outcomesTransfers.define query. This gives information about the API in
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesTransfers.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesTransfers.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs outcomesTransfers.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\View();
 
-    $query->setoutcomesTransferID("ID");
+    $query->setid("ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,12 +64,12 @@ Performs outcomesTransfers.add add query to create an instance of an object. Use
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesTransfer();
-    $addObject->outcomesTransferAnimalConditionID = "Condition"
-    $addObject->outcomesTransferDate = "Date"
-    $addObject->outcomesTransferNotes = "Notes"
-    $addObject->outcomesTransferReceiveID = "Received"
-    $addObject->outcomesTransferCoalitionMember = "Coalition Member"
-    $addObject->outcomesTransferReasonID = "Transfer Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->receiveId = "Received"
+    $addObject->coalitionMember = "Coalition Member"
+    $addObject->reasonId = "Transfer Reason"
 
     $query->addOutcomesTransfer($addObject);
 
@@ -73,13 +82,13 @@ Performs outcomesTransfers.edit edit query to edit an object. Uses classes of ty
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Edit();
 
     $editObject = new \RescueGroups\Objects\OutcomesTransfer();
-    $editObject->outcomesTransferID = "ID"
-    $editObject->outcomesTransferAnimalConditionID = "Condition"
-    $editObject->outcomesTransferDate = "Date"
-    $editObject->outcomesTransferNotes = "Notes"
-    $editObject->outcomesTransferReceiveID = "Received"
-    $editObject->outcomesTransferCoalitionMember = "Coalition Member"
-    $editObject->outcomesTransferReasonID = "Transfer Reason"
+    $editObject->id = "ID"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->receiveId = "Received"
+    $editObject->coalitionMember = "Coalition Member"
+    $editObject->reasonId = "Transfer Reason"
 
     $query->updateOutcomesTransfer($editObject);
 
@@ -91,13 +100,13 @@ Performs outcomesTransfers.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setoutcomesTransferAnimalConditionID("Condition");
-    $query->setoutcomesTransferDate("Date");
-    $query->setoutcomesTransferNotes("Notes");
-    $query->setoutcomesTransferReceiveID("Received");
-    $query->setoutcomesTransferCoalitionMember("Coalition Member");
-    $query->setoutcomesTransferReasonID("Transfer Reason");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setreceiveId("Received");
+    $query->setcoalitionMember("Coalition Member");
+    $query->setreasonId("Transfer Reason");
 
     $result = $api->executeRequest($query);
 

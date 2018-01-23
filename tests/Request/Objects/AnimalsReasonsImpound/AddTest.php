@@ -22,7 +22,7 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Add();
 
         $testObject = new \RescueGroups\Objects\AnimalsReasonsImpound();
-        $testObject->reasonName = 'testValue Reason';
+        $testObject->name = 'testValue Reason';
 
         $query->addAnimalsReasonsImpound($testObject);
 

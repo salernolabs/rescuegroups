@@ -10,27 +10,47 @@ namespace RescueGroups\Objects;
 
 class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $groupID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $groupName = null;
+    public $name = null;
 
     /**
      * Header
      *
      * @var integer
      */
-    public $groupHeaderID = null;
+    public $headerId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'groupID' => 'id',
+            'groupName' => 'name',
+            'groupHeaderID' => 'headerId',
+        ],
+        'output' => [
+            'id' => 'groupID',
+            'name' => 'groupName',
+            'headerId' => 'groupHeaderID',
+        ]
+    ];
 
     /**
      * AnimalGroup Constructor
@@ -40,9 +60,7 @@ class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->groupID)) $this->groupID = $inputData->groupID;
-        if (!empty($inputData->groupName)) $this->groupName = $inputData->groupName;
-        if (!empty($inputData->groupHeaderID)) $this->groupHeaderID = $inputData->groupHeaderID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -53,11 +71,6 @@ class AnimalGroup implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->groupID !== null) $output['groupID'] = $this->groupID;
-        if ($this->groupName !== null) $output['groupName'] = $this->groupName;
-        if ($this->groupHeaderID !== null) $output['groupHeaderID'] = $this->groupHeaderID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

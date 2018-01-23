@@ -10,20 +10,38 @@ namespace RescueGroups\Objects;
 
 class AnimalsReasonsEuthanasia implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * Reason ID, Primary Key
      *
      * @var integer
      */
-    public $reasonID = null;
+    public $id = null;
 
     /**
      * Reason
      *
      * @var string
      */
-    public $reasonName = null;
+    public $name = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'reasonID' => 'id',
+            'reasonName' => 'name',
+        ],
+        'output' => [
+            'id' => 'reasonID',
+            'name' => 'reasonName',
+        ]
+    ];
 
     /**
      * AnimalsReasonsEuthanasia Constructor
@@ -33,8 +51,7 @@ class AnimalsReasonsEuthanasia implements \RescueGroups\Objects\APIEncodableInte
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->reasonID)) $this->reasonID = $inputData->reasonID;
-        if (!empty($inputData->reasonName)) $this->reasonName = $inputData->reasonName;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -45,10 +62,6 @@ class AnimalsReasonsEuthanasia implements \RescueGroups\Objects\APIEncodableInte
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->reasonID !== null) $output['reasonID'] = $this->reasonID;
-        if ($this->reasonName !== null) $output['reasonName'] = $this->reasonName;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

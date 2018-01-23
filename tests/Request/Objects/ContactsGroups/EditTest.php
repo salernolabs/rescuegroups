@@ -22,9 +22,9 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\ContactsGroups\Edit();
 
         $testObject = new \RescueGroups\Objects\ContactsGroup();
-        $testObject->groupID = 'testValue ID';
-        $testObject->groupName = 'testValue Name';
-        $testObject->groupBusiness = 'testValue Business';
+        $testObject->id = 'testValue ID';
+        $testObject->name = 'testValue Name';
+        $testObject->business = 'testValue Business';
 
         $query->updateContactsGroup($testObject);
 

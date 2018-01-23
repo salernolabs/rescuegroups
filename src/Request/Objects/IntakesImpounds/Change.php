@@ -30,91 +30,91 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakeID = null;
+    private $intakeId = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    private $intakesImpoundAnimalID = null;
+    private $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $intakesImpoundAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $intakesImpoundDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $intakesImpoundNotes = null;
+    private $notes = null;
 
     /**
      * Impound Location
      *
      * @var string
      */
-    private $intakesImpoundLocation = null;
+    private $location = null;
 
     /**
      * Impound Street address
      *
      * @var string
      */
-    private $intakesImpoundAddress = null;
+    private $address = null;
 
     /**
      * Impound City
      *
      * @var string
      */
-    private $intakesImpoundCity = null;
+    private $city = null;
 
     /**
      * Impound State/Province
      *
      * @var string
      */
-    private $tate = null;
+    private $state = null;
 
     /**
      * Impound Postal Code
      *
      * @var string
      */
-    private $intakesImpoundPostalcode = null;
+    private $postalcode = null;
 
     /**
      * Impound From
      *
      * @var integer
      */
-    private $intakesImpoundFromID = null;
+    private $fromId = null;
 
     /**
      * Impound Performed By
      *
      * @var integer
      */
-    private $taffID = null;
+    private $staffId = null;
 
     /**
      * Reason
      *
      * @var integer
      */
-    private $intakesImpoundReasonID = null;
+    private $reasonId = null;
 
 
     /**
@@ -123,9 +123,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakeID($value)
+    public function setIntakeId($value)
     {
-        $this->intakeID = $value;
+        $this->intakeId = $value;
 
         return $this;
     }
@@ -136,9 +136,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesImpoundAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->intakesImpoundAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -149,9 +149,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesImpoundAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->intakesImpoundAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -162,9 +162,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setIntakesImpoundDate($value)
+    public function setDate($value)
     {
-        $this->intakesImpoundDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -175,9 +175,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundNotes($value)
+    public function setNotes($value)
     {
-        $this->intakesImpoundNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -188,9 +188,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundLocation($value)
+    public function setLocation($value)
     {
-        $this->intakesImpoundLocation = $value;
+        $this->location = $value;
 
         return $this;
     }
@@ -201,9 +201,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundAddress($value)
+    public function setAddress($value)
     {
-        $this->intakesImpoundAddress = $value;
+        $this->address = $value;
 
         return $this;
     }
@@ -214,9 +214,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundCity($value)
+    public function setCity($value)
     {
-        $this->intakesImpoundCity = $value;
+        $this->city = $value;
 
         return $this;
     }
@@ -227,9 +227,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setTate($value)
+    public function setState($value)
     {
-        $this->tate = $value;
+        $this->state = $value;
 
         return $this;
     }
@@ -240,9 +240,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesImpoundPostalcode($value)
+    public function setPostalcode($value)
     {
-        $this->intakesImpoundPostalcode = $value;
+        $this->postalcode = $value;
 
         return $this;
     }
@@ -253,9 +253,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesImpoundFromID($value)
+    public function setFromId($value)
     {
-        $this->intakesImpoundFromID = $value;
+        $this->fromId = $value;
 
         return $this;
     }
@@ -266,9 +266,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setTaffID($value)
+    public function setStaffId($value)
     {
-        $this->taffID = $value;
+        $this->staffId = $value;
 
         return $this;
     }
@@ -279,9 +279,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesImpoundReasonID($value)
+    public function setReasonId($value)
     {
-        $this->intakesImpoundReasonID = $value;
+        $this->reasonId = $value;
 
         return $this;
     }
@@ -296,18 +296,18 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
-        if ($this->intakesImpoundAnimalID !== null) $parameterArray['values'][] = ["intakesImpoundAnimalID"=>$this->intakesImpoundAnimalID];
-        if ($this->intakesImpoundAnimalConditionID !== null) $parameterArray['values'][] = ["intakesImpoundAnimalConditionID"=>$this->intakesImpoundAnimalConditionID];
-        if ($this->intakesImpoundDate !== null) $parameterArray['values'][] = ["intakesImpoundDate"=>$this->intakesImpoundDate];
-        if ($this->intakesImpoundNotes !== null) $parameterArray['values'][] = ["intakesImpoundNotes"=>$this->intakesImpoundNotes];
-        if ($this->intakesImpoundLocation !== null) $parameterArray['values'][] = ["intakesImpoundLocation"=>$this->intakesImpoundLocation];
-        if ($this->intakesImpoundAddress !== null) $parameterArray['values'][] = ["intakesImpoundAddress"=>$this->intakesImpoundAddress];
-        if ($this->intakesImpoundCity !== null) $parameterArray['values'][] = ["intakesImpoundCity"=>$this->intakesImpoundCity];
-        if ($this->tate !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->tate];
-        if ($this->intakesImpoundPostalcode !== null) $parameterArray['values'][] = ["intakesImpoundPostalcode"=>$this->intakesImpoundPostalcode];
-        if ($this->intakesImpoundFromID !== null) $parameterArray['values'][] = ["intakesImpoundFromID"=>$this->intakesImpoundFromID];
-        if ($this->taffID !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->taffID];
-        if ($this->intakesImpoundReasonID !== null) $parameterArray['values'][] = ["intakesImpoundReasonID"=>$this->intakesImpoundReasonID];
+        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesImpoundAnimalID"=>$this->animalId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesImpoundAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesImpoundDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesImpoundNotes"=>$this->notes];
+        if ($this->location !== null) $parameterArray['values'][] = ["intakesImpoundLocation"=>$this->location];
+        if ($this->address !== null) $parameterArray['values'][] = ["intakesImpoundAddress"=>$this->address];
+        if ($this->city !== null) $parameterArray['values'][] = ["intakesImpoundCity"=>$this->city];
+        if ($this->state !== null) $parameterArray['values'][] = ["intakesImpoundState"=>$this->state];
+        if ($this->postalcode !== null) $parameterArray['values'][] = ["intakesImpoundPostalcode"=>$this->postalcode];
+        if ($this->fromId !== null) $parameterArray['values'][] = ["intakesImpoundFromID"=>$this->fromId];
+        if ($this->staffId !== null) $parameterArray['values'][] = ["intakesImpoundStaffID"=>$this->staffId];
+        if ($this->reasonId !== null) $parameterArray['values'][] = ["intakesImpoundReasonID"=>$this->reasonId];
     }
 }

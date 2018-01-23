@@ -22,8 +22,8 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Add();
 
         $testObject = new \RescueGroups\Objects\CallsQueuesMember();
-        $testObject->memberQueueID = 'testValue Queue';
-        $testObject->memberManager = 'testValue Manager';
+        $testObject->queueId = 'testValue Queue';
+        $testObject->manager = 'testValue Manager';
 
         $query->addCallsQueuesMember($testObject);
 

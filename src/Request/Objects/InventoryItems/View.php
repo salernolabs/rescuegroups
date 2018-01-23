@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $inventoryitemID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setInventoryitemID($value)
+    public function setId($value)
     {
-        $this->inventoryitemID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->inventoryitemID !== null) $parameterArray['values'][] = ["inventoryitemID"=>$this->inventoryitemID];
+        if ($this->id !== null) $parameterArray['values'][] = ["inventoryitemID"=>$this->id];
     }
 }

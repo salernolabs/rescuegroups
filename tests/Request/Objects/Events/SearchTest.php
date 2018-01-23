@@ -25,28 +25,26 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('eventID')
-            ->addFilter('eventID', 'equals', 'ID')
-            ->addField('eventName')
-            ->addFilter('eventName', 'equals', 'Name')
-            ->addField('tart')
-            ->addFilter('tart', 'equals', 'Start Date/Time')
-            ->addField('eventEnd')
-            ->addFilter('eventEnd', 'equals', 'End Date/Time')
-            ->addField('eventUrl')
-            ->addFilter('eventUrl', 'equals', 'Web address')
-            ->addField('eventDescription')
-            ->addFilter('eventDescription', 'equals', 'Description')
-            ->addField('eventLocationID')
-            ->addFilter('eventLocationID', 'equals', 'Location')
-            ->addField('eventAnimalAttendance')
-            ->addFilter('eventAnimalAttendance', 'equals', 'Event animal attendance')
-            ->addField('eventMeetrequests')
-            ->addFilter('eventMeetrequests', 'equals', 'Event meet requests')
-            ->addField('pecies')
-            ->addFilter('pecies', 'equals', 'Species attending')
-            ->addField('locationID')
-            ->addFilter('locationID', 'equals', 'Location')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'ID')
+            ->addField('name')
+            ->addFilter('name', 'equals', 'Name')
+            ->addField('start')
+            ->addFilter('start', 'equals', 'Start Date/Time')
+            ->addField('end')
+            ->addFilter('end', 'equals', 'End Date/Time')
+            ->addField('url')
+            ->addFilter('url', 'equals', 'Web address')
+            ->addField('description')
+            ->addFilter('description', 'equals', 'Description')
+            ->addField('locationId')
+            ->addFilter('locationId', 'equals', 'Location')
+            ->addField('animalAttendance')
+            ->addFilter('animalAttendance', 'equals', 'Event animal attendance')
+            ->addField('meetrequests')
+            ->addFilter('meetrequests', 'equals', 'Event meet requests')
+            ->addField('species')
+            ->addFilter('species', 'equals', 'Species attending')
             ->addField('locationName')
             ->addFilter('locationName', 'equals', 'Location name')
             ->addField('locationUrl')
@@ -67,8 +65,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->addFilter('locationPhoneExt', 'equals', 'Location phone extension')
             ->addField('locationAnimals')
             ->addFilter('locationAnimals', 'equals', 'Location animals')
-            ->addField('location')
-            ->addFilter('location', 'equals', 'Location events')
+            ->addField('locations')
+            ->addFilter('locations', 'equals', 'Location events')
             ->addField('locationColonies')
             ->addFilter('locationColonies', 'equals', 'Location colonies')
             ->addField('locationMeetrequests')
@@ -96,7 +94,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ['fieldName'=>'eventAnimalAttendance','operation'=>'equals','criteria'=>"Event animal attendance"],
             ['fieldName'=>'eventMeetrequests','operation'=>'equals','criteria'=>"Event meet requests"],
             ['fieldName'=>'eventSpecies','operation'=>'equals','criteria'=>"Species attending"],
-            ['fieldName'=>'locationID','operation'=>'equals','criteria'=>"Location"],
             ['fieldName'=>'locationName','operation'=>'equals','criteria'=>"Location name"],
             ['fieldName'=>'locationUrl','operation'=>'equals','criteria'=>"Location web address"],
             ['fieldName'=>'locationAddress','operation'=>'equals','criteria'=>"Location street address"],
@@ -123,7 +120,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             "eventAnimalAttendance",
             "eventMeetrequests",
             "eventSpecies",
-            "locationID",
             "locationName",
             "locationUrl",
             "locationAddress",

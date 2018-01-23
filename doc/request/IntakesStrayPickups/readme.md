@@ -12,6 +12,15 @@ Performs intakesStraypickups.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesStraypickups.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesStraypickups.view query.
 
@@ -19,7 +28,7 @@ Performs intakesStraypickups.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
 
-    $query->setintakesStraypickupID("Stray Pickup");
+    $query->setid("Stray Pickup");
 
     $result = $api->executeRequest($query);
 
@@ -48,16 +57,16 @@ Performs intakesStraypickups.add add query to create an instance of an object. U
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesStrayPickup();
-    $addObject->intakesStraypickupAnimalConditionID = "Condition"
-    $addObject->intakesStraypickupDate = "Date"
-    $addObject->intakesStraypickupNotes = "Notes"
-    $addObject->intakesStraypickupLocation = "Pickup Location"
-    $addObject->intakesStraypickupAddress = "Pickup Street address"
-    $addObject->intakesStraypickupCity = "Pickup City"
-    $addObject->tate = "Pickup State/Province"
-    $addObject->intakesStraypickupPostalcode = "Pickup Postal Code"
-    $addObject->intakesStraypickupFinderID = "Found By"
-    $addObject->taffID = "Pickup By"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->location = "Pickup Location"
+    $addObject->address = "Pickup Street address"
+    $addObject->city = "Pickup City"
+    $addObject->state = "Pickup State/Province"
+    $addObject->postalcode = "Pickup Postal Code"
+    $addObject->finderId = "Found By"
+    $addObject->staffId = "Pickup By"
 
     $query->addIntakesStrayPickup($addObject);
 
@@ -70,18 +79,18 @@ Performs intakesStraypickups.edit edit query to edit an object. Uses classes of 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesStrayPickup();
-    $editObject->intakesStraypickupID = "Stray Pickup"
-    $editObject->intakesStraypickupAnimalID = "Animal"
-    $editObject->intakesStraypickupAnimalConditionID = "Condition"
-    $editObject->intakesStraypickupDate = "Date"
-    $editObject->intakesStraypickupNotes = "Notes"
-    $editObject->intakesStraypickupLocation = "Pickup Location"
-    $editObject->intakesStraypickupAddress = "Pickup Street address"
-    $editObject->intakesStraypickupCity = "Pickup City"
-    $editObject->tate = "Pickup State/Province"
-    $editObject->intakesStraypickupPostalcode = "Pickup Postal Code"
-    $editObject->intakesStraypickupFinderID = "Found By"
-    $editObject->taffID = "Pickup By"
+    $editObject->id = "Stray Pickup"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->location = "Pickup Location"
+    $editObject->address = "Pickup Street address"
+    $editObject->city = "Pickup City"
+    $editObject->state = "Pickup State/Province"
+    $editObject->postalcode = "Pickup Postal Code"
+    $editObject->finderId = "Found By"
+    $editObject->staffId = "Pickup By"
 
     $query->updateIntakesStrayPickup($editObject);
 
@@ -93,18 +102,18 @@ Performs intakesStraypickups.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesStraypickupAnimalID("Animal");
-    $query->setintakesStraypickupAnimalConditionID("Condition");
-    $query->setintakesStraypickupDate("Date");
-    $query->setintakesStraypickupNotes("Notes");
-    $query->setintakesStraypickupLocation("Pickup Location");
-    $query->setintakesStraypickupAddress("Pickup Street address");
-    $query->setintakesStraypickupCity("Pickup City");
-    $query->settate("Pickup State/Province");
-    $query->setintakesStraypickupPostalcode("Pickup Postal Code");
-    $query->setintakesStraypickupFinderID("Found By");
-    $query->settaffID("Pickup By");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setlocation("Pickup Location");
+    $query->setaddress("Pickup Street address");
+    $query->setcity("Pickup City");
+    $query->setstate("Pickup State/Province");
+    $query->setpostalcode("Pickup Postal Code");
+    $query->setfinderId("Found By");
+    $query->setstaffId("Pickup By");
 
     $result = $api->executeRequest($query);
 

@@ -35,13 +35,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "webimageID" => [1, 'webimageID'],
-        "webimageName" => [0, 'webimageName'],
-        "webimageFileName" => [0, 'webimageFileName'],
-        "webimageUrl" => [0, 'webimageUrl'],
-        "ize" => [0, 'webimageSize'],
-        "webimageWidth" => [0, 'webimageWidth'],
-        "webimageHeight" => [0, 'webimageHeight'],
+        "id" => [1, 'webimageID'],
+        "name" => [0, 'webimageName'],
+        "fileName" => [0, 'webimageFileName'],
+        "url" => [0, 'webimageUrl'],
+        "size" => [0, 'webimageSize'],
+        "width" => [0, 'webimageWidth'],
+        "height" => [0, 'webimageHeight'],
     ];
 
     /**

@@ -22,8 +22,8 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsSurrender\Edit();
 
         $testObject = new \RescueGroups\Objects\AnimalsReasonsSurrender();
-        $testObject->reasonID = 'testValue Reason ID';
-        $testObject->reasonName = 'testValue Reason';
+        $testObject->id = 'testValue Reason ID';
+        $testObject->name = 'testValue Reason';
 
         $query->updateAnimalsReasonsSurrender($testObject);
 

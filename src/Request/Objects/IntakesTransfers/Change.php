@@ -30,56 +30,56 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $intakeID = null;
+    private $intakeId = null;
 
     /**
      * Animal
      *
      * @var integer
      */
-    private $intakesTransferAnimalID = null;
+    private $animalId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $intakesTransferAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $intakesTransferDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $intakesTransferNotes = null;
+    private $notes = null;
 
     /**
      * Transferred From
      *
      * @var integer
      */
-    private $intakesTransferFromID = null;
+    private $fromId = null;
 
     /**
      * Coalition Member
      *
      * @var string
      */
-    private $intakesTransferCoalitionMember = null;
+    private $coalitionMember = null;
 
     /**
      * Transfer Reason
      *
      * @var integer
      */
-    private $intakesTransferReasonID = null;
+    private $reasonId = null;
 
 
     /**
@@ -88,9 +88,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakeID($value)
+    public function setIntakeId($value)
     {
-        $this->intakeID = $value;
+        $this->intakeId = $value;
 
         return $this;
     }
@@ -101,9 +101,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesTransferAnimalID($value)
+    public function setAnimalId($value)
     {
-        $this->intakesTransferAnimalID = $value;
+        $this->animalId = $value;
 
         return $this;
     }
@@ -114,9 +114,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesTransferAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->intakesTransferAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -127,9 +127,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setIntakesTransferDate($value)
+    public function setDate($value)
     {
-        $this->intakesTransferDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -140,9 +140,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesTransferNotes($value)
+    public function setNotes($value)
     {
-        $this->intakesTransferNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -153,9 +153,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesTransferFromID($value)
+    public function setFromId($value)
     {
-        $this->intakesTransferFromID = $value;
+        $this->fromId = $value;
 
         return $this;
     }
@@ -166,9 +166,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setIntakesTransferCoalitionMember($value)
+    public function setCoalitionMember($value)
     {
-        $this->intakesTransferCoalitionMember = $value;
+        $this->coalitionMember = $value;
 
         return $this;
     }
@@ -179,9 +179,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setIntakesTransferReasonID($value)
+    public function setReasonId($value)
     {
-        $this->intakesTransferReasonID = $value;
+        $this->reasonId = $value;
 
         return $this;
     }
@@ -196,13 +196,13 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeID !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeID];
-        if ($this->intakesTransferAnimalID !== null) $parameterArray['values'][] = ["intakesTransferAnimalID"=>$this->intakesTransferAnimalID];
-        if ($this->intakesTransferAnimalConditionID !== null) $parameterArray['values'][] = ["intakesTransferAnimalConditionID"=>$this->intakesTransferAnimalConditionID];
-        if ($this->intakesTransferDate !== null) $parameterArray['values'][] = ["intakesTransferDate"=>$this->intakesTransferDate];
-        if ($this->intakesTransferNotes !== null) $parameterArray['values'][] = ["intakesTransferNotes"=>$this->intakesTransferNotes];
-        if ($this->intakesTransferFromID !== null) $parameterArray['values'][] = ["intakesTransferFromID"=>$this->intakesTransferFromID];
-        if ($this->intakesTransferCoalitionMember !== null) $parameterArray['values'][] = ["intakesTransferCoalitionMember"=>$this->intakesTransferCoalitionMember];
-        if ($this->intakesTransferReasonID !== null) $parameterArray['values'][] = ["intakesTransferReasonID"=>$this->intakesTransferReasonID];
+        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
+        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesTransferAnimalID"=>$this->animalId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesTransferAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["intakesTransferDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["intakesTransferNotes"=>$this->notes];
+        if ($this->fromId !== null) $parameterArray['values'][] = ["intakesTransferFromID"=>$this->fromId];
+        if ($this->coalitionMember !== null) $parameterArray['values'][] = ["intakesTransferCoalitionMember"=>$this->coalitionMember];
+        if ($this->reasonId !== null) $parameterArray['values'][] = ["intakesTransferReasonID"=>$this->reasonId];
     }
 }

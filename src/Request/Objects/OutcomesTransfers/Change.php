@@ -30,49 +30,49 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $outcomeID = null;
+    private $outcomeId = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    private $outcomesTransferAnimalConditionID = null;
+    private $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    private $outcomesTransferDate = null;
+    private $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    private $outcomesTransferNotes = null;
+    private $notes = null;
 
     /**
      * Received
      *
      * @var integer
      */
-    private $outcomesTransferReceiveID = null;
+    private $receiveId = null;
 
     /**
      * Coalition Member
      *
      * @var string
      */
-    private $outcomesTransferCoalitionMember = null;
+    private $coalitionMember = null;
 
     /**
      * Transfer Reason
      *
      * @var integer
      */
-    private $outcomesTransferReasonID = null;
+    private $reasonId = null;
 
 
     /**
@@ -81,9 +81,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomeID($value)
+    public function setOutcomeId($value)
     {
-        $this->outcomeID = $value;
+        $this->outcomeId = $value;
 
         return $this;
     }
@@ -94,9 +94,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesTransferAnimalConditionID($value)
+    public function setAnimalConditionId($value)
     {
-        $this->outcomesTransferAnimalConditionID = $value;
+        $this->animalConditionId = $value;
 
         return $this;
     }
@@ -107,9 +107,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param \DateTime $value
      * @return $this
      */
-    public function setOutcomesTransferDate($value)
+    public function setDate($value)
     {
-        $this->outcomesTransferDate = $value;
+        $this->date = $value;
 
         return $this;
     }
@@ -120,9 +120,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesTransferNotes($value)
+    public function setNotes($value)
     {
-        $this->outcomesTransferNotes = $value;
+        $this->notes = $value;
 
         return $this;
     }
@@ -133,9 +133,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesTransferReceiveID($value)
+    public function setReceiveId($value)
     {
-        $this->outcomesTransferReceiveID = $value;
+        $this->receiveId = $value;
 
         return $this;
     }
@@ -146,9 +146,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param string $value
      * @return $this
      */
-    public function setOutcomesTransferCoalitionMember($value)
+    public function setCoalitionMember($value)
     {
-        $this->outcomesTransferCoalitionMember = $value;
+        $this->coalitionMember = $value;
 
         return $this;
     }
@@ -159,9 +159,9 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setOutcomesTransferReasonID($value)
+    public function setReasonId($value)
     {
-        $this->outcomesTransferReasonID = $value;
+        $this->reasonId = $value;
 
         return $this;
     }
@@ -176,12 +176,12 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeID !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeID];
-        if ($this->outcomesTransferAnimalConditionID !== null) $parameterArray['values'][] = ["outcomesTransferAnimalConditionID"=>$this->outcomesTransferAnimalConditionID];
-        if ($this->outcomesTransferDate !== null) $parameterArray['values'][] = ["outcomesTransferDate"=>$this->outcomesTransferDate];
-        if ($this->outcomesTransferNotes !== null) $parameterArray['values'][] = ["outcomesTransferNotes"=>$this->outcomesTransferNotes];
-        if ($this->outcomesTransferReceiveID !== null) $parameterArray['values'][] = ["outcomesTransferReceiveID"=>$this->outcomesTransferReceiveID];
-        if ($this->outcomesTransferCoalitionMember !== null) $parameterArray['values'][] = ["outcomesTransferCoalitionMember"=>$this->outcomesTransferCoalitionMember];
-        if ($this->outcomesTransferReasonID !== null) $parameterArray['values'][] = ["outcomesTransferReasonID"=>$this->outcomesTransferReasonID];
+        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
+        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesTransferAnimalConditionID"=>$this->animalConditionId];
+        if ($this->date !== null) $parameterArray['values'][] = ["outcomesTransferDate"=>$this->date];
+        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesTransferNotes"=>$this->notes];
+        if ($this->receiveId !== null) $parameterArray['values'][] = ["outcomesTransferReceiveID"=>$this->receiveId];
+        if ($this->coalitionMember !== null) $parameterArray['values'][] = ["outcomesTransferCoalitionMember"=>$this->coalitionMember];
+        if ($this->reasonId !== null) $parameterArray['values'][] = ["outcomesTransferReasonID"=>$this->reasonId];
     }
 }

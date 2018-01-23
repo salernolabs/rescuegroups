@@ -22,13 +22,13 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Edit();
 
         $testObject = new \RescueGroups\Objects\OutcomesTransfer();
-        $testObject->outcomesTransferID = 'testValue ID';
-        $testObject->outcomesTransferAnimalConditionID = 'testValue Condition';
-        $testObject->outcomesTransferDate = 'testValue Date';
-        $testObject->outcomesTransferNotes = 'testValue Notes';
-        $testObject->outcomesTransferReceiveID = 'testValue Received';
-        $testObject->outcomesTransferCoalitionMember = 'testValue Coalition Member';
-        $testObject->outcomesTransferReasonID = 'testValue Transfer Reason';
+        $testObject->id = 'testValue ID';
+        $testObject->animalConditionId = 'testValue Condition';
+        $testObject->date = 'testValue Date';
+        $testObject->notes = 'testValue Notes';
+        $testObject->receiveId = 'testValue Received';
+        $testObject->coalitionMember = 'testValue Coalition Member';
+        $testObject->reasonId = 'testValue Transfer Reason';
 
         $query->updateOutcomesTransfer($testObject);
 

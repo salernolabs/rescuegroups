@@ -12,6 +12,15 @@ Performs testimonials.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\Testimonials\Define();
 
     $result = $api->executeRequest($query);
+Performs testimonials.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\Testimonials\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## PublicSearch
 Performs testimonials.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Testimonial](../../../src/Objects/Testimonial.php) objects.
 

@@ -25,10 +25,10 @@ class SearchTest extends \PHPUnit\Framework\TestCase
             ->setResultLimit(123)
             ->setResultSort('testSortValue')
             ->setResultOrder('ascending')
-            ->addField('reasonID')
-            ->addFilter('reasonID', 'equals', 'Reason ID')
-            ->addField('reasonName')
-            ->addFilter('reasonName', 'equals', 'Reason')
+            ->addField('id')
+            ->addFilter('id', 'equals', 'Reason ID')
+            ->addField('name')
+            ->addFilter('name', 'equals', 'Reason')
             ->setCalculateFoundRows(true);
 
         $data = $this->api->getPostObject($query);

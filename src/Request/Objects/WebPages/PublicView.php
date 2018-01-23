@@ -30,7 +30,7 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
      *
      * @var integer
      */
-    private $webpageID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
      * @param integer $value
      * @return $this
      */
-    public function setWebpageID($value)
+    public function setId($value)
     {
-        $this->webpageID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class PublicView extends \RescueGroups\Request\Objects\Base implements \RescueGr
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->webpageID !== null) $parameterArray['values'][] = ["webpageID"=>$this->webpageID];
+        if ($this->id !== null) $parameterArray['values'][] = ["webpageID"=>$this->id];
     }
 }

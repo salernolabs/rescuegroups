@@ -22,10 +22,10 @@ class EditTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\NewsArticles\Edit();
 
         $testObject = new \RescueGroups\Objects\NewsArticle();
-        $testObject->articleID = 'testValue ID';
-        $testObject->articleTitle = 'testValue Title';
-        $testObject->articleDescription = 'testValue Description';
-        $testObject->articleDate = 'testValue Date';
+        $testObject->id = 'testValue ID';
+        $testObject->title = 'testValue Title';
+        $testObject->description = 'testValue Description';
+        $testObject->date = 'testValue Date';
 
         $query->updateNewsArticle($testObject);
 

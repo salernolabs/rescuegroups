@@ -35,16 +35,16 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "webfileID" => [1, 'webfileID'],
-        "webfileOldName" => [0, 'webfileOldName'],
-        "webfileName" => [0, 'webfileName'],
-        "webfileDescription" => [0, 'webfileDescription'],
-        "tatus" => [0, 'webfileStatus'],
-        "webfileDisplayInline" => [0, 'webfileDisplayInline'],
-        "webfileRoleID" => [0, 'webfileRoleID'],
-        "webfileRoleName" => [0, 'webfileRoleName'],
-        "ize" => [0, 'webfileSize'],
-        "webfileCreatedDate" => [0, 'webfileCreatedDate'],
+        "id" => [1, 'webfileID'],
+        "oldName" => [0, 'webfileOldName'],
+        "name" => [0, 'webfileName'],
+        "description" => [0, 'webfileDescription'],
+        "status" => [0, 'webfileStatus'],
+        "displayInline" => [0, 'webfileDisplayInline'],
+        "roleId" => [0, 'webfileRoleID'],
+        "roleName" => [0, 'webfileRoleName'],
+        "size" => [0, 'webfileSize'],
+        "createdDate" => [0, 'webfileCreatedDate'],
     ];
 
     /**

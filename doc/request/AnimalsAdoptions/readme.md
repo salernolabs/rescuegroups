@@ -12,6 +12,15 @@ Performs animalsAdoptions.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsAdoptions.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsAdoptions.list list query, typically suitable for filling HTML select fields.
 
@@ -43,7 +52,7 @@ Performs animalsAdoptions.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\View();
 
-    $query->setadoptionID("Adoption ID");
+    $query->setid("Adoption ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,16 +64,16 @@ Performs animalsAdoptions.add add query to create an instance of an object. Uses
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Add();
 
     $addObject = new \RescueGroups\Objects\Create\AnimalsAdoption();
-    $addObject->adoptionAdopterID = "Adopter ID"
-    $addObject->adoptionLeadID = "Lead ID"
-    $addObject->adoptionFeeAmount = "Fee"
-    $addObject->adoptionDonationAmount = "Donation"
-    $addObject->adoptionDonationID = "Donation ID"
-    $addObject->adoptionDate = "Date"
-    $addObject->adoptionSubmittedformID = "Submitted form ID"
-    $addObject->adoptionStatusID = "Status ID"
-    $addObject->adoptionLetterSent = "Thank you letter sent"
-    $addObject->adoptionAddAdopterRole = "Add contact to adopters group"
+    $addObject->adopterId = "Adopter ID"
+    $addObject->leadId = "Lead ID"
+    $addObject->feeAmount = "Fee"
+    $addObject->donationAmount = "Donation"
+    $addObject->donationId = "Donation ID"
+    $addObject->date = "Date"
+    $addObject->submittedformId = "Submitted form ID"
+    $addObject->statusId = "Status ID"
+    $addObject->letterSent = "Thank you letter sent"
+    $addObject->addAdopterRole = "Add contact to adopters group"
 
     $query->addAnimalsAdoption($addObject);
 
@@ -77,17 +86,17 @@ Performs animalsAdoptions.edit edit query to edit an object. Uses classes of typ
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsAdoption();
-    $editObject->adoptionID = "Adoption ID"
-    $editObject->adoptionAnimalID = "Animal ID"
-    $editObject->adoptionAdopterID = "Adopter ID"
-    $editObject->adoptionLeadID = "Lead ID"
-    $editObject->adoptionFeeAmount = "Fee"
-    $editObject->adoptionDonationAmount = "Donation"
-    $editObject->adoptionDonationID = "Donation ID"
-    $editObject->adoptionDate = "Date"
-    $editObject->adoptionSubmittedformID = "Submitted form ID"
-    $editObject->adoptionStatusID = "Status ID"
-    $editObject->adoptionLetterSent = "Thank you letter sent"
+    $editObject->id = "Adoption ID"
+    $editObject->animalId = "Animal ID"
+    $editObject->adopterId = "Adopter ID"
+    $editObject->leadId = "Lead ID"
+    $editObject->feeAmount = "Fee"
+    $editObject->donationAmount = "Donation"
+    $editObject->donationId = "Donation ID"
+    $editObject->date = "Date"
+    $editObject->submittedformId = "Submitted form ID"
+    $editObject->statusId = "Status ID"
+    $editObject->letterSent = "Thank you letter sent"
 
     $query->updateAnimalsAdoption($editObject);
 
@@ -99,13 +108,13 @@ Performs animalsAdoptions.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Delete();
 
-    $query->setadoptionID("Adoption ID");
-    $query->setadoptionRemoveContact("Remove contact from adopters group");
-    $query->setadoptionChangeAnimal("Change animal to available");
-    $query->setadoptionChangeSubmittedform("Change submitted form to cancelled");
-    $query->setadoptionRemoveUser("Remove Adopter role from user");
-    $query->setadoptionDonationAmount("Donation");
-    $query->setadoptionLetterSent("Thank you letter sent");
+    $query->setid("Adoption ID");
+    $query->setremoveContact("Remove contact from adopters group");
+    $query->setchangeAnimal("Change animal to available");
+    $query->setchangeSubmittedform("Change submitted form to cancelled");
+    $query->setremoveUser("Remove Adopter role from user");
+    $query->setdonationAmount("Donation");
+    $query->setletterSent("Thank you letter sent");
 
     $result = $api->executeRequest($query);
 

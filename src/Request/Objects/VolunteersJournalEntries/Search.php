@@ -35,14 +35,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "journalEntryID" => [1, 'journalEntryID'],
-        "journalEntryContactID" => [0, 'journalEntryContactID'],
-        "journalEntryDate" => [0, 'journalEntryDate'],
-        "journalEntryComment" => [0, 'journalEntryComment'],
-        "journalEntryType" => [0, 'journalEntryType'],
+        "id" => [1, 'journalEntryID'],
+        "contactId" => [0, 'journalEntryContactID'],
+        "date" => [0, 'journalEntryDate'],
+        "comment" => [0, 'journalEntryComment'],
+        "type" => [0, 'journalEntryType'],
         "volunteerName" => [0, 'volunteerName'],
         "volunteerType" => [0, 'volunteerType'],
-        "journalEntryCreatedDate" => [0, 'journalEntryCreatedDate'],
+        "createdDate" => [0, 'journalEntryCreatedDate'],
     ];
 
     /**

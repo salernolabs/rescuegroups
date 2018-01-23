@@ -12,6 +12,15 @@ Performs intakesBorninrescueshelter.define query. This gives information about t
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesBorninrescueshelter.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesBorninrescueshelter.view query.
 
@@ -48,7 +57,7 @@ Performs intakesBorninrescueshelter.add add query to create an instance of an ob
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesBornInRescueShelter();
-    $addObject->animalConditionID = "Condition"
+    $addObject->animalConditionId = "Condition"
     $addObject->date = "Date"
     $addObject->notes = "Notes"
 
@@ -64,8 +73,8 @@ Performs intakesBorninrescueshelter.edit edit query to edit an object. Uses clas
 
     $editObject = new \RescueGroups\Objects\IntakesBornInRescueShelter();
     $editObject->id = "Born In Rescue/Shelter"
-    $editObject->animalID = "Animal"
-    $editObject->animalConditionID = "Condition"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
     $editObject->date = "Date"
     $editObject->notes = "Notes"
 
@@ -79,9 +88,9 @@ Performs intakesBorninrescueshelter.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Change();
 
-    $query->setintakeID("Intake");
-    $query->setanimalID("Animal");
-    $query->setanimalConditionID("Condition");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
     $query->setdate("Date");
     $query->setnotes("Notes");
 

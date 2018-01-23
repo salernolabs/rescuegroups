@@ -30,7 +30,7 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      *
      * @var integer
      */
-    private $inventoryLoanerID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
      * @param integer $value
      * @return $this
      */
-    public function setInventoryLoanerID($value)
+    public function setId($value)
     {
-        $this->inventoryLoanerID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->inventoryLoanerID !== null) $parameterArray['values'][] = ["inventoryLoanerID"=>$this->inventoryLoanerID];
+        if ($this->id !== null) $parameterArray['values'][] = ["inventoryLoanerID"=>$this->id];
     }
 }

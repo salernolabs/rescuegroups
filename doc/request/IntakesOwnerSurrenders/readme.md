@@ -12,6 +12,15 @@ Performs intakesOwnersurrenders.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
 
     $result = $api->executeRequest($query);
+Performs intakesOwnersurrenders.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## View
 Performs intakesOwnersurrenders.view query.
 
@@ -19,7 +28,7 @@ Performs intakesOwnersurrenders.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
 
-    $query->setintakesOwnersurrenderID("Owner Surrender");
+    $query->setid("Owner Surrender");
 
     $result = $api->executeRequest($query);
 
@@ -48,11 +57,11 @@ Performs intakesOwnersurrenders.add add query to create an instance of an object
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Add();
 
     $addObject = new \RescueGroups\Objects\IntakesOwnerSurrender();
-    $addObject->intakesOwnersurrenderAnimalConditionID = "Condition"
-    $addObject->intakesOwnersurrenderDate = "Date"
-    $addObject->intakesOwnersurrenderNotes = "Notes"
-    $addObject->intakesOwnersurrenderOwnerID = "Surrendered By"
-    $addObject->intakesOwnersurrenderReasonID = "Surrender Reason"
+    $addObject->animalConditionId = "Condition"
+    $addObject->date = "Date"
+    $addObject->notes = "Notes"
+    $addObject->ownerId = "Surrendered By"
+    $addObject->reasonId = "Surrender Reason"
 
     $query->addIntakesOwnerSurrender($addObject);
 
@@ -65,13 +74,13 @@ Performs intakesOwnersurrenders.edit edit query to edit an object. Uses classes 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Edit();
 
     $editObject = new \RescueGroups\Objects\IntakesOwnerSurrender();
-    $editObject->intakesOwnersurrenderID = "Owner Surrender"
-    $editObject->intakesOwnersurrenderAnimalID = "Animal"
-    $editObject->intakesOwnersurrenderAnimalConditionID = "Condition"
-    $editObject->intakesOwnersurrenderDate = "Date"
-    $editObject->intakesOwnersurrenderNotes = "Notes"
-    $editObject->intakesOwnersurrenderOwnerID = "Surrendered By"
-    $editObject->intakesOwnersurrenderReasonID = "Surrender Reason"
+    $editObject->id = "Owner Surrender"
+    $editObject->animalId = "Animal"
+    $editObject->animalConditionId = "Condition"
+    $editObject->date = "Date"
+    $editObject->notes = "Notes"
+    $editObject->ownerId = "Surrendered By"
+    $editObject->reasonId = "Surrender Reason"
 
     $query->updateIntakesOwnerSurrender($editObject);
 
@@ -83,13 +92,13 @@ Performs intakesOwnersurrenders.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Change();
 
-    $query->setintakeID("Intake");
-    $query->setintakesOwnersurrenderAnimalID("Animal");
-    $query->setintakesOwnersurrenderAnimalConditionID("Condition");
-    $query->setintakesOwnersurrenderDate("Date");
-    $query->setintakesOwnersurrenderNotes("Notes");
-    $query->setintakesOwnersurrenderOwnerID("Surrendered By");
-    $query->setintakesOwnersurrenderReasonID("Surrender Reason");
+    $query->setintakeId("Intake");
+    $query->setanimalId("Animal");
+    $query->setanimalConditionId("Condition");
+    $query->setdate("Date");
+    $query->setnotes("Notes");
+    $query->setownerId("Surrendered By");
+    $query->setreasonId("Surrender Reason");
 
     $result = $api->executeRequest($query);
 

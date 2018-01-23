@@ -10,76 +10,110 @@ namespace RescueGroups\Objects;
 
 class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $outcomesReleaseID = null;
+    public $id = null;
 
     /**
      * Condition
      *
      * @var integer
      */
-    public $outcomesReleaseAnimalConditionID = null;
+    public $animalConditionId = null;
 
     /**
      * Date
      *
      * @var \DateTime
      */
-    public $outcomesReleaseDate = null;
+    public $date = null;
 
     /**
      * Notes
      *
      * @var string
      */
-    public $outcomesReleaseNotes = null;
+    public $notes = null;
 
     /**
      * Location
      *
      * @var string
      */
-    public $outcomesReleaseLocation = null;
+    public $location = null;
 
     /**
      * Street address
      *
      * @var string
      */
-    public $outcomesReleaseAddress = null;
+    public $address = null;
 
     /**
      * City
      *
      * @var string
      */
-    public $outcomesReleaseCity = null;
+    public $city = null;
 
     /**
      * State/Province
      *
      * @var string
      */
-    public $tate = null;
+    public $state = null;
 
     /**
      * Postal Code
      *
      * @var string
      */
-    public $outcomesReleasePostalcode = null;
+    public $postalcode = null;
 
     /**
      * Released By
      *
      * @var integer
      */
-    public $outcomesReleaseByID = null;
+    public $byId = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'outcomesReleaseID' => 'id',
+            'outcomesReleaseAnimalConditionID' => 'animalConditionId',
+            'outcomesReleaseDate' => 'date',
+            'outcomesReleaseNotes' => 'notes',
+            'outcomesReleaseLocation' => 'location',
+            'outcomesReleaseAddress' => 'address',
+            'outcomesReleaseCity' => 'city',
+            'outcomesReleaseState' => 'state',
+            'outcomesReleasePostalcode' => 'postalcode',
+            'outcomesReleaseByID' => 'byId',
+        ],
+        'output' => [
+            'id' => 'outcomesReleaseID',
+            'animalConditionId' => 'outcomesReleaseAnimalConditionID',
+            'date' => 'outcomesReleaseDate',
+            'notes' => 'outcomesReleaseNotes',
+            'location' => 'outcomesReleaseLocation',
+            'address' => 'outcomesReleaseAddress',
+            'city' => 'outcomesReleaseCity',
+            'state' => 'outcomesReleaseState',
+            'postalcode' => 'outcomesReleasePostalcode',
+            'byId' => 'outcomesReleaseByID',
+        ]
+    ];
 
     /**
      * OutcomesReleas Constructor
@@ -89,16 +123,7 @@ class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->outcomesReleaseID)) $this->outcomesReleaseID = $inputData->outcomesReleaseID;
-        if (!empty($inputData->outcomesReleaseAnimalConditionID)) $this->outcomesReleaseAnimalConditionID = $inputData->outcomesReleaseAnimalConditionID;
-        if (!empty($inputData->outcomesReleaseDate)) $this->outcomesReleaseDate = $inputData->outcomesReleaseDate;
-        if (!empty($inputData->outcomesReleaseNotes)) $this->outcomesReleaseNotes = $inputData->outcomesReleaseNotes;
-        if (!empty($inputData->outcomesReleaseLocation)) $this->outcomesReleaseLocation = $inputData->outcomesReleaseLocation;
-        if (!empty($inputData->outcomesReleaseAddress)) $this->outcomesReleaseAddress = $inputData->outcomesReleaseAddress;
-        if (!empty($inputData->outcomesReleaseCity)) $this->outcomesReleaseCity = $inputData->outcomesReleaseCity;
-        if (!empty($inputData->outcomesReleaseState)) $this->tate = $inputData->outcomesReleaseState;
-        if (!empty($inputData->outcomesReleasePostalcode)) $this->outcomesReleasePostalcode = $inputData->outcomesReleasePostalcode;
-        if (!empty($inputData->outcomesReleaseByID)) $this->outcomesReleaseByID = $inputData->outcomesReleaseByID;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -109,18 +134,6 @@ class OutcomesReleas implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->outcomesReleaseID !== null) $output['outcomesReleaseID'] = $this->outcomesReleaseID;
-        if ($this->outcomesReleaseAnimalConditionID !== null) $output['outcomesReleaseAnimalConditionID'] = $this->outcomesReleaseAnimalConditionID;
-        if ($this->outcomesReleaseDate !== null) $output['outcomesReleaseDate'] = $this->outcomesReleaseDate;
-        if ($this->outcomesReleaseNotes !== null) $output['outcomesReleaseNotes'] = $this->outcomesReleaseNotes;
-        if ($this->outcomesReleaseLocation !== null) $output['outcomesReleaseLocation'] = $this->outcomesReleaseLocation;
-        if ($this->outcomesReleaseAddress !== null) $output['outcomesReleaseAddress'] = $this->outcomesReleaseAddress;
-        if ($this->outcomesReleaseCity !== null) $output['outcomesReleaseCity'] = $this->outcomesReleaseCity;
-        if ($this->tate !== null) $output['outcomesReleaseState'] = $this->tate;
-        if ($this->outcomesReleasePostalcode !== null) $output['outcomesReleasePostalcode'] = $this->outcomesReleasePostalcode;
-        if ($this->outcomesReleaseByID !== null) $output['outcomesReleaseByID'] = $this->outcomesReleaseByID;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

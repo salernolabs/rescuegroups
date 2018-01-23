@@ -35,19 +35,19 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "journalEntryID" => [0, 'journalEntryID'],
-        "journalEntryAnimalID" => [0, 'journalEntryAnimalID'],
-        "journalEntryDate" => [0, 'journalEntryDate'],
-        "journalEntryComment" => [0, 'journalEntryComment'],
-        "journalEntryEntrytypeID" => [0, 'journalEntryEntrytypeID'],
-        "journalEntrytypeDescription" => [0, 'journalEntrytypeDescription'],
-        "journalEntrytypeCategoryID" => [0, 'journalEntrytypeCategoryID'],
-        "journalEntrytypeCategoryName" => [0, 'journalEntrytypeCategoryName'],
-        "journalEntryCost" => [0, 'journalEntryCost'],
-        "journalEntryDueDate" => [0, 'journalEntryDueDate'],
-        "journalEntryReminderDate" => [0, 'journalEntryReminderDate'],
-        "journalEntryReminderContactID" => [0, 'journalEntryReminderContactID'],
-        "journalEntryReminderContactName" => [0, 'journalEntryReminderContactName'],
+        "id" => [0, 'journalEntryID'],
+        "animalId" => [0, 'journalEntryAnimalID'],
+        "date" => [0, 'journalEntryDate'],
+        "comment" => [0, 'journalEntryComment'],
+        "entrytypeId" => [0, 'journalEntryEntrytypeID'],
+        "typeDescription" => [0, 'journalEntrytypeDescription'],
+        "typeCategoryId" => [0, 'journalEntrytypeCategoryID'],
+        "typeCategoryName" => [0, 'journalEntrytypeCategoryName'],
+        "cost" => [0, 'journalEntryCost'],
+        "dueDate" => [0, 'journalEntryDueDate'],
+        "reminderDate" => [0, 'journalEntryReminderDate'],
+        "reminderContactId" => [0, 'journalEntryReminderContactID'],
+        "reminderContactName" => [0, 'journalEntryReminderContactName'],
     ];
 
     /**

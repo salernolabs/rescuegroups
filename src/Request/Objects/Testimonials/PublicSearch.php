@@ -35,14 +35,14 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "testimonialID" => [1, 'testimonialID'],
-        "testimonialLocation" => [0, 'testimonialLocation'],
-        "testimonialLocationDistance" => [0, 'testimonialLocationDistance'],
-        "testimonialLocationCitystate" => [0, 'testimonialLocationCitystate'],
-        "ervice" => [0, 'testimonialService'],
-        "testimonialUserFirstname" => [0, 'testimonialUserFirstname'],
-        "testimonialCreatedDate" => [0, 'testimonialCreatedDate'],
-        "testimonialContent" => [0, 'testimonialContent'],
+        "id" => [1, 'testimonialID'],
+        "location" => [0, 'testimonialLocation'],
+        "locationDistance" => [0, 'testimonialLocationDistance'],
+        "locationCitystate" => [0, 'testimonialLocationCitystate'],
+        "service" => [0, 'testimonialService'],
+        "userFirstname" => [0, 'testimonialUserFirstname'],
+        "createdDate" => [0, 'testimonialCreatedDate'],
+        "content" => [0, 'testimonialContent'],
     ];
 
     /**

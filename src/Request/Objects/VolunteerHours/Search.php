@@ -36,7 +36,7 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     private $objectFields = [
         "id" => [1, 'volunteerHoursID'],
-        "volunteerID" => [0, 'volunteerHoursVolunteerID'],
+        "volunteerId" => [0, 'volunteerHoursVolunteerID'],
         "volunteerDate" => [0, 'volunteerHoursVolunteerDate'],
         "createdDate" => [0, 'volunteerHoursCreatedDate'],
         "volunteerLength" => [0, 'volunteerHoursVolunteerLength'],

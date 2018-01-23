@@ -30,7 +30,7 @@ class SetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
      *
      * @var string
      */
-    private $settingDefaultAnimalTemplate = null;
+    private $defaultAnimalTemplate = null;
 
 
     /**
@@ -39,9 +39,9 @@ class SetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSettingDefaultAnimalTemplate($value)
+    public function setDefaultAnimalTemplate($value)
     {
-        $this->settingDefaultAnimalTemplate = $value;
+        $this->defaultAnimalTemplate = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class SetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->settingDefaultAnimalTemplate !== null) $parameterArray['values'][] = ["settingDefaultAnimalTemplate"=>$this->settingDefaultAnimalTemplate];
+        if ($this->defaultAnimalTemplate !== null) $parameterArray['values'][] = ["settingDefaultAnimalTemplate"=>$this->defaultAnimalTemplate];
     }
 }

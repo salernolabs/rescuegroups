@@ -30,7 +30,7 @@ class AddYoutubeUrl extends \RescueGroups\Request\Objects\Base implements \Rescu
      *
      * @var integer
      */
-    private $animalID = null;
+    private $id = null;
 
     /**
      * YouTube Url
@@ -53,9 +53,9 @@ class AddYoutubeUrl extends \RescueGroups\Request\Objects\Base implements \Rescu
      * @param integer $value
      * @return $this
      */
-    public function setAnimalID($value)
+    public function setId($value)
     {
-        $this->animalID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -96,7 +96,7 @@ class AddYoutubeUrl extends \RescueGroups\Request\Objects\Base implements \Rescu
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->animalID !== null) $parameterArray['values'][] = ["animalID"=>$this->animalID];
+        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
         if ($this->youtubeUrl !== null) $parameterArray['values'][] = ["youtubeUrl"=>$this->youtubeUrl];
         if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];
     }

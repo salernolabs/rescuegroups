@@ -35,17 +35,17 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      * @var array
      */
     private $objectFields = [
-        "queueID" => [1, 'queueID'],
-        "queueName" => [0, 'queueName'],
-        "queueFromEmail" => [0, 'queueFromEmail'],
-        "queueDefaultUrgencyID" => [0, 'queueDefaultUrgencyID'],
-        "queueDefaultUrgencyName" => [0, 'queueDefaultUrgencyName'],
-        "queueCreatedDate" => [0, 'queueCreatedDate'],
-        "queueCreatedByID" => [0, 'queueCreatedByID'],
-        "queueUpdatedDate" => [0, 'queueUpdatedDate'],
-        "queueUpdatedByID" => [0, 'queueUpdatedByID'],
-        "queueOpenCallsCount" => [0, 'queueOpenCallsCount'],
-        "queueMembersCount" => [0, 'queueMembersCount'],
+        "id" => [1, 'queueID'],
+        "name" => [0, 'queueName'],
+        "fromEmail" => [0, 'queueFromEmail'],
+        "defaultUrgencyId" => [0, 'queueDefaultUrgencyID'],
+        "defaultUrgencyName" => [0, 'queueDefaultUrgencyName'],
+        "createdDate" => [0, 'queueCreatedDate'],
+        "createdById" => [0, 'queueCreatedByID'],
+        "updatedDate" => [0, 'queueUpdatedDate'],
+        "updatedById" => [0, 'queueUpdatedByID'],
+        "openCallsCount" => [0, 'queueOpenCallsCount'],
+        "membersCount" => [0, 'queueMembersCount'],
     ];
 
     /**

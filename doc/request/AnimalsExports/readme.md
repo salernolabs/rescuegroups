@@ -12,6 +12,15 @@ Performs animalsExports.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\AnimalsExports\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsExports.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsExports\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetExports
 Performs animalsExports.getExports query.
 
@@ -29,8 +38,8 @@ Performs animalsExports.updateExports query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsExports\UpdateExports();
 
-    $query->setexportID("Export ID");
-    $query->setexportEnabled("Export enabled");
+    $query->setid("Export ID");
+    $query->setenabled("Export enabled");
 
     $result = $api->executeRequest($query);
 

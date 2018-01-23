@@ -22,11 +22,11 @@ class AddTest extends \PHPUnit\Framework\TestCase
         $query = new \RescueGroups\Request\Objects\Memorials\Add();
 
         $testObject = new \RescueGroups\Objects\Create\Memorial();
-        $testObject->memorialPictureBinary = 'testValue File';
-        $testObject->memorialName = 'testValue File name';
-        $testObject->memorialPictureOldFileName = 'testValue Old file name';
-        $testObject->memorialDescription = 'testValue Description';
-        $testObject->memorialOrder = 'testValue Order';
+        $testObject->pictureBinary = 'testValue File';
+        $testObject->name = 'testValue File name';
+        $testObject->pictureOldFileName = 'testValue Old file name';
+        $testObject->description = 'testValue Description';
+        $testObject->order = 'testValue Order';
 
         $query->addMemorial($testObject);
 

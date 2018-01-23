@@ -10,48 +10,74 @@ namespace RescueGroups\Objects;
 
 class Colony implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $colonyID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $colonyName = null;
+    public $name = null;
 
     /**
      * Location
      *
      * @var integer
      */
-    public $colonyLocationID = null;
+    public $locationId = null;
 
     /**
      * Number of animals
      *
      * @var string
      */
-    public $colonyTotalAnimals = null;
+    public $totalAnimals = null;
 
     /**
      * Registered
      *
      * @var \DateTime
      */
-    public $colonyRegisteredDate = null;
+    public $registeredDate = null;
 
     /**
      * Specific location
      *
      * @var string
      */
-    public $colonySpecificLocation = null;
+    public $specificLocation = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'colonyID' => 'id',
+            'colonyName' => 'name',
+            'colonyLocationID' => 'locationId',
+            'colonyTotalAnimals' => 'totalAnimals',
+            'colonyRegisteredDate' => 'registeredDate',
+            'colonySpecificLocation' => 'specificLocation',
+        ],
+        'output' => [
+            'id' => 'colonyID',
+            'name' => 'colonyName',
+            'locationId' => 'colonyLocationID',
+            'totalAnimals' => 'colonyTotalAnimals',
+            'registeredDate' => 'colonyRegisteredDate',
+            'specificLocation' => 'colonySpecificLocation',
+        ]
+    ];
 
     /**
      * Colony Constructor
@@ -61,12 +87,7 @@ class Colony implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->colonyID)) $this->colonyID = $inputData->colonyID;
-        if (!empty($inputData->colonyName)) $this->colonyName = $inputData->colonyName;
-        if (!empty($inputData->colonyLocationID)) $this->colonyLocationID = $inputData->colonyLocationID;
-        if (!empty($inputData->colonyTotalAnimals)) $this->colonyTotalAnimals = $inputData->colonyTotalAnimals;
-        if (!empty($inputData->colonyRegisteredDate)) $this->colonyRegisteredDate = $inputData->colonyRegisteredDate;
-        if (!empty($inputData->colonySpecificLocation)) $this->colonySpecificLocation = $inputData->colonySpecificLocation;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -77,14 +98,6 @@ class Colony implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->colonyID !== null) $output['colonyID'] = $this->colonyID;
-        if ($this->colonyName !== null) $output['colonyName'] = $this->colonyName;
-        if ($this->colonyLocationID !== null) $output['colonyLocationID'] = $this->colonyLocationID;
-        if ($this->colonyTotalAnimals !== null) $output['colonyTotalAnimals'] = $this->colonyTotalAnimals;
-        if ($this->colonyRegisteredDate !== null) $output['colonyRegisteredDate'] = $this->colonyRegisteredDate;
-        if ($this->colonySpecificLocation !== null) $output['colonySpecificLocation'] = $this->colonySpecificLocation;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }

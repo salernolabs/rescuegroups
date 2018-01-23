@@ -30,7 +30,7 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      *
      * @var integer
      */
-    private $intakesStraydropoffID = null;
+    private $id = null;
 
 
     /**
@@ -39,9 +39,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
      * @param integer $value
      * @return $this
      */
-    public function setIntakesStraydropoffID($value)
+    public function setId($value)
     {
-        $this->intakesStraydropoffID = $value;
+        $this->id = $value;
 
         return $this;
     }
@@ -56,6 +56,6 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakesStraydropoffID !== null) $parameterArray['values'][] = ["intakesStraydropoffID"=>$this->intakesStraydropoffID];
+        if ($this->id !== null) $parameterArray['values'][] = ["intakesStraydropoffID"=>$this->id];
     }
 }

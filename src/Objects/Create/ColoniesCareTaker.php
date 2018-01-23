@@ -15,14 +15,14 @@ class ColoniesCareTaker implements \RescueGroups\Objects\APIEncodableInterface
      *
      * @var integer
      */
-    public $caretakerColonyID = null;
+    public $colonyId = null;
 
     /**
      * Contact
      *
      * @var integer
      */
-    public $caretakerContactID = null;
+    public $contactId = null;
 
 
     /**
@@ -33,8 +33,8 @@ class ColoniesCareTaker implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->caretakerColonyID)) $this->caretakerColonyID = $inputData->caretakerColonyID;
-        if (!empty($inputData->caretakerContactID)) $this->caretakerContactID = $inputData->caretakerContactID;
+        if (!empty($inputData->caretakerColonyID)) $this->colonyId = $inputData->caretakerColonyID;
+        if (!empty($inputData->caretakerContactID)) $this->contactId = $inputData->caretakerContactID;
     }
 
     /**
@@ -46,8 +46,8 @@ class ColoniesCareTaker implements \RescueGroups\Objects\APIEncodableInterface
     public function getArray($includeId = true)
     {
         $output = [];
-        if ($includeId && $this->caretakerColonyID !== null) $output['caretakerColonyID'] = $this->caretakerColonyID;
-        if ($this->caretakerContactID !== null) $output['caretakerContactID'] = $this->caretakerContactID;
+        if ($includeId && $this->colonyId !== null) $output['caretakerColonyID'] = $this->colonyId;
+        if ($this->contactId !== null) $output['caretakerContactID'] = $this->contactId;
 
         return $output;
     }

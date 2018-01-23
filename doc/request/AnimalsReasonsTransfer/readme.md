@@ -12,6 +12,15 @@ Performs animalsReasonsTransfer.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Define();
 
     $result = $api->executeRequest($query);
+Performs animalsReasonsTransfer.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs animalsReasonsTransfer.list list query, typically suitable for filling HTML select fields.
 
@@ -26,7 +35,7 @@ Performs animalsReasonsTransfer.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\View();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -55,7 +64,7 @@ Performs animalsReasonsTransfer.add add query to create an instance of an object
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Add();
 
     $addObject = new \RescueGroups\Objects\AnimalsReasonsTransfer();
-    $addObject->reasonName = "Reason"
+    $addObject->name = "Reason"
 
     $query->addAnimalsReasonsTransfer($addObject);
 
@@ -68,8 +77,8 @@ Performs animalsReasonsTransfer.edit edit query to edit an object. Uses classes 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Edit();
 
     $editObject = new \RescueGroups\Objects\AnimalsReasonsTransfer();
-    $editObject->reasonID = "Reason ID"
-    $editObject->reasonName = "Reason"
+    $editObject->id = "Reason ID"
+    $editObject->name = "Reason"
 
     $query->updateAnimalsReasonsTransfer($editObject);
 
@@ -81,7 +90,7 @@ Performs animalsReasonsTransfer.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Delete();
 
-    $query->setreasonID("Reason ID");
+    $query->setid("Reason ID");
 
     $result = $api->executeRequest($query);
 

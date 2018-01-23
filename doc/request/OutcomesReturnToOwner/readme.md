@@ -12,6 +12,15 @@ Performs outcomesReturntoowner.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Define();
 
     $result = $api->executeRequest($query);
+Performs outcomesReturntoowner.define query.
+
+### Example Query
+
+    $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Define();
+
+
+    $result = $api->executeRequest($query);
+
 ## GetList
 Performs outcomesReturntoowner.list list query, typically suitable for filling HTML select fields.
 
@@ -55,10 +64,10 @@ Performs outcomesReturntoowner.add add query to create an instance of an object.
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Add();
 
     $addObject = new \RescueGroups\Objects\OutcomesReturnToOwner();
-    $addObject->animalConditionID = "Condition"
+    $addObject->animalConditionId = "Condition"
     $addObject->date = "Date"
     $addObject->notes = "Notes"
-    $addObject->ownerID = "Return To"
+    $addObject->ownerId = "Return To"
 
     $query->addOutcomesReturnToOwner($addObject);
 
@@ -72,10 +81,10 @@ Performs outcomesReturntoowner.edit edit query to edit an object. Uses classes o
 
     $editObject = new \RescueGroups\Objects\OutcomesReturnToOwner();
     $editObject->id = "ID"
-    $editObject->animalConditionID = "Condition"
+    $editObject->animalConditionId = "Condition"
     $editObject->date = "Date"
     $editObject->notes = "Notes"
-    $editObject->ownerID = "Return To"
+    $editObject->ownerId = "Return To"
 
     $query->updateOutcomesReturnToOwner($editObject);
 
@@ -87,11 +96,11 @@ Performs outcomesReturntoowner.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Change();
 
-    $query->setoutcomeID("Outcome");
-    $query->setanimalConditionID("Condition");
+    $query->setoutcomeId("Outcome");
+    $query->setanimalConditionId("Condition");
     $query->setdate("Date");
     $query->setnotes("Notes");
-    $query->setownerID("Return To");
+    $query->setownerId("Return To");
 
     $result = $api->executeRequest($query);
 

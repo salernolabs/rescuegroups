@@ -10,34 +10,56 @@ namespace RescueGroups\Objects;
 
 class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
 {
+    use \RescueGroups\Objects\Traits\APIReadWrite;
+
     /**
      * ID, Primary Key
      *
      * @var integer
      */
-    public $waitinglistID = null;
+    public $id = null;
 
     /**
      * Name
      *
      * @var string
      */
-    public $waitinglistName = null;
+    public $name = null;
 
     /**
      * Type
      *
      * @var string
      */
-    public $waitinglistType = null;
+    public $type = null;
 
     /**
      * Comment
      *
      * @var string
      */
-    public $waitinglistComment = null;
+    public $comment = null;
 
+
+    /**
+     * Mapping fields
+     * @var array
+     */
+    static private $apiMapping = [
+        'id' => 'id',
+        'input' => [
+            'waitinglistID' => 'id',
+            'waitinglistName' => 'name',
+            'waitinglistType' => 'type',
+            'waitinglistComment' => 'comment',
+        ],
+        'output' => [
+            'id' => 'waitinglistID',
+            'name' => 'waitinglistName',
+            'type' => 'waitinglistType',
+            'comment' => 'waitinglistComment',
+        ]
+    ];
 
     /**
      * WaitingList Constructor
@@ -47,10 +69,7 @@ class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
     {
         if (empty($inputData)) return;
 
-        if (!empty($inputData->waitinglistID)) $this->waitinglistID = $inputData->waitinglistID;
-        if (!empty($inputData->waitinglistName)) $this->waitinglistName = $inputData->waitinglistName;
-        if (!empty($inputData->waitinglistType)) $this->waitinglistType = $inputData->waitinglistType;
-        if (!empty($inputData->waitinglistComment)) $this->waitinglistComment = $inputData->waitinglistComment;
+        $this->mapFromAPI($inputData);
     }
 
     /**
@@ -61,12 +80,6 @@ class WaitingList implements \RescueGroups\Objects\APIEncodableInterface
      */
     public function getArray($includeId = true)
     {
-        $output = [];
-        if ($includeId && $this->waitinglistID !== null) $output['waitinglistID'] = $this->waitinglistID;
-        if ($this->waitinglistName !== null) $output['waitinglistName'] = $this->waitinglistName;
-        if ($this->waitinglistType !== null) $output['waitinglistType'] = $this->waitinglistType;
-        if ($this->waitinglistComment !== null) $output['waitinglistComment'] = $this->waitinglistComment;
-
-        return $output;
+        return $this->mapToAPI($includeId);
     }
 }
