@@ -17,14 +17,13 @@ class LoginTest extends \PHPUnit\Framework\TestCase
      */
     public function testQuery()
     {
-        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../../data/fixtures/actions-login.json');
-        $this->api
-            ->setCustomGuzzleHandler($vcr);
+        $request = new \RescueGroups\Request\Actions\Login('testuser', 'testpassword', 'orgid1');
 
-        $request = new \RescueGroups\Request\Actions\Login();
+        $data = $this->api->getPostObject($request);
 
-        $result = $this->api->executeRequest($request);
-
-        $this->assertEquals('ok', $result->status);
+        $this->assertEquals('testuser', $data['username']);
+        $this->assertEquals('testpassword', $data['password']);
+        $this->assertEquals('orgid1', $data['accountNumber']);
+        $this->assertEquals('login', $data['action']);
     }
 }
