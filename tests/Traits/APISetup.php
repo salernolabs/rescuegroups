@@ -30,12 +30,7 @@ trait APISetup
      */
     private function apiLogin()
     {
-        $vcr = \Dshafik\GuzzleHttp\VcrHandler::turnOn(__DIR__ . '/../data/fixtures/actions-login.json');
-        $this->api
-            ->setCustomGuzzleHandler($vcr);
-
-        $request = new \RescueGroups\Request\Actions\Login();
-        $this->api->executeRequest($request);
+        $this->api->setToken('testToken', 'testTokenHash');
     }
 
 }
