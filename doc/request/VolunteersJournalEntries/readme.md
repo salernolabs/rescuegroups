@@ -12,15 +12,6 @@ Performs volunteersJournalEntries.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
 
     $result = $api->executeRequest($query);
-Performs volunteersJournalEntries.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## Search
 Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) objects.
 
@@ -45,7 +36,7 @@ Performs volunteersJournalEntries.view query.
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -88,7 +79,7 @@ Performs volunteersJournalEntries.delete query.
 
     $query = new \RescueGroups\Request\Objects\VolunteersJournalEntries\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

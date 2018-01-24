@@ -12,15 +12,6 @@ Performs animals.define query. This gives information about the API interface to
     $query = new \RescueGroups\Request\Objects\Animals\Define();
 
     $result = $api->executeRequest($query);
-Performs animals.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Animals\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animals.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs animals.publicView query.
 
     $query = new \RescueGroups\Request\Objects\Animals\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -46,7 +37,7 @@ Performs animals.view query.
 
     $query = new \RescueGroups\Request\Objects\Animals\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -361,10 +352,10 @@ Performs animals.addPicture query.
 
     $query = new \RescueGroups\Request\Objects\Animals\AddPicture();
 
-    $query->setid("ID");
-    $query->setpictureBinary("Picture");
-    $query->setfileName("File name");
-    $query->setmediaOrder("Order");
+    $query->setId("ID");
+    $query->setPictureBinary("Picture");
+    $query->setFileName("File name");
+    $query->setMediaOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -375,9 +366,9 @@ Performs animals.addPictureUrl query.
 
     $query = new \RescueGroups\Request\Objects\Animals\AddPictureUrl();
 
-    $query->setid("ID");
-    $query->setpictureUrl("Picture Url");
-    $query->setmediaOrder("Order");
+    $query->setId("ID");
+    $query->setPictureUrl("Picture Url");
+    $query->setMediaOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -388,10 +379,10 @@ Performs animals.addVideo query.
 
     $query = new \RescueGroups\Request\Objects\Animals\AddVideo();
 
-    $query->setid("ID");
-    $query->setvideoBinary("Video");
-    $query->setfileName("File name");
-    $query->setmediaOrder("Order");
+    $query->setId("ID");
+    $query->setVideoBinary("Video");
+    $query->setFileName("File name");
+    $query->setMediaOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -402,9 +393,9 @@ Performs animals.addYoutubeUrl query.
 
     $query = new \RescueGroups\Request\Objects\Animals\AddYoutubeUrl();
 
-    $query->setid("ID");
-    $query->setyoutubeUrl("YouTube Url");
-    $query->setmediaOrder("Order");
+    $query->setId("ID");
+    $query->setYoutubeUrl("YouTube Url");
+    $query->setMediaOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -415,9 +406,9 @@ Performs animals.pictureReorder query.
 
     $query = new \RescueGroups\Request\Objects\Animals\PictureReorder();
 
-    $query->setid("ID");
-    $query->setmediaId("ID");
-    $query->setnewOrder("Order");
+    $query->setId("ID");
+    $query->setMediaId("ID");
+    $query->setNewOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -428,9 +419,9 @@ Performs animals.videoReorder query.
 
     $query = new \RescueGroups\Request\Objects\Animals\VideoReorder();
 
-    $query->setid("ID");
-    $query->setmediaId("ID");
-    $query->setnewOrder("Order");
+    $query->setId("ID");
+    $query->setMediaId("ID");
+    $query->setNewOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -441,9 +432,9 @@ Performs animals.videoUrlReorder query.
 
     $query = new \RescueGroups\Request\Objects\Animals\VideoUrlReorder();
 
-    $query->setid("ID");
-    $query->setmediaId("ID");
-    $query->setnewOrder("Order");
+    $query->setId("ID");
+    $query->setMediaId("ID");
+    $query->setNewOrder("Order");
 
     $result = $api->executeRequest($query);
 
@@ -454,7 +445,7 @@ Performs animals.pictures query.
 
     $query = new \RescueGroups\Request\Objects\Animals\Pictures();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -465,7 +456,7 @@ Performs animals.videos query.
 
     $query = new \RescueGroups\Request\Objects\Animals\Videos();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -476,7 +467,7 @@ Performs animals.youtubeUrls query.
 
     $query = new \RescueGroups\Request\Objects\Animals\YoutubeUrls();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -507,7 +498,7 @@ Performs animals.setRequiredFields query.
 
     $query = new \RescueGroups\Request\Objects\Animals\SetRequiredFields();
 
-    $query->setfieldlist("Field list");
+    $query->setFieldlist("Field list");
 
     $result = $api->executeRequest($query);
 
@@ -538,7 +529,7 @@ Performs animals.setDisabledFields query.
 
     $query = new \RescueGroups\Request\Objects\Animals\SetDisabledFields();
 
-    $query->setfieldlist("Field list");
+    $query->setFieldlist("Field list");
 
     $result = $api->executeRequest($query);
 
@@ -569,7 +560,7 @@ Performs animals.setEnabledSpecies query.
 
     $query = new \RescueGroups\Request\Objects\Animals\SetEnabledSpecies();
 
-    $query->setfieldlist("Field list");
+    $query->setFieldlist("Field list");
 
     $result = $api->executeRequest($query);
 
@@ -600,7 +591,7 @@ Performs animals.setPublicStatuses query.
 
     $query = new \RescueGroups\Request\Objects\Animals\SetPublicStatuses();
 
-    $query->setstatuslist("Statuses");
+    $query->setStatuslist("Statuses");
 
     $result = $api->executeRequest($query);
 
@@ -621,77 +612,77 @@ Performs animals.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Animals\UpdateSettings();
 
-    $query->setenableAnimalsSpecialListBabies("Babies (Kittens, Puppies) enabled");
-    $query->setsetAnimalsSpecialListBabiesYoungest("Babies (Kittens, Puppies) Youngest Age");
-    $query->setsetAnimalsSpecialListBabiesOldest("Babies (Kittens, Puppies) Oldest Age");
-    $query->setenableAnimalsSpecialListTeens("Teens enabled");
-    $query->setsetAnimalsSpecialListTeensYoungest("Teens Youngest Age");
-    $query->setsetAnimalsSpecialListTeensOldest("Teens Oldest Age");
-    $query->setenableAnimalsSpecialListAdults("Adults enabled");
-    $query->setsetAnimalsSpecialListAdultsYoungest("Adults Youngest Age");
-    $query->setsetAnimalsSpecialListAdultsOldest("Adults Oldest Age");
-    $query->setenableAnimalsSpecialListSeniors("Seniors enabled");
-    $query->setsetAnimalsSpecialListSeniorsYoungest("Seniors Youngest Age");
-    $query->setenableAnimalsSpecialListLongtime("Long Time/Must Adopt enabled");
-    $query->setsetAnimalsSpecialListLongtimeYoungest("Long Time/Must Adopt Shortest length of time");
-    $query->setsetAnimalsSpecialListLongtimeOldest("Long Time/Must Adopt Longest length of time");
-    $query->setenableAnimalsSpecialListRecent("Recent Arrivals enabled");
-    $query->setsetAnimalsSpecialListRecentDays("Recent Arrivals Shortest length of time");
-    $query->setenableAnimalsSpecialListSpecialNeeds("Special Needs enabled");
-    $query->setenableAnimalsSpecialListUrgent("Urgent enabled");
-    $query->setenableAnimalsSpecialListFoster("Needs a Caretaker/Foster enabled");
-    $query->setenableAnimalsSpecialListCourtesy("Courtesy Listings enabled");
-    $query->setenableAnimalAutoRescueID("Automatically set animal's Rescue ID");
-    $query->setsetAnimalAutoRescueIDFormat("Format for Rescue IDs");
-    $query->setdisableAnimalAutoRescueIDCourtesyListings("Do not automatically assign Rescue ID for courtesy listings");
-    $query->setenablePortalWebsite("Enable the Portal website");
-    $query->setshowAnimalMicrochip("Show if the animal is microchipped");
-    $query->setshowAnimalAltered("Show if the animal is altered");
-    $query->setshowAnimalWillBeAltered("Show if the animal will be altered before adoption");
-    $query->setshowAnimalRescueID("Show the animal's Rescue ID");
-    $query->setshowAnimalAdoptionFee("Show the animal's adoption fee");
-    $query->setshowAnimalEuthanasiaInfo("Show the animal's euthanasia information");
-    $query->setdisableAnimalCourtesyHeaderFooter("Disable the animal header/footer to courtesy animals");
-    $query->setshowAnimalKennelcardJournalEntries("Show journal entries on the kennel card");
-    $query->setshowAnimalKennelcardJournalCost("Show cost on the kennel card");
-    $query->setdisableAnimalExportAdopted("Prevent adopted animals from being uploaded to Petfinder");
-    $query->setenableExportAdoptedToAdoptapet("Export adopted pets to Adopt-a-Pet.com");
-    $query->setdisableAnimalExportCourtesy("Prevent courtesy animals from being uploaded to other sites");
-    $query->setdisableAnimalExportAnimalWebPageLink("Disable the link to the animal's web page");
-    $query->setdisableAnimalExportWebsiteLink("Disable the link to your organization's website");
-    $query->setdisableAnimalExportAdoptionFormLink("Disable the link to your adoption form");
-    $query->setenableAnimalExportDescriptionHeader("Include the Animal Description Header in the animal description");
-    $query->setenableAnimalExportDescriptionFooter("Include the Animal Description Footer in the animal description");
-    $query->setenableAnimalExportUniqueAnimalID("Use the RescueGroups.org Animal ID as a Unique ID");
-    $query->setenableAnimalExportContactFieldFirstname("Show the foster/caretaker's first name");
-    $query->setenableAnimalExportContactFieldLastname("Show the foster/caretaker's last name");
-    $query->setenableAnimalExportContactFieldEmail("Show the foster/caretaker's email address");
-    $query->setenableAnimalExportContactFieldPhoneHome("Show the foster/caretaker's home phone number");
-    $query->setenableAnimalExportContactFieldPhoneCell("Show the foster/caretaker's cell phone number");
-    $query->setsetAnimalExportYouTubeAccount("Account to use for YouTube video upload");
-    $query->setsetAnimalExportYouTubeAuthorizationCode("YouTube authorization code");
-    $query->setsetAnimalExportDefaultCategory1("By default, export to services that list animals for adoption");
-    $query->setsetAnimalExportDefaultCategory4("By default, export to services that list animals for adoption (from non-rescue/shelters)");
-    $query->setsetAnimalExportDefaultCategory3("By default, export to services that list animals for sale by breeder");
-    $query->setsetAnimalExportDefaultCategory2("By default, export to services that list animals for sale by owner");
-    $query->setsetAnimalExportDefaultCategory5("By default, export to services that provide animal related classifieds");
-    $query->setsetAnimalExportDefaultCategory6("By default, export to services that provide animal related community discussion/forums");
-    $query->setsetAnimalExportDefaultCategory8("By default, export to services that provide animal related educational information");
-    $query->setsetAnimalExportDefaultCategory7("By default, export to services that provide animal related news");
-    $query->setsetAnimalExportDefaultCategory13("By default, export to services that provide event calendars");
-    $query->setsetAnimalExportDefaultCategory9("By default, export to services that sell/promote animal related products (food, toys, treats, etc)");
-    $query->setsetAnimalExportDefaultCategory11("By default, export to services that sell/promote animal related services (training, grooming)");
-    $query->setsetAnimalExportDefaultCategory10("By default, export to services that sell/promote non-animal related products");
-    $query->setsetAnimalExportDefaultCategory12("By default, export to services that sell/promote non-animal related services");
-    $query->setdisableAnimalDescriptionVideo("Disable videos in Animal descriptions");
-    $query->setenableAnimalDescriptionVideoLink("Use a link instead of embedding the video in Animal descriptions");
-    $query->setenableFreePetChipRegistry("Enable FreePetChipRegistry registrations");
-    $query->setsetFreePetChipRegistryUserName("FreePetChipRegistry user name");
-    $query->setenablePetLinkRegistry("Enable PetLink registrations");
-    $query->setsetPetLinkUserName("PetLink user name");
-    $query->setsetPetLinkPassword("PetLink password");
-    $query->setdisableMicrochipUserAlert("Disable the email alert to the volunteer concerning microchip registration (success or failure)");
-    $query->setsetMicrochipAlertEmails("Email address(es) to alert concerning microchip registration (success or failure)");
+    $query->setEnableAnimalsSpecialListBabies("Babies (Kittens, Puppies) enabled");
+    $query->setAnimalsSpecialListBabiesYoungest("Babies (Kittens, Puppies) Youngest Age");
+    $query->setAnimalsSpecialListBabiesOldest("Babies (Kittens, Puppies) Oldest Age");
+    $query->setEnableAnimalsSpecialListTeens("Teens enabled");
+    $query->setAnimalsSpecialListTeensYoungest("Teens Youngest Age");
+    $query->setAnimalsSpecialListTeensOldest("Teens Oldest Age");
+    $query->setEnableAnimalsSpecialListAdults("Adults enabled");
+    $query->setAnimalsSpecialListAdultsYoungest("Adults Youngest Age");
+    $query->setAnimalsSpecialListAdultsOldest("Adults Oldest Age");
+    $query->setEnableAnimalsSpecialListSeniors("Seniors enabled");
+    $query->setAnimalsSpecialListSeniorsYoungest("Seniors Youngest Age");
+    $query->setEnableAnimalsSpecialListLongtime("Long Time/Must Adopt enabled");
+    $query->setAnimalsSpecialListLongtimeYoungest("Long Time/Must Adopt Shortest length of time");
+    $query->setAnimalsSpecialListLongtimeOldest("Long Time/Must Adopt Longest length of time");
+    $query->setEnableAnimalsSpecialListRecent("Recent Arrivals enabled");
+    $query->setAnimalsSpecialListRecentDays("Recent Arrivals Shortest length of time");
+    $query->setEnableAnimalsSpecialListSpecialNeeds("Special Needs enabled");
+    $query->setEnableAnimalsSpecialListUrgent("Urgent enabled");
+    $query->setEnableAnimalsSpecialListFoster("Needs a Caretaker/Foster enabled");
+    $query->setEnableAnimalsSpecialListCourtesy("Courtesy Listings enabled");
+    $query->setEnableAnimalAutoRescueID("Automatically set animal's Rescue ID");
+    $query->setAnimalAutoRescueIDFormat("Format for Rescue IDs");
+    $query->setDisableAnimalAutoRescueIDCourtesyListings("Do not automatically assign Rescue ID for courtesy listings");
+    $query->setEnablePortalWebsite("Enable the Portal website");
+    $query->setShowAnimalMicrochip("Show if the animal is microchipped");
+    $query->setShowAnimalAltered("Show if the animal is altered");
+    $query->setShowAnimalWillBeAltered("Show if the animal will be altered before adoption");
+    $query->setShowAnimalRescueID("Show the animal's Rescue ID");
+    $query->setShowAnimalAdoptionFee("Show the animal's adoption fee");
+    $query->setShowAnimalEuthanasiaInfo("Show the animal's euthanasia information");
+    $query->setDisableAnimalCourtesyHeaderFooter("Disable the animal header/footer to courtesy animals");
+    $query->setShowAnimalKennelcardJournalEntries("Show journal entries on the kennel card");
+    $query->setShowAnimalKennelcardJournalCost("Show cost on the kennel card");
+    $query->setDisableAnimalExportAdopted("Prevent adopted animals from being uploaded to Petfinder");
+    $query->setEnableExportAdoptedToAdoptapet("Export adopted pets to Adopt-a-Pet.com");
+    $query->setDisableAnimalExportCourtesy("Prevent courtesy animals from being uploaded to other sites");
+    $query->setDisableAnimalExportAnimalWebPageLink("Disable the link to the animal's web page");
+    $query->setDisableAnimalExportWebsiteLink("Disable the link to your organization's website");
+    $query->setDisableAnimalExportAdoptionFormLink("Disable the link to your adoption form");
+    $query->setEnableAnimalExportDescriptionHeader("Include the Animal Description Header in the animal description");
+    $query->setEnableAnimalExportDescriptionFooter("Include the Animal Description Footer in the animal description");
+    $query->setEnableAnimalExportUniqueAnimalID("Use the RescueGroups.org Animal ID as a Unique ID");
+    $query->setEnableAnimalExportContactFieldFirstname("Show the foster/caretaker's first name");
+    $query->setEnableAnimalExportContactFieldLastname("Show the foster/caretaker's last name");
+    $query->setEnableAnimalExportContactFieldEmail("Show the foster/caretaker's email address");
+    $query->setEnableAnimalExportContactFieldPhoneHome("Show the foster/caretaker's home phone number");
+    $query->setEnableAnimalExportContactFieldPhoneCell("Show the foster/caretaker's cell phone number");
+    $query->setAnimalExportYouTubeAccount("Account to use for YouTube video upload");
+    $query->setAnimalExportYouTubeAuthorizationCode("YouTube authorization code");
+    $query->setAnimalExportDefaultCategory1("By default, export to services that list animals for adoption");
+    $query->setAnimalExportDefaultCategory4("By default, export to services that list animals for adoption (from non-rescue/shelters)");
+    $query->setAnimalExportDefaultCategory3("By default, export to services that list animals for sale by breeder");
+    $query->setAnimalExportDefaultCategory2("By default, export to services that list animals for sale by owner");
+    $query->setAnimalExportDefaultCategory5("By default, export to services that provide animal related classifieds");
+    $query->setAnimalExportDefaultCategory6("By default, export to services that provide animal related community discussion/forums");
+    $query->setAnimalExportDefaultCategory8("By default, export to services that provide animal related educational information");
+    $query->setAnimalExportDefaultCategory7("By default, export to services that provide animal related news");
+    $query->setAnimalExportDefaultCategory13("By default, export to services that provide event calendars");
+    $query->setAnimalExportDefaultCategory9("By default, export to services that sell/promote animal related products (food, toys, treats, etc)");
+    $query->setAnimalExportDefaultCategory11("By default, export to services that sell/promote animal related services (training, grooming)");
+    $query->setAnimalExportDefaultCategory10("By default, export to services that sell/promote non-animal related products");
+    $query->setAnimalExportDefaultCategory12("By default, export to services that sell/promote non-animal related services");
+    $query->setDisableAnimalDescriptionVideo("Disable videos in Animal descriptions");
+    $query->setEnableAnimalDescriptionVideoLink("Use a link instead of embedding the video in Animal descriptions");
+    $query->setEnableFreePetChipRegistry("Enable FreePetChipRegistry registrations");
+    $query->setFreePetChipRegistryUserName("FreePetChipRegistry user name");
+    $query->setEnablePetLinkRegistry("Enable PetLink registrations");
+    $query->setPetLinkUserName("PetLink user name");
+    $query->setPetLinkPassword("PetLink password");
+    $query->setDisableMicrochipUserAlert("Disable the email alert to the volunteer concerning microchip registration (success or failure)");
+    $query->setMicrochipAlertEmails("Email address(es) to alert concerning microchip registration (success or failure)");
 
     $result = $api->executeRequest($query);
 

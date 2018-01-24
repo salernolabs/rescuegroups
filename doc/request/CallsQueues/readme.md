@@ -12,15 +12,6 @@ Performs callsQueues.define query. This gives information about the API interfac
     $query = new \RescueGroups\Request\Objects\CallsQueues\Define();
 
     $result = $api->executeRequest($query);
-Performs callsQueues.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsQueues\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs callsQueues.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs callsQueues.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueues\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -93,7 +84,7 @@ Performs callsQueues.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueues\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

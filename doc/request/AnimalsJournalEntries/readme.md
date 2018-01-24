@@ -12,15 +12,6 @@ Performs animalsJournalEntries.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsJournalEntries.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## Search
 Performs animalsJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntry](../../../src/Objects/AnimalsJournalEntry.php) objects.
 
@@ -45,7 +36,7 @@ Performs animalsJournalEntries.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\View();
 
-    $query->setid("Entry ID");
+    $query->setId("Entry ID");
 
     $result = $api->executeRequest($query);
 
@@ -94,7 +85,7 @@ Performs animalsJournalEntries.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntries\Delete();
 
-    $query->setid("Entry ID");
+    $query->setId("Entry ID");
 
     $result = $api->executeRequest($query);
 

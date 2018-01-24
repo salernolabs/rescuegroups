@@ -12,15 +12,6 @@ Performs waitinglists.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
 
     $result = $api->executeRequest($query);
-Performs waitinglists.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\WaitingLists\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs waitinglists.view query.
 
@@ -28,7 +19,7 @@ Performs waitinglists.view query.
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -87,7 +78,7 @@ Performs waitinglists.delete query.
 
     $query = new \RescueGroups\Request\Objects\WaitingLists\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

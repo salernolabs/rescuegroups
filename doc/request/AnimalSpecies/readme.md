@@ -12,15 +12,6 @@ Performs animalSpecies.define query. This gives information about the API interf
     $query = new \RescueGroups\Request\Objects\AnimalSpecies\Define();
 
     $result = $api->executeRequest($query);
-Performs animalSpecies.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalSpecies\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## PublicList
 Performs animalSpecies.publicList list query, typically suitable for filling HTML select fields.
 

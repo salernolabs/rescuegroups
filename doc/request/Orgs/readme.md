@@ -12,15 +12,6 @@ Performs orgs.define query. This gives information about the API interface to yo
     $query = new \RescueGroups\Request\Objects\Orgs\Define();
 
     $result = $api->executeRequest($query);
-Performs orgs.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Orgs\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs orgs.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs orgs.publicView query.
 
     $query = new \RescueGroups\Request\Objects\Orgs\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

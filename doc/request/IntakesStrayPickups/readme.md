@@ -12,15 +12,6 @@ Performs intakesStraypickups.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesStraypickups.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesStraypickups.view query.
 
@@ -28,7 +19,7 @@ Performs intakesStraypickups.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\View();
 
-    $query->setid("Stray Pickup");
+    $query->setId("Stray Pickup");
 
     $result = $api->executeRequest($query);
 
@@ -102,18 +93,18 @@ Performs intakesStraypickups.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayPickups\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setlocation("Pickup Location");
-    $query->setaddress("Pickup Street address");
-    $query->setcity("Pickup City");
-    $query->setstate("Pickup State/Province");
-    $query->setpostalcode("Pickup Postal Code");
-    $query->setfinderId("Found By");
-    $query->setstaffId("Pickup By");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setLocation("Pickup Location");
+    $query->setAddress("Pickup Street address");
+    $query->setCity("Pickup City");
+    $query->setState("Pickup State/Province");
+    $query->setPostalcode("Pickup Postal Code");
+    $query->setFinderId("Found By");
+    $query->setStaffId("Pickup By");
 
     $result = $api->executeRequest($query);
 

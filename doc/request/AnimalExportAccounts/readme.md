@@ -12,15 +12,6 @@ Performs animalExportAccounts.define query. This gives information about the API
     $query = new \RescueGroups\Request\Objects\AnimalExportAccounts\Define();
 
     $result = $api->executeRequest($query);
-Performs animalExportAccounts.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalExportAccounts\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalExportAccounts.list list query, typically suitable for filling HTML select fields.
 

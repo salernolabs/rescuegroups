@@ -12,15 +12,6 @@ Performs intakesServicetypes.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesServicetypes.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs intakesServicetypes.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs intakesServicetypes.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\View();
 
-    $query->setid("Service");
+    $query->setId("Service");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs intakesServicetypes.delete query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServiceTypes\Delete();
 
-    $query->setid("Service");
+    $query->setId("Service");
 
     $result = $api->executeRequest($query);
 

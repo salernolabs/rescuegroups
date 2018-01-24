@@ -12,15 +12,6 @@ Performs intakesImpounds.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesImpounds.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesImpounds\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesImpounds.view query.
 
@@ -28,7 +19,7 @@ Performs intakesImpounds.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\View();
 
-    $query->setid("Impound");
+    $query->setId("Impound");
 
     $result = $api->executeRequest($query);
 
@@ -104,19 +95,19 @@ Performs intakesImpounds.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesImpounds\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setlocation("Impound Location");
-    $query->setaddress("Impound Street address");
-    $query->setcity("Impound City");
-    $query->setstate("Impound State/Province");
-    $query->setpostalcode("Impound Postal Code");
-    $query->setfromId("Impound From");
-    $query->setstaffId("Impound Performed By");
-    $query->setreasonId("Reason");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setLocation("Impound Location");
+    $query->setAddress("Impound Street address");
+    $query->setCity("Impound City");
+    $query->setState("Impound State/Province");
+    $query->setPostalcode("Impound Postal Code");
+    $query->setFromId("Impound From");
+    $query->setStaffId("Impound Performed By");
+    $query->setReasonId("Reason");
 
     $result = $api->executeRequest($query);
 

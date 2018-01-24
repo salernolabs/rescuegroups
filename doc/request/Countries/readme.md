@@ -12,15 +12,6 @@ Performs countries.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Countries\Define();
 
     $result = $api->executeRequest($query);
-Performs countries.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Countries\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs countries.list list query, typically suitable for filling HTML select fields.
 

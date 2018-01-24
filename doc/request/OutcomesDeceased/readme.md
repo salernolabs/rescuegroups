@@ -12,15 +12,6 @@ Performs outcomesDeceased.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesDeceased.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesDeceased.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesDeceased.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -96,11 +87,11 @@ Performs outcomesDeceased.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesDeceased\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setreason("Reason");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setReason("Reason");
 
     $result = $api->executeRequest($query);
 

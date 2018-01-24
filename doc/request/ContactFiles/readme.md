@@ -12,15 +12,6 @@ Performs contactFiles.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\ContactFiles\Define();
 
     $result = $api->executeRequest($query);
-Performs contactFiles.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\ContactFiles\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs contactFiles.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs contactFiles.view query.
 
     $query = new \RescueGroups\Request\Objects\ContactFiles\View();
 
-    $query->setid("File ID");
+    $query->setId("File ID");
 
     $result = $api->executeRequest($query);
 

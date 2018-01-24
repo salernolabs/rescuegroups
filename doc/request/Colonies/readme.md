@@ -12,15 +12,6 @@ Performs colonies.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Colonies\Define();
 
     $result = $api->executeRequest($query);
-Performs colonies.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Colonies\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs colonies.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs colonies.view query.
 
     $query = new \RescueGroups\Request\Objects\Colonies\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -97,7 +88,7 @@ Performs colonies.delete query.
 
     $query = new \RescueGroups\Request\Objects\Colonies\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

@@ -12,15 +12,6 @@ Performs animalsAdoptions.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsAdoptions.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsAdoptions.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs animalsAdoptions.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\View();
 
-    $query->setid("Adoption ID");
+    $query->setId("Adoption ID");
 
     $result = $api->executeRequest($query);
 
@@ -108,13 +99,13 @@ Performs animalsAdoptions.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\Delete();
 
-    $query->setid("Adoption ID");
-    $query->setremoveContact("Remove contact from adopters group");
-    $query->setchangeAnimal("Change animal to available");
-    $query->setchangeSubmittedform("Change submitted form to cancelled");
-    $query->setremoveUser("Remove Adopter role from user");
-    $query->setdonationAmount("Donation");
-    $query->setletterSent("Thank you letter sent");
+    $query->setId("Adoption ID");
+    $query->setRemoveContact("Remove contact from adopters group");
+    $query->setChangeAnimal("Change animal to available");
+    $query->setChangeSubmittedform("Change submitted form to cancelled");
+    $query->setRemoveUser("Remove Adopter role from user");
+    $query->setDonationAmount("Donation");
+    $query->setLetterSent("Thank you letter sent");
 
     $result = $api->executeRequest($query);
 
@@ -135,10 +126,10 @@ Performs animalsAdoptions.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\UpdateSettings();
 
-    $query->setshowAdoptionsTrackingMessage("Show a reminder to use the Adoptions feature when changing an animal's status to Adopted");
-    $query->setshowAppPending("Show an &quot;Application Pending&quot; message on public pages for animals when applicable");
-    $query->setshowAppPendingAdoptAnyway("Show an &quot;Apply anyway&quot; message on public pages for animals when applicable");
-    $query->setpreventApplicationsForPendingAnimals("Prevent applications from being submitted for animals with a pending application");
+    $query->setShowAdoptionsTrackingMessage("Show a reminder to use the Adoptions feature when changing an animal's status to Adopted");
+    $query->setShowAppPending("Show an &quot;Application Pending&quot; message on public pages for animals when applicable");
+    $query->setShowAppPendingAdoptAnyway("Show an &quot;Apply anyway&quot; message on public pages for animals when applicable");
+    $query->setPreventApplicationsForPendingAnimals("Prevent applications from being submitted for animals with a pending application");
 
     $result = $api->executeRequest($query);
 

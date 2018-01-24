@@ -12,15 +12,6 @@ Performs users.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Users\Define();
 
     $result = $api->executeRequest($query);
-Performs users.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Users\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs users.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs users.view query.
 
     $query = new \RescueGroups\Request\Objects\Users\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

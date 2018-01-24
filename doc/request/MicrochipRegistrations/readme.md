@@ -12,15 +12,6 @@ Performs microchipRegistrations.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
 
     $result = $api->executeRequest($query);
-Performs microchipRegistrations.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs microchipRegistrations.view query.
 
@@ -28,7 +19,7 @@ Performs microchipRegistrations.view query.
 
     $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

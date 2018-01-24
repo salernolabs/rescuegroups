@@ -12,15 +12,6 @@ Performs animalsReasonsTransfer.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsReasonsTransfer.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsReasonsTransfer.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs animalsReasonsTransfer.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\View();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs animalsReasonsTransfer.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsTransfer\Delete();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 

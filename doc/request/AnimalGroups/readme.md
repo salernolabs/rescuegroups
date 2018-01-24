@@ -12,15 +12,6 @@ Performs animalGroups.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Define();
 
     $result = $api->executeRequest($query);
-Performs animalGroups.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalGroups\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalGroups.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs animalGroups.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalGroups\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -91,7 +82,7 @@ Performs animalGroups.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalGroups\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

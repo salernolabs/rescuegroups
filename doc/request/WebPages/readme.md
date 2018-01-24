@@ -12,15 +12,6 @@ Performs webpages.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\WebPages\Define();
 
     $result = $api->executeRequest($query);
-Performs webpages.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\WebPages\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs webpages.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs webpages.publicView query.
 
     $query = new \RescueGroups\Request\Objects\WebPages\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -46,7 +37,7 @@ Performs webpages.view query.
 
     $query = new \RescueGroups\Request\Objects\WebPages\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

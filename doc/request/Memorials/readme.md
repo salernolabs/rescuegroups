@@ -12,15 +12,6 @@ Performs memorials.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Memorials\Define();
 
     $result = $api->executeRequest($query);
-Performs memorials.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Memorials\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs memorials.view query.
 
@@ -28,7 +19,7 @@ Performs memorials.view query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs memorials.delete query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -111,9 +102,9 @@ Performs memorials.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Memorials\UpdateSettings();
 
-    $query->setenableMemorials("Enable the Memorials feature");
-    $query->setsetMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
-    $query->setshowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
+    $query->setEnableMemorials("Enable the Memorials feature");
+    $query->setMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
+    $query->setShowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
 
     $result = $api->executeRequest($query);
 

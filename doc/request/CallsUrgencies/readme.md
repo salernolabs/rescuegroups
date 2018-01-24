@@ -12,15 +12,6 @@ Performs callsUrgencies.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\CallsUrgencies\Define();
 
     $result = $api->executeRequest($query);
-Performs callsUrgencies.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsUrgencies\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs callsUrgencies.list list query, typically suitable for filling HTML select fields.
 

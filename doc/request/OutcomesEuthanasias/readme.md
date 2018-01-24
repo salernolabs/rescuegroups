@@ -12,15 +12,6 @@ Performs outcomesEuthanasias.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesEuthanasias.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesEuthanasias.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesEuthanasias.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -96,11 +87,11 @@ Performs outcomesEuthanasias.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesEuthanasias\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setreasonId("Euthanasia Reason");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setReasonId("Euthanasia Reason");
 
     $result = $api->executeRequest($query);
 

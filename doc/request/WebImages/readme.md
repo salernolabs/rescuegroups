@@ -12,15 +12,6 @@ Performs webimages.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\WebImages\Define();
 
     $result = $api->executeRequest($query);
-Performs webimages.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\WebImages\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs webimages.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs webimages.view query.
 
     $query = new \RescueGroups\Request\Objects\WebImages\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -92,7 +83,7 @@ Performs webimages.delete query.
 
     $query = new \RescueGroups\Request\Objects\WebImages\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

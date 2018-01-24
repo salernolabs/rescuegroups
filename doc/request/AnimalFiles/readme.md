@@ -12,15 +12,6 @@ Performs animalFiles.define query. This gives information about the API interfac
     $query = new \RescueGroups\Request\Objects\AnimalFiles\Define();
 
     $result = $api->executeRequest($query);
-Performs animalFiles.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalFiles\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalFiles.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs animalFiles.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalFiles\View();
 
-    $query->setid("File ID");
+    $query->setId("File ID");
 
     $result = $api->executeRequest($query);
 

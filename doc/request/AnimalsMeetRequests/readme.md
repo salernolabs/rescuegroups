@@ -12,15 +12,6 @@ Performs animalsMeetrequests.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsMeetrequests.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## Search
 Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) objects.
 
@@ -45,7 +36,7 @@ Performs animalsMeetrequests.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\View();
 
-    $query->setid("Meet Request ID");
+    $query->setId("Meet Request ID");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs animalsMeetrequests.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsMeetRequests\Delete();
 
-    $query->setid("Meet Request ID");
+    $query->setId("Meet Request ID");
 
     $result = $api->executeRequest($query);
 

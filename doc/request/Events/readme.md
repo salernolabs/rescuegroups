@@ -12,15 +12,6 @@ Performs events.define query. This gives information about the API interface to 
     $query = new \RescueGroups\Request\Objects\Events\Define();
 
     $result = $api->executeRequest($query);
-Performs events.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Events\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs events.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs events.publicView query.
 
     $query = new \RescueGroups\Request\Objects\Events\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -46,7 +37,7 @@ Performs events.view query.
 
     $query = new \RescueGroups\Request\Objects\Events\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -129,7 +120,7 @@ Performs events.delete query.
 
     $query = new \RescueGroups\Request\Objects\Events\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -150,8 +141,8 @@ Performs events.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
 
-    $query->setenableEvents("Enable the Events feature");
-    $query->setsetEventsMapWebsite("Map website to use with the Events feature");
+    $query->setEnableEvents("Enable the Events feature");
+    $query->setEventsMapWebsite("Map website to use with the Events feature");
 
     $result = $api->executeRequest($query);
 
