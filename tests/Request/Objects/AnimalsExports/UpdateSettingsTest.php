@@ -33,7 +33,7 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
         $query->setEnableAnimalExportContactFieldEmail("Show the foster/caretaker's email address");
         $query->setEnableAnimalExportContactFieldPhoneHome("Show the foster/caretaker's home phone number");
         $query->setEnableAnimalExportContactFieldPhoneCell("Show the foster/caretaker's cell phone number");
-        $query->setSetAnimalExportYouTubeAccount("Account to use for YouTube video upload");
+        $query->setAnimalExportYouTubeAccount("Account to use for YouTube video upload");
 
         $data = $this->api->getPostObject($query);
 

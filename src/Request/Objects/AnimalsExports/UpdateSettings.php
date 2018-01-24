@@ -299,7 +299,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportYouTubeAccount($value)
+    public function setAnimalExportYouTubeAccount($value)
     {
         $this->setAnimalExportYouTubeAccount = $value;
 

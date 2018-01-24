@@ -542,7 +542,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesYoungest($value)
+    public function setAnimalsSpecialListBabiesYoungest($value)
     {
         $this->setAnimalsSpecialListBabiesYoungest = $value;
 
@@ -555,7 +555,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesOldest($value)
+    public function setAnimalsSpecialListBabiesOldest($value)
     {
         $this->setAnimalsSpecialListBabiesOldest = $value;
 
@@ -581,7 +581,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensYoungest($value)
+    public function setAnimalsSpecialListTeensYoungest($value)
     {
         $this->setAnimalsSpecialListTeensYoungest = $value;
 
@@ -594,7 +594,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensOldest($value)
+    public function setAnimalsSpecialListTeensOldest($value)
     {
         $this->setAnimalsSpecialListTeensOldest = $value;
 
@@ -620,7 +620,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsYoungest($value)
+    public function setAnimalsSpecialListAdultsYoungest($value)
     {
         $this->setAnimalsSpecialListAdultsYoungest = $value;
 
@@ -633,7 +633,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsOldest($value)
+    public function setAnimalsSpecialListAdultsOldest($value)
     {
         $this->setAnimalsSpecialListAdultsOldest = $value;
 
@@ -659,7 +659,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListSeniorsYoungest($value)
+    public function setAnimalsSpecialListSeniorsYoungest($value)
     {
         $this->setAnimalsSpecialListSeniorsYoungest = $value;
 
@@ -685,7 +685,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeYoungest($value)
+    public function setAnimalsSpecialListLongtimeYoungest($value)
     {
         $this->setAnimalsSpecialListLongtimeYoungest = $value;
 
@@ -698,7 +698,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeOldest($value)
+    public function setAnimalsSpecialListLongtimeOldest($value)
     {
         $this->setAnimalsSpecialListLongtimeOldest = $value;
 
@@ -724,7 +724,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListRecentDays($value)
+    public function setAnimalsSpecialListRecentDays($value)
     {
         $this->setAnimalsSpecialListRecentDays = $value;
 
@@ -802,7 +802,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalAutoRescueIDFormat($value)
+    public function setAnimalAutoRescueIDFormat($value)
     {
         $this->setAnimalAutoRescueIDFormat = $value;
 
@@ -1140,7 +1140,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportYouTubeAccount($value)
+    public function setAnimalExportYouTubeAccount($value)
     {
         $this->setAnimalExportYouTubeAccount = $value;
 
@@ -1153,7 +1153,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportYouTubeAuthorizationCode($value)
+    public function setAnimalExportYouTubeAuthorizationCode($value)
     {
         $this->setAnimalExportYouTubeAuthorizationCode = $value;
 
@@ -1166,7 +1166,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory1($value)
+    public function setAnimalExportDefaultCategory1($value)
     {
         $this->setAnimalExportDefaultCategory1 = $value;
 
@@ -1179,7 +1179,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory4($value)
+    public function setAnimalExportDefaultCategory4($value)
     {
         $this->setAnimalExportDefaultCategory4 = $value;
 
@@ -1192,7 +1192,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory3($value)
+    public function setAnimalExportDefaultCategory3($value)
     {
         $this->setAnimalExportDefaultCategory3 = $value;
 
@@ -1205,7 +1205,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory2($value)
+    public function setAnimalExportDefaultCategory2($value)
     {
         $this->setAnimalExportDefaultCategory2 = $value;
 
@@ -1218,7 +1218,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory5($value)
+    public function setAnimalExportDefaultCategory5($value)
     {
         $this->setAnimalExportDefaultCategory5 = $value;
 
@@ -1231,7 +1231,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory6($value)
+    public function setAnimalExportDefaultCategory6($value)
     {
         $this->setAnimalExportDefaultCategory6 = $value;
 
@@ -1244,7 +1244,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory8($value)
+    public function setAnimalExportDefaultCategory8($value)
     {
         $this->setAnimalExportDefaultCategory8 = $value;
 
@@ -1257,7 +1257,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory7($value)
+    public function setAnimalExportDefaultCategory7($value)
     {
         $this->setAnimalExportDefaultCategory7 = $value;
 
@@ -1270,7 +1270,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory13($value)
+    public function setAnimalExportDefaultCategory13($value)
     {
         $this->setAnimalExportDefaultCategory13 = $value;
 
@@ -1283,7 +1283,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory9($value)
+    public function setAnimalExportDefaultCategory9($value)
     {
         $this->setAnimalExportDefaultCategory9 = $value;
 
@@ -1296,7 +1296,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory11($value)
+    public function setAnimalExportDefaultCategory11($value)
     {
         $this->setAnimalExportDefaultCategory11 = $value;
 
@@ -1309,7 +1309,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory10($value)
+    public function setAnimalExportDefaultCategory10($value)
     {
         $this->setAnimalExportDefaultCategory10 = $value;
 
@@ -1322,7 +1322,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory12($value)
+    public function setAnimalExportDefaultCategory12($value)
     {
         $this->setAnimalExportDefaultCategory12 = $value;
 
@@ -1374,7 +1374,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetFreePetChipRegistryUserName($value)
+    public function setFreePetChipRegistryUserName($value)
     {
         $this->setFreePetChipRegistryUserName = $value;
 
@@ -1400,7 +1400,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPetLinkUserName($value)
+    public function setPetLinkUserName($value)
     {
         $this->setPetLinkUserName = $value;
 
@@ -1413,7 +1413,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPetLinkPassword($value)
+    public function setPetLinkPassword($value)
     {
         $this->setPetLinkPassword = $value;
 
@@ -1439,7 +1439,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetMicrochipAlertEmails($value)
+    public function setMicrochipAlertEmails($value)
     {
         $this->setMicrochipAlertEmails = $value;
 

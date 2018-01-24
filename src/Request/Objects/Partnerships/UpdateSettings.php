@@ -59,7 +59,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPartnershipAlertEmailAddresses($value)
+    public function setPartnershipAlertEmailAddresses($value)
     {
         $this->setPartnershipAlertEmailAddresses = $value;
 

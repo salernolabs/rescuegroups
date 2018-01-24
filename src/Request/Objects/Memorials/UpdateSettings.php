@@ -66,7 +66,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetMemorialsDonationOnlineStoreItem($value)
+    public function setMemorialsDonationOnlineStoreItem($value)
     {
         $this->setMemorialsDonationOnlineStoreItem = $value;
 

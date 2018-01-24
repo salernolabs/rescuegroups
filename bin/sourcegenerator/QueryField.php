@@ -56,6 +56,12 @@ class QueryField
         $this->sdkFieldName = $sdkFieldName;
         $this->parameterName = ucfirst($sdkFieldName);
 
+        if (preg_match('#^Set[A-Z]#', $this->parameterName))
+        {
+            //Remove Set from the parameter name
+            $this->parameterName = substr($this->parameterName, 3);
+        }
+
         switch ($fieldData->type)
         {
             case 'key':

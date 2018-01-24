@@ -519,7 +519,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteSlogan($value)
+    public function setWebsiteSlogan($value)
     {
         $this->setWebsiteSlogan = $value;
 
@@ -532,7 +532,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteMenuSource($value)
+    public function setWebsiteMenuSource($value)
     {
         $this->setWebsiteMenuSource = $value;
 
@@ -545,7 +545,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteIndexPageID($value)
+    public function setWebsiteIndexPageID($value)
     {
         $this->setWebsiteIndexPageID = $value;
 
@@ -610,7 +610,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteFrontPageNumberOfHighlightedAnimals($value)
+    public function setWebsiteFrontPageNumberOfHighlightedAnimals($value)
     {
         $this->setWebsiteFrontPageNumberOfHighlightedAnimals = $value;
 
@@ -623,7 +623,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteFrontPageHighlightedAnimalsDescriptionLength($value)
+    public function setWebsiteFrontPageHighlightedAnimalsDescriptionLength($value)
     {
         $this->setWebsiteFrontPageHighlightedAnimalsDescriptionLength = $value;
 
@@ -675,7 +675,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalPictureMode($value)
+    public function setWebsiteAnimalPictureMode($value)
     {
         $this->setWebsiteAnimalPictureMode = $value;
 
@@ -688,7 +688,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteAnimalPictureAnimalID($value)
+    public function setWebsiteAnimalPictureAnimalID($value)
     {
         $this->setWebsiteAnimalPictureAnimalID = $value;
 
@@ -766,7 +766,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteSideBarWidth($value)
+    public function setWebsiteSideBarWidth($value)
     {
         $this->setWebsiteSideBarWidth = $value;
 
@@ -792,7 +792,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param integer $value
      * @return $this
      */
-    public function setSetWebsiteBackgroundImageID($value)
+    public function setWebsiteBackgroundImageID($value)
     {
         $this->setWebsiteBackgroundImageID = $value;
 
@@ -831,7 +831,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseLayout($value)
+    public function setWebsiteAnimalBrowseLayout($value)
     {
         $this->setWebsiteAnimalBrowseLayout = $value;
 
@@ -844,7 +844,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowsePanelWidth($value)
+    public function setWebsiteAnimalBrowsePanelWidth($value)
     {
         $this->setWebsiteAnimalBrowsePanelWidth = $value;
 
@@ -857,7 +857,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowsePanelColumns($value)
+    public function setWebsiteAnimalBrowsePanelColumns($value)
     {
         $this->setWebsiteAnimalBrowsePanelColumns = $value;
 
@@ -870,7 +870,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseAnimalsPerPage($value)
+    public function setWebsiteAnimalBrowseAnimalsPerPage($value)
     {
         $this->setWebsiteAnimalBrowseAnimalsPerPage = $value;
 
@@ -883,7 +883,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseLimit($value)
+    public function setWebsiteAnimalBrowseLimit($value)
     {
         $this->setWebsiteAnimalBrowseLimit = $value;
 
@@ -922,7 +922,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseDescriptionLength($value)
+    public function setWebsiteAnimalBrowseDescriptionLength($value)
     {
         $this->setWebsiteAnimalBrowseDescriptionLength = $value;
 
@@ -935,7 +935,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetWebsiteAnimalBrowseFields($value)
+    public function setWebsiteAnimalBrowseFields($value)
     {
         $this->setWebsiteAnimalBrowseFields = $value;
 
@@ -961,7 +961,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalDetailPageStyle($value)
+    public function setAnimalDetailPageStyle($value)
     {
         $this->setAnimalDetailPageStyle = $value;
 
@@ -1052,7 +1052,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalDetailPageEventsLimit($value)
+    public function setAnimalDetailPageEventsLimit($value)
     {
         $this->setAnimalDetailPageEventsLimit = $value;
 
@@ -1195,7 +1195,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalImageBorderStyle($value)
+    public function setAnimalImageBorderStyle($value)
     {
         $this->setAnimalImageBorderStyle = $value;
 
@@ -1208,7 +1208,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalImageBorderColor($value)
+    public function setAnimalImageBorderColor($value)
     {
         $this->setAnimalImageBorderColor = $value;
 
@@ -1221,7 +1221,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalImageMatteColor($value)
+    public function setAnimalImageMatteColor($value)
     {
         $this->setAnimalImageMatteColor = $value;
 

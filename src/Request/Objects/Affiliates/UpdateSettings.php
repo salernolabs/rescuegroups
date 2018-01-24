@@ -200,7 +200,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesPayPalEmail($value)
+    public function setAffiliatesPayPalEmail($value)
     {
         $this->setAffiliatesPayPalEmail = $value;
 
@@ -226,7 +226,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesIGiveCauseID($value)
+    public function setAffiliatesIGiveCauseID($value)
     {
         $this->setAffiliatesIGiveCauseID = $value;
 
@@ -252,7 +252,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesAmazonTag($value)
+    public function setAffiliatesAmazonTag($value)
     {
         $this->setAffiliatesAmazonTag = $value;
 
@@ -278,7 +278,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesUWID($value)
+    public function setAffiliatesUWID($value)
     {
         $this->setAffiliatesUWID = $value;
 
@@ -304,7 +304,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesCFCID($value)
+    public function setAffiliatesCFCID($value)
     {
         $this->setAffiliatesCFCID = $value;
 
@@ -330,7 +330,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesVolunteerMatchOrgID($value)
+    public function setAffiliatesVolunteerMatchOrgID($value)
     {
         $this->setAffiliatesVolunteerMatchOrgID = $value;
 
@@ -356,7 +356,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEIN($value)
+    public function setAffiliatesEIN($value)
     {
         $this->setAffiliatesEIN = $value;
 
@@ -382,7 +382,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEbayStoreName($value)
+    public function setAffiliatesEbayStoreName($value)
     {
         $this->setAffiliatesEbayStoreName = $value;
 
@@ -408,7 +408,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesByVetsOnlyPartner($value)
+    public function setAffiliatesByVetsOnlyPartner($value)
     {
         $this->setAffiliatesByVetsOnlyPartner = $value;
 
@@ -434,7 +434,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesFacebookPage($value)
+    public function setAffiliatesFacebookPage($value)
     {
         $this->setAffiliatesFacebookPage = $value;
 
@@ -473,7 +473,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesTwitterAccount($value)
+    public function setAffiliatesTwitterAccount($value)
     {
         $this->setAffiliatesTwitterAccount = $value;
 

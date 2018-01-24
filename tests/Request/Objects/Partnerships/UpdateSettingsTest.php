@@ -21,7 +21,7 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Partnerships\UpdateSettings();
         $query->setEnablePartnerships("Enable the Partnerships feature");
-        $query->setSetPartnershipAlertEmailAddresses("Partnership alert email address(es)");
+        $query->setPartnershipAlertEmailAddresses("Partnership alert email address(es)");
 
         $data = $this->api->getPostObject($query);
 

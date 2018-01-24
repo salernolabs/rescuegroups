@@ -21,7 +21,7 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Memorials\UpdateSettings();
         $query->setEnableMemorials("Enable the Memorials feature");
-        $query->setSetMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
+        $query->setMemorialsDonationOnlineStoreItem("Select Memorials donation store item");
         $query->setShowMemorialsAlphaLinks("Show alphabetical links (A-Z) on the Memorials page");
 
         $data = $this->api->getPostObject($query);

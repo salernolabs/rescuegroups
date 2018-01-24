@@ -59,7 +59,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetEventsMapWebsite($value)
+    public function setEventsMapWebsite($value)
     {
         $this->setEventsMapWebsite = $value;
 

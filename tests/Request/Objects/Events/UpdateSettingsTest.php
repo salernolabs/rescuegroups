@@ -21,7 +21,7 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
 
         $query = new \RescueGroups\Request\Objects\Events\UpdateSettings();
         $query->setEnableEvents("Enable the Events feature");
-        $query->setSetEventsMapWebsite("Map website to use with the Events feature");
+        $query->setEventsMapWebsite("Map website to use with the Events feature");
 
         $data = $this->api->getPostObject($query);
 
