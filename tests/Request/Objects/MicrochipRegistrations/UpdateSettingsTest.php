@@ -20,7 +20,9 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\MicrochipRegistrations\UpdateSettings();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('microchipRegistrations', $data['objectType']);
         $this->assertEquals('updateSettings', $data['objectAction']);

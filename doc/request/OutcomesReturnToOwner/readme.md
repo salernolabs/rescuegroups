@@ -12,15 +12,6 @@ Performs outcomesReturntoowner.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesReturntoowner.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesReturntoowner.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesReturntoowner.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -96,11 +87,11 @@ Performs outcomesReturntoowner.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReturnToOwner\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setownerId("Return To");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setOwnerId("Return To");
 
     $result = $api->executeRequest($query);
 

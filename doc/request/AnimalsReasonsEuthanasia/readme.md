@@ -12,15 +12,6 @@ Performs animalsReasonsEuthanasia.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsReasonsEuthanasia.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsReasonsEuthanasia.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs animalsReasonsEuthanasia.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\View();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs animalsReasonsEuthanasia.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\Delete();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 

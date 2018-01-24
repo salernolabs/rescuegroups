@@ -12,15 +12,6 @@ Performs newsarticles.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\NewsArticles\Define();
 
     $result = $api->executeRequest($query);
-Performs newsarticles.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\NewsArticles\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs newsarticles.view query.
 
@@ -28,7 +19,7 @@ Performs newsarticles.view query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -39,7 +30,7 @@ Performs newsarticles.publicView query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -115,7 +106,7 @@ Performs newsarticles.delete query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -136,7 +127,7 @@ Performs newsarticles.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\NewsArticles\UpdateSettings();
 
-    $query->setenableNewsarticles("Enable the News Articles feature");
+    $query->setEnableNewsarticles("Enable the News Articles feature");
 
     $result = $api->executeRequest($query);
 

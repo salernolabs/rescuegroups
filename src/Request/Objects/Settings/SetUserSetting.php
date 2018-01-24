@@ -56,6 +56,9 @@ class SetUserSetting extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->defaultAnimalTemplate !== null) $parameterArray['values'][] = ["settingDefaultAnimalTemplate"=>$this->defaultAnimalTemplate];
+        $value = [];
+        if ($this->defaultAnimalTemplate !== null) $value["settingDefaultAnimalTemplate"] = $this->defaultAnimalTemplate;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

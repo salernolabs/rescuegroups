@@ -59,7 +59,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPartnershipAlertEmailAddresses($value)
+    public function setPartnershipAlertEmailAddresses($value)
     {
         $this->setPartnershipAlertEmailAddresses = $value;
 
@@ -76,7 +76,10 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enablePartnerships !== null) $parameterArray['values'][] = ["enablePartnerships"=>$this->enablePartnerships];
-        if ($this->setPartnershipAlertEmailAddresses !== null) $parameterArray['values'][] = ["setPartnershipAlertEmailAddresses"=>$this->setPartnershipAlertEmailAddresses];
+        $value = [];
+        if ($this->enablePartnerships !== null) $value["enablePartnerships"] = $this->enablePartnerships;
+        if ($this->setPartnershipAlertEmailAddresses !== null) $value["setPartnershipAlertEmailAddresses"] = $this->setPartnershipAlertEmailAddresses;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -29,6 +29,54 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_FORM_ID = 'formId';
+    const FIELD_ANIMAL_ID = 'animalId';
+    const FIELD_ASSIGNED_TO = 'assignedTo';
+    const FIELD_ASSIGNED_TO_ID = 'assignedToId';
+    const FIELD_COMMENTS_COUNT = 'commentsCount';
+    const FIELD_COMMENTS_INLINE = 'commentsInline';
+    const FIELD_COMPLETED = 'completed';
+    const FIELD_UPDATED = 'updated';
+    const FIELD_FORM_NAME = 'formName';
+    const FIELD_PENDING = 'pending';
+    const FIELD_STATUS = 'status';
+    const FIELD_STATUS_ID = 'statusId';
+    const FIELD_ANSWERS = 'answers';
+    const FIELD_SUBMITTER_ID = 'submitterId';
+    const FIELD_SUBMITTER_CLASS = 'submitterClass';
+    const FIELD_SUBMITTER_SALUTATION = 'submitterSalutation';
+    const FIELD_SUBMITTER_NAME = 'submitterName';
+    const FIELD_SUBMITTER_FIRSTNAME = 'submitterFirstname';
+    const FIELD_SUBMITTER_LASTNAME = 'submitterLastname';
+    const FIELD_SUBMITTER_TITLE = 'submitterTitle';
+    const FIELD_SUBMITTER_ADDRESS = 'submitterAddress';
+    const FIELD_SUBMITTER_CITY = 'submitterCity';
+    const FIELD_SUBMITTER_STATE = 'submitterState';
+    const FIELD_SUBMITTER_POSTALCODE = 'submitterPostalcode';
+    const FIELD_SUBMITTER_PLUS4 = 'submitterPlus4';
+    const FIELD_SUBMITTER_COUNTY = 'submitterCounty';
+    const FIELD_SUBMITTER_COUNTRY = 'submitterCountry';
+    const FIELD_SUBMITTER_PHONE_HOME = 'submitterPhoneHome';
+    const FIELD_SUBMITTER_PHONE_WORK = 'submitterPhoneWork';
+    const FIELD_SUBMITTER_PHONE_WORK_EXT = 'submitterPhoneWorkExt';
+    const FIELD_SUBMITTER_PHONE_CELL = 'submitterPhoneCell';
+    const FIELD_SUBMITTER_FAX = 'submitterFax';
+    const FIELD_SUBMITTER_EMAIL = 'submitterEmail';
+    const FIELD_SUBMITTER_EMAIL_ALT = 'submitterEmailAlt';
+    const FIELD_SUBMITTER_EMAIL_PAGER = 'submitterEmailPager';
+    const FIELD_SUBMITTER_COMPANY = 'submitterCompany';
+    const FIELD_SUBMITTER_REFERRED_BY = 'submitterReferredBy';
+    const FIELD_SUBMITTER_CARRIER = 'submitterCarrier';
+    const FIELD_SUBMITTER_BOUNCES = 'submitterBounces';
+    const FIELD_SUBMITTER_SEND_MAIL = 'submitterSendMail';
+    const FIELD_SUBMITTER_ACTIVE = 'submitterActive';
+    const FIELD_SUBMITTER_COMMENT = 'submitterComment';
+    const FIELD_SUBMITTER_TRANSPORTATION = 'submitterTransportation';
+    const FIELD_SUBMITTER_AVAILABILITY = 'submitterAvailability';
+    const FIELD_SUBMITTER_CARETAKER_PUBLIC = 'submitterCaretakerPublic';
+    const FIELD_SUBMITTER_COALITION_MEMBER = 'submitterCoalitionMember';
+
     /**
      * Filterable Fields
      *

@@ -200,7 +200,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesPayPalEmail($value)
+    public function setAffiliatesPayPalEmail($value)
     {
         $this->setAffiliatesPayPalEmail = $value;
 
@@ -226,7 +226,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesIGiveCauseID($value)
+    public function setAffiliatesIGiveCauseID($value)
     {
         $this->setAffiliatesIGiveCauseID = $value;
 
@@ -252,7 +252,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesAmazonTag($value)
+    public function setAffiliatesAmazonTag($value)
     {
         $this->setAffiliatesAmazonTag = $value;
 
@@ -278,7 +278,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesUWID($value)
+    public function setAffiliatesUWID($value)
     {
         $this->setAffiliatesUWID = $value;
 
@@ -304,7 +304,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesCFCID($value)
+    public function setAffiliatesCFCID($value)
     {
         $this->setAffiliatesCFCID = $value;
 
@@ -330,7 +330,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesVolunteerMatchOrgID($value)
+    public function setAffiliatesVolunteerMatchOrgID($value)
     {
         $this->setAffiliatesVolunteerMatchOrgID = $value;
 
@@ -356,7 +356,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEIN($value)
+    public function setAffiliatesEIN($value)
     {
         $this->setAffiliatesEIN = $value;
 
@@ -382,7 +382,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesEbayStoreName($value)
+    public function setAffiliatesEbayStoreName($value)
     {
         $this->setAffiliatesEbayStoreName = $value;
 
@@ -408,7 +408,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesByVetsOnlyPartner($value)
+    public function setAffiliatesByVetsOnlyPartner($value)
     {
         $this->setAffiliatesByVetsOnlyPartner = $value;
 
@@ -434,7 +434,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesFacebookPage($value)
+    public function setAffiliatesFacebookPage($value)
     {
         $this->setAffiliatesFacebookPage = $value;
 
@@ -473,7 +473,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAffiliatesTwitterAccount($value)
+    public function setAffiliatesTwitterAccount($value)
     {
         $this->setAffiliatesTwitterAccount = $value;
 
@@ -516,29 +516,32 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->setAffiliatesPayPalEmail !== null) $parameterArray['values'][] = ["setAffiliatesPayPalEmail"=>$this->setAffiliatesPayPalEmail];
-        if ($this->showAffiliatesPayPalLink !== null) $parameterArray['values'][] = ["showAffiliatesPayPalLink"=>$this->showAffiliatesPayPalLink];
-        if ($this->setAffiliatesIGiveCauseID !== null) $parameterArray['values'][] = ["setAffiliatesIGiveCauseID"=>$this->setAffiliatesIGiveCauseID];
-        if ($this->showAffiliatesIGiveLink !== null) $parameterArray['values'][] = ["showAffiliatesIGiveLink"=>$this->showAffiliatesIGiveLink];
-        if ($this->setAffiliatesAmazonTag !== null) $parameterArray['values'][] = ["setAffiliatesAmazonTag"=>$this->setAffiliatesAmazonTag];
-        if ($this->showAffiliatesAmazonLink !== null) $parameterArray['values'][] = ["showAffiliatesAmazonLink"=>$this->showAffiliatesAmazonLink];
-        if ($this->setAffiliatesUWID !== null) $parameterArray['values'][] = ["setAffiliatesUWID"=>$this->setAffiliatesUWID];
-        if ($this->showAffiliatesUWLink !== null) $parameterArray['values'][] = ["showAffiliatesUWLink"=>$this->showAffiliatesUWLink];
-        if ($this->setAffiliatesCFCID !== null) $parameterArray['values'][] = ["setAffiliatesCFCID"=>$this->setAffiliatesCFCID];
-        if ($this->showAffiliatesCFCLink !== null) $parameterArray['values'][] = ["showAffiliatesCFCLink"=>$this->showAffiliatesCFCLink];
-        if ($this->setAffiliatesVolunteerMatchOrgID !== null) $parameterArray['values'][] = ["setAffiliatesVolunteerMatchOrgID"=>$this->setAffiliatesVolunteerMatchOrgID];
-        if ($this->showAffiliatesVolunteerMatchLink !== null) $parameterArray['values'][] = ["showAffiliatesVolunteerMatchLink"=>$this->showAffiliatesVolunteerMatchLink];
-        if ($this->setAffiliatesEIN !== null) $parameterArray['values'][] = ["setAffiliatesEIN"=>$this->setAffiliatesEIN];
-        if ($this->showAffiliatesHelpingLink !== null) $parameterArray['values'][] = ["showAffiliatesHelpingLink"=>$this->showAffiliatesHelpingLink];
-        if ($this->setAffiliatesEbayStoreName !== null) $parameterArray['values'][] = ["setAffiliatesEbayStoreName"=>$this->setAffiliatesEbayStoreName];
-        if ($this->showAffiliatesEbayStoreLink !== null) $parameterArray['values'][] = ["showAffiliatesEbayStoreLink"=>$this->showAffiliatesEbayStoreLink];
-        if ($this->setAffiliatesByVetsOnlyPartner !== null) $parameterArray['values'][] = ["setAffiliatesByVetsOnlyPartner"=>$this->setAffiliatesByVetsOnlyPartner];
-        if ($this->showAffiliatesByVetsOnlyLink !== null) $parameterArray['values'][] = ["showAffiliatesByVetsOnlyLink"=>$this->showAffiliatesByVetsOnlyLink];
-        if ($this->setAffiliatesFacebookPage !== null) $parameterArray['values'][] = ["setAffiliatesFacebookPage"=>$this->setAffiliatesFacebookPage];
-        if ($this->showAffiliatesFacebookLink !== null) $parameterArray['values'][] = ["showAffiliatesFacebookLink"=>$this->showAffiliatesFacebookLink];
-        if ($this->showAffiliatesFacebookBadge !== null) $parameterArray['values'][] = ["showAffiliatesFacebookBadge"=>$this->showAffiliatesFacebookBadge];
-        if ($this->setAffiliatesTwitterAccount !== null) $parameterArray['values'][] = ["setAffiliatesTwitterAccount"=>$this->setAffiliatesTwitterAccount];
-        if ($this->showAffiliatesTwitterLink !== null) $parameterArray['values'][] = ["showAffiliatesTwitterLink"=>$this->showAffiliatesTwitterLink];
-        if ($this->showAffiliatesTwitterBadge !== null) $parameterArray['values'][] = ["showAffiliatesTwitterBadge"=>$this->showAffiliatesTwitterBadge];
+        $value = [];
+        if ($this->setAffiliatesPayPalEmail !== null) $value["setAffiliatesPayPalEmail"] = $this->setAffiliatesPayPalEmail;
+        if ($this->showAffiliatesPayPalLink !== null) $value["showAffiliatesPayPalLink"] = $this->showAffiliatesPayPalLink;
+        if ($this->setAffiliatesIGiveCauseID !== null) $value["setAffiliatesIGiveCauseID"] = $this->setAffiliatesIGiveCauseID;
+        if ($this->showAffiliatesIGiveLink !== null) $value["showAffiliatesIGiveLink"] = $this->showAffiliatesIGiveLink;
+        if ($this->setAffiliatesAmazonTag !== null) $value["setAffiliatesAmazonTag"] = $this->setAffiliatesAmazonTag;
+        if ($this->showAffiliatesAmazonLink !== null) $value["showAffiliatesAmazonLink"] = $this->showAffiliatesAmazonLink;
+        if ($this->setAffiliatesUWID !== null) $value["setAffiliatesUWID"] = $this->setAffiliatesUWID;
+        if ($this->showAffiliatesUWLink !== null) $value["showAffiliatesUWLink"] = $this->showAffiliatesUWLink;
+        if ($this->setAffiliatesCFCID !== null) $value["setAffiliatesCFCID"] = $this->setAffiliatesCFCID;
+        if ($this->showAffiliatesCFCLink !== null) $value["showAffiliatesCFCLink"] = $this->showAffiliatesCFCLink;
+        if ($this->setAffiliatesVolunteerMatchOrgID !== null) $value["setAffiliatesVolunteerMatchOrgID"] = $this->setAffiliatesVolunteerMatchOrgID;
+        if ($this->showAffiliatesVolunteerMatchLink !== null) $value["showAffiliatesVolunteerMatchLink"] = $this->showAffiliatesVolunteerMatchLink;
+        if ($this->setAffiliatesEIN !== null) $value["setAffiliatesEIN"] = $this->setAffiliatesEIN;
+        if ($this->showAffiliatesHelpingLink !== null) $value["showAffiliatesHelpingLink"] = $this->showAffiliatesHelpingLink;
+        if ($this->setAffiliatesEbayStoreName !== null) $value["setAffiliatesEbayStoreName"] = $this->setAffiliatesEbayStoreName;
+        if ($this->showAffiliatesEbayStoreLink !== null) $value["showAffiliatesEbayStoreLink"] = $this->showAffiliatesEbayStoreLink;
+        if ($this->setAffiliatesByVetsOnlyPartner !== null) $value["setAffiliatesByVetsOnlyPartner"] = $this->setAffiliatesByVetsOnlyPartner;
+        if ($this->showAffiliatesByVetsOnlyLink !== null) $value["showAffiliatesByVetsOnlyLink"] = $this->showAffiliatesByVetsOnlyLink;
+        if ($this->setAffiliatesFacebookPage !== null) $value["setAffiliatesFacebookPage"] = $this->setAffiliatesFacebookPage;
+        if ($this->showAffiliatesFacebookLink !== null) $value["showAffiliatesFacebookLink"] = $this->showAffiliatesFacebookLink;
+        if ($this->showAffiliatesFacebookBadge !== null) $value["showAffiliatesFacebookBadge"] = $this->showAffiliatesFacebookBadge;
+        if ($this->setAffiliatesTwitterAccount !== null) $value["setAffiliatesTwitterAccount"] = $this->setAffiliatesTwitterAccount;
+        if ($this->showAffiliatesTwitterLink !== null) $value["showAffiliatesTwitterLink"] = $this->showAffiliatesTwitterLink;
+        if ($this->showAffiliatesTwitterBadge !== null) $value["showAffiliatesTwitterBadge"] = $this->showAffiliatesTwitterBadge;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

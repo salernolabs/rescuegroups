@@ -56,6 +56,9 @@ class SetPublicStatuses extends \RescueGroups\Request\Objects\Base implements \R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->statuslist !== null) $parameterArray['values'][] = ["statuslist"=>$this->statuslist];
+        $value = [];
+        if ($this->statuslist !== null) $value["statuslist"] = $this->statuslist;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

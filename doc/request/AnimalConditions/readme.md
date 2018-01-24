@@ -12,15 +12,6 @@ Performs animalConditions.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\AnimalConditions\Define();
 
     $result = $api->executeRequest($query);
-Performs animalConditions.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalConditions\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalConditions.list list query, typically suitable for filling HTML select fields.
 

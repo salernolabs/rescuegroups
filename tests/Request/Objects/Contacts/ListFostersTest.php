@@ -20,7 +20,9 @@ class ListFostersTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Contacts\ListFosters();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('contacts', $data['objectType']);
         $this->assertEquals('listFosters', $data['objectAction']);

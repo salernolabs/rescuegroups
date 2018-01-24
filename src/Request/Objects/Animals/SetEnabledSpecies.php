@@ -56,6 +56,9 @@ class SetEnabledSpecies extends \RescueGroups\Request\Objects\Base implements \R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->fieldlist !== null) $parameterArray['values'][] = ["fieldlist"=>$this->fieldlist];
+        $value = [];
+        if ($this->fieldlist !== null) $value["fieldlist"] = $this->fieldlist;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

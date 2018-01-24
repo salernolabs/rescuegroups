@@ -36,5 +36,8 @@ class ListRescues extends \RescueGroups\Request\Objects\Base implements \RescueG
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
+        $value = [];
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

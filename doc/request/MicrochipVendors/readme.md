@@ -12,15 +12,6 @@ Performs microchipVendors.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\MicrochipVendors\Define();
 
     $result = $api->executeRequest($query);
-Performs microchipVendors.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\MicrochipVendors\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs microchipVendors.list list query, typically suitable for filling HTML select fields.
 

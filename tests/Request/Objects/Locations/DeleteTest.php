@@ -20,7 +20,11 @@ class DeleteTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Locations\Delete();
+        $query->setId("ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["locationID"]);
 
         $this->assertEquals('locations', $data['objectType']);
         $this->assertEquals('delete', $data['objectAction']);

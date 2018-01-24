@@ -29,6 +29,21 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_ANIMAL_ID = 'animalId';
+    const FIELD_ANIMAL_CONDITION_ID = 'animalConditionId';
+    const FIELD_DATE = 'date';
+    const FIELD_NOTES = 'notes';
+    const FIELD_FOUND_LOCATION = 'foundLocation';
+    const FIELD_FOUND_ADDRESS = 'foundAddress';
+    const FIELD_FOUND_CITY = 'foundCity';
+    const FIELD_FOUND_STATE = 'foundState';
+    const FIELD_FOUND_POSTALCODE = 'foundPostalcode';
+    const FIELD_FINDER_ID = 'finderId';
+    const FIELD_ANIMAL_NAME = 'animalName';
+    const FIELD_ANIMAL_CONDITION_NAME = 'animalConditionName';
+    const FIELD_FINDER_NAME = 'finderName';
+
     /**
      * Filterable Fields
      *

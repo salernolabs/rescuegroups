@@ -12,15 +12,6 @@ Performs partnerships.define query. This gives information about the API interfa
     $query = new \RescueGroups\Request\Objects\Partnerships\Define();
 
     $result = $api->executeRequest($query);
-Performs partnerships.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Partnerships\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs partnerships.view query.
 
@@ -28,7 +19,7 @@ Performs partnerships.view query.
 
     $query = new \RescueGroups\Request\Objects\Partnerships\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -56,7 +47,7 @@ Performs partnerships.request query.
 
     $query = new \RescueGroups\Request\Objects\Partnerships\Request();
 
-    $query->setsharingOrgId("Sharing Org");
+    $query->setSharingOrgId("Sharing Org");
 
     $result = $api->executeRequest($query);
 
@@ -77,8 +68,8 @@ Performs partnerships.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Partnerships\UpdateSettings();
 
-    $query->setenablePartnerships("Enable the Partnerships feature");
-    $query->setsetPartnershipAlertEmailAddresses("Partnership alert email address(es)");
+    $query->setEnablePartnerships("Enable the Partnerships feature");
+    $query->setPartnershipAlertEmailAddresses("Partnership alert email address(es)");
 
     $result = $api->executeRequest($query);
 

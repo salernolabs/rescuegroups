@@ -176,12 +176,15 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesTransferAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["outcomesTransferDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesTransferNotes"=>$this->notes];
-        if ($this->receiveId !== null) $parameterArray['values'][] = ["outcomesTransferReceiveID"=>$this->receiveId];
-        if ($this->coalitionMember !== null) $parameterArray['values'][] = ["outcomesTransferCoalitionMember"=>$this->coalitionMember];
-        if ($this->reasonId !== null) $parameterArray['values'][] = ["outcomesTransferReasonID"=>$this->reasonId];
+        $value = [];
+        if ($this->outcomeId !== null) $value["outcomeID"] = $this->outcomeId;
+        if ($this->animalConditionId !== null) $value["outcomesTransferAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["outcomesTransferDate"] = $this->date;
+        if ($this->notes !== null) $value["outcomesTransferNotes"] = $this->notes;
+        if ($this->receiveId !== null) $value["outcomesTransferReceiveID"] = $this->receiveId;
+        if ($this->coalitionMember !== null) $value["outcomesTransferCoalitionMember"] = $this->coalitionMember;
+        if ($this->reasonId !== null) $value["outcomesTransferReasonID"] = $this->reasonId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

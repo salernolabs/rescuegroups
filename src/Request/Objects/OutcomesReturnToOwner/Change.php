@@ -136,10 +136,13 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesReturntoownerAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["outcomesReturntoownerDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesReturntoownerNotes"=>$this->notes];
-        if ($this->ownerId !== null) $parameterArray['values'][] = ["outcomesReturntoownerOwnerID"=>$this->ownerId];
+        $value = [];
+        if ($this->outcomeId !== null) $value["outcomeID"] = $this->outcomeId;
+        if ($this->animalConditionId !== null) $value["outcomesReturntoownerAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["outcomesReturntoownerDate"] = $this->date;
+        if ($this->notes !== null) $value["outcomesReturntoownerNotes"] = $this->notes;
+        if ($this->ownerId !== null) $value["outcomesReturntoownerOwnerID"] = $this->ownerId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

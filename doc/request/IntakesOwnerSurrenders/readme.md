@@ -12,15 +12,6 @@ Performs intakesOwnersurrenders.define query. This gives information about the A
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesOwnersurrenders.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesOwnersurrenders.view query.
 
@@ -28,7 +19,7 @@ Performs intakesOwnersurrenders.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\View();
 
-    $query->setid("Owner Surrender");
+    $query->setId("Owner Surrender");
 
     $result = $api->executeRequest($query);
 
@@ -92,13 +83,13 @@ Performs intakesOwnersurrenders.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerSurrenders\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setownerId("Surrendered By");
-    $query->setreasonId("Surrender Reason");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setOwnerId("Surrendered By");
+    $query->setReasonId("Surrender Reason");
 
     $result = $api->executeRequest($query);
 

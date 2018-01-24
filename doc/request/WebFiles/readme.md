@@ -12,15 +12,6 @@ Performs webfiles.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\WebFiles\Define();
 
     $result = $api->executeRequest($query);
-Performs webfiles.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\WebFiles\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs webfiles.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs webfiles.view query.
 
     $query = new \RescueGroups\Request\Objects\WebFiles\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

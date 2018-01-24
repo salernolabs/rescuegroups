@@ -96,8 +96,11 @@ class AddPictureUrl extends \RescueGroups\Request\Objects\Base implements \Rescu
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
-        if ($this->pictureUrl !== null) $parameterArray['values'][] = ["pictureUrl"=>$this->pictureUrl];
-        if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];
+        $value = [];
+        if ($this->id !== null) $value["animalID"] = $this->id;
+        if ($this->pictureUrl !== null) $value["pictureUrl"] = $this->pictureUrl;
+        if ($this->mediaOrder !== null) $value["mediaOrder"] = $this->mediaOrder;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

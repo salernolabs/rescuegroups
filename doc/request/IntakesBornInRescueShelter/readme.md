@@ -12,15 +12,6 @@ Performs intakesBorninrescueshelter.define query. This gives information about t
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesBorninrescueshelter.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesBorninrescueshelter.view query.
 
@@ -28,7 +19,7 @@ Performs intakesBorninrescueshelter.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\View();
 
-    $query->setid("Born In Rescue/Shelter");
+    $query->setId("Born In Rescue/Shelter");
 
     $result = $api->executeRequest($query);
 
@@ -88,11 +79,11 @@ Performs intakesBorninrescueshelter.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesBornInRescueShelter\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
 
     $result = $api->executeRequest($query);
 

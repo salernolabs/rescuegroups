@@ -29,6 +29,14 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_VOLUNTEER_ID = 'volunteerId';
+    const FIELD_VOLUNTEER_DATE = 'volunteerDate';
+    const FIELD_CREATED_DATE = 'createdDate';
+    const FIELD_VOLUNTEER_LENGTH = 'volunteerLength';
+    const FIELD_VOLUNTEER_TASK = 'volunteerTask';
+    const FIELD_VOLUNTEER_TYPE = 'volunteerType';
+
     /**
      * Filterable Fields
      *

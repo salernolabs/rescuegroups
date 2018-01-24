@@ -542,7 +542,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesYoungest($value)
+    public function setAnimalsSpecialListBabiesYoungest($value)
     {
         $this->setAnimalsSpecialListBabiesYoungest = $value;
 
@@ -555,7 +555,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListBabiesOldest($value)
+    public function setAnimalsSpecialListBabiesOldest($value)
     {
         $this->setAnimalsSpecialListBabiesOldest = $value;
 
@@ -581,7 +581,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensYoungest($value)
+    public function setAnimalsSpecialListTeensYoungest($value)
     {
         $this->setAnimalsSpecialListTeensYoungest = $value;
 
@@ -594,7 +594,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListTeensOldest($value)
+    public function setAnimalsSpecialListTeensOldest($value)
     {
         $this->setAnimalsSpecialListTeensOldest = $value;
 
@@ -620,7 +620,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsYoungest($value)
+    public function setAnimalsSpecialListAdultsYoungest($value)
     {
         $this->setAnimalsSpecialListAdultsYoungest = $value;
 
@@ -633,7 +633,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListAdultsOldest($value)
+    public function setAnimalsSpecialListAdultsOldest($value)
     {
         $this->setAnimalsSpecialListAdultsOldest = $value;
 
@@ -659,7 +659,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListSeniorsYoungest($value)
+    public function setAnimalsSpecialListSeniorsYoungest($value)
     {
         $this->setAnimalsSpecialListSeniorsYoungest = $value;
 
@@ -685,7 +685,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeYoungest($value)
+    public function setAnimalsSpecialListLongtimeYoungest($value)
     {
         $this->setAnimalsSpecialListLongtimeYoungest = $value;
 
@@ -698,7 +698,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListLongtimeOldest($value)
+    public function setAnimalsSpecialListLongtimeOldest($value)
     {
         $this->setAnimalsSpecialListLongtimeOldest = $value;
 
@@ -724,7 +724,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalsSpecialListRecentDays($value)
+    public function setAnimalsSpecialListRecentDays($value)
     {
         $this->setAnimalsSpecialListRecentDays = $value;
 
@@ -802,7 +802,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalAutoRescueIDFormat($value)
+    public function setAnimalAutoRescueIDFormat($value)
     {
         $this->setAnimalAutoRescueIDFormat = $value;
 
@@ -1140,7 +1140,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportYouTubeAccount($value)
+    public function setAnimalExportYouTubeAccount($value)
     {
         $this->setAnimalExportYouTubeAccount = $value;
 
@@ -1153,7 +1153,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportYouTubeAuthorizationCode($value)
+    public function setAnimalExportYouTubeAuthorizationCode($value)
     {
         $this->setAnimalExportYouTubeAuthorizationCode = $value;
 
@@ -1166,7 +1166,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory1($value)
+    public function setAnimalExportDefaultCategory1($value)
     {
         $this->setAnimalExportDefaultCategory1 = $value;
 
@@ -1179,7 +1179,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory4($value)
+    public function setAnimalExportDefaultCategory4($value)
     {
         $this->setAnimalExportDefaultCategory4 = $value;
 
@@ -1192,7 +1192,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory3($value)
+    public function setAnimalExportDefaultCategory3($value)
     {
         $this->setAnimalExportDefaultCategory3 = $value;
 
@@ -1205,7 +1205,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory2($value)
+    public function setAnimalExportDefaultCategory2($value)
     {
         $this->setAnimalExportDefaultCategory2 = $value;
 
@@ -1218,7 +1218,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory5($value)
+    public function setAnimalExportDefaultCategory5($value)
     {
         $this->setAnimalExportDefaultCategory5 = $value;
 
@@ -1231,7 +1231,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory6($value)
+    public function setAnimalExportDefaultCategory6($value)
     {
         $this->setAnimalExportDefaultCategory6 = $value;
 
@@ -1244,7 +1244,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory8($value)
+    public function setAnimalExportDefaultCategory8($value)
     {
         $this->setAnimalExportDefaultCategory8 = $value;
 
@@ -1257,7 +1257,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory7($value)
+    public function setAnimalExportDefaultCategory7($value)
     {
         $this->setAnimalExportDefaultCategory7 = $value;
 
@@ -1270,7 +1270,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory13($value)
+    public function setAnimalExportDefaultCategory13($value)
     {
         $this->setAnimalExportDefaultCategory13 = $value;
 
@@ -1283,7 +1283,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory9($value)
+    public function setAnimalExportDefaultCategory9($value)
     {
         $this->setAnimalExportDefaultCategory9 = $value;
 
@@ -1296,7 +1296,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory11($value)
+    public function setAnimalExportDefaultCategory11($value)
     {
         $this->setAnimalExportDefaultCategory11 = $value;
 
@@ -1309,7 +1309,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory10($value)
+    public function setAnimalExportDefaultCategory10($value)
     {
         $this->setAnimalExportDefaultCategory10 = $value;
 
@@ -1322,7 +1322,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetAnimalExportDefaultCategory12($value)
+    public function setAnimalExportDefaultCategory12($value)
     {
         $this->setAnimalExportDefaultCategory12 = $value;
 
@@ -1374,7 +1374,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetFreePetChipRegistryUserName($value)
+    public function setFreePetChipRegistryUserName($value)
     {
         $this->setFreePetChipRegistryUserName = $value;
 
@@ -1400,7 +1400,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPetLinkUserName($value)
+    public function setPetLinkUserName($value)
     {
         $this->setPetLinkUserName = $value;
 
@@ -1413,7 +1413,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetPetLinkPassword($value)
+    public function setPetLinkPassword($value)
     {
         $this->setPetLinkPassword = $value;
 
@@ -1439,7 +1439,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetMicrochipAlertEmails($value)
+    public function setMicrochipAlertEmails($value)
     {
         $this->setMicrochipAlertEmails = $value;
 
@@ -1456,76 +1456,79 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableAnimalsSpecialListBabies !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListBabies"=>$this->enableAnimalsSpecialListBabies];
-        if ($this->setAnimalsSpecialListBabiesYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesYoungest"=>$this->setAnimalsSpecialListBabiesYoungest];
-        if ($this->setAnimalsSpecialListBabiesOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListBabiesOldest"=>$this->setAnimalsSpecialListBabiesOldest];
-        if ($this->enableAnimalsSpecialListTeens !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListTeens"=>$this->enableAnimalsSpecialListTeens];
-        if ($this->setAnimalsSpecialListTeensYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensYoungest"=>$this->setAnimalsSpecialListTeensYoungest];
-        if ($this->setAnimalsSpecialListTeensOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListTeensOldest"=>$this->setAnimalsSpecialListTeensOldest];
-        if ($this->enableAnimalsSpecialListAdults !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListAdults"=>$this->enableAnimalsSpecialListAdults];
-        if ($this->setAnimalsSpecialListAdultsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsYoungest"=>$this->setAnimalsSpecialListAdultsYoungest];
-        if ($this->setAnimalsSpecialListAdultsOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListAdultsOldest"=>$this->setAnimalsSpecialListAdultsOldest];
-        if ($this->enableAnimalsSpecialListSeniors !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSeniors"=>$this->enableAnimalsSpecialListSeniors];
-        if ($this->setAnimalsSpecialListSeniorsYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListSeniorsYoungest"=>$this->setAnimalsSpecialListSeniorsYoungest];
-        if ($this->enableAnimalsSpecialListLongtime !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListLongtime"=>$this->enableAnimalsSpecialListLongtime];
-        if ($this->setAnimalsSpecialListLongtimeYoungest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeYoungest"=>$this->setAnimalsSpecialListLongtimeYoungest];
-        if ($this->setAnimalsSpecialListLongtimeOldest !== null) $parameterArray['values'][] = ["setAnimalsSpecialListLongtimeOldest"=>$this->setAnimalsSpecialListLongtimeOldest];
-        if ($this->enableAnimalsSpecialListRecent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListRecent"=>$this->enableAnimalsSpecialListRecent];
-        if ($this->setAnimalsSpecialListRecentDays !== null) $parameterArray['values'][] = ["setAnimalsSpecialListRecentDays"=>$this->setAnimalsSpecialListRecentDays];
-        if ($this->enableAnimalsSpecialListSpecialNeeds !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListSpecialNeeds"=>$this->enableAnimalsSpecialListSpecialNeeds];
-        if ($this->enableAnimalsSpecialListUrgent !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListUrgent"=>$this->enableAnimalsSpecialListUrgent];
-        if ($this->enableAnimalsSpecialListFoster !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListFoster"=>$this->enableAnimalsSpecialListFoster];
-        if ($this->enableAnimalsSpecialListCourtesy !== null) $parameterArray['values'][] = ["enableAnimalsSpecialListCourtesy"=>$this->enableAnimalsSpecialListCourtesy];
-        if ($this->enableAnimalAutoRescueID !== null) $parameterArray['values'][] = ["enableAnimalAutoRescueID"=>$this->enableAnimalAutoRescueID];
-        if ($this->setAnimalAutoRescueIDFormat !== null) $parameterArray['values'][] = ["setAnimalAutoRescueIDFormat"=>$this->setAnimalAutoRescueIDFormat];
-        if ($this->disableAnimalAutoRescueIDCourtesyListings !== null) $parameterArray['values'][] = ["disableAnimalAutoRescueIDCourtesyListings"=>$this->disableAnimalAutoRescueIDCourtesyListings];
-        if ($this->enablePortalWebsite !== null) $parameterArray['values'][] = ["enablePortalWebsite"=>$this->enablePortalWebsite];
-        if ($this->showAnimalMicrochip !== null) $parameterArray['values'][] = ["showAnimalMicrochip"=>$this->showAnimalMicrochip];
-        if ($this->showAnimalAltered !== null) $parameterArray['values'][] = ["showAnimalAltered"=>$this->showAnimalAltered];
-        if ($this->showAnimalWillBeAltered !== null) $parameterArray['values'][] = ["showAnimalWillBeAltered"=>$this->showAnimalWillBeAltered];
-        if ($this->showAnimalRescueID !== null) $parameterArray['values'][] = ["showAnimalRescueID"=>$this->showAnimalRescueID];
-        if ($this->showAnimalAdoptionFee !== null) $parameterArray['values'][] = ["showAnimalAdoptionFee"=>$this->showAnimalAdoptionFee];
-        if ($this->showAnimalEuthanasiaInfo !== null) $parameterArray['values'][] = ["showAnimalEuthanasiaInfo"=>$this->showAnimalEuthanasiaInfo];
-        if ($this->disableAnimalCourtesyHeaderFooter !== null) $parameterArray['values'][] = ["disableAnimalCourtesyHeaderFooter"=>$this->disableAnimalCourtesyHeaderFooter];
-        if ($this->showAnimalKennelcardJournalEntries !== null) $parameterArray['values'][] = ["showAnimalKennelcardJournalEntries"=>$this->showAnimalKennelcardJournalEntries];
-        if ($this->showAnimalKennelcardJournalCost !== null) $parameterArray['values'][] = ["showAnimalKennelcardJournalCost"=>$this->showAnimalKennelcardJournalCost];
-        if ($this->disableAnimalExportAdopted !== null) $parameterArray['values'][] = ["disableAnimalExportAdopted"=>$this->disableAnimalExportAdopted];
-        if ($this->enableExportAdoptedToAdoptapet !== null) $parameterArray['values'][] = ["enableExportAdoptedToAdoptapet"=>$this->enableExportAdoptedToAdoptapet];
-        if ($this->disableAnimalExportCourtesy !== null) $parameterArray['values'][] = ["disableAnimalExportCourtesy"=>$this->disableAnimalExportCourtesy];
-        if ($this->disableAnimalExportAnimalWebPageLink !== null) $parameterArray['values'][] = ["disableAnimalExportAnimalWebPageLink"=>$this->disableAnimalExportAnimalWebPageLink];
-        if ($this->disableAnimalExportWebsiteLink !== null) $parameterArray['values'][] = ["disableAnimalExportWebsiteLink"=>$this->disableAnimalExportWebsiteLink];
-        if ($this->disableAnimalExportAdoptionFormLink !== null) $parameterArray['values'][] = ["disableAnimalExportAdoptionFormLink"=>$this->disableAnimalExportAdoptionFormLink];
-        if ($this->enableAnimalExportDescriptionHeader !== null) $parameterArray['values'][] = ["enableAnimalExportDescriptionHeader"=>$this->enableAnimalExportDescriptionHeader];
-        if ($this->enableAnimalExportDescriptionFooter !== null) $parameterArray['values'][] = ["enableAnimalExportDescriptionFooter"=>$this->enableAnimalExportDescriptionFooter];
-        if ($this->enableAnimalExportUniqueAnimalID !== null) $parameterArray['values'][] = ["enableAnimalExportUniqueAnimalID"=>$this->enableAnimalExportUniqueAnimalID];
-        if ($this->enableAnimalExportContactFieldFirstname !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldFirstname"=>$this->enableAnimalExportContactFieldFirstname];
-        if ($this->enableAnimalExportContactFieldLastname !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldLastname"=>$this->enableAnimalExportContactFieldLastname];
-        if ($this->enableAnimalExportContactFieldEmail !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldEmail"=>$this->enableAnimalExportContactFieldEmail];
-        if ($this->enableAnimalExportContactFieldPhoneHome !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldPhoneHome"=>$this->enableAnimalExportContactFieldPhoneHome];
-        if ($this->enableAnimalExportContactFieldPhoneCell !== null) $parameterArray['values'][] = ["enableAnimalExportContactFieldPhoneCell"=>$this->enableAnimalExportContactFieldPhoneCell];
-        if ($this->setAnimalExportYouTubeAccount !== null) $parameterArray['values'][] = ["setAnimalExportYouTubeAccount"=>$this->setAnimalExportYouTubeAccount];
-        if ($this->setAnimalExportYouTubeAuthorizationCode !== null) $parameterArray['values'][] = ["setAnimalExportYouTubeAuthorizationCode"=>$this->setAnimalExportYouTubeAuthorizationCode];
-        if ($this->setAnimalExportDefaultCategory1 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory1"=>$this->setAnimalExportDefaultCategory1];
-        if ($this->setAnimalExportDefaultCategory4 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory4"=>$this->setAnimalExportDefaultCategory4];
-        if ($this->setAnimalExportDefaultCategory3 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory3"=>$this->setAnimalExportDefaultCategory3];
-        if ($this->setAnimalExportDefaultCategory2 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory2"=>$this->setAnimalExportDefaultCategory2];
-        if ($this->setAnimalExportDefaultCategory5 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory5"=>$this->setAnimalExportDefaultCategory5];
-        if ($this->setAnimalExportDefaultCategory6 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory6"=>$this->setAnimalExportDefaultCategory6];
-        if ($this->setAnimalExportDefaultCategory8 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory8"=>$this->setAnimalExportDefaultCategory8];
-        if ($this->setAnimalExportDefaultCategory7 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory7"=>$this->setAnimalExportDefaultCategory7];
-        if ($this->setAnimalExportDefaultCategory13 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory13"=>$this->setAnimalExportDefaultCategory13];
-        if ($this->setAnimalExportDefaultCategory9 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory9"=>$this->setAnimalExportDefaultCategory9];
-        if ($this->setAnimalExportDefaultCategory11 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory11"=>$this->setAnimalExportDefaultCategory11];
-        if ($this->setAnimalExportDefaultCategory10 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory10"=>$this->setAnimalExportDefaultCategory10];
-        if ($this->setAnimalExportDefaultCategory12 !== null) $parameterArray['values'][] = ["setAnimalExportDefaultCategory12"=>$this->setAnimalExportDefaultCategory12];
-        if ($this->disableAnimalDescriptionVideo !== null) $parameterArray['values'][] = ["disableAnimalDescriptionVideo"=>$this->disableAnimalDescriptionVideo];
-        if ($this->enableAnimalDescriptionVideoLink !== null) $parameterArray['values'][] = ["enableAnimalDescriptionVideoLink"=>$this->enableAnimalDescriptionVideoLink];
-        if ($this->enableFreePetChipRegistry !== null) $parameterArray['values'][] = ["enableFreePetChipRegistry"=>$this->enableFreePetChipRegistry];
-        if ($this->setFreePetChipRegistryUserName !== null) $parameterArray['values'][] = ["setFreePetChipRegistryUserName"=>$this->setFreePetChipRegistryUserName];
-        if ($this->enablePetLinkRegistry !== null) $parameterArray['values'][] = ["enablePetLinkRegistry"=>$this->enablePetLinkRegistry];
-        if ($this->setPetLinkUserName !== null) $parameterArray['values'][] = ["setPetLinkUserName"=>$this->setPetLinkUserName];
-        if ($this->setPetLinkPassword !== null) $parameterArray['values'][] = ["setPetLinkPassword"=>$this->setPetLinkPassword];
-        if ($this->disableMicrochipUserAlert !== null) $parameterArray['values'][] = ["disableMicrochipUserAlert"=>$this->disableMicrochipUserAlert];
-        if ($this->setMicrochipAlertEmails !== null) $parameterArray['values'][] = ["setMicrochipAlertEmails"=>$this->setMicrochipAlertEmails];
+        $value = [];
+        if ($this->enableAnimalsSpecialListBabies !== null) $value["enableAnimalsSpecialListBabies"] = $this->enableAnimalsSpecialListBabies;
+        if ($this->setAnimalsSpecialListBabiesYoungest !== null) $value["setAnimalsSpecialListBabiesYoungest"] = $this->setAnimalsSpecialListBabiesYoungest;
+        if ($this->setAnimalsSpecialListBabiesOldest !== null) $value["setAnimalsSpecialListBabiesOldest"] = $this->setAnimalsSpecialListBabiesOldest;
+        if ($this->enableAnimalsSpecialListTeens !== null) $value["enableAnimalsSpecialListTeens"] = $this->enableAnimalsSpecialListTeens;
+        if ($this->setAnimalsSpecialListTeensYoungest !== null) $value["setAnimalsSpecialListTeensYoungest"] = $this->setAnimalsSpecialListTeensYoungest;
+        if ($this->setAnimalsSpecialListTeensOldest !== null) $value["setAnimalsSpecialListTeensOldest"] = $this->setAnimalsSpecialListTeensOldest;
+        if ($this->enableAnimalsSpecialListAdults !== null) $value["enableAnimalsSpecialListAdults"] = $this->enableAnimalsSpecialListAdults;
+        if ($this->setAnimalsSpecialListAdultsYoungest !== null) $value["setAnimalsSpecialListAdultsYoungest"] = $this->setAnimalsSpecialListAdultsYoungest;
+        if ($this->setAnimalsSpecialListAdultsOldest !== null) $value["setAnimalsSpecialListAdultsOldest"] = $this->setAnimalsSpecialListAdultsOldest;
+        if ($this->enableAnimalsSpecialListSeniors !== null) $value["enableAnimalsSpecialListSeniors"] = $this->enableAnimalsSpecialListSeniors;
+        if ($this->setAnimalsSpecialListSeniorsYoungest !== null) $value["setAnimalsSpecialListSeniorsYoungest"] = $this->setAnimalsSpecialListSeniorsYoungest;
+        if ($this->enableAnimalsSpecialListLongtime !== null) $value["enableAnimalsSpecialListLongtime"] = $this->enableAnimalsSpecialListLongtime;
+        if ($this->setAnimalsSpecialListLongtimeYoungest !== null) $value["setAnimalsSpecialListLongtimeYoungest"] = $this->setAnimalsSpecialListLongtimeYoungest;
+        if ($this->setAnimalsSpecialListLongtimeOldest !== null) $value["setAnimalsSpecialListLongtimeOldest"] = $this->setAnimalsSpecialListLongtimeOldest;
+        if ($this->enableAnimalsSpecialListRecent !== null) $value["enableAnimalsSpecialListRecent"] = $this->enableAnimalsSpecialListRecent;
+        if ($this->setAnimalsSpecialListRecentDays !== null) $value["setAnimalsSpecialListRecentDays"] = $this->setAnimalsSpecialListRecentDays;
+        if ($this->enableAnimalsSpecialListSpecialNeeds !== null) $value["enableAnimalsSpecialListSpecialNeeds"] = $this->enableAnimalsSpecialListSpecialNeeds;
+        if ($this->enableAnimalsSpecialListUrgent !== null) $value["enableAnimalsSpecialListUrgent"] = $this->enableAnimalsSpecialListUrgent;
+        if ($this->enableAnimalsSpecialListFoster !== null) $value["enableAnimalsSpecialListFoster"] = $this->enableAnimalsSpecialListFoster;
+        if ($this->enableAnimalsSpecialListCourtesy !== null) $value["enableAnimalsSpecialListCourtesy"] = $this->enableAnimalsSpecialListCourtesy;
+        if ($this->enableAnimalAutoRescueID !== null) $value["enableAnimalAutoRescueID"] = $this->enableAnimalAutoRescueID;
+        if ($this->setAnimalAutoRescueIDFormat !== null) $value["setAnimalAutoRescueIDFormat"] = $this->setAnimalAutoRescueIDFormat;
+        if ($this->disableAnimalAutoRescueIDCourtesyListings !== null) $value["disableAnimalAutoRescueIDCourtesyListings"] = $this->disableAnimalAutoRescueIDCourtesyListings;
+        if ($this->enablePortalWebsite !== null) $value["enablePortalWebsite"] = $this->enablePortalWebsite;
+        if ($this->showAnimalMicrochip !== null) $value["showAnimalMicrochip"] = $this->showAnimalMicrochip;
+        if ($this->showAnimalAltered !== null) $value["showAnimalAltered"] = $this->showAnimalAltered;
+        if ($this->showAnimalWillBeAltered !== null) $value["showAnimalWillBeAltered"] = $this->showAnimalWillBeAltered;
+        if ($this->showAnimalRescueID !== null) $value["showAnimalRescueID"] = $this->showAnimalRescueID;
+        if ($this->showAnimalAdoptionFee !== null) $value["showAnimalAdoptionFee"] = $this->showAnimalAdoptionFee;
+        if ($this->showAnimalEuthanasiaInfo !== null) $value["showAnimalEuthanasiaInfo"] = $this->showAnimalEuthanasiaInfo;
+        if ($this->disableAnimalCourtesyHeaderFooter !== null) $value["disableAnimalCourtesyHeaderFooter"] = $this->disableAnimalCourtesyHeaderFooter;
+        if ($this->showAnimalKennelcardJournalEntries !== null) $value["showAnimalKennelcardJournalEntries"] = $this->showAnimalKennelcardJournalEntries;
+        if ($this->showAnimalKennelcardJournalCost !== null) $value["showAnimalKennelcardJournalCost"] = $this->showAnimalKennelcardJournalCost;
+        if ($this->disableAnimalExportAdopted !== null) $value["disableAnimalExportAdopted"] = $this->disableAnimalExportAdopted;
+        if ($this->enableExportAdoptedToAdoptapet !== null) $value["enableExportAdoptedToAdoptapet"] = $this->enableExportAdoptedToAdoptapet;
+        if ($this->disableAnimalExportCourtesy !== null) $value["disableAnimalExportCourtesy"] = $this->disableAnimalExportCourtesy;
+        if ($this->disableAnimalExportAnimalWebPageLink !== null) $value["disableAnimalExportAnimalWebPageLink"] = $this->disableAnimalExportAnimalWebPageLink;
+        if ($this->disableAnimalExportWebsiteLink !== null) $value["disableAnimalExportWebsiteLink"] = $this->disableAnimalExportWebsiteLink;
+        if ($this->disableAnimalExportAdoptionFormLink !== null) $value["disableAnimalExportAdoptionFormLink"] = $this->disableAnimalExportAdoptionFormLink;
+        if ($this->enableAnimalExportDescriptionHeader !== null) $value["enableAnimalExportDescriptionHeader"] = $this->enableAnimalExportDescriptionHeader;
+        if ($this->enableAnimalExportDescriptionFooter !== null) $value["enableAnimalExportDescriptionFooter"] = $this->enableAnimalExportDescriptionFooter;
+        if ($this->enableAnimalExportUniqueAnimalID !== null) $value["enableAnimalExportUniqueAnimalID"] = $this->enableAnimalExportUniqueAnimalID;
+        if ($this->enableAnimalExportContactFieldFirstname !== null) $value["enableAnimalExportContactFieldFirstname"] = $this->enableAnimalExportContactFieldFirstname;
+        if ($this->enableAnimalExportContactFieldLastname !== null) $value["enableAnimalExportContactFieldLastname"] = $this->enableAnimalExportContactFieldLastname;
+        if ($this->enableAnimalExportContactFieldEmail !== null) $value["enableAnimalExportContactFieldEmail"] = $this->enableAnimalExportContactFieldEmail;
+        if ($this->enableAnimalExportContactFieldPhoneHome !== null) $value["enableAnimalExportContactFieldPhoneHome"] = $this->enableAnimalExportContactFieldPhoneHome;
+        if ($this->enableAnimalExportContactFieldPhoneCell !== null) $value["enableAnimalExportContactFieldPhoneCell"] = $this->enableAnimalExportContactFieldPhoneCell;
+        if ($this->setAnimalExportYouTubeAccount !== null) $value["setAnimalExportYouTubeAccount"] = $this->setAnimalExportYouTubeAccount;
+        if ($this->setAnimalExportYouTubeAuthorizationCode !== null) $value["setAnimalExportYouTubeAuthorizationCode"] = $this->setAnimalExportYouTubeAuthorizationCode;
+        if ($this->setAnimalExportDefaultCategory1 !== null) $value["setAnimalExportDefaultCategory1"] = $this->setAnimalExportDefaultCategory1;
+        if ($this->setAnimalExportDefaultCategory4 !== null) $value["setAnimalExportDefaultCategory4"] = $this->setAnimalExportDefaultCategory4;
+        if ($this->setAnimalExportDefaultCategory3 !== null) $value["setAnimalExportDefaultCategory3"] = $this->setAnimalExportDefaultCategory3;
+        if ($this->setAnimalExportDefaultCategory2 !== null) $value["setAnimalExportDefaultCategory2"] = $this->setAnimalExportDefaultCategory2;
+        if ($this->setAnimalExportDefaultCategory5 !== null) $value["setAnimalExportDefaultCategory5"] = $this->setAnimalExportDefaultCategory5;
+        if ($this->setAnimalExportDefaultCategory6 !== null) $value["setAnimalExportDefaultCategory6"] = $this->setAnimalExportDefaultCategory6;
+        if ($this->setAnimalExportDefaultCategory8 !== null) $value["setAnimalExportDefaultCategory8"] = $this->setAnimalExportDefaultCategory8;
+        if ($this->setAnimalExportDefaultCategory7 !== null) $value["setAnimalExportDefaultCategory7"] = $this->setAnimalExportDefaultCategory7;
+        if ($this->setAnimalExportDefaultCategory13 !== null) $value["setAnimalExportDefaultCategory13"] = $this->setAnimalExportDefaultCategory13;
+        if ($this->setAnimalExportDefaultCategory9 !== null) $value["setAnimalExportDefaultCategory9"] = $this->setAnimalExportDefaultCategory9;
+        if ($this->setAnimalExportDefaultCategory11 !== null) $value["setAnimalExportDefaultCategory11"] = $this->setAnimalExportDefaultCategory11;
+        if ($this->setAnimalExportDefaultCategory10 !== null) $value["setAnimalExportDefaultCategory10"] = $this->setAnimalExportDefaultCategory10;
+        if ($this->setAnimalExportDefaultCategory12 !== null) $value["setAnimalExportDefaultCategory12"] = $this->setAnimalExportDefaultCategory12;
+        if ($this->disableAnimalDescriptionVideo !== null) $value["disableAnimalDescriptionVideo"] = $this->disableAnimalDescriptionVideo;
+        if ($this->enableAnimalDescriptionVideoLink !== null) $value["enableAnimalDescriptionVideoLink"] = $this->enableAnimalDescriptionVideoLink;
+        if ($this->enableFreePetChipRegistry !== null) $value["enableFreePetChipRegistry"] = $this->enableFreePetChipRegistry;
+        if ($this->setFreePetChipRegistryUserName !== null) $value["setFreePetChipRegistryUserName"] = $this->setFreePetChipRegistryUserName;
+        if ($this->enablePetLinkRegistry !== null) $value["enablePetLinkRegistry"] = $this->enablePetLinkRegistry;
+        if ($this->setPetLinkUserName !== null) $value["setPetLinkUserName"] = $this->setPetLinkUserName;
+        if ($this->setPetLinkPassword !== null) $value["setPetLinkPassword"] = $this->setPetLinkPassword;
+        if ($this->disableMicrochipUserAlert !== null) $value["disableMicrochipUserAlert"] = $this->disableMicrochipUserAlert;
+        if ($this->setMicrochipAlertEmails !== null) $value["setMicrochipAlertEmails"] = $this->setMicrochipAlertEmails;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

@@ -20,7 +20,9 @@ class GetPublicableStatusesTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\GetPublicableStatuses();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('animals', $data['objectType']);
         $this->assertEquals('getPublicableStatuses', $data['objectAction']);

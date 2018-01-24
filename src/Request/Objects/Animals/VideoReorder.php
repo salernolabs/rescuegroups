@@ -96,8 +96,11 @@ class VideoReorder extends \RescueGroups\Request\Objects\Base implements \Rescue
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
-        if ($this->mediaId !== null) $parameterArray['values'][] = ["mediaID"=>$this->mediaId];
-        if ($this->newOrder !== null) $parameterArray['values'][] = ["newOrder"=>$this->newOrder];
+        $value = [];
+        if ($this->id !== null) $value["animalID"] = $this->id;
+        if ($this->mediaId !== null) $value["mediaID"] = $this->mediaId;
+        if ($this->newOrder !== null) $value["newOrder"] = $this->newOrder;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

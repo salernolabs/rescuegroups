@@ -29,6 +29,11 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_COLONY_ID = 'colonyId';
+    const FIELD_CONTACT_ID = 'contactId';
+    const FIELD_CONTACT_NAME = 'contactName';
+
     /**
      * Filterable Fields
      *

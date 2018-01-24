@@ -36,5 +36,8 @@ class GetExports extends \RescueGroups\Request\Objects\Base implements \RescueGr
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
+        $value = [];
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

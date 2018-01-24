@@ -12,15 +12,6 @@ Performs inventoryitems.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\InventoryItems\Define();
 
     $result = $api->executeRequest($query);
-Performs inventoryitems.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\InventoryItems\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs inventoryitems.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs inventoryitems.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryItems\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -110,7 +101,7 @@ Performs inventoryitems.delete query.
 
     $query = new \RescueGroups\Request\Objects\InventoryItems\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

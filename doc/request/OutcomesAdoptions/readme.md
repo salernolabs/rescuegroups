@@ -12,15 +12,6 @@ Performs outcomesAdoptions.define query. This gives information about the API in
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesAdoptions.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesAdoptions.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesAdoptions.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -96,11 +87,11 @@ Performs outcomesAdoptions.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesAdoptions\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setadoptionId("Adoption");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setAdoptionId("Adoption");
 
     $result = $api->executeRequest($query);
 

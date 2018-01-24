@@ -12,15 +12,6 @@ Performs inventoryLoaners.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Define();
 
     $result = $api->executeRequest($query);
-Performs inventoryLoaners.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\InventoryLoaners\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs inventoryLoaners.view query.
 
@@ -28,7 +19,7 @@ Performs inventoryLoaners.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -95,7 +86,7 @@ Performs inventoryLoaners.delete query.
 
     $query = new \RescueGroups\Request\Objects\InventoryLoaners\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

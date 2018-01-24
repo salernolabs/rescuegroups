@@ -276,17 +276,20 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
-        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalID"=>$this->animalId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesStraypickupAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesStraypickupDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesStraypickupNotes"=>$this->notes];
-        if ($this->location !== null) $parameterArray['values'][] = ["intakesStraypickupLocation"=>$this->location];
-        if ($this->address !== null) $parameterArray['values'][] = ["intakesStraypickupAddress"=>$this->address];
-        if ($this->city !== null) $parameterArray['values'][] = ["intakesStraypickupCity"=>$this->city];
-        if ($this->state !== null) $parameterArray['values'][] = ["intakesStraypickupState"=>$this->state];
-        if ($this->postalcode !== null) $parameterArray['values'][] = ["intakesStraypickupPostalcode"=>$this->postalcode];
-        if ($this->finderId !== null) $parameterArray['values'][] = ["intakesStraypickupFinderID"=>$this->finderId];
-        if ($this->staffId !== null) $parameterArray['values'][] = ["intakesStraypickupStaffID"=>$this->staffId];
+        $value = [];
+        if ($this->intakeId !== null) $value["intakeID"] = $this->intakeId;
+        if ($this->animalId !== null) $value["intakesStraypickupAnimalID"] = $this->animalId;
+        if ($this->animalConditionId !== null) $value["intakesStraypickupAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["intakesStraypickupDate"] = $this->date;
+        if ($this->notes !== null) $value["intakesStraypickupNotes"] = $this->notes;
+        if ($this->location !== null) $value["intakesStraypickupLocation"] = $this->location;
+        if ($this->address !== null) $value["intakesStraypickupAddress"] = $this->address;
+        if ($this->city !== null) $value["intakesStraypickupCity"] = $this->city;
+        if ($this->state !== null) $value["intakesStraypickupState"] = $this->state;
+        if ($this->postalcode !== null) $value["intakesStraypickupPostalcode"] = $this->postalcode;
+        if ($this->finderId !== null) $value["intakesStraypickupFinderID"] = $this->finderId;
+        if ($this->staffId !== null) $value["intakesStraypickupStaffID"] = $this->staffId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

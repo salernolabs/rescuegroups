@@ -12,15 +12,6 @@ Performs inventoryfiles.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\InventoryFiles\Define();
 
     $result = $api->executeRequest($query);
-Performs inventoryfiles.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\InventoryFiles\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs inventoryfiles.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs inventoryfiles.view query.
 
     $query = new \RescueGroups\Request\Objects\InventoryFiles\View();
 
-    $query->setid("File");
+    $query->setId("File");
 
     $result = $api->executeRequest($query);
 

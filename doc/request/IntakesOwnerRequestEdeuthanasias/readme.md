@@ -12,15 +12,6 @@ Performs intakesOwnerrequestedeuthanasias.define query. This gives information a
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesOwnerrequestedeuthanasias.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesOwnerrequestedeuthanasias.view query.
 
@@ -28,7 +19,7 @@ Performs intakesOwnerrequestedeuthanasias.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\View();
 
-    $query->setid("Owner requestedeuthanasia");
+    $query->setId("Owner requestedeuthanasia");
 
     $result = $api->executeRequest($query);
 
@@ -92,13 +83,13 @@ Performs intakesOwnerrequestedeuthanasias.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesOwnerRequestedEuthanasias\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setownerId("Owner");
-    $query->setreasonId("Euthanasia Reason");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setOwnerId("Owner");
+    $query->setReasonId("Euthanasia Reason");
 
     $result = $api->executeRequest($query);
 

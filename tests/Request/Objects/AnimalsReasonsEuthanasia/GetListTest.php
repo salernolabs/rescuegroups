@@ -20,7 +20,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\AnimalsReasonsEuthanasia\GetList();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('animalsReasonsEuthanasia', $data['objectType']);
         $this->assertEquals('list', $data['objectAction']);

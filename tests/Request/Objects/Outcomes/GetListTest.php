@@ -20,7 +20,9 @@ class GetListTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Outcomes\GetList();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('outcomes', $data['objectType']);
         $this->assertEquals('list', $data['objectAction']);

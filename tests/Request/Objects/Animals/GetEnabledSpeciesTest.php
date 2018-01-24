@@ -20,7 +20,9 @@ class GetEnabledSpeciesTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\GetEnabledSpecies();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('animals', $data['objectType']);
         $this->assertEquals('getEnabledSpecies', $data['objectAction']);

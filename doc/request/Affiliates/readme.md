@@ -12,15 +12,6 @@ Performs affiliates.define query. This gives information about the API interface
     $query = new \RescueGroups\Request\Objects\Affiliates\Define();
 
     $result = $api->executeRequest($query);
-Performs affiliates.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Affiliates\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetSettings
 Performs affiliates.getSettings query.
 
@@ -38,30 +29,30 @@ Performs affiliates.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Affiliates\UpdateSettings();
 
-    $query->setsetAffiliatesPayPalEmail("setAffiliatesPayPalEmail");
-    $query->setshowAffiliatesPayPalLink("showAffiliatesPayPalLink");
-    $query->setsetAffiliatesIGiveCauseID("setAffiliatesIGiveCauseID");
-    $query->setshowAffiliatesIGiveLink("showAffiliatesIGiveLink");
-    $query->setsetAffiliatesAmazonTag("setAffiliatesAmazonTag");
-    $query->setshowAffiliatesAmazonLink("showAffiliatesAmazonLink");
-    $query->setsetAffiliatesUWID("setAffiliatesUWID");
-    $query->setshowAffiliatesUWLink("showAffiliatesUWLink");
-    $query->setsetAffiliatesCFCID("setAffiliatesCFCID");
-    $query->setshowAffiliatesCFCLink("showAffiliatesCFCLink");
-    $query->setsetAffiliatesVolunteerMatchOrgID("setAffiliatesVolunteerMatchOrgID");
-    $query->setshowAffiliatesVolunteerMatchLink("showAffiliatesVolunteerMatchLink");
-    $query->setsetAffiliatesEIN("setAffiliatesEIN");
-    $query->setshowAffiliatesHelpingLink("showAffiliatesHelpingLink");
-    $query->setsetAffiliatesEbayStoreName("setAffiliatesEbayStoreName");
-    $query->setshowAffiliatesEbayStoreLink("showAffiliatesEbayStoreLink");
-    $query->setsetAffiliatesByVetsOnlyPartner("setAffiliatesByVetsOnlyPartner");
-    $query->setshowAffiliatesByVetsOnlyLink("showAffiliatesByVetsOnlyLink");
-    $query->setsetAffiliatesFacebookPage("setAffiliatesFacebookPage");
-    $query->setshowAffiliatesFacebookLink("showAffiliatesFacebookLink");
-    $query->setshowAffiliatesFacebookBadge("showAffiliatesFacebookBadge");
-    $query->setsetAffiliatesTwitterAccount("setAffiliatesTwitterAccount");
-    $query->setshowAffiliatesTwitterLink("showAffiliatesTwitterLink");
-    $query->setshowAffiliatesTwitterBadge("showAffiliatesTwitterBadge");
+    $query->setAffiliatesPayPalEmail("setAffiliatesPayPalEmail");
+    $query->setShowAffiliatesPayPalLink("showAffiliatesPayPalLink");
+    $query->setAffiliatesIGiveCauseID("setAffiliatesIGiveCauseID");
+    $query->setShowAffiliatesIGiveLink("showAffiliatesIGiveLink");
+    $query->setAffiliatesAmazonTag("setAffiliatesAmazonTag");
+    $query->setShowAffiliatesAmazonLink("showAffiliatesAmazonLink");
+    $query->setAffiliatesUWID("setAffiliatesUWID");
+    $query->setShowAffiliatesUWLink("showAffiliatesUWLink");
+    $query->setAffiliatesCFCID("setAffiliatesCFCID");
+    $query->setShowAffiliatesCFCLink("showAffiliatesCFCLink");
+    $query->setAffiliatesVolunteerMatchOrgID("setAffiliatesVolunteerMatchOrgID");
+    $query->setShowAffiliatesVolunteerMatchLink("showAffiliatesVolunteerMatchLink");
+    $query->setAffiliatesEIN("setAffiliatesEIN");
+    $query->setShowAffiliatesHelpingLink("showAffiliatesHelpingLink");
+    $query->setAffiliatesEbayStoreName("setAffiliatesEbayStoreName");
+    $query->setShowAffiliatesEbayStoreLink("showAffiliatesEbayStoreLink");
+    $query->setAffiliatesByVetsOnlyPartner("setAffiliatesByVetsOnlyPartner");
+    $query->setShowAffiliatesByVetsOnlyLink("showAffiliatesByVetsOnlyLink");
+    $query->setAffiliatesFacebookPage("setAffiliatesFacebookPage");
+    $query->setShowAffiliatesFacebookLink("showAffiliatesFacebookLink");
+    $query->setShowAffiliatesFacebookBadge("showAffiliatesFacebookBadge");
+    $query->setAffiliatesTwitterAccount("setAffiliatesTwitterAccount");
+    $query->setShowAffiliatesTwitterLink("showAffiliatesTwitterLink");
+    $query->setShowAffiliatesTwitterBadge("showAffiliatesTwitterBadge");
 
     $result = $api->executeRequest($query);
 

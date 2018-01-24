@@ -12,15 +12,6 @@ Performs callsCategories.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
 
     $result = $api->executeRequest($query);
-Performs callsCategories.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsCategories\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs callsCategories.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs callsCategories.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -95,7 +86,7 @@ Performs callsCategories.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsCategories\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

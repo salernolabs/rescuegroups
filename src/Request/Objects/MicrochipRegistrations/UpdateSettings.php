@@ -36,5 +36,8 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
+        $value = [];
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

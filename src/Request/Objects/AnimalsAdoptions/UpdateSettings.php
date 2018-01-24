@@ -116,9 +116,12 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->showAdoptionsTrackingMessage !== null) $parameterArray['values'][] = ["showAdoptionsTrackingMessage"=>$this->showAdoptionsTrackingMessage];
-        if ($this->showAppPending !== null) $parameterArray['values'][] = ["showAppPending"=>$this->showAppPending];
-        if ($this->showAppPendingAdoptAnyway !== null) $parameterArray['values'][] = ["showAppPendingAdoptAnyway"=>$this->showAppPendingAdoptAnyway];
-        if ($this->preventApplicationsForPendingAnimals !== null) $parameterArray['values'][] = ["preventApplicationsForPendingAnimals"=>$this->preventApplicationsForPendingAnimals];
+        $value = [];
+        if ($this->showAdoptionsTrackingMessage !== null) $value["showAdoptionsTrackingMessage"] = $this->showAdoptionsTrackingMessage;
+        if ($this->showAppPending !== null) $value["showAppPending"] = $this->showAppPending;
+        if ($this->showAppPendingAdoptAnyway !== null) $value["showAppPendingAdoptAnyway"] = $this->showAppPendingAdoptAnyway;
+        if ($this->preventApplicationsForPendingAnimals !== null) $value["preventApplicationsForPendingAnimals"] = $this->preventApplicationsForPendingAnimals;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

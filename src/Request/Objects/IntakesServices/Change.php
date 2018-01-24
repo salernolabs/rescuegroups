@@ -176,12 +176,15 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
-        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesServiceAnimalID"=>$this->animalId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesServiceAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesServiceDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesServiceNotes"=>$this->notes];
-        if ($this->ownerId !== null) $parameterArray['values'][] = ["intakesServiceOwnerID"=>$this->ownerId];
-        if ($this->servicetypeId !== null) $parameterArray['values'][] = ["intakesServiceServicetypeID"=>$this->servicetypeId];
+        $value = [];
+        if ($this->intakeId !== null) $value["intakeID"] = $this->intakeId;
+        if ($this->animalId !== null) $value["intakesServiceAnimalID"] = $this->animalId;
+        if ($this->animalConditionId !== null) $value["intakesServiceAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["intakesServiceDate"] = $this->date;
+        if ($this->notes !== null) $value["intakesServiceNotes"] = $this->notes;
+        if ($this->ownerId !== null) $value["intakesServiceOwnerID"] = $this->ownerId;
+        if ($this->servicetypeId !== null) $value["intakesServiceServicetypeID"] = $this->servicetypeId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

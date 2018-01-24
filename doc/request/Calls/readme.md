@@ -12,15 +12,6 @@ Performs calls.define query. This gives information about the API interface to y
     $query = new \RescueGroups\Request\Objects\Calls\Define();
 
     $result = $api->executeRequest($query);
-Performs calls.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Calls\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs calls.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs calls.view query.
 
     $query = new \RescueGroups\Request\Objects\Calls\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

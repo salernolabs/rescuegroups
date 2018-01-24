@@ -29,6 +29,7 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = false;
 
+
     /**
      * Filterable Fields
      *

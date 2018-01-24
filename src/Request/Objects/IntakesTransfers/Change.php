@@ -196,13 +196,16 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->intakeId !== null) $parameterArray['values'][] = ["intakeID"=>$this->intakeId];
-        if ($this->animalId !== null) $parameterArray['values'][] = ["intakesTransferAnimalID"=>$this->animalId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["intakesTransferAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["intakesTransferDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["intakesTransferNotes"=>$this->notes];
-        if ($this->fromId !== null) $parameterArray['values'][] = ["intakesTransferFromID"=>$this->fromId];
-        if ($this->coalitionMember !== null) $parameterArray['values'][] = ["intakesTransferCoalitionMember"=>$this->coalitionMember];
-        if ($this->reasonId !== null) $parameterArray['values'][] = ["intakesTransferReasonID"=>$this->reasonId];
+        $value = [];
+        if ($this->intakeId !== null) $value["intakeID"] = $this->intakeId;
+        if ($this->animalId !== null) $value["intakesTransferAnimalID"] = $this->animalId;
+        if ($this->animalConditionId !== null) $value["intakesTransferAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["intakesTransferDate"] = $this->date;
+        if ($this->notes !== null) $value["intakesTransferNotes"] = $this->notes;
+        if ($this->fromId !== null) $value["intakesTransferFromID"] = $this->fromId;
+        if ($this->coalitionMember !== null) $value["intakesTransferCoalitionMember"] = $this->coalitionMember;
+        if ($this->reasonId !== null) $value["intakesTransferReasonID"] = $this->reasonId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

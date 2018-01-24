@@ -12,15 +12,6 @@ Performs donations.define query. This gives information about the API interface 
     $query = new \RescueGroups\Request\Objects\Donations\Define();
 
     $result = $api->executeRequest($query);
-Performs donations.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Donations\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs donations.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs donations.view query.
 
     $query = new \RescueGroups\Request\Objects\Donations\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -102,7 +93,7 @@ Performs donations.delete query.
 
     $query = new \RescueGroups\Request\Objects\Donations\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

@@ -236,15 +236,18 @@ class Change extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->outcomeId !== null) $parameterArray['values'][] = ["outcomeID"=>$this->outcomeId];
-        if ($this->animalConditionId !== null) $parameterArray['values'][] = ["outcomesReleaseAnimalConditionID"=>$this->animalConditionId];
-        if ($this->date !== null) $parameterArray['values'][] = ["outcomesReleaseDate"=>$this->date];
-        if ($this->notes !== null) $parameterArray['values'][] = ["outcomesReleaseNotes"=>$this->notes];
-        if ($this->location !== null) $parameterArray['values'][] = ["outcomesReleaseLocation"=>$this->location];
-        if ($this->address !== null) $parameterArray['values'][] = ["outcomesReleaseAddress"=>$this->address];
-        if ($this->city !== null) $parameterArray['values'][] = ["outcomesReleaseCity"=>$this->city];
-        if ($this->state !== null) $parameterArray['values'][] = ["outcomesReleaseState"=>$this->state];
-        if ($this->postalcode !== null) $parameterArray['values'][] = ["outcomesReleasePostalcode"=>$this->postalcode];
-        if ($this->byId !== null) $parameterArray['values'][] = ["outcomesReleaseByID"=>$this->byId];
+        $value = [];
+        if ($this->outcomeId !== null) $value["outcomeID"] = $this->outcomeId;
+        if ($this->animalConditionId !== null) $value["outcomesReleaseAnimalConditionID"] = $this->animalConditionId;
+        if ($this->date !== null) $value["outcomesReleaseDate"] = $this->date;
+        if ($this->notes !== null) $value["outcomesReleaseNotes"] = $this->notes;
+        if ($this->location !== null) $value["outcomesReleaseLocation"] = $this->location;
+        if ($this->address !== null) $value["outcomesReleaseAddress"] = $this->address;
+        if ($this->city !== null) $value["outcomesReleaseCity"] = $this->city;
+        if ($this->state !== null) $value["outcomesReleaseState"] = $this->state;
+        if ($this->postalcode !== null) $value["outcomesReleasePostalcode"] = $this->postalcode;
+        if ($this->byId !== null) $value["outcomesReleaseByID"] = $this->byId;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

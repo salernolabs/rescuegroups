@@ -20,7 +20,9 @@ class ListRescuesTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Contacts\ListRescues();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('contacts', $data['objectType']);
         $this->assertEquals('listRescues', $data['objectAction']);

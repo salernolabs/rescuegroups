@@ -29,6 +29,32 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_CREATED_DATE = 'createdDate';
+    const FIELD_CREATED_BY_ID = 'createdById';
+    const FIELD_UPDATED_DATE = 'updatedDate';
+    const FIELD_UPDATED_BY_ID = 'updatedById';
+    const FIELD_MICROCHIP_NUMBER = 'microchipNumber';
+    const FIELD_MICROCHIP_VENDOR = 'microchipVendor';
+    const FIELD_REGISTRY = 'registry';
+    const FIELD_ORG_ID = 'orgId';
+    const FIELD_ANIMAL_ID = 'animalId';
+    const FIELD_REGISTRANT_NAME = 'registrantName';
+    const FIELD_REGISTRANT_FIRSTNAME = 'registrantFirstname';
+    const FIELD_REGISTRANT_LASTNAME = 'registrantLastname';
+    const FIELD_REGISTRANT_ADDRESS = 'registrantAddress';
+    const FIELD_REGISTRANT_CITY = 'registrantCity';
+    const FIELD_REGISTRANT_STATE = 'registrantState';
+    const FIELD_REGISTRANT_POSTALCODE = 'registrantPostalcode';
+    const FIELD_REGISTRANT_COUNTRY = 'registrantCountry';
+    const FIELD_REGISTRANT_PRIMARY_PHONE = 'registrantPrimaryPhone';
+    const FIELD_REGISTRANT_SECONDARY_PHONE = 'registrantSecondaryPhone';
+    const FIELD_REGISTRANT_PRIMARY_EMAIL = 'registrantPrimaryEmail';
+    const FIELD_REGISTRANT_SECONDARY_EMAIL = 'registrantSecondaryEmail';
+    const FIELD_DATE = 'date';
+    const FIELD_CODE = 'code';
+    const FIELD_COMPLETE = 'complete';
+
     /**
      * Filterable Fields
      *

@@ -12,15 +12,6 @@ Performs contacts.define query. This gives information about the API interface t
     $query = new \RescueGroups\Request\Objects\Contacts\Define();
 
     $result = $api->executeRequest($query);
-Performs contacts.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\Contacts\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs contacts.view query.
 
@@ -28,7 +19,7 @@ Performs contacts.view query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -170,7 +161,7 @@ Performs contacts.delete query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -191,14 +182,14 @@ Performs contacts.updateSettings query.
 
     $query = new \RescueGroups\Request\Objects\Contacts\UpdateSettings();
 
-    $query->setenableContactsDoNotAdoptListSharing("Share your organization's Do Not Adopt list");
-    $query->setenableContactsAutoSelectRegistrationInvitation("Automatically select to send Registration Invitation");
-    $query->setenableContactsAutoSelectCaretakerInfoPublic("Automatically select to set caretaker information public");
-    $query->setenableAddContactOnlineFormSubmission("Add a Contact record when an Online Form is submitted");
-    $query->setenableContactsAddContactMeetRequest("Add a Contact record when an Meet Request is submitted");
-    $query->setenableContactsAddContactCallCreation("Add a Contact record when a Call is created from the Contact Us page");
-    $query->setenableContactsAddContactAnimalSponsorship("Add a Contact record when an Animal Sponsorship is submitted");
-    $query->setenableContactsAddContactUserRegistration("Add a Contact record when a user registers");
+    $query->setEnableContactsDoNotAdoptListSharing("Share your organization's Do Not Adopt list");
+    $query->setEnableContactsAutoSelectRegistrationInvitation("Automatically select to send Registration Invitation");
+    $query->setEnableContactsAutoSelectCaretakerInfoPublic("Automatically select to set caretaker information public");
+    $query->setEnableAddContactOnlineFormSubmission("Add a Contact record when an Online Form is submitted");
+    $query->setEnableContactsAddContactMeetRequest("Add a Contact record when an Meet Request is submitted");
+    $query->setEnableContactsAddContactCallCreation("Add a Contact record when a Call is created from the Contact Us page");
+    $query->setEnableContactsAddContactAnimalSponsorship("Add a Contact record when an Animal Sponsorship is submitted");
+    $query->setEnableContactsAddContactUserRegistration("Add a Contact record when a user registers");
 
     $result = $api->executeRequest($query);
 

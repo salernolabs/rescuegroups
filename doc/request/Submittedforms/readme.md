@@ -12,15 +12,6 @@ Performs submittedforms.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\SubmittedForms\Define();
 
     $result = $api->executeRequest($query);
-Performs submittedforms.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\SubmittedForms\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs submittedforms.list list query, typically suitable for filling HTML select fields.
 
@@ -55,27 +46,27 @@ Performs submittedforms.publicCommonSubmit query.
 
     $query = new \RescueGroups\Request\Objects\SubmittedForms\PublicCommonSubmit();
 
-    $query->setanimalId("Animal");
-    $query->setsubmitterSalutation("Salutation");
-    $query->setsubmitterFirstname("First name");
-    $query->setsubmitterLastname("Last name");
-    $query->setsubmitterAddress("Street address");
-    $query->setsubmitterCity("City");
-    $query->setsubmitterState("State/Province");
-    $query->setsubmitterPostalcode("Postal Code");
-    $query->setsubmitterPlus4("Zip code plus 4");
-    $query->setsubmitterCounty("County");
-    $query->setsubmitterCountry("Country");
-    $query->setsubmitterPhoneHome("Home phone number");
-    $query->setsubmitterPhoneWork("Work phone number");
-    $query->setsubmitterPhoneWorkExt("Work phone extension");
-    $query->setsubmitterPhoneCell("Cell phone number");
-    $query->setsubmitterFax("Fax number");
-    $query->setsubmitterEmail("Email address");
-    $query->setsubmitterEmailAlt("Alternate email address");
-    $query->setsubmitterEmailPager("Pager email address");
-    $query->setsubmitterReferredBy("Referred by");
-    $query->setanswers("Answers");
+    $query->setAnimalId("Animal");
+    $query->setSubmitterSalutation("Salutation");
+    $query->setSubmitterFirstname("First name");
+    $query->setSubmitterLastname("Last name");
+    $query->setSubmitterAddress("Street address");
+    $query->setSubmitterCity("City");
+    $query->setSubmitterState("State/Province");
+    $query->setSubmitterPostalcode("Postal Code");
+    $query->setSubmitterPlus4("Zip code plus 4");
+    $query->setSubmitterCounty("County");
+    $query->setSubmitterCountry("Country");
+    $query->setSubmitterPhoneHome("Home phone number");
+    $query->setSubmitterPhoneWork("Work phone number");
+    $query->setSubmitterPhoneWorkExt("Work phone extension");
+    $query->setSubmitterPhoneCell("Cell phone number");
+    $query->setSubmitterFax("Fax number");
+    $query->setSubmitterEmail("Email address");
+    $query->setSubmitterEmailAlt("Alternate email address");
+    $query->setSubmitterEmailPager("Pager email address");
+    $query->setSubmitterReferredBy("Referred by");
+    $query->setAnswers("Answers");
 
     $result = $api->executeRequest($query);
 

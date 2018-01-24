@@ -29,6 +29,28 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_OLD_NAME = 'oldName';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_STATUS = 'status';
+    const FIELD_DISPLAY_INLINE = 'displayInline';
+    const FIELD_SIZE = 'size';
+    const FIELD_CREATED_DATE = 'createdDate';
+    const FIELD_ITEM_ID = 'itemId';
+    const FIELD_INVENTORYITEM_NAME = 'inventoryitemName';
+    const FIELD_INVENTORYITEM_DESCRIPTION = 'inventoryitemDescription';
+    const FIELD_INVENTORYITEM_RECEIVED_DATE = 'inventoryitemReceivedDate';
+    const FIELD_INVENTORYITEM_SOURCE = 'inventoryitemSource';
+    const FIELD_INVENTORYITEM_COST = 'inventoryitemCost';
+    const FIELD_INVENTORYITEM_CONDITION_ID = 'inventoryitemConditionId';
+    const FIELD_INVENTORYITEM_CONDITION = 'inventoryitemCondition';
+    const FIELD_INVENTORYITEM_CATEGORY = 'inventoryitemCategory';
+    const FIELD_INVENTORYITEM_DISPOSED_DATE = 'inventoryitemDisposedDate';
+    const FIELD_INVENTORYITEM_DISPOSED_DESTINATION = 'inventoryitemDisposedDestination';
+    const FIELD_INVENTORYITEM_STORAGE_LOCATION = 'inventoryitemStorageLocation';
+    const FIELD_INVENTORYITEM_FILES = 'inventoryitemFiles';
+    const FIELD_INVENTORYITEM_LOANERS = 'inventoryitemLoaners';
+
     /**
      * Filterable Fields
      *

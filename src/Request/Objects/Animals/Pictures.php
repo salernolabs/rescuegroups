@@ -56,6 +56,9 @@ class Pictures extends \RescueGroups\Request\Objects\Base implements \RescueGrou
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
+        $value = [];
+        if ($this->id !== null) $value["animalID"] = $this->id;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

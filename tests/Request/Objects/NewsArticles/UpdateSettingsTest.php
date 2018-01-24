@@ -20,7 +20,11 @@ class UpdateSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\NewsArticles\UpdateSettings();
+        $query->setEnableNewsarticles("Enable the News Articles feature");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Enable the News Articles feature", $data['values'][0]["enableNewsarticles"]);
 
         $this->assertEquals('newsarticles', $data['objectType']);
         $this->assertEquals('updateSettings', $data['objectAction']);

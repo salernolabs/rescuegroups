@@ -20,7 +20,11 @@ class PublicViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\WebPages\PublicView();
+        $query->setId("ID");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["webpageID"]);
 
         $this->assertEquals('webpages', $data['objectType']);
         $this->assertEquals('publicView', $data['objectAction']);

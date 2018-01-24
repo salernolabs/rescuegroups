@@ -29,6 +29,22 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_NAME = 'name';
+    const FIELD_ITEM_ID = 'itemId';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_RECEIVED_DATE = 'receivedDate';
+    const FIELD_SOURCE = 'source';
+    const FIELD_COST = 'cost';
+    const FIELD_CONDITION_ID = 'conditionId';
+    const FIELD_CONDITION = 'condition';
+    const FIELD_CATEGORY = 'category';
+    const FIELD_DISPOSED_DATE = 'disposedDate';
+    const FIELD_DISPOSED_DESTINATION = 'disposedDestination';
+    const FIELD_STORAGE_LOCATION = 'storageLocation';
+    const FIELD_FILES = 'files';
+    const FIELD_LOANERS = 'loaners';
+
     /**
      * Filterable Fields
      *

@@ -20,7 +20,9 @@ class GetSettingsTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Partnerships\GetSettings();
+
         $data = $this->api->getPostObject($query);
+
 
         $this->assertEquals('partnerships', $data['objectType']);
         $this->assertEquals('getSettings', $data['objectAction']);

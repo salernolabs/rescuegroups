@@ -56,6 +56,9 @@ class Delete extends \RescueGroups\Request\Objects\Base implements \RescueGroups
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["memorialID"=>$this->id];
+        $value = [];
+        if ($this->id !== null) $value["memorialID"] = $this->id;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

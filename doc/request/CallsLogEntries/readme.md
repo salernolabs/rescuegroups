@@ -12,15 +12,6 @@ Performs callsLogentries.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
 
     $result = $api->executeRequest($query);
-Performs callsLogentries.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsLogEntries\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs callsLogentries.view query.
 
@@ -28,7 +19,7 @@ Performs callsLogentries.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsLogEntries\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

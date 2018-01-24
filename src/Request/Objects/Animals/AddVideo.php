@@ -116,9 +116,12 @@ class AddVideo extends \RescueGroups\Request\Objects\Base implements \RescueGrou
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["animalID"=>$this->id];
-        if ($this->videoBinary !== null) $parameterArray['values'][] = ["videoBinary"=>$this->videoBinary];
-        if ($this->fileName !== null) $parameterArray['values'][] = ["fileName"=>$this->fileName];
-        if ($this->mediaOrder !== null) $parameterArray['values'][] = ["mediaOrder"=>$this->mediaOrder];
+        $value = [];
+        if ($this->id !== null) $value["animalID"] = $this->id;
+        if ($this->videoBinary !== null) $value["videoBinary"] = $this->videoBinary;
+        if ($this->fileName !== null) $value["fileName"] = $this->fileName;
+        if ($this->mediaOrder !== null) $value["mediaOrder"] = $this->mediaOrder;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

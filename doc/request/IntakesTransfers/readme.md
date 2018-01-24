@@ -12,15 +12,6 @@ Performs intakesTransfers.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesTransfers.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesTransfers\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesTransfers.view query.
 
@@ -28,7 +19,7 @@ Performs intakesTransfers.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\View();
 
-    $query->setid("Owner Surrender");
+    $query->setId("Owner Surrender");
 
     $result = $api->executeRequest($query);
 
@@ -94,14 +85,14 @@ Performs intakesTransfers.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesTransfers\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setfromId("Transferred From");
-    $query->setcoalitionMember("Coalition Member");
-    $query->setreasonId("Transfer Reason");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setFromId("Transferred From");
+    $query->setCoalitionMember("Coalition Member");
+    $query->setReasonId("Transfer Reason");
 
     $result = $api->executeRequest($query);
 

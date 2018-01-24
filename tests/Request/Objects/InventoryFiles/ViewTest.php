@@ -20,7 +20,11 @@ class ViewTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\InventoryFiles\View();
+        $query->setId("File");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("File", $data['values'][0]["inventoryfileID"]);
 
         $this->assertEquals('inventoryfiles', $data['objectType']);
         $this->assertEquals('view', $data['objectAction']);

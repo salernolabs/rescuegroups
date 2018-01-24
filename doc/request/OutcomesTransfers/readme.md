@@ -12,15 +12,6 @@ Performs outcomesTransfers.define query. This gives information about the API in
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesTransfers.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesTransfers.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesTransfers.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -100,13 +91,13 @@ Performs outcomesTransfers.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesTransfers\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setreceiveId("Received");
-    $query->setcoalitionMember("Coalition Member");
-    $query->setreasonId("Transfer Reason");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setReceiveId("Received");
+    $query->setCoalitionMember("Coalition Member");
+    $query->setReasonId("Transfer Reason");
 
     $result = $api->executeRequest($query);
 

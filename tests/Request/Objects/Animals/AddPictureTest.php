@@ -20,7 +20,17 @@ class AddPictureTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Animals\AddPicture();
+        $query->setId("ID");
+        $query->setPictureBinary("Picture");
+        $query->setFileName("File name");
+        $query->setMediaOrder("Order");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("ID", $data['values'][0]["animalID"]);
+        $this->assertEquals("Picture", $data['values'][0]["pictureBinary"]);
+        $this->assertEquals("File name", $data['values'][0]["fileName"]);
+        $this->assertEquals("Order", $data['values'][0]["mediaOrder"]);
 
         $this->assertEquals('animals', $data['objectType']);
         $this->assertEquals('addPicture', $data['objectAction']);

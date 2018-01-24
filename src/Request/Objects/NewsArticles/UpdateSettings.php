@@ -56,6 +56,9 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableNewsarticles !== null) $parameterArray['values'][] = ["enableNewsarticles"=>$this->enableNewsarticles];
+        $value = [];
+        if ($this->enableNewsarticles !== null) $value["enableNewsarticles"] = $this->enableNewsarticles;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

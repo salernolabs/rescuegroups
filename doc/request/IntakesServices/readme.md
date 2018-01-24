@@ -12,15 +12,6 @@ Performs intakesServices.define query. This gives information about the API inte
     $query = new \RescueGroups\Request\Objects\IntakesServices\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesServices.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesServices\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesServices.view query.
 
@@ -28,7 +19,7 @@ Performs intakesServices.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServices\View();
 
-    $query->setid("Service");
+    $query->setId("Service");
 
     $result = $api->executeRequest($query);
 
@@ -92,13 +83,13 @@ Performs intakesServices.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesServices\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setownerId("Owner");
-    $query->setservicetypeId("Service");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setOwnerId("Owner");
+    $query->setServicetypeId("Service");
 
     $result = $api->executeRequest($query);
 

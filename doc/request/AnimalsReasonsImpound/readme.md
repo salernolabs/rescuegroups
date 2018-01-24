@@ -12,15 +12,6 @@ Performs animalsReasonsImpound.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsReasonsImpound.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsReasonsImpound.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs animalsReasonsImpound.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\View();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 
@@ -90,7 +81,7 @@ Performs animalsReasonsImpound.delete query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsReasonsImpound\Delete();
 
-    $query->setid("Reason ID");
+    $query->setId("Reason ID");
 
     $result = $api->executeRequest($query);
 

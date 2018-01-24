@@ -12,15 +12,6 @@ Performs callsOutcomes.define query. This gives information about the API interf
     $query = new \RescueGroups\Request\Objects\CallsOutcomes\Define();
 
     $result = $api->executeRequest($query);
-Performs callsOutcomes.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsOutcomes\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs callsOutcomes.list list query, typically suitable for filling HTML select fields.
 

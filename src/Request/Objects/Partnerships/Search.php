@@ -29,6 +29,19 @@ class Search extends \RescueGroups\Request\Objects\Base implements
      */
     const QUERY_LOGIN_REQUIRED = true;
 
+    const FIELD_ID = 'id';
+    const FIELD_REQUEST_ORG_ID = 'requestOrgId';
+    const FIELD_REQUEST_ORG_NAME = 'requestOrgName';
+    const FIELD_SHARING_ORG_ID = 'sharingOrgId';
+    const FIELD_SHARING_ORG_NAME = 'sharingOrgName';
+    const FIELD_REQUEST_DATE = 'requestDate';
+    const FIELD_REQUESTED_BY_ID = 'requestedById';
+    const FIELD_REQUESTED_BY = 'requestedBy';
+    const FIELD_RESPONSE_BY_ID = 'responseById';
+    const FIELD_RESPONSE_BY = 'responseBy';
+    const FIELD_STATUS = 'status';
+    const FIELD_RESPONSE_DATE = 'responseDate';
+
     /**
      * Filterable Fields
      *

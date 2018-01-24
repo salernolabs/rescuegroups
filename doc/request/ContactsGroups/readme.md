@@ -12,15 +12,6 @@ Performs contactsGroups.define query. This gives information about the API inter
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Define();
 
     $result = $api->executeRequest($query);
-Performs contactsGroups.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\ContactsGroups\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs contactsGroups.view query.
 
@@ -28,7 +19,7 @@ Performs contactsGroups.view query.
 
     $query = new \RescueGroups\Request\Objects\ContactsGroups\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -92,7 +83,7 @@ Performs contactsGroups.delete query.
 
     $query = new \RescueGroups\Request\Objects\ContactsGroups\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

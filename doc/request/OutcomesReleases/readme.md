@@ -12,15 +12,6 @@ Performs outcomesReleases.define query. This gives information about the API int
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
 
     $result = $api->executeRequest($query);
-Performs outcomesReleases.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\OutcomesReleases\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs outcomesReleases.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs outcomesReleases.view query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -106,16 +97,16 @@ Performs outcomesReleases.change query.
 
     $query = new \RescueGroups\Request\Objects\OutcomesReleases\Change();
 
-    $query->setoutcomeId("Outcome");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setlocation("Location");
-    $query->setaddress("Street address");
-    $query->setcity("City");
-    $query->setstate("State/Province");
-    $query->setpostalcode("Postal Code");
-    $query->setbyId("Released By");
+    $query->setOutcomeId("Outcome");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setLocation("Location");
+    $query->setAddress("Street address");
+    $query->setCity("City");
+    $query->setState("State/Province");
+    $query->setPostalcode("Postal Code");
+    $query->setById("Released By");
 
     $result = $api->executeRequest($query);
 

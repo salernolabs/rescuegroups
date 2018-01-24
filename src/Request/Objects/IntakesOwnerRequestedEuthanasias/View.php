@@ -56,6 +56,9 @@ class View extends \RescueGroups\Request\Objects\Base implements \RescueGroups\R
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->id !== null) $parameterArray['values'][] = ["intakesOwnerrequestedeuthanasiaID"=>$this->id];
+        $value = [];
+        if ($this->id !== null) $value["intakesOwnerrequestedeuthanasiaID"] = $this->id;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

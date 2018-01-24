@@ -12,15 +12,6 @@ Performs callsQueuesMembers.define query. This gives information about the API i
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Define();
 
     $result = $api->executeRequest($query);
-Performs callsQueuesMembers.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs callsQueuesMembers.list list query, typically suitable for filling HTML select fields.
 
@@ -35,7 +26,7 @@ Performs callsQueuesMembers.view query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -93,7 +84,7 @@ Performs callsQueuesMembers.delete query.
 
     $query = new \RescueGroups\Request\Objects\CallsQueuesMembers\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

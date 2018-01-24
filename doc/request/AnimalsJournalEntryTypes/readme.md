@@ -12,15 +12,6 @@ Performs animalsJournalEntrytypes.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsJournalEntrytypes.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsJournalEntrytypes.list list query, typically suitable for filling HTML select fields.
 
@@ -52,7 +43,7 @@ Performs animalsJournalEntrytypes.view query.
 
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\View();
 
-    $query->setid("Entrytype ID");
+    $query->setId("Entrytype ID");
 
     $result = $api->executeRequest($query);
 

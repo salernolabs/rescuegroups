@@ -12,15 +12,6 @@ Performs animalsJournalCategories.define query. This gives information about the
     $query = new \RescueGroups\Request\Objects\AnimalsJournalCategories\Define();
 
     $result = $api->executeRequest($query);
-Performs animalsJournalCategories.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalsJournalCategories\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalsJournalCategories.list list query, typically suitable for filling HTML select fields.
 

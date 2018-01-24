@@ -12,15 +12,6 @@ Performs eventanimalattendance.define query. This gives information about the AP
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Define();
 
     $result = $api->executeRequest($query);
-Performs eventanimalattendance.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## PublicView
 Performs eventanimalattendance.publicView query.
 
@@ -28,7 +19,7 @@ Performs eventanimalattendance.publicView query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\PublicView();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -39,7 +30,7 @@ Performs eventanimalattendance.view query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\View();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 
@@ -114,7 +105,7 @@ Performs eventanimalattendance.delete query.
 
     $query = new \RescueGroups\Request\Objects\EventAnimalAttendance\Delete();
 
-    $query->setid("ID");
+    $query->setId("ID");
 
     $result = $api->executeRequest($query);
 

@@ -12,15 +12,6 @@ Performs animalAdoptionLeads.define query. This gives information about the API 
     $query = new \RescueGroups\Request\Objects\AnimalAdoptionLeads\Define();
 
     $result = $api->executeRequest($query);
-Performs animalAdoptionLeads.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\AnimalAdoptionLeads\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## GetList
 Performs animalAdoptionLeads.list list query, typically suitable for filling HTML select fields.
 

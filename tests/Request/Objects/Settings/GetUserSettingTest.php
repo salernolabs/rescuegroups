@@ -20,7 +20,11 @@ class GetUserSettingTest extends \PHPUnit\Framework\TestCase
         $this->apiLogin();
 
         $query = new \RescueGroups\Request\Objects\Settings\GetUserSetting();
+        $query->setName("Pattern");
+
         $data = $this->api->getPostObject($query);
+
+        $this->assertEquals("Pattern", $data['values'][0]["settingName"]);
 
         $this->assertEquals('settings', $data['objectType']);
         $this->assertEquals('getUserSetting', $data['objectAction']);

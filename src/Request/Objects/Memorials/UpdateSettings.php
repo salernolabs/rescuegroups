@@ -66,7 +66,7 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
      * @param string $value
      * @return $this
      */
-    public function setSetMemorialsDonationOnlineStoreItem($value)
+    public function setMemorialsDonationOnlineStoreItem($value)
     {
         $this->setMemorialsDonationOnlineStoreItem = $value;
 
@@ -96,8 +96,11 @@ class UpdateSettings extends \RescueGroups\Request\Objects\Base implements \Resc
     {
         if (empty($parameterArray['values'])) $parameterArray['values'] = [];
 
-        if ($this->enableMemorials !== null) $parameterArray['values'][] = ["enableMemorials"=>$this->enableMemorials];
-        if ($this->setMemorialsDonationOnlineStoreItem !== null) $parameterArray['values'][] = ["setMemorialsDonationOnlineStoreItem"=>$this->setMemorialsDonationOnlineStoreItem];
-        if ($this->showMemorialsAlphaLinks !== null) $parameterArray['values'][] = ["showMemorialsAlphaLinks"=>$this->showMemorialsAlphaLinks];
+        $value = [];
+        if ($this->enableMemorials !== null) $value["enableMemorials"] = $this->enableMemorials;
+        if ($this->setMemorialsDonationOnlineStoreItem !== null) $value["setMemorialsDonationOnlineStoreItem"] = $this->setMemorialsDonationOnlineStoreItem;
+        if ($this->showMemorialsAlphaLinks !== null) $value["showMemorialsAlphaLinks"] = $this->showMemorialsAlphaLinks;
+
+        if (!empty($value)) $parameterArray['values'][] = $value;
     }
 }

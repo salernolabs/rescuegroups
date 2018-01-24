@@ -12,15 +12,6 @@ Performs intakesStraydropoffs.define query. This gives information about the API
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Define();
 
     $result = $api->executeRequest($query);
-Performs intakesStraydropoffs.define query.
-
-### Example Query
-
-    $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Define();
-
-
-    $result = $api->executeRequest($query);
-
 ## View
 Performs intakesStraydropoffs.view query.
 
@@ -28,7 +19,7 @@ Performs intakesStraydropoffs.view query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\View();
 
-    $query->setid("Stray Pickup");
+    $query->setId("Stray Pickup");
 
     $result = $api->executeRequest($query);
 
@@ -100,17 +91,17 @@ Performs intakesStraydropoffs.change query.
 
     $query = new \RescueGroups\Request\Objects\IntakesStrayDropoffs\Change();
 
-    $query->setintakeId("Intake");
-    $query->setanimalId("Animal");
-    $query->setanimalConditionId("Condition");
-    $query->setdate("Date");
-    $query->setnotes("Notes");
-    $query->setfoundLocation("Found Location");
-    $query->setfoundAddress("Found Street address");
-    $query->setfoundCity("Found City");
-    $query->setfoundState("Found State/Province");
-    $query->setfoundPostalcode("Found Postal Code");
-    $query->setfinderId("Dropped off by");
+    $query->setIntakeId("Intake");
+    $query->setAnimalId("Animal");
+    $query->setAnimalConditionId("Condition");
+    $query->setDate("Date");
+    $query->setNotes("Notes");
+    $query->setFoundLocation("Found Location");
+    $query->setFoundAddress("Found Street address");
+    $query->setFoundCity("Found City");
+    $query->setFoundState("Found State/Province");
+    $query->setFoundPostalcode("Found Postal Code");
+    $query->setFinderId("Dropped off by");
 
     $result = $api->executeRequest($query);
 
