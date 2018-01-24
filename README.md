@@ -2,6 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/salernolabs/rescuegroups/v/stable)](https://packagist.org/packages/salernolabs/rescuegroups)
 [![License](https://poser.pugx.org/salernolabs/rescuegroups/license)](https://packagist.org/packages/salernolabs/rescuegroups)
+[![Build Status](https://travis-ci.org/salernolabs/rescuegroups.svg?branch=master)](https://travis-ci.org/salernolabs/rescuegroups)
 
 An unofficial rescuegroups.org HTTP API PHP SDK. This package is not stable yet and still under development. Please note much of this is automatically generated via the Define queries. Due to naming conventions the "list" actions are encapsulated in "GetList" classes because "List" is a reserved word in PHP7.
 
