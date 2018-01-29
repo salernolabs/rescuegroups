@@ -1,9 +1,9 @@
 <?php
 /**
- * IntakesStrayDropoff Response Object
+ * IntakesStrayDropoff Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

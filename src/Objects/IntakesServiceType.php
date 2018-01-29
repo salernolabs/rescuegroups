@@ -1,9 +1,9 @@
 <?php
 /**
- * IntakesServiceType Response Object
+ * IntakesServiceType Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

@@ -1,9 +1,9 @@
 <?php
 /**
- * SubmittedForm Response Object
+ * SubmittedForm Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;
