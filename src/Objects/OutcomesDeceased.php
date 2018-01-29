@@ -1,9 +1,9 @@
 <?php
 /**
- * OutcomesDeceased Response Object
+ * OutcomesDeceased Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

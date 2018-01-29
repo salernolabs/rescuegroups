@@ -1,9 +1,9 @@
 <?php
 /**
- * Location Response Object
+ * Location Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

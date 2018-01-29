@@ -1,9 +1,9 @@
 <?php
 /**
- * WebFile Response Object
+ * WebFile Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

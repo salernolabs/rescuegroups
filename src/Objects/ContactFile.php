@@ -1,9 +1,9 @@
 <?php
 /**
- * ContactFile Response Object
+ * ContactFile Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

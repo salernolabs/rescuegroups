@@ -1,9 +1,9 @@
 <?php
 /**
- * InventoryFile Response Object
+ * InventoryFile Object
  *
  * @package RescueGroups
- * @subpackage Response
+ * @subpackage Objects
  * @author SourceGenerator
  */
 namespace RescueGroups\Objects;

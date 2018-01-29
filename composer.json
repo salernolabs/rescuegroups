@@ -20,8 +20,16 @@
     "config": {
         "preferred-install": "dist"
     },
+    "minimum-stability" : "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:ericsalerno/rescuegroups-sdk-builder.git"
+        }
+    ],
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "^6.4",
+        "salernolabs/rescuegroups-sdk-builder": "dev-master"
     },
     "require": {
         "guzzlehttp/guzzle": "^6.3"
