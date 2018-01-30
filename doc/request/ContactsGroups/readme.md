@@ -31,7 +31,7 @@ Performs contactsGroups.list list query, typically suitable for filling HTML sel
     $query = new \RescueGroups\Request\Objects\ContactsGroups\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs contactsGroups.search search query. This query returns an array of [\RescueGroups\Objects\ContactsGroup](../../../src/Objects/ContactsGroup.php) objects.
+Performs contactsGroups.search search query. This query returns an array of [\RescueGroups\Objects\Search\ContactsGroup](../../../src/Objects/Search/ContactsGroup.php) objects.
 
 ### Example Search Query
 

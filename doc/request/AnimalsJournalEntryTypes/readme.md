@@ -20,7 +20,7 @@ Performs animalsJournalEntrytypes.list list query, typically suitable for fillin
     $query = new \RescueGroups\Request\Objects\AnimalsJournalEntryTypes\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs animalsJournalEntrytypes.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntryType](../../../src/Objects/AnimalsJournalEntryType.php) objects.
+Performs animalsJournalEntrytypes.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsJournalEntryType](../../../src/Objects/Search/AnimalsJournalEntryType.php) objects.
 
 ### Example Search Query
 

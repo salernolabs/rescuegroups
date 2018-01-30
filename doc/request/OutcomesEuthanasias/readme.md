@@ -31,7 +31,7 @@ Performs outcomesEuthanasias.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesEuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesEuthanasia](../../../src/Objects/OutcomesEuthanasia.php) objects.
+Performs outcomesEuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesEuthanasia](../../../src/Objects/Search/OutcomesEuthanasia.php) objects.
 
 ### Example Search Query
 

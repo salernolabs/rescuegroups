@@ -24,7 +24,7 @@ Performs intakesOwnersurrenders.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesOwnersurrenders.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerSurrender](../../../src/Objects/IntakesOwnerSurrender.php) objects.
+Performs intakesOwnersurrenders.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesOwnerSurrender](../../../src/Objects/Search/IntakesOwnerSurrender.php) objects.
 
 ### Example Search Query
 

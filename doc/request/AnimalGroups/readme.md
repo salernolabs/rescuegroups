@@ -31,7 +31,7 @@ Performs animalGroups.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs animalGroups.search search query. This query returns an array of [\RescueGroups\Objects\AnimalGroup](../../../src/Objects/AnimalGroup.php) objects.
+Performs animalGroups.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalGroup](../../../src/Objects/Search/AnimalGroup.php) objects.
 
 ### Example Search Query
 

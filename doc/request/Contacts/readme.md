@@ -51,7 +51,7 @@ Performs contacts.listFosters query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs contacts.search search query. This query returns an array of [\RescueGroups\Objects\Contact](../../../src/Objects/Contact.php) objects.
+Performs contacts.search search query. This query returns an array of [\RescueGroups\Objects\Search\Contact](../../../src/Objects/Search/Contact.php) objects.
 
 ### Example Search Query
 

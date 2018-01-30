@@ -53,13 +53,13 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\WebPage($object);
+                $output[] = new \RescueGroups\Objects\Search\WebPage($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\WebPage($data)];
+        return [new \RescueGroups\Objects\Search\WebPage($data)];
     }
 
     /**

@@ -35,7 +35,7 @@ Performs newsarticles.publicView query.
     $result = $api->executeRequest($query);
 
 ## PublicSearch
-Performs newsarticles.publicSearch search query. This query returns an array of [\RescueGroups\Objects\NewsArticle](../../../src/Objects/NewsArticle.php) objects.
+Performs newsarticles.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Search\NewsArticle](../../../src/Objects/Search/NewsArticle.php) objects.
 
 ### Example Search Query
 
@@ -52,7 +52,7 @@ Performs newsarticles.publicSearch search query. This query returns an array of 
 
     $result = $api->executeRequest($query);
 ## Search
-Performs newsarticles.search search query. This query returns an array of [\RescueGroups\Objects\NewsArticle](../../../src/Objects/NewsArticle.php) objects.
+Performs newsarticles.search search query. This query returns an array of [\RescueGroups\Objects\Search\NewsArticle](../../../src/Objects/Search/NewsArticle.php) objects.
 
 ### Example Search Query
 

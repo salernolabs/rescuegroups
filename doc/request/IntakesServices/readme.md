@@ -24,7 +24,7 @@ Performs intakesServices.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesServices.search search query. This query returns an array of [\RescueGroups\Objects\IntakesService](../../../src/Objects/IntakesService.php) objects.
+Performs intakesServices.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesService](../../../src/Objects/Search/IntakesService.php) objects.
 
 ### Example Search Query
 

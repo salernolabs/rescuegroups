@@ -24,7 +24,7 @@ Performs intakesStraypickups.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesStraypickups.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayPickup](../../../src/Objects/IntakesStrayPickup.php) objects.
+Performs intakesStraypickups.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesStrayPickup](../../../src/Objects/Search/IntakesStrayPickup.php) objects.
 
 ### Example Search Query
 

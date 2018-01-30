@@ -13,7 +13,7 @@ Performs volunteersJournalEntries.define query. This gives information about the
 
     $result = $api->executeRequest($query);
 ## Search
-Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\VolunteersJournalEntry](../../../src/Objects/VolunteersJournalEntry.php) objects.
+Performs volunteersJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\Search\VolunteersJournalEntry](../../../src/Objects/Search/VolunteersJournalEntry.php) objects.
 
 ### Example Search Query
 

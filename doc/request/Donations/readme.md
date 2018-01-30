@@ -31,7 +31,7 @@ Performs donations.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs donations.search search query. This query returns an array of [\RescueGroups\Objects\Donation](../../../src/Objects/Donation.php) objects.
+Performs donations.search search query. This query returns an array of [\RescueGroups\Objects\Search\Donation](../../../src/Objects/Search/Donation.php) objects.
 
 ### Example Search Query
 

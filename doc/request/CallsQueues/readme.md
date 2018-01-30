@@ -31,7 +31,7 @@ Performs callsQueues.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs callsQueues.search search query. This query returns an array of [\RescueGroups\Objects\CallsQueue](../../../src/Objects/CallsQueue.php) objects.
+Performs callsQueues.search search query. This query returns an array of [\RescueGroups\Objects\Search\CallsQueue](../../../src/Objects/Search/CallsQueue.php) objects.
 
 ### Example Search Query
 

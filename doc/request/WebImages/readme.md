@@ -20,7 +20,7 @@ Performs webimages.list list query, typically suitable for filling HTML select f
     $query = new \RescueGroups\Request\Objects\WebImages\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs webimages.search search query. This query returns an array of [\RescueGroups\Objects\WebImage](../../../src/Objects/WebImage.php) objects.
+Performs webimages.search search query. This query returns an array of [\RescueGroups\Objects\Search\WebImage](../../../src/Objects/Search/WebImage.php) objects.
 
 ### Example Search Query
 

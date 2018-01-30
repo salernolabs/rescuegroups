@@ -20,7 +20,7 @@ Performs animalsAdoptions.list list query, typically suitable for filling HTML s
     $query = new \RescueGroups\Request\Objects\AnimalsAdoptions\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs animalsAdoptions.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsAdoption](../../../src/Objects/AnimalsAdoption.php) objects.
+Performs animalsAdoptions.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsAdoption](../../../src/Objects/Search/AnimalsAdoption.php) objects.
 
 ### Example Search Query
 

@@ -20,7 +20,7 @@ Performs contactFiles.list list query, typically suitable for filling HTML selec
     $query = new \RescueGroups\Request\Objects\ContactFiles\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs contactFiles.search search query. This query returns an array of [\RescueGroups\Objects\ContactFile](../../../src/Objects/ContactFile.php) objects.
+Performs contactFiles.search search query. This query returns an array of [\RescueGroups\Objects\Search\ContactFile](../../../src/Objects/Search/ContactFile.php) objects.
 
 ### Example Search Query
 

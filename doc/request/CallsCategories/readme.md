@@ -31,7 +31,7 @@ Performs callsCategories.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs callsCategories.search search query. This query returns an array of [\RescueGroups\Objects\CallsCategory](../../../src/Objects/CallsCategory.php) objects.
+Performs callsCategories.search search query. This query returns an array of [\RescueGroups\Objects\Search\CallsCategory](../../../src/Objects/Search/CallsCategory.php) objects.
 
 ### Example Search Query
 

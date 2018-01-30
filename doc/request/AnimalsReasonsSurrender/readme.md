@@ -31,7 +31,7 @@ Performs animalsReasonsSurrender.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs animalsReasonsSurrender.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsReasonsSurrender](../../../src/Objects/AnimalsReasonsSurrender.php) objects.
+Performs animalsReasonsSurrender.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsReasonsSurrender](../../../src/Objects/Search/AnimalsReasonsSurrender.php) objects.
 
 ### Example Search Query
 

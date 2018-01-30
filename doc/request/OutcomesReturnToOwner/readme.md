@@ -31,7 +31,7 @@ Performs outcomesReturntoowner.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesReturntoowner.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesReturnToOwner](../../../src/Objects/OutcomesReturnToOwner.php) objects.
+Performs outcomesReturntoowner.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesReturnToOwner](../../../src/Objects/Search/OutcomesReturnToOwner.php) objects.
 
 ### Example Search Query
 

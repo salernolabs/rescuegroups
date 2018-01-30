@@ -71,7 +71,7 @@ Performs submittedforms.publicCommonSubmit query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs submittedforms.search search query. This query returns an array of [\RescueGroups\Objects\SubmittedForm](../../../src/Objects/SubmittedForm.php) objects.
+Performs submittedforms.search search query. This query returns an array of [\RescueGroups\Objects\Search\SubmittedForm](../../../src/Objects/Search/SubmittedForm.php) objects.
 
 ### Example Search Query
 

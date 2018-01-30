@@ -24,7 +24,7 @@ Performs waitinglists.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs waitinglists.search search query. This query returns an array of [\RescueGroups\Objects\WaitingList](../../../src/Objects/WaitingList.php) objects.
+Performs waitinglists.search search query. This query returns an array of [\RescueGroups\Objects\Search\WaitingList](../../../src/Objects/Search/WaitingList.php) objects.
 
 ### Example Search Query
 

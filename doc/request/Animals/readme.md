@@ -42,7 +42,7 @@ Performs animals.view query.
     $result = $api->executeRequest($query);
 
 ## PublicSearch
-Performs animals.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) objects.
+Performs animals.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Search\Animal](../../../src/Objects/Search/Animal.php) objects.
 
 ### Example Search Query
 
@@ -59,7 +59,7 @@ Performs animals.publicSearch search query. This query returns an array of [\Res
 
     $result = $api->executeRequest($query);
 ## Search
-Performs animals.search search query. This query returns an array of [\RescueGroups\Objects\Animal](../../../src/Objects/Animal.php) objects.
+Performs animals.search search query. This query returns an array of [\RescueGroups\Objects\Search\Animal](../../../src/Objects/Search/Animal.php) objects.
 
 ### Example Search Query
 

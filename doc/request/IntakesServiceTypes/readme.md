@@ -31,7 +31,7 @@ Performs intakesServicetypes.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesServicetypes.search search query. This query returns an array of [\RescueGroups\Objects\IntakesServiceType](../../../src/Objects/IntakesServiceType.php) objects.
+Performs intakesServicetypes.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesServiceType](../../../src/Objects/Search/IntakesServiceType.php) objects.
 
 ### Example Search Query
 

@@ -333,13 +333,13 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\Animal($object);
+                $output[] = new \RescueGroups\Objects\Search\Animal($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\Animal($data)];
+        return [new \RescueGroups\Objects\Search\Animal($data)];
     }
 
     /**

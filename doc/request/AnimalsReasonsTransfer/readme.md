@@ -31,7 +31,7 @@ Performs animalsReasonsTransfer.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs animalsReasonsTransfer.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsReasonsTransfer](../../../src/Objects/AnimalsReasonsTransfer.php) objects.
+Performs animalsReasonsTransfer.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsReasonsTransfer](../../../src/Objects/Search/AnimalsReasonsTransfer.php) objects.
 
 ### Example Search Query
 

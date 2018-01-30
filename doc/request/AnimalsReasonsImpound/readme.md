@@ -31,7 +31,7 @@ Performs animalsReasonsImpound.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs animalsReasonsImpound.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsReasonsImpound](../../../src/Objects/AnimalsReasonsImpound.php) objects.
+Performs animalsReasonsImpound.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsReasonsImpound](../../../src/Objects/Search/AnimalsReasonsImpound.php) objects.
 
 ### Example Search Query
 

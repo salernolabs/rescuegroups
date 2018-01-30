@@ -35,7 +35,7 @@ Performs eventanimalattendance.view query.
     $result = $api->executeRequest($query);
 
 ## PublicSearch
-Performs eventanimalattendance.publicSearch search query. This query returns an array of [\RescueGroups\Objects\EventAnimalAttendance](../../../src/Objects/EventAnimalAttendance.php) objects.
+Performs eventanimalattendance.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Search\EventAnimalAttendance](../../../src/Objects/Search/EventAnimalAttendance.php) objects.
 
 ### Example Search Query
 
@@ -52,7 +52,7 @@ Performs eventanimalattendance.publicSearch search query. This query returns an 
 
     $result = $api->executeRequest($query);
 ## Search
-Performs eventanimalattendance.search search query. This query returns an array of [\RescueGroups\Objects\EventAnimalAttendance](../../../src/Objects/EventAnimalAttendance.php) objects.
+Performs eventanimalattendance.search search query. This query returns an array of [\RescueGroups\Objects\Search\EventAnimalAttendance](../../../src/Objects/Search/EventAnimalAttendance.php) objects.
 
 ### Example Search Query
 

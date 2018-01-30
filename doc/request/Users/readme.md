@@ -31,7 +31,7 @@ Performs users.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs users.search search query. This query returns an array of [\RescueGroups\Objects\User](../../../src/Objects/User.php) objects.
+Performs users.search search query. This query returns an array of [\RescueGroups\Objects\Search\User](../../../src/Objects/Search/User.php) objects.
 
 ### Example Search Query
 

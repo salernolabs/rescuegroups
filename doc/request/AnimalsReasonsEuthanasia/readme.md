@@ -31,7 +31,7 @@ Performs animalsReasonsEuthanasia.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs animalsReasonsEuthanasia.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsReasonsEuthanasia](../../../src/Objects/AnimalsReasonsEuthanasia.php) objects.
+Performs animalsReasonsEuthanasia.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsReasonsEuthanasia](../../../src/Objects/Search/AnimalsReasonsEuthanasia.php) objects.
 
 ### Example Search Query
 
