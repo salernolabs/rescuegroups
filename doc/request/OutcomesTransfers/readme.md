@@ -31,7 +31,7 @@ Performs outcomesTransfers.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesTransfers.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesTransfer](../../../src/Objects/OutcomesTransfer.php) objects.
+Performs outcomesTransfers.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesTransfer](../../../src/Objects/Search/OutcomesTransfer.php) objects.
 
 ### Example Search Query
 

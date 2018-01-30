@@ -24,7 +24,7 @@ Performs memorials.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs memorials.search search query. This query returns an array of [\RescueGroups\Objects\Memorial](../../../src/Objects/Memorial.php) objects.
+Performs memorials.search search query. This query returns an array of [\RescueGroups\Objects\Search\Memorial](../../../src/Objects/Search/Memorial.php) objects.
 
 ### Example Search Query
 

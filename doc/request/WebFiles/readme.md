@@ -20,7 +20,7 @@ Performs webfiles.list list query, typically suitable for filling HTML select fi
     $query = new \RescueGroups\Request\Objects\WebFiles\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs webfiles.search search query. This query returns an array of [\RescueGroups\Objects\WebFile](../../../src/Objects/WebFile.php) objects.
+Performs webfiles.search search query. This query returns an array of [\RescueGroups\Objects\Search\WebFile](../../../src/Objects/Search/WebFile.php) objects.
 
 ### Example Search Query
 

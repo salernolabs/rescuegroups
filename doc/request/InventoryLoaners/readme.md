@@ -24,7 +24,7 @@ Performs inventoryLoaners.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs inventoryLoaners.search search query. This query returns an array of [\RescueGroups\Objects\InventoryLoaner](../../../src/Objects/InventoryLoaner.php) objects.
+Performs inventoryLoaners.search search query. This query returns an array of [\RescueGroups\Objects\Search\InventoryLoaner](../../../src/Objects/Search/InventoryLoaner.php) objects.
 
 ### Example Search Query
 

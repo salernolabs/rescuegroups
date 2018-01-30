@@ -31,7 +31,7 @@ Performs colonies.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs colonies.search search query. This query returns an array of [\RescueGroups\Objects\Colony](../../../src/Objects/Colony.php) objects.
+Performs colonies.search search query. This query returns an array of [\RescueGroups\Objects\Search\Colony](../../../src/Objects/Search/Colony.php) objects.
 
 ### Example Search Query
 

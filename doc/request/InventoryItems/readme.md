@@ -31,7 +31,7 @@ Performs inventoryitems.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs inventoryitems.search search query. This query returns an array of [\RescueGroups\Objects\InventoryItem](../../../src/Objects/InventoryItem.php) objects.
+Performs inventoryitems.search search query. This query returns an array of [\RescueGroups\Objects\Search\InventoryItem](../../../src/Objects/Search/InventoryItem.php) objects.
 
 ### Example Search Query
 

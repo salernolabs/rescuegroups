@@ -24,7 +24,7 @@ Performs intakesStraydropoffs.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesStraydropoffs.search search query. This query returns an array of [\RescueGroups\Objects\IntakesStrayDropoff](../../../src/Objects/IntakesStrayDropoff.php) objects.
+Performs intakesStraydropoffs.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesStrayDropoff](../../../src/Objects/Search/IntakesStrayDropoff.php) objects.
 
 ### Example Search Query
 

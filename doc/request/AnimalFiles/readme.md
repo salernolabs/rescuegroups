@@ -20,7 +20,7 @@ Performs animalFiles.list list query, typically suitable for filling HTML select
     $query = new \RescueGroups\Request\Objects\AnimalFiles\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs animalFiles.search search query. This query returns an array of [\RescueGroups\Objects\AnimalFile](../../../src/Objects/AnimalFile.php) objects.
+Performs animalFiles.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalFile](../../../src/Objects/Search/AnimalFile.php) objects.
 
 ### Example Search Query
 

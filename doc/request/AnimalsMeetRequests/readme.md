@@ -13,7 +13,7 @@ Performs animalsMeetrequests.define query. This gives information about the API 
 
     $result = $api->executeRequest($query);
 ## Search
-Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsMeetRequest](../../../src/Objects/AnimalsMeetRequest.php) objects.
+Performs animalsMeetrequests.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsMeetRequest](../../../src/Objects/Search/AnimalsMeetRequest.php) objects.
 
 ### Example Search Query
 

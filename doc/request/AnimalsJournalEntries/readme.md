@@ -13,7 +13,7 @@ Performs animalsJournalEntries.define query. This gives information about the AP
 
     $result = $api->executeRequest($query);
 ## Search
-Performs animalsJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\AnimalsJournalEntry](../../../src/Objects/AnimalsJournalEntry.php) objects.
+Performs animalsJournalEntries.search search query. This query returns an array of [\RescueGroups\Objects\Search\AnimalsJournalEntry](../../../src/Objects/Search/AnimalsJournalEntry.php) objects.
 
 ### Example Search Query
 

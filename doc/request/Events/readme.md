@@ -42,7 +42,7 @@ Performs events.view query.
     $result = $api->executeRequest($query);
 
 ## PublicSearch
-Performs events.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) objects.
+Performs events.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Search\Event](../../../src/Objects/Search/Event.php) objects.
 
 ### Example Search Query
 
@@ -59,7 +59,7 @@ Performs events.publicSearch search query. This query returns an array of [\Resc
 
     $result = $api->executeRequest($query);
 ## Search
-Performs events.search search query. This query returns an array of [\RescueGroups\Objects\Event](../../../src/Objects/Event.php) objects.
+Performs events.search search query. This query returns an array of [\RescueGroups\Objects\Search\Event](../../../src/Objects/Search/Event.php) objects.
 
 ### Example Search Query
 

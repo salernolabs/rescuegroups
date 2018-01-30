@@ -24,7 +24,7 @@ Performs intakesOwnerrequestedeuthanasias.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesOwnerrequestedeuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\IntakesOwnerRequestedEuthanasia](../../../src/Objects/IntakesOwnerRequestedEuthanasia.php) objects.
+Performs intakesOwnerrequestedeuthanasias.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesOwnerRequestedEuthanasia](../../../src/Objects/Search/IntakesOwnerRequestedEuthanasia.php) objects.
 
 ### Example Search Query
 

@@ -20,7 +20,7 @@ Performs inventoryfiles.list list query, typically suitable for filling HTML sel
     $query = new \RescueGroups\Request\Objects\InventoryFiles\GetList();
     $result = $api->executeRequest($query);
 ## Search
-Performs inventoryfiles.search search query. This query returns an array of [\RescueGroups\Objects\InventoryFile](../../../src/Objects/InventoryFile.php) objects.
+Performs inventoryfiles.search search query. This query returns an array of [\RescueGroups\Objects\Search\InventoryFile](../../../src/Objects/Search/InventoryFile.php) objects.
 
 ### Example Search Query
 

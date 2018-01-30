@@ -24,7 +24,7 @@ Performs intakesTransfers.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesTransfers.search search query. This query returns an array of [\RescueGroups\Objects\IntakesTransfer](../../../src/Objects/IntakesTransfer.php) objects.
+Performs intakesTransfers.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesTransfer](../../../src/Objects/Search/IntakesTransfer.php) objects.
 
 ### Example Search Query
 

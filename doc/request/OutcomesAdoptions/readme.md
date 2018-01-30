@@ -31,7 +31,7 @@ Performs outcomesAdoptions.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesAdoptions.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesAdoption](../../../src/Objects/OutcomesAdoption.php) objects.
+Performs outcomesAdoptions.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesAdoption](../../../src/Objects/Search/OutcomesAdoption.php) objects.
 
 ### Example Search Query
 

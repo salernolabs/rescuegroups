@@ -97,13 +97,13 @@ class PublicSearch extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\EventAnimalAttendance($object);
+                $output[] = new \RescueGroups\Objects\Search\EventAnimalAttendance($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\EventAnimalAttendance($data)];
+        return [new \RescueGroups\Objects\Search\EventAnimalAttendance($data)];
     }
 
     /**

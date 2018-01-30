@@ -13,7 +13,7 @@ Performs volunteerHours.define query. This gives information about the API inter
 
     $result = $api->executeRequest($query);
 ## Search
-Performs volunteerHours.search search query. This query returns an array of [\RescueGroups\Objects\VolunteerHour](../../../src/Objects/VolunteerHour.php) objects.
+Performs volunteerHours.search search query. This query returns an array of [\RescueGroups\Objects\Search\VolunteerHour](../../../src/Objects/Search/VolunteerHour.php) objects.
 
 ### Example Search Query
 

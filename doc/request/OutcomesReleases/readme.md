@@ -31,7 +31,7 @@ Performs outcomesReleases.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesReleases.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesReleas](../../../src/Objects/OutcomesReleas.php) objects.
+Performs outcomesReleases.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesReleas](../../../src/Objects/Search/OutcomesReleas.php) objects.
 
 ### Example Search Query
 

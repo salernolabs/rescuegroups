@@ -42,7 +42,7 @@ Performs webpages.view query.
     $result = $api->executeRequest($query);
 
 ## PublicSearch
-Performs webpages.publicSearch search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) objects.
+Performs webpages.publicSearch search query. This query returns an array of [\RescueGroups\Objects\Search\WebPage](../../../src/Objects/Search/WebPage.php) objects.
 
 ### Example Search Query
 
@@ -59,7 +59,7 @@ Performs webpages.publicSearch search query. This query returns an array of [\Re
 
     $result = $api->executeRequest($query);
 ## Search
-Performs webpages.search search query. This query returns an array of [\RescueGroups\Objects\WebPage](../../../src/Objects/WebPage.php) objects.
+Performs webpages.search search query. This query returns an array of [\RescueGroups\Objects\Search\WebPage](../../../src/Objects/Search/WebPage.php) objects.
 
 ### Example Search Query
 

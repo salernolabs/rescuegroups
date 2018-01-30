@@ -31,7 +31,7 @@ Performs locations.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs locations.search search query. This query returns an array of [\RescueGroups\Objects\Location](../../../src/Objects/Location.php) objects.
+Performs locations.search search query. This query returns an array of [\RescueGroups\Objects\Search\Location](../../../src/Objects/Search/Location.php) objects.
 
 ### Example Search Query
 

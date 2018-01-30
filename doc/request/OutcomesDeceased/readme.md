@@ -31,7 +31,7 @@ Performs outcomesDeceased.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs outcomesDeceased.search search query. This query returns an array of [\RescueGroups\Objects\OutcomesDeceased](../../../src/Objects/OutcomesDeceased.php) objects.
+Performs outcomesDeceased.search search query. This query returns an array of [\RescueGroups\Objects\Search\OutcomesDeceased](../../../src/Objects/Search/OutcomesDeceased.php) objects.
 
 ### Example Search Query
 

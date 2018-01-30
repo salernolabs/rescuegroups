@@ -24,7 +24,7 @@ Performs intakesBorninrescueshelter.view query.
     $result = $api->executeRequest($query);
 
 ## Search
-Performs intakesBorninrescueshelter.search search query. This query returns an array of [\RescueGroups\Objects\IntakesBornInRescueShelter](../../../src/Objects/IntakesBornInRescueShelter.php) objects.
+Performs intakesBorninrescueshelter.search search query. This query returns an array of [\RescueGroups\Objects\Search\IntakesBornInRescueShelter](../../../src/Objects/Search/IntakesBornInRescueShelter.php) objects.
 
 ### Example Search Query
 
