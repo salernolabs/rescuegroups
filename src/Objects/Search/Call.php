@@ -80,7 +80,7 @@ class Call extends \RescueGroups\Objects\Call implements \RescueGroups\Objects\A
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'callID' => 'id',

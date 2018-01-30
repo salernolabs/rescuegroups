@@ -45,7 +45,7 @@ class OutcomesDeceased extends \RescueGroups\Objects\OutcomesDeceased implements
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'outcomesDeceasedID' => 'id',

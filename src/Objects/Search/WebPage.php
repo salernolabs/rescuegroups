@@ -45,7 +45,7 @@ class WebPage extends \RescueGroups\Objects\WebPage implements \RescueGroups\Obj
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'webpageID' => 'id',

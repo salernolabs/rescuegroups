@@ -45,7 +45,7 @@ class ContactFile extends \RescueGroups\Objects\ContactFile implements \RescueGr
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'contactfileID' => 'id',

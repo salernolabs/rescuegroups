@@ -122,7 +122,7 @@ class Colony extends \RescueGroups\Objects\Colony implements \RescueGroups\Objec
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'colonyID' => 'id',

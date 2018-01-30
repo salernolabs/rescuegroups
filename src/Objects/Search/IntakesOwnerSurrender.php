@@ -45,7 +45,7 @@ class IntakesOwnerSurrender extends \RescueGroups\Objects\IntakesOwnerSurrender 
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesOwnersurrenderID' => 'id',

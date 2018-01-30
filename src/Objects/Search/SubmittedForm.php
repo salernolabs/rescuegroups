@@ -325,7 +325,7 @@ class SubmittedForm extends \RescueGroups\Objects\SubmittedForm implements \Resc
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'submittedformID' => 'id',

@@ -52,7 +52,7 @@ class WebFile extends \RescueGroups\Objects\WebFile implements \RescueGroups\Obj
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'webfileID' => 'id',

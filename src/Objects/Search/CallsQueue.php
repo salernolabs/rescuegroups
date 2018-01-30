@@ -66,7 +66,7 @@ class CallsQueue extends \RescueGroups\Objects\CallsQueue implements \RescueGrou
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'queueID' => 'id',

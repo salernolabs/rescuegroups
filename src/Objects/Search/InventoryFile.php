@@ -129,7 +129,7 @@ class InventoryFile extends \RescueGroups\Objects\InventoryFile implements \Resc
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'inventoryfileID' => 'id',

@@ -38,7 +38,7 @@ class IntakesStrayDropoff extends \RescueGroups\Objects\IntakesStrayDropoff impl
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesStraydropoffID' => 'id',

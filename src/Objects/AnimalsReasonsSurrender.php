@@ -31,7 +31,7 @@ class AnimalsReasonsSurrender implements \RescueGroups\Objects\APIEncodableInter
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'reasonID' => 'id',

@@ -38,7 +38,7 @@ class Contact extends \RescueGroups\Objects\Contact implements \RescueGroups\Obj
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'contactID' => 'id',

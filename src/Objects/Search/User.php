@@ -45,7 +45,7 @@ class User extends \RescueGroups\Objects\User implements \RescueGroups\Objects\A
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'userID' => 'id',

@@ -24,7 +24,7 @@ class AnimalsJournalEntryType extends \RescueGroups\Objects\AnimalsJournalEntryT
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'journalEntrytypeID' => 'id',

@@ -66,7 +66,7 @@ class IntakesService implements \RescueGroups\Objects\APIEncodableInterface
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesServiceID' => 'id',

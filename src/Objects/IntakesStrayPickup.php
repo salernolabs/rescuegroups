@@ -101,7 +101,7 @@ class IntakesStrayPickup implements \RescueGroups\Objects\APIEncodableInterface
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesStraypickupID' => 'id',

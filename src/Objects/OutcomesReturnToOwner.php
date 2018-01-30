@@ -52,7 +52,7 @@ class OutcomesReturnToOwner implements \RescueGroups\Objects\APIEncodableInterfa
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'outcomesReturntoownerID' => 'id',

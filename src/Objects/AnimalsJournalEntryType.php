@@ -38,7 +38,7 @@ class AnimalsJournalEntryType implements \RescueGroups\Objects\APIEncodableInter
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'journalEntrytypeID' => 'id',

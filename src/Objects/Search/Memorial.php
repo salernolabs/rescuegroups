@@ -45,7 +45,7 @@ class Memorial extends \RescueGroups\Objects\Memorial implements \RescueGroups\O
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'memorialID' => 'id',

@@ -66,7 +66,7 @@ class OutcomesTransfer implements \RescueGroups\Objects\APIEncodableInterface
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'outcomesTransferID' => 'id',
