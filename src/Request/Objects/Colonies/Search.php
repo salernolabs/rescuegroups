@@ -95,13 +95,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\Colony($object);
+                $output[] = new \RescueGroups\Objects\Search\Colony($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\Colony($data)];
+        return [new \RescueGroups\Objects\Search\Colony($data)];
     }
 
     /**

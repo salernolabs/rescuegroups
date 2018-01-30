@@ -61,13 +61,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\AnimalsJournalEntryType($object);
+                $output[] = new \RescueGroups\Objects\Search\AnimalsJournalEntryType($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\AnimalsJournalEntryType($data)];
+        return [new \RescueGroups\Objects\Search\AnimalsJournalEntryType($data)];
     }
 
     /**

@@ -71,13 +71,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\AnimalFile($object);
+                $output[] = new \RescueGroups\Objects\Search\AnimalFile($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\AnimalFile($data)];
+        return [new \RescueGroups\Objects\Search\AnimalFile($data)];
     }
 
     /**

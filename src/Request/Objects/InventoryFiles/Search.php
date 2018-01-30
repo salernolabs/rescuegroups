@@ -95,13 +95,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\InventoryFile($object);
+                $output[] = new \RescueGroups\Objects\Search\InventoryFile($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\InventoryFile($data)];
+        return [new \RescueGroups\Objects\Search\InventoryFile($data)];
     }
 
     /**

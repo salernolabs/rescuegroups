@@ -73,13 +73,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\OutcomesReturnToOwner($object);
+                $output[] = new \RescueGroups\Objects\Search\OutcomesReturnToOwner($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\OutcomesReturnToOwner($data)];
+        return [new \RescueGroups\Objects\Search\OutcomesReturnToOwner($data)];
     }
 
     /**

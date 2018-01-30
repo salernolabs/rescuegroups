@@ -79,13 +79,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\AnimalsJournalEntry($object);
+                $output[] = new \RescueGroups\Objects\Search\AnimalsJournalEntry($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\AnimalsJournalEntry($data)];
+        return [new \RescueGroups\Objects\Search\AnimalsJournalEntry($data)];
     }
 
     /**

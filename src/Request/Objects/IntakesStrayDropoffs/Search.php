@@ -81,13 +81,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\IntakesStrayDropoff($object);
+                $output[] = new \RescueGroups\Objects\Search\IntakesStrayDropoff($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\IntakesStrayDropoff($data)];
+        return [new \RescueGroups\Objects\Search\IntakesStrayDropoff($data)];
     }
 
     /**

@@ -57,13 +57,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\IntakesServiceType($object);
+                $output[] = new \RescueGroups\Objects\Search\IntakesServiceType($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\IntakesServiceType($data)];
+        return [new \RescueGroups\Objects\Search\IntakesServiceType($data)];
     }
 
     /**

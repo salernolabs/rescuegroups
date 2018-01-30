@@ -67,13 +67,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\WebImage($object);
+                $output[] = new \RescueGroups\Objects\Search\WebImage($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\WebImage($data)];
+        return [new \RescueGroups\Objects\Search\WebImage($data)];
     }
 
     /**
