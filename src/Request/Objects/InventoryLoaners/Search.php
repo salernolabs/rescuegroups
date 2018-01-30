@@ -167,13 +167,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\InventoryLoaner($object);
+                $output[] = new \RescueGroups\Objects\Search\InventoryLoaner($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\InventoryLoaner($data)];
+        return [new \RescueGroups\Objects\Search\InventoryLoaner($data)];
     }
 
     /**

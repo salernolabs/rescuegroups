@@ -75,13 +75,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\CallsQueue($object);
+                $output[] = new \RescueGroups\Objects\Search\CallsQueue($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\CallsQueue($data)];
+        return [new \RescueGroups\Objects\Search\CallsQueue($data)];
     }
 
     /**

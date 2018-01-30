@@ -57,13 +57,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\AnimalsReasonsTransfer($object);
+                $output[] = new \RescueGroups\Objects\Search\AnimalsReasonsTransfer($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\AnimalsReasonsTransfer($data)];
+        return [new \RescueGroups\Objects\Search\AnimalsReasonsTransfer($data)];
     }
 
     /**

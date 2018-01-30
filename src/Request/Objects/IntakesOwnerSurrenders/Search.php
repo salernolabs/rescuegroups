@@ -75,13 +75,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\IntakesOwnerSurrender($object);
+                $output[] = new \RescueGroups\Objects\Search\IntakesOwnerSurrender($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\IntakesOwnerSurrender($data)];
+        return [new \RescueGroups\Objects\Search\IntakesOwnerSurrender($data)];
     }
 
     /**

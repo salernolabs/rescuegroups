@@ -75,13 +75,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\OutcomesAdoption($object);
+                $output[] = new \RescueGroups\Objects\Search\OutcomesAdoption($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\OutcomesAdoption($data)];
+        return [new \RescueGroups\Objects\Search\OutcomesAdoption($data)];
     }
 
     /**

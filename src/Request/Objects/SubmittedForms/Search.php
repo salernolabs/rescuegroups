@@ -147,13 +147,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\SubmittedForm($object);
+                $output[] = new \RescueGroups\Objects\Search\SubmittedForm($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\SubmittedForm($data)];
+        return [new \RescueGroups\Objects\Search\SubmittedForm($data)];
     }
 
     /**

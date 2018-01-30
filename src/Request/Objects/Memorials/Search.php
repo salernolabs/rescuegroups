@@ -67,13 +67,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\Memorial($object);
+                $output[] = new \RescueGroups\Objects\Search\Memorial($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\Memorial($data)];
+        return [new \RescueGroups\Objects\Search\Memorial($data)];
     }
 
     /**

@@ -69,13 +69,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\ContactFile($object);
+                $output[] = new \RescueGroups\Objects\Search\ContactFile($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\ContactFile($data)];
+        return [new \RescueGroups\Objects\Search\ContactFile($data)];
     }
 
     /**

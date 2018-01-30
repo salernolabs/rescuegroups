@@ -81,13 +81,13 @@ class Search extends \RescueGroups\Request\Objects\Base implements
             $output = [];
             foreach ($data as $object)
             {
-                $output[] = new \RescueGroups\Objects\Location($object);
+                $output[] = new \RescueGroups\Objects\Search\Location($object);
             }
 
             return $output;
         }
 
-        return [new \RescueGroups\Objects\Location($data)];
+        return [new \RescueGroups\Objects\Search\Location($data)];
     }
 
     /**
