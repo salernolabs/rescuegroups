@@ -31,7 +31,7 @@ class AnimalsReasonsTransfer extends \RescueGroups\Objects\AnimalsReasonsTransfe
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'reasonID' => 'id',

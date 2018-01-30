@@ -52,7 +52,7 @@ class InventoryFile implements \RescueGroups\Objects\APIEncodableInterface
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'inventoryfileID' => 'id',

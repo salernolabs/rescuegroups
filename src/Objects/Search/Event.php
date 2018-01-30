@@ -122,7 +122,7 @@ class Event extends \RescueGroups\Objects\Event implements \RescueGroups\Objects
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'eventID' => 'id',

@@ -45,7 +45,7 @@ class IntakesOwnerRequestedEuthanasia extends \RescueGroups\Objects\IntakesOwner
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesOwnerrequestedeuthanasiaID' => 'id',

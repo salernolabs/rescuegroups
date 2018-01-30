@@ -31,7 +31,7 @@ class AnimalsReasonsEuthanasia implements \RescueGroups\Objects\APIEncodableInte
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'reasonID' => 'id',

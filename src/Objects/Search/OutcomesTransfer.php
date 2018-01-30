@@ -59,7 +59,7 @@ class OutcomesTransfer extends \RescueGroups\Objects\OutcomesTransfer implements
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'outcomesTransferID' => 'id',

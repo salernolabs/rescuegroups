@@ -52,7 +52,7 @@ class IntakesBornInRescueShelter implements \RescueGroups\Objects\APIEncodableIn
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesBorninrescueshelterID' => 'id',

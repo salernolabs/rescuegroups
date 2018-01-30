@@ -31,7 +31,7 @@ class VolunteerHour extends \RescueGroups\Objects\VolunteerHour implements \Resc
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'volunteerHoursID' => 'id',

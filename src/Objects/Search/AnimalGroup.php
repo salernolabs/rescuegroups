@@ -31,7 +31,7 @@ class AnimalGroup extends \RescueGroups\Objects\AnimalGroup implements \RescueGr
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'groupID' => 'id',

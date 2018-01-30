@@ -24,7 +24,7 @@ class WaitingList extends \RescueGroups\Objects\WaitingList implements \RescueGr
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'waitinglistID' => 'id',

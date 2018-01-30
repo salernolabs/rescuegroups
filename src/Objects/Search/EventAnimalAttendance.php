@@ -192,7 +192,7 @@ class EventAnimalAttendance extends \RescueGroups\Objects\EventAnimalAttendance 
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'attendanceID' => 'id',

@@ -66,7 +66,7 @@ class CallsQueuesMember extends \RescueGroups\Objects\CallsQueuesMember implemen
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'memberID' => 'id',

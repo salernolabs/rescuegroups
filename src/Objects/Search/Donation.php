@@ -31,7 +31,7 @@ class Donation extends \RescueGroups\Objects\Donation implements \RescueGroups\O
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'donationID' => 'id',

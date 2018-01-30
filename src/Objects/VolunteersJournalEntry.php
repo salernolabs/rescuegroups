@@ -52,7 +52,7 @@ class VolunteersJournalEntry implements \RescueGroups\Objects\APIEncodableInterf
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'journalEntryID' => 'id',

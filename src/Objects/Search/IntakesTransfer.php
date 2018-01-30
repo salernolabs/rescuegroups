@@ -45,7 +45,7 @@ class IntakesTransfer extends \RescueGroups\Objects\IntakesTransfer implements \
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'intakesTransferID' => 'id',

@@ -38,7 +38,7 @@ class InventoryItem extends \RescueGroups\Objects\InventoryItem implements \Resc
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'inventoryitemID' => 'id',

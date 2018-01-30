@@ -52,7 +52,7 @@ class OutcomesReleas extends \RescueGroups\Objects\OutcomesReleas implements \Re
      * Mapping fields
      * @var array
      */
-    static private $apiMapping = [
+    static protected $apiMapping = [
         'id' => 'id',
         'input' => [
             'outcomesReleaseID' => 'id',
